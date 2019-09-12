@@ -12,11 +12,11 @@ Een klassiek voorbeeld daarvan is een lijst met de namen en adressen. Die lijst 
 | JORIS | Joost | Boedreef 25 | 2600 | Berchem | 03 444 44 44 | 2 |
 | VOET | Bart | Plopstraat 9 | 2630 | Aartselaar | 03 888 88 88 | 3 |
 
-In bovenstaand voorbeeld is de eerste rij de aanduiding van de resp. kolommen \(veldnamen\).
+In bovenstaand voorbeeld is de eerste rij de aanduiding van de kolommen \(veldnamen\).
 
 Bovenstaand voorbeeld bevat dus vijf rijen \(records\) die telkens bepaalde waarden bevatten, hier gaat het over de "Naam", "Voornaam", "Adres", "Postcode", "Gemeente", "Telefoon" en "Verdieping". 
 
-Een andere voorstelling voor het bijhouden van bovenvermelde gegevens kan in de vorm van een kaartenbak zijn. Visueel voorgesteld krijgt men dan het volgende.
+Een andere voorstelling voor het bijhouden van deze zelfde gegevens kan in de vorm van een kaartenbak zijn. Visueel voorgesteld krijgt men dan het volgende.
 
 | Fiche |
 | :--- |
@@ -27,8 +27,6 @@ Een andere voorstelling voor het bijhouden van bovenvermelde gegevens kan in de 
 | Gemeente |
 | Telefoon |
 | Verdieping |
-
-Iedereen begrijpt direct dat de verzameling van deze verschillende fiches een groot aantal onderscheiden fiches kan bevatten.
 
 ## **Voorbeeld 2** 
 
@@ -43,7 +41,7 @@ Een bedrijf in de productiesector zal onder andere volgende gegevens willen bijh
 
 ## **Voorbeeld 3** 
 
-Een bank houdt per rekening van een bepaalde klant geen box bij met daarin het geld van een klant. Het bedrag op de rekening van die resp. klant is een cijfer dat wordt bijgehouden in een database. Als een klant het bedrag op zijn rekening aanpast, ttz. door een storting van een bepaald geldelijk bedrag of een afhaling, dan betreft die storting/afhaling een bepaalde bewerking op de database, m.n. een wijziging van het bedrag op de rekening van de klant die een bedrag heeft gestort/ afgehaald.
+Een bank houdt per rekening van een bepaalde klant geen box bij met daarin het geld van een klant. Het bedrag op de rekening van die klant is een cijfer dat wordt bijgehouden in een database. Als een klant het bedrag op zijn rekening aanpast, ttz. door een storting van een bepaald bedrag of een afhaling, dan betreft die storting/afhaling een bepaalde bewerking op de database. Ze zorgt dus voor een wijziging van het bedrag op de rekening van de klant die een bedrag heeft gestort/afgehaald.
 
 {% hint style="info" %}
 **CONCLUSIE**   

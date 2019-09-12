@@ -1,6 +1,6 @@
 # Architectuur van een databank
 
-Hieronder begrijpen we de wijze en de verschillende stappen die normaliter doorlopen worden voordat een database kan opgesteld worden.
+Hieronder begrijpen we de wijze en de verschillende stappen die normaal gesproken doorlopen worden voordat een database kan opgesteld worden.
 
 ![](../../.gitbook/assets/databanken-intro-afbeelding-1.JPG)
 

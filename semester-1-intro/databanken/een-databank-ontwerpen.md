@@ -16,7 +16,7 @@ Enkele aandachtspunten kunnen dan zijn:
 ## **Enkele begrippen** 
 
 **Tabel**   
-__Gegevens worden opgeslagen in een tabel. Deze tabel heeft steeds een naam, of tabelnaam. Eén tabel bevat normaliter samenhorende gegevens. \(bv. personen, facturen, …\) of entiteiten.
+__Gegevens worden opgeslagen in een tabel. Deze tabel heeft steeds een naam, of tabelnaam. Eén tabel bevat normaal gesproken samenhorende gegevens. \(bv. personen, facturen, …\) of entiteiten.
 
 **Record**   
 __Een tabel bestaat uit rijen of records. Eén record bevat alle gegevens van de zgn. rij. \(bv. alle gegevens betreffende een persoon\) 
