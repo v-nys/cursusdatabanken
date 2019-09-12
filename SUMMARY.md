@@ -27,5 +27,5 @@
   * [Herleiden van ERD's tot tabellen](semester-1-intro/erm/herleiden-van-erds-tot-tabellen.md)
   * [Voorbeeld](semester-1-intro/erm/voorbeeld.md)
   * [Bibliografie](semester-1-intro/erm/bibliografie.md)
-* [Installatie van alle software](semester-1-intro/sql-server.md)
+* [Installatie van alle software](semester-1-intro/installatie-software.md)
 
