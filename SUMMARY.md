@@ -7,6 +7,7 @@
 
 ## Semester 1: intro
 
+* [Installatie van alle software](semester-1-intro/installatie-software.md)
 * [Databanken](semester-1-intro/databanken/README.md)
   * [Inleiding](semester-1-intro/databanken/inleiding.md)
   * [Voorbeeld](semester-1-intro/databanken/voorbeeld.md)
@@ -27,5 +28,4 @@
   * [Herleiden van ERD's tot tabellen](semester-1-intro/erm/herleiden-van-erds-tot-tabellen.md)
   * [Voorbeeld](semester-1-intro/erm/voorbeeld.md)
   * [Bibliografie](semester-1-intro/erm/bibliografie.md)
-* [Installatie van alle software](semester-1-intro/installatie-software.md)
 
