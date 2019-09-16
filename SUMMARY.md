@@ -3,6 +3,7 @@
 * [Welkom](README.md)
 * [Inleiding](inleiding/README.md)
   * [Benodigdheden](inleiding/benodigdheden.md)
+  * [Nuttige extra's](inleiding/nuttige-extras.md)
   * [Mee helpen?](inleiding/mee-helpen.md)
 
 ## Semester 1: intro
