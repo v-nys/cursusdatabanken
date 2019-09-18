@@ -10,9 +10,14 @@ Volg daarom onderstaande stappen nauwkeurig.
 
 {% embed url="https://www.youtube.com/watch?v=araZ9AAP1cs" %}
 
+* Indien je niet over een compatibele versie van Windows beschikt, let dan goed op de aantekeningen bij het filmpje over de installatie van Docker.
+
 {% embed url="https://www.youtube.com/watch?v=hf3H6rIGXQA" %}
 
 {% embed url="https://www.youtube.com/watch?v=B35N7-\_2mW8" %}
+
+* Indien je in de eerste stap hebt vastgesteld dat je versie van Windows niet compatibel is met Docker Desktop, probeer dan [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/). Dit volstaat ook, maar de ondersteuning is moeilijker.
+* Je hebt gratis toegang tot Windows 10 Education via [Dreamspark](dreamspark.ap.be). Als je noch Docker Desktop, noch Docker Toolbox kan installeren, zal je je versie van Windows moeten upgraden via deze weg.
 
 {% embed url="https://www.youtube.com/watch?v=P6wrQ0hJAEo" %}
 
