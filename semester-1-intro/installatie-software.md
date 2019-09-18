@@ -37,5 +37,15 @@ docker run --name mijn-mysql-container -v mijn-mysql-volume:/var/lib/mysql -p 33
 
 {% embed url="https://youtu.be/oIfpnNvtEvA" %}
 
+Het laatste filmpje vermeldt enkele commando's. Hier zijn ze, om typfouten te vermijden:
 
+```text
+docker container start mijn-mysql-container
+```
+
+```text
+git add --all
+git commit -m "Dit is mijn script."
+git push
+```
 
