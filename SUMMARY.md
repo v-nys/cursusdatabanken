@@ -32,5 +32,5 @@
 
 ## PRO \(GEEN LEERSTOF EN/OF IN OPBOUW\)
 
-* [Untitled](pro-geen-leerstof-en-of-in-opbouw/untitled.md)
+* [PRO](pro-geen-leerstof-en-of-in-opbouw/untitled.md)
 
