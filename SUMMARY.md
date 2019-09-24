@@ -32,5 +32,6 @@
 
 ## PRO \(GEEN LEERSTOF EN/OF IN OPBOUW\)
 
-* [PRO](pro-geen-leerstof-en-of-in-opbouw/untitled.md)
+* [PRO](pro-geen-leerstof-en-of-in-opbouw/untitled/README.md)
+  * [Blockchain](pro-geen-leerstof-en-of-in-opbouw/untitled/blockchain.md)
 
