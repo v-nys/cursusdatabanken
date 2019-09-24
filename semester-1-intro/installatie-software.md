@@ -27,7 +27,7 @@ In onderstaand filmpje bevat MySQL Workbench al een geregistreerde verbinding. A
 {% embed url="https://www.youtube.com/watch?v=C7IuKm496pU" caption="" %}
 
 {% hint style="info" %}
-Voor bovenstaande stap moet je enkele commando's intypen. Je kan deze gewoon kopiëren en plakken.
+Voor bovenstaande stap moet je enkele commando's intypen. Je kan deze gewoon kopiëren en plakken door op het icoontje actheraan in onderstaande vakjes te klikken. Dat werkt beter dan het commando met de hand te selecteren.
 {% endhint %}
 
 ```text
