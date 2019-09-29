@@ -51,10 +51,6 @@ Hieronder krijg je een vereenvoudigd logisch model van een boek. Hier staat "CHA
 | Herdruk | CHAR | 4 | JA | NEE |
 | Commentaar | TEXT | NVT | NVT | NA |
 
-### Benoemen van het script
-
-We spreken af dat alle scripts een duidelijke naam krijgen die uitdrukt wat de volgorde is ten opzichte van bestaande scripts, wat voor operatie plaatsvindt en welke data worden aangepast. We zullen het script dat deze tabel aanmaakt 0002\_\_CreateBoeken.sql noemen.
-
 ### Commentaar toevoegen
 
 Schrijf bovenaan in je script, in commentaar, de tekst "dit is mijn eerste tabel".
@@ -82,8 +78,5 @@ CREATE TABLE Boeken(
     Commentaar TEXT
 );
 ```
-
-### Script bijhouden
-
-Sla je script opnieuw op wanneer je klaar bent.
-
+### Benoemen en opslaan van het script
+We spreken af dat alle scripts een duidelijke naam krijgen die uitdrukt wat de volgorde is ten opzichte van bestaande scripts, wat voor operatie plaatsvindt en welke data worden aangepast. We zullen het script dat deze tabel aanmaakt 0002\_\_CreateBoeken.sql noemen.
