@@ -1,9 +1,9 @@
-# Het `CREATE` statement
+# CREATE
 
 ## Opgelet!
 
 {% hint style="danger" %}
-Onder Unix (macOS en Linux) zijn databasenamen hoofdlettergevoelig \(in tegenstelling tot SQL trefwoorden\). Je moet dus je altijd verwijzen naar je database met de zelfde naam als de naam waaronder je database hebt aangemaakt. Dit geldt overigens ook voor de tabelnamen. Onder Windows is deze beperking standaard niet van toepassing, maar het is een goede gewoonte. Volg daarom de gemaakte afspraken wat betreft naamgeving heel nauwkeurig. Als de code op jouw Windowsmachine werkt maar niet op onze testserver omdat de code de afspraken niet volgt, bevat ze een fout!
+Onder Unix \(macOS en Linux\) zijn databasenamen hoofdlettergevoelig \(in tegenstelling tot SQL trefwoorden\). Je moet dus je altijd verwijzen naar je database met de zelfde naam als de naam waaronder je database hebt aangemaakt. Dit geldt overigens ook voor de tabelnamen. Onder Windows is deze beperking standaard niet van toepassing, maar het is een goede gewoonte. Volg daarom de gemaakte afspraken wat betreft naamgeving heel nauwkeurig. Als de code op jouw Windowsmachine werkt maar niet op onze testserver omdat de code de afspraken niet volgt, bevat ze een fout!
 {% endhint %}
 
 ## Aanmaken van je eerste database
@@ -36,7 +36,7 @@ Sla de code die de database aanmaakt op in een eerste script met als naam 0001\_
 
 Het niveau onder dat van de databank is het niveau van de tabel. Een tabel bevat typisch informatie over één entiteit, d.w.z. één soort interessante data. Dat is bijvoorbeeld bijvoorbeeld een tabel `Boeken` in een bibliotheeksysteem. We vertrekken van een model van een boek.
 
-![Een boek als entiteit](../../.gitbook/assets/entity-boek.png)
+![Een boek als entiteit](https://github.com/v-nys/cursusdatabanken/tree/d7121aac8588b29ddf7d55ab5cdbbc7d756f7f63/semester-1-intro/.gitbook/assets/entity-boek.png)
 
 Hieronder krijg je een vereenvoudigd logisch model van een boek. Hier staat "CHAR" voor een aantal karakters. Soms moet dat aantal precies zijn, soms is het alleen begrensd. Hier zijn de aantallen alleen begrensd. Een voorbeeld van een precies aantal is een postcode in België: die bestaat uit precies vier cijfers. Internationale tekens zijn tekens die typisch niet gebruikt worden in Engelstalige teksten.
 
@@ -78,5 +78,8 @@ CREATE TABLE Boeken(
     Commentaar TEXT
 );
 ```
+
 ### Benoemen en opslaan van het script
+
 We spreken af dat alle scripts een duidelijke naam krijgen die uitdrukt wat de volgorde is ten opzichte van bestaande scripts, wat voor operatie plaatsvindt en welke data worden aangepast. We zullen het script dat deze tabel aanmaakt 0002\_\_CreateBoeken.sql noemen.
+

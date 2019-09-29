@@ -20,7 +20,7 @@
 * [Normaliseren](semester-1-intro/normaliseren/README.md)
   * [Voorbeeld](semester-1-intro/normaliseren/voorbeeld-1.md)
 * [\(My\)SQL](semester-1-intro/onderscheid/README.md)
-  * [DDL basis](semester-1-intro/onderscheid/ddl.md)
+  * [DDL basis](semester-1-intro/onderscheid/ddl/README.md)
     * [CREATE](semester-1-intro/onderscheid/ddl/create.md)
     * [ALTER](semester-1-intro/onderscheid/ddl/alter.md)
     * [DROP](semester-1-intro/onderscheid/ddl/drop.md)
