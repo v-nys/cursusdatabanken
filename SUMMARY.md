@@ -24,6 +24,7 @@
     * [CREATE](semester-1-intro/onderscheid/ddl/create.md)
     * [ALTER](semester-1-intro/onderscheid/ddl/alter.md)
     * [DROP](semester-1-intro/onderscheid/ddl/drop.md)
+    * [Oefeningen](semester-1-intro/onderscheid/ddl/oefeningen.md)
   * [DML basis](semester-1-intro/onderscheid/dml-data-aanmaken.md)
 * [NoSQL](semester-1-intro/nosql.md)
 * [ERM](semester-1-intro/erm/README.md)
