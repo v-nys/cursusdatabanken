@@ -18,7 +18,7 @@ Noem je script 0011\_\_Oefening.sql.
 
 ## een kolom voor de klasseur
 
-Het is handig om bij te houden wie een boek in het systeem heeft geplaatst. Daarom willen we een extra kolom met de naam `InsertedBy` die 255 karakters lang is en internationale karakters moet kunnen bevatten.
+Het is handig om bij te houden wie een boek in het systeem heeft geplaatst. Daarom willen we een extra kolom met de naam `IngevoegdDoor` die maximaal 255 karakters lang is en internationale karakters moet kunnen bevatten. Deze kolom is niet verplicht.
 
 Noem je script 0012\_\_Oefening.sql.
 
