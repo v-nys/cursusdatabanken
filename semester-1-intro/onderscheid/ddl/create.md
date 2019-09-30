@@ -36,7 +36,7 @@ Sla de code die de database aanmaakt op in een eerste script met als naam 0001\_
 
 Het niveau onder dat van de databank is het niveau van de tabel. Een tabel bevat typisch informatie over één entiteit, d.w.z. één soort interessante data. Dat is bijvoorbeeld bijvoorbeeld een tabel `Boeken` in een bibliotheeksysteem. We vertrekken van een model van een boek.
 
-![Een boek als entiteit](https://github.com/v-nys/cursusdatabanken/tree/d7121aac8588b29ddf7d55ab5cdbbc7d756f7f63/semester-1-intro/.gitbook/assets/entity-boek.png)
+![Een boek, voorgesteld als entiteitstype.](../../../.gitbook/assets/erd-boeken.png)
 
 Hieronder krijg je een vereenvoudigd logisch model van een boek. Hier staat "CHAR" voor een aantal karakters. Soms moet dat aantal precies zijn, soms is het alleen begrensd. Hier zijn de aantallen alleen begrensd. Een voorbeeld van een precies aantal is een postcode in België: die bestaat uit precies vier cijfers. Internationale tekens zijn tekens die typisch niet gebruikt worden in Engelstalige teksten.
 
