@@ -65,15 +65,15 @@ Dit doe je met CREATE TABLE. Kijk naar de tabelvoorstelling hierboven en kijk na
 
 ```sql
 CREATE TABLE Boeken(
-    Voornaam NVARCHAR(50),
-    Familienaam NVARCHAR(80),
-    Titel NVARCHAR(255),
-    Stad NVARCHAR(50),
+    Voornaam VARCHAR(50) CHAR SET utf8mb4,
+    Familienaam VARCHAR(80) CHAR SET utf8mb4,
+    Titel VARCHAR(255) CHAR SET utf8mb4,
+    Stad VARCHAR(50) CHAR SET utf8mb4,
     -- alleen het jaartal, geen datetime
     -- omdat de kleinste datum daarin 1753 is
     -- varchar omdat we ook jaartallen kleiner dan 1000 hebben
     Verschijningsjaar VARCHAR(4),
-    Uitgeverij NVARCHAR(80),
+    Uitgeverij VARCHAR(80) CHAR SET utf8mb4,
     Herdruk VARCHAR(4),
     Commentaar TEXT
 );

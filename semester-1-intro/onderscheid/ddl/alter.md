@@ -27,7 +27,7 @@ Om een kolom toe te voegen maak je gebruik van de `ADD` clausule bij het ALTER s
 -- herstel de kolom
 -- deze mag tot 150 (mogelijk internationale) karakters bevatten
 USE ModernWays;
-ALTER TABLE Boeken ADD COLUMN Commentaar NVARCHAR(150);
+ALTER TABLE Boeken ADD COLUMN Commentaar VARCHAR(150) CHAR SET utf8mb4;
 ```
 
 #### Script bijhouden
@@ -46,7 +46,7 @@ In ons voorbeeld wordt het:
 
 ```sql
 USE ModernWays;
-ALTER TABLE Boeken CHANGE Familienaam Familienaam NVARCHAR(200) NOT NULL;
+ALTER TABLE Boeken CHANGE Familienaam Familienaam VARCHAR(200) CHAR SET utf8mb4 NOT NULL;
 ```
 
 #### Script bijhouden
