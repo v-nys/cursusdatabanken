@@ -30,6 +30,8 @@
   * [DML basis](semester-1-intro/deeltalen/dml/README.md)
     * [INSERT](semester-1-intro/deeltalen/dml/insert.md)
     * [SELECT](semester-1-intro/deeltalen/dml/select.md)
+    * [UPDATE](semester-1-intro/deeltalen/dml/update.md)
+    * [DELETE](semester-1-intro/deeltalen/dml/delete.md)
 * [NoSQL](semester-1-intro/nosql.md)
 * [ERM](semester-1-intro/erm/README.md)
   * [Basisbegrippen](semester-1-intro/erm/basisbegrippen.md)
