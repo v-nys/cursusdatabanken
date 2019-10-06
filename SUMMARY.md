@@ -9,6 +9,7 @@
 ## Semester 1: intro
 
 * [Installatie van alle software](semester-1-intro/installatie-software.md)
+* [Scripts](semester-1-intro/scripts.md)
 * [Databanken](semester-1-intro/databanken/README.md)
   * [Inleiding](semester-1-intro/databanken/inleiding.md)
   * [Voorbeeld](semester-1-intro/databanken/voorbeeld.md)
