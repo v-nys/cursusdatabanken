@@ -32,6 +32,10 @@ Een database moet slechts één keer gemaakt worden, maar je moet vooraleer die 
 
 Sla de code die de database aanmaakt op in een eerste script met als naam 0001\_\_CreateDatabase.sql.
 
+{% hint style="warning" %}
+Je mag het script 0001\_\_CreateDatabase.sql dat je aangemaakt hebt tijdens de installatie van een lokale MySQL gewoon overschrijven.
+{% endhint %}
+
 ## Aanmaken van je eerste tabel
 
 Het niveau onder dat van de databank is het niveau van de tabel. Een tabel bevat typisch informatie over één entiteit, d.w.z. één soort interessante data. Dat is bijvoorbeeld bijvoorbeeld een tabel `Boeken` in een bibliotheeksysteem. We vertrekken van een model van een boek.
