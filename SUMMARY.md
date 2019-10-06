@@ -28,6 +28,7 @@
     * [Oefeningen](semester-1-intro/deeltalen/ddl/oefeningen.md)
   * [DML basis](semester-1-intro/deeltalen/dml/README.md)
     * [INSERT](semester-1-intro/deeltalen/dml/insert.md)
+    * [SELECT](semester-1-intro/deeltalen/dml/select.md)
 * [NoSQL](semester-1-intro/nosql.md)
 * [ERM](semester-1-intro/erm/README.md)
   * [Basisbegrippen](semester-1-intro/erm/basisbegrippen.md)
