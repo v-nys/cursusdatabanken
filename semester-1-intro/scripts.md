@@ -6,6 +6,9 @@ Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. 
 | 0001\_\_CreateDatabase.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/create) |
 | 0001\_\_CreateDatabase.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/create) |
 | 0002\_\_CreateBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/create) |
+| 0003\_\_AlterBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/alter) |
+| 0004\_\_AlterBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/alter) |
+| 0005\_\_AlterBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/alter) |
 | 0006\_\_DropModernWays.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/drop) |
 | 0007\_\_CreateModernWays.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/drop) |
 | 0008\_\_CreateMovies.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/drop) |
@@ -13,8 +16,5 @@ Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. 
 | 0010\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/oefeningen) |
 | 0011\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/oefeningen) |
 | 0012\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/oefeningen) |
-| 0003\_\_AlterBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/alter) |
-| 0004\_\_AlterBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/alter) |
-| 0005\_\_AlterBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/alter) |
 | 0016\_\_InsertBoek.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/insert) |
 | 0017\_\_InsertBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/insert) |
