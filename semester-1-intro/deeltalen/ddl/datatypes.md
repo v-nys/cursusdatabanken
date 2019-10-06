@@ -36,6 +36,17 @@ Als je data van een van deze types hebt, zet je deze tussen enkele aanhalingstek
 
 ## numerieke types
 
+### `INT` en varianten
+`INT` dient (net als enkele varianten van diverse groottes, hieronder opgelijst) voor de opslag van gehele getallen. Standaard kan een `INT` positieve en negatieve gehele getallen voorstellen. We zeggen dat hij dan `SIGNED` is, dus dat hij vergezeld is van een teken. Als je alleen positieve getallen wil, laat je je datatype voorafgaan door `UNSIGNED`, bijvoorbeeld `Leeftijd UNSIGNED TINYINT`.
+
+| Type      | Gebruikt aantal bytes | Minimum signed | Minimum unsigned | Maximum signed | Maximum unsigned |
+|-----------|-----------------------|----------------|------------------|----------------|------------------|
+| TINYINT   | 1                     | -128           | 0                | 127            | 255              |
+| SMALLINT  | 2                     | -32768         | 0                | 32767          | 65535            |
+| MEDIUMINT | 3                     | -8388608       | 0                | 8388607        | 16777215         |
+| INT       | 4                     | -2147483648    | 0                | 2147483647     | 4294967295       |
+| BIGINT    | 8                     | -2^63          | 0                | 2^63-1         | 2^64-1           |
+
 ### `FLOAT` en `DOUBLE`
 Deze twee types dienen om getallen bij benadering op te slaan. Ze werken op dezelfde manier, maar `DOUBLE` heeft een groter bereik. Je geeft een kolom niet gewoon het type `FLOAT` of `DOUBLE`, maar `FLOAT(M,D)` of `DOUBLE(M,D)`. Dit betekent dat je tot `M` cijfers wil bijhouden, waarvan `D` na de komma kunnen komen. Als je een waarde opslaat die meer precisie vereist, wordt ze afgerond! Bovendien is het soms lastig om benaderde getallen te vergelijken.
 
