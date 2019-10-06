@@ -18,3 +18,4 @@ Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. 
 | 0012\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/oefeningen) |
 | 0016\_\_InsertBoek.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/insert) |
 | 0017\_\_InsertBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/insert) |
+| 0018\_\_UpdateBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/update) |

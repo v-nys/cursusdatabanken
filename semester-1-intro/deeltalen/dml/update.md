@@ -33,6 +33,11 @@ WHERE Titel = 'Logicaboek';
 
 De `WHERE` clausule bepaalt een voorwaarde die door de database als waar of vals geëvalueerd wordt. De voorwaarde `Titel = 'Logicaboek'` wordt voor elke rij in de tabel geëvalueerd. Als de evaluatie van de logische expressie voor een bepaalde rij waar oplevert wordt die rij geüpdatet.
 
+{% hint style="info" %}
+Het gebruik van `WHERE` is niet beperkt tot `UPDATE`. Je kan ook specifieke rijen selecteren of wissen door een `WHERE` clausule toe te voegen.
+{% endhint %}
+
+
 MySQL staat dit om veiligheidsredenen niet zomaar toe, maar voorlopig zijn we aan het verkennen. Om dit dus toch mogelijk te maken, moet je `SET SQL_SAFE_UPDATES = 0` toevoegen voor een "onveilig" commando en achteraf `SET SQL_SAFE_UPDATES = 1` toevoegen.
 
 {% hint style="danger" %}
