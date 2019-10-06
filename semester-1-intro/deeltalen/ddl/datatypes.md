@@ -26,10 +26,13 @@ Een collation is een set regels om stukken tekst met dezelfde karakterset te ver
 
 Gebruik `CHAR` voor stukken tekst van gelijke lengte (bijvoorbeeld serienummers van producten). Gebruik `VARCHAR` voor zaken als namen.
 
-#### een karakterset koppelen
+### een karakterset koppelen
 Als je voor een bepaalde kolom een andere tekenset dan de default voor jouw databank wil gebruiken, kan je dat aangeven door je datatype te laten volgen door `CHAR SET`, gevolgd door de naam van de tekenset in kwestie, bijvoorbeeld `utf8mb4` om op een efficiënte manier een heleboel niet-westerse tekens te kunnen voorstellen.
 
 Soms kom je online misschien ook `NVARCHAR` tegen. Dit is een wat achterhaalde manier om niet-westerse tekens voor te stellen. Onthoud gewoon dat je voor niet-westerse tekens best de tekenset `utf8mb4` specifieert voor je kolom.
+
+### strings schrijven
+Als je data van een van deze types hebt, zet je deze tussen enkele aanhalingstekens. Bijvoorbeeld `'Do,Re,Mi,Fa,Sol,La,Si'`. Als je data zelf enkele aanhalingstekens bevat, moet je ze ontdubbelen. Bijvoorbeeld `'do''s en don''ts'`.
 
 ## numerieke types
 
@@ -40,6 +43,9 @@ Deze twee types dienen om getallen bij benadering op te slaan. Ze werken op deze
 Dit type dienst voor het bijhouden van exacte getallen. Je specifieert net als bij `FLOAT` en `DOUBLE` het aantal cijfers en het (maximaal even grote) aantal cijfers na de komma.
 
 Een gelijkaardig onderscheid tussen numerieke types ken je misschien uit de cursus C♯. 
+
+### getallen schrijven
+Deze data hoeft niet tussen enkele quotes. Je gebruikt een punt in plaats van een komma.
 
 ## temporele types
 
@@ -54,3 +60,6 @@ Een `DATETIME` is een waarde die een specifiek ogenblik in de tijd voorstelt. Me
 
 ### `YEAR`
 Voor wanneer een volledige datum meer is dan je nodig hebt. Je kan wel minder jaartallen bijhouden: van 1901 tot 2155.
+
+### datums schrijven
+Je schrijft datums alsof het strings waren in een afgesproken formaat, dus ook tussen enkele aanhalingstekens.

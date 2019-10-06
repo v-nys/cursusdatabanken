@@ -22,3 +22,4 @@ Het is handig om bij te houden wie een boek in het systeem heeft geplaatst. Daar
 
 Noem je script 0012\_\_Oefening.sql.
 
+(Voorzie hier nog drie oefeningen met wat datatypes)
