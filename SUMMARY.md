@@ -24,6 +24,7 @@
     * [CREATE](semester-1-intro/deeltalen/ddl/create.md)
     * [ALTER](semester-1-intro/deeltalen/ddl/alter.md)
     * [DROP](semester-1-intro/deeltalen/ddl/drop.md)
+    * [datatypes](semester-1-intro/deeltalen/ddl/datatypes.md)
     * [Oefeningen](semester-1-intro/deeltalen/ddl/oefeningen.md)
   * [DML basis](semester-1-intro/deeltalen/dml/README.md)
     * [INSERT](semester-1-intro/deeltalen/dml/insert.md)
