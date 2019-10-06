@@ -3,18 +3,18 @@ Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. 
 
 | Bestandsnaam                 | Vermeld op pagina |
 |------------------------------|-------------------|
-| 0001\_\_CreateDatabase.sql | semester-1-intro/deeltalen/ddl/create.md |
-| 0001\_\_CreateDatabase.sql | semester-1-intro/deeltalen/ddl/create.md |
-| 0002\_\_CreateBoeken.sql | semester-1-intro/deeltalen/ddl/create.md |
-| 0006\_\_DropModernWays.sql | semester-1-intro/deeltalen/ddl/drop.md |
-| 0007\_\_CreateModernWays.sql | semester-1-intro/deeltalen/ddl/drop.md |
-| 0008\_\_CreateMovies.sql | semester-1-intro/deeltalen/ddl/drop.md |
-| 0009\_\_DropMovies.sql | semester-1-intro/deeltalen/ddl/drop.md |
-| 0010\_\_Oefening.sql | semester-1-intro/deeltalen/ddl/oefeningen.md |
-| 0011\_\_Oefening.sql | semester-1-intro/deeltalen/ddl/oefeningen.md |
-| 0012\_\_Oefening.sql | semester-1-intro/deeltalen/ddl/oefeningen.md |
-| 0003\_\_AlterBoeken.sql | semester-1-intro/deeltalen/ddl/alter.md |
-| 0004\_\_AlterBoeken.sql | semester-1-intro/deeltalen/ddl/alter.md |
-| 0005\_\_AlterBoeken.sql | semester-1-intro/deeltalen/ddl/alter.md |
-| 0016\_\_InsertBoek.sql | semester-1-intro/deeltalen/dml/insert.md |
-| 0017\_\_InsertBoeken.sql | semester-1-intro/deeltalen/dml/insert.md |
+| 0001\_\_CreateDatabase.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/create) |
+| 0001\_\_CreateDatabase.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/create) |
+| 0002\_\_CreateBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/create) |
+| 0006\_\_DropModernWays.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/drop) |
+| 0007\_\_CreateModernWays.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/drop) |
+| 0008\_\_CreateMovies.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/drop) |
+| 0009\_\_DropMovies.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/drop) |
+| 0010\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/oefeningen) |
+| 0011\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/oefeningen) |
+| 0012\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/oefeningen) |
+| 0003\_\_AlterBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/alter) |
+| 0004\_\_AlterBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/alter) |
+| 0005\_\_AlterBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/alter) |
+| 0016\_\_InsertBoek.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/insert) |
+| 0017\_\_InsertBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/insert) |

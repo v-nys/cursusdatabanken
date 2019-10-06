@@ -3,7 +3,7 @@
 
 (define-runtime-path HERE ".")
 (define-values (subp stdout stdin stderr)
-  (subprocess #f #f #f "/bin/grep" "-roHE" "[0-9][0-9][0-9][0-9]\\\\_\\\\_[^[:space:]]*\\.sql"))
+  (subprocess #f #f #f "/bin/grep" "-roHE" "[0-9][0-9][0-9][0-9]\\\\_\\\\_[^[:space:]]*\\.sql" "--exclude" "*scripts.md"))
 (close-output-port stdin)
 (close-input-port stderr)
 
@@ -41,12 +41,14 @@ Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. 
       "| "
       a
       " | "
-      (format "[pagina](https://apwt.gitbook.io/cursus-databanken/~a)" b)
+      (format "[pagina](https://apwt.gitbook.io/cursus-databanken/~a)" (substring b 0 (- (string-length b) 3)))
       " |"))
    filenames
    pages)
   "\n")
 })
+
+(display markdown)
 
 (call-with-output-file
     (build-path HERE "semester-1-intro/scripts.md")
