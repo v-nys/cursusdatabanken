@@ -53,7 +53,7 @@ Hieronder krijg je een vereenvoudigd logisch model van een boek. Hier staat "CHA
 | Verschijningsjaar | CHAR | 4 | JA | NEE |
 | Uitgeverij | CHAR | 80 | JA | JA |
 | Herdruk | CHAR | 4 | JA | NEE |
-| Commentaar | TEXT | NVT | NVT | NA |
+| Commentaar | CHAR | 1000 | JA | NEE |
 
 ### Commentaar toevoegen
 
@@ -79,7 +79,7 @@ CREATE TABLE Boeken(
     Verschijningsjaar VARCHAR(4),
     Uitgeverij VARCHAR(80) CHAR SET utf8mb4,
     Herdruk VARCHAR(4),
-    Commentaar TEXT
+    Commentaar VARCHAR(1000)
 );
 ```
 
