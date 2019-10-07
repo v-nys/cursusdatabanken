@@ -9,7 +9,7 @@ USE ModernWays;
 UPDATE Boeken SET Categorie = 'Metafysica';
 ```
 
-Pas toe en sla op als 0018\_\_UpdateBoeken.sql.
+Pas toe en sla op als 0015\_\_UpdateBoeken.sql.
 
 Inspecteer je data. Zie je het effect?
 

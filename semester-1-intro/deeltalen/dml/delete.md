@@ -3,5 +3,5 @@ Net zoals het DROP statement verwijdert het DELETE statement objecten uit de dat
 
 De syntax van `DELETE` lijkt erg op die van `SELECT`, maar in plaats van bepaalde rijen te tonen, zal MySQL ze gewoon wissen. Je kan ook geen specifieke kolommen wissen, dus je schrijft `DELETE FROM Boeken` en niet `DELETE * FROM Boeken` of `DELETE Voornaam FROM Boeken`.
 
-Schrijf een script 0019\_\_DeleteBoeken.sql dat alle boeken van een auteur met voornaam "Gerard" wist.
+Schrijf een script 0016\_\_DeleteBoeken.sql dat alle boeken van een auteur met voornaam "Gerard" wist.
 

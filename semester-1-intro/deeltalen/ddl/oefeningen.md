@@ -21,5 +21,3 @@ Noem je script 0011\_\_Oefening.sql.
 Het is handig om bij te houden wie een boek in het systeem heeft geplaatst. Daarom willen we een extra kolom met de naam `IngevoegdDoor` die maximaal 255 karakters lang is en internationale karakters moet kunnen bevatten. Deze kolom is niet verplicht.
 
 Noem je script 0012\_\_Oefening.sql.
-
-(Voorzie hier nog drie oefeningen met wat datatypes)

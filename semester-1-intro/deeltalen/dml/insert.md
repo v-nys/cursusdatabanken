@@ -39,7 +39,7 @@ VALUES (
 );
 ```
 
-Dit zou moeten werken. Sla dit op als 0016\_\_InsertBoek.sql. Merk op: de volgorde van de vernoemde kolommen moet overeenstemmen met de volgorde van de waarden!
+Dit zou moeten werken. Sla dit op als 0013\_\_InsertBoek.sql. Merk op: de volgorde van de vernoemde kolommen moet overeenstemmen met de volgorde van de waarden!
 
 ## Meer data in één keer
 
@@ -63,4 +63,4 @@ VALUES
 ('Diderik', 'Batens', 'Logicaboek', '', 'Garant', '1999', '', '', '', '', '')
 ```
 
-Sla dit op als 0017\_\_InsertBoeken.sql. Merk op dat de komma's **binnen** de haakjes onderdelen van één rij scheiden, terwijl die **buiten** de haakjes de verschillende rijen scheiden.
+Sla dit op als 0014\_\_InsertBoeken.sql. Merk op dat de komma's **binnen** de haakjes onderdelen van één rij scheiden, terwijl die **buiten** de haakjes de verschillende rijen scheiden.
