@@ -57,7 +57,7 @@ Hieronder krijg je een vereenvoudigd logisch model van een boek. Hier staat "CHA
 
 ### Commentaar toevoegen
 
-Schrijf bovenaan in je script, in commentaar, de tekst "dit is mijn eerste tabel".
+Schrijf bovenaan in je script, in commentaar, de tekst "dit is mijn eerste tabel". Dit doe je met behulp van `--`.
 
 ### Database selecteren
 
