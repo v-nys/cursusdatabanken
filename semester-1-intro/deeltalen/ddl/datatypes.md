@@ -37,7 +37,7 @@ Als je data van een van deze types hebt, zet je deze tussen enkele aanhalingstek
 ## numerieke types
 
 ### `INT` en varianten
-`INT` dient (net als enkele varianten van diverse groottes, hieronder opgelijst) voor de opslag van gehele getallen. Standaard kan een `INT` positieve en negatieve gehele getallen voorstellen. We zeggen dat hij dan `SIGNED` is, dus dat hij vergezeld is van een teken. Als je alleen positieve getallen wil, laat je je datatype voorafgaan door `UNSIGNED`, bijvoorbeeld `Leeftijd UNSIGNED TINYINT`.
+`INT` dient (net als enkele varianten van diverse groottes, hieronder opgelijst) voor de opslag van gehele getallen. Standaard kan een `INT` positieve en negatieve gehele getallen voorstellen. We zeggen dat hij dan `SIGNED` is, dus dat hij vergezeld is van een teken. Als je alleen positieve getallen wil, laat je je datatype volgen door `UNSIGNED`, bijvoorbeeld `Leeftijd TINYINT UNSIGNED`.
 
 | Type      | Gebruikt aantal bytes | Minimum signed | Minimum unsigned | Maximum signed | Maximum unsigned |
 |-----------|-----------------------|----------------|------------------|----------------|------------------|
@@ -49,6 +49,10 @@ Als je data van een van deze types hebt, zet je deze tussen enkele aanhalingstek
 
 ### `FLOAT` en `DOUBLE`
 Deze twee types dienen om getallen bij benadering op te slaan. Ze werken op dezelfde manier, maar `DOUBLE` heeft een groter bereik. Je geeft een kolom niet gewoon het type `FLOAT` of `DOUBLE`, maar `FLOAT(M,D)` of `DOUBLE(M,D)`. Dit betekent dat je tot `M` cijfers wil bijhouden, waarvan `D` na de komma kunnen komen. Als je een waarde opslaat die meer precisie vereist, wordt ze afgerond! Bovendien is het soms lastig om benaderde getallen te vergelijken.
+
+{% hint style="warning" %}
+In de toekomst zal de werking van `FLOAT` en `DOUBLE` veranderen zodat je een andere syntax moet gebruiken. Wij houden het op deze, omdat dit nog even zal duren en omdat deze syntax verstaanbaarder is dan het nieuwe alternatief.
+{% endhint %}
 
 ### `DECIMAL`
 Dit type dienst voor het bijhouden van exacte getallen. Je specifieert net als bij `FLOAT` en `DOUBLE` het aantal cijfers en het (maximaal even grote) aantal cijfers na de komma.
