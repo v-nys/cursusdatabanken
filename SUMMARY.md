@@ -27,6 +27,7 @@
     * [DROP](semester-1-intro/deeltalen/ddl/drop.md)
     * [datatypes](semester-1-intro/deeltalen/ddl/datatypes.md)
     * [Oefeningen](semester-1-intro/deeltalen/ddl/oefeningen.md)
+    * [Labo-oefeningen](semester-1-intro/deeltalen/ddl/oefeningen-labo.md)
   * [DML basis](semester-1-intro/deeltalen/dml/README.md)
     * [INSERT](semester-1-intro/deeltalen/dml/insert.md)
     * [SELECT](semester-1-intro/deeltalen/dml/select.md)
