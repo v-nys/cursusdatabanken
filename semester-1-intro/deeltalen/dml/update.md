@@ -4,9 +4,13 @@ Het `UPDATE` DML statement gelijkt op het `ALTER` DDL statement. Beide brengen Ã
 ## basisprincipe
 We hebben eerder de kolom `Categorie` toegevoegd aan de tabel `Boeken`. Maar deze kolom is voor de eerste boeken nog niet ingevuld. We kunnen het `UPDATE` statement gebruiken om de categorieÃ«n voor de eerste boeken in te vullen.
 
+MySQL staat dit om veiligheidsredenen niet zomaar toe, maar voorlopig zijn we aan het verkennen. Om dit dus toch mogelijk te maken, moet je `SET SQL_SAFE_UPDATES = 0` toevoegen voor een "onveilig" commando en achteraf `SET SQL_SAFE_UPDATES = 1` toevoegen.
+
 ```sql
 USE ModernWays;
+SET SQL_SAFE_UPDATES = 0;
 UPDATE Boeken SET Categorie = 'Metafysica';
+SET SQL_SAFE_UPDATES = 1;
 ```
 
 Pas toe en sla op als 0015\_\_UpdateBoeken.sql.
@@ -38,7 +42,6 @@ Het gebruik van `WHERE` is niet beperkt tot `UPDATE`. Je kan ook specifieke rije
 {% endhint %}
 
 
-MySQL staat dit om veiligheidsredenen niet zomaar toe, maar voorlopig zijn we aan het verkennen. Om dit dus toch mogelijk te maken, moet je `SET SQL_SAFE_UPDATES = 0` toevoegen voor een "onveilig" commando en achteraf `SET SQL_SAFE_UPDATES = 1` toevoegen.
 
 {% hint style="danger" %}
 De vergelijking van strings in MySQL is standaard niet hoofdlettergevoelig! Je zou dus wel eens rijen kunnen aanpassen zonder dat dat je bedoeling is. Dat komt omdat de standaard collation van MySQL latin1\_swedish\_ci is. Het deeltje "\_ci" betekent "case insensitive" of "hoofdletterongevoelig". Soms zie je ook "ai" en dat betekent accentongevoelig.
