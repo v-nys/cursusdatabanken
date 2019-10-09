@@ -7,12 +7,14 @@ Je kan in MySQL Workbench wel rechtstreeks naar je tabellen kijken, maar om geri
 De simpelste vorm van het `SELECT` commando toont gewoon alle data in een bepaalde tabel, bijvoorbeeld:
 
 ```sql
+USE ModernWays;
 SELECT * FROM Boeken;
 ```
 
 De asterisk is een "wildcard" of "joker". Ze geeft aan dat we **alle** kolommen willen zien. We kunnen ook kijken naar specifieke kolommen:
 
 ```sql
+USE ModernWays;
 SELECT Voornaam, Familienaam FROM Boeken;
 ```
 
@@ -26,12 +28,14 @@ SELECT Boeken.Voornaam, Boeken.Familienaam FROM Boeken;
 Er zijn veel manieren om geselecteerde data te groeperen, maar de simpelste is `ORDER BY`. Als je dit toevoegt aan een `SELECT`-statement, kan je de rijen in een andere volgorde weergeven. Bijvoorbeeld:
 
 ```sql
+USE ModernWays;
 SELECT * FROM Boeken ORDER BY Familienaam;
 ```
 
 Je kan ook een tweede (en derde,...) kolom gebruiken om knopen door te hakken:
 
 ```sql
+USE ModernWays;
 SELECT * FROM Boeken ORDER BY Familienaam, Voornaam, Titel;
 ```
 
@@ -53,14 +57,14 @@ SELECT Titel, substring(Voornaam, 1, 1),
 -- om de initialen en een punt erachter te tonen
 -- daarvoor gebruiken we 'string concatenation',
 -- het aan elkaar plakken van strings
-SELECT Titel, substring(Voornaam, 1, 1) + '.' + substring(Familienaam, 1, 1) + '.' FROM Boeken ORDER BY Titel, Voornaam;
+SELECT Titel, concat(substring(Voornaam, 1, 1),'.',substring(Familienaam, 1, 1),'.') FROM Boeken ORDER BY Titel, Voornaam;
 ```
 
 Dit is handig, maar de hoofdingen van de gegenereerde output kunnen beter. Je kan een afgeleide kolom ook een alternatieve hoofding geven met `AS`:
 
 ```sql
 USE ModernWays;
-SELECT Titel, substring(Voornaam, 1, 1) + '.' + substring(Familienaam, 1, 1) + '.' AS Initialen FROM Boeken ORDER BY Titel, Voornaam;
+SELECT Titel, concat(substring(Voornaam, 1, 1),'.',substring(Familienaam, 1, 1),'.') AS Initialen FROM Boeken ORDER BY Titel, Voornaam;
 ```
 
 Als er spaties voorkomen in de hoofding, zet ze dan tussen enkele aanhalingstekens.

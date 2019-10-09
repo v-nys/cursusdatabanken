@@ -64,6 +64,7 @@ RENAME TABLE `OldTableName` TO `NewTableName`;
 In ons voorbeeld:
 
 ```sql
+USE ModernWays;
 RENAME TABLE `Boeken` TO `MijnBoeken`;
 ```
 

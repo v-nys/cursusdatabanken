@@ -16,6 +16,7 @@ VALUES (
 Probeer het eens uit:
 
 ```sql
+USE ModernWays;
 INSERT INTO Boeken (
 Voornaam
 )
@@ -26,16 +27,19 @@ VALUES (
 
 Dit zou... fout moeten lopen! Je krijgt een foutmelding ongeveer zoals deze: "Cannot insert the value NULL into column 'Familienaam', table 'ModernWays.dbo.Boeken'; column does not allow nulls. INSERT fails."
 
-Omdat we hebben vereist in een eerder script dat de achternaam van een auteur altijd aanwezig is, moeten we hem aanduiden als gebruikte kolom:
+Omdat we hebben vereist in een eerder script dat de achternaam van een auteur en de categorie altijd aanwezig zijn, moeten we deze aanduiden als gebruikte kolommen:
 
 ```sql
+USE ModernWays;
 INSERT INTO Boeken (
 Voornaam,
-Familienaam
+Familienaam,
+Categorie
 )
 VALUES (
 'Aurelius',
-'Augustinus'
+'Augustinus',
+'Filosofie'
 );
 ```
 
@@ -46,7 +50,8 @@ Dit zou moeten werken. Sla dit op als 0013\_\_InsertBoek.sql. Merk op: de volgor
 Je hoeft geen `INSERT` statement te schrijven per stukje data. Je kan meerdere rijen tegelijk invoegen door ze te scheiden met komma's:
 
 ```sql
-INSERT INTO boeken (
+USE ModernWays;
+INSERT INTO Boeken (
    Voornaam,
    Familienaam,
    Titel,
@@ -56,11 +61,11 @@ INSERT INTO boeken (
    Herdruk,
    Commentaar,
    Categorie,
-   IngevoegdDoor,
+   IngevoegdDoor
 )
 VALUES
-('Gerard', 'Visser', 'Heideggers vraag naar de techniek', 'Nijwegen', '', '2014', '', '', '', '', ''),
-('Diderik', 'Batens', 'Logicaboek', '', 'Garant', '1999', '', '', '', '', '')
+('Gerard', 'Visser', 'Heideggers vraag naar de techniek', 'Nijwegen', '2014', '', '', '', '', ''),
+('Diderik', 'Batens', 'Logicaboek', '', '1999', '', '', '', '', '')
 ```
 
 Sla dit op als 0014\_\_InsertBoeken.sql. Merk op dat de komma's **binnen** de haakjes onderdelen van één rij scheiden, terwijl die **buiten** de haakjes de verschillende rijen scheiden.
