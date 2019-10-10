@@ -69,3 +69,4 @@ VALUES
 ```
 
 Sla dit op als 0014\_\_InsertBoeken.sql. Merk op dat de komma's **binnen** de haakjes onderdelen van één rij scheiden, terwijl die **buiten** de haakjes de verschillende rijen scheiden.
+

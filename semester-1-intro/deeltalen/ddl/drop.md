@@ -19,5 +19,5 @@ DROP TABLE Boeken;
 
 ### uitproberen
 
-Schrijf eerst een script, 0008\_\_CreateMovies.sql, dat een tabel aanmaakt met precies één verplichte kolom, van type `VARCHAR(50)` (met ondersteuning voor internationale karakters) en met naam `Titel`. Schrijf daarna een script, 0009\_\_DropMovies.sql, dat deze tabel weer verwijdert.
+Schrijf eerst een script, 0008\_\_CreateMovies.sql, dat een tabel aanmaakt met precies één verplichte kolom, van type `VARCHAR(50)` \(met ondersteuning voor internationale karakters\) en met naam `Titel`. Schrijf daarna een script, 0009\_\_DropMovies.sql, dat deze tabel weer verwijdert.
 

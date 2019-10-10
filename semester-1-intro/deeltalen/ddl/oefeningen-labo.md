@@ -1,4 +1,7 @@
-# Oefeningen
+# Labo-oefeningen
+
+## Oefeningen
+
 **Voor je deze oefeningen maakt, gebruik je onderstaand script om zeker te zijn dat je databank in de gewenste toestand is:**
 
 ```sql
@@ -8,7 +11,8 @@ CREATE DATABASE ModernWays;
 
 Sla dit op als 0500\_\_CalibrateDB.sql in je map met scripts.
 
-## nummers
+### nummers
+
 Schrijf een script dat een tabel `Nummers` voor muzieknummers toevoegt aan je databank met volgende karakteristieken:
 
 | Kolomnaam | Type | Maximale lengte | Variabele lengte | Internationale tekens | Verplicht |
@@ -20,8 +24,10 @@ Schrijf een script dat een tabel `Nummers` voor muzieknummers toevoegt aan je da
 
 Sla op als 0501\_\_Oefening.sql.
 
-## huisdieren
+### huisdieren
+
 Doe hetzelfde voor een tabel `Huisdieren` met huisdieren, met volgende kenmerken:
+
 | Kolomnaam | Type | Maximale lengte | Variabele lengte | Internationale tekens | Verplicht |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Naam | CHAR | 100 | JA | JA | JA |
@@ -30,33 +36,36 @@ Doe hetzelfde voor een tabel `Huisdieren` met huisdieren, met volgende kenmerken
 
 Sla op als 0502\_\_Oefening.sql.
 
-## hernoemen
+### hernoemen
+
 Hernoem je tabel `Nummers` naar `Liedjes`. Sla op als 0503\_\_Oefening.sql.
 
-## uitbreiden
+### uitbreiden
+
 Voeg een extra kolom, `Album`, toe aan `Liedjes`. Deze is niet verplicht, telt tot 100 internationale tekens. Sla op als 0504\_\_Oefening.sql.
 
-## verwijderen
+### verwijderen
+
 Verwijder de kolom `Genre` voor `Liedjes`. Sla op als 0505\_\_Oefening.sql.
 
-## verder uitbreiden
+### verder uitbreiden
+
 Voeg een extra kolom, `Baasje`, toe aan `Huisdieren`. Deze is verplicht, telt tot 100 internationale tekens. Sla op als 0506\_\_Oefening.sql.
 
-## complexere data
-Maak een tabel `Metingen` aan met volgende kolommen:
-1. `Tijdstip` (een verplicht tijdstip dat een datum en het uur van de dag voorstelt)
-2. `Grootte` (een verplicht positief geheel getal dat tot 20000 kan oplopen, maar niet hoger)
-3. `Marge` (een benaderd kommagetal van 3 cijfers, waarvan 2 na de komma)
+### complexere data
+
+Maak een tabel `Metingen` aan met volgende kolommen: 1. `Tijdstip` \(een verplicht tijdstip dat een datum en het uur van de dag voorstelt\) 2. `Grootte` \(een verplicht positief geheel getal dat tot 20000 kan oplopen, maar niet hoger\) 3. `Marge` \(een benaderd kommagetal van 3 cijfers, waarvan 2 na de komma\)
 
 Sla op als 0507\_\_Oefening.sql.
 
-## data invoegen
-Plaats volgende data in je tabel met muzieknummers:
-1. het nummer "John the Revelator" van de groep "Larkin Poe". Het genre is "Blues" en het verschijningsjaar is 2017.
-2. het nummer "Missionary Man" van de groep "Ghost". Het genre is "Metal" en het verschijningsjaar is 2016.
+### data invoegen
 
-## afronden
+Plaats volgende data in je tabel met muzieknummers: 1. het nummer "John the Revelator" van de groep "Larkin Poe". Het genre is "Blues" en het verschijningsjaar is 2017. 2. het nummer "Missionary Man" van de groep "Ghost". Het genre is "Metal" en het verschijningsjaar is 2016.
+
+### afronden
+
 Wanneer je klaar bent, van in je map met SQL scripts:
+
 ```text
 git add *.sql
 git commit -m "Eerste scripts labo"
@@ -64,6 +73,7 @@ git push
 ```
 
 Herstel ook je databank naar de toestand zodat ze weer gelijk loopt met de theorie met volgend script en sla op als 0017\_\_CalibrateDB.sql:
+
 ```sql
 CREATE DATABASE  IF NOT EXISTS `ModernWays` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `ModernWays`;
@@ -71,7 +81,7 @@ USE `ModernWays`;
 --
 -- Host: localhost    Database: ModernWays
 -- ------------------------------------------------------
--- Server version	8.0.17
+-- Server version    8.0.17
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -129,5 +139,7 @@ UNLOCK TABLES;
 
 Vul op Digitap ook de link in naar je Bitbucket repository.
 
-# Opdracht: In orde brengen scripts les
-Zorg er tegen volgend labo voor dat (naast de scripts uit dit labo) alle scripts die al aan bod gekomen zijn over de DDL hebt en dat ze juist genummerd zijn.
+## Opdracht: In orde brengen scripts les
+
+Zorg er tegen volgend labo voor dat \(naast de scripts uit dit labo\) alle scripts die al aan bod gekomen zijn over de DDL hebt en dat ze juist genummerd zijn.
+

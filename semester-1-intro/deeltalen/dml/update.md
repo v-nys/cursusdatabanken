@@ -1,7 +1,9 @@
-# `UPDATE`
+# UPDATE
+
 Het `UPDATE` DML statement gelijkt op het `ALTER` DDL statement. Beide brengen één of meerdere wijzigingen aan in de database. Daar waar `ALTER` de structuur van een tabel wijzigt, wijzigt `UPDATE` de gegevens die in een tabel zitten.
 
 ## basisprincipe
+
 We hebben eerder de kolom `Categorie` toegevoegd aan de tabel `Boeken`. Maar deze kolom is voor de eerste boeken nog niet ingevuld. We kunnen het `UPDATE` statement gebruiken om de categorieën voor de eerste boeken in te vullen.
 
 MySQL staat dit om veiligheidsredenen niet zomaar toe, maar voorlopig zijn we aan het verkennen. Om dit dus toch mogelijk te maken, moet je `SET SQL_SAFE_UPDATES = 0` toevoegen voor een "onveilig" commando en achteraf `SET SQL_SAFE_UPDATES = 1` toevoegen.
@@ -17,7 +19,7 @@ Pas toe en sla op als 0015\_\_UpdateBoeken.sql.
 
 Inspecteer je data. Zie je het effect?
 
-Je kan ook de inhoud van meer dan één kolom aanpassen. Dat zou je als volgt doen (maar hoef je niet uit te voeren):
+Je kan ook de inhoud van meer dan één kolom aanpassen. Dat zou je als volgt doen \(maar hoef je niet uit te voeren\):
 
 ```sql
 USE ModernWays;
@@ -27,6 +29,7 @@ UPDATE Boeken SET Categorie = 'Wetenschap', Titel = 'Een boek';
 Zonder verdere specificatie zet het eerste stukje code de kolom `Categorie` van alle rijen op 'Metafysica'.
 
 ## verfijnd aanpassen
+
 Het zou kunnen dat alle boeken in de categorie Metafysica thuishoren. En in dat geval doet het statement precies wat je er van verwacht. De boeken in ons voorbeeld behoren tot verschillende categorieën. We moeten dus in het UPDATE statement specifiëren in welke rij we de kolom `Categorie` willen updaten. We moeten één bepaalde rij eruit filteren. Dat doen we met de `WHERE` clausule. We beperken de update tot de boeken waarvan de titel gelijk is aan 'Logicaboek'. Dat zou er zo uitzien:
 
 ```sql
@@ -41,8 +44,6 @@ De `WHERE` clausule bepaalt een voorwaarde die door de database als waar of vals
 Het gebruik van `WHERE` is niet beperkt tot `UPDATE`. Je kan ook specifieke rijen selecteren of wissen door een `WHERE` clausule toe te voegen.
 {% endhint %}
 
-
-
 {% hint style="danger" %}
 De vergelijking van strings in MySQL is standaard niet hoofdlettergevoelig! Je zou dus wel eens rijen kunnen aanpassen zonder dat dat je bedoeling is. Dat komt omdat de standaard collation van MySQL latin1\_swedish\_ci is. Het deeltje "\_ci" betekent "case insensitive" of "hoofdletterongevoelig". Soms zie je ook "ai" en dat betekent accentongevoelig.
 {% endhint %}
@@ -56,6 +57,7 @@ WHERE Titel COLLATE Latin1_General_CI_AS = 'logicaboek';
 ```
 
 ## samengestelde constructies
+
 Je kan ook meerdere rijen in één keer updaten. Dat doe je door bijvoorbeeld de logische operator `OR` te gebruiken:
 
 ```sql
@@ -90,3 +92,4 @@ WHERE Categorie = 'Wiskunde';
 UPDATE Boeken SET Categorie = substring(Categorie, 4, len(Categorie) -3)
 WHERE left(Categorie, 3) = '[1]';
 ```
+

@@ -11,7 +11,7 @@ Onder Unix \(macOS en Linux\) zijn databasenamen hoofdlettergevoelig \(in tegens
 Gebruik het volgende SQL statement om een database te maken:
 
 ```sql
-CREATE DATABASE ModernWays
+CREATE DATABASE ModernWays;
 ```
 
 We kunnen ook eerst nagaan als de database al bestaat:
