@@ -1,9 +1,8 @@
-# Scripts
-
+# Overzicht van alle scripts
 Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. Als een script meermaals vermeld wordt, wordt het op meerdere plaatsen besproken, dus check beide. Hou je verzameling scripts up-to-date!
 
-| Bestandsnaam | Vermeld op pagina |
-| :--- | :--- |
+| Bestandsnaam                 | Vermeld op pagina |
+|------------------------------|-------------------|
 | 0001\_\_CreateDatabase.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/create) |
 | 0001\_\_CreateDatabase.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/create) |
 | 0002\_\_CreateBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/create) |
@@ -30,4 +29,17 @@ Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. 
 | 0505\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/oefeningen-labo) |
 | 0506\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/oefeningen-labo) |
 | 0507\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/oefeningen-labo) |
-
+| 0508\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/oefeningen-labo) |
+| 0509\_\_CalibrateDB.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/oefeningen-labo) |
+| 0510\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/oefeningen-labo) |
+| 0511\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/oefeningen-labo) |
+| 0512\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/oefeningen-labo) |
+| 0513\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/oefeningen-labo) |
+| 0514\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/oefeningen-labo) |
+| 0515\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/oefeningen-labo) |
+| 0516\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/oefeningen-labo) |
+| 0517\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/oefeningen-labo) |
+| 0518\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/oefeningen-labo) |
+| 0519\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/oefeningen-labo) |
+| 0520\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/oefeningen-labo) |
+| 0521\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/oefeningen-labo) |
