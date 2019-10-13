@@ -60,7 +60,9 @@ Sla op als 0507\_\_Oefening.sql.
 
 ### data invoegen
 
-Plaats volgende data in je tabel met muzieknummers: 1. het nummer "John the Revelator" van de groep "Larkin Poe". Het genre is "Blues" en het verschijningsjaar is 2017. 2. het nummer "Missionary Man" van de groep "Ghost". Het genre is "Metal" en het verschijningsjaar is 2016.
+Plaats volgende data in je tabel met muzieknummers: 1. het nummer "John the Revelator" van de groep "Larkin Poe". Het album is "Peach" en het verschijningsjaar is 2017. 2. het nummer "Missionary Man" van de groep "Ghost". Het album is "Popestar" en het verschijningsjaar is 2016.
+
+Sla op als script 0508\_\_Oefening.sql.
 
 ### afronden
 
@@ -75,7 +77,8 @@ git push
 Herstel ook je databank naar de toestand zodat ze weer gelijk loopt met de theorie met volgend script en sla op als 0017\_\_CalibrateDB.sql:
 
 ```sql
-CREATE DATABASE  IF NOT EXISTS `ModernWays` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+DROP DATABASE IF EXISTS `ModernWays`;
+CREATE DATABASE `ModernWays` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `ModernWays`;
 -- MySQL dump 10.13  Distrib 8.0.17, for Linux (x86_64)
 --
