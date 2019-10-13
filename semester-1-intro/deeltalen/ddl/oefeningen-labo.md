@@ -54,7 +54,7 @@ Voeg een extra kolom, `Baasje`, toe aan `Huisdieren`. Deze is verplicht, telt to
 
 ### complexere data
 
-Maak een tabel `Metingen` aan met volgende kolommen: 1. `Tijdstip` \(een verplicht tijdstip dat een datum en het uur van de dag voorstelt\) 2. `Grootte` \(een verplicht positief geheel getal dat tot 20000 kan oplopen, maar niet hoger\) 3. `Marge` \(een benaderd kommagetal van 3 cijfers, waarvan 2 na de komma\)
+Maak een tabel `Metingen` aan met volgende kolommen: 1. `Tijdstip` \(een verplicht tijdstip dat een datum en het uur van de dag voorstelt\) 2. `Grootte` \(een verplicht positief geheel getal dat tot 20000 kan oplopen, maar niet hoger\) 3. `Marge` \(een benaderd kommagetal met enkele precisie, van 3 cijfers, waarvan 2 na de komma\)
 
 Sla op als 0507\_\_Oefening.sql.
 
