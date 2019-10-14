@@ -1,8 +1,9 @@
-# Overzicht van alle scripts
+# Scripts
+
 Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. Als een script meermaals vermeld wordt, wordt het op meerdere plaatsen besproken, dus check beide. Hou je verzameling scripts up-to-date!
 
-| Bestandsnaam                 | Vermeld op pagina |
-|------------------------------|-------------------|
+| Bestandsnaam | Vermeld op pagina |
+| :--- | :--- |
 | 0001\_\_CreateDatabase.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/create) |
 | 0001\_\_CreateDatabase.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/create) |
 | 0002\_\_CreateBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/ddl/create) |
@@ -43,3 +44,4 @@ Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. 
 | 0519\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/oefeningen-labo) |
 | 0520\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/oefeningen-labo) |
 | 0521\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-intro/deeltalen/dml/oefeningen-labo) |
+
