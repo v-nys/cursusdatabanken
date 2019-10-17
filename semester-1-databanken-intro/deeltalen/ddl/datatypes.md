@@ -1,4 +1,4 @@
-# datatypes
+# Datatypes
 
 ## Soorten datatypes
 
