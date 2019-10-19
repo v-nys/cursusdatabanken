@@ -1,4 +1,4 @@
-# Oefeningen
+# Basisoefeningen
 
 Als je tabellen maakt, zit het niet altijd meteen juist. Vaak probeer je een bepaalde structuur voor je data en verbeter je deze regelmatig. Om je de structuur van je data te bekijken, moet je in MySQL Workbench eerst je databanken refreshen. Daarna kan je je databank openklappen en via rechtermuisklik de structuur van je tabel controleren.
 
