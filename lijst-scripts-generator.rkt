@@ -53,6 +53,6 @@
 (display markdown)
 
 (call-with-output-file
-    (build-path HERE "semester-1-intro/scripts.md")
+    (build-path HERE "semester-1-databanken-intro/scripts.md")
   (λ (out) (display markdown out))
   #:exists 'replace)
