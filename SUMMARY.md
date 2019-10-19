@@ -36,6 +36,7 @@
     * [Labo-oefeningen basis](semester-1-databanken-intro/deeltalen/dml/oefeningen-labo.md)
   * [DML medium](semester-1-databanken-intro/deeltalen/dml/README2.md)
     * [SELECT met clausules](semester-1-databanken-intro/deeltalen/dml/select-met-clausules.md)
+    * [SELECT met WHERE](semester-1-databanken-intro/deeltalen/dml/select-met-where.md)
     * [logische operatoren](semester-1-databanken-intro/deeltalen/dml/logische-operatoren.md)
     * [geneste queries](semester-1-databanken-intro/deeltalen/dml/geneste-queries.md)
 * [NoSQL](semester-1-databanken-intro/nosql.md)
