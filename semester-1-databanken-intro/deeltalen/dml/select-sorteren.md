@@ -8,17 +8,17 @@ Om te sorteren gebruiken we de clausule `ORDER BY`. Het sorteren kan op 2 manier
 
 In het Engels is dat *ascending* en *descending*. In SQL wordt dat afgekort naar `ASC` en `DESC`.
 Stel dat je de namen uit de tabel boeken wil opvragen gesorteerd op de voornaam, de familienaam en titel van de boeken.
-De query ziet er dan zo uit:
+De query ziet er dan zo uit (0031\_\_SelectBoeken.sql):
 
 ```sql
 USE ModernWays;
 -- oplopend sorteren volgens familienaam
 -- ascending
-select Voornaam, Familienaam, Titel from Boeken
+SELECT Voornaam, Familienaam, Titel FROM Boeken
    order by Familienaam asc, Voornaam, Titel;
 -- aflopend sorteren volgens familienaam
 -- descending
-select Voornaam, Familienaam, Titel from Boeken
+SELECT Voornaam, Familienaam, Titel FROM Boeken
    order by Familienaam desc, Voornaam, Titel
 ```
 
