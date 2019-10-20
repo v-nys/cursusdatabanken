@@ -1,17 +1,17 @@
 # GROUP BY: resultaten groeperen
-Vaak willen we informatie die niet in één rij zit, maar die over meerdere rijen gaat.
-Probleem
-
 Soms willen we informatie die iets vertelt over alle rijen met eenzelfde waarde in een veld.
-Oplossing
+De oplossing schuilt in een `GROUP BY` clausule.
+Met de GROUP BY operator kan je rijen "samenpersen" en de gewenste informatie uit de samengeperste rijen halen.
+Dit "samenpersen" gebeurt eerst, voor de gewenste informatie wordt geselecteerd.
+Beeld je in dat er een tussenliggende tabel wordt aangemaakt op basis van de tabel waarin je wenst te zoeken.
 
-Met de GROUP BY operator kan je rijen "samenpersen" en de gewenste informatie uit de samengeperste rijen halen. Dit "samenpersen" gebeurt eerst, voor de gewenste informatie wordt geselecteerd. Beeld je in dat er een tussenliggende tabel wordt aangemaakt op basis van de tabel waarin je wenst te zoeken.
+Veronderstel dat je onderstaande tabel `Honden` hebt, waarin de leeftijd opgeslagen is als `TINYINT` en de andere twee velden als `varchar(50)`:
 
-Veronderstel dat je onderstaande tabel Honden hebt, waarin de leeftijd opgeslagen is als tinyint en de andere twee velden als tekst varchar(50).
-naam	leeftijd	geslacht
-Ming	8	mannelijk
-Swieber	14	mannelijk
-Misty	5	vrouwelijk
+| naam | leeftijd | geslacht |
+|------|----------|----------|
+| Ming | 9        | mannelijk|
+| Swieber | 14 |mannelijk|
+| Misty | 6 | vrouwelijk |
 
 Informatie die over de rijen gaat kan dan zijn: "hoe veel mannelijke honden zijn er in het systeem?" of "wat is de gemiddelde leeftijd per geslacht?" Deze vragen kan je voor een grotere database niet meteen beantwoorden zonder GROUP BY. GROUP BY Honden.geslacht moet je zien als een tussenliggende tabel die er als volgt uitziet:
 namen per geslacht	leeftijd per geslacht	geslacht
