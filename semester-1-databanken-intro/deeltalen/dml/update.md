@@ -45,7 +45,7 @@ Het gebruik van `WHERE` is niet beperkt tot `UPDATE`. Je kan ook specifieke rije
 {% endhint %}
 
 {% hint style="danger" %}
-De vergelijking van strings in MySQL is standaard niet hoofdlettergevoelig! Je zou dus wel eens rijen kunnen aanpassen zonder dat dat je bedoeling is. Dat komt omdat de standaard collation van MySQL latin1\_swedish\_ci is. Het deeltje "\_ci" betekent "case insensitive" of "hoofdletterongevoelig". Soms zie je ook "ai" en dat betekent accentongevoelig.
+De vergelijking van strings in MySQL is standaard niet hoofdlettergevoelig! Je zou dus wel eens rijen kunnen aanpassen zonder dat dat je bedoeling is. Dat komt omdat de standaard collation van MySQL uft8mb4\_0900\_ai\_ci is. Het deeltje "\_ci" betekent "case insensitive" of "hoofdletterongevoelig". Soms zie je ook "ai" en dat betekent accentongevoelig.
 {% endhint %}
 
 Je kan het een specifieke collation gebruiken door `COLLATE`, gevolgd door een op je systeem aanwezige collation na een kolomnaam te gebruiken. Bijvoorbeeld:
@@ -53,7 +53,7 @@ Je kan het een specifieke collation gebruiken door `COLLATE`, gevolgd door een o
 ```sql
 SELECT Voornaam, Familienaam, Titel
 FROM Boeken
-WHERE Titel COLLATE Latin1_General_CI_AS = 'logicaboek';
+WHERE Titel COLLATE utf8mb4_0900_as_cs = 'logicaboek';
 ```
 
 ## samengestelde constructies

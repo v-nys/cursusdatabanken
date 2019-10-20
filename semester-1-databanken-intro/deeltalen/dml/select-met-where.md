@@ -12,7 +12,7 @@ Bijvoorbeeld (sla op als 0018\_\_SelectBoeken.sql):
 USE ModernWays;
 SELECT Voornaam, Familienaam, Titel 
 FROM Boeken
--- deze vergelijking levert TRUE of FALSE op
+-- deze vergelijking levert TRUE of FALSE of NULL op
 WHERE Familienaam = 'Augustinus';
 ```
 
@@ -43,6 +43,8 @@ FROM Boeken
 -- <> betekent het omgekeerde van =
 WHERE Titel <> NULL;
 ```
+
+**Het ligt niet aan de data! Vergelijkingen met `NULL` via `=` en `<>` zijn zinloos!**
 
 {% hint style="info" %}
 Wat je hier leert over `WHERE` is overdraagbaar naar andere DML-statements. Je kan bijvoorbeeld enkel specifieke rijen updaten of wissen.

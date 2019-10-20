@@ -10,11 +10,7 @@ De bouwstenen zijn:
 * `TRUE`, `FALSE` en `NULL`
 * haakjes (voor groepering)
 * de logische operatoren `AND`, `OR` en `NOT` (en `XOR`)
-* de vergelijkingsoperatoren `=`, `<`, `>`, `<=`, `>=` en `<>` (verschillend, niet gelijk);
-* wildcards (`%`, `_`, `[]`)
-* andere operatoren zoals `LIKE`, `IN` en `BETWEEN`
-
-We zullen deze bouwstenen in volgorde behandelen.
+* en andere constructies die een voorwaarde uitdrukken (deze komen later aan bod)
 
 Het gebruik van de ronde haakjes dient om de volgorde van de evaluatie van de operatoren te bepalen. Wat tussen haakjes staat, werk je eerst uit als één geheel, vooraleer je de onderdelen buiten deze haakjes uitrekent.
 
@@ -45,3 +41,5 @@ Voor de logische operatoren gebruiken we waarheidstabellen:
 {% hint style="warning" %}
 Eens je een `NULL`-waarde combineert met een andere waarde, is het resultaat sowieso `NULL`. Probeer dit dus te vermijden waar mogelijk!
 {% endhint %}
+
+De resterende operatoren komen later aan bod.
