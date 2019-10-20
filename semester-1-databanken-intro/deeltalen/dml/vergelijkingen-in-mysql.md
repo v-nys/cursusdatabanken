@@ -25,18 +25,23 @@ USE ModernWays;
 SELECT Familienaam, Titel FROM Boeken WHERE Familienaam < 'B';
 ```
 
-Dit SELECT statement retourneert alle rijen uit de tabel `Boeken` waarvan de `Familienaam` een waarde heeft die "kleiner" is dan `'B'`. Wanneer is een string "kleiner" dan een andere string? Om op die vraag te antwoorden moet je eerst weten dat de namen in een bepaalde, normaal alfabetische volgorde (in het Engels **collation order**) worden gerangschikt. "Alle namen kleiner dan 'B'"" wil dan zeggen "alle namen die na het sorteren voor 'B' komen." De **collation** is dus een stel regels voor het vergelijken van tekens in een tekenset.
+Dit `SELECT` statement retourneert alle rijen uit de tabel `Boeken` waarvan de `Familienaam` een waarde heeft die "kleiner" is dan `'B'`.
+Wanneer is een string "kleiner" dan een andere string?
+Om op die vraag te antwoorden moet je eerst weten dat de namen in een bepaalde, **gewoonlijk** alfabetische volgorde (in het Engels **collation order**) worden gerangschikt.
+"Alle namen kleiner dan 'B'" wil dan zeggen "alle namen die na het sorteren voor 'B' komen."
+De **collation** is dus een stel regels voor het vergelijken van tekens in een tekenset.
 
-Als de familienaam Beth in je tabel voorkomt, wordt deze niet in de selectie opgenomen. Om ook die rij te selecteren, zou je kunnen denken om de expressie Familienaam <= 'B' te gebruiken:
+Als de familienaam Beth in je tabel voorkomt, wordt deze niet in de selectie opgenomen. Om ook die rij te selecteren, zou je kunnen denken om de expressie `Familienaam <= 'B'` te gebruiken:
 
 ```sql
 USE ModernWays;
 SELECT Familienaam, Titel FROM Boeken WHERE Familienaam <= 'B';
 ```
 
-Dit zal niet werken. Dat komt omdat we de boeken opvragen waarvan de familienaam van de auteur kleiner of gelijk is aan 'B'.
-De tekst 'Beth' is niet gelijk aan 'B' en is zeker niet kleiner!
-In het algemeen mag je dit onthouden: als een string A een prefix is van een string B, d.w.z. als string B letterlijk begint met de inhoud van A en dan nog meer tekst bevat, dan zal A altijd voor B gesorteerd worden.
+Dit zal niet werken.
+Dat komt omdat we de boeken opvragen waarvan de familienaam van de auteur kleiner of gelijk is aan 'B'.
+De tekst `'Beth'` is niet gelijk aan `'B'` en is zeker niet kleiner!
+In het algemeen mag je dit onthouden: als een string A een **prefix** is van een string B, d.w.z. als string B letterlijk begint met de inhoud van A en dan nog meer tekst bevat, dan zal A altijd voor B gesorteerd worden.
 Zo wordt 'schoen' gesorteerd voor 'schoenmaker', omdat 'schoen' een prefix is van 'schoenmaker'.
 Maar er wordt éérst naar de letters gekeken en dan pas naar de lengte van de tekst.
 Zo wordt 'schoeisel' voor 'schoen' gesorteerd, omdat 'i' voor 'n' komt.
@@ -44,16 +49,16 @@ Zo wordt 'schoeisel' voor 'schoen' gesorteerd, omdat 'i' voor 'n' komt.
 Ter verduidelijking: als we `'B'` als familienaam toevoegen, wordt het resultaat wel geselecteerd:
 
 ```sql
-insert into Boeken (
+INSERT INTO Boeken (
    Familienaam,
    Titel,
    Voornaam)
-values (
+VALUES (
    'B',
    'Het Boek',
    'Jef');
 
-select Titel, Familienaam from Boeken
+SELECT Titel, Familienaam from Boeken
    where Familienaam <= 'B';
 ```
 
@@ -61,20 +66,20 @@ Stel dat je alle titels wilt van de auteurs wilt waarvan de familienaam begint m
 
 ```sql
 use ModernWays;
-select Familienaam, Titel from Boeken where Familienaam <= 'Bz';
+SELECT Familienaam, Titel from Boeken where Familienaam <= 'Bz';
 ```
 
 Maar hier zijn verschillende problemen mee. Als `'Bz'` een prefix is van de naam van een auteur (niet erg waarschijnlijk, maar het zou kunnen), zal dit niet werken. Nog lastiger: dit is erg afhankelijk van de collation. Het is niet in elke collation zo dat 'Bz' voor 'Bé' komt, bijvoorbeeld. Sommige collations sorteren eerst de gebruikelijke 26 letters van het alfabet en pas daarna de letters met accenten.
 
 Dit is beter:
 
-select Familienaam, Titel from Boeken where Familienaam < 'C'
+SELECT Familienaam, Titel from Boeken where Familienaam < 'C'
 
 Hoe weet je wat er met accenten en hoofdletters gebeurt? Dat hangt ervan af of de gebruikte collation hoofdlettergevoelig (case sensitive) en/of accentgevoelig (accent sensitive) is.
 
 Probeer dit eens uit (hoeft niet in een script):
 
-insert into Boeken (
+INSERT INTO Boeken (
    Voornaam,
    Familienaam,
    Titel,
@@ -85,7 +90,7 @@ insert into Boeken (
    Commentaar,
    Categorie
 )
-values
+VALUES
 (
    'Emile',
    'Bréhier',
@@ -109,7 +114,7 @@ values
    'Roman'
 );
 
-select Voornaam, Familienaam, Titel from Boeken
+SELECT Voornaam, Familienaam, Titel from Boeken
    where Familienaam <= 'Bret';
 
 Als de collation voor Familienaam accentgevoelig is, zal je alleen het boek van Breton zien. Anders zal je ook dat van Bréhier zien. Als je onder MySQL de collation van de kolommen van de tabel Boeken te weten wil komen, gebruik je volgende query:
