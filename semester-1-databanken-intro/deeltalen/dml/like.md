@@ -16,54 +16,48 @@ De betekenis van de wildcards in SQL is als volgt:
 Om alle boeken te selecteren waarvan de familienaam van de auteur begint met A als de collation niet hoofdlettergevoelig is:
 
 ```sql
-use ModernWays;
-select Voornaam, Familienaam, Titel
-   from Boeken
-   where Familienaam like 'a%';
+USE ModernWays;
+SELECT Voornaam, Familienaam, Titel
+   FROM Boeken
+   WHERE Familienaam LIKE 'b%';
 ```
 
 Wanneer de collation niet hoofdlettergevoelig is, geeft dit statement hetzelfde resultaat:
 
 ```sql
-select Voornaam, Familienaam, Titel
-   from Boeken
-   where Familienaam like 'A%';
+SELECT Voornaam, Familienaam, Titel
+   FROM Boeken
+   WHERE Familienaam LIKE 'B%';
 ```
 
 Om alle boeken te selecteren waarvan de familenaam van de auteur eindigt op een s:
 
 ```sql
-select Voornaam, Familienaam, Titel
-   from Boeken
-   where Familienaam like '%s';
+SELECT Voornaam, Familienaam, Titel
+   FROM Boeken
+   WHERE Familienaam LIKE '%s';
 ```
 
 Om boeken waarvoor in de titel het woord economie voorkomt, te selecteren:
 
 ```sql
-use ModernWays;
-select Voornaam, Familienaam, Titel, Verschijningsjaar
-   from Boeken
-   where Titel like '%economie%';
+USE ModernWays;
+SELECT Voornaam, Familienaam, Titel, Verschijningsjaar
+   FROM Boeken
+   WHERE Titel LIKE '%economie%';
 ```
 
-Het is belangrijk dat je toepassing van de LIKE operator en de wildcard ziet. Bijvoorbeeld:
+Het is belangrijk dat je toepassing van de LIKE operator en de wildcard ziet. Bijvoorbeeld (0032\_\_SelectBoeken.sql):
 
 ```sql
-use ModernWays;
+USE ModernWays;
 -- eerst wordt een boek ingevoegd
-insert into Boeken (
-   Voornaam,
-   Familienaam,
-   Titel)
-values (
-   'Mathijs',
-   'Degrote',
-   'Leren werken met SQL')
+INSERT INTO Boeken (Voornaam,Familienaam,Titel)
+VALUES ('Mathijs','Degrote','Leren werken met SQL');
 -- er gaat wat tijd voorbij en ik weet niet meer of het "Mathijs" of "Matijs" is
 -- ik los dit op met LIKE
-select Voornaam from Boeken
-   where Voornaam like 'ma%ijs'
+SELECT Voornaam from Boeken
+   WHERE Voornaam LIKE 'ma%ijs';
 ```
 
 {% hint style="warning" %}

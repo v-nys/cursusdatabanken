@@ -15,11 +15,11 @@ USE ModernWays;
 -- oplopend sorteren volgens familienaam
 -- ascending
 SELECT Voornaam, Familienaam, Titel FROM Boeken
-   order by Familienaam asc, Voornaam, Titel;
+   ORDER BY Familienaam ASC, Voornaam, Titel;
 -- aflopend sorteren volgens familienaam
 -- descending
 SELECT Voornaam, Familienaam, Titel FROM Boeken
-   order by Familienaam desc, Voornaam, Titel
+   ORDER BY Familienaam DESC, Voornaam, Titel
 ```
 
 Het eerste veld in de `ORDER BY` clause wordt dan eerst bekeken, dan het tweede, enzovoort.

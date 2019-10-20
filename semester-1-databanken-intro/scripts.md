@@ -27,9 +27,15 @@ Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. 
 | 0021\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/select-met-where) |
 | 0022\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/praktijkvoorbeeld-logische-operatoren) |
 | 0023\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/praktijkvoorbeeld-logische-operatoren) |
-| 0024\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/praktijkvoorbeeld-logische-operatoren) |
+| 0024\_\_InsertBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/praktijkvoorbeeld-logische-operatoren) |
 | 0025\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/praktijkvoorbeeld-logische-operatoren) |
 | 0026\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/praktijkvoorbeeld-logische-operatoren) |
+| 0027\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/praktijkvoorbeeld-logische-operatoren) |
+| 0028\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/vergelijkingen-in-mysql) |
+| 0029\_\_InsertBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/vergelijkingen-in-mysql) |
+| 0030\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/vergelijkingen-in-mysql) |
+| 0031\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/select-sorteren) |
+| 0032\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/like) |
 | 0500\_\_CalibrateDB.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo) |
 | 0501\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo) |
 | 0502\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo) |
