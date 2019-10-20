@@ -36,7 +36,8 @@ VALUES
 ('Stephen','Hawking','The Nature of Space and Time','Wiskunde'),
 ('Stephen','Hawking','Antwoorden op de grote vragen','Filosofie'),
 ('William','Dunham','Journey through Genius: The Great Theorems of Mathematics','Wiskunde'),
-('William','Dunham','Euler: The Master of Us All','Geschiedenis');
+('William','Dunham','Euler: The Master of Us All','Geschiedenis'),
+('Evert Willem','Beth','Mathematical Thought','Filosofie');
 ```
 
 Je wil alle wiskunde boeken van Dunham en Hawking. Welke expressie moet je hiervoor gebruiken?

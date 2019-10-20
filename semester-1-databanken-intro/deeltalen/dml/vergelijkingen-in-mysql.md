@@ -46,13 +46,13 @@ Zo wordt 'schoen' gesorteerd voor 'schoenmaker', omdat 'schoen' een prefix is va
 Maar er wordt éérst naar de letters gekeken en dan pas naar de lengte van de tekst.
 Zo wordt 'schoeisel' voor 'schoen' gesorteerd, omdat 'i' voor 'n' komt.
 
-Ter verduidelijking: als we `'B'` als familienaam toevoegen, wordt het resultaat wel geselecteerd:
+Ter verduidelijking: als we `'B'` als familienaam toevoegen (in script 0029\_\_InsertBoeken.sql), wordt het resultaat wel geselecteerd:
 
 ```sql
-INSERT INTO Boeken (Familienaam,Titel,Voornaam)
+USE ModernWays;
+INSERT INTO Boeken (Familienaam,Titel,Voornaam,Categorie)
 VALUES
-('B','Het Boek','Jef');
-
+('B','Het Boek','Jef','Filosofie');
 SELECT Titel, Familienaam FROM Boeken
    where Familienaam <= 'B';
 ```
@@ -60,7 +60,7 @@ SELECT Titel, Familienaam FROM Boeken
 Stel dat je alle titels wilt van de auteurs wilt waarvan de familienaam begint met een' A' of een 'B'. Dan moet je de WHERE clausule verfijnen. Je zou dit kunnen proberen:
 
 ```sql
-use ModernWays;
+USE ModernWays;
 SELECT Familienaam, Titel FROM Boeken where Familienaam <= 'Bz';
 ```
 
