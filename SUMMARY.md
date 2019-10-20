@@ -41,6 +41,8 @@
     * [praktijkvoorbeeld](semester-1-databanken-intro/deeltalen/dml/praktijkvoorbeeld-logische-operatoren.md)
     * [vergelijkingen](semester-1-databanken-intro/deeltalen/dml/vergelijkingen-in-mysql.md)
     * [SELECT sorteren](semester-1-databanken-intro/deeltalen/dml/select-sorteren.md)
+    * [LIKE: rijen beschrijven](semester-1-databanken-intro/deeltalen/dml/like.md)
+    * [GROUP BY: resultaten groeperen](semester-1-databanken-intro/deeltalen/dml/group-by.md)
 * [NoSQL](semester-1-databanken-intro/nosql.md)
 * [ERM](semester-1-databanken-intro/erm/README.md)
   * [Basisbegrippen](semester-1-databanken-intro/erm/basisbegrippen.md)
