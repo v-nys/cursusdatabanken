@@ -18,7 +18,7 @@ Voor "gelijk aan" heb je maar één `=` nodig, waar veel programmeertalen `==` g
 ## operatoren in combinatie met collations
 Voor getallen betekenen bovenstaande operatoren precies wat je zou verwachten. Je moet in het achterhoofd houden dat `FLOAT` en `DOUBLE` niet helemaal precies zijn, maar voor de rest betekenen ze wat je verwacht uit de wiskunde.
 
-Voor tekst is het wat complexer. Je kan wel degelijk iets als het volgende (0027\_\_SelectBoeken.sql) schrijven:
+Voor tekst is het wat complexer. Je kan wel degelijk iets als het volgende (0028\_\_SelectBoeken.sql) schrijven:
 
 ```sql
 USE ModernWays;
