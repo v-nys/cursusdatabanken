@@ -19,14 +19,14 @@ Voor de logische operatoren gebruiken we waarheidstabellen:
 | AND   | TRUE  | FALSE | NULL |
 |-------|-------|-------|------|
 | TRUE  | TRUE  | FALSE | NULL |
-| FALSE | FALSE | FALSE | NULL |
-| NULL  | NULL  | NULL  | NULL |
+| FALSE | FALSE | FALSE | FALSE |
+| NULL  | NULL  | FALSE  | NULL |
 
 | OR    | TRUE | FALSE | NULL |
 |-------|------|-------|------|
-| TRUE  | TRUE | TRUE  | NULL |
+| TRUE  | TRUE | TRUE  | TRUE |
 | FALSE | TRUE | FALSE | NULL |
-| NULL  | NULL | NULL  | NULL |
+| NULL  | TRUE | NULL  | NULL |
 
 | NOT | TRUE  | FALSE | NULL |
 |-----|-------|-------|------|
@@ -38,8 +38,12 @@ Voor de logische operatoren gebruiken we waarheidstabellen:
 | FALSE | TRUE  | FALSE | NULL |
 | NULL  | NULL  | NULL  | NULL |
 
-{% hint style="warning" %}
-Eens je een `NULL`-waarde combineert met een andere waarde, is het resultaat sowieso `NULL`. Probeer dit dus te vermijden waar mogelijk!
+{% hint style="info" %}
+Om deze te onthouden, doe je er best aan `NULL` te zien als een onbekend resultaat. Als je niet zeker bent wat de uitkomst is omwille van de aanwezigheid van `NULL`, zal de uitkomst zelf ook `NULL` zijn.
 {% endhint %}
 
-De resterende operatoren komen later aan bod.
+Je kan de waarheidstabellen ook nabouwen in Workbench, bv.:
+
+```sql
+SELECT TRUE OR NULL;
+```
