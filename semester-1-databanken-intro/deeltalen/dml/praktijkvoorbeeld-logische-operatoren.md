@@ -63,11 +63,11 @@ Dus alle wiskunde boeken van Dunham en van Hawking zou je kunnen schrijven als:
 
 ```sql
 USE ModernWays;
-SELECT Familienaam, Titel FROM Boeken
+SELECT Familienaam, Titel, Categorie FROM Boeken
 WHERE Categorie = 'Wiskunde' AND Familienaam = 'Dunham' OR Familienaam = 'Hawking';
 ```
 
-Sla op als (0024\_\_SelectBoeken.sql) en probeer uit. Wat blijkt? We krijgen boeken van Hawking die niet over wiskunde gaan. Dit komt omdat, net als de typische rekenkundige operatoren (`+`, `*`, e.d.) de logische operatoren een zekere voorrang krijgen. Meerbepaald: `AND` heeft voorrang op `OR`, dus bovenstaand script is hetzelfde als:
+Sla op als (0025\_\_SelectBoeken.sql) en probeer uit. Wat blijkt? We krijgen boeken van Hawking die niet over wiskunde gaan. Dit komt omdat, net als de typische rekenkundige operatoren (`+`, `*`, e.d.) de logische operatoren een zekere voorrang krijgen. Meerbepaald: `AND` heeft voorrang op `OR`, dus bovenstaand script is hetzelfde als:
 
 ```sql
 USE ModernWays;
@@ -75,7 +75,7 @@ SELECT Familienaam, Titel FROM Boeken
 WHERE (Categorie = 'Wiskunde' AND Familienaam = 'Dunham') OR Familienaam = 'Hawking';
 ```
 
-Er zijn twee mogelijkheden om dit op te lossen (sla op als 0025\_\_SelectBoeken.sql en 0026\_\_SelectBoeken.sql):
+Er zijn twee mogelijkheden om dit op te lossen (sla op als 0026\_\_SelectBoeken.sql en 0027\_\_SelectBoeken.sql):
 
 
 ```sql
