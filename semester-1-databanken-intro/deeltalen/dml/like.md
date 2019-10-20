@@ -1,31 +1,71 @@
-Probleem
+# `WHERE` omschrijven met `LIKE`
+In veel gevallen weten we maar half wat we willen zoeken. We kennen een deel van de naam, het begin of het einde of iets tussenin.
+Met de `LIKE` operator kan je in SQL naar patronen zoeken (pattern matching).
+Je kan met de `LIKE` operator naar patronen in tekst zoeken.
+Je combineert de `LIKE` operator met jokers (**wildcards**) om een booleaanse expressie te vormen.
+De set van jokers bestaat uit symbolen die één of meer ontbrekende tekens voorstellen.
 
-Het is niet genoeg gegevens uit een tabel te kunnen opvragen, je moet ze ook kunnen sorteren of ordenen. We willen lijsten in alfanumerieke volgorde weergeven omdat het gemakkelijker is in een geordende lijst te zoeken.
-Oplossing
+De LIKE operator vergelijkt een tekstuitdrukking in het linkerlid, dat eventueel een wildcard bevat, met een patroon tussen aanhalingstekens in het rechterlid.
+Een patroon is een veralgemeende tekstuitdrukking. d.w.z. een tekst waarin nog enige vrijheid bestaat.
 
-Om te sorteren gebruiken we de clausule ORDER BY. Het sorteren kan op 2 manieren:
+De betekenis van de wildcards in SQL is als volgt:
 
-    oplopend
-    aflopend
+* `%`: nul, één of meer willekeurige tekens
+* `_`: exact één willekeurig teken
 
-In het Engels is dat ascending en descending. In SQL wordt dat afgekort naar de clausules ASC en DESC. Stel dat je de namen uit de tabel boeken wil opvragen gesorteerd op de voornaam, de familienaam en titel van de boeken. De query ziet er dan zo uit:
+Om alle boeken te selecteren waarvan de familienaam van de auteur begint met A als de collation niet hoofdlettergevoelig is:
 
+```sql
 use ModernWays;
+select Voornaam, Familienaam, Titel
+   from Boeken
+   where Familienaam like 'a%';
+```
 
--- oplopend sorteren volgens familienaam
--- ascending
-select Voornaam, Familienaam, Titel from Boeken
-   order by Familienaam asc, Voornaam, Titel;
+Wanneer de collation niet hoofdlettergevoelig is, geeft dit statement hetzelfde resultaat:
 
--- aflopend sorteren volgens familienaam
--- descending
-select Voornaam, Familienaam, Titel from Boeken
-   order by Familienaam desc, Voornaam, Titel
+```sql
+select Voornaam, Familienaam, Titel
+   from Boeken
+   where Familienaam like 'A%';
+```
 
-Het eerste veld in de ORDER BY clause wordt dan eerst bekeken, dan het tweede, enzovoort. Als niet aangegeven is of de sortering voor een bepaald veld oplopend of aflopend is, is ze standaard oplopend. Dat wil zeggen dat als je ASC en DESC niet vermeldt na een kolom, de code zich gedraagt alsof er ASC staat.
+Om alle boeken te selecteren waarvan de familenaam van de auteur eindigt op een s:
 
-De eerste bovenstaande SELECT clausule toont dus eerst boeken in alfabetische volgorde van de familienamen van de auteurs. Als twee auteurs dezelfde familienaam hebben, wordt hun voornaam gebruikt om de knoop door te hakken. Dan komt het boek met de voornaam die alfabetisch eerst komt ook eerst in de lijst. Als twee auteurs dezelfde naam hebben, of als het gewoon om twee boeken van dezelfde auteur gaat, wordt de titel gebruikt om de knoop door te hakken.
+```sql
+select Voornaam, Familienaam, Titel
+   from Boeken
+   where Familienaam like '%s';
+```
 
-Voor de tweede query komen de familienamen met een 'Z' voor die met een 'A'. Let op: de voornamen met een 'A' komen wel voor de voornamen met een 'Z'!
+Om boeken waarvoor in de titel het woord economie voorkomt, te selecteren:
 
-Merk op uit bovenstaand voorbeeld: de volgorde van de kolommen in de ORDER BY clausule hoeft niet dezelfde te zijn als de volgorde van de weergave in de SELECT clausule. Het kan perfect zijn dat je wil sorteren op familienaam, maar wel eerst de voornaam wil tonen en dan pas de achternaam.
+```sql
+use ModernWays;
+select Voornaam, Familienaam, Titel, Verschijningsjaar
+   from Boeken
+   where Titel like '%economie%';
+```
+
+Het is belangrijk dat je toepassing van de LIKE operator en de wildcard ziet. Bijvoorbeeld:
+
+```sql
+use ModernWays;
+-- eerst wordt een boek ingevoegd
+insert into Boeken (
+   Voornaam,
+   Familienaam,
+   Titel)
+values (
+   'Mathijs',
+   'Degrote',
+   'Leren werken met SQL')
+-- er gaat wat tijd voorbij en ik weet niet meer of het "Mathijs" of "Matijs" is
+-- ik los dit op met LIKE
+select Voornaam from Boeken
+   where Voornaam like 'ma%ijs'
+```
+
+{% hint style="warning" %}
+De `LIKE` wordt door beginners vaak vergeten. Je komt soms dingen tegen als `WHERE Voornaam = 'ma%ijs'`. Dat zal geen resultaten opleveren, want niemand heeft letterlijk de voornaam "Ma%ijs".
+{% endhint %}
