@@ -86,7 +86,7 @@ SELECT Familienaam, Titel FROM Boeken
        OR Categorie = 'Wiskunde' AND Familienaam = 'Hawking';
 ```
 ```sql
-USE ModernWays
+USE ModernWays;
 SELECT Familienaam, Titel FROM Boeken
     WHERE Categorie = 'Wiskunde'
       AND (Familienaam = 'Dunham' OR Familienaam = 'Hawking');

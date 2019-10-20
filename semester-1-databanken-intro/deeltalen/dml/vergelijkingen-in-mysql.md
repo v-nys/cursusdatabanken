@@ -66,9 +66,10 @@ SELECT Familienaam, Titel FROM Boeken where Familienaam <= 'Bz';
 
 Maar hier zijn verschillende problemen mee. Als `'Bz'` een prefix is van de naam van een auteur (niet erg waarschijnlijk, maar het zou kunnen), zal dit niet werken. Nog lastiger: dit is erg afhankelijk van de collation. Het is niet in elke collation zo dat 'Bz' voor 'Bé' komt, bijvoorbeeld. Sommige collations sorteren eerst de gebruikelijke 26 letters van het alfabet en pas daarna de letters met accenten.
 
-Dit is beter (je mag er in het algemeen wel vanuit gaan dat `'B'` voor `'C'` komt):
+0030\_\_SelectBoeken.sql is beter (je mag er in het algemeen wel vanuit gaan dat `'B'` voor `'C'` komt):
 
 ```sql
+USE ModernWays;
 SELECT Familienaam, Titel FROM Boeken where Familienaam < 'C'
 ```
 
@@ -83,7 +84,7 @@ INSERT INTO Boeken (
    Titel,
    Stad,
    Uitgeverij,
-   Verschijningsdatum,
+   Verschijningsjaar,
    Herdruk,
    Commentaar,
    Categorie
@@ -113,10 +114,14 @@ VALUES
 );
 
 SELECT Voornaam, Familienaam, Titel FROM Boeken
-   where Familienaam <= 'Bret';
+   where Familienaam <= 'Breton';
 ```
 
-Als de collation voor `Familienaam` accentgevoelig is, zal je alleen het boek van Breton zien. Anders zal je ook dat van Bréhier zien. Als je onder MySQL de collation van de kolommen van de tabel Boeken te weten wil komen, gebruik je volgende speciale query:
+Als de collation voor `Familienaam` accentongevoelig is, zal je beide nieuwe records zien.
+Anders worden de zaken complexer.
+Dan moet je kijken naar het gebruikte collation algoritme en de accentgevoeligheid.
+Dit kan vrij complex worden en we laten het verder zo, maar weet dat er een verschil mogelijk is.
+Als je onder MySQL de collation van de kolommen van de tabel Boeken te weten wil komen, gebruik je volgende speciale query:
 
 ```sql
 SHOW FULL COLUMNS FROM Boeken;
@@ -127,7 +132,9 @@ Er zijn véél collations, maar onthoud vooral volgende vuistregels:
 
 * als ze `_bin` bevat (al dan niet met hoofdletters geschreven), worden de bytevoorstellingen van de karakters vergeleken
   * dit is zowat de strengste definitie van gelijkheid die je kan hebben
+  * bijvoorbeeld bij `utf8mb4_bin` komt `'Breton`' **voor** `'Bréhier'`
 * als ze `_as` bevat, is de collation accentgevoelig
+  * dit betekent niet noodzakelijk dat `'Breton`' voor `'Bréhier`'komt, maar wel dat `'e`' en `'é`' verschillend zijn
 * als ze `_ai` bevat, is de collation accentongevoelig
 * als ze `_cs` bevat, is de collation hoofdlettergevoelig
 * als ze `_ci` bevat, is de collation hoofdletterongevoelig
