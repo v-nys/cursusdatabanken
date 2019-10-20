@@ -53,26 +53,26 @@ Alle boeken van Dunham dat schrijf je als:
 Familienaam = 'Dunham'
 ```
 
-Alle boeken van De Roover, dat schrijf je als:
+Alle boeken van Hawking, dat schrijf je als:
 
 ```sql
-Familienaam ='De Roover'
+Familienaam ='Hawking'
 ```
 
-Dus alle wiskunde boeken van Dunham en van De Roover zou je kunnen schrijven als:
+Dus alle wiskunde boeken van Dunham en van Hawking zou je kunnen schrijven als:
 
 ```sql
 USE ModernWays;
 SELECT Familienaam, Titel FROM Boeken
-WHERE Categorie = 'Wiskunde' AND Familienaam = 'Dunham' OR Familienaam = 'De Roover';
+WHERE Categorie = 'Wiskunde' AND Familienaam = 'Dunham' OR Familienaam = 'Hawking';
 ```
 
-Sla op als (0024\_\_SelectBoeken.sql) en probeer uit. Wat blijkt? We krijgen boeken van De Roover die niet over wiskunde gaan. Dit komt omdat, net als de typische rekenkundige operatoren (`+`, `*`, e.d.) de logische operatoren een zekere voorrang krijgen. Meerbepaald: `AND` heeft voorrang op `OR`, dus bovenstaand script is hetzelfde als:
+Sla op als (0024\_\_SelectBoeken.sql) en probeer uit. Wat blijkt? We krijgen boeken van Hawking die niet over wiskunde gaan. Dit komt omdat, net als de typische rekenkundige operatoren (`+`, `*`, e.d.) de logische operatoren een zekere voorrang krijgen. Meerbepaald: `AND` heeft voorrang op `OR`, dus bovenstaand script is hetzelfde als:
 
 ```sql
 USE ModernWays;
 SELECT Familienaam, Titel FROM Boeken
-WHERE (Categorie = 'Wiskunde' AND Familienaam = 'Dunham') OR Familienaam = 'De Roover';
+WHERE (Categorie = 'Wiskunde' AND Familienaam = 'Dunham') OR Familienaam = 'Hawking';
 ```
 
 Er zijn twee mogelijkheden om dit op te lossen (sla op als 0025\_\_SelectBoeken.sql en 0026\_\_SelectBoeken.sql):
