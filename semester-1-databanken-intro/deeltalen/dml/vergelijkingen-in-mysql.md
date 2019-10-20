@@ -139,4 +139,6 @@ Als je MySQL geïnstalleerd hebt zoals afgesproken, wordt standaard de tekenset 
 ## speciaal geval: `IS NULL`
 Zoals eerder aangegeven heeft het geen zin een waarde rechtstreeks te vergelijken met `NULL` door middel van `=` of `<>`. Als je dit toch wil doen, gebruik je `IS NULL` of `IS NOT NULL`. Bijvoorbeeld:
 
-TODO
+```sql
+SELECT * FROM Boeken WHERE Categorie IS NULL;
+```
