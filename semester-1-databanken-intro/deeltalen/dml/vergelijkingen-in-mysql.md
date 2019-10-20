@@ -49,16 +49,11 @@ Zo wordt 'schoeisel' voor 'schoen' gesorteerd, omdat 'i' voor 'n' komt.
 Ter verduidelijking: als we `'B'` als familienaam toevoegen, wordt het resultaat wel geselecteerd:
 
 ```sql
-INSERT INTO Boeken (
-   Familienaam,
-   Titel,
-   Voornaam)
-VALUES (
-   'B',
-   'Het Boek',
-   'Jef');
+INSERT INTO Boeken (Familienaam,Titel,Voornaam)
+VALUES
+('B','Het Boek','Jef');
 
-SELECT Titel, Familienaam from Boeken
+SELECT Titel, Familienaam FROM Boeken
    where Familienaam <= 'B';
 ```
 
@@ -66,19 +61,22 @@ Stel dat je alle titels wilt van de auteurs wilt waarvan de familienaam begint m
 
 ```sql
 use ModernWays;
-SELECT Familienaam, Titel from Boeken where Familienaam <= 'Bz';
+SELECT Familienaam, Titel FROM Boeken where Familienaam <= 'Bz';
 ```
 
 Maar hier zijn verschillende problemen mee. Als `'Bz'` een prefix is van de naam van een auteur (niet erg waarschijnlijk, maar het zou kunnen), zal dit niet werken. Nog lastiger: dit is erg afhankelijk van de collation. Het is niet in elke collation zo dat 'Bz' voor 'Bé' komt, bijvoorbeeld. Sommige collations sorteren eerst de gebruikelijke 26 letters van het alfabet en pas daarna de letters met accenten.
 
-Dit is beter:
+Dit is beter (je mag er in het algemeen wel vanuit gaan dat `'B'` voor `'C'` komt):
 
-SELECT Familienaam, Titel from Boeken where Familienaam < 'C'
+```sql
+SELECT Familienaam, Titel FROM Boeken where Familienaam < 'C'
+```
 
-Hoe weet je wat er met accenten en hoofdletters gebeurt? Dat hangt ervan af of de gebruikte collation hoofdlettergevoelig (case sensitive) en/of accentgevoelig (accent sensitive) is.
+Hoe weet je precies wat er met accenten en hoofdletters gebeurt? Dat hangt ervan af of de gebruikte collation hoofdlettergevoelig (case sensitive) en/of accentgevoelig (accent sensitive) is voor de kolom die je aan het beschouwen bent.
 
 Probeer dit eens uit (hoeft niet in een script):
 
+```
 INSERT INTO Boeken (
    Voornaam,
    Familienaam,
@@ -114,20 +112,25 @@ VALUES
    'Roman'
 );
 
-SELECT Voornaam, Familienaam, Titel from Boeken
+SELECT Voornaam, Familienaam, Titel FROM Boeken
    where Familienaam <= 'Bret';
+```
 
-Als de collation voor Familienaam accentgevoelig is, zal je alleen het boek van Breton zien. Anders zal je ook dat van Bréhier zien. Als je onder MySQL de collation van de kolommen van de tabel Boeken te weten wil komen, gebruik je volgende query:
+Als de collation voor `Familienaam` accentgevoelig is, zal je alleen het boek van Breton zien. Anders zal je ook dat van Bréhier zien. Als je onder MySQL de collation van de kolommen van de tabel Boeken te weten wil komen, gebruik je volgende speciale query:
 
+```sql
 SHOW FULL COLUMNS FROM Boeken;
+```
 
+Je kan in MySQL Workbench ook rechtsklikken op de tabel in kwestie en dan via "Table Inspector" naar "Columns" gaan om de collation te achterhalen.
 Er zijn véél collations, maar onthoud vooral volgende vuistregels:
 
-    als ze _bin bevat (al dan niet met hoofdletters geschreven), is ze zo streng mogelijk
-    als ze _as bevat, is ze accentgevoelig
-    als ze _ai bevat, is ze accentongevoelig
-    als ze _cs bevat, is ze hoofdlettergevoelig
-    als ze _ci bevat, is ze hoofdletterongevoelig
+* als ze `_bin` bevat (al dan niet met hoofdletters geschreven), worden de bytevoorstellingen van de karakters vergeleken
+  * dit is zowat de strengste definitie van gelijkheid die je kan hebben
+* als ze `_as` bevat, is de collation accentgevoelig
+* als ze `_ai` bevat, is de collation accentongevoelig
+* als ze `_cs` bevat, is de collation hoofdlettergevoelig
+* als ze `_ci` bevat, is de collation hoofdletterongevoelig
 
 {% hint style="info" %}
 Als je MySQL geïnstalleerd hebt zoals afgesproken, wordt standaard de tekenset `utf8mb4` en de collation `utf8mb4_0900_ai_ci` gebruikt. Dus met de standaardinstellingen maakt het niet uit of je `CHAR SET utf8mb4` toevoegt, maar het is beter expliciet te zijn dan te hopen dat jouw database nog volledig ingesteld is op standaardinstellingen.
