@@ -40,6 +40,7 @@
     * [logische operatoren](semester-1-databanken-intro/deeltalen/dml/logische-operatoren.md)
     * [praktijkvoorbeeld](semester-1-databanken-intro/deeltalen/dml/praktijkvoorbeeld-logische-operatoren.md)
     * [vergelijkingen](semester-1-databanken-intro/deeltalen/dml/vergelijkingen-in-mysql.md)
+    * [SELECT sorteren](semester-1-databanken-intro/deeltalen/dml/select-sorteren.md)
 * [NoSQL](semester-1-databanken-intro/nosql.md)
 * [ERM](semester-1-databanken-intro/erm/README.md)
   * [Basisbegrippen](semester-1-databanken-intro/erm/basisbegrippen.md)
