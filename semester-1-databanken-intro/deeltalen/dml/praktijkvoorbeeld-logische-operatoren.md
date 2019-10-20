@@ -5,7 +5,7 @@ Waarschijnlijk zal je nergens méér gebruik maken van booleaanse expressies dan
 ```sql
 USE ModernWays;
 SELECT Familienaam, Titel FROM Boeken
-WHERE Familienaam = 'Augustinus' OR Familienaam = 'Visser';
+WHERE Familienaam = 'Augustinus' OR Familienaam = 'Batens';
 ```
 
 Als je een auteur ingeeft die niet in de databank aanwezig is, wordt er geen fout gemeld, maar zijn er gewoon geen resultaten (0023\_\_SelectBoeken.sql):
@@ -21,10 +21,10 @@ Merk op: de `OR` vormt een grote booleaanse expressie door zelf twee booleaanse 
 ```sql
 USE ModernWays;
 SELECT Familienaam, Titel FROM Boeken
-WHERE Familienaam = 'Augustinus' OR 'Visser';
+WHERE Familienaam = 'Augustinus' OR 'Batens';
 ```
 
-**Dit is verkeerd!** Wat aan de linkerkant van `OR` staat is inderdaad een booleaanse expressie, maar `'Visser'` is tekst. Dit zal je dus een fout opleveren. Later zie je hoe je wel wat schrijfwerk kan besparen met de `IN`-operator.
+**Dit is verkeerd!** Wat aan de linkerkant van `OR` staat is inderdaad een booleaanse expressie, maar `'Batens'` is tekst. Dit zal je dus een fout opleveren. Later zie je hoe je wel wat schrijfwerk kan besparen met de `IN`-operator.
 
 ## combinatie `AND` en `OR`
 Je wil alle wiskunde boeken van Aveni en Hawkins. Welke expressie moet je hiervoor gebruiken?
