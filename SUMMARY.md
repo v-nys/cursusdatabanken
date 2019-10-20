@@ -42,6 +42,7 @@
     * [vergelijkingen](semester-1-databanken-intro/deeltalen/dml/vergelijkingen-in-mysql.md)
     * [SELECT sorteren](semester-1-databanken-intro/deeltalen/dml/select-sorteren.md)
     * [LIKE: rijen beschrijven](semester-1-databanken-intro/deeltalen/dml/like.md)
+    * [Labo-oefeningen medium](semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium.md)
 * [NoSQL](semester-1-databanken-intro/nosql.md)
 * [ERM](semester-1-databanken-intro/erm/README.md)
   * [Basisbegrippen](semester-1-databanken-intro/erm/basisbegrippen.md)
