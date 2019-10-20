@@ -53,7 +53,7 @@ Voeg met een script 0529\_\_Oefening.sql volgende twee boeken toe, exact zoals g
 | ? | Beowulf | 0975 | Mythologie |
 | Ovidius | Metamorfosen | 8 | Mythologie |
 
-Vraag dan alle boeken op die verschenen zijn voor '0976' in 0530\_\_BoekenOefening.sql. Probeer uit en vraag uitleg (eventueel via het discussieforum) als het resultaat niet is wat je verwacht! 
+Vraag dan alle boeken op die verschenen zijn voor '0976' in 0530\_\_Oefening.sql. Probeer uit en vraag uitleg (eventueel via het discussieforum) als het resultaat niet is wat je verwacht! 
 
 ### Oefening 5
 Toon met een script, 0531\_\_Oefening.sql, alle boeken zonder commentaar waarvan de auteur een achternaam heeft die met een letter vanaf "D" begint.
