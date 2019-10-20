@@ -50,6 +50,7 @@ Schrijf een script, 0528\_\_Oefening.sql, dat alle boeken selecteert die ten laa
 ### Oefening 4
 Voeg met een script 0529\_\_Oefening.sql volgende twee boeken toe, exact zoals gegeven (laat andere kolommen weg):
 | Familienaam | Titel | Verschijningsjaar | Categorie |
+|-------------|-------|-------------------|-----------|
 | ? | Beowulf | 0975 | Mythologie |
 | Ovidius | Metamorfosen | 8 | Mythologie |
 
