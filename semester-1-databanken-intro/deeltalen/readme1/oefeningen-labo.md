@@ -1,4 +1,4 @@
-# Labo-oefeningen
+# Labo-oefeningen basis
 
 ## Oefeningen
 

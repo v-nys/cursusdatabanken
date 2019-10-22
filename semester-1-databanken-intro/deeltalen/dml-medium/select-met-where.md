@@ -1,6 +1,7 @@
-# `SELECT` met `WHERE`
+# SELECT met WHERE
+
 {% hint style="warning" %}
-Denk eraan je database te [https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo](kalibreren) indien nodig, zodat je meteen met de scripts kan inpikken.
+Denk eraan je database te [kalibreren ](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo)indien nodig, zodat je meteen met de scripts kan inpikken.
 {% endhint %}
 
 In de meeste gevallen zijn we niet geïnterresseerd om alle rijen uit een tabel te selecteren. We willen over de mogelijkheid beschikken om alleen de rijen, die aan een bepaalde voorwaarde voldoen, te kunnen selecteren.
@@ -9,7 +10,7 @@ De oplossing bestaat erin de `WHERE`-clausule te gebruiken. De `WHERE`-clausule 
 
 Om de `WHERE` te gebruiken, zet je hem na de `FROM Tabel`.
 
-Bijvoorbeeld (sla op als 0018\_\_SelectBoeken.sql):
+Bijvoorbeeld \(sla op als 0018\_\_SelectBoeken.sql\):
 
 ```sql
 USE ModernWays;
@@ -19,7 +20,7 @@ FROM Boeken
 WHERE Familienaam = 'Augustinus';
 ```
 
-Ofwel (sla op als 0019\_\_SelectBoeken.sql):
+Ofwel \(sla op als 0019\_\_SelectBoeken.sql\):
 
 ```sql
 USE ModernWays;
@@ -28,7 +29,7 @@ FROM Boeken
 WHERE Voornaam = 'Diderik';
 ```
 
-Je krijgt `NULL` wanneer je bijvoorbeeld vergelijkt met een niet-ingevulde waarde, ook geschreven als `NULL`. Zelfs `NULL` is niet gelijk aan `NULL`. Probeer maar eens alle boeken zonder titel op te vragen met een vergelijking (0020\_\_SelectBoeken.sql):
+Je krijgt `NULL` wanneer je bijvoorbeeld vergelijkt met een niet-ingevulde waarde, ook geschreven als `NULL`. Zelfs `NULL` is niet gelijk aan `NULL`. Probeer maar eens alle boeken zonder titel op te vragen met een vergelijking \(0020\_\_SelectBoeken.sql\):
 
 ```sql
 USE ModernWays;
@@ -37,7 +38,7 @@ FROM Boeken
 WHERE Titel = NULL;
 ```
 
-Maar probeer ook deze eens (0021\_\_SelectBoeken.sql):
+Maar probeer ook deze eens \(0021\_\_SelectBoeken.sql\):
 
 ```sql
 USE ModernWays;
@@ -52,3 +53,4 @@ WHERE Titel <> NULL;
 {% hint style="info" %}
 Wat je hier leert over `WHERE` is overdraagbaar naar andere DML-statements. Je kan bijvoorbeeld enkel specifieke rijen updaten of wissen.
 {% endhint %}
+
