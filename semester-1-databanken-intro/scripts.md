@@ -58,6 +58,7 @@ Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. 
 | 0519\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo) |
 | 0520\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo) |
 | 0521\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo) |
+| 0522\_\_CalibrateDB.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
 | 0523\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
 | 0524\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
 | 0525\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |

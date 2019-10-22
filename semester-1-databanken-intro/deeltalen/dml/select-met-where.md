@@ -1,6 +1,6 @@
 # `SELECT` met `WHERE`
 {% hint style="warning" %}
-Denk eraan je database te kalibreren indien nodig, zodat je meteen met de scripts kan inpikken.
+Denk eraan je database te [https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo](kalibreren) indien nodig, zodat je meteen met de scripts kan inpikken.
 {% endhint %}
 
 In de meeste gevallen zijn we niet geïnterresseerd om alle rijen uit een tabel te selecteren. We willen over de mogelijkheid beschikken om alleen de rijen, die aan een bepaalde voorwaarde voldoen, te kunnen selecteren.
