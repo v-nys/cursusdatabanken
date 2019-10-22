@@ -45,7 +45,16 @@ CREATE TABLE `Huisdieren` (
 
 LOCK TABLES `Huisdieren` WRITE;
 /*!40000 ALTER TABLE `Huisdieren` DISABLE KEYS */;
-INSERT INTO `Huisdieren` VALUES ('Misty',6,'hond','Vincent','WAF!'),('Ming',8,'hond','Christiane','WAF!'),('Bientje',6,'kat','Esther','miauwww...'),('Ming',7,'kat','Bert','miauwww...'),('Suerta',2,'hond','Thaïs','WAF!'),('Фёдор',1,'hond','Lyssa','WAF!');
+INSERT INTO `Huisdieren` VALUES
+('Misty',6,'hond','Vincent','WAF!'),
+('Ming',8,'hond','Christiane','WAF!'),
+('Bientje',6,'kat','Esther','miauwww...'),
+('Ming',7,'kat','Bert','miauwww...'),
+('Suerta',2,'hond','Thaïs','WAF!'),
+('Aran',6,'hond','Thaïs','WAF!'),
+('Mojo',12,'hond','Thaïs','WAF!'),
+('Bollie',14,'kat','Truus','miauwww...'),
+('Фёдор',1,'hond','Lyssa','WAF!');
 /*!40000 ALTER TABLE `Huisdieren` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -71,6 +80,18 @@ CREATE TABLE `Liedjes` (
 
 LOCK TABLES `Liedjes` WRITE;
 /*!40000 ALTER TABLE `Liedjes` DISABLE KEYS */;
+INSERT INTO Liedjes(Titel, Artiest, Album, Jaar)
+VALUES
+('Stairway to Heaven','Led Zeppelin','Led Zeppelin IV','1971'),
+('Rock and Roll','Led Zeppelin','Led Zeppelin IV','1971'),
+('Riders on the Storm','The Doors','L.A. Woman','1971'),
+('Good Enough','Molly Tuttle','Rise','2017'),
+('Outrage for the Execution of Willie McGee','Goodnight, Texas','Conductor','2018'),
+('They Lie','Layla Zoe','The Lily','2013'),
+('Green Eyed Lover','Layla Zoe','The Lily','2013'),
+('Why You So Afraid','Layla Zoe','The Lily','2013'),
+('It Ain''t You','Danielle Nicole','Wolf Den','2015'),
+('Unchained','Van Halen','Fair Warning','1981');
 /*!40000 ALTER TABLE `Liedjes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -96,6 +117,50 @@ LOCK TABLES `Metingen` WRITE;
 /*!40000 ALTER TABLE `Metingen` DISABLE KEYS */;
 /*!40000 ALTER TABLE `Metingen` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `Boeken`
+--
+
+DROP TABLE IF EXISTS `Boeken`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `Boeken` (
+  `Voornaam` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `Familienaam` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Titel` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `Stad` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `Verschijningsjaar` varchar(4) DEFAULT NULL,
+  `Uitgeverij` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `Herdruk` varchar(4) DEFAULT NULL,
+  `Commentaar` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `Categorie` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `IngevoegdDoor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Boeken`
+--
+
+LOCK TABLES `Boeken` WRITE;
+/*!40000 ALTER TABLE `Boeken` DISABLE KEYS */;
+INSERT INTO `Boeken` VALUES
+('Aurelius','Augustinus',NULL,NULL,NULL,NULL,NULL,NULL,'Metafysica',NULL),
+('Diderik','Batens','Logicaboek','','1999','','','','Metafysica',''),
+('Stephen','Hawking','The Nature of Space and Time',NULL,'1996',NULL,NULL,NULL,'Wiskunde',NULL),
+('Stephen','Hawking','Antwoorden op de grote vragen',NULL,NULL,NULL,NULL,NULL,'Filosofie',NULL),
+('William','Dunham','Journey through Genius: The Great Theorems of Mathematics',NULL,NULL,NULL,NULL,NULL,'Wiskunde',NULL),
+('William','Dunham','Euler: The Master of Us All',NULL,'1999',NULL,NULL,'Te lezen','Geschiedenis',NULL),
+('Evert Willem','Beth','Mathematical Thought',NULL,'2010',NULL,NULL,NULL,'Filosofie',NULL),
+('Jef','B','Het Boek',NULL,'2015',NULL,NULL,NULL,'Filosofie',NULL),
+('Mathijs','Degrote','Leren werken met SQL',NULL,NULL,NULL,NULL,'Kan nooit kwaad','Informatica',NULL),
+('Tom','Van Wommel','Auteursrecht',NULL,NULL,NULL,NULL,'Nuttig om te weten','Recht',NULL),
+('Kris','Van Laer','Schaken',NULL,NULL,NULL,NULL,'Veel goede tips','Entertainment',NULL),
+('Ellen','Reynaert','Het criminele brein',NULL,NULL,NULL,NULL,NULL,'Psychologie',NULL);
+/*!40000 ALTER TABLE `Boeken` ENABLE KEYS */;
+UNLOCK TABLES;
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
