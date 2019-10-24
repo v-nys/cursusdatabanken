@@ -113,7 +113,7 @@ Sla dit op als 0509\_\_CalibrateDB.sql in je map met scripts.
 
 ### nummers
 
-Schrijf een script dat volgende nummers toevoegt aan je tabel, `Liedjes`. Ze worden gegeven in het formaat "titel / artiest / album / releasejaar":
+Schrijf een script dat volgende nummers toevoegt aan je tabel, `Liedjes`. Ze worden gegeven in het formaat "titel / artiest / album / jaar":
 
 * Stairway to Heaven / Led Zeppelin / Led Zeppelin IV / 1971
 * Good Enough / Molly Tuttle / Rise / 2017
