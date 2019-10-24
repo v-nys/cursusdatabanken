@@ -192,9 +192,9 @@ Schrijf een script, 0525\_\_Oefening.sql, dat de zin "X is de naam van een hond"
 
 ### Oefening 1
 
-Door de naam van een te controleren kolom te laten volgen door `COLLATE (een-of-andere-collation)` behandel je vergelijkingen alsof de kolom een andere collation heeft.
+Door de naam van een te controleren kolom te laten volgen door `COLLATE (een-of-andere-collation)` behandel je vergelijkingen alsof de kolom een andere collation heeft. Zo levert `'hello' COLLATE utf8mb4_0900_ai_ci = 'HélLô'` het resultaat `TRUE`
 
-Voorspel wat volgende code zal doen bij collation utf8mb4\_0900\_ci\_as:
+Voorspel wat volgende code zal doen bij collation utf8mb4\_0900\_as\_ci:
 
 ```sql
 USE ModernWays;
@@ -210,7 +210,7 @@ values
   ('Céline', 'Claus', 'De verwondering', 'Antwerpen', 'Manteau', '1970','Filosofie'),
   ('Celine' ,'Raes', 'Jagen en gejaagd worden', 'Antwerpen', 'De Bezige Bij', '1954','Filosofie'),
   ('CELINE', 'Sarthe', 'Het zijn en het niets', 'Parijs', 'Gallimard', '1943','Filosofie');
-select * from Boeken where voornaam = 'Celine';
+select * from Boeken where Voornaam = 'Celine';
 ```
 
 Pas vervolgens de code aan zodat je enkel en alleen het boek van Raes te zien krijgt. Sla op als 0526\_\_Oefening.sql.
