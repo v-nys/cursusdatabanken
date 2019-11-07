@@ -56,6 +56,8 @@ SELECT Voornaam from Boeken
    WHERE Voornaam LIKE 'ma%ijs';
 ```
 
+Je kan ook voor `LIKE` gebruik maken van `COLLATE` om te bepalen of het patroon rekening houdt met hoofdletters of niet.
+
 {% hint style="warning" %}
 De `LIKE` wordt door beginners vaak vergeten. Je komt soms dingen tegen als `WHERE Voornaam = 'ma%ijs'`. Dat zal geen resultaten opleveren, want niemand heeft letterlijk de voornaam "Ma%ijs".
 {% endhint %}
