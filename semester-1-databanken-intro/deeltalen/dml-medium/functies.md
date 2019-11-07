@@ -20,9 +20,6 @@ Je kan wel net zo goed dit doen:
 SELECT 'Ha';
 ```
 
-{% hint type='info' %}
-{% endhint %}
-
 ## CONCAT
 Deze functie gebruik je om stukken tekst aan elkaar te hangen. Je kan dus dit doen om de volledige naam van auteurs te tonen:
 
