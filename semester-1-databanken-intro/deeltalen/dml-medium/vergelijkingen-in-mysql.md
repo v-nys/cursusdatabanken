@@ -127,6 +127,12 @@ Je kan in MySQL Workbench ook rechtsklikken op de tabel in kwestie en dan via "T
 * als ze `_cs` bevat, is de collation hoofdlettergevoelig
 * als ze `_ci` bevat, is de collation hoofdletterongevoelig
 
+Als je dus bijvoorbeeld enkel een boek van Breton wil, zonder boeken van "Bréton" of "breton", schrijf je:
+
+```sql
+SELECT * FROM Boeken WHERE Familienaam COLLATE utf8mb4_as_cs = 'Breton';
+```
+
 {% hint style="info" %}
 Als je MySQL geïnstalleerd hebt zoals afgesproken, wordt standaard de tekenset `utf8mb4` en de collation `utf8mb4_0900_ai_ci` gebruikt. Dus met de standaardinstellingen maakt het niet uit of je `CHAR SET utf8mb4` toevoegt, maar het is beter expliciet te zijn dan te hopen dat jouw database nog volledig ingesteld is op standaardinstellingen.
 {% endhint %}
