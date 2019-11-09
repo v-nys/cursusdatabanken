@@ -72,3 +72,11 @@ Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. 
 | 0533\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
 | 0534\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
 | 0535\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
+
+Je scripts toevoegen doe je met:
+
+```text
+git add --all
+git commit -m "mijn nieuwste scripts"
+git push
+```
