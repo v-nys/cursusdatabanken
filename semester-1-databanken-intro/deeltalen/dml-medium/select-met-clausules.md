@@ -19,6 +19,7 @@ SELECT expression(s) waarin sleutelwoorden, namen en constanten zitten FROM Tabe
 ```
 
 Hiermee kan je:
+
 * enkel bepaalde rijen weergeven
 * rijen met eenzelfde waarde voor een bepaalde eigenschap groeperen
 * statistische eigenschappen van de getoonde data afdwingen
@@ -29,3 +30,4 @@ In de volgende pagina's komen al deze clausules aan bod.
 {% hint style="info" %}
 Wat je hier leert over `WHERE` is overdraagbaar naar andere DML-statements. Je kan bijvoorbeeld enkel specifieke rijen updaten of wissen.
 {% endhint %}
+

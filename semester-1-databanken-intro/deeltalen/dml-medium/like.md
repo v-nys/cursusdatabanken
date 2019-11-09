@@ -1,12 +1,8 @@
-# `WHERE` omschrijven met `LIKE`
-In veel gevallen weten we maar half wat we willen zoeken. We kennen een deel van de naam, het begin of het einde of iets tussenin.
-Met de `LIKE` operator kan je in SQL naar patronen zoeken (pattern matching).
-Je kan met de `LIKE` operator naar patronen in tekst zoeken.
-Je combineert de `LIKE` operator met jokers (**wildcards**) om een booleaanse expressie te vormen.
-De set van jokers bestaat uit symbolen die één of meer ontbrekende tekens voorstellen.
+# LIKE: rijen beschrijven
 
-De LIKE operator vergelijkt een tekstuitdrukking in het linkerlid, dat eventueel een wildcard bevat, met een patroon tussen aanhalingstekens in het rechterlid.
-Een patroon is een veralgemeende tekstuitdrukking. d.w.z. een tekst waarin nog enige vrijheid bestaat.
+In veel gevallen weten we maar half wat we willen zoeken. We kennen een deel van de naam, het begin of het einde of iets tussenin. Met de `LIKE` operator kan je in SQL naar patronen zoeken \(pattern matching\). Je kan met de `LIKE` operator naar patronen in tekst zoeken. Je combineert de `LIKE` operator met jokers \(**wildcards**\) om een booleaanse expressie te vormen. De set van jokers bestaat uit symbolen die één of meer ontbrekende tekens voorstellen.
+
+De LIKE operator vergelijkt een tekstuitdrukking in het linkerlid, dat eventueel een wildcard bevat, met een patroon tussen aanhalingstekens in het rechterlid. Een patroon is een veralgemeende tekstuitdrukking. d.w.z. een tekst waarin nog enige vrijheid bestaat.
 
 De betekenis van de wildcards in SQL is als volgt:
 
@@ -47,7 +43,7 @@ SELECT Voornaam, Familienaam, Titel, Verschijningsjaar
    WHERE Titel LIKE '%economie%';
 ```
 
-Het is belangrijk dat je toepassing van de LIKE operator en de wildcard ziet. Bijvoorbeeld (0032\_\_SelectBoeken.sql):
+Het is belangrijk dat je toepassing van de LIKE operator en de wildcard ziet. Bijvoorbeeld \(0032\_\_SelectBoeken.sql\):
 
 ```sql
 USE ModernWays;
@@ -60,6 +56,9 @@ SELECT Voornaam from Boeken
    WHERE Voornaam LIKE 'ma%ijs';
 ```
 
+Je kan ook voor `LIKE` gebruik maken van `COLLATE` om te bepalen of het patroon rekening houdt met hoofdletters of niet.
+
 {% hint style="warning" %}
 De `LIKE` wordt door beginners vaak vergeten. Je komt soms dingen tegen als `WHERE Voornaam = 'ma%ijs'`. Dat zal geen resultaten opleveren, want niemand heeft letterlijk de voornaam "Ma%ijs".
 {% endhint %}
+
