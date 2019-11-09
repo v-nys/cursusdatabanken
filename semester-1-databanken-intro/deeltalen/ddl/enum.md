@@ -46,7 +46,7 @@ VALUES
 (6, 'broek', 'large'),
 (7, 'trui', 'small'),
 (8, 'trui', 'medium'),
-(9, 'trui', 'large')
+(9, 'trui', 'large');
 ```
 
 Wat **niet** gaat, is dit (hoef je niet op te slaan):
@@ -64,5 +64,5 @@ Enumeraties hebben verschillende voordelen:
 * Ze zorgen voor meer leesbare invoer en uitvoer dan getallen.
 
 {% hint style="warning" %}
-Let op! Enumeraties zijn een soort strings, maar ze worden anders gesorteerd. De volgorde waarin waarden van een enum gesorteerd worden, is de volgorde waarin de elementen gedeclareerd zijn.
+Let op! Enumeraties lijken op strings, maar ze worden anders gesorteerd. De volgorde waarin waarden van een enum gesorteerd worden, is de volgorde waarin de elementen gedeclareerd zijn.
 {% endhint %}
