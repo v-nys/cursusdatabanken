@@ -4,6 +4,7 @@ Soms wordt de SQL-basissyntax wat langdradig. Een voorbeeld daarvan is als je ve
 Een logge manier om hun gegevens op te vragen is deze, die je al kent:
 
 ```sql
+USE ModernWays;
 SELECT *
 FROM Honden
 WHERE Naam = 'Bailey'
@@ -19,6 +20,7 @@ We moeten steeds het gedeelte `Naam = ` herhalen. Dit komt omdat de `WHERE`-clau
 Gelukkig is er een andere manier om sneller de gewenste booleaanse expressie te vormen (0049\_\_SelectHonden.sql):
 
 ```sql
+USE ModernWays;
 SELECT * FROM Honden
 WHERE Naam IN ('Bailey','Cookie','Lola','Iggy','Snoopy','Leo')
 ```
@@ -28,8 +30,25 @@ Je schrijft dus een lijst van alle mogelijkheden met ronde haakjes en met elemen
 Als we uitdrukkelijk rekening willen houden met hoofdletters en accenten, kunnen we ook hier de gebruikte collation aanpassen (0050\_\_SelectHonden.sql):
 
 ```sql
+USE ModernWays;
 SELECT * FROM Honden
 WHERE Naam COLLATE utf8mb4_as_cs IN ('Bailey','Cookie','Lola','Iggy','Snoopy','Leo')
+```
+
+De `IN` is niet specifiek gelinkt aan `WHERE`, maar is gewoon een andere operator om een booleaanse expressie te bekomen. Je kan dus ook dit doen (0051\_\_SelectHonden.sql), met `HAVING` in plaats van `WHERE`:
+
+```sql
+USE ModernWays;
+SELECT MAX(Leeftijd)
+FROM Honden
+GROUP BY Geslacht
+HAVING MAX(Leeftijd) IN (13,15);
+```
+
+Je kan zelfs gewoon dit doen:
+
+```sql
+SELECT 5 in (3,7,9);
 ```
 
 {% hint style="info" %}
