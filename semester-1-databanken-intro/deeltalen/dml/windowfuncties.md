@@ -53,7 +53,7 @@ Hier kan je de leeftijd opvragen, maar kan je `COUNT` niet per groep toepassen.
 **In het algemeen geldt dat je alleen velden die gebruikt zijn om te groeperen kan tonen in combinatie met resultaten van windowfuncties.**
 
 {% hint style="warning" %}
-Er is hier een uitzondering op (waarden die functioneel afhankelijk zijn van de groepering), maar dit laten we achterwege. Volg gewoon de richtlijn.
+Er is hier een uitzondering op, waardoor sommige schijnbaar onaanvaardbare queries toch kunnen uitvoeren. Je hoeft op dit punt niet te weten wat dat betekent, maar als je later teruggrijpt naar deze cursus: de uitzondering betreft waarden die functioneel afhankelijk zijn van de gegroepeerde kolommen.
 {% endhint %}
 
 Dit is dus wel geldig (0045__SelectHonden.sql):
@@ -76,7 +76,7 @@ FROM Honden
 GROUP BY Honden.Geslacht;
 ```
 
-En met deze query moet je oppassen:
+En deze gaat normaal niet:
 
 ```sql
 USE ModernWays;
