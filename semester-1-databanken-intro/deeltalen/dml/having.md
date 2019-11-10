@@ -1,4 +1,4 @@
-# `SELECT` met `HAVING`
+# Voorwaarden bij groepering (`HAVING`)
 Met de `WHERE`-clausule kon je voorwaarden uitdrukken voor het selecteren (of updaten of wissen) van records. Je kan met `WHERE` echter **geen** voorwaarden uitdrukken op kolommen die vermeld zijn in de `GROUP BY`-clause of op geaggregeerde waarden. Met andere woorden, dit gaat niet:
 
 ```sql
