@@ -254,3 +254,53 @@ GROUP BY Leeftijd;
 ```
 
 Dit toont ons dat er 10 (dus 6 vrouwelijke en 4 mannelijke) honden zijn van 1 jaar oud. Anders gezegd: hoe meer kolommen je vermeldt na `GROUP BY`, hoe meer onderverdelingen je zal zien.
+
+## toepassing: aggregaatfuncties
+
+Nu kan je iets zeggen over de kolommen met een verzameling met behulp van aggregaatfuncties. Dit zijn functies (en gewone functies heb je al eerder gezien), maar ze werken specifiek op verzamelingen van de normale datatypes. De belangrijkste zijn:
+
+    count
+    min
+    max
+    avg
+    sum
+
+Met deze code kan je bijvoorbeeld de gemiddelde leeftijd per geslacht in de tabel tonen:
+
+USE ModernWays;
+
+SELECT avg(Honden.Leeftijd)
+FROM Honden
+GROUP BY Honden.Geslacht;
+
+Met deze code, de hoogste leeftijd per geslacht:
+
+USE ModernWays;
+        
+SELECT max(Honden.Leeftijd)
+FROM Honden
+GROUP BY Honden.Geslacht;
+
+En met deze query moet je oppassen:
+
+USE ModernWays;
+SELECT Honden.Naam
+FROM Honden
+GROUP BY Honden.Geslacht;
+
+Op mijn machine geeft dit twee rijen (met telkens één kolom): één met "Ming" en één met "Misty". Onder MySQL wordt er in het algemeen gewoon een naam uit de verzameling mogelijke namen gehaald. In andere SQL-omgevingen werkt dit mogelijk niet en ben je verplicht een aggregaatfunctie toe te passen op de verzamelde waarden.
+
+Je kan ook aggregaatfuncties toepassen wanneer je géén gebruik aan het maken bent van GROUP BY, omdat SELECT niet gewoon data toont, maar eigenlijk een verzameling van rijen teruggeeft en aggregaatfuncties nu net op verzamelingen werken. Dus dit gaat ook:
+
+USE ModernWays;
+SELECT count(*)
+FROM Honden;
+
+Dit laatste is zou hetzelfde resultaat opleveren als je count(*) zou vervangen door count(Honden.Naam) of count(Honden.Leeftijd) of count(Honden.Geslacht). Dat komt omdat count gewoon het aantal rijen telt. Dat aantal is (zonder bijkomende operatoren zoals DISTINCT, zie later) altijd hetzelfde, ongeacht welke kolom je selecteert.
+
+## wat kan?
+Na groepering kan je twee soorten kolommen tonen:
+
+* geaggregeerde kolommen
+* functioneel afhankelijke kolommen
+
