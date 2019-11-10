@@ -48,6 +48,7 @@
   * [Groeperen en samenvatten](semester-1-databanken-intro/deeltalen/dml/README3.md)
     * [SELECT met GROUP BY](semester-1-databanken-intro/deeltalen/dml/select-met-group-by.md)
     * [aggregaatfuncties](semester-1-databanken-intro/deeltalen/dml/aggregaatfuncties.md)
+    * [aggregaatfuncties als windowfuncties](semester-1-databanken-intro/deeltalen/dml/windowfuncties.md)
     * [SELECT met HAVING](semester-1-databanken-intro/deeltalen/dml/having.md)
 * [NoSQL](semester-1-databanken-intro/nosql.md)
 * [ERM](semester-1-databanken-intro/erm/README.md)

@@ -212,7 +212,7 @@ VALUES
 
 Als je wil weten hoe veel honden van elk geslacht er zijn, schrijf je dit (0037__SelectHonden.sql):
 
-```
+```sql
 USE ModernWays;
 SELECT COUNT(*), Geslacht
 FROM Honden
@@ -225,7 +225,7 @@ Voorlopig onthoud je maar dat `COUNT(*)` vertelt hoe veel resultaten er per groe
 
 Met bovenstaande query zie je per geslacht hoe veel honden er zijn. De tussenliggende tabel is een hulpmiddel om hierover na te denken; volgende code zou niet werken:
 
-```
+```sql
 USE ModernWays;
 SELECT *
 FROM Honden
@@ -237,7 +237,7 @@ Dit geeft je een foutmelding, waarvan we de precieze betekenis verderop toelicht
 ## uitbreiding naar meerdere kolommen
 `GROUP BY` hoeft niet gevolgd te worden door één kolom, maar kan door meerdere kolommen gevolgd worden. In dat geval groepeer je records **per unieke combinatie** van kolomwaarden. Je kan bijvoorbeeld dit doen (0038__SelectHonden.sql):
 
-```
+```sql
 USE ModernWays;
 SELECT COUNT(*), Geslacht, Leeftijd
 FROM Honden
@@ -246,7 +246,7 @@ GROUP BY Geslacht, Leeftijd;
 
 Dit toont je hoe veel mannelijke en hoe veel vrouwelijke honden er zijn van elke leeftijd die in het systeem voorkomt. Er zijn bijvoorbeeld 6 vrouwelijke honden van 1 jaar oud en 4 mannelijke honden van 1 jaar oud. We kunnen ter controle ook dit even doen (0039__SelectHonden.sql):
 
-```
+```sql
 USE ModernWays;
 SELECT COUNT(*), Leeftijd
 FROM Honden
