@@ -22,7 +22,7 @@ Als de winkel alleen polo's, broeken en truien verkoopt en als er maar drie form
 Dat gaat als volgt:
 
 ```sql
-CREATE TABLE Kledij (
+CREATE TABLE Kledingstukken (
 -- later zullen we zien dat je hier best een primary key van maakt
 Nummer INT NOT NULL,
 Type ENUM('polo','broek','trui'),
@@ -30,13 +30,13 @@ Formaat ENUM('small','medium','large')
 )
 ```
 
-Noem die code 0033__CreateKledij.sql.
+Noem die code 0033__CreateKledingstukken.sql.
 
-Vervolgens kan je data aanmaken alsof de tweede en derde kolom tekst bevatten, met 0034__InsertKledij.sql:
+Vervolgens kan je data aanmaken alsof de tweede en derde kolom tekst bevatten, met 0034__InsertKledingstukken.sql:
 
 ```sql
 USE ModernWays;
-INSERT INTO Kledij
+INSERT INTO Kledingstukken
 VALUES
 (1, 'polo', 'small'),
 (2, 'polo', 'medium'),
@@ -52,7 +52,7 @@ VALUES
 Wat **niet** gaat, is dit (hoef je niet op te slaan):
 ```sql
 USE ModernWays;
-INSERT INTO Kledij
+INSERT INTO Kledingstukken
 VALUES
 (10,'hemd','extra large');
 ```
@@ -63,6 +63,15 @@ Enumeraties hebben verschillende voordelen:
 * Ze zijn zuiniger in gebruik van opslagruimte dan strings die dezelfde tekst voorstellen.
 * Ze zorgen voor meer leesbare invoer en uitvoer dan getallen.
 
-{% hint style="warning" %}
-Let op! Enumeraties lijken op strings, maar ze worden anders gesorteerd. De volgorde waarin waarden van een enum gesorteerd worden, is de volgorde waarin de elementen gedeclareerd zijn.
-{% endhint %}
+Let wel op! Enumeraties lijken op strings, maar ze worden anders gesorteerd. De volgorde waarin waarden van een enum gesorteerd worden, is de volgorde waarin de elementen gedeclareerd zijn.
+
+Dit kan je afleiden uit volgend script (0035__SelectKledingstukken.sql):
+
+```sql
+USE ModernWays;
+SELECT *
+FROM Kledingstukken
+ORDER BY Formaat;
+```
+
+Wat zou dit geven als formaat een `VARCHAR` was?
