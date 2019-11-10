@@ -4,7 +4,7 @@ We hebben `GROUP BY` geïllustreerd met een nieuw soort output, `COUNT(*)`. Dit 
 ## aggregaatfunctie: `COUNT`
 `COUNT` krijgt als invoer een lijst rijen en zegt hoe veel niet-`NULL` elementen er in deze lijst zitten.
 
-De simpelste toepassing is het tellen val al je records, zoals hier in 0040__SelectHOnden.sql:
+De simpelste toepassing is het tellen val al je records, zoals hier in 0040\_\_SelectHOnden.sql:
 
 ```sql
 USE ModernWays;
@@ -15,7 +15,7 @@ FROM Honden;
 We schrijven in deze toepassing meestal `COUNT(*)` voor het gemak, maar in principe kan je tussen de haakjes om het even welke naam van een kolom die geen `NULL` toestaat uit je lijst met resultaten zetten.
 
 ## aggregaatfunctie: `SUM`
-Deze aggregaatfunctie krijgt een expressie en berekent voor de som van het toepassen van deze expressie voor elk record. Een eenvoudig voorbeeld van een expressie is hier (in 0041__SelectHonden) een kolomnaam:
+Deze aggregaatfunctie krijgt een expressie en berekent voor de som van het toepassen van deze expressie voor elk record. Een eenvoudig voorbeeld van een expressie is hier (in 0041\_\_SelectHonden) een kolomnaam:
 
 ```sql
 USE ModernWays;
@@ -34,7 +34,7 @@ FROM Honden;
 ```
 
 ## aggregaatfuncties: `MIN` en `MAX`
-Deze aggregaatfuncties krijgen een expressie en berekenen het minimum of het maximum voor het toepassen van deze expressie voor elk record. Een eenvoudig voorbeeld van een expressie is hier (in 0042__SelectHonden) een kolomnaam:
+Deze aggregaatfuncties krijgen een expressie en berekenen het minimum of het maximum voor het toepassen van deze expressie voor elk record. Een eenvoudig voorbeeld van een expressie is hier (in 0042\_\_SelectHonden) een kolomnaam:
 
 ```sql
 USE ModernWays;
@@ -45,7 +45,7 @@ FROM Honden;
 Dit vertelt je wat de leeftijd van de oudste hond in het systeem is.
 
 ## aggregaatfunctie: `AVG`
-Deze aggregaatfunctie krijgt een expressie en berekent het gemiddelde voor het toepassen van deze expressie voor elk record. Een eenvoudig voorbeeld van een expressie is hier (in 0043__SelectHonden) een kolomnaam:
+Deze aggregaatfunctie krijgt een expressie en berekent het gemiddelde voor het toepassen van deze expressie voor elk record. Een eenvoudig voorbeeld van een expressie is hier (in 0043\_\_SelectHonden) een kolomnaam:
 
 ```sql
 USE ModernWays;

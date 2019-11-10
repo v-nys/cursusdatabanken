@@ -28,7 +28,7 @@ Je moet dit enkel zien als een hulpmiddel om over `GROUP BY` na te denken! Je ka
 
 De kolom vermeld na `GROUP BY` neemt geen nieuwe vorm aan, maar komt nog één keer voor per waarde. Er is dus precies één rij met de waarde `"mannelijk"` en één rij met de waarde `"vrouwelijk"`. De andere kolommen veranderen eigenlijk van datatype: de kolom voor de naam bevat een sequentie van `VARCHAR(50)` per rij in plaats van een `VARCHAR(50)` per rij. De kolom voor de leeftijd bevat een sequentie van `TINYINT` in plaats een `TINYINT` per rij, wat hier aangegeven is door de verschillende waarden tussen rechte haakjes te zetten. Er is gekozen voor deze notatie omdat dit lijkt op het gebruik van lijsten in de meeste programmeertalen. De kolom voor het geslacht bevat nog steeds waarden uit een `ENUM`, omdat GROUP BY nu juist zo werkt dat er precies één waarde is voor elke rij.
 
-Ter illustratie maken we gebruik van volgend script (0035__CreateHonden.sql):
+Ter illustratie maken we gebruik van volgend script (0035\_\_CreateHonden.sql):
 
 ```sql
 USE ModernWays;
@@ -210,7 +210,7 @@ VALUES
 ("Boomer",15,"mannelijk");
 ```
 
-Als je wil weten hoe veel honden van elk geslacht er zijn, schrijf je dit (0037__SelectHonden.sql):
+Als je wil weten hoe veel honden van elk geslacht er zijn, schrijf je dit (0037\_\_SelectHonden.sql):
 
 ```sql
 USE ModernWays;
@@ -235,7 +235,7 @@ GROUP BY Geslacht;
 Dit geeft je een foutmelding, waarvan we de precieze betekenis verderop toelichten.
 
 ## uitbreiding naar meerdere kolommen
-`GROUP BY` hoeft niet gevolgd te worden door één kolom, maar kan door meerdere kolommen gevolgd worden. In dat geval groepeer je records **per unieke combinatie** van kolomwaarden. Je kan bijvoorbeeld dit doen (0038__SelectHonden.sql):
+`GROUP BY` hoeft niet gevolgd te worden door één kolom, maar kan door meerdere kolommen gevolgd worden. In dat geval groepeer je records **per unieke combinatie** van kolomwaarden. Je kan bijvoorbeeld dit doen (0038\_\_SelectHonden.sql):
 
 ```sql
 USE ModernWays;
@@ -244,7 +244,7 @@ FROM Honden
 GROUP BY Geslacht, Leeftijd;
 ```
 
-Dit toont je hoe veel mannelijke en hoe veel vrouwelijke honden er zijn van elke leeftijd die in het systeem voorkomt. Er zijn bijvoorbeeld 6 vrouwelijke honden van 1 jaar oud en 4 mannelijke honden van 1 jaar oud. We kunnen ter controle ook dit even doen (0039__SelectHonden.sql):
+Dit toont je hoe veel mannelijke en hoe veel vrouwelijke honden er zijn van elke leeftijd die in het systeem voorkomt. Er zijn bijvoorbeeld 6 vrouwelijke honden van 1 jaar oud en 4 mannelijke honden van 1 jaar oud. We kunnen ter controle ook dit even doen (0039\_\_SelectHonden.sql):
 
 ```sql
 USE ModernWays;

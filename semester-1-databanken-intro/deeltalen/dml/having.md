@@ -18,7 +18,7 @@ GROUP BY Geslacht
 WHERE Geslacht = 'mannelijk';
 ```
 
-Als je dit soort voorwaarden wil uitdrukken, maak je gebruik van `HAVING` (0047__SelectHonden.sql) en (0048__SelectHonden.sql):
+Als je dit soort voorwaarden wil uitdrukken, maak je gebruik van `HAVING` (0047\_\_SelectHonden.sql) en (0048\_\_SelectHonden.sql):
 
 ```sql
 -- een voorbeeld met een gegroepeerde kolom

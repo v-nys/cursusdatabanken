@@ -2,7 +2,7 @@
 Aggregaatfuncties worden vaak gecombineerd met `GROUP BY`. Het resultaat ervan lijkt intuïtief juist, maar eigenlijk is het niet vanzelfsprekend. De "missing link" tussen aggregaatfuncties en `GROUP BY` is het idee van een **windowfunctie**.
 
 ## `COUNT` als windowfunctie
-Je kan met `COUNT` tellen per geslacht (0044__SelectHonden.sql):
+Je kan met `COUNT` tellen per geslacht (0044\_\_SelectHonden.sql):
 
 ```sql
 USE ModernWays;
@@ -56,7 +56,7 @@ Hier kan je de leeftijd opvragen, maar kan je `COUNT` niet per groep toepassen.
 Er is hier een uitzondering op, waardoor sommige schijnbaar onaanvaardbare queries toch kunnen uitvoeren. Je hoeft op dit punt niet te weten wat dat betekent, maar als je later teruggrijpt naar deze cursus: de uitzondering betreft waarden die functioneel afhankelijk zijn van de gegroepeerde kolommen.
 {% endhint %}
 
-Dit is dus wel geldig (0045__SelectHonden.sql):
+Dit is dus wel geldig (0045\_\_SelectHonden.sql):
 
 ```sql
 USE ModernWays;
@@ -66,7 +66,7 @@ FROM Honden
 GROUP BY Honden.Geslacht;
 ```
 
-Of dit (0046__SelectHonden.sql):
+Of dit (0046\_\_SelectHonden.sql):
 
 ```sql
 USE ModernWays;
