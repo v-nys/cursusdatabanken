@@ -1,9 +1,8 @@
-# Scripts
-
+# Overzicht van alle scripts
 Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. Als een script meermaals vermeld wordt, wordt het op meerdere plaatsen besproken, dus check beide. Hou je verzameling scripts up-to-date!
 
-| Bestandsnaam | Vermeld op pagina |
-|--------------|-------------------|
+| Bestandsnaam                     | Vermeld op pagina |
+|----------------------------------|-------------------|
 | 0001\_\_CreateDatabase.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/create) |
 | 0001\_\_CreateDatabase.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/create) |
 | 0002\_\_CreateBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/create) |
@@ -17,26 +16,48 @@ Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. 
 | 0010\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen) |
 | 0011\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen) |
 | 0012\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen) |
-| 0013\_\_InsertBoek.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/insert) |
-| 0014\_\_InsertBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/insert) |
-| 0015\_\_UpdateBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/update) |
-| 0016\_\_DeleteBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/delete) |
+| 0013\_\_InsertBoek.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/readme1/insert) |
+| 0014\_\_InsertBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/readme1/insert) |
+| 0015\_\_UpdateBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/readme1/update) |
+| 0016\_\_DeleteBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/readme1/delete) |
 | 0017\_\_CalibrateDB.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo) |
-| 0018\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/select-met-where) |
-| 0019\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/select-met-where) |
-| 0020\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/select-met-where) |
-| 0021\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/select-met-where) |
-| 0022\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/praktijkvoorbeeld-logische-operatoren) |
-| 0023\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/praktijkvoorbeeld-logische-operatoren) |
-| 0024\_\_InsertBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/praktijkvoorbeeld-logische-operatoren) |
-| 0025\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/praktijkvoorbeeld-logische-operatoren) |
-| 0026\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/praktijkvoorbeeld-logische-operatoren) |
-| 0027\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/praktijkvoorbeeld-logische-operatoren) |
-| 0028\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/vergelijkingen-in-mysql) |
-| 0029\_\_InsertBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/vergelijkingen-in-mysql) |
-| 0030\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/vergelijkingen-in-mysql) |
-| 0031\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/select-sorteren) |
-| 0032\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/like) |
+| 0018\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/select-met-where) |
+| 0019\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/select-met-where) |
+| 0020\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/select-met-where) |
+| 0021\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/select-met-where) |
+| 0022\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/praktijkvoorbeeld-logische-operatoren) |
+| 0023\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/praktijkvoorbeeld-logische-operatoren) |
+| 0024\_\_InsertBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/praktijkvoorbeeld-logische-operatoren) |
+| 0025\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/praktijkvoorbeeld-logische-operatoren) |
+| 0026\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/praktijkvoorbeeld-logische-operatoren) |
+| 0027\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/praktijkvoorbeeld-logische-operatoren) |
+| 0028\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/vergelijkingen-in-mysql) |
+| 0029\_\_InsertBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/vergelijkingen-in-mysql) |
+| 0030\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/vergelijkingen-in-mysql) |
+| 0031\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/select-sorteren) |
+| 0032\_\_SelectBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/like) |
+| 0033\_\_CreateKledingstukken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/enum) |
+| 0034\_\_InsertKledingstukken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/enum) |
+| 0035\_\_SelectKledingstukken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/enum) |
+| 0036\_\_CreateHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/select-met-group-by) |
+| 0037\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/select-met-group-by) |
+| 0038\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/select-met-group-by) |
+| 0039\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/select-met-group-by) |
+| 0040\_\_SelectHOnden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/aggregaatfuncties) |
+| 0041\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/aggregaatfuncties) |
+| 0042\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/aggregaatfuncties) |
+| 0043\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/aggregaatfuncties) |
+| 0044\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/windowfuncties) |
+| 0045\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/windowfuncties) |
+| 0046\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/windowfuncties) |
+| 0047\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/having) |
+| 0048\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/having) |
+| 0049\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/in) |
+| 0050\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/in) |
+| 0051\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/in) |
+| 0052\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/in) |
+| 0052\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/between) |
+| 0053\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/distinct) |
 | 0500\_\_CalibrateDB.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo) |
 | 0501\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo) |
 | 0502\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo) |
@@ -46,41 +67,30 @@ Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. 
 | 0506\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo) |
 | 0507\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo) |
 | 0508\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo) |
-| 0509\_\_CalibrateDB.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo) |
-| 0510\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo) |
-| 0511\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo) |
-| 0512\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo) |
-| 0513\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo) |
-| 0514\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo) |
-| 0515\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo) |
-| 0516\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo) |
-| 0517\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo) |
-| 0518\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo) |
-| 0519\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo) |
-| 0520\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo) |
-| 0521\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo) |
-| 0522\_\_CalibrateDB.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
-| 0523\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
-| 0524\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
-| 0525\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
-| 0526\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
-| 0527\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
-| 0528\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
-| 0529\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
-| 0530\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
-| 0531\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
-| 0532\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
-| 0533\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
-| 0534\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
-| 0535\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-medium) |
-
-<<<<<<< HEAD
-Je scripts toevoegen doe je met:
-
-```text
-git add --all
-git commit -m "mijn nieuwste scripts"
-git push
-```
-=======
->>>>>>> f4f7c2ce38c0cb1cc9d8b906891a629438a943bf
+| 0509\_\_CalibrateDB.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/readme1/oefeningen-labo) |
+| 0510\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/readme1/oefeningen-labo) |
+| 0511\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/readme1/oefeningen-labo) |
+| 0512\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/readme1/oefeningen-labo) |
+| 0513\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/readme1/oefeningen-labo) |
+| 0514\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/readme1/oefeningen-labo) |
+| 0515\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/readme1/oefeningen-labo) |
+| 0516\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/readme1/oefeningen-labo) |
+| 0517\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/readme1/oefeningen-labo) |
+| 0518\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/readme1/oefeningen-labo) |
+| 0519\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/readme1/oefeningen-labo) |
+| 0520\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/readme1/oefeningen-labo) |
+| 0521\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/readme1/oefeningen-labo) |
+| 0522\_\_CalibrateDB.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/oefeningen-labo-medium) |
+| 0523\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/oefeningen-labo-medium) |
+| 0524\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/oefeningen-labo-medium) |
+| 0525\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/oefeningen-labo-medium) |
+| 0526\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/oefeningen-labo-medium) |
+| 0527\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/oefeningen-labo-medium) |
+| 0528\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/oefeningen-labo-medium) |
+| 0529\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/oefeningen-labo-medium) |
+| 0530\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/oefeningen-labo-medium) |
+| 0531\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/oefeningen-labo-medium) |
+| 0532\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/oefeningen-labo-medium) |
+| 0533\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/oefeningen-labo-medium) |
+| 0534\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/oefeningen-labo-medium) |
+| 0535\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-medium/oefeningen-labo-medium) |

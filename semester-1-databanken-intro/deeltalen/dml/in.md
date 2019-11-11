@@ -1,4 +1,6 @@
 # Snel vergelijken met meerdere waarden: IN
+
+## `IN` voor verkorte notatie
 Soms wordt de SQL-basissyntax wat langdradig. Een voorbeeld daarvan is als je verschillende waarden tegelijk wil onderzoeken. Het kan bijvoorbeeld zijn dat je enkel in bepaalde honden geïnteresseerd bent, waarvan je de naam al kent. Bijvoorbeeld Bailey, Cookie, Lola, Iggy, Snoopy en Leo.
 
 Een logge manier om hun gegevens op te vragen is deze, die je al kent:
@@ -54,3 +56,19 @@ SELECT 5 in (3,7,9);
 {% hint style="info" %}
 Misschien vraag je je af of er ook een kortere notatie is voor pattern matching met `LIKE`. Min of meer, maar dit behandelen we pas in een latere cursus. Het concept hierachter is een "reguliere expressie".
 {% endhint %}
+
+## geneste queries
+Je kan met `IN` ook controleren of het waarde in het resultaat van een "kleinere" query voorkomt. Dit noemen we een **geneste query**. Een voorbeeld hiervan is dit (0052\_\_SelectHonden.sql):
+
+```sql
+USE ModernWays;
+SELECT Naam
+FROM Honden
+WHERE Geslacht = "mannelijk"
+AND Naam IN
+  (SELECT Naam
+   FROM Honden
+   WHERE Geslacht = "vrouwelijk");
+```
+
+Probeer zelf te achterhalen wat dit doet en hoe het werkt!

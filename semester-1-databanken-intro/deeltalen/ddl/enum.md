@@ -30,9 +30,9 @@ Formaat ENUM('small','medium','large')
 )
 ```
 
-Noem die code 0033__CreateKledingstukken.sql.
+Noem die code 0033\_\_CreateKledingstukken.sql.
 
-Vervolgens kan je data aanmaken alsof de tweede en derde kolom tekst bevatten, met 0034__InsertKledingstukken.sql:
+Vervolgens kan je data aanmaken alsof de tweede en derde kolom tekst bevatten, met 0034\_\_InsertKledingstukken.sql:
 
 ```sql
 USE ModernWays;
@@ -65,7 +65,7 @@ Enumeraties hebben verschillende voordelen:
 
 Let wel op! Enumeraties lijken op strings, maar ze worden anders gesorteerd. De volgorde waarin waarden van een enum gesorteerd worden, is de volgorde waarin de elementen gedeclareerd zijn.
 
-Dit kan je afleiden uit volgend script (0035__SelectKledingstukken.sql):
+Dit kan je afleiden uit volgend script (0035\_\_SelectKledingstukken.sql):
 
 ```sql
 USE ModernWays;

@@ -28,7 +28,7 @@ Je moet dit enkel zien als een hulpmiddel om over `GROUP BY` na te denken! Je ka
 
 De kolom vermeld na `GROUP BY` neemt geen nieuwe vorm aan, maar komt nog één keer voor per waarde. Er is dus precies één rij met de waarde `"mannelijk"` en één rij met de waarde `"vrouwelijk"`. De andere kolommen veranderen eigenlijk van datatype: de kolom voor de naam bevat een sequentie van `VARCHAR(50)` per rij in plaats van een `VARCHAR(50)` per rij. De kolom voor de leeftijd bevat een sequentie van `TINYINT` in plaats een `TINYINT` per rij, wat hier aangegeven is door de verschillende waarden tussen rechte haakjes te zetten. Er is gekozen voor deze notatie omdat dit lijkt op het gebruik van lijsten in de meeste programmeertalen. De kolom voor het geslacht bevat nog steeds waarden uit een `ENUM`, omdat GROUP BY nu juist zo werkt dat er precies één waarde is voor elke rij.
 
-Ter illustratie maken we gebruik van volgend script (0035\_\_CreateHonden.sql):
+Ter illustratie maken we gebruik van volgend script (0036\_\_CreateHonden.sql):
 
 ```sql
 USE ModernWays;
