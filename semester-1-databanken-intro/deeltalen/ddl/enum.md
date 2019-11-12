@@ -22,12 +22,12 @@ Als de winkel alleen polo's, broeken en truien verkoopt en als er maar drie form
 Dat gaat als volgt:
 
 ```sql
+USE ModernWays;
 CREATE TABLE Kledingstukken (
--- later zullen we zien dat je hier best een primary key van maakt
 Nummer INT NOT NULL,
 Type ENUM('polo','broek','trui'),
 Formaat ENUM('small','medium','large')
-)
+);
 ```
 
 Noem die code 0033\_\_CreateKledingstukken.sql.
