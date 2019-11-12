@@ -52,3 +52,14 @@ USE ModernWays;
 SELECT AVG(Leeftijd)
 FROM Honden;
 ```
+
+## combineren van aggregaatfuncties en niet-geaggregeerde expressies
+Onder normale omstandigheden kan je geen combinatie maken van geaggregeerde resultaten en niet-geaggregeerde resultaten. Iets als het volgende gaat dus niet:
+
+```sql
+USE ModernWays;
+SELECT COUNT(*), Naam
+FROM Honden;
+```
+
+De exacte logica hier achter zie je later. Voorlopig volstaat het om te weten dat je ofwel een resultaat per record, ofwel over een verzameling records toont.
