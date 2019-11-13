@@ -234,6 +234,10 @@ GROUP BY Geslacht;
 
 Dit geeft je een foutmelding, waarvan we de precieze betekenis verderop toelichten.
 
+{% hint style="danger" %}
+Dit gedrag is systeemafhankelijk. Het kan zijn dat je wel een resultaat te zien krijgt, maar we beschouwen queries zoals de bovenstaande als ongeldig. Op systemen waarop je wel een resultaat krijgt, is het resultaat ook niet erg betekenisvol.
+{% endhint %}
+
 ## uitbreiding naar meerdere kolommen
 `GROUP BY` hoeft niet gevolgd te worden door één kolom, maar kan door meerdere kolommen gevolgd worden. In dat geval groepeer je records **per unieke combinatie** van kolomwaarden. Je kan bijvoorbeeld dit doen (0038\_\_SelectHonden.sql):
 
