@@ -42,6 +42,9 @@ Als je data van een van deze types hebt, zet je deze tussen enkele aanhalingstek
 
 ## numerieke types
 
+### Boolean
+Dit is het simpelste type. Het kent twee waarden: `TRUE` en `FALSE`, vaak voorgesteld als `1` en `0`. Je kan beide schrfijwijzen hanteren.
+
 ### `INT` en varianten
 
 `INT` dient \(net als enkele varianten van diverse groottes, hieronder opgelijst\) voor de opslag van gehele getallen. Standaard kan een `INT` positieve en negatieve gehele getallen voorstellen. We zeggen dat hij dan `SIGNED` is, dus dat hij vergezeld is van een teken. Als je alleen positieve getallen wil, laat je je datatype volgen door `UNSIGNED`, bijvoorbeeld `Leeftijd TINYINT UNSIGNED`.
