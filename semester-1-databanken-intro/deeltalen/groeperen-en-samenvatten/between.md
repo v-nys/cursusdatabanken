@@ -1,5 +1,6 @@
-# waarden in een bereik zoeken
-Vaak zijn we geïnteresseerd in een specifieke deel data. Bijvoorbeeld alle personen in een bepaalde leeftijdscategorie. We kunnen dit al schrijven als volgt (in dit geval voor grote puppy's in plaats van personen):
+# BETWEEN
+
+Vaak zijn we geïnteresseerd in een specifieke deel data. Bijvoorbeeld alle personen in een bepaalde leeftijdscategorie. We kunnen dit al schrijven als volgt \(in dit geval voor grote puppy's in plaats van personen\):
 
 ```sql
 USE ModernWays;
@@ -8,7 +9,7 @@ FROM Honden
 WHERE Leeftijd >= 1 AND Leeftijd <= 2;
 ```
 
-Een beetje zoals bij de syntax die we hebben ingekort met `IN` zitten we hier met overbodig schrijfwerk. We kunnen dit oplossen met `BETWEEN ... AND ...` (0052\_\_SelectHonden.sql):
+Een beetje zoals bij de syntax die we hebben ingekort met `IN` zitten we hier met overbodig schrijfwerk. We kunnen dit oplossen met `BETWEEN ... AND ...` \(0052\_\_SelectHonden.sql\):
 
 ```sql
 USE ModernWays;
@@ -23,8 +24,9 @@ Let op: hier is `AND` op zich geen booleaanse operator, maar `BETWEEN ... AND ..
 SELECT 'c' BETWEEN 'a' AND 'e';
 ```
 
-En je kan (zoals overal waar je een string gebruikt) de gebruikte collation wijzigen:
+En je kan \(zoals overal waar je een string gebruikt\) de gebruikte collation wijzigen:
 
 ```sql
 SELECT 'C' COLLATE utf8mb4_bin BETWEEN 'a' AND 'e';
 ```
+
