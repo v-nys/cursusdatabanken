@@ -24,7 +24,6 @@ Het formaat is:
 | artiest   | totaal aantal liedjes |
 |-----------|-----------------------|
 | Layla Zoe | waarde                |
-
 ## Groeperen en berekenen
 ### Oefening 1
 Schrijf een script, 0539\_\_Oefening.sql, dat je toont:
@@ -84,6 +83,7 @@ Doe dit met behulp van `HAVING` (ook als je het anders kan).
 
 ### Oefening 7
 Schrijf een script, 0545\_\_Oefening.sql, dat je het totaal beluisteringen toont voor elke artiest met minstens 10 karakters in de naam.
+
 **Tip: Hiervoor moet je al wat meer combineren. Je moet ook weten dat `GROUP BY` pas wordt toegepast na `WHERE`.**
 
 Het formaat is (met opnieuw meerdere rijen mogelijk):
@@ -94,12 +94,12 @@ Het formaat is (met opnieuw meerdere rijen mogelijk):
 
 ### Oefening 8
 Schrijf een script, 0546\_\_Oefening.sql, dat je het totaal aantal beluisteringen toont voor elke artiest met minstens 10 karakters in de naam, maar enkel als dat aantal groter is dan 100.
+
 **Tip: Hiervoor moet je nog meer combineren. Je moet ook weten dat `HAVING` perfect in combinatie gebruikt kan worden met `WHERE`. Je moet dus het verschil tussen de twee goed zien!**
 
 | artiest    | totaal aantal beluisteringen |
 |------------|------------------------------|
 | waarde     | waarde                       |
-
 ## Korte notaties
 ### Oefening 1
 Schrijf een script, 0547\_\_Oefening.sql, dat nagaat of het totaal aantal beluisteringen van een artiest ofwel 17, ofwel 50, ofwel 100 is. Het formaat is:
