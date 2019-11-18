@@ -53,6 +53,7 @@
     * [IN](semester-1-databanken-intro/deeltalen/dml/in.md)
     * [BETWEEN](semester-1-databanken-intro/deeltalen/dml/between.md)
     * [SELECT DISTINCT](semester-1-databanken-intro/deeltalen/dml/distinct.md)
+    * [Labo-oefeningen groeperen en samenvatten](semester-1-databanken-intro/deeltalen/dml/oefeningen-labo-groeperen.md)
 * [NoSQL](semester-1-databanken-intro/nosql.md)
 * [ERM](semester-1-databanken-intro/erm/README.md)
   * [Basisbegrippen](semester-1-databanken-intro/erm/basisbegrippen.md)
