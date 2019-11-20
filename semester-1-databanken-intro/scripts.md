@@ -109,4 +109,3 @@ Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. 
 | 0545\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/oefeningen-labo-groeperen) |
 | 0546\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/oefeningen-labo-groeperen) |
 | 0547\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/oefeningen-labo-groeperen) |
-| 0548\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/oefeningen-labo-groeperen) |
