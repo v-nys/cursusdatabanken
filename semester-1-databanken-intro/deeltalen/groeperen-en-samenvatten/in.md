@@ -35,7 +35,7 @@ Als we uitdrukkelijk rekening willen houden met hoofdletters en accenten, kunnen
 ```sql
 USE ModernWays;
 SELECT * FROM Honden
-WHERE Naam COLLATE utf8mb4_as_cs IN ('Bailey','Cookie','Lola','Iggy','Snoopy','Leo')
+WHERE Naam COLLATE utf8mb4_0900_as_cs IN ('Bailey','Cookie','Lola','Iggy','Snoopy','Leo')
 ```
 
 De `IN` is niet specifiek gelinkt aan `WHERE`, maar is gewoon een andere operator om een booleaanse expressie te bekomen. Je kan dus ook dit doen \(0051\_\_SelectHonden.sql\), met `HAVING` in plaats van `WHERE`:

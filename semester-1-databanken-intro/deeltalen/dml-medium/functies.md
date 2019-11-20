@@ -1,7 +1,9 @@
-# Functies
-Functies in SQL staan je toe een waarde te berekenen in plaats van een vaste waarde of de waarde in een of andere kolom. 
+# functies
+
+Functies in SQL staan je toe een waarde te berekenen in plaats van een vaste waarde of de waarde in een of andere kolom.
 
 ## SUBSTRING
+
 Deze functie gebruik je om een deel van een stuk tekst over te houden. Je kan bijvoorbeeld dit doen om de eerste twee letters van de familienaam van een auteur te tonen:
 
 ```sql
@@ -21,6 +23,7 @@ SELECT 'Ha';
 ```
 
 ## CONCAT
+
 Deze functie gebruik je om stukken tekst aan elkaar te hangen. Je kan dus dit doen om de volledige naam van auteurs te tonen:
 
 ```sql
@@ -34,6 +37,7 @@ SELECT CONCAT(Voornaam,' ',Familienaam) AS Naam FROM Boeken;
 ```
 
 ## LENGTH
+
 Hiermee bereken je de lengte van een stuk tekst. Je kan bijvoorbeeld dit doen:
 
 ```sql
@@ -49,3 +53,4 @@ SELECT Length('abc');
 ```
 
 Dan zal je als resultaat `3` krijgen.
+

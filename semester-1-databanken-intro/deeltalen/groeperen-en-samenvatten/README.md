@@ -1,2 +1,2 @@
-# DML groeperen en samenvatten
+# Groeperen en samenvatten
 
