@@ -31,6 +31,9 @@
 ; TODO: moet zorgen dat kolom bestandsnaam minstens zo breed is als breedste filename (zonder backslashes)
 
 (define markdown @string-append{
+ # Je script controleren
+ Je scripts controleren gaat via volgende tool:
+ {% embed url="https://youtu.be/d0JONC3heBg" caption="XCHK" %}
  # Overzicht van alle scripts
  Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. Als een script meermaals vermeld wordt, wordt het op meerdere plaatsen besproken, dus check beide. Hou je verzameling scripts up-to-date!
 
