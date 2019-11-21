@@ -59,8 +59,8 @@ Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. 
 | 0050\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/in) |
 | 0051\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/in) |
 | 0052\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/in) |
-| 0052\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/between) |
-| 0053\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/distinct) |
+| 0053\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/between) |
+| 0054\_\_SelectHonden.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/distinct) |
 | 0500\_\_CalibrateDB.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo) |
 | 0501\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo) |
 | 0502\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo) |
