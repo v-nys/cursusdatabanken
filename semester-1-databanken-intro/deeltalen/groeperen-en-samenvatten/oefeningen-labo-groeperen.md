@@ -145,7 +145,7 @@ UNLOCK TABLES;
 
 ### Oefening 1
 
-Schrijf een script, 0537\_\_Oefening.sql, dat toont hoe veel boeken elke auteur heeft geschreven. Je mag ervan uitgaan dat er geen twee auteurs zijn met dezelfde combinatie van voornaam en achternaam.
+Schrijf een script, 0537\_\_Oefening.sql, dat toont hoeveel boeken elke auteur heeft geschreven. Je mag ervan uitgaan dat er geen twee auteurs zijn met dezelfde combinatie van voornaam en achternaam.
 
 Het formaat is \(met de juiste hoofding per kolom en een berekende `waarde`, maar met meer rijen\):
 
@@ -155,7 +155,7 @@ Het formaat is \(met de juiste hoofding per kolom en een berekende `waarde`, maa
 
 ### Oefening 2
 
-Schrijf een script, 0538\_\_Oefening.sql, dat toont hoe veel liedjes van Layla Zoe er in het systeem zitten.
+Schrijf een script, 0538\_\_Oefening.sql, dat toont hoeveel liedjes van Layla Zoe er in het systeem zitten.
 
 Het formaat is:
 
@@ -171,7 +171,7 @@ Schrijf een script, 0539\_\_Oefening.sql, dat je toont:
 
 * hoe oud een huisdier _gemiddeld_ is
 * hoe oud het oudste huisdier is
-* hoe veel huisdieren er zijn
+* hoeveel huisdieren er zijn
 
 Als je het script uitvoert, moet je de resultaten in volgend formaat te zien krijgen \(met de juiste hoofding per kolom en een berekende `waarde`, maar met meer rijen\):
 
@@ -181,7 +181,7 @@ Als je het script uitvoert, moet je de resultaten in volgend formaat te zien kri
 
 ### Oefening 2
 
-Schrijf een script, 0540\_\_Oefening.sql, dat per artiest toont hoe veel liedjes van deze artiest in het systeem zitten.
+Schrijf een script, 0540\_\_Oefening.sql, dat per artiest toont hoeveel liedjes van deze artiest in het systeem zitten.
 
 Als je het script uitvoert, moet je de resultaten in volgend formaat te zien krijgen \(met de juiste hoofding, maar met meer rijen\):
 

@@ -15,7 +15,7 @@ FROM Honden
 GROUP BY Geslacht;
 ```
 
-Dit produceert twee rijen: één voor alle mannelijke honden, één voor alle vrouwelijke honden. Het is niet vanzelfsprekend dat `COUNT(*)` ons dan iets anders dan `2` oplevert, want eerder zagen we dat `COUNT` een aantal rijen als invoer naam en zei hoe veel het er waren.
+Dit produceert twee rijen: één voor alle mannelijke honden, één voor alle vrouwelijke honden. Het is niet vanzelfsprekend dat `COUNT(*)` ons dan iets anders dan `2` oplevert, want eerder zagen we dat `COUNT` een aantal rijen als invoer naam en zei hoeveel het er waren.
 
 Hier komt een nieuw aspect bij. `COUNT(*)` geeft, in de aanwezigheid van een `GROUP BY`, het aantal resultaten **per groep**. Dit komt omdat `GROUP BY` de functie `COUNT` laat werken over elk resultaat van de "tussenliggende tabel" van eerder.
 

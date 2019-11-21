@@ -14,7 +14,7 @@ Veronderstel dat je onderstaande tabel `Honden` hebt, waarin de leeftijd opgesla
 | Swieber | 14 | mannelijk |
 | Misty | 6 | vrouwelijk |
 
-Informatie die over de rijen gaat kan dan zijn: "hoe veel mannelijke honden zijn er in het systeem?" of "wat is de gemiddelde leeftijd per geslacht?" Deze vragen kan je niet meteen beantwoorden met de eerdere DML-commando's, maar wel met behulp van `GROUP BY`. `Honden GROUP BY Honden.geslacht` moet je zien als een tijdelijke tabel die er als volgt uitziet:
+Informatie die over de rijen gaat kan dan zijn: "hoeveel mannelijke honden zijn er in het systeem?" of "wat is de gemiddelde leeftijd per geslacht?" Deze vragen kan je niet meteen beantwoorden met de eerdere DML-commando's, maar wel met behulp van `GROUP BY`. `Honden GROUP BY Honden.geslacht` moet je zien als een tijdelijke tabel die er als volgt uitziet:
 
 | namen per geslacht | leeftijd per geslacht | geslacht |
 | :--- | :--- | :--- |
@@ -209,7 +209,7 @@ VALUES
 ("Boomer",15,"mannelijk");
 ```
 
-Als je wil weten hoe veel honden van elk geslacht er zijn, schrijf je dit \(0037\_\_SelectHonden.sql\):
+Als je wil weten hoeveel honden van elk geslacht er zijn, schrijf je dit \(0037\_\_SelectHonden.sql\):
 
 ```sql
 USE ModernWays;
@@ -219,10 +219,10 @@ GROUP BY Geslacht;
 ```
 
 {% hint style="info" %}
-Voorlopig onthoud je maar dat `COUNT(*)` vertelt hoe veel resultaten er per groep zijn. Verderop leggen we aggregaatfuncties uit voor de details.
+Voorlopig onthoud je maar dat `COUNT(*)` vertelt hoeveel resultaten er per groep zijn. Verderop leggen we aggregaatfuncties uit voor de details.
 {% endhint %}
 
-Met bovenstaande query zie je per geslacht hoe veel honden er zijn. De tussenliggende tabel is een hulpmiddel om hierover na te denken; volgende code zou niet werken:
+Met bovenstaande query zie je per geslacht hoeveel honden er zijn. De tussenliggende tabel is een hulpmiddel om hierover na te denken; volgende code zou niet werken:
 
 ```sql
 USE ModernWays;
@@ -248,7 +248,7 @@ FROM Honden
 GROUP BY Geslacht, Leeftijd;
 ```
 
-Dit toont je hoe veel mannelijke en hoe veel vrouwelijke honden er zijn van elke leeftijd die in het systeem voorkomt. Er zijn bijvoorbeeld 6 vrouwelijke honden van 1 jaar oud en 4 mannelijke honden van 1 jaar oud. We kunnen ter controle ook dit even doen \(0039\_\_SelectHonden.sql\):
+Dit toont je hoeveel mannelijke en hoeveel vrouwelijke honden er zijn van elke leeftijd die in het systeem voorkomt. Er zijn bijvoorbeeld 6 vrouwelijke honden van 1 jaar oud en 4 mannelijke honden van 1 jaar oud. We kunnen ter controle ook dit even doen \(0039\_\_SelectHonden.sql\):
 
 ```sql
 USE ModernWays;

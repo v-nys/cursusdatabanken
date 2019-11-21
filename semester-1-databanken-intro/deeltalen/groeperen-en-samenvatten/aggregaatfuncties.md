@@ -4,7 +4,7 @@ We hebben `GROUP BY` geïllustreerd met een nieuw soort output, `COUNT(*)`. Dit 
 
 ## aggregaatfunctie: `COUNT`
 
-`COUNT` krijgt als invoer een lijst rijen en zegt hoe veel niet-`NULL` elementen er in deze lijst zitten.
+`COUNT` krijgt als invoer een lijst rijen en zegt hoeveel niet-`NULL` elementen er in deze lijst zitten.
 
 De simpelste toepassing is het tellen val al je records, zoals hier in 0040\_\_SelectHOnden.sql:
 
