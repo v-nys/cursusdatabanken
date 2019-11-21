@@ -213,8 +213,6 @@ Schrijf een script, 0543\_\_Oefening.sql, dat je het gemiddeld aantal beluisteri
 | :--- | :--- |
 | Layla Zoe | waarde |
 
-**Tip: Hiervoor moet je al wat meer combineren. Je moet ook weten dat `GROUP BY` pas wordt toegepast na `WHERE`.**
-
 ### Oefening 6
 
 Schrijf een script, 0544\_\_Oefening.sql, dat je het totaal beluisteringen toont voor elke artiest met minstens 10 karakters in de naam.
