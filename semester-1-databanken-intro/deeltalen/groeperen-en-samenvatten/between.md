@@ -9,7 +9,7 @@ FROM Honden
 WHERE Leeftijd >= 1 AND Leeftijd <= 2;
 ```
 
-Een beetje zoals bij de syntax die we hebben ingekort met `IN` zitten we hier met overbodig schrijfwerk. We kunnen dit oplossen met `BETWEEN ... AND ...` \(0052\_\_SelectHonden.sql\):
+Een beetje zoals bij de syntax die we hebben ingekort met `IN` zitten we hier met overbodig schrijfwerk. We kunnen dit oplossen met `BETWEEN ... AND ...` \(0053\_\_SelectHonden.sql\):
 
 ```sql
 USE ModernWays;
