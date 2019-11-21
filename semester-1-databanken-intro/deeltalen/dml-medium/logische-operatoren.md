@@ -1,4 +1,4 @@
-# logische operatoren
+# Logische operatoren
 
 We willen niet alleen rijen kunnen selecteren gebaseerd op één kolom die gelijk is aan een bepaalde waarde. We moeten ook complexere voorwaarden kunnen opstellen. Daarom beschikken over we een hele reeks operatoren die we bovendien kunnen combineren.
 

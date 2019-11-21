@@ -1,4 +1,4 @@
-# aggregaatfuncties als windowfuncties
+# Aggregaatfuncties als windowfuncties
 
 ## aggregaatfuncties als windowfuncties
 

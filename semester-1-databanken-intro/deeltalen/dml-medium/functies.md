@@ -1,4 +1,4 @@
-# functies
+# Functies
 
 Functies in SQL staan je toe een waarde te berekenen in plaats van een vaste waarde of de waarde in een of andere kolom.
 
