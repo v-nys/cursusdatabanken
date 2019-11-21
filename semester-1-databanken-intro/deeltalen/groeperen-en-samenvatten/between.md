@@ -27,6 +27,6 @@ SELECT 'c' BETWEEN 'a' AND 'e';
 En je kan \(zoals overal waar je een string gebruikt\) de gebruikte collation wijzigen:
 
 ```sql
-SELECT 'C' COLLATE utf8mb4_bin BETWEEN 'a' AND 'e';
+SELECT 'C' COLLATE utf8mb4_0900_bin BETWEEN 'a' AND 'e';
 ```
 

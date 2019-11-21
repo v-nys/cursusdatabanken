@@ -1,4 +1,4 @@
-# vergelijkingen
+# Vergelijkingen
 
 ## overzicht operatoren
 

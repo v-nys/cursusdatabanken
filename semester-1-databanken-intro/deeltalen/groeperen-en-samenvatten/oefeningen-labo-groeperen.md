@@ -1,6 +1,7 @@
 # Labo-oefeningen groeperen en samenvatten
 
 ## Calibreren
+
 Voor gebruik je onderstaand script om te garanderen dat je database in de gewenste toestand is en noem je het 0536\_\_CalibrateDB.sql:
 
 ```sql
@@ -11,7 +12,7 @@ USE `ModernWays`;
 --
 -- Host: localhost    Database: ModernWays
 -- ------------------------------------------------------
--- Server version	8.0.17
+-- Server version    8.0.17
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -143,103 +144,116 @@ UNLOCK TABLES;
 ## Groeperen en tellen
 
 ### Oefening 1
-Schrijf een script, 0537\_\_Oefening.sql, dat toont hoe veel boeken elke auteur heeft geschreven. Je mag ervan uitgaan dat er geen twee auteurs zijn met dezelfde combinatie van voornaam en achternaam.
 
-Het formaat is (met de juiste hoofding per kolom en een berekende `waarde`, maar met meer rijen):
+Schrijf een script, 0537\_\_Oefening.sql, dat toont hoeveel boeken elke auteur heeft geschreven. Je mag ervan uitgaan dat er geen twee auteurs zijn met dezelfde combinatie van voornaam en achternaam.
 
-| Voornaam   | Familienaam | Aantal boeken |
-|------------|-------------|---------------|
-| waarde     | waarde      | waarde        |
+Het formaat is \(met de juiste hoofding per kolom en een berekende `waarde`, maar met meer rijen\):
+
+| Voornaam | Familienaam | Aantal boeken |
+| :--- | :--- | :--- |
+| waarde | waarde | waarde |
 
 ### Oefening 2
-Schrijf een script, 0538\_\_Oefening.sql, dat toont hoe veel liedjes van Layla Zoe er in het systeem zitten.
+
+Schrijf een script, 0538\_\_Oefening.sql, dat toont hoeveel liedjes van Layla Zoe er in het systeem zitten.
 
 Het formaat is:
 
-| Artiest   | Totaal aantal liedjes |
-|-----------|-----------------------|
-| Layla Zoe | waarde                |
+| Artiest | Totaal aantal liedjes |
+| :--- | :--- |
+| Layla Zoe | waarde |
+
 ## Groeperen en berekenen
+
 ### Oefening 1
+
 Schrijf een script, 0539\_\_Oefening.sql, dat je toont:
 
-* hoe oud een huisdier *gemiddeld* is
+* hoe oud een huisdier _gemiddeld_ is
 * hoe oud het oudste huisdier is
-* hoe veel huisdieren er zijn
+* hoeveel huisdieren er zijn
 
-Als je het script uitvoert, moet je de resultaten in volgend formaat te zien krijgen (met de juiste hoofding per kolom en een berekende `waarde`, maar met meer rijen):
+Als je het script uitvoert, moet je de resultaten in volgend formaat te zien krijgen \(met de juiste hoofding per kolom en een berekende `waarde`, maar met meer rijen\):
 
 | Gemiddelde leeftijd | Hoogste leeftijd | Totaal aantal |
-|---------------------|------------------|---------------|
-| waarde              | waarde           | waarde        |
+| :--- | :--- | :--- |
+| waarde | waarde | waarde |
 
 ### Oefening 2
-Schrijf een script, 0540\_\_Oefening.sql, dat per artiest toont hoe veel liedjes van deze artiest in het systeem zitten.
 
-Als je het script uitvoert, moet je de resultaten in volgend formaat te zien krijgen (met de juiste hoofding, maar met meer rijen):
+Schrijf een script, 0540\_\_Oefening.sql, dat per artiest toont hoeveel liedjes van deze artiest in het systeem zitten.
+
+Als je het script uitvoert, moet je de resultaten in volgend formaat te zien krijgen \(met de juiste hoofding, maar met meer rijen\):
 
 | Artiest | Aantal liedjes |
-|---------|----------------|
-| waarde  | waarde         |
+| :--- | :--- |
+| waarde | waarde |
 
 ### Oefening 3
-Schrijf een script, 0541\_\_Oefening.sql, dat je toont hoe alle nummers samen van één artiest zijn beluisterd. Dus als bijvoorbeeld "Stairway to Heaven" 10 keer beluisterd is en "Rock and Roll" 7 keer, dan zijn alle nummers van Led Zeppelin samen 17 keer beluisterd. Jouw script moet dit voor *alle* artiesten uitrekenen.
+
+Schrijf een script, 0541\_\_Oefening.sql, dat je toont hoe alle nummers samen van één artiest zijn beluisterd. Dus als bijvoorbeeld "Stairway to Heaven" 10 keer beluisterd is en "Rock and Roll" 7 keer, dan zijn alle nummers van Led Zeppelin samen 17 keer beluisterd. Jouw script moet dit voor _alle_ artiesten uitrekenen.
 
 | artiest | aantal beluisteringen |
-|---------|-----------------------|
-| waarde  | waarde                |
+| :--- | :--- |
+| waarde | waarde |
 
 ### Oefening 4
+
 Schrijf een script, 0542\_\_Oefening.sql, dat alle artiesten toont waar al meer dan 100 keer naar geluisterd is. Het formaat is als volgt:
 
 | Artiest | Aantal beluisteringen |
-|---------|-----------------------|
-| waarde  | waarde                |
+| :--- | :--- |
+| waarde | waarde |
 
 ### Oefening 5
-Schrijf een script, 0543\_\_Oefening.sql, dat je het gemiddeld aantal beluisteringen van nummers van Layla Zoe toont. Het formaat is (met in dit geval exact één rij):
 
-| Artiest    | Gemiddeld aantal beluisteringen |
-|------------|---------------------------------|
-| Layla Zoe  | waarde                          |
+Schrijf een script, 0543\_\_Oefening.sql, dat je het gemiddeld aantal beluisteringen van nummers van Layla Zoe toont. Het formaat is \(met in dit geval exact één rij\):
 
-**Tip: Hiervoor moet je al wat meer combineren. Je moet ook weten dat `GROUP BY` pas wordt toegepast na `WHERE`.**
+| Artiest | Gemiddeld aantal beluisteringen |
+| :--- | :--- |
+| Layla Zoe | waarde |
 
 ### Oefening 6
+
 Schrijf een script, 0544\_\_Oefening.sql, dat je het totaal beluisteringen toont voor elke artiest met minstens 10 karakters in de naam.
 
-Het formaat is (met opnieuw meerdere rijen mogelijk):
+Het formaat is \(met opnieuw meerdere rijen mogelijk\):
 
-| Artiest    | Totaal aantal beluisteringen |
-|------------|------------------------------|
-| waarde     | waarde                       |
+| Artiest | Totaal aantal beluisteringen |
+| :--- | :--- |
+| waarde | waarde |
 
 **Tip: Hiervoor moet je al wat meer combineren. Je moet ook weten dat `GROUP BY` pas wordt toegepast na `WHERE`.**
 
 ### Oefening 7
+
 Schrijf een script, 0545\_\_Oefening.sql, dat je het totaal aantal beluisteringen toont voor elke artiest met minstens 10 karakters in de naam, maar enkel als dat aantal minstens 100 is.
 
 **Tip: Hiervoor moet je nog meer combineren. Je moet ook weten dat `HAVING` perfect in combinatie gebruikt kan worden met `WHERE`. Je moet dus het verschil tussen de twee goed zien!**
 
-| artiest    | totaal aantal beluisteringen |
-|------------|------------------------------|
-| waarde     | waarde                       |
+| artiest | totaal aantal beluisteringen |
+| :--- | :--- |
+| waarde | waarde |
+
 ## Korte notaties
+
 ### Oefening 1
+
 Schrijf een script, 0546\_\_Oefening.sql, dat nagaat of het totaal aantal beluisteringen van een artiest ofwel 17, ofwel 50, ofwel 100 is. Het formaat is:
 
-| Artiest    | Specifiek aantal beluisteringen |
-|------------|---------------------------------|
-| waarde     | 0 of 1                          |
+| Artiest | Specifiek aantal beluisteringen |
+| :--- | :--- |
+| waarde | 0 of 1 |
 
 Hier betekent 0 dat het aantal beluisteringen verschilt van 17, 50 en 100 en betekent 1 dat het aantal beluisteringen ofwel 17, ofwel 50, ofwel 100 is. Voor elke artiest wordt een rij getoond.
 
 ### Oefening 2
+
 Schrijf een script, 0547\_\_Oefening.sql, dat alle artiesten toont waarvan de naam alfabetisch tussen de 'i' en de 'p' ligt. Zorg ervoor dat elke artiestennaam slechts één keer wordt getoond. Dit moet hoofdletterongevoelig en accentongevoelig zijn en los dit op zonder gebruik te maken van `GROUP BY`.
 
 Het formaat is:
 
-| Artiest    |
-|------------|
-| waarde     |
+| Artiest |
+| :--- |
+| waarde |
 

@@ -1,10 +1,10 @@
-# aggregaatfuncties
+# Aggregaatfuncties
 
 We hebben `GROUP BY` geïllustreerd met een nieuw soort output, `COUNT(*)`. Dit is geen speciale syntax voor één toepassing, maar is een voorbeeld van een **aggregaatfunctie**. Je hebt al kennisgemaakt met gewone functies zoals `CONCAT`, `LENGTH` en `SUBSTRING`. Met dergelijke functies kon je waarden berekenen uit bestaande waarden. Aggregaatfuncties zijn gelijkaardig, maar ze berekenen waarden uit **groepen van records**. Op deze pagina bieden we een overzicht van aggregaatfuncties die je vaak zal tegenkomen, maar weet dat er nog bestaan.
 
 ## aggregaatfunctie: `COUNT`
 
-`COUNT` krijgt als invoer een lijst rijen en zegt hoe veel niet-`NULL` elementen er in deze lijst zitten.
+`COUNT` krijgt als invoer een lijst rijen en zegt hoeveel niet-`NULL` elementen er in deze lijst zitten.
 
 De simpelste toepassing is het tellen val al je records, zoals hier in 0040\_\_SelectHOnden.sql:
 
