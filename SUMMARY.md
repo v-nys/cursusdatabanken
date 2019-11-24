@@ -36,7 +36,7 @@
     * [Vreemde sleutels](semester-1-databanken-intro/deeltalen/ddl-medium/vreemde-sleutel.md)
     * [Relaties-voorstellen](semester-1-databanken-intro/deeltalen/ddl-medium/relaties-voorstellen.md)
   * [DML gevorderd](semester-1-databanken-intro/deeltalen/dml-gevorderd/README.md)
-    * [JOINs bij simpele relaties](semester-1-databanken-intro/deeltalen/ddl-medium/joins-simpele-relaties.md)
+    * [JOINs bij simpele relaties](semester-1-databanken-intro/deeltalen/dml-gevorderd/joins-simpele-relaties.md)
   * [DML basis](semester-1-databanken-intro/deeltalen/dml-basis/README.md)
     * [INSERT](semester-1-databanken-intro/deeltalen/dml-basis/insert.md)
     * [SELECT](semester-1-databanken-intro/deeltalen/dml-basis/select.md)
