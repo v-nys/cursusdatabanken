@@ -43,61 +43,37 @@ Dit levert dan een resultaat dat er als volgt uitziet:
 | aardappelsla maken | 3 | Bavo | 2 | 1 |
 | aardappelsla maken | 3 | Max | 3 | 3 |
 
-Dit bevat nuttige informatie, maar ook rijen waar we niets aan hebben. De interessante rijen zijn die, die een persoon koppelen aan een taak. Om deze te krijgen, gebruiken we normaal `INNER JOIN`.
+Dit bevat nuttige informatie, maar ook rijen waar we niets aan hebben. De interessante rijen zijn die, die een persoon koppelen aan een taak. Dat zijn de rijen waarin `Taken.Id` gelijk is aan `Taken_Id` (afkomstig uit `Personen`).
+
+Je kan dus personen koppelen aan hun taak via:
+
+```sql
+SELECT *
+FROM Taken
+CROSS JOIN Personen
+WHERE Taken.Id = Taken_Id;
+```
+
+Hier moet je `Taken.Id` schrijven omdat zowel `Taken` als `Personen` een kolom `Id` hebben. Door de tabelnaam toe te voegen, maak je duidelijk over welke kolom het precies gaat.
 
 {% hint style="info" %}
 In MySQL is er eigenlijk [geen verschil](https://dev.mysql.com/doc/refman/8.0/en/join.html) tussen een `CROSS JOIN` met een `WHERE` clause en een `INNER JOIN` met een `ON` clause, die we dadelijk zullen bekijken. We kiezen voor de ene of de andere vorm om uit te drukken wat we bedoelen, maar het resultaat zal hetzelfde zijn.
 {% endhint %}
 
 ## INNER JOIN
-Met een `INNER JOIN` worden rijen opgevraagd uit twee tabellen en worden deze verbonden door middel van overlappende sleutels.
+Dit laatste voorbeeld werkt in MySQL, maar het wordt typisch anders geschreven. Meestal zal `CROSS JOIN` vervangen worden door `INNER JOIN`, terwijl `WHERE` vervangen wordt door `ON`. Wanneer we twee tabellen willen koppelen zodat samenhorende rijen uit tabel A en tabel B één nieuwe rij opleveren, zullen we deze conventie volgen.
 
-Om 1-op-1 relaties te demonstreren, maakten we gebruik van een takenverdeling in een sportclub. Door de tabel Taken en de tabel Leden op te vragen, konden we via de primaire en vreemde sleutels aflezen wie welke taak moest uitvoeren. Het kan ook als volgt, via dit script, dat je 0084__SelectLedenTaken noemt:
-
-```sql
-SELECT Leden.Voornaam, Taken.Omschrijving 
-FROM Leden
-INNER JOIN Taken ON Leden.Id = Taken.Leden_Id
-```
-
-Hoe werkt het?
-syntax
-
-We denken voorlopig alleen nog maar na over 1-op-1-relaties en 1-op-max-1-relaties. Dit is pseudosyntax, dus je moet zelf overal de juiste namen invullen!
+Het resultaat zal er dus zo uitzien:
 
 ```sql
-SELECT <select_list> 
-FROM Table_A
-INNER JOIN Table_B ON Table_A.Key = Table_B.ForeignKey
+SELECT *
+FROM Taken
+INNER JOIN Personen
+ON Taken.Id = Taken_Id;
 ```
 
-werking
+Het resultaat is hetzelfde, maar in dit scenario wordt `INNER JOIN` verkozen. `ON` is ook geen synoniem voor `WHERE`, want het kan alleen gebruikt worden in een `JOIN`-statement.
 
-Voorlopig kan je INNER JOIN als volgt zien:
-
-* de rijen van tabel B worden op alle mogelijke manieren aan rijen van tabel A geplakt (zoals bij `CROSS JOIN`)
-* de resulterende rijen die voldoen aan de voorwaarde na ON worden overgehouden
-* de geselecteerde kolommen worden overgehouden
-
-Bijvoorbeeld, als we de tabellen (met vier leden en drie taken) gebruiken van eerder, levert de eerste stap ons volgende combinaties van rijen uit de twee tabellen:
-Leden.Voornaam	Leden.Id	Taken.Omschrijving	Taken.Id	Taken.Leden_Id
-Yannick	1	bestek voorzien 	1	2
-Yannick	1	frisdrank meebrengen	2	1
-Yannick	1	aardappelsla maken 	3	3
-Bavo 	2	bestek voorzien 	1	2
-Bavo 	2	frisdrank meebrengen	2	1
-Bavo 	2	aardappelsla maken 	3	3
-Max 	3	bestek voorzien 	1	2
-Max 	3	frisdrank meebrengen	2	1
-Max 	3	aardappelsla maken 	3	3
-Herve 	4	bestek voorzien 	1	2
-Herve 	4	frisdrank meebrengen	2	1
-Herve 	4	aardappelsla maken 	3	3
-
-Als we enkel de rijen overhouden die voldoen aan de voorwaarden (d.w.z. Leden.Id en Taken.Leden_Id zijn gelijk), krijgen we volgend resultaat:
-Leden.Voornaam	Leden.Id	Taken.Omschrijving	Taken.Id	Taken.Leden_Id
-Yannick	1	frisdrank meebrengen	2	1
-Bavo 	2	bestek voorzien 	1	2
-Max 	3	aardappelsla maken 	3	3
-
-Als we dan enkel de kolommen Leden.Voornaam en Taken.Omschrijving overhouden, kunnen we meteen aflezen wie welke taak moet uitvoeren.
+{% hint style="info" %}
+Om precies te zijn: `ON` kan gebruikt worden in een `JOIN`-statement die geen `CROSS JOIN`-statement is. Er bestaan nog andere soorten `JOIN`s dan `CROSS` en `INNER`, maar die zijn voor een latere cursus.
+{% endhint %}
