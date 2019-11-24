@@ -35,8 +35,6 @@
     * [Primaire sleutel in een nieuwe tabel](semester-1-databanken-intro/deeltalen/ddl-medium/tabel-aanmaken-met-sleutel.md)
     * [Vreemde sleutels](semester-1-databanken-intro/deeltalen/ddl-medium/vreemde-sleutel.md)
     * [Relaties-voorstellen](semester-1-databanken-intro/deeltalen/ddl-medium/relaties-voorstellen.md)
-  * [DML gevorderd](semester-1-databanken-intro/deeltalen/dml-gevorderd/README.md)
-    * [JOINs bij simpele relaties](semester-1-databanken-intro/deeltalen/dml-gevorderd/joins-simpele-relaties.md)
   * [DML basis](semester-1-databanken-intro/deeltalen/dml-basis/README.md)
     * [INSERT](semester-1-databanken-intro/deeltalen/dml-basis/insert.md)
     * [SELECT](semester-1-databanken-intro/deeltalen/dml-basis/select.md)
@@ -62,6 +60,9 @@
     * [BETWEEN](semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/between.md)
     * [SELECT DISTINCT](semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/distinct.md)
     * [Labo-oefeningen groeperen en samenvatten](semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/oefeningen-labo-groeperen.md)
+  * [DML gevorderd](semester-1-databanken-intro/deeltalen/dml-gevorderd/README.md)
+    * [JOINs bij simpele relaties](semester-1-databanken-intro/deeltalen/dml-gevorderd/joins-simpele-relaties.md)
+
 * [NoSQL](semester-1-databanken-intro/nosql.md)
 * [ERM](semester-1-databanken-intro/erm/README.md)
   * [Basisbegrippen](semester-1-databanken-intro/erm/basisbegrippen.md)
