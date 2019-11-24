@@ -1,9 +1,9 @@
 # Concept en gebruik vreemde sleutel
 ## Concept
-In [sleutels-voor-identificatie](het voorbeeld met games) heb je gezien dat er verschillende redenen zijn om rijen uniek te identificeren.
+In [het voorbeeld met games](sleutels-voor-identificatie.md) heb je gezien dat er verschillende redenen zijn om rijen uniek te identificeren.
 Dit is alleen zinvol als we de primaire sleutelattributen ook ergens anders vermelden. Met andere woorden, als we in kolom A van tabel B een primaire sleutel plaatsen, is het logisch dat we in kolom C van tabel D over deze sleutel spreken.
 
-We hebben dat ook gedaan in het tweede voorbeeld op [de eerder genoemde pagina](het voorbeeld met games), door een tabel te maken die de dubbele voorkomens van lange stukken tekst vervangt door hun identificatienummers.
+We hebben dat ook gedaan in het tweede voorbeeld op [de eerder genoemde pagina](sleutels-voor-identificatie.md) (het voorbeeld met games), door een tabel te maken die de dubbele voorkomens van lange stukken tekst vervangt door hun identificatienummers.
 
 Wanneer we in één record via een bepaalde kolom verwijzen naar (de sleutel van) een ander record, spreken we over een **vreemde sleutel** of **foreign key**. Hij is "vreemd" omdat hij verwijst naar een **ander** record, mogelijk (maar niet noodzakelijk) in een andere tabel.
 

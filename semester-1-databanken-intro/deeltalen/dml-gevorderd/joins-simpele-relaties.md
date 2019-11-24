@@ -61,7 +61,7 @@ In MySQL is er eigenlijk [geen verschil](https://dev.mysql.com/doc/refman/8.0/en
 {% endhint %}
 
 ## INNER JOIN
-Dit laatste voorbeeld werkt in MySQL, maar het wordt typisch anders geschreven. Meestal zal `CROSS JOIN` vervangen worden door `INNER JOIN`, terwijl `WHERE` vervangen wordt door `ON`. Wanneer we twee tabellen willen koppelen zodat samenhorende rijen uit tabel A en tabel B één nieuwe rij opleveren, zullen we deze conventie volgen.
+Dit laatste voorbeeld werkt in MySQL, maar het wordt typisch anders geschreven. Meestal zal `CROSS JOIN` vervangen worden door `INNER JOIN`, terwijl `WHERE` vervangen wordt door `ON`. **Wanneer we twee tabellen willen koppelen zodat samenhorende rijen uit tabel A en tabel B één nieuwe rij opleveren, zullen we deze conventie volgen.**
 
 Het resultaat zal er dus zo uitzien:
 
