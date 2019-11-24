@@ -89,6 +89,7 @@ Je mag niet verhinderen dat de vreemde sleutel de waarde NULL aanneemt.
 
 ## een-op-veel relaties
 
+
 ### speciaal geval: een-op-max-een-relaties
 
 ## veel-op-veel relaties
