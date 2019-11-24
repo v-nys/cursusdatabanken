@@ -31,6 +31,7 @@
   * [DDL medium](semester-1-databanken-intro/deeltalen/ddl-medium/README.md)
     * [Enum](semester-1-databanken-intro/deeltalen/ddl-medium/enum.md)
     * [Sleutels voor identificatie](semester-1-databanken-intro/deeltalen/ddl-medium/sleutels-voor-identificatie.md)
+    * [Primaire sleutel toevoegen/verwijderen](semester-1-databanken-intro/deeltalen/ddl-medium/primaire-sleutel-toevoegen-verwijderen.md)
   * [DML basis](semester-1-databanken-intro/deeltalen/dml-basis/README.md)
     * [INSERT](semester-1-databanken-intro/deeltalen/dml-basis/insert.md)
     * [SELECT](semester-1-databanken-intro/deeltalen/dml-basis/select.md)
