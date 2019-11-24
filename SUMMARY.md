@@ -62,6 +62,7 @@
     * [Labo-oefeningen groeperen en samenvatten](semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/oefeningen-labo-groeperen.md)
   * [DML gevorderd](semester-1-databanken-intro/deeltalen/dml-gevorderd/README.md)
     * [JOINs bij simpele relaties](semester-1-databanken-intro/deeltalen/dml-gevorderd/joins-simpele-relaties.md)
+    * [JOINs via tussenliggende tabel](semester-1-databanken-intro/deeltalen/dml-gevorderd/joins-via-tussenliggende-tabel.md)
 
 * [NoSQL](semester-1-databanken-intro/nosql.md)
 * [ERM](semester-1-databanken-intro/erm/README.md)
