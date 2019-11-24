@@ -37,7 +37,7 @@ Maar niets verhindert een ontwikkelaar om twee gelijknamige games meteen na elka
 Het idee om elke rij uniek te maken is goed, maar je volgt best een voorzichtige aanpak.
 Dit kan door een speciale kolom aan de tabel toe te voegen, een primaire sleutel of primary key.
 Deze kolom bevat geen informatie over de rij in kwestie, maar dient alleen om een specifieke rij aan te duiden.
-Vaak is het gewoon een getal, zoals in dit voorbeeld, waarin de kolom Id een primaire sleutel is:
+Vaak is het gewoon een getal, zoals in dit voorbeeld, waarin de kolom `Id` een primaire sleutel is:
 
 | Titel | Ontwikkelaar | Id |
 |-------|--------------|----|
@@ -52,7 +52,7 @@ Je kan in SQL uitdrukken dat een bepaalde kolom wordt gebruikt als primaire sleu
 
 # Sleutels voor efficiënt gebruik van ruimte
 
-Tabellen zoals we ze eerder hebben gezien, zijn niet bruikbaar voor (middel)grote systemen.
+Tabellen zoals we ze eerder soms hebben gezien, zijn ook niet bruikbaar voor (middel)grote systemen omwille van een efficiëntieprobleem.
 Sleutels zullen je ook toestaan op grotere schaal te werken.
 
 Veronderstel dat je, in opdracht van Game Mania, een databank met videogames moet opstellen.
