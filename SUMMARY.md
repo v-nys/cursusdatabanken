@@ -34,6 +34,7 @@
     * [Primaire sleutel toevoegen/verwijderen](semester-1-databanken-intro/deeltalen/ddl-medium/primaire-sleutel-toevoegen-verwijderen.md)
     * [Primaire sleutel in een nieuwe tabel](semester-1-databanken-intro/deeltalen/ddl-medium/tabel-aanmaken-met-sleutel.md)
     * [Vreemde sleutels](semester-1-databanken-intro/deeltalen/ddl-medium/vreemde-sleutel.md)
+    * [Relaties-voorstellen](semester-1-databanken-intro/deeltalen/ddl-medium/relaties-voorstellen.md)
   * [DML basis](semester-1-databanken-intro/deeltalen/dml-basis/README.md)
     * [INSERT](semester-1-databanken-intro/deeltalen/dml-basis/insert.md)
     * [SELECT](semester-1-databanken-intro/deeltalen/dml-basis/select.md)
