@@ -89,7 +89,7 @@ WHERE Categorie = 'Wiskunde';
 -- Hier heb je '[1]' gezet voor de tekst als er 'Wiskunde' staat.
 -- nu halen we dat weer weg
 -- left(X,Y) is zoals substring(X,1,Y)
-UPDATE Boeken SET Categorie = substring(Categorie, 4, len(Categorie) -3)
+UPDATE Boeken SET Categorie = substring(Categorie, 4, length(Categorie) -3)
 WHERE left(Categorie, 3) = '[1]';
 ```
 
