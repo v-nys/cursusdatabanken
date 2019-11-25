@@ -25,6 +25,8 @@ CREATE TABLE Boeken (
 ); 
 ```
 
+Deze hoef je niet uit te voeren.
+
 Dit wil zeggen: "maak een tabel voor boeken met een uniek identificatienummer (de primary key); boeken kunnen ook verwijzen naar specifieke records in de tabel die personen voorstelt; deze verwijzingen worden voorgesteld met de kolom `Personen_Id` **in de tabel voor boeken**"
 
 Hierbij gebruiken we enkele **afspraken**:
@@ -43,3 +45,5 @@ ADD CONSTRAINT fk_Boeken_Personen
   FOREIGN KEY (Personen_Id)
   REFERENCES Personen(Id);
 ```
+
+Sla op als 0058\_\_AlterBoeken.sql en voer uit.

@@ -41,7 +41,7 @@ Bijvoorbeeld, voor de taken:
 | frisdrank meebrengen | 2 |
 | aardappelsla maken | 3 |
 
-Voor de personen:
+Voor de leden:
 
 | voornaam | Id |
 |----------|----|
@@ -49,9 +49,9 @@ Voor de personen:
 | Bavo | 2 |
 | Max | 3 |
 
-Zet de structuur van de twee tabellen om in SQL-tabellen met een script ???CreateTakenLeden. Elke kolom bestaat uit een reeks van maximaal 50 karakters (zonder accenten e.d.).
+Zet de structuur van de twee tabellen om in SQL-tabellen met een script 0059\_\_CreateTakenLeden.sql. Elke normale kolom bestaat uit een reeks van maximaal 50 karakters (zonder accenten e.d.) en is verplicht. De `Id`-kolom stel je voor met een `INT` die automatisch ophoogt.
 
-Vul de twee tabellen, Taken en Leden in met een script ???InsertTakenLeden.
+Vul de twee tabellen, `Taken` en `Leden` in met een script 0060\_\_InsertTakenLeden.sql.
 
 Als Bavo bestek voorziet, Yannick frisdrank meebrengt en Max aardappelsla maakt, kunnen we dat als volgt bijhouden in een aparte tabel die alleen vreemde sleutels bevat:
 
@@ -85,121 +85,162 @@ Beide zijn even goed.
 Typisch wordt gekozen om de foreign key in de tabel te zetten met het kleinste aantal kolommen, om alles een beetje in evenwicht te houden.
 Hier hebben beide even veel kolommen dus het maakt helemaal niet uit.
 
-Pas je tabel Leden aan zodat ze de tweede mogelijkheid van hierboven implementeert in een script ???ModifyLeden.
-Je mag niet verhinderen dat de vreemde sleutel de waarde `NULL` aanneemt.
+Pas je tabel Leden aan zodat ze de tweede mogelijkheid van hierboven implementeert in een script 0061\_\_AlterLeden.sql.
+Je mag **niet** verhinderen dat de vreemde sleutel de waarde `NULL` aanneemt.
+
+Om de data te combineren, moet je nu [gebruik maken van een `JOIN`-operatie](../dml-gevorderd/joins-simpele-relaties.md).
+Voor een een-op-een-relatie is dit iets makkelijker.
 
 ## een-op-veel relaties
-Een 1-op-N verband is een verband dat je heel vaak tegenkomt op websites met een achterliggende databank. Bij dit soort verband stemt een rij uit een bepaalde tabel A overeen met meerdere rijen uit een tabel B. In de omgekeerde richting stemt een rij uit tabel B maar met één rij van tabel A overeen. Bijvoorbeeld, als je tweets bijhoudt in een databank, kan één persoon meerdere tweets hebben, maar één tweet kan (oorspronkelijk) slechts van één persoon komen. Hier moet je je inbeelden dat personen bijgehouden worden in tabel A en tweets in tabel B.
+Een een-op-veel (of 1-op-N) verband is een verband dat je heel vaak tegenkomt op websites met een achterliggende databank. Bij dit soort verband stemt een rij uit een bepaalde tabel A overeen met meerdere rijen uit een tabel B. In de omgekeerde richting stemt een rij uit tabel B maar met één rij van tabel A overeen. Bijvoorbeeld, als je tweets bijhoudt in een databank, kan één persoon meerdere tweets hebben, maar één tweet kan oorspronkelijk slechts van één persoon komen. Hier moet je je inbeelden dat personen bijgehouden worden in tabel A en tweets in tabel B.
 
-In een database van een webshop kan één persoon meerdere bestellingen plaatsen, maar één bestelling kan slechts van één klant komen. Hier geldt: personen in A, bestellingen in B.
+In een database van een webshop kan één persoon meerdere bestellingen plaatsen, maar één bestelling kan slechts van één klant komen.
+Hier geldt: personen in A, bestellingen in B.
 
 Hier zijn enkele tweets die we als voorbeeld zullen gebruiken, voorafgegaan door de handle van de gebruiker die ze geschreven heeft:
 
-    @NintendoEurope: Don't forget -- Nintendo Labo: VR Kit launches 12/04!
-    @NintendoEurope: Splat it out in the #Splatoon2 EU Community Cup 5 this Sunday!
-    @NintendoEurope: Crikey! Keep an eye out for cardboard crocs and other crafty wildlife on this jungle train ride! #Yoshi
-    @Xbox: You had a lot to say about #MetroExodus. Check out our favorite 5-word reviews.
-    @Xbox: It's a perfect day for some mayhem.
-    @Xbox: Drift all over N. Sanity Beach and beyond in Crash Team Racing Nitro-Fueled.
+```text
+@NintendoEurope: Don't forget -- Nintendo Labo: VR Kit launches 12/04!
+@NintendoEurope: Splat it out in the #Splatoon2 EU Community Cup 5 this Sunday!
+@NintendoEurope: Crikey! Keep an eye out for cardboard crocs and other crafty wildlife on this jungle train ride! #Yoshi
+@Xbox: You had a lot to say about #MetroExodus. Check out our favorite 5-word reviews.
+@Xbox: It's a perfect day for some mayhem.
+@Xbox: Drift all over N. Sanity Beach and beyond in Crash Team Racing Nitro-Fueled.
+```
 
 Zoals in het geval van de 1-op-1 relatie, kunnen we deze relatie tussen gebruikers en tweets voorstellen in een tabel:
-user	tweet
-1	1
-1	2
-1	3
-2	4
-2	5
-2	6
 
-Dit is opnieuw iets meer dan we nodig hebben. We kunnen een foreign key van één tabel toevoegen aan een andere. Maar, in tegenstelling tot de precieze 1-op-1-relatie, mogen we niet kiezen. We zetten, net als bij de "1-op-maximum-1"-relatie de foreign key in de tabel die niet aan de "exact-1"-kant van de relatie zit. Zorg er ook voor dat de vreemde sleutel nooit NULL is met een constraint.
+| user | tweet |
+|------|-------|
+| 1 | 1 |
+| 1 | 2 |
+| 1 | 3 |
+| 2 | 4 |
+| 2 | 5 |
+| 2 | 6 |
 
-Voer dit zelfstandig uit voor de reeks tweets hierboven. Volg de reeds afgesproken afspraken: één tabel Users voor users (met een kolom Handle), één tabel Tweets voor tweets (met een kolom Bericht), beide voorzien van primaire sleutels, met de vreemde sleutel aan de "N-kant". Stel gebruikersnamen en tweets voor met kolommen van variabele lengte (tot 144 tekens), zonder internationale tekens. De @ maakt geen deel uit van een gebruikersnaam. Zet de SQL-code die je nodig hebt om de tabellen te maken in een script 0085__CreateUsersTweets. Zet de code die je nodig hebt om de vreemde sleutel toe te voegen in 0086__AlterNSide. Zet ten slotte de code om de tabel in te vullen in een script 0087__InsertUsersTweets.
+Dit is opnieuw iets meer dan we nodig hebben. We kunnen een foreign key van één tabel toevoegen aan een andere. Maar, in tegenstelling tot de precieze 1-op-1-relatie, mogen we niet kiezen. We zetten de foreign key in de tabel die niet aan de "exact-1"-kant van de relatie zit. Zorg er ook voor dat de vreemde sleutel nooit NULL is met een constraint.
 
-Schrijf ten slotte een script, 0088__SelectUsersTweets, dat twee kolommen weergeeft: één voor gebruikersnamen en één voor de inhoud van hun tweets. Doe dit met INNER JOIN. Je resultaat zou dus zes rijen moeten bevatten!
+Voer dit zelfstandig uit voor de reeks tweets hierboven.
+Volg de reeds afgesproken afspraken: één tabel Users voor users (met een kolom Handle), één tabel Tweets voor tweets (met een kolom Bericht), beide voorzien van primaire sleutels, met de vreemde sleutel aan de "N-kant".
+Stel gebruikersnamen en tweets voor met kolommen van variabele lengte (tot 144 tekens),
+zonder internationale tekens.
+De @ maakt geen deel uit van een gebruikersnaam.
+Zet de SQL-code die je nodig hebt om de tabellen te maken in een script 0062\_\_CreateUsersTweets.sql.
+Zet de code die je nodig hebt om de vreemde sleutel toe te voegen in 0063\_\_AlterTweets.sql.
+Zet ten slotte de code om de tabel in te vullen in een script 0064\_\_InsertUsersTweets.sql.
 
 ### speciaal geval: een-op-max-een-relaties
-Een een-op-max-een relatie is een relatie waarbij één entiteit A gelinkt is aan **hooguit** één andere entiteit B. Het kan ook zijn dat A aan geen enkele B gelinkt is.
+Een een-op-max-een relatie is een relatie waarbij één entiteit A gelinkt is aan **hooguit** één andere entiteit B.
+Het kan ook zijn dat A aan geen enkele B gelinkt is.
+Deze stel je voor zoals een 1-op-N relatie, dus met de vreemde sleutel in de tabel aan de niet-exact-1-kant.
+Dit voorkomt vreemde sleutels met de waarde `NULL`.
 
-TODO voorstelling diagram?
+Hoe je de tweets terug koppelt aan de juiste account, lees je ook bij de uitleg rond [`JOIN`-operaties bij simpele relaties](../dml-gevorderd/joins-simpele-relaties.md).
+Koppel users aan de juiste tweets in een script 0065\_\_SelectUsersTweets.sql.
 
 ## veel-op-veel relaties
-Een auteur kan meerdere boeken hebben en een boek kan verschillende auteurs hebben. Een game kan op verschillende platformen uitgebracht zijn en voor elk platform zijn er verschillende games beschikbaar. Een student volgt verschillende vakken en in elk vak zitten verschillende studenten. Dit zijn allemaal voorbeelden waar één rij uit een tabel A gekoppeld kan zijn aan meerdere rijen uit een tabel B en één rij uit dezelfde tabel B gekoppeld kan zijn aan meerdere rijen uit dezelfde tabel A. We zeggen dan ook dat er een M-op-N-relatie bestaat tussen de entiteiten A en B.
+Een auteur kan meerdere boeken hebben en een boek kan verschillende auteurs hebben.
+Een game kan op verschillende platformen uitgebracht zijn en voor elk platform zijn er verschillende games beschikbaar.
+Een student volgt verschillende vakken en in elk vak zitten verschillende studenten.
+Dit zijn allemaal voorbeelden waar één rij uit een tabel A gekoppeld kan zijn aan meerdere rijen uit een tabel B en één rij uit dezelfde tabel B gekoppeld kan zijn aan meerdere rijen uit dezelfde tabel A.
+We zeggen dan ook dat er een veel-op-veel of M-op-N-relatie bestaat tussen de entiteiten A en B.
 
-Bij 1-op-1-relaties mochten we de vreemde sleutel in tabel A of B zetten. Bij 1-op-max-1 of 1-op-N relaties zetten de vreemde sleutel in de tabel die niet precies één keer gekoppeld was. Herinner je dat dit vooral gedaan werd om geen overbodige tabellen toe te voegen. We konden de takenverdeling voor het etentje ook als volgt voorstellen, met een aparte tabel:
-Leden_Id	Taken_Id
-2	1
-1	2
-3	3
+Bij 1-op-1-relaties mochten we de vreemde sleutel in tabel A of B zetten.
+Bij 1-op-max-1 of 1-op-N relaties zetten de vreemde sleutel in de tabel die niet precies één keer gekoppeld was.
+Dit werd vooral gedaan om geen overbodige tabellen toe te voegen.
+We konden in principe de takenverdeling voor het etentje ook als volgt voorstellen, met een aparte tabel:
 
-We deden dit alleen anders omdat we het met een tabel minder (en dus in totaal ook een kolom minder) konden. Voor een M-op-N-relatie is deze voorstelling echter perfect.
-Voorbeeld
+| Leden_Id | Taken_Id |
+| 2 | 1 |
+| 1 | 2 |
+| 3 | 3 |
 
+We deden dit alleen anders omdat we het met een tabel minder (en dus in totaal ook een kolom minder) konden.
+Voor een M-op-N-relatie is deze voorstelling echter onze beste optie.
+
+### voorbeeld
 Een game kan beschikbaar zijn op meerdere platformen en op elk platform zijn er natuurlijk meerdere games beschikbaar. Bijvoorbeeld:
 
-    Anthem: beschikbaar op PS4, XBox One, Windows
-    Sekiro: beschikbaar op PS4, XBox One, Windows
-    Devil May Cry 5: beschikbaar op PS4, XBox One
-    Mega Man 11: beschikbaar op PS4, XBox One, Windows, Nintendo Switch
+* Anthem: beschikbaar op PS4, XBox One, Windows
+* Sekiro: beschikbaar op PS4, XBox One, Windows
+* Devil May Cry 5: beschikbaar op PS4, XBox One
+* Mega Man 11: beschikbaar op PS4, XBox One, Windows, Nintendo Switch
 
-Veronderstel dat Anthem ID 1 heeft, Sekiro 2, enzovoort. Veronderstel ook dat PS4 ID 1 heeft, Xbox One ID 2, Windows ID 3 en Nintendo Switch ID 4. Dan kunnen we voorstellen welke games uitgebracht zijn op welke platformen als volgt:
-Games.Id	Platformen.Id
-1	1
-1	2
-1	3
-2	1
-2	2
-2	3
-3	1
-3	2
-4	1
-4	2
-4	3
-4	4
+Veronderstel dat Anthem ID 1 heeft, Sekiro 2, enzovoort.
+Veronderstel ook dat PS4 ID 1 heeft, Xbox One ID 2, Windows ID 3 en Nintendo Switch ID 4.
+Dan kunnen we voorstellen welke games uitgebracht zijn op welke platformen als volgt:
 
-Je vindt deze informatie dan ook terug in de tabel Releases, die is toegevoegd door het recentste script om de database te kalibreren. Merk ook op dat de tabel Games wat gewijzigd is en dat er een tabel Platformen is toegevoegd. Ten slotte is de tabel Boeken grondig aangepast.
-Opdracht
+| Games.Id | Platformen.Id |
+|----------|---------------|
+| 1 | 1 |
+| 1 | 2 |
+| 1 | 3 |
+| 2 | 1 |
+| 2 | 2 |
+| 2 | 3 |
+| 3 | 1 |
+| 3 | 2 |
+| 4 | 1 |
+| 4 | 2 |
+| 4 | 3 |
+| 4 | 4 |
 
-Schrijf zelf een tabel, BoekenNaarAuteurs die enkele auteurs koppelt aan boeken die ze hebben geschreven met een script 0089__CreateBoekenNaarAuteurs.
+Voeg zelf de nodige structuur toe.
+Je hebt drie tabellen nodig: een voor games, een voor platformen, een voor de koppeling.
+De tabel `Games` heeft naast de `Id` één kolom: `Titel`, een stuk tekst van maximaal 50 karakters dat nooit leeg mag zijn en mogelijk Unicode karakters bevat.
+Voor `Platformen` is er een gelijkaardige structuur, maar de naam van de kolom die niet als sleutel wordt gebruikt is `Naam`.
+Noem de tabel die de koppeling afhandelt `Releases`.
+Volg de conventie voor de naam van de kolommen die naar beide andere tabellen verwijzen.
+Sla de DDL-instructies op als 0066\_\_CreateGamesPlatformsReleases.sql.
+Voeg de DML-instructies toe als 0067\_\_InsertGamesPlatformsReleases.sql.
 
-0090__CalibrateDB.sql omvat alle aanpassingen tot hier. Gebruik volgende informatie om deze tabel in te vullen met 0091__InsertBoekenNaarAuteurs:
+[`JOIN`-operaties bij simpele relaties](../dml-gevorderd/joins-via-tussenliggende-tabel.md) legt uit hoe je nu toont welke games op welk platform verschenen zijn.
+Schrijf een script dat dit doet en noem het 0068\_\_SelectReleases.sql.
 
-    Haruki Murakami schreef Norwegian Wood en Kafka on the Shore
-    Neil Gaiman schreef American Gods en The Ocean at the End of the Lane
-    Stephen King schreef Pet Sematary
-    Terry Pratchett en Neil Gaiman schreven samen Good Omens
-    Stephen King en Peter Straub schreven samen The Talisman
+### Relaties met attributen
+Attributen horen meestal bij entiteiten, maar kunnen ook bij relaties horen.
+Bovenstaande tabel `Releases` geeft bijvoorbeeld aan welk spel op welk platform verschenen is, maar wat als we de releasedatum willen bijhouden?
+Deze hoort niet in de tabel `Games`.
+Hij hoort ook niet in de tabel Platformen.
+Hij hoort bij de combinatie van een game en een platform, d.w.z. bij de relatie die wordt voorgesteld met de tabel Releases.
+Daarom kunnen we de tabel ook uitbreiden met een kolom `Releasedatum`.
+Voor het leesgemak stellen we de games en de platformen niet voor via hun `Id`-attribuut.
 
-De beste manier om dit te doen is met een INNER JOIN zonder ON, maar met WHERE. Zo kan je een combinatie nemen van aan voornaam (uit de tabel Auteurs), familienaam (uit de tabel Auteurs) en een titel (uit de tabel Boeken) en hoef je nooit zelf de sleutels af te lezen. Je gebruikt bijvoorbeeld de WHERE om na te gaan dat in een combinatie van een auteur en een boek de voornaam "Haruki" is, de familienaam "Murakami" en de titel "Norwegian Wood" en dan selecteer je alleen de sleutelkolommen.
-Relaties met attributen
-Basisidee
+| Titel | Naam | Releasedatum |
+|-------|------|--------------|
+| Anthem | PS4 | 22 februari 2019 |
+| Anthem | XBox One | 22 februari 2019 |
+| Anthem | Windows | 22 februari 2019 |
+| Sekiro: Shadows Die Twice | PS4 | 22 maart 2019 |
+| Sekiro: Shadows Die Twice | XBox One | 22 maart 2019 |
+| Sekiro: Shadows Die Twice | Windows | 22 maart 2019 |
+| Devil May Cry 5 | PS4 | 8 maart 2019 |
+| Devil May Cry 5 | XBox One | 8 maart 2019 |
+| Mega Man 11 | PS4 | 2 oktober 2018 |
+| Mega Man 11 | XBox One | 2 oktober 2018 |
+| Mega Man 11 | Windows | 2 oktober 2018 |
+| Mega Man 11 | Nintendo Switch | 2 oktober 2018 |
 
-Attributen horen meestal bij entiteiten, maar kunnen ook bij relaties horen. Bovenstaande tabel Releases geeft bijvoorbeeld aan welk spel op welk platform verschenen is, maar wat als we de releasedatum willen bijhouden? Deze hoort niet in de tabel Games. Hij hoort ook niet in de tabel Platformen. Hij hoort bij de combinatie van een game en een platform, d.w.z. bij de relatie die wordt voorgesteld met de tabel Releases. Daarom kunnen we de tabel ook als volgt uitbreiden:
-Titel	Naam platform	Releasedatum
-Anthem	PS4	22 februari 2019
-Anthem	XBox One	22 februari 2019
-Anthem	Windows	22 februari 2019
-Sekiro: Shadows Die Twice	PS4	22 maart 2019
-Sekiro: Shadows Die Twice	XBox One	22 maart 2019
-Sekiro: Shadows Die Twice	Windows	22 maart 2019
-Devil May Cry 5	PS4	8 maart 2019
-Devil May Cry 5	XBox One	8 maart 2019
-Mega Man 11	PS4	2 oktober 2018
-Mega Man 11	XBox One	2 oktober 2018
-Mega Man 11	Windows	2 oktober 2018
-Mega Man 11	Nintendo Switch	2 oktober 2018
+In een ERD stellen we dit als volgt voor:
 
-Je kan dit zelf doen met de gegeven scripts 0092__AlterReleases en 0093__UpdateReleases. Zorg dat je de werking van deze scripts begrijpt!
-Opdracht
+![](releases-M-N-met-datum.svg)
 
-Schrijf zelf een tabel die personen koppelt aan boeken die ze hebben uitgeleend in de bibliotheek. Een uitlening heeft een startdatum en eventueel een einddatum. Deze datums stel je voor met het DATE-datatype, zoals in de twee vorige scripts. Gebruik 0094__CreateUitleningen om de tabel aan te maken en 0095__InsertUitleningen om de data in te vullen.
+In dit geval is `Releases` niet gewoon een tabel die een **relatie** voorstelt, maar wel een **associative entity**: een relatie tussen `Games` en `Platformen` die eigen kenmerken bezit, zodat je ze eigenlijk ook als een entiteit zou kunnen zien.
 
-    Max heeft Norwegian Wood geleend van 1 februari 2019 tot 15 februari 2019.
-    Bavo heeft Norwegian Wood geleend van 16 februari 2019 tot 2 maart 2019.
-    Bavo heeft Pet Sematary geleend van 16 februari 2019 tot 2 maart 2019.
-    Yannick heeft Pet Sematary geleend van 1 mei 2019 en heeft het boek nog niet teruggebracht.
+Voeg zelf de nodige info toe. Hiervoor volg je volgende stappen:
 
-Verdere soorten relaties
+1. Voeg een kolom van type `DATE` toe aan de tabel `Releases`. Deze kan nog niet verplicht zijn. Noem het script 0069\_\_AlterReleases.sql.
+2. Kopieer je script dat games en hun releaseplatform weergeeft naar een nieuw script, 0070\_\_UpdateReleases.sql.
+3. Pas op de gecombineerde tabel de datum aan volgens de gegevens hierboven. Je kan in deze tabel een `SET` uitvoeren op `Releasedatum`.
+4. Gebruik `WHERE Games.Titel = ... AND Platformen.Naam = ...` in plaats van eerst de sleutels af te lezen!
+5. Maak de kolom voor de releasedatum verplicht via 0071\_\_AlterReleases.sql, zodat nieuwe games altijd een releasedatum moeten krijgen.
 
-Tabellen kunnen meer dan twee entiteiten verbinden. Voor releases van games kan je bijvoorbeeld een spel, een uitgever en een platform aan elkaar linken met een M-op-N-op-K relatie. Dit is wel niet vaak nodig, dus denk altijd even goed na voor je dit doet. Als alle versies (d.w.z. release op PS4, Switch, XBox One, PC,...) van een game steeds door dezelfde uitgever verzorgd worden, kan je bijvoorbeeld beter een N-op-1-relatie tussen games en uitgevers gebruiken en de uitgever uit de M-op-N-op-K-relatie laten vallen, zodat het een gewone M-op-N-relatie wordt. De keuze berust vooral op een goede analyse en goed overleg met de klant! In deze cursus zal je nooit een ternaire (d.w.z. tussen drie entiteiten) of hogere relatie nodig hebben.
+# Verdere soorten relaties
 
-### speciaal geval: 0 of 1 in plaats van "veel"
+Tabellen kunnen meer dan twee entiteiten verbinden.
+Voor releases van games kan je bijvoorbeeld een spel, een uitgever en een platform aan elkaar linken met een M-op-N-op-K relatie.
+Dit is wel niet vaak nodig, dus denk altijd even goed na voor je dit doet.
+Als alle versies (d.w.z. release op PS4, Switch, XBox One, PC,...) van een game steeds door dezelfde uitgever verzorgd worden, kan je bijvoorbeeld beter een N-op-1-relatie tussen games en uitgevers gebruiken en de uitgever uit de M-op-N-op-K-relatie laten vallen, zodat het een gewone M-op-N-relatie wordt.
+De keuze berust vooral op een goede analyse en goed overleg met de klant!
+In deze cursus zal je nooit een ternaire (d.w.z. tussen drie entiteiten) of hogere relatie nodig hebben.

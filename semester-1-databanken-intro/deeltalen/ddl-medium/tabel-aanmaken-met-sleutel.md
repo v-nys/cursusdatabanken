@@ -19,3 +19,5 @@ CREATE TABLE Boeken(
     Id INT AUTO_INCREMENT PRIMARY KEY
 );
 ```
+
+Deze hoef je niet uit te voeren.
