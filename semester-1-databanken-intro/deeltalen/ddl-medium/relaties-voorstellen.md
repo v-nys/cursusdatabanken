@@ -242,6 +242,5 @@ Voeg zelf de nodige info toe. Hiervoor volg je volgende stappen:
 Tabellen kunnen meer dan twee entiteiten verbinden.
 Voor releases van games kan je bijvoorbeeld een spel, een uitgever en een platform aan elkaar linken met een M-op-N-op-K relatie.
 Dit is wel niet vaak nodig, dus denk altijd even goed na voor je dit doet.
-Als alle versies (d.w.z. release op PS4, Switch, XBox One, PC,...) van een game steeds door dezelfde uitgever verzorgd worden, kan je bijvoorbeeld beter een N-op-1-relatie tussen games en uitgevers gebruiken en de uitgever uit de M-op-N-op-K-relatie laten vallen, zodat het een gewone M-op-N-relatie wordt.
 De keuze berust vooral op een goede analyse en goed overleg met de klant!
 In deze cursus zal je nooit een ternaire (d.w.z. tussen drie entiteiten) of hogere relatie nodig hebben.
