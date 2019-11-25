@@ -122,7 +122,7 @@ Zoals in het geval van de 1-op-1 relatie, kunnen we deze relatie tussen gebruike
 Dit is opnieuw iets meer dan we nodig hebben. We kunnen een foreign key van één tabel toevoegen aan een andere. Maar, in tegenstelling tot de precieze 1-op-1-relatie, mogen we niet kiezen. We zetten de foreign key in de tabel die niet aan de "exact-1"-kant van de relatie zit. Zorg er ook voor dat de vreemde sleutel nooit NULL is met een constraint.
 
 Voer dit zelfstandig uit voor de reeks tweets hierboven.
-Volg de reeds afgesproken afspraken: één tabel Users voor users (met een kolom Handle), één tabel Tweets voor tweets (met een kolom Bericht), beide voorzien van primaire sleutels, met de vreemde sleutel aan de "N-kant".
+Volg de reeds afgesproken afspraken: één tabel `Users` voor users (met een kolom `Handle`), één tabel `Tweets` voor tweets (met een kolom Bericht), beide voorzien van primaire sleutels, met de vreemde sleutel aan de "N-kant".
 Stel gebruikersnamen en tweets voor met kolommen van variabele lengte (tot 144 tekens),
 zonder internationale tekens.
 De @ maakt geen deel uit van een gebruikersnaam.
@@ -152,6 +152,7 @@ Dit werd vooral gedaan om geen overbodige tabellen toe te voegen.
 We konden in principe de takenverdeling voor het etentje ook als volgt voorstellen, met een aparte tabel:
 
 | Leden_Id | Taken_Id |
+|----------|----------|
 | 2 | 1 |
 | 1 | 2 |
 | 3 | 3 |
