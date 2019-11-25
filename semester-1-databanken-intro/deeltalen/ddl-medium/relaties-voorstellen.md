@@ -23,7 +23,7 @@ De club gebruikt een database om de taken en de leden bij te houden en de taken 
   * Bavo
   * Max
 
-Onderstaande figuur stelt deze indeling voor:
+Onderstaande figuur stelt deze indeling voor in een ERD in [Chen-notatie](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model):
 
 ![](taak-persoon-1-1.svg)
 
@@ -147,7 +147,7 @@ Dit zijn allemaal voorbeelden waar één rij uit een tabel A gekoppeld kan zijn 
 We zeggen dan ook dat er een veel-op-veel of M-op-N-relatie bestaat tussen de entiteiten A en B.
 
 Bij 1-op-1-relaties mochten we de vreemde sleutel in tabel A of B zetten.
-Bij 1-op-max-1 of 1-op-N relaties zetten de vreemde sleutel in de tabel die niet precies één keer gekoppeld was.
+Bij 1-op-max-1 of 1-op-N relaties zetten we de vreemde sleutel in de tabel die niet precies één keer gekoppeld was.
 Dit werd vooral gedaan om geen overbodige tabellen toe te voegen.
 We konden in principe de takenverdeling voor het etentje ook als volgt voorstellen, met een aparte tabel:
 
