@@ -1,4 +1,7 @@
 # Primaire sleutel toevoegen/verwijderen voor een bestaande tabel
+{% hint style="info" %}
+We vertrekken hier van 0055\_\_CalibrateDB.sql.
+{% endhint %}
 ## de basis
 We voegen een `Id` kolom toe aan de tabel `Boeken` die we als primaire sleutel gaan gebruiken.
 
@@ -7,6 +10,8 @@ Om een primaire sleutel toe te voegen aan een reeds bestaande tabel, gebruik je 
 ```sql
 ALTER TABLE Boeken ADD Id INT auto_increment PRIMARY KEY;
 ```
+
+Sla die instructie op in 0056\_\_AlterBoeken.sql.
 
 Je kan ook nagaan of de primaire sleutel is toegevoegd door het volgende statement uit te voeren:
 
@@ -30,12 +35,14 @@ Zorg ervoor dat je op die kolom een primary key constraint hebt staan:
 ```sql
 USE ModernWays;
 CREATE TABLE Personen (
-    Id int AUTO_INCREMENT PRIMARY KEY,
+    Id INT AUTO_INCREMENT PRIMARY KEY,
     Voornaam varchar(255) char set utf8mb4 NOT NULL,
     Familienaam varchar(255) char set utf8mb4,
     Leeftijd int
 );
 ```
+
+Sla op als 0057\_\_CreatePersonen.sql.
 
 Je kan de beginwaarde zelf bepalen.
 Bijvoorbeeld, als je de boeken wil nummeren vanaf 5 in plaats van 1 (de default):
@@ -45,6 +52,10 @@ ALTER TABLE Boeken AUTO_INCREMENT = 5;
 ```
 
 Dit kan van pas komen als je al wat data hebt en SQL alleen voor de nieuwe data zelf de nummers wil laten genereren.
+
+{% hint style="info" %}
+Eerder hebben we `AUTO_INCREMENT` al gebruikt voor boeken. Bekijk eens wat er gebeurd was als je `AUTO_INCREMENT` in dat script achterwege had gelaten.
+{% endhint %}
 
 # Primary key constraints verwijderen
 
