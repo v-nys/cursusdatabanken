@@ -1,22 +1,19 @@
 # JOINs bij simpele relaties
-Om de integriteit van de database te bewaren, normaliseren we de gegevens in de database.
-Door normalisering geraakt de informatie echter verspreid over meer dan één tabel.
-De gebruiker heeft daar echter niet veel aan.
-Primaire en vreemde sleutels zeggen de gebruiker niets.
-Anders gesteld, een tabel vol getallen zoals onderaan op [de pagina over primary keys](../ddl-medium/sleutels-voor-identificatie.md) is op zich niet leesbaar.
-We moeten dus een manier vinden om de informatie weer voor te stellen alsof die uit één tabel komt.
+
+Om de integriteit van de database te bewaren, normaliseren we de gegevens in de database. Door normalisering geraakt de informatie echter verspreid over meer dan één tabel. De gebruiker heeft daar echter niet veel aan. Primaire en vreemde sleutels zeggen de gebruiker niets. Anders gesteld, een tabel vol getallen zoals onderaan op [de pagina over primary keys](../ddl-medium/sleutels-voor-identificatie.md) is op zich niet leesbaar. We moeten dus een manier vinden om de informatie weer voor te stellen alsof die uit één tabel komt.
 
 ## CROSS JOIN
+
 De "domste" manier om data uit meerdere tabellen te combineren tot data die uit één tabel lijkt te komen, is de "cross join". Deze "plakt" elke rij uit tabel A aan elke rij uit tabel B. Veronderstel bijvoorbeeld volgende tabellen voor taken en voor personen:
 
 | omschrijving | Id |
-|--------------|----|
+| :--- | :--- |
 | bestek voorzien | 1 |
 | frisdrank meebrengen | 2 |
 | aardappelsla maken | 3 |
 
-| voornaam | Id | Taken_Id |
-|----------|----|----------|
+| voornaam | Id | Taken\_Id |
+| :--- | :--- | :--- |
 | Yannick | 1 | 2 |
 | Bavo | 2 | 1 |
 | Max | 3 | 3 |
@@ -31,8 +28,8 @@ CROSS JOIN Personen;
 
 Dit levert dan een resultaat dat er als volgt uitziet:
 
-| omschrijving | Taken.Id | voornaam | Personen.Id | Taken_Id |
-|--------------|----------|----------|-------------|----------|
+| omschrijving | Taken.Id | voornaam | Personen.Id | Taken\_Id |
+| :--- | :--- | :--- | :--- | :--- |
 | bestek voorzien | 1 | Yannick | 1 | 2 |
 | bestek voorzien | 1 | Bavo | 2 | 1 |
 | bestek voorzien | 1 | Max | 3 | 3 |
@@ -43,7 +40,7 @@ Dit levert dan een resultaat dat er als volgt uitziet:
 | aardappelsla maken | 3 | Bavo | 2 | 1 |
 | aardappelsla maken | 3 | Max | 3 | 3 |
 
-Dit bevat nuttige informatie, maar ook rijen waar we niets aan hebben. De interessante rijen zijn die, die een persoon koppelen aan een taak. Dat zijn de rijen waarin `Taken.Id` gelijk is aan `Taken_Id` (afkomstig uit `Personen`).
+Dit bevat nuttige informatie, maar ook rijen waar we niets aan hebben. De interessante rijen zijn die, die een persoon koppelen aan een taak. Dat zijn de rijen waarin `Taken.Id` gelijk is aan `Taken_Id` \(afkomstig uit `Personen`\).
 
 Je kan dus personen koppelen aan hun taak via:
 
@@ -61,6 +58,7 @@ In MySQL is er eigenlijk [geen verschil](https://dev.mysql.com/doc/refman/8.0/en
 {% endhint %}
 
 ## INNER JOIN
+
 Dit laatste voorbeeld werkt in MySQL, maar het wordt typisch anders geschreven. Meestal zal `CROSS JOIN` vervangen worden door `INNER JOIN`, terwijl `WHERE` vervangen wordt door `ON`. **Wanneer we twee tabellen willen koppelen zodat samenhorende rijen uit tabel A en tabel B één nieuwe rij opleveren, zullen we deze conventie volgen.**
 
 Het resultaat zal er dus zo uitzien:
@@ -77,3 +75,4 @@ Het resultaat is hetzelfde, maar in dit scenario wordt `INNER JOIN` verkozen. `O
 {% hint style="info" %}
 Om precies te zijn: `ON` kan gebruikt worden in een `JOIN`-statement die geen `CROSS JOIN`-statement is. Er bestaan nog andere soorten `JOIN`s dan `CROSS` en `INNER`, maar die zijn voor een latere cursus.
 {% endhint %}
+
