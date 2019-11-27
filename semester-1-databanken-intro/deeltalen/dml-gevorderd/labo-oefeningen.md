@@ -168,8 +168,8 @@ Wis de kolom `Baasje` uit de tabel `Huisdieren`. Noem dit 0554\_\_Oefening.sql.
 
 Toon alle mogelijke combinaties gegevens over een huisdier en gegevens over een baasje. Het resultaat moet er zo uitzien:
 
-| Naam | Leeftijd | Soort | Geluid | Id | Naam | Id |
-|------|----------|-------|--------|----|------|----|
+| Naam | Leeftijd | Soort | Geluid | Id | Naam | Id | Huisdieren_Id |
+|------|----------|-------|--------|----|------|----|---------------|
 | waarde | waarde | waarde | waarde | waarde | waarde | waarde |
 
 Dit resultaat bevat ook rijen waarin baasje en huisdier **niet** bij elkaar horen.
