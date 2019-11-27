@@ -127,7 +127,7 @@ Voer dit zelfstandig uit voor de reeks tweets hierboven. Volg de reeds afgesprok
 Voor het laatste script bespaart onderstaande gedeeltelijke SQL je het copy-pasten van de tweets.
 
 ```sql
-('Don't forget -- Nintendo Labo: VR Kit launches 12/04!',1),
+('Don''t forget -- Nintendo Labo: VR Kit launches 12/04!',1),
 ('Splat it out in the #Splatoon2 EU Community Cup 5 this Sunday!',1),
 ('Crikey! Keep an eye out for cardboard crocs and other crafty wildlife on this jungle train ride! #Yoshi',1),
 ('You had a lot to say about #MetroExodus. Check out our favorite 5-word reviews.',2),
