@@ -1,6 +1,6 @@
-# Een primaire sleutel maken in een nieuwe tabel
-Het is niet erg handig om telkens de primaire sleutel achteraf toe te voegen.
-Als je een nieuwe tabel maakt, kan je in één keer een kolom aanduiden als primaire sleutel:
+# Primaire sleutel in een nieuwe tabel
+
+Het is niet erg handig om telkens de primaire sleutel achteraf toe te voegen. Als je een nieuwe tabel maakt, kan je in één keer een kolom aanduiden als primaire sleutel:
 
 ```sql
 USE ModernWays;
@@ -21,3 +21,4 @@ CREATE TABLE Boeken(
 ```
 
 Deze hoef je niet uit te voeren.
+

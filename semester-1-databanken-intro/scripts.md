@@ -1,11 +1,17 @@
-# Je script controleren
+# Scripts
+
+## Je script controleren
+
 Je scripts controleren gaat via volgende tool:
+
 {% embed url="https://youtu.be/d0JONC3heBg" caption="XCHK" %}
-# Overzicht van alle scripts
+
+## Overzicht van alle scripts
+
 Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. Als een script meermaals vermeld wordt, wordt het op meerdere plaatsen besproken, dus check beide. Hou je verzameling scripts up-to-date!
 
-| Bestandsnaam                             | Vermeld op pagina |
-|------------------------------------------|-------------------|
+| Bestandsnaam | Vermeld op pagina |
+| :--- | :--- |
 | 0001\_\_CreateDatabase.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/create) |
 | 0001\_\_CreateDatabase.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/create) |
 | 0002\_\_CreateBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/create) |
@@ -126,3 +132,4 @@ Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. 
 | 0545\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/oefeningen-labo-groeperen) |
 | 0546\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/oefeningen-labo-groeperen) |
 | 0547\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/oefeningen-labo-groeperen) |
+
