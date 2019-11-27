@@ -23,12 +23,12 @@ Deze kunnen we op deze manier combineren en tonen:
 ```sql
 SELECT *
 FROM Taken
-CROSS JOIN Personen;
+CROSS JOIN Leden;
 ```
 
 Dit levert dan een resultaat dat er als volgt uitziet:
 
-| omschrijving | Taken.Id | voornaam | Personen.Id | Taken\_Id |
+| omschrijving | Taken.Id | voornaam | Leden.Id | Taken\_Id |
 | :--- | :--- | :--- | :--- | :--- |
 | bestek voorzien | 1 | Yannick | 1 | 2 |
 | bestek voorzien | 1 | Bavo | 2 | 1 |
@@ -40,18 +40,18 @@ Dit levert dan een resultaat dat er als volgt uitziet:
 | aardappelsla maken | 3 | Bavo | 2 | 1 |
 | aardappelsla maken | 3 | Max | 3 | 3 |
 
-Dit bevat nuttige informatie, maar ook rijen waar we niets aan hebben. De interessante rijen zijn die, die een persoon koppelen aan een taak. Dat zijn de rijen waarin `Taken.Id` gelijk is aan `Taken_Id` \(afkomstig uit `Personen`\).
+Dit bevat nuttige informatie, maar ook rijen waar we niets aan hebben. De interessante rijen zijn die, die een persoon koppelen aan een taak. Dat zijn de rijen waarin `Taken.Id` gelijk is aan `Taken_Id` \(afkomstig uit `Leden`\).
 
 Je kan dus personen koppelen aan hun taak via:
 
 ```sql
 SELECT *
 FROM Taken
-CROSS JOIN Personen
+CROSS JOIN Leden
 WHERE Taken.Id = Taken_Id;
 ```
 
-Hier moet je `Taken.Id` schrijven omdat zowel `Taken` als `Personen` een kolom `Id` hebben. Door de tabelnaam toe te voegen, maak je duidelijk over welke kolom het precies gaat.
+Hier moet je `Taken.Id` schrijven omdat zowel `Taken` als `Leden` een kolom `Id` hebben. Door de tabelnaam toe te voegen, maak je duidelijk over welke kolom het precies gaat.
 
 {% hint style="info" %}
 In MySQL is er eigenlijk [geen verschil](https://dev.mysql.com/doc/refman/8.0/en/join.html) tussen een `CROSS JOIN` met een `WHERE` clause en een `INNER JOIN` met een `ON` clause, die we dadelijk zullen bekijken. We kiezen voor de ene of de andere vorm om uit te drukken wat we bedoelen, maar het resultaat zal hetzelfde zijn.
@@ -66,7 +66,7 @@ Het resultaat zal er dus zo uitzien:
 ```sql
 SELECT *
 FROM Taken
-INNER JOIN Personen
+INNER JOIN Leden
 ON Taken.Id = Taken_Id;
 ```
 
