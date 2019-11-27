@@ -194,8 +194,8 @@ Je hebt hier drie tabellen nodig: een voor games, een voor platformen, een voor 
 Voor 0066 zou je dit moeten hebben:
 
 ```sql
-CREATE TABLE Platformen(Naam varchar(50) NOT NULL, Id INT AUTO_INCREMENT PRIMARY KEY);
-CREATE TABLE Games(Titel varchar(100) NOT NULL, Id int auto_increment primary key);
+CREATE TABLE Platformen(Naam varchar(50) CHARSET utf8mb4 NOT NULL, Id INT AUTO_INCREMENT PRIMARY KEY);
+CREATE TABLE Games(Titel varchar(50) CHARSET utf8mb4 NOT NULL, Id int auto_increment primary key);
 CREATE TABLE Releases(Games_Id INT NOT NULL,
                       Platformen_Id INT NOT NULL,
 		      CONSTRAINT fk_Releases_Games FOREIGN KEY (Games_Id) REFERENCES Games(Id),
