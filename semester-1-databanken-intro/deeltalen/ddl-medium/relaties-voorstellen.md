@@ -79,6 +79,17 @@ Beide zijn even goed. Typisch wordt gekozen om de foreign key in de tabel te zet
 
 Pas je tabel Leden aan zodat ze de tweede mogelijkheid van hierboven implementeert in een script 0061\_\_AlterLeden.sql. Je mag **niet** verhinderen dat de vreemde sleutel de waarde `NULL` aanneemt.
 
+Dit ziet er zo uit:
+
+```sql
+USE ModernWays;
+ALTER TABLE Leden
+ADD COLUMN Taken_Id INT,
+ADD CONSTRAINT fk_Leden_Taken
+FOREIGN KEY (Taken_Id)
+REFERENCES Taken(Id);
+```
+
 Om de data te combineren, moet je nu [gebruik maken van een `JOIN`-operatie](../dml-gevorderd/joins-simpele-relaties.md). Voor een een-op-een-relatie is dit iets makkelijker.
 
 ### een-op-veel relaties
@@ -111,13 +122,32 @@ Zoals in het geval van de 1-op-1 relatie, kunnen we deze relatie tussen gebruike
 
 Dit is opnieuw iets meer dan we nodig hebben. We kunnen een foreign key van één tabel toevoegen aan een andere. Maar, in tegenstelling tot de precieze 1-op-1-relatie, mogen we niet kiezen. We zetten de foreign key in de tabel die niet aan de "exact-1"-kant van de relatie zit. Zorg er ook voor dat de vreemde sleutel nooit NULL is met een constraint.
 
-Voer dit zelfstandig uit voor de reeks tweets hierboven. Volg de reeds afgesproken afspraken: één tabel `Users` voor users \(met een kolom `Handle`\), één tabel `Tweets` voor tweets \(met een kolom Bericht\), beide voorzien van primaire sleutels, met de vreemde sleutel aan de "N-kant". Stel gebruikersnamen en tweets voor met kolommen van variabele lengte \(tot 144 tekens\), zonder internationale tekens. De @ maakt geen deel uit van een gebruikersnaam. Zet de SQL-code die je nodig hebt om de tabellen te maken in een script 0062\_\_CreateUsersTweets.sql. Zet de code die je nodig hebt om de vreemde sleutel toe te voegen in 0063\_\_AlterTweets.sql. Zet ten slotte de code om de tabel in te vullen in een script 0064\_\_InsertUsersTweets.sql.
+Voer dit zelfstandig uit voor de reeks tweets hierboven. Volg de reeds afgesproken afspraken: één tabel `Users` voor users \(met een kolom `Handle`\), één tabel `Tweets` voor tweets \(met een kolom Bericht\), beide voorzien van primaire sleutels, met de vreemde sleutel aan de "N-kant". Stel gebruikersnamen en tweets voor met kolommen van variabele lengte \(tot 144 tekens\), zonder internationale tekens. De @ maakt geen deel uit van een gebruikersnaam. Zet de SQL-code die je nodig hebt om de (lege) tabellen te maken in een script 0062\_\_CreateUsersTweets.sql. Zet de code die je nodig hebt om de vreemde sleutel toe te voegen in 0063\_\_AlterTweets.sql. Zet ten slotte de code om de tabellen in te vullen in een script 0064\_\_InsertUsersTweets.sql. Begin met een `INSERT` voor de users, doe dan pas die voor de tweets.
+
+Voor het laatste script bespaart onderstaande gedeeltelijke SQL je het copy-pasten van de tweets.
+
+```sql
+('Don't forget -- Nintendo Labo: VR Kit launches 12/04!',1),
+('Splat it out in the #Splatoon2 EU Community Cup 5 this Sunday!',1),
+('Crikey! Keep an eye out for cardboard crocs and other crafty wildlife on this jungle train ride! #Yoshi',1),
+('You had a lot to say about #MetroExodus. Check out our favorite 5-word reviews.',2),
+('It''s a perfect day for some mayhem.',2),
+('Drift all over N. Sanity Beach and beyond in Crash Team Racing Nitro-Fueled.',2)
+```
 
 #### speciaal geval: een-op-max-een-relaties
 
 Een een-op-max-een relatie is een relatie waarbij één entiteit A gelinkt is aan **hooguit** één andere entiteit B. Het kan ook zijn dat A aan geen enkele B gelinkt is. Deze stel je voor zoals een 1-op-N relatie, dus met de vreemde sleutel in de tabel aan de niet-exact-1-kant. Dit voorkomt vreemde sleutels met de waarde `NULL`.
 
-Hoe je de tweets terug koppelt aan de juiste account, lees je ook bij de uitleg rond [`JOIN`-operaties bij simpele relaties](../dml-gevorderd/joins-simpele-relaties.md). Koppel users aan de juiste tweets in een script 0065\_\_SelectUsersTweets.sql.
+Hoe je de tweets terug koppelt aan de juiste account, lees je ook bij de uitleg rond [`JOIN`-operaties bij simpele relaties](../dml-gevorderd/joins-simpele-relaties.md). Koppel users aan de juiste tweets met dit script, 0065\_\_SelectUsersTweets.sql:
+
+```sql
+USE ModernWays;
+SELECT Handle, Bericht
+FROM Users
+INNER JOIN Tweets
+ON Users_Id = Users.Id;
+```
 
 ### veel-op-veel relaties
 
@@ -159,9 +189,60 @@ Veronderstel dat Anthem ID 1 heeft, Sekiro 2, enzovoort. Veronderstel ook dat PS
 | 4 | 3 |
 | 4 | 4 |
 
-Voeg zelf de nodige structuur toe. Je hebt drie tabellen nodig: een voor games, een voor platformen, een voor de koppeling. De tabel `Games` heeft naast de `Id` één kolom: `Titel`, een stuk tekst van maximaal 50 karakters dat nooit leeg mag zijn en mogelijk Unicode karakters bevat. Voor `Platformen` is er een gelijkaardige structuur, maar de naam van de kolom die niet als sleutel wordt gebruikt is `Naam`. Noem de tabel die de koppeling afhandelt `Releases`. Volg de conventie voor de naam van de kolommen die naar beide andere tabellen verwijzen. Sla de DDL-instructies op als 0066\_\_CreateGamesPlatformsReleases.sql. Voeg de DML-instructies toe als 0067\_\_InsertGamesPlatformsReleases.sql.
+Je hebt hier drie tabellen nodig: een voor games, een voor platformen, een voor de koppeling. De tabel `Games` heeft naast de `Id` één kolom: `Titel`, een stuk tekst van maximaal 50 karakters dat nooit leeg mag zijn en mogelijk Unicode karakters bevat. Voor `Platformen` is er een gelijkaardige structuur, maar de naam van de kolom die niet als sleutel wordt gebruikt is `Naam`. Noem de tabel die de koppeling afhandelt `Releases`. Volg de conventie voor de naam van de kolommen die naar beide andere tabellen verwijzen. Sla de DDL-instructies op als 0066\_\_CreateGamesPlatformenReleases.sql. Voeg de DML-instructies toe als 0067\_\_InsertGamesPlatformenReleases.sql.
 
-[`JOIN`-operaties bij simpele relaties](../dml-gevorderd/joins-via-tussenliggende-tabel.md) legt uit hoe je nu toont welke games op welk platform verschenen zijn. Schrijf een script dat dit doet en noem het 0068\_\_SelectReleases.sql.
+Voor 0066 zou je dit moeten hebben:
+
+```sql
+CREATE TABLE Platformen(Naam varchar(50) NOT NULL, Id INT AUTO_INCREMENT PRIMARY KEY);
+CREATE TABLE Games(Titel varchar(100) NOT NULL, Id int auto_increment primary key);
+CREATE TABLE Releases(Games_Id INT NOT NULL,
+                      Platformen_Id INT NOT NULL,
+		      CONSTRAINT fk_Releases_Games FOREIGN KEY (Games_Id) REFERENCES Games(Id),
+		      CONSTRAINT fk_Releases_Platformen FOREIGN KEY (Platformen_Id) REFERENCES Platformen(Id));
+```
+
+Voor 0067:
+```sql
+INSERT INTO Platformen(Naam)
+VALUES
+('PS4'),
+('Xbox One'),
+('Windows'),
+('Nintendo Switch');
+INSERT INTO Games(Titel)
+Values
+('Anthem'),
+('Sekiro: Shadows Die Twice'),
+('Devil May Cry 5'),
+('Mega Man 11');
+-- je zou dit typisch niet met de sleutels doen
+-- hier nemen we echter over uit de cursus
+INSERT INTO Releases(Games_Id,Platformen_Id)
+values
+(1,1),
+(1,2),
+(1,3),
+(2,1),
+(2,2),
+(2,3),
+(3,1),
+(3,2),
+(4,1),
+(4,2),
+(4,3),
+(4,4);
+```
+
+[`JOIN`-operaties bij simpele relaties](../dml-gevorderd/joins-via-tussenliggende-tabel.md) legt uit hoe je nu toont welke games op welk platform verschenen zijn. Dit wordt hier gedaan in 0068\_\_SelectReleases.sql:
+
+```sql
+USE ModernWays;
+SELECT Games.Titel, Platformen.Naam
+FROM Releases
+INNER JOIN Platformen ON Releases.Platformen_Id = Platformen.Id
+INNER JOIN Games ON Releases.Games_Id = Games.Id
+```
 
 #### Relaties met attributen
 
@@ -192,7 +273,7 @@ Voeg zelf de nodige info toe. Hiervoor volg je volgende stappen:
 
 1. Voeg een kolom van type `DATE` toe aan de tabel `Releases`. Deze kan nog niet verplicht zijn. Noem het script 0069\_\_AlterReleases.sql.
 2. Kopieer je script dat games en hun releaseplatform weergeeft naar een nieuw script, 0070\_\_UpdateReleases.sql.
-3. Pas op de gecombineerde tabel de datum aan volgens de gegevens hierboven. Je kan in deze tabel een `SET` uitvoeren op `Releasedatum`.
+3. Pas voor de gecombineerde tabel de datum aan volgens de gegevens hierboven. Je kan in deze tabel een `SET` uitvoeren op `Releasedatum`.
 4. Gebruik `WHERE Games.Titel = ... AND Platformen.Naam = ...` in plaats van eerst de sleutels af te lezen!
 5. Maak de kolom voor de releasedatum verplicht via 0071\_\_AlterReleases.sql, zodat nieuwe games altijd een releasedatum moeten krijgen.
 
