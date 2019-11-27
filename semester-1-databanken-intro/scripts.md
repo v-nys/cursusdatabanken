@@ -1,17 +1,11 @@
-# Scripts
-
-## Je script controleren
-
+# Je script controleren
 Je scripts controleren gaat via volgende tool:
-
 {% embed url="https://youtu.be/d0JONC3heBg" caption="XCHK" %}
-
-## Overzicht van alle scripts
-
+# Overzicht van alle scripts
 Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. Als een script meermaals vermeld wordt, wordt het op meerdere plaatsen besproken, dus check beide. Hou je verzameling scripts up-to-date!
 
-| Bestandsnaam | Vermeld op pagina |
-| :--- | :--- |
+| Bestandsnaam                              | Vermeld op pagina |
+|-------------------------------------------|-------------------|
 | 0001\_\_CreateDatabase.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/create) |
 | 0001\_\_CreateDatabase.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/create) |
 | 0002\_\_CreateBoeken.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/create) |
@@ -78,8 +72,8 @@ Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. 
 | 0063\_\_AlterTweets.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl-medium/relaties-voorstellen) |
 | 0064\_\_InsertUsersTweets.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl-medium/relaties-voorstellen) |
 | 0065\_\_SelectUsersTweets.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl-medium/relaties-voorstellen) |
-| 0066\_\_CreateGamesPlatformsReleases.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl-medium/relaties-voorstellen) |
-| 0067\_\_InsertGamesPlatformsReleases.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl-medium/relaties-voorstellen) |
+| 0066\_\_CreateGamesPlatformenReleases.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl-medium/relaties-voorstellen) |
+| 0067\_\_InsertGamesPlatformenReleases.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl-medium/relaties-voorstellen) |
 | 0068\_\_SelectReleases.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl-medium/relaties-voorstellen) |
 | 0069\_\_AlterReleases.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl-medium/relaties-voorstellen) |
 | 0070\_\_UpdateReleases.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl-medium/relaties-voorstellen) |
@@ -132,4 +126,19 @@ Hieronder vind je alle scripts terug die in de cursus geschreven moeten worden. 
 | 0545\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/oefeningen-labo-groeperen) |
 | 0546\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/oefeningen-labo-groeperen) |
 | 0547\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/oefeningen-labo-groeperen) |
-
+| 0548\_\_CalibrateDB.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-gevorderd/labo-oefeningen) |
+| 0549\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-gevorderd/labo-oefeningen) |
+| 0550\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-gevorderd/labo-oefeningen) |
+| 0551\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-gevorderd/labo-oefeningen) |
+| 0552\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-gevorderd/labo-oefeningen) |
+| 0553\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-gevorderd/labo-oefeningen) |
+| 0554\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-gevorderd/labo-oefeningen) |
+| 0555\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-gevorderd/labo-oefeningen) |
+| 0556\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-gevorderd/labo-oefeningen) |
+| 0557\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-gevorderd/labo-oefeningen) |
+| 0558\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-gevorderd/labo-oefeningen) |
+| 0559\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-gevorderd/labo-oefeningen) |
+| 0560\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-gevorderd/labo-oefeningen) |
+| 0561\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-gevorderd/labo-oefeningen) |
+| 0562\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-gevorderd/labo-oefeningen) |
+| 0563\_\_Oefening.sql | [pagina](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/dml-gevorderd/labo-oefeningen) |
