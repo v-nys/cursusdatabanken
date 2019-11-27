@@ -272,10 +272,12 @@ In dit geval is `Releases` niet gewoon een tabel die een **relatie** voorstelt, 
 Voeg zelf de nodige info toe. Hiervoor volg je volgende stappen:
 
 1. Voeg een kolom van type `DATE` toe aan de tabel `Releases`. Deze kan nog niet verplicht zijn. Noem het script 0069\_\_AlterReleases.sql.
-2. Kopieer je script dat games en hun releaseplatform weergeeft naar een nieuw script, 0070\_\_UpdateReleases.sql.
+2. Kopieer het script dat games en hun releaseplatform weergeeft naar een nieuw script, 0070\_\_UpdateReleases.sql.
 3. Pas voor de gecombineerde tabel de datum aan volgens de gegevens hierboven. Je kan in deze tabel een `SET` uitvoeren op `Releasedatum`.
-4. Gebruik `WHERE Games.Titel = ... AND Platformen.Naam = ...` in plaats van eerst de sleutels af te lezen!
-5. Maak de kolom voor de releasedatum verplicht via 0071\_\_AlterReleases.sql, zodat nieuwe games altijd een releasedatum moeten krijgen.
+  * Gebruik `WHERE Games.Titel = ... AND Platformen.Naam = ...` in plaats van eerst de sleutels af te lezen!
+4. Maak de kolom voor de releasedatum verplicht via 0071\_\_AlterReleases.sql, zodat nieuwe games altijd een releasedatum moeten krijgen. Doe dit door de kolom aan te passen naar `DATE NOT NULL`.
+
+Hier komen geen nieuwe ideeën aan bod, maar je moet de eerdere stappen goed begrijpen om deze stappen te doorlopen.
 
 ## Verdere soorten relaties
 
