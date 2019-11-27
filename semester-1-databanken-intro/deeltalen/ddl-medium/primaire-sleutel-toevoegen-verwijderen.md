@@ -173,18 +173,3 @@ Een constraint behoort tot de definitie van de tabel, dus moet je DROP gebruiken
 USE ModernWays;
 ALTER TABLE Boeken DROP PRIMARY KEY;
 ```
-
-Je kan dus geen kolom verwijderen waarop een (primary) key constraint ligt. Je moet eerst de constraint verwijderen:
-
-```sql
-alter table Boeken drop primary key;
-alter table Boeken drop column Id;
-```
-
-Dan kan je eventueel de kolom weer toevoegen:
-
-```sql
-use ModernWays;
-ALTER TABLE Boeken ADD Id INT auto_increment PRIMARY KEY;
-```
-
