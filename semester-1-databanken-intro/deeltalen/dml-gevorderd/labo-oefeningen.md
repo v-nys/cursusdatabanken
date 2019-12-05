@@ -1,4 +1,7 @@
-# Calibratie
+# Labo-oefeningen
+
+## Calibratie
+
 Start vanaf onderstaand script, 0548\_\_CalibrateDB.sql:
 
 ```sql
@@ -9,7 +12,7 @@ USE `ModernWays`;
 --
 -- Host: localhost    Database: ModernWaysBL
 -- ------------------------------------------------------
--- Server version	8.0.17
+-- Server version    8.0.17
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -140,80 +143,97 @@ UNLOCK TABLES;
 -- Dump completed on 2019-11-27 11:14:28
 ```
 
-# primaire sleutels
-## Oefening 1
+## primaire sleutels
+
+### Oefening 1
+
 Schrijf een script, 0549\_\_Oefening.sql, dat de tabel `Huisdieren` voorziet van een primaire sleutel. Deze begint vanaf 1 en is van het type `INT`.
 
-## Oefening 2
+### Oefening 2
+
 Maak een nieuwe tabel, `Baasjes`, met één "gewone" kolom voor de naam van het baasje. Deze kolom heeft dezelfde eigenschappen als de bestaande kolom `Baasje` in de tabel `Huisdieren`. Om deze te achterhalen: rechterklik op `Huisdieren`, gebruik "table inspector" en lees het type af, check of `NULL` toegestaan is en let op de karakterset. Op andere zaken hoef je nu niet te letten. De tabel heeft ook een primaire sleutel die de gewoonlijke conventies voor primaire sleutelkolommen volgt. Noem het script om de tabel te maken 0550\_\_Oefening.sql.
 
-## Oefening 3
+### Oefening 3
+
 Lees alle baasjes af uit de tabel met huisdieren en vul op basis hiervan de tabel `Baasjes` in, zodat de primaire sleutelwaarden automatisch bepaald worden door MySQL. Noem dit script 0551\_\_Oefening.sql.
 
-# vreemde sleutels
+## vreemde sleutels
+
 We zullen hier de kolom `Baasje` wegwerken uit de tabel `Huisdieren` en in een eigen tabel plaatsen, die een één-op-één verband vertoont met `Huisdieren`. We zullen dit doen door meerdere stappen te doorlopen.
 
-## Oefening 1
+### Oefening 1
+
 Voeg een kolom toe aan de tabel `Baasjes` die je zal gebruiken om naar de tabel `Huisdieren` te verwijzen. Volg hierbij de conventies rond vreemde sleutels. Voorlopig moet je een `NULL`-waarde toestaan. Noem dit 0552\_\_Oefening.sql.
 
-## Oefening 2
+### Oefening 2
+
 Vul de juiste waarden in in de kolom die je net hebt toegevoegd. Je mag dit voorlopig doen zoals je zelf wil, als het juiste baasje maar naar het juiste dier verwijst. Noem dit 0553\_\_Oefening.sql.
 
-## Oefening 3
+### Oefening 3
+
 Wis de kolom `Baasje` uit de tabel `Huisdieren`. Noem dit 0554\_\_Oefening.sql.
 
-# combineren
+## combineren
 
-## Oefening 1
+### Oefening 1
 
 Toon alle mogelijke combinaties gegevens over een huisdier en gegevens over een baasje. Het resultaat moet er zo uitzien:
 
-| Naam | Leeftijd | Soort | Geluid | Id | Naam | Id | Huisdieren_Id |
-|------|----------|-------|--------|----|------|----|---------------|
-| waarde | waarde | waarde | waarde | waarde | waarde | waarde |
+| Naam | Leeftijd | Soort | Geluid | Id | Naam | Id | Huisdieren\_Id |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| waarde | waarde | waarde | waarde | waarde | waarde | waarde |  |
 
-Dit resultaat bevat ook rijen waarin baasje en huisdier **niet** bij elkaar horen.
-Noem het script 0555\_\_Oefening.sql.
+Dit resultaat bevat ook rijen waarin baasje en huisdier **niet** bij elkaar horen. Noem het script 0555\_\_Oefening.sql.
 
-## Oefening 2
+### Oefening 2
+
 Toon nu de combinaties van namen van huisdieren en name van baasjes in volgend formaat:
 
 | Naam huisdier | Naam baasje |
-|---------------|-------------|
-| waarde        | waarde      |
+| :--- | :--- |
+| waarde | waarde |
 
 Noem je script 0556\_\_Oefening.sql.
 
 Proficiat! Je hebt een 1-op-1 relatie gemaakt en gebruikt!
 
-# vreemde sleutels, deel 2
+## vreemde sleutels, deel 2
+
 Nu gaan we artiesten in een eigen tabel plaatsen, omdat het eigenlijk ook entiteiten zijn.
 
-## Oefening 1
+### Oefening 1
+
 Schrijf een script, 0557\_\_Oefening.sql, dat een tabel `Artiesten` maakt. Artiesten hebben een naam met dezelfde eigenschappen als de kolom `Artiest` uit de tabel `Liedjes`. Ze hebben ook een primary key met de gebruikelijke conventies. Doe dit zoals je de tabel `Baasjes` hebt aangemaakt.
 
-## Oefening 2
+### Oefening 2
+
 Schrijf een script, 0558\_\_Oefening.sql, dat alle artiesten uit de tabel `Liedjes` invoegt in de nieuwe tabel `Artiesten`.
 
-## Oefening 3
+### Oefening 3
+
 Voeg met 0559\_\_Oefening.sql een vreemde sleutel toe aan de tabel `Liedjes`, zodat van een liedje naar een artiest kan worden verwezen. Voorlopig mag deze kolom de waarde `NULL` bevatten. Volg de afspraken rond vreemde sleutels.
 
-## Oefening 4
+### Oefening 4
+
 Vul met 0560\_\_Oefening.sql de waarden voor de vreemde sleutelkolom van `Liedjes` in. Je mag dit doen op een manier naar eigen keuze.
 
-## Oefening 5
+### Oefening 5
+
 Wis de kolom `Artiest` uit de tabel `Liedjes`. Noem je script 0561\_\_Oefening.sql.
 
-## Oefening 5
+### Oefening 5
+
 Toon alle mogelijke combinaties gegevens over een liedje en gegevens over een artiest. Noem je script 0562\_\_Oefening.sql.
 
-## Oefening 6
+### Oefening 6
+
 Toon nu de combinaties van artiesten en hun liedjes in volgend formaat:
 
-| Artiest | Titel  |
-|---------|--------|
-| waarde  | waarde |
+| Artiest | Titel |
+| :--- | :--- |
+| waarde | waarde |
 
 Noem je script 0563\_\_Oefening.sql.
 
 Proficiat! Je hebt een 1-op-N relatie gemaakt en gebruikt!
+

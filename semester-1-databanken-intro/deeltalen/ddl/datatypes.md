@@ -80,7 +80,7 @@ Deze data hoeft niet tussen enkele quotes. Je gebruikt een punt in plaats van ee
 
 ### `DATE`
 
-Dit type dient voor het bijhouden van datums in de vorm `YYYY-MM-DD`. Je kan alleen jaartallen van 1000 tot 9999 bijhouden.
+Dit type dient voor het bijhouden van datums in de vorm `'YYYY-MM-DD'`. Je kan alleen jaartallen van 1000 tot 9999 bijhouden.
 
 ### `TIME`
 

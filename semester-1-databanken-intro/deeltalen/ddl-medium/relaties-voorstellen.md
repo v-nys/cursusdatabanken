@@ -122,7 +122,7 @@ Zoals in het geval van de 1-op-1 relatie, kunnen we deze relatie tussen gebruike
 
 Dit is opnieuw iets meer dan we nodig hebben. We kunnen een foreign key van één tabel toevoegen aan een andere. Maar, in tegenstelling tot de precieze 1-op-1-relatie, mogen we niet kiezen. We zetten de foreign key in de tabel die niet aan de "exact-1"-kant van de relatie zit. Zorg er ook voor dat de vreemde sleutel nooit NULL is met een constraint.
 
-Voer dit zelfstandig uit voor de reeks tweets hierboven. Volg de reeds afgesproken afspraken: één tabel `Users` voor users \(met een kolom `Handle`\), één tabel `Tweets` voor tweets \(met een kolom Bericht\), beide voorzien van primaire sleutels, met de vreemde sleutel aan de "N-kant". Stel gebruikersnamen en tweets voor met kolommen van variabele lengte \(tot 144 tekens\), zonder internationale tekens. De @ maakt geen deel uit van een gebruikersnaam. Zet de SQL-code die je nodig hebt om de (lege) tabellen te maken in een script 0062\_\_CreateUsersTweets.sql. Zet de code die je nodig hebt om de vreemde sleutel toe te voegen in 0063\_\_AlterTweets.sql. Zet ten slotte de code om de tabellen in te vullen in een script 0064\_\_InsertUsersTweets.sql. Begin met een `INSERT` voor de users, doe dan pas die voor de tweets.
+Voer dit zelfstandig uit voor de reeks tweets hierboven. Volg de reeds afgesproken afspraken: één tabel `Users` voor users \(met een kolom `Handle`\), één tabel `Tweets` voor tweets \(met een kolom Bericht\), beide voorzien van primaire sleutels, met de vreemde sleutel aan de "N-kant". Stel gebruikersnamen en tweets voor met kolommen van variabele lengte \(tot 144 tekens\), zonder internationale tekens. De @ maakt geen deel uit van een gebruikersnaam. Zet de SQL-code die je nodig hebt om de \(lege\) tabellen te maken in een script 0062\_\_CreateUsersTweets.sql. Zet de code die je nodig hebt om de vreemde sleutel toe te voegen in 0063\_\_AlterTweets.sql. Zet ten slotte de code om de tabellen in te vullen in een script 0064\_\_InsertUsersTweets.sql. Begin met een `INSERT` voor de users, doe dan pas die voor de tweets.
 
 Voor het laatste script bespaart onderstaande gedeeltelijke SQL je het copy-pasten van de tweets.
 
@@ -198,11 +198,12 @@ CREATE TABLE Platformen(Naam varchar(50) CHARSET utf8mb4 NOT NULL, Id INT AUTO_I
 CREATE TABLE Games(Titel varchar(50) CHARSET utf8mb4 NOT NULL, Id int auto_increment primary key);
 CREATE TABLE Releases(Games_Id INT NOT NULL,
                       Platformen_Id INT NOT NULL,
-		      CONSTRAINT fk_Releases_Games FOREIGN KEY (Games_Id) REFERENCES Games(Id),
-		      CONSTRAINT fk_Releases_Platformen FOREIGN KEY (Platformen_Id) REFERENCES Platformen(Id));
+              CONSTRAINT fk_Releases_Games FOREIGN KEY (Games_Id) REFERENCES Games(Id),
+              CONSTRAINT fk_Releases_Platformen FOREIGN KEY (Platformen_Id) REFERENCES Platformen(Id));
 ```
 
 Voor 0067:
+
 ```sql
 INSERT INTO Platformen(Naam)
 VALUES
@@ -274,7 +275,7 @@ Voeg zelf de nodige info toe. Hiervoor volg je volgende stappen:
 1. Voeg een kolom van type `DATE` toe aan de tabel `Releases`. Deze kan nog niet verplicht zijn. Noem het script 0069\_\_AlterReleases.sql.
 2. Kopieer het script dat games en hun releaseplatform weergeeft naar een nieuw script, 0070\_\_UpdateReleases.sql.
 3. Pas voor de gecombineerde tabel de datum aan volgens de gegevens hierboven. Je kan in deze tabel een `SET` uitvoeren op `Releasedatum`.
-  * Gebruik `WHERE Games.Titel = ... AND Platformen.Naam = ...` in plaats van eerst de sleutels af te lezen!
+   * Gebruik `WHERE Games.Titel = ... AND Platformen.Naam = ...` in plaats van eerst de sleutels af te lezen!
 4. Maak de kolom voor de releasedatum verplicht via 0071\_\_AlterReleases.sql, zodat nieuwe games altijd een releasedatum moeten krijgen. Doe dit door de kolom aan te passen naar `DATE NOT NULL`.
 
 Hier komen geen nieuwe ideeën aan bod, maar je moet de eerdere stappen goed begrijpen om deze stappen te doorlopen.
