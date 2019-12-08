@@ -15,6 +15,7 @@
 
 * Voorbeeld: een lening kunnen we zien als een entity set op zich, maar ook als een relationship set tussen klanten en filialen, met ln\_nr en bedrag als attributen van de relationship set.
 * Nadelen: als de relationship set geen 1 op 1-relatie is, en attributen heeft, dan ontstaat duplicatie van gegevens.
+* In het geval een begrip duidelijk twee entiteittypes verbindt, maar ook eigen attributen bezit, wordt gekozen voor een **"associatieve entiteit"**. Een voorbeeld hiervan kan bijvoorbeeld "lesmoment" zijn, wanneer er entiteittypes voor leerkrachten en voor vakken zijn. Een lesmoment verbindt een leerkracht en een vak, maar voegt toe op welk tijdstip de leerkracht in kwestie het vak geeft.
 
 ## Keuze tussen binaire of meervoudige relationship sets
 
