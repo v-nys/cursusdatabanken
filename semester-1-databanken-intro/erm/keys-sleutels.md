@@ -9,6 +9,10 @@
 
 ![](../../.gitbook/assets/image%20%2845%29.png)
 
+{% hint style="info" %}
+In SQL-databanken wordt typisch een eenvoudig numeriek sleutelattribuut `Id` toegevoegd. Dit neemt weinig ruimte in beslag, is makkelijk automatisch toe te kennen en uit te schrijven.
+{% endhint %}
+
 ## Sleutel van een relationship set
 
 * Een relatie tussen twee entity sets wordt uniek bepaald door de sleutels van elk van de twee entiteiten waartussen de relatie ligt. Voorbeeld: \(klantnummer, rekeningnr\) is een sleutel voor de relatie "houder van" tussen klanten en rekeningen.
@@ -24,3 +28,4 @@
 * De sleutel van de zwakke entity set kan dan gevormd worden door de primaire sleutel van de sterke entity set, en de "discriminator" van de zwakke entity set.
 * Opmerking:existence dependency leidt niet automatisch tot een zwakke entity set.
 
+Een voorbeeld is een entity type `Hotelkamer` met een kolom `Nummer`. `Nummer` op zich kan niet als sleutel dienen. Een entiteit van dit type kan enkel uniek geïdentificeerd worden wanneer ze gelinkt wordt aan een hotel.
