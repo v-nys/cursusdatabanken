@@ -29,3 +29,4 @@ In SQL-databanken wordt typisch een eenvoudig numeriek sleutelattribuut `Id` toe
 * Opmerking:existence dependency leidt niet automatisch tot een zwakke entity set.
 
 Een voorbeeld is een entity type `Hotelkamer` met een kolom `Nummer`. `Nummer` op zich kan niet als sleutel dienen. Een entiteit van dit type kan enkel uniek geïdentificeerd worden wanneer ze gelinkt wordt aan een hotel.
+

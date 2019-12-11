@@ -29,9 +29,10 @@ Constraints dwingen verschillende vormen van "integriteit" af.
 
 Cardinaliteit en existence dependencies worden in de eerste plaats gelinkt aan "referentiële integriteit". Dit wil zeggen dat entiteiten op een correcte manier naar elkaar verwijzen. Het is om referentiële integriteit te bewaren dat een database management systeem niet toestaat dat je een vreemde sleutelwaarde ingeeft die verwijst naar een niet-bestaande entiteit. **Let op: het is vaak wel mogelijk om een vreemde sleutelwaarde `NULL` te gebruiken.**
 
-Breder dan alleen referentiële integriteit is data-integriteit. Dit wil zeggen dat de data geen ongeldige waarden bevat. Niets kan je volledig beschermen tegen foutieve invoer, maar (onder andere) volgende types checks bieden een betere data-integriteit:
+Breder dan alleen referentiële integriteit is data-integriteit. Dit wil zeggen dat de data geen ongeldige waarden bevat. Niets kan je volledig beschermen tegen foutieve invoer, maar \(onder andere\) volgende types checks bieden een betere data-integriteit:
 
 * checks op `NULL`
 * checks op toegelaten waarden
 
 Er zijn nog specifieke vormen van data-integriteit naast referentiële integriteit. Deze worden behandeld in de cursus Databanken.
+

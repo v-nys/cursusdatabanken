@@ -16,18 +16,19 @@ Voorlopig moet je specialisatie en generalisatie enkel op het conceptuele niveau
 * attribuut-bepaald: een entity kan tot een specialisatie behoren op basis van een attribuut in de veralgemeende entity set, bv. het attribuut "rekeningstype", dat de waarde "zicht" of "spaar" kan hebben.
 * user-bepaald: de gebruiker kan zelf een entity indelen in de specialisatie naar keuze.
 * gescheiden of overlappend: het kan zijn dat een entiteit slechts tot één gespecialiseerde entity set mag behoren, of tot meerdere tegelijk. Het is bijvoorbeeld niet mogelijk dat een rekening tegelijkertijd een spaarrekening én een zichtrekening is, maar dat wil niet zeggen dat dit voor andere entiteittypes ook altijd zo is.
-* totaal of partieel: het kan zijn dat een entiteit *moet* behoren tot een gespecialiseerde set, maar het kan ook zijn dat dit niet hoeft.
+* totaal of partieel: het kan zijn dat een entiteit _moet_ behoren tot een gespecialiseerde set, maar het kan ook zijn dat dit niet hoeft.
 
-## Aggregatie 
+## Aggregatie
 
 Aggregatie in een ERM houdt in dat een relatie tussen twee entiteittypes wordt behandeld als een entiteit op zich. Aggregatie wordt oa. gebruikt om relaties tussen relaties te leggen.
 
 ![](../../.gitbook/assets/image%20%2817%29.png)
 
-Dit is een n op n relatie, het attribuut filiaal hoort dus bij de relationship set, en kan niet verplaatst worden naar een van de entity sets. 
+Dit is een n op n relatie, het attribuut filiaal hoort dus bij de relationship set, en kan niet verplaatst worden naar een van de entity sets.
 
 Door aggregatie kunnen we het attribuut filiaal verzelfstandigen tot entity set.
 
 ![](../../.gitbook/assets/image%20%2829%29.png)
 
 In deze laatste afbeelding is er een associatieve entiteit `Lening` aanwezig.
+
