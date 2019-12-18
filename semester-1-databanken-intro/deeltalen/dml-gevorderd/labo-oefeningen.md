@@ -221,11 +221,11 @@ Vul met 0560\_\_Oefening.sql de waarden voor de vreemde sleutelkolom van `Liedje
 
 Wis de kolom `Artiest` uit de tabel `Liedjes`. Noem je script 0561\_\_Oefening.sql.
 
-### Oefening 5
+### Oefening 6
 
 Toon alle mogelijke combinaties gegevens over een liedje en gegevens over een artiest. Noem je script 0562\_\_Oefening.sql.
 
-### Oefening 6
+### Oefening 7
 
 Toon nu de combinaties van artiesten en hun liedjes in volgend formaat:
 
