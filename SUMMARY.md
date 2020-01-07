@@ -81,3 +81,11 @@
 * [PRO](pro-geen-leerstof-en-of-in-opbouw/untitled/README.md)
   * [Blockchain](pro-geen-leerstof-en-of-in-opbouw/untitled/blockchain.md)
 
+## SEMESTER 2: DATABANKEN
+
+* [Joins](semester-2-databanken/joins.md)
+* [Views](semester-2-databanken/views.md)
+* [Indexeren](semester-2-databanken/indexeren.md)
+* [ERD](semester-2-databanken/erd.md)
+* [Stored procedures](semester-2-databanken/stored-procedures.md)
+
