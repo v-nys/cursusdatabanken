@@ -84,8 +84,9 @@
 ## SEMESTER 2: DATABANKEN
 
 * [Join](semester-2-databanken/joins.md)
-* [Views](semester-2-databanken/views/README.md)
+* [Views](semester-2-databanken/views.md)
   * [CREATE](semester-2-databanken/views/create.md)
+  * [DROP](semester-2-databanken/views/drop.md)
 * [Indexeren](semester-2-databanken/indexeren.md)
 * [ERD](semester-2-databanken/erd.md)
 * [Stored procedures](semester-2-databanken/stored-procedures.md)
