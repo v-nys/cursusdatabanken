@@ -87,6 +87,7 @@
 * [Views](semester-2-databanken/views.md)
   * [CREATE](semester-2-databanken/views/create.md)
   * [DROP](semester-2-databanken/views/drop.md)
+  * [UPDATE](semester-2-databanken/views/update.md)
 * [Indexeren](semester-2-databanken/indexeren.md)
 * [ERD](semester-2-databanken/erd.md)
 * [Stored procedures](semester-2-databanken/stored-procedures.md)
