@@ -6,3 +6,7 @@ In eerste instantie is een tabel geïndexeerd op basis van zijn primaire sleutel
 
 Indexeren verhoogt dus de snelheid waarmee gegevens worden geselecteerd, maar vertraagt de werking bij het opslaan van gegevens. Wanneer gegevens worden toege-voegd, wordt niet alleen de tabel bijgewerkt, maar moet ook de index worden bijgewerkt. Een index kun je op elk willekeurig moment creëren/wijzigen/verwijderen, zonder dat dit invloed heeft op de opgeslagen data in de bijhorende tabellen.
 
+{% hint style="info" %}
+[https://www.mysqltutorial.org/mysql-index/mysql-prefix-index/](https://www.mysqltutorial.org/mysql-index/mysql-prefix-index/)
+{% endhint %}
+
