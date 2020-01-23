@@ -74,7 +74,3 @@ FROM takenLeden;
 
 Wel belangrijk te weten dat een view de data niet fysisch bevat, maar telkens de query zal uitvoeren.
 
-{% hint style="info" %}
-[https://www.mysqltutorial.org/mysql-views-tutorial.aspx](https://www.mysqltutorial.org/mysql-views-tutorial.aspx)
-{% endhint %}
-

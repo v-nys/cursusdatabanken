@@ -10,5 +10,9 @@ Een view bevat rijen en kolommen zoals een 'echte' tabel.
 
 Een view is dus het resultaat van een query en kan tabellen bevatten dewelke afkomstig zijn uit verschillende tabellen.  
 
+{% hint style="info" %}
+[https://www.mysqltutorial.org/mysql-views-tutorial.aspx](https://www.mysqltutorial.org/mysql-views-tutorial.aspx)
+{% endhint %}
+
 
 
