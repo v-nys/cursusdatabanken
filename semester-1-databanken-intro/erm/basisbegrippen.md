@@ -28,7 +28,7 @@
 * Een relation is een verband tussen verschillende entiteiten. bv. de relatie "ontlener" tussen de entiteit "Janssens" uit de entity set klanten en de entiteit lening nr 0001 uit de entity set leningen.
 * Een relationship set \(relatie\) is de verzameling van alle gelijkaardige relaties tussen entiteiten uit dezelfde entity sets.
 
-![](../../.gitbook/assets/image%20%2856%29.png)
+![](../../.gitbook/assets/image%20%2861%29.png)
 
 * In bovenstaande relatie speelt Janssens de rol van "lener" en 0001 de rol van "lening". Rollen zijn alleen echt van belang bij relaties van een entity set naar zichzelf, "recursieve" relaties.
 * Voorbeeld: de relatie "is manager van" van de entity set "personeel" naar zichzelf.

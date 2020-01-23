@@ -41,6 +41,14 @@ INNER JOIN Leden
 ON Taken.Id = Taken_Id;
 ```
 
+Het resultaat van deze query is:
+
+| voornaam | omschrijving |
+| :--- | :--- |
+| Yannick | frisdrank meebrengen |
+| Bavo | bestek voorzien |
+| Max | aardappelsla maken |
+
 Als we het resultaat van bovenstaande query willen opslaan in een view, doen we dit op volgende manier:
 
 ```sql
@@ -52,6 +60,10 @@ INNER JOIN Leden ON Taken.Id = Taken_Id;
 ```
 
 Eens je bovenstaande query `CREATE VIEW` hebt uitgevoerd wordt de view bewaard in de database.
+
+In mySQL kan je een view vinden onder deze rubriek:
+
+![](../../.gitbook/assets/image%20%2847%29.png)
 
 Nu kan je deze view bevragen zoals een gewone tabel.
 

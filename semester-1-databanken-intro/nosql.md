@@ -71,7 +71,7 @@ Er zijn 4 soorten no-sql databanken:
 
 #### NoSQL – \(wide\) Column databank
 
-![](../.gitbook/assets/image%20%2852%29.png)
+![](../.gitbook/assets/image%20%2857%29.png)
 
 * Gebruikt tabellen, rijen en kolommen, maar anders dan een relationele databank.
 * De namen en formaat van de kolommen kan verschillen van rij tot rij in binnen dezelfde tabel.
