@@ -83,7 +83,15 @@
 
 ## SEMESTER 2: DATABANKEN
 
-* [Join](semester-2-databanken/joins.md)
+* [Join](semester-2-databanken/joins/README.md)
+  * [INNER JOIN](semester-2-databanken/joins/inner-join.md)
+  * [LEFT JOIN](semester-2-databanken/joins/left-join.md)
+  * [COALESCE](semester-2-databanken/joins/coalesce.md)
+  * [RIGHT JOIN](semester-2-databanken/joins/right-join.md)
+  * [OUTER JOIN](semester-2-databanken/joins/outer-join.md)
+  * [LEFT EXCLUDING JOIN](semester-2-databanken/joins/left-excluding-join.md)
+  * [RIGHT EXCLUDING JOIN](semester-2-databanken/joins/right-excluding-join.md)
+  * [OUTER EXCLUDING JOIN](semester-2-databanken/joins/outer-excluding-join.md)
 * [Views](semester-2-databanken/views/README.md)
   * [CREATE](semester-2-databanken/views/create.md)
   * [DROP](semester-2-databanken/views/drop.md)
