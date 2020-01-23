@@ -28,7 +28,7 @@ Dit is een n op n relatie, het attribuut filiaal hoort dus bij de relationship s
 
 Door aggregatie kunnen we het attribuut filiaal verzelfstandigen tot entity set.
 
-![](../../.gitbook/assets/image%20%2829%29.png)
+![](../../.gitbook/assets/image%20%2830%29.png)
 
 In deze laatste afbeelding is er een associatieve entiteit `Lening` aanwezig.
 

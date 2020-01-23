@@ -101,6 +101,7 @@
   * [BESLUIT](semester-2-databanken/views/besluit.md)
 * [Indexeren](semester-2-databanken/indexeren/README.md)
   * [CREATE](semester-2-databanken/indexeren/create.md)
+  * [DROP](semester-2-databanken/indexeren/drop.md)
 * [ERD](semester-2-databanken/erd.md)
 * [Stored procedures](semester-2-databanken/stored-procedures.md)
 

@@ -42,7 +42,7 @@ Er zijn 4 soorten no-sql databanken:
 * Graph databank  Bv. Neo4J
 * Column databank  Bv. Google bigtable 
 
-![](../.gitbook/assets/image%20%2831%29.png)
+![](../.gitbook/assets/image%20%2832%29.png)
 
 
 
@@ -71,7 +71,7 @@ Er zijn 4 soorten no-sql databanken:
 
 #### NoSQL – \(wide\) Column databank
 
-![](../.gitbook/assets/image%20%2857%29.png)
+![](../.gitbook/assets/image%20%2860%29.png)
 
 * Gebruikt tabellen, rijen en kolommen, maar anders dan een relationele databank.
 * De namen en formaat van de kolommen kan verschillen van rij tot rij in binnen dezelfde tabel.
@@ -82,7 +82,7 @@ Vaak worden combinaties gebruikt van meerdere soorten DB’s en dit afhankelijk 
 
 Ter info, hieronder een lijstje met ranking van de meest populaire databases met bijzondere aandacht voor het database model \([https://db-engines.com/en/ranking](https://db-engines.com/en/ranking)\).
 
-![](../.gitbook/assets/image%20%2825%29.png)
+![](../.gitbook/assets/image%20%2826%29.png)
 
 {% hint style="info" %}
 _Extra info_  

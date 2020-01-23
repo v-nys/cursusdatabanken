@@ -63,7 +63,7 @@ Eens je bovenstaande query `CREATE VIEW` hebt uitgevoerd wordt de view bewaard i
 
 In mySQL kan je een view vinden onder deze rubriek:
 
-![](../../.gitbook/assets/image%20%2847%29.png)
+![](../../.gitbook/assets/image%20%2850%29.png)
 
 Nu kan je deze view bevragen zoals een gewone tabel.
 

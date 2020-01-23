@@ -24,7 +24,7 @@ SET omschrijving = 'frisdrank voorzien'
 WHERE voornaam = 'Yannick';
 ```
 
-![](../../.gitbook/assets/image%20%2834%29.png)
+![](../../.gitbook/assets/image%20%2836%29.png)
 
 ### UPDATE VIEW INFORMATIE
 
@@ -36,7 +36,7 @@ FROM information_schema.views
 WHERE table_schema = 'modernways';
 ```
 
-![](../../.gitbook/assets/image%20%2854%29.png)
+![](../../.gitbook/assets/image%20%2857%29.png)
 
 
 
