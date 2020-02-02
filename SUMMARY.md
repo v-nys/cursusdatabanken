@@ -92,6 +92,7 @@
   * [LEFT EXCLUDING JOIN](semester-2-databanken/joins/left-excluding-join.md)
   * [RIGHT EXCLUDING JOIN](semester-2-databanken/joins/right-excluding-join.md)
   * [OUTER EXCLUDING JOIN](semester-2-databanken/joins/outer-excluding-join.md)
+  * [Labo oefeningen](semester-2-databanken/joins/labo-oefeningen.md)
 * [Views](semester-2-databanken/views/README.md)
   * [CREATE](semester-2-databanken/views/create.md)
   * [DROP](semester-2-databanken/views/drop.md)
