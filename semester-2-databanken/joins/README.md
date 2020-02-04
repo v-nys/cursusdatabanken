@@ -13,7 +13,7 @@ Om de integriteit van een database te bewaren normaliseren we de gegevens in de 
 
 ## Startpunt
 
-Als je wil mee volgen, gebruik dan onderstaand calibratiescript. Noem het 0100\_\_CalibrateDB.sql.
+Als je wil mee volgen, gebruik dan onderstaand calibratiescript. Noem het 0100\_\_CalibrateDB.sql. **Let op: dit maakt dezelfde tabelstructuur aan als de voorbeelden, maar gebruikt andere data.**
 
 ```
 DROP DATABASE IF EXISTS `ModernWays`;
