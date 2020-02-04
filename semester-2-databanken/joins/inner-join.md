@@ -20,10 +20,10 @@ Selecteer alle boeken en toon de voornaam en de familienaam van de `auteur`. De 
 SELECT Personen.voornaam, Personen.familienaam,
        Boeken.titel 
 FROM Boeken
-INNER JOIN Personen ON Boeken.IdAuteur = Personen.Id;
+INNER JOIN Personen ON Boeken.Personen_Id = Personen.Id;
 ```
 
-Voor elke rij uit de tabel `Boeken` wordt er opgezocht als er met de waarde die in de foreign key kolom `IdAuteur` van `Boeken` een waarde bestand in de primary key kolom `Id` van `Personen`. Als er een match in wordt de rij geselecteerd. Indien er geen match is wordt de rij in de tabel `Boeken` genegeerd.
+Voor elke rij uit de tabel `Boeken` wordt er opgezocht als er met de waarde die in de foreign key kolom `Personen_Id` van `Boeken` een waarde bestand in de primary key kolom `Id` van `Personen`. Als er een match in wordt de rij geselecteerd. Indien er geen match is wordt de rij in de tabel `Boeken` genegeerd.
 
 We wijzigen de vraag lichtjes en willen nu alle auteurs zien en de boeken die ze geschreven hebben. We ordenen de lijst op `Familienaam`, `Voornaam`, `Titel`
 
@@ -31,7 +31,7 @@ We wijzigen de vraag lichtjes en willen nu alle auteurs zien en de boeken die ze
 SELECT Personen.Voornaam, Personen.Familienaam,
        Boeken.Titel 
 FROM Personen
-INNER JOIN Boeken ON Boeken.IdAuteur = Personen.Id
+INNER JOIN Boeken ON Boeken.Personen_Id = Personen.Id
 ORDER BY Personen.Voornaam, Personen.Familienaam, Boeken.Titel;
 ```
 
@@ -78,7 +78,7 @@ Alle auteurs en hun boeken te selecteren, maar ordenen de lijst nu op `Familiena
 SELECT Personen.Voornaam, Personen.Familienaam,
        Boeken.Titel 
 FROM Personen
-INNER JOIN Boeken ON Boeken.IdAuteur = Personen.Id
+INNER JOIN Boeken ON Boeken.Personen_Id = Personen.Id
 ORDER BY Personen.Familienaam, Personen.Voornaam, Boeken.Titel;
 ```
 

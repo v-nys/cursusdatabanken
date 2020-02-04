@@ -8,7 +8,7 @@ Met de functie `coalesce` kan je aangeven wat erin een `null` kolom moet worden 
 SELECT Personen.Voornaam, Personen.Familienaam,
        COALESCE (Boeken.Titel, 'Geen boek opgenomen in Boeken') 
 FROM Personen
-LEFT JOIN Boeken ON Boeken.IdAuteur = Personen.Id
+LEFT JOIN Boeken ON Boeken.Personen_Id = Personen.Id
 ORDER BY Personen.Familienaam, Personen.Voornaam, Boeken.Titel;
 ```
 

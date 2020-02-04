@@ -19,7 +19,7 @@ Als ik de tabellen in de select statement switch en `Boeken` links en `Personen`
 SELECT Personen.Voornaam, Personen.Familienaam,
        COALESCE (Boeken.Titel, 'Geen boek opgenomen in Boeken') 
 FROM Boeken
-LEFT JOIN Personen on Boeken.IdAuteur = Personen.Id
+LEFT JOIN Personen on Boeken.Personen_Id = Personen.Id
 ORDER BY Personen.Familienaam, Personen.Voornaam, Boeken.Titel;
 ```
 
@@ -31,7 +31,7 @@ Door een `right join`:
 SELECT Personen.Voornaam, Personen.Familienaam,
        COALESCE (Boeken.Titel, 'Geen boek opgenomen in Boeken') 
 FROM Boeken
-RIGHT JOIN Personen ON Boeken.IdAuteur = Personen.Id
+RIGHT JOIN Personen ON Boeken.Personen_Id = Personen.Id
 ORDER BY Personen.Familienaam, Personen.Voornaam, Boeken.Titel;
 ```
 
@@ -46,7 +46,7 @@ SELECT Personen.Voornaam, Personen.Familienaam,
        COALESCE (Boeken.Titel, 'Geen boek opgenomen in Boeken')
        AS 'Titel van het boek'
 FROM Boeken
-RIGHT JOIN Personen ON Boeken.IdAuteur = Personen.Id
+RIGHT JOIN Personen ON Boeken.Personen_Id = Personen.Id
 ORDER BY Personen.Familienaam, Personen.Voornaam, Boeken.Titel;
 ```
 

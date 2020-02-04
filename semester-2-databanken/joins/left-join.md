@@ -19,7 +19,7 @@ Als je alle personen wilt tonen ongeacht of ze een boek hebben geschreven of nie
 SELECT Personen.Voornaam, Personen.Familienaam,
        Boeken.Titel 
 FROM Personen
-LEFT JOIN Boeken ON Boeken.IdAuteur = Personen.Id
+LEFT JOIN Boeken ON Boeken.Personen_Id = Personen.Id
 ORDER BY Personen.Familienaam, Personen.Voornaam, Boeken.Titel;
 ```
 
