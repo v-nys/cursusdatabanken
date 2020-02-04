@@ -30,9 +30,9 @@ We kunnen hieruit een tabel met twee kolommen afleiden die elke auteur koppelt a
 Dit zou er zo uitzien:
 
 ```sql
-SELECT Personen.Naam, Boeken.Titel
+SELECT Personen.Voornaam, Personen.Familienaam, Boeken.Titel
 FROM Publicaties
-     INNER JOIN Personen ON Publicaties.Personen = Personen.Id
+     INNER JOIN Personen ON Publicaties.Personen_Id = Personen.Id
      INNER JOIN Boeken ON Publicaties.Boeken_Id = Boeken.Id
 ```
 
