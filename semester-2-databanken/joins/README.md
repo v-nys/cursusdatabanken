@@ -2,7 +2,7 @@
 
 #### **Situatie**
 
-Om de integriteit van een database te bewaren normaliseren we de gegevens in de database. Door de normalisering geraakt de informatie echter verspreid over meer dan één tabel. De gebruiker heeft daar echter niet veel aan. Primaire - en vreemde sleutels zeggen de gebruiker niets. We moeten dus een manier vinden om de informatie weer voor te stellen _alsof_ die uit één tabel komt.
+Om de integriteit van een database te bewaren normaliseren we de gegevens in de database. Ruwweg betekent dit dat we tabellen splitsen in kleinere, zinvollere tabellen om ontdubbeling te vermijden. Door de normalisering geraakt de informatie echter verspreid over meer dan één tabel. De gebruiker heeft daar echter niet veel aan. Primaire - en vreemde sleutels zeggen de gebruiker niets. We moeten dus een manier vinden om de informatie weer voor te stellen _alsof_ die uit één tabel komt.
 
 #### **Oplossing**
 

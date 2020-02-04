@@ -1,10 +1,12 @@
 # INNER JOIN
 
-Het diagram met de naam A staat voor de tabel `Boeken` en met de naam B voor `Personen`.
+Deze is in het eerste semester al aan bod gekomen. We herhalen hem hier en we introduceren een visueel geheugensteuntje.
 
-**Syntax**
+## Syntax
 
 ```sql
+-- de gebruikte kolommen hoeven niet Key te heten
+-- ze mogen ook een verschillende naam hebben in tabel A dan in tabel B
 SELECT <select_list> 
 FROM Table_A
 INNER JOIN Table_B ON Table_A.Key = Table_B.Key
@@ -12,7 +14,11 @@ INNER JOIN Table_B ON Table_A.Key = Table_B.Key
 
 ![venn diagram inner join](https://modernways.be/myap/it/image/sql/venn%20diagram%20inner%20join.png)
 
-venn diagram inner join
+### Betekenis
+We combineren informatie uit twee tabellen: de linkertabel (`A`) en de rechtertabel (`B`). We zeggen dat er overlapping is tussen de tabellen als de gebruikte sleutelkolommen dezelfde waarde bevatten. Het stuk van `A` dat we bekijken (`Table_A.Key`) matcht met het stuk van `B` dat we bekijken en dat tekenen we als een overlappend gedeelte.
+
+## Voorbeeld
+Het diagram met de naam A staat voor de tabel `Boeken` en met de naam B voor `Personen`.
 
 Selecteer alle boeken en toon de voornaam en de familienaam van de `auteur`. De 'master' tabel is in dat geval `Boeken` en de 'slave' tabel `Personen`.
 
