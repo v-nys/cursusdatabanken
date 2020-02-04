@@ -29,9 +29,9 @@ FROM Boeken
 INNER JOIN Personen ON Boeken.Personen_Id = Personen.Id;
 ```
 
-Voor elke rij uit de tabel `Boeken` wordt er opgezocht als er met de waarde die in de foreign key kolom `Personen_Id` van `Boeken` een waarde bestand in de primary key kolom `Id` van `Personen`. Als er een match in wordt de rij geselecteerd. Indien er geen match is wordt de rij in de tabel `Boeken` genegeerd.
+Elke rij uit de tabel `Boeken` wordt gecombineerd met elke rij uit de tabel `Personen` en de combinaties waarin een match wordt gevonden tussen `Personen\_Id` en `Personen.Id` worden overgehouden. Indien er geen match is wordt de gecombineerde rij genegeerd.
 
-We wijzigen de vraag lichtjes en willen nu alle auteurs zien en de boeken die ze geschreven hebben. We ordenen de lijst op `Familienaam`, `Voornaam`, `Titel`
+Het resultaat is een nieuwe tabel, dus je kan er verder mee werken zoals je altijd gedaan hebt. We ordenen de lijst op `Familienaam`, `Voornaam`, `Titel`.
 
 ```sql
 SELECT Personen.Voornaam, Personen.Familienaam,
@@ -40,8 +40,6 @@ FROM Personen
 INNER JOIN Boeken ON Boeken.Personen_Id = Personen.Id
 ORDER BY Personen.Voornaam, Personen.Familienaam, Boeken.Titel;
 ```
-
-Dat resulteert in indentiek dezelfde lijst.
 
 We voegen een nieuwe persoon toe in de tabel `Personen`:
 
@@ -76,7 +74,7 @@ SELECT * FROM Personen
 ORDER BY Familienaam, Voornaam;
 ```
 
-En we zien dat Simone De Beauvois is toegevoegd.
+En we zien dat Simone De Beauvoir is toegevoegd.
 
 Alle auteurs en hun boeken te selecteren, maar ordenen de lijst nu op `Familienaam`, `Voornaam` en `Titel`:
 
