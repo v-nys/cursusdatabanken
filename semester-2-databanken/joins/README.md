@@ -16,7 +16,7 @@ Om de integriteit van een database te bewaren normaliseren we de gegevens in de 
 Als je wil mee volgen, gebruik dan onderstaand calibratiescript. Noem het 0100\_\_CalibrateDB.sql. **Let op: dit maakt dezelfde tabelstructuur aan als de voorbeelden, maar gebruikt andere data.**
 
 ```
-DROP DATABASE IF EXISTS `ModernWays`;
+drop database if exists `ModernWays`;
 CREATE DATABASE  IF NOT EXISTS `ModernWays` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `ModernWays`;
 -- MySQL dump 10.13  Distrib 8.0.19, for Linux (x86_64)
@@ -46,7 +46,10 @@ DROP TABLE IF EXISTS `Boeken`;
 CREATE TABLE `Boeken` (
   `Titel` varchar(200) DEFAULT NULL,
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`Id`)
+  `Personen_Id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `fk_Boeken_Personen` (`Personen_Id`),
+  CONSTRAINT `fk_Boeken_Personen` FOREIGN KEY (`Personen_Id`) REFERENCES `Personen` (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -56,7 +59,7 @@ CREATE TABLE `Boeken` (
 
 LOCK TABLES `Boeken` WRITE;
 /*!40000 ALTER TABLE `Boeken` DISABLE KEYS */;
-INSERT INTO `Boeken` VALUES ('Norwegian Wood',1),('Kafka on the Shore',2),('American Gods',3),('The Ocean at the End of the Lane',4),('Pet Sematary',5),('Good Omens',6),('The Talisman',7);
+INSERT INTO `Boeken` VALUES ('Norwegian Wood',1,10),('Kafka on the Shore',2,10),('American Gods',3,16),('The Ocean at the End of the Lane',4,16),('Pet Sematary',5,17),('Good Omens',6,18),('The Talisman',7,17);
 /*!40000 ALTER TABLE `Boeken` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -71,12 +74,12 @@ CREATE TABLE `Personen` (
   `Voornaam` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `Familienaam` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `AanspreekTitel` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `Straat` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `Huisnummer` varchar(5) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `Stad` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `Commentaar` varchar(1000) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `Biografie` text COLLATE utf8mb4_general_ci,
+  `AanspreekTitel` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `Straat` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `Huisnummer` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `Stad` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `Commentaar` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `Biografie` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
