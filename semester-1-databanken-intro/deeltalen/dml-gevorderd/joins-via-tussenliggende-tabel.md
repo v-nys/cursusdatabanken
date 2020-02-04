@@ -6,7 +6,7 @@ Om entiteiten gekoppeld via een M-op-N-relatie aan elkaar te koppelen, moet je e
 
 Bijvoorbeeld, als je een tabel `Publicaties` hebt die auteurs linkt aan boeken:
 
-| Auteurs.Id | Boeken.Id |
+| Personen.Id | Boeken.Id |
 | :--- | :--- |
 | 1 | 1 |
 | 1 | 2 |
@@ -30,9 +30,9 @@ We kunnen hieruit een tabel met twee kolommen afleiden die elke auteur koppelt a
 Dit zou er zo uitzien:
 
 ```sql
-SELECT Auteurs.Naam, Boeken.Titel
+SELECT Personen.Naam, Boeken.Titel
 FROM Publicaties
-     INNER JOIN Auteurs ON Publicaties.Auteurs_Id = Auteurs.Id
+     INNER JOIN Personen ON Publicaties.Personen = Personen.Id
      INNER JOIN Boeken ON Publicaties.Boeken_Id = Boeken.Id
 ```
 
