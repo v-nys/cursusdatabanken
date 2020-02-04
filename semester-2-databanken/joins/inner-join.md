@@ -29,7 +29,7 @@ FROM Boeken
 INNER JOIN Personen ON Boeken.Personen_Id = Personen.Id;
 ```
 
-Elke rij uit de tabel `Boeken` wordt gecombineerd met elke rij uit de tabel `Personen` en de combinaties waarin een match wordt gevonden tussen `Personen\_Id` en `Personen.Id` worden overgehouden. Indien er geen match is wordt de gecombineerde rij genegeerd.
+Elke rij uit de tabel `Boeken` wordt gecombineerd met elke rij uit de tabel `Personen` en de combinaties waarin een match wordt gevonden tussen `Personen_Id` en `Personen.Id` worden overgehouden. Indien er geen match is wordt de gecombineerde rij genegeerd.
 
 Het resultaat is een nieuwe tabel, dus je kan er verder mee werken zoals je altijd gedaan hebt. We ordenen de lijst op `Familienaam`, `Voornaam`, `Titel`.
 
@@ -88,7 +88,7 @@ ORDER BY Personen.Familienaam, Personen.Voornaam, Boeken.Titel;
 
 Nu merken we dat Simone De Beauvoir niet meer in de lijst voorkomt. Dat komt doordat er voor Simone de Beauvoir geen boeken in de boekentabel zijn opgenomen.
 
-Een `inner join` gaat alleen die personen tonen waarvoor een match in de tabel Boeken wordt gevonden.inner join Boeken Personen Simone De Beauvoir
+Een `INNER JOIN` gaat alleen die personen tonen waarvoor een match in de tabel Boeken wordt gevonden.
 
 ![inner join Boeken Personen Simone De Beauvoir](https://modernways.be/myap/it/image/sql/inner%20join%20Boeken%20Personen%20Simone%20De%20Beauvoir.png)
 

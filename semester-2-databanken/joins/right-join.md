@@ -11,8 +11,6 @@ ON Table_A.Key = Table_B.Key
 
 ![venn diagram right join](https://modernways.be/myap/it/image/sql/venn%20diagram%20right%20join.png)
 
-venn diagram right join
-
 Als ik de tabellen in de select statement switch en `Boeken` links en `Personen` rechts zet, gaat Simone de Beauvoir getoond worden?
 
 ```sql
