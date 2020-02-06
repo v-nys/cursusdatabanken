@@ -1,4 +1,4 @@
-# Labo-oefeningen
+# Labo oefeningen
 
 ## Calibratie
 
@@ -9,7 +9,7 @@ Start vanaf onderstaand script, 0600\_\_CalibrateDB.sql:
 --
 -- Host: localhost    Database: ModernWays
 -- ------------------------------------------------------
--- Server version	8.0.16
+-- Server version    8.0.16
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -316,6 +316,7 @@ UNLOCK TABLES;
 ## Veel-op-veel-relaties
 
 ### Oefening 1
+
 Merk op dat er tabellen zijn met de namen `Boeken` en tabel `Auteurs`. Gebruik volgende informatie om de tabel `BoekenNaarAuteurs` in te vullen met 0601\_\_Oefening.sql:
 
 * Haruki Murakami schreef Norwegian Wood en Kafka on the Shore
@@ -325,6 +326,7 @@ Merk op dat er tabellen zijn met de namen `Boeken` en tabel `Auteurs`. Gebruik v
 * Stephen King en Peter Straub schreven **samen** The Talisman
 
 ### Tussenstappen
+
 Noem volgend script 0602\_\_Oefening.sql en voer uit. Je hoeft het niet helemaal te begrijpen.:
 
 ```sql
@@ -357,9 +359,11 @@ WHERE Games.Titel = 'Mega Man 11' AND Releases.Games_Id = Games.Id;
 ```
 
 ### Oefening 2
-Schrijf zelf een tabel, `Uitleningen`, die personen koppelt aan boeken die ze hebben uitgeleend in de bibliotheek. Een uitlening heeft een startdatum en eventueel een einddatum. Deze datums stel je voor met het `DATE`-datatype. Noem het script dat deze tabel aanmaakt 0604\_\_Oefening.sql.
+
+Schrijf zelf een tabel, `Uitleningen`, die leden koppelt aan boeken die ze hebben uitgeleend in de bibliotheek. Een uitlening heeft een startdatum en eventueel een einddatum. Deze datums stel je voor met het `DATE`-datatype. Noem het script dat deze tabel aanmaakt 0604\_\_Oefening.sql.
 
 ### Oefening 3
+
 Schrijf een script, 0605\_\_Oefening.sql, dat volgende informatie in de databank plaatst:
 
 * Max heeft Norwegian Wood geleend van 1 februari 2019 tot 15 februari 2019.
@@ -370,22 +374,23 @@ Schrijf een script, 0605\_\_Oefening.sql, dat volgende informatie in de databank
 ## Tabellen samenvoegen bij veel-op-veel relaties
 
 ### Voorbeeld
+
 We hebben een tabel die bijhoudt wanneer een bepaalde videogame is uitgebracht op een bepaald platform. Die ziet er zo uit:
 
-| Games.Id | Platformen.Id    | Releasedatum     |
-|----------|------------------|------------------|
-| 1        | 1                | 22 februari 2019 |
-| 1        | 2                | 22 februari 2019 |
-| 1        | 3                | 22 februari 2019 |
-| 2        | 1                | 22 maart 2019    |
-| 2        | 2                | 22 maart 2019    |
-| 2        | 3                | 22 maart 2019    |
-| 3        | 1                | 8 maart 2019     |
-| 3        | 2                | 8 maart 2019     |
-| 4        | 1                | 2 oktober 2018   |
-| 4        | 2                | 2 oktober 2018   |
-| 4        | 3                | 2 oktober 2018   |
-| 4        | 4                | 2 oktober 2018   |
+| Games.Id | Platformen.Id | Releasedatum |
+| :--- | :--- | :--- |
+| 1 | 1 | 22 februari 2019 |
+| 1 | 2 | 22 februari 2019 |
+| 1 | 3 | 22 februari 2019 |
+| 2 | 1 | 22 maart 2019 |
+| 2 | 2 | 22 maart 2019 |
+| 2 | 3 | 22 maart 2019 |
+| 3 | 1 | 8 maart 2019 |
+| 3 | 2 | 8 maart 2019 |
+| 4 | 1 | 2 oktober 2018 |
+| 4 | 2 | 2 oktober 2018 |
+| 4 | 3 | 2 oktober 2018 |
+| 4 | 4 | 2 oktober 2018 |
 
 Als we deze tabel willen ontcijferen, d.w.z. als we de namen van de games en de platformen willen zien, combineren we deze tabel `Releases` eerst met de tabel `Platformen` en vervolgens met de tabel `games`. Dat ziet er zo uit:
 
@@ -397,35 +402,40 @@ FROM Releases
 ```
 
 ### Oefening 4
-Gebruik nu INNER JOIN met de tabel `Personen`, de tabel `Boeken` en de tabel die deze twee entiteiten koppelt om weer te geven welke personen ooit een boek hebben uitgeleend (en welk boek dat was). Schrijf je oplossing in een script 0606\_\_Oefening.sql. Je toont alleen de naam van de persoon (als eerste kolom) en de titel van het boek (als tweede kolom).
+
+Gebruik nu INNER JOIN met de tabel `Personen`, de tabel `Boeken` en de tabel die deze twee entiteiten koppelt om weer te geven welke personen ooit een boek hebben uitgeleend \(en welk boek dat was\). Schrijf je oplossing in een script 0606\_\_Oefening.sql. Je toont alleen de naam van de persoon \(als eerste kolom\) en de titel van het boek \(als tweede kolom\).
 
 ### Oefening 5
-Er is een tabel `Taken` en een tabel `Leden`. Bij taken staat (door middel van een verwijzing) welk lid een bepaalde taak uitvoert (zoals eerder in de cursus "Databanken Intro"). Toon nu alle taken die niet aan iemand zijn toegewezen.
+
+Er is een tabel `Taken` en een tabel `Leden`. Bij taken staat \(door middel van een verwijzing\) welk lid een bepaalde taak uitvoert \(zoals eerder in de cursus "Databanken Intro"\). Toon nu alle taken die niet aan iemand zijn toegewezen.
 
 ## Andere soorten JOINs
 
 ### Oefening 6
-Toon alle taken, met het lid dat de taak uitvoert. Als de taak door niemand wordt uitgevoerd, staat er een `NULL`. Doe dit met een soort JOIN die je nog niet hebt gebruikt, dus geen CROSS JOIN of INNER JOIN. Voorbeeldoutput (kan anders zijn voor jouw data):
 
-| Voornaam | Omschrijving                |
-|----------|-----------------------------|
-| Yannick  | frisdrank meebrengen        |
-| Bavo     | bestek voorzien             |
-| Max      | aardappelsla maken          |
-| NULL	   | papieren bordjes meebrengen |
+Toon alle taken, met het lid dat de taak uitvoert. Als de taak door niemand wordt uitgevoerd, staat er een `NULL`. Doe dit met een soort JOIN die je nog niet hebt gebruikt, dus geen CROSS JOIN of INNER JOIN. Voorbeeldoutput \(kan anders zijn voor jouw data\):
+
+| Voornaam | Omschrijving |
+| :--- | :--- |
+| Yannick | frisdrank meebrengen |
+| Bavo | bestek voorzien |
+| Max | aardappelsla maken |
+| NULL | papieren bordjes meebrengen |
 
 Noem het script 0607\_\_Oefening.sql.
 
 ### Oefening 7
-Toon alle titels van games met hun bijbehorend platform, als er een is. Toon ook games waarvoor het platform niet meer ondersteund wordt (d.w.z. waarvoor geen info in `Releases` staat). Gebruik hiervoor een samenstelling van twee JOINs. Noem het script 0608\_\_Oefening.sql.
+
+Toon alle titels van games met hun bijbehorend platform, als er een is. Toon ook games waarvoor het platform niet meer ondersteund wordt \(d.w.z. waarvoor geen info in `Releases` staat\). Gebruik hiervoor een samenstelling van twee JOINs. Noem het script 0608\_\_Oefening.sql.
 
 Voorbeeldoutput:
 
-| Titel        | Naam     |
-|--------------|----------|
-| Anthem       | PS4      |
-| Anthem       | XBox one |
-| Anthem       | Windows  |
-| ...          | ...      |
-| Mega Man 11  | Switch   |
-| Oregon Trail | NULL     |
+| Titel | Naam |
+| :--- | :--- |
+| Anthem | PS4 |
+| Anthem | XBox one |
+| Anthem | Windows |
+| ... | ... |
+| Mega Man 11 | Switch |
+| Oregon Trail | NULL |
+
