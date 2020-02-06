@@ -100,6 +100,7 @@
   * [RENAME](semester-2-databanken/views/rename.md)
   * [SHOW](semester-2-databanken/views/show.md)
   * [BESLUIT](semester-2-databanken/views/besluit.md)
+  * [Labo oefeningen](semester-2-databanken/views/labo-oefeningen.md)
 * [Indexeren](semester-2-databanken/indexeren/README.md)
   * [CREATE](semester-2-databanken/indexeren/create.md)
   * [DROP](semester-2-databanken/indexeren/drop.md)
