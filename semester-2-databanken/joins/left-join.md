@@ -25,3 +25,5 @@ Simone is nu wel geselecteerd. Maar er is geen boek van haar aanwezig in de tabe
 
 ![left join Boeken Personen Simone De Beauvoir](https://modernways.be/myap/it/image/sql/left%20join%20Boeken%20Personen%20Simone%20De%20Beauvoir.png)
 
+## Opmerking:
+De `LEFT JOIN` wordt ook wel `LEFT OUTER JOIN` genoemd. Er is geen verschil.
