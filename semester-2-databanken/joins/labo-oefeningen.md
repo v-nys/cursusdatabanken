@@ -405,11 +405,10 @@ FROM Releases
 
 Gebruik nu INNER JOIN met de tabel `Personen`, de tabel `Boeken` en de tabel die deze twee entiteiten koppelt om weer te geven welke personen ooit een boek hebben uitgeleend \(en welk boek dat was\). Schrijf je oplossing in een script 0606\_\_Oefening.sql. Je toont alleen de naam van de persoon \(als eerste kolom\) en de titel van het boek \(als tweede kolom\).
 
-### Oefening 5
-
-Er is een tabel `Taken` en een tabel `Leden`. Bij taken staat \(door middel van een verwijzing\) welk lid een bepaalde taak uitvoert \(zoals eerder in de cursus "Databanken Intro"\). Toon nu alle taken die niet aan iemand zijn toegewezen.
-
 ## Andere soorten JOINs
+
+### Oefening 5
+Er is een tabel `Taken` en een tabel `Leden`. Bij taken staat \(door middel van een verwijzing\) welk lid een bepaalde taak uitvoert \(zoals eerder in de cursus "Databanken Intro"\). Toon nu alle taken die niet aan iemand zijn toegewezen. Noem je script 0607\_\_Oefening.sql.
 
 ### Oefening 6
 
@@ -422,11 +421,11 @@ Toon alle taken, met het lid dat de taak uitvoert. Als de taak door niemand word
 | Max | aardappelsla maken |
 | NULL | papieren bordjes meebrengen |
 
-Noem het script 0607\_\_Oefening.sql.
+Noem het script 0608\_\_Oefening.sql.
 
 ### Oefening 7
 
-Toon alle titels van games met hun bijbehorend platform, als er een is. Toon ook games waarvoor het platform niet meer ondersteund wordt \(d.w.z. waarvoor geen info in `Releases` staat\). Gebruik hiervoor een samenstelling van twee JOINs. Noem het script 0608\_\_Oefening.sql.
+Toon alle titels van games met hun bijbehorend platform, als er een is. Toon ook games waarvoor het platform niet meer ondersteund wordt \(d.w.z. waarvoor geen info in `Releases` staat\). Gebruik hiervoor een samenstelling van twee JOINs. Noem het script 0609\_\_Oefening.sql.
 
 Voorbeeldoutput:
 
@@ -439,3 +438,17 @@ Voorbeeldoutput:
 | Mega Man 11 | Switch |
 | Oregon Trail | NULL |
 
+### Oefening 8
+
+Toon alle platformen waarvoor games beschikbaar zijn. Toon dus geen platformen geen games beschikbaar zijn. Noem je script 0610\_\_Oefening.sql.
+
+### Oefening 9 (Een uitdaging!)
+
+Toon alle games waarvoor het platform onbekend is, samen met alle platformen waarvoor geen games beschikbaar zijn. Het resultaat ziet er als volgt uit:
+
+| Titel        | Naam          |
+| :----------- | :------------ |
+| Oregon Trail | NULL          |
+| NULL         | Master System |
+
+Noem je script 0611\_\_Oefening.sql.
