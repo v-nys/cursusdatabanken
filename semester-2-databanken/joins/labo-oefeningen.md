@@ -446,9 +446,9 @@ Toon alle platformen waarvoor games beschikbaar zijn. Toon dus geen platformen g
 
 Toon alle games waarvoor het platform onbekend is, samen met alle platformen waarvoor geen games beschikbaar zijn. Het resultaat ziet er als volgt uit:
 
-| Titel        | Naam          |
-| :----------- | :------------ |
-| Oregon Trail | NULL          |
-| NULL         | Master System |
+| Titel             | Naam                   |
+| :---------------- | :--------------------- |
+| Oregon Trail      | Geen platformen gekend |
+| Geen games gekend | Master System          |
 
 Noem je script 0611\_\_Oefening.sql.
