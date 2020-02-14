@@ -12,6 +12,8 @@ Deze procedure geeft duidelijk weer hoe je aan de slag gaat met MySQL en je scri
 
 {% embed url="https://youtu.be/oIfpnNvtEvA" caption="je scripts delen via Bitbucket" %}
 
+{% embed url="https://youtu.be/XGb91ytgZPI" caption="gebruik maken van xchk om je scripts te controleren" %}
+
 {% hint style="warning" %}
 In het laatste filmpje mag je het opstarten van een Docker container negeren. We gebruiken nu een lokale installatie van MySQL, dus van 4:50 tot 5:06 mag je overslaan.
 {% endhint %}
