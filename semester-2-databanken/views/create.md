@@ -5,9 +5,7 @@
 ```sql
 CREATE VIEW viewnaam
 AS
-SELECT kolomnaam
-FROM tabelnaam
-INNER JOIN tabelnaam ON kolomnaam = kolomnaam;
+SELECT ??? -- hier kan vanalles komen, maar er wordt een resultatenset getoond
 ```
 
 ## Voorbeeld
