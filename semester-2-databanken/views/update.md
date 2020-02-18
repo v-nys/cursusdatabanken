@@ -29,11 +29,11 @@ WHERE Voornaam = 'Yannick';
 
 Inspecteer `TakenLeden` en `Leden` nadat je deze opdracht hebt uitgevoerd. Wat zie je?
 
-In een updatable view kan altijd bepaald worden waar de aanpassingen echt moeten plaatsvinden. Volgende figuur toont het idee:
+In een updatable view kan bepaald worden waar dergelijke aanpassingen echt moeten plaatsvinden. Volgende figuur toont het idee:
 
 ![Aan de linkerkant staat de view. Aan de rechterkant de tabellen die er deel van uitmaken.](../../.gitbook/assets/image%20%2858%29.png)
 
-Probeer nog enkele DML-operaties met `TakenLeden`.
+Er zijn helaas grenzen aan wat mogelijk is. Experimenteer met enkele DML-operaties met `TakenLeden`. Probeer o.a. een `INSERT` en een `DELETE` van telkens één rij.
 
 ### UPDATE VIEW INFORMATIE
 
