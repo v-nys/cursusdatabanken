@@ -3,9 +3,7 @@
 Met volgende query kan je een zich krijgen van alle tabellen en views binnen de database.
 
 ```sql
-USE modernways;
+USE ModernWays;
 SHOW FULL TABLES;
 ```
-
-![](../../.gitbook/assets/image%20%2858%29.png)
 

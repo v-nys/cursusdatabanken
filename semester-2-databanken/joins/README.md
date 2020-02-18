@@ -15,7 +15,7 @@ Om de integriteit van een database te bewaren normaliseren we de gegevens in de 
 
 Als je wil mee volgen, gebruik dan onderstaand calibratiescript. Noem het 0100\_\_CalibrateDB.sql. **Let op: dit maakt dezelfde tabelstructuur aan als de voorbeelden, maar gebruikt andere data.**
 
-```
+```text
 drop database if exists `ModernWays`;
 CREATE DATABASE  IF NOT EXISTS `ModernWays` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `ModernWays`;
@@ -23,7 +23,7 @@ USE `ModernWays`;
 --
 -- Host: localhost    Database: ModernWays
 -- ------------------------------------------------------
--- Server version	8.0.17
+-- Server version    8.0.17
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -103,3 +103,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 ```
+

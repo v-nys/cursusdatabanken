@@ -48,5 +48,5 @@ RIGHT JOIN Personen ON Boeken.Personen_Id = Personen.Id
 ORDER BY Personen.Familienaam, Personen.Voornaam, Boeken.Titel;
 ```
 
-![right join met coalesce en kolomtitel  Boeken Personen Simone De Beauvoir](https://modernways.be/myap/it/image/sql/right%20join%20met%20coalesce%20en%20kolomtitel%20%20Boeken%20Personen%20Simone%20De%20Beauvoir.png)
+![right join met coalesce en kolomtitel Boeken Personen Simone De Beauvoir](https://modernways.be/myap/it/image/sql/right%20join%20met%20coalesce%20en%20kolomtitel%20%20Boeken%20Personen%20Simone%20De%20Beauvoir.png)
 

@@ -3,10 +3,8 @@
 Het is mogelijk om de naam van de view te wijzigen.
 
 ```sql
-USE modernways;
-RENAME TABLE takenleden
-TO takenleden_updated;
+USE ModernWays;
+RENAME TABLE Takenleden
+TO TakenLeden_Updated;
 ```
-
-![](../../.gitbook/assets/image%20%2855%29.png)
 
