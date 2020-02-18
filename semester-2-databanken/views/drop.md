@@ -15,7 +15,7 @@ DROP VIEW IF EXISTS viewnaam;
 Toegepast op het voorbeeld vermeld bij `CREATE`.
 
 ```sql
-DROP VIEW IF EXISTS takenLeden;
+DROP VIEW IF EXISTS TakenLeden;
 ```
 
 
