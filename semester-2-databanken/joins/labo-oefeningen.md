@@ -408,6 +408,7 @@ Gebruik nu INNER JOIN met de tabel `Personen`, de tabel `Boeken` en de tabel die
 ## Andere soorten JOINs
 
 ### Oefening 5
+
 Er is een tabel `Taken` en een tabel `Leden`. Bij taken staat \(door middel van een verwijzing\) welk lid een bepaalde taak uitvoert \(zoals eerder in de cursus "Databanken Intro"\). Toon nu alle taken die niet aan iemand zijn toegewezen. Noem je script 0607\_\_Oefening.sql.
 
 ### Oefening 6
@@ -442,13 +443,14 @@ Voorbeeldoutput:
 
 Toon alle platformen waarvoor games beschikbaar zijn. Toon dus geen platformen geen games beschikbaar zijn. Noem je script 0610\_\_Oefening.sql.
 
-### Oefening 9 (Een uitdaging!)
+### Oefening 9 \(Een uitdaging!\)
 
 Toon alle games waarvoor het platform onbekend is, samen met alle platformen waarvoor geen games beschikbaar zijn. Het resultaat ziet er als volgt uit:
 
-| Titel             | Naam                   |
-| :---------------- | :--------------------- |
-| Oregon Trail      | Geen platformen gekend |
-| Geen games gekend | Master System          |
+| Titel | Naam |
+| :--- | :--- |
+| Oregon Trail | Geen platformen gekend |
+| Geen games gekend | Master System |
 
 Noem je script 0611\_\_Oefening.sql.
+

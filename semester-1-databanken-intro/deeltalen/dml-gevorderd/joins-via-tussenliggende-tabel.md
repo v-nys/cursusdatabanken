@@ -36,14 +36,14 @@ FROM Publicaties
      INNER JOIN Boeken ON Publicaties.Boeken_Id = Boeken.Id
 ```
 
-Probeer het uit! Gebruik hiervoor onderstaand calibratiescript (0101\_\_CalibrateDB.sql):
+Probeer het uit! Gebruik hiervoor onderstaand calibratiescript \(0101\_\_CalibrateDB.sql\):
 
-```
+```text
 -- MySQL dump 10.13  Distrib 8.0.16, for Linux (x86_64)
 --
 -- Host: localhost    Database: ModernWays
 -- ------------------------------------------------------
--- Server version	8.0.16
+-- Server version    8.0.16
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -359,3 +359,4 @@ or (Personen.Familienaam = "King" and Personen.Voornaam = "Stephen" and Boeken.T
 or (Personen.Familienaam = "Straub" and Personen.Voornaam = "Peter" and Boeken.Titel = "The Talisman");
 /*!40000 ALTER TABLE `Publicaties` ENABLE KEYS */;
 ```
+
