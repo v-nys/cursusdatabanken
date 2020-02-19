@@ -1,4 +1,4 @@
-# CREATE
+# ALTER
 
 ## Syntax
 
@@ -17,3 +17,4 @@ SELECT Leden.Voornaam, Taken.Omschrijving, Taken.Id AS 'Taken_Id'
 FROM Taken
 INNER JOIN Leden ON Leden.Id = Taken.Leden_Id;
 ```
+
