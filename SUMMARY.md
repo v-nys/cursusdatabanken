@@ -95,6 +95,7 @@
   * [Labo oefeningen](semester-2-databanken/joins/labo-oefeningen.md)
 * [Views](semester-2-databanken/views/README.md)
   * [CREATE](semester-2-databanken/views/create.md)
+  * [ALTER](semester-2-databanken/views/alter.md)
   * [DROP](semester-2-databanken/views/drop.md)
   * [UPDATE](semester-2-databanken/views/update.md)
   * [RENAME](semester-2-databanken/views/rename.md)
