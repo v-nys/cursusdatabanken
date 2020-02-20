@@ -8,7 +8,7 @@ Een view, gebaseerd op een query, kun je op exact dezelfde manier benaderen als 
 
 Een view bevat rijen en kolommen zoals een 'echte' tabel. 
 
-Een view is dus het resultaat van een query en kan tabellen bevatten dewelke afkomstig zijn uit verschillende tabellen.
+Een view is dus het resultaat van een query en kan kolommen bevatten dewelke afkomstig zijn uit verschillende tabellen.
 
 Views gebruiken de sleutelwoorden die we kennen uit de DDL. Ze worden gecreëerd als "virtuele tabellen", dus het is logisch dat ze syntax gebruiken die gelijkaardig is aan die voor het creëren van gewone tabellen.
 

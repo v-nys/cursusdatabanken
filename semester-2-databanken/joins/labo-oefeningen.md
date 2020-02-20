@@ -441,7 +441,7 @@ Voorbeeldoutput:
 
 ### Oefening 8
 
-Toon alle platformen waarvoor games beschikbaar zijn. Toon dus geen platformen indien geen games beschikbaar zijn. Noem je script 0610\_\_Oefening.sql.
+Toon alle platformen waarvoor games beschikbaar zijn. Toon dus geen platformen geen games beschikbaar zijn. Noem je script 0610\_\_Oefening.sql.
 
 ### Oefening 9 \(Een uitdaging!\)
 
