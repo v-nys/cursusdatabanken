@@ -1,6 +1,7 @@
 # Labo oefeningen
 
 ## Labo oefeningen
+
 Start vanaf volgend calibratiescript, `0612__Oefening.sql`:
 
 ```sql
@@ -11,7 +12,7 @@ USE `ModernWays`;
 --
 -- Host: localhost    Database: ModernWays
 -- ------------------------------------------------------
--- Server version	8.0.17
+-- Server version    8.0.17
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -157,7 +158,7 @@ We willen een complexere versie van de bestaande view `AuteursBoeken`. We zullen
 
 1. Gebruik een `ALTER VIEW` om je bestaande view `AuteursBoeken` te voorzien van het `Id` uit de kolom `Boeken`. Toon `Id` hier wel als `Boeken_Id`. Noem het script dat de view aanpast `0615__Oefening.sql`.
 2. Maak een view `GemiddeldeRatings` aan op basis van `Reviews`. Noem de kolom met het gemiddelde `Rating`. Noem het script dat de view maakt `0616__Oefening.sql`.
-3. Maak de tabel `AuteursBoekenRatings` aan door een nieuwe view te maken gebaseerd op `AuteursBoeken` en `GemiddeldeRatings`. Noem het script dat de view maakt `0617__Oefening.sql`.
+3. Maak de view`AuteursBoekenRatings` aan door een nieuwe view te maken gebaseerd op `AuteursBoeken` en `GemiddeldeRatings`. Noem het script dat de view maakt `0617__Oefening.sql`.
 
 ![](../../.gitbook/assets/auteursboeken.png)
 
