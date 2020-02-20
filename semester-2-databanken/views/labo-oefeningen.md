@@ -156,7 +156,7 @@ Wat gebeurt er als je de naam "Stephen King" via deze view in "Steven King" wil 
 
 We willen een complexere versie van de bestaande view `AuteursBoeken`. We zullen hierbij ook de gemiddelde rating van elk boek plaatsen in een uitgebreide versie van de view, namelijk `AuteursBoekenRatings`. We zullen dit in stappen doen. Lees eerst de stappen, bekijk dan de figuren, voer dan de stappen uit.
 
-1. Gebruik een `ALTER VIEW` om je bestaande view `AuteursBoeken` te voorzien van het `Id` uit de kolom `Boeken`. Toon `Id` hier wel als `Boeken_Id`. Noem het script dat de view aanpast `0615__Oefening.sql`.
+1. Gebruik een `ALTER VIEW` om je bestaande view `AuteursBoeken` te voorzien van het `Id` uit de tabel`Boeken`. Toon `Id` hier wel als `Boeken_Id`. Noem het script dat de view aanpast `0615__Oefening.sql`.
 2. Maak een view `GemiddeldeRatings` aan op basis van `Reviews`. Noem de kolom met het gemiddelde `Rating`. Noem het script dat de view maakt `0616__Oefening.sql`.
 3. Maak de view`AuteursBoekenRatings` aan door een nieuwe view te maken gebaseerd op `AuteursBoeken` en `GemiddeldeRatings`. Noem het script dat de view maakt `0617__Oefening.sql`.
 
