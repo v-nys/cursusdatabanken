@@ -8,7 +8,7 @@
 * De concrete samenstelling van een entity set zal regelmatig wijzigen \(personeelsleden bij of weg, klanten
 * Voorstelling: 
 
-![](../../.gitbook/assets/image%20%2828%29.png)
+![](../../.gitbook/assets/image%20%2831%29.png)
 
 ## Attributes, Values, Domain
 
@@ -21,14 +21,14 @@
 * Berekenbaar attribuut: bv. als het attribuut geboortedatum bestaat, kan het attribuut leeftijd berekend worden uit geboortedatum en huidige datum.
 * Voorstelling:
 
-![](../../.gitbook/assets/image%20%2834%29.png)
+![](../../.gitbook/assets/image%20%2837%29.png)
 
 ## Relation, Relationship set
 
 * Een relation is een verband tussen verschillende entiteiten. bv. de relatie "ontlener" tussen de entiteit "Janssens" uit de entity set klanten en de entiteit lening nr 0001 uit de entity set leningen.
 * Een relationship set \(relatie\) is de verzameling van alle gelijkaardige relaties tussen entiteiten uit dezelfde entity sets.
 
-![](../../.gitbook/assets/image%20%2864%29.png)
+![](../../.gitbook/assets/image%20%2870%29.png)
 
 * In bovenstaande relatie speelt Janssens de rol van "lener" en 0001 de rol van "lening". Rollen zijn alleen echt van belang bij relaties van een entity set naar zichzelf, "recursieve" relaties.
 * Voorbeeld: de relatie "is manager van" van de entity set "personeel" naar zichzelf.

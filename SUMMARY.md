@@ -105,6 +105,7 @@
 * [Indexeren](semester-2-databanken/indexeren/README.md)
   * [CREATE](semester-2-databanken/indexeren/create.md)
   * [DROP](semester-2-databanken/indexeren/drop.md)
+  * [UNIQUE](semester-2-databanken/indexeren/unique.md)
 * [ERD](semester-2-databanken/erd.md)
 * [Stored procedures](semester-2-databanken/stored-procedures.md)
 

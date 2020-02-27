@@ -7,7 +7,7 @@
 * Er kunnen meerdere sleutels mogelijk zijn, we noemen die dan "kandidaat-sleutels".
 * We kiezen dan een "primaire sleutel" uit deze kandidaat-sleutels.
 
-![](../../.gitbook/assets/image%20%2849%29.png)
+![](../../.gitbook/assets/image%20%2853%29.png)
 
 {% hint style="info" %}
 In SQL-databanken wordt typisch een eenvoudig numeriek sleutelattribuut `Id` toegevoegd. Dit neemt weinig ruimte in beslag, is makkelijk automatisch toe te kennen en uit te schrijven.
