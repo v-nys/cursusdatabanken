@@ -62,13 +62,9 @@ FROM taken
 WHERE omschrijving LIKE 'aardappel%';
 ```
 
-![](../../.gitbook/assets/image%20%2822%29.png)
-
 Als je de tabel taken veel bevraagd waarbij je filtert op de omschrijving is het zinvol om voor deze kolom een index te creëren waardoor de uitvoering een heel stuk sneller zal verlopen.
 
 De grootte van de kolom omschrijving is bij design ingesteld op 50 karakters.
-
-![](../../.gitbook/assets/image%20%2850%29.png)
 
 Voor de index moet je de lengte van het zgn. voorvoegsel bepalen. Soms wordt er gezegd dat je dit zo efficiënt mogelijk dient te doen door de prefex zo kort mogelijk te houden. Hier schuilt wel een gevaar in wanneer de tabel nieuwe data bevat, mogelijk is de index niet meer zo uniek. 
 
@@ -99,8 +95,6 @@ ON taken(omschrijving(20));
 ```
 
 Binnen de schema navigation kan je nu de index zien.
-
-![](../../.gitbook/assets/image%20%2836%29.png)
 
 Als je nu bovenstaande select-query opnieuw uitvoert zal deze efficiënter en sneller verlopen.
 
