@@ -106,6 +106,7 @@
   * [CREATE](semester-2-databanken/indexeren/create.md)
   * [DROP](semester-2-databanken/indexeren/drop.md)
   * [UNIQUE](semester-2-databanken/indexeren/unique.md)
+  * [Labo oefeningen](semester-2-databanken/indexeren/labo-oefeningen.md)
 * [ERD](semester-2-databanken/erd.md)
 * [Stored procedures](semester-2-databanken/stored-procedures.md)
 
