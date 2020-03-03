@@ -1,2 +1,0 @@
-# Labo oefeningen
-
