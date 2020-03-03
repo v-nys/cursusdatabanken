@@ -45,7 +45,7 @@ Een relationshiptype stelt verbanden tussen entiteitstypes voor:
 
 * een relationship is een individueel voorkomen van dergelijk verband
 * een relationshiptype heeft een naam
-* * bv. het relationshiptype uitgeleend\_door modelleert de verbanden tussen boeken en personen
+  * bv. het relationshiptype uitgeleend\_door modelleert de verbanden tussen boeken en personen
 
 Een speciaal relatietype is de zwakke relatie: dit is een relatie tussen een zwakke entiteit en de entiteit die gebruikt wordt om de zwakke identiteit uniek identificeerbaar te maken. Bijvoorbeeld "behoort tot" tussen "hotelkamer" en "hotel"
 
@@ -63,15 +63,15 @@ rollen bepalen de zin waarin een verband moet worden opgevat
 
 * bv. het verband \(‘in bestelling’\) tussen leveranciers en aankooporders kan zowel vanaf leverancier, als vanaf aankooporder beschouwd worden \(d.w.z. je kan leven "heeft besteld" of "is besteld door"\)
 * iedere rol heeft een naam om dit op te helderen
-* * bv. relationshiptype "in\_bestelling": rollen leverancier-besteller
+  * bv. relationshiptype "in\_bestelling": rollen leverancier-besteller
 
 Cardinaliteit van een rol: het aantal keren dat een entiteit in die rol kan of moet optreden
 
 * minimale cardinaliteit is meestal: 0 of 1
-* * 0: als het in die rol niet is vereist dat elke entiteit met een andere entiteit is gekoppeld
+  * 0: als het in die rol niet is vereist dat elke entiteit met een andere entiteit is gekoppeld
   * 1: iedere entiteit moet minstens éénmaal in die rol optreden \(bestaansafhankelijkheid\), bv. van rol "auteur" in een relatie tussen auteurs en boeken, omdat elk boek minstens één auteur heeft
 * maximale cardinaliteit: 1 of n
-* * 1: als het in een rol is vereist dat met een entiteit maximaal één ander entiteit mag zijn gekoppeld
+  * 1: als het in een rol is vereist dat met een entiteit maximaal één ander entiteit mag zijn gekoppeld
   * n: als een entiteit, in een rol, met een onbepaald aantal entiteiten mag zijn gekoppeld
 * 4 veelgebruikte combinaties: 0..1, 0..n, 1..1, 1..n
 
