@@ -1,6 +1,6 @@
 # Labo oefeningen
 
-### Oefening \(deel 1\)
+## Oefening 1 \(deel 1\)
 
 We maken een entity-relationshipmodel voor iets als [Trakt](https://trakt.tv/). Dit is een website waarmee je kan bijhouden welke films en series je hebt bekeken of aan het bekijken bent. Teken zelf een voorstel voor een ERD uit, op basis van volgende informatie:
 
@@ -22,7 +22,7 @@ Het ERM houdt zich iets minder bezig met de implementatiedetails. We hebben alle
 * multivalued attributen worden voorgesteld met tabellen met een vreemde sleutel voor de entiteit
 * derived attributen worden zelden bijgehouden en worden berekend waar nodig om inconsistentie te vermijden
 
-### Oefening \(deel 2\)
+## Oefening 1 \(deel 2\)
 
 Zet je schema om naar SQL-code. 
 
