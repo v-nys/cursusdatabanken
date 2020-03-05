@@ -71,7 +71,7 @@ Cardinaliteit van een rol: het aantal keren dat een entiteit in die rol kan of m
   * 0: als het in die rol niet is vereist dat elke entiteit met een andere entiteit is gekoppeld
   * 1: iedere entiteit moet minstens éénmaal in die rol optreden \(bestaansafhankelijkheid\), bv. van rol "auteur" in een relatie tussen auteurs en boeken, omdat elk boek minstens één auteur heeft
 * maximale cardinaliteit: 1 of n
-  * 1: als het in een rol is vereist dat met een entiteit maximaal één ander entiteit mag zijn gekoppeld
+  * 1: als het in een rol is vereist dat met een entiteit maximaal één andere entiteit mag zijn gekoppeld
   * n: als een entiteit, in een rol, met een onbepaald aantal entiteiten mag zijn gekoppeld
 * 4 veelgebruikte combinaties: 0..1, 0..n, 1..1, 1..n
 
