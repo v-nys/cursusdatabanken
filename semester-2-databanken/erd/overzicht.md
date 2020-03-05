@@ -20,7 +20,7 @@ Elk van deze zaken wordt in een ER diagram weergegeven met een bepaald symbool w
 
 #### Wat zijn entiteitstypes?
 
-Zoals we bij het programmeren een onderscheid maken tussen klassen en objecten, maken we hier een onderscheid tussen entiteitstypes en entiteiten. Een entiteitstype is het begrip zelf: "een klant", "een leverancier", "een beroep", "een lied",... Uit deze voorbeelden blijkt dat een entiteittype iets concreet of iets abstract kan zijn. Een entiteit is een specifiek voorkomen hiervan: "_deze_ klant", "_die_ leverancier", "_dat_ beroep", "_mijn lievelingslied_",... Entiteiten hebben eigenschappen, die we voorstellen als attributen. Bijvoorbeeld: "klantnummer", "firmanaam", "barema",... Entiteitstypes zijn gelinkt aan attribuuttypes voor alle eigenschappen die een die een entiteit kan hebben.
+Zoals we bij het programmeren een onderscheid maken tussen klassen en objecten, maken we hier een onderscheid tussen entiteitstypes en entiteiten. Een entiteitstype is het begrip zelf: "een klant", "een leverancier", "een beroep", "een lied",... Uit deze voorbeelden blijkt dat een entiteittype iets concreet of iets abstract kan zijn. Een entiteit is een specifiek voorkomen hiervan: "_deze_ klant", "_die_ leverancier", "_dat_ beroep", "_mijn lievelingslied_",... Entiteiten hebben eigenschappen, die we voorstellen als attributen. Bijvoorbeeld: "klantnummer", "firmanaam", "barema",... Entiteitstypes zijn gelinkt aan attribuuttypes voor alle eigenschappen die een entiteit kan hebben.
 
 #### Verschillende soorten entiteittypen
 
