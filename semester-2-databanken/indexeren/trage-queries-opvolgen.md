@@ -10,7 +10,7 @@ Je voert de queries in kwestie opnieuw uit, maar je laat ze voorafgaan door het 
 
 | table | key | rows |
 |---|---|---|
-| <naam van een doorzochte tabel> | <eventueel gebruikte index> | <aantal rijen doorzocht> |
-| <naam van een andere doorzochte tabel> | <eventueel gebruikte index> | <aantal rijen doorzocht> |
+| naam van een doorzochte tabel | eventueel gebruikte index | aantal rijen doorzocht |
+| naam van een andere doorzochte tabel | eventueel gebruikte index | aantal rijen doorzocht |
 
 Als er voor een index `NULL` staat, betekent dat dat alle rijen van de eerste tot de laatste zijn beschouwd, wat typisch erg inefficiënt is (zeker als het aantal rijen groot is). Door een index toe te voegen aan een kolom met een gezochte waarde (bv. een kolom vermeld in een `WHERE`), kan je de `NULL` wegwerken en het aantal doorzochte rijen drastisch verlagen.
