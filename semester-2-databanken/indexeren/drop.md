@@ -7,37 +7,8 @@ Indexen belasten het systeem als deze niet nodig zijn, daarom is het raadzaam om
 Om een bestaande index te verwijderen van een tabel gebruik je het `drop index` statement.
 
 ```sql
-DROP INDEX index_name ON table_name
-[algorithm [lock]];
+DROP INDEX index_name ON table_name;
 ```
-
-### Algorithm \(optie\)
-
-```sql
-ALGORITHM = {DEFAULT|INPLACE|COPY}
-```
-
-Je hebt twee opties, die je niet noodzakelijkerwijze hoeft te gebruiken.
-
-**COPY**: De tabel wordt hierbij gekopieerd, waarna de drop index op deze gekopieerde tabel wordt uitgevoerd.
-
-**INPLACE**: Hierbij wordt de tabel opnieuw opgebouwd in plaats van te worden gekopieerd.
-
-### Lock \(optie\)
-
-```sql
-LOCK = {DEFAULT|NONE|SHARED|EXCLUSIVE}
-```
-
-Deze optie zorgt ervoor dat het gelijktijdig lezen en schrijven van data in de tabel wordt gecontroleerd.
-
-**DEFAULT**: dit biedt het maximale level van gelijktijdig lezen en schrijven.
-
-**NONE**: indien ondersteund laat dit gelijktijdig lezen en schrijven toe, anders zal er een error worden gegeven.
-
-**SHARED**: indien ondersteund, laat dit gelijktijdig lezen toe, maar niet schrijven.
-
-**EXCLUSIVE**: zoals het woordt zegt, dit zorgt voor exclusieve toegang.
 
 ## Drop primary key
 

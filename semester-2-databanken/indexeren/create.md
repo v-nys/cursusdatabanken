@@ -2,9 +2,9 @@
 
 ## Prefix index
 
-Wanneer je een secundaire index voor een kolom maakt, slaat MySQL de waarden van de kolommen op in een afzonderlijke gegevensstructuur, bijvoorbeeld B-Tree en Hash.
+Wanneer je een secundaire index voor een kolom maakt, d.w.z. een index die niet over de primaire sleutel gaat, slaat MySQL de waarden van de kolommen op in een afzonderlijke gegevensstructuur. Dit zijn structuren waarin je snel kan opzoeken.
 
-In het geval dat de kolommen de tekenreekskolommen zijn, zal de index veel schijfruimte in beslag nemen en mogelijk de INSERT-bewerkingen vertragen.
+In het geval dat de kolommen de tekenreekskolommen zijn (`CHAR`, `VARCHAR` of `TEXT`), zal de index veel schijfruimte in beslag nemen en mogelijk de INSERT-bewerkingen vertragen.
 
 Om dit probleem aan te pakken, kan je met MySQL een index maken voor het leidende deel van de kolomwaarden van de tekenreekskolommen met behulp van de volgende syntax: 
 
@@ -68,7 +68,7 @@ De grootte van de kolom omschrijving is bij design ingesteld op 50 karakters.
 
 Voor de index moet je de lengte van het zgn. voorvoegsel bepalen. Soms wordt er gezegd dat je dit zo efficiënt mogelijk dient te doen door de prefex zo kort mogelijk te houden. Hier schuilt wel een gevaar in wanneer de tabel nieuwe data bevat, mogelijk is de index niet meer zo uniek. 
 
-Hoe zoek je nu de ideale lengte van de prefix op?
+Hoe zoek je nu de ideale lengte van de prefix op? Een vuistregel: zorg dat de index meteen naar een uniek resultaat leidt, maar dat hij niet groter is dan nodig om dit te bereiken.
 
 **Stap 1**: zoek het aantal rijen in de tabel op
 
@@ -78,7 +78,7 @@ SELECT COUNT(*)
 FROM taken;
 ```
 
-**Stap 2**: zoek volgens verschillende lengtes de meest unieke prefix
+**Stap 2**: zoek volgens verschillende lengtes de meest unieke prefix. Via `LEFT` krijg je alleen de eerste (aantal) tekens uit een string.
 
 ```sql
 USE modernways;
@@ -86,7 +86,7 @@ SELECT COUNT(DISTINCT LEFT(omschrijving, 20)) uniek
 FROM taken;
 ```
 
-Indien 20 de perfecte lengte van de prefix is, dan gaan we de index weldegenlijk opbouwen.
+Indien 20 de perfecte lengte van de prefix is, dan gaan we de index opbouwen.
 
 ```sql
 USE modernways;
@@ -97,6 +97,10 @@ ON taken(omschrijving(20));
 Binnen de schema navigation kan je nu de index zien.
 
 Als je nu bovenstaande select-query opnieuw uitvoert zal deze efficiënter en sneller verlopen.
+
+{% hint style="warning" %}
+De lengte van het "ideale" prefix kan wijzigen naarmate je meer data toevoegt aan een tabel.
+{% endhint %}
 
 {% hint style="info" %}
 [https://www.mysqltutorial.org/mysql-index/mysql-prefix-index/](https://www.mysqltutorial.org/mysql-index/mysql-prefix-index/)

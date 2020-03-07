@@ -10,10 +10,10 @@ Je vindt [hier](https://dev.mysql.com/doc/refman/8.0/en/mysql-indexes.html) een 
 
 # Verschillende types index in MySQL
 
-Niet alle indexen zijn hetzelfde. Zoals eerder aangegeven kunnen indexen gebaseerd zijn op één kolom, of op meerdere kolommen. Een index met strengere voorwaarde zal typisch een grotere snelheidswinst opleveren dan een index met zwakkere eisen. Volgende indexen zijn voorzien in MySQL (en stemmen in sommige gevallen overeen met constraints op je data zoals `PRIMARY KEY` en `UNIQUE`):
+Niet alle indexen zijn hetzelfde. Zoals eerder aangegeven kunnen indexen gebaseerd zijn op één kolom, of op meerdere kolommen. Een index met strengere voorwaarde zal typisch een grotere snelheidswinst opleveren dan een index met zwakkere eisen. Volgende indexen zijn voorzien in MySQL (en stemmen in sommige gevallen overeen met constraints op je data zoals `UNIQUE`):
 
 - Primaire sleutels: deze heb je meestal sowieso al aangemaakt. Primaire sleutelkolommen worden vaak gebruikt voor zoekoperaties en WHERE-clauses, dus het is logisch om ze automatisch in een index op te nemen. MySQL houdt rijen intern bij in een gesorteerde volgorde op basis van de primaire sleutel en dankzij deze sortering kan er efficiënt gezocht worden. 
-- Unieke indexen: deze kan je definiëren op (verzamelingen van) kolommen met unieke waarden. De data kunnen niet fysiek opgeslagen worden in een volgorde bepaald door deze index (omdat de primaire sleutel de volgorde al bepaalt), maar er kan een extra datastructuur met de unieke waarden worden bijgehouden. Dit is erg vergelijkbaar met een woordenlijst achteraan in een handboek.
+- Unieke indexen: deze kan je definiëren op (verzamelingen van) kolommen met unieke waarden. De data kunnen niet fysiek opgeslagen worden in een volgorde bepaald door deze index (omdat de primaire sleutel de volgorde al bepaalt), maar er kan een extra datastructuur met de unieke waarden worden bijgehouden. Dit is erg vergelijkbaar met een **gesorteerde woordenlijst** achteraan in een handboek.
 - Gewone indexen: deze kan je definiëren op kolommen met waarden die niet noodzakelijk uniek zijn. Ze mogen ook NULL bevatten.
 - Dalende indexen: dit is een gewone index, maar opgeslagen in dalende volgorde. Deze is vooral geschikt als je vaak data toont die normaal achteraan in de index terecht zou komen. Bijvoorbeeld: de recentste posts of comments in een bloggingsysteem. Een gewone index zou hier nog steeds een snelheidswinst opleveren, maar niet zo'n grote als een dalende index.
 - Fulltext indexen: deze dienen voor kolommen die een blok tekst bevatten. De tekst wordt opgesplitst in individuele woorden, die dan geïndexeerd worden. Zo kan je efficiënt blokken tekst zoeken die één specifiek woord bevatten.
@@ -25,4 +25,4 @@ Je zal waarschijnlijk pas indexen nodig hebben als je met grotere databases gaat
 - welke soorten queries vaak uitgevoerd worden
 - hoe "duur" dergelijke queries zijn
 
-Als je weet dat bepaalde queries vaak voorkomen en/of veel zoekwerk doorheen kolommen vereisen, is het zinvol de betrokken kolommen te indexeren op een manier die goed past bij hun typische gebruik. In de praktijk zal je ook de eventuele snelheidswinsten die je indexen opleveren opmeten.
+Als je weet dat bepaalde queries vaak voorkomen en/of veel zoekwerk doorheen kolommen vereisen, is het zinvol de betrokken kolommen te indexeren op een manier die goed past bij hun typische gebruik. In de praktijk zal je ook de eventuele snelheidswinsten die je indexen opleveren opmeten. Hiervoor gebruik je het `EXPLAIN`-statement, dat een overzicht geeft van hoe een bepaald statement is uitgevoerd.

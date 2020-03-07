@@ -1,8 +1,6 @@
 # UNIQUE
 
-De primary key is een unieke index bij creatie.
-
-Er kan echter slechts één primary key per tabel worden gedefinieerd en indien je toch op een andere kolom ook een unieke index wil leggen kan je dit door een index te bepalen die uniek is. Je kan meerdere unieke indexen binnen één tabel hebben, maar slechts één primary key.
+De primary key is een unieke index bij creatie. Er kan echter slechts één primary key per tabel worden gedefinieerd en indien je toch op een andere kolom ook een unieke index wil leggen kan je dit door een index te bepalen die uniek is. Je kan meerdere unieke indexen binnen één tabel hebben, maar slechts één primary key. De data zullen dan niet fysiek opgeslagen zijn in volgorde van deze unieke index, maar er zal wel een hulpstructuur bijgehouden worden die voor elke unieke waarde zegt waar je ze kan terugvinden.
 
 ```sql
 CREATE UNIQUE INDEX index_name
@@ -17,6 +15,15 @@ Bij creatie van de tabel doe je dit als volgt.
 CREATE TABLE table_name(
 //...
 UNIQUE KEY(index_column_1,index_column_2,...) 
+);
+```
+
+Deze syntax is algemeen en zegt dat een **combinatie** van waarden uniek moet zijn. Als je index maar één kolom gebruikt, kan je dit doen met een `UNIQUE` constraint op die kolom, bijvoorbeeld:
+
+```sql
+CREATE TABLE table_name(
+//...
+ColName VARCHAR(100) UNIQUE
 );
 ```
 
@@ -76,3 +83,7 @@ VALUES ('Jef','Doe','john.doe@modernways.be');
 
 Schrijf het sql-statement dat ervoor zorgt indien je bovenop de unieke mailindex ook nog zou willen bepalen dat de combinatie van voornaam en achternaam uniek moet zijn.
 
+{% hint style="warning" %}
+Wat met `NULL`-waarden in combinatie met unieke indexen? Zie [de officiële documentatie](https://dev.mysql.com/doc/refman/8.0/en/create-index.html#create-index-unique). De waarden zijn dus niet noodzakelijk 100% uniek, dit in tegenstelling tot sommige andere databasesystemen.
+{% endhint %}
+{% endhint %}
