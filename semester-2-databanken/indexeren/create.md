@@ -102,6 +102,12 @@ Als je nu bovenstaande select-query opnieuw uitvoert zal deze efficiënter en sn
 De lengte van het "ideale" prefix kan wijzigen naarmate je meer data toevoegt aan een tabel.
 {% endhint %}
 
+## Fulltext indexen
+Indien je een full text index wil aanmaken, gebruik je dezelfde syntax als voor een gewone index, maar schrijf je `CREATE FULLTEXT INDEX` in plaats van `CREATE INDEX`.
+
+## Aflopende indexen
+Indien je een aflopend gesorteerde index wil (bijvoorbeeld van "Z" naar "A" in plaats van omgekeerd), schrijf je `DESC` na de kolomnaam. Bijvoorbeeld `ON Personen (Voornaam DESC)`.
+
 {% hint style="info" %}
 [https://www.mysqltutorial.org/mysql-index/mysql-prefix-index/](https://www.mysqltutorial.org/mysql-index/mysql-prefix-index/)
 {% endhint %}
