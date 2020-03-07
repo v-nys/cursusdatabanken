@@ -110,5 +110,6 @@
   * [CREATE](semester-2-databanken/indexeren/create.md)
   * [DROP](semester-2-databanken/indexeren/drop.md)
   * [UNIQUE](semester-2-databanken/indexeren/unique.md)
+  * [trage queries opvolgen](semester-2-databanken/indexeren/trage-queries-opvolgen.md)
 * [Stored procedures](semester-2-databanken/stored-procedures.md)
 
