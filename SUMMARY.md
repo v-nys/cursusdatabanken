@@ -106,6 +106,7 @@
   * [Overzicht](semester-2-databanken/erd/overzicht.md)
   * [Labo oefeningen](semester-2-databanken/erd/labo-oefeningen.md)
 * [Indexeren](semester-2-databanken/indexeren/README.md)
+  * [CREATE](semester-2-databanken/indexeren/toepassingen-indexen.md)
   * [CREATE](semester-2-databanken/indexeren/create.md)
   * [DROP](semester-2-databanken/indexeren/drop.md)
   * [UNIQUE](semester-2-databanken/indexeren/unique.md)
