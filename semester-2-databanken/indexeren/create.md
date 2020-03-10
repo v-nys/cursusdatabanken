@@ -4,9 +4,9 @@
 
 Wanneer je een secundaire index voor een kolom maakt, d.w.z. een index die niet over de primaire sleutel gaat, slaat MySQL de waarden van de kolommen op in een afzonderlijke gegevensstructuur. Dit zijn structuren waarin je snel kan opzoeken.
 
-In het geval dat de kolommen de tekenreekskolommen zijn (`CHAR`, `VARCHAR` of `TEXT`), zal de index veel schijfruimte in beslag nemen en mogelijk de INSERT-bewerkingen vertragen.
+In het geval dat de kolommen de tekenreekskolommen zijn \(`CHAR`, `VARCHAR` of `TEXT`\), zal de index veel schijfruimte in beslag nemen en mogelijk de INSERT-bewerkingen vertragen.
 
-Om dit probleem aan te pakken, kan je met MySQL een index maken voor het leidende deel van de kolomwaarden van de tekenreekskolommen met behulp van de volgende syntax: 
+Om dit probleem aan te pakken, kan je met MySQL een index maken voor het leidende deel van de kolomwaarden van de tekenreekskolommen met behulp van de volgende syntax:
 
 ```sql
 column_name(length)
@@ -69,7 +69,7 @@ Als je de tabel taken veel bevraagd waarbij je filtert op de omschrijving is het
 
 De grootte van de kolom omschrijving is bij design ingesteld op 50 karakters.
 
-Voor de index moet je de lengte van het zgn. voorvoegsel bepalen. Soms wordt er gezegd dat je dit zo efficiënt mogelijk dient te doen door de prefex zo kort mogelijk te houden. Hier schuilt wel een gevaar in wanneer de tabel nieuwe data bevat, mogelijk is de index niet meer zo uniek. 
+Voor de index moet je de lengte van het zgn. voorvoegsel bepalen. Soms wordt er gezegd dat je dit zo efficiënt mogelijk dient te doen door de prefex zo kort mogelijk te houden. Hier schuilt wel een gevaar in wanneer de tabel nieuwe data bevat, mogelijk is de index niet meer zo uniek.
 
 Hoe zoek je nu de ideale lengte van de prefix op? Een vuistregel: zorg dat de index meteen naar een uniek resultaat leidt, maar dat hij niet groter is dan nodig om dit te bereiken.
 
@@ -81,7 +81,7 @@ SELECT COUNT(*)
 FROM taken;
 ```
 
-**Stap 2**: zoek volgens verschillende lengtes de meest unieke prefix. Via `LEFT` krijg je alleen de eerste (aantal) tekens uit een string.
+**Stap 2**: zoek volgens verschillende lengtes de meest unieke prefix. Via `LEFT` krijg je alleen de eerste \(aantal\) tekens uit een string.
 
 ```sql
 USE modernways;
@@ -106,10 +106,12 @@ De lengte van het "ideale" prefix kan wijzigen naarmate je meer data toevoegt aa
 {% endhint %}
 
 ## Fulltext indexen
+
 Indien je een full text index wil aanmaken, gebruik je dezelfde syntax als voor een gewone index, maar schrijf je `CREATE FULLTEXT INDEX` in plaats van `CREATE INDEX`.
 
 ## Aflopende indexen
-Indien je een aflopend gesorteerde index wil (bijvoorbeeld van "Z" naar "A" in plaats van omgekeerd), schrijf je `DESC` na de kolomnaam. Bijvoorbeeld `ON Personen (Voornaam DESC)`.
+
+Indien je een aflopend gesorteerde index wil \(bijvoorbeeld van "Z" naar "A" in plaats van omgekeerd\), schrijf je `DESC` na de kolomnaam. Bijvoorbeeld `ON Personen (Voornaam DESC)`.
 
 {% hint style="info" %}
 [https://www.mysqltutorial.org/mysql-index/mysql-prefix-index/](https://www.mysqltutorial.org/mysql-index/mysql-prefix-index/)

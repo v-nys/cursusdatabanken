@@ -1,9 +1,11 @@
 # Indexeren
+
 ## Wat is een index?
+
 Je kent het principe van een index waarschijnlijk uit alledaagse situaties.
 
-- In studieboeken staat vaak achteraan een alfabetisch geordende woordenlijst met paginanummers. Hiermee raak je veel sneller aan de gewenste informatie dan wanneer je een boek woord per woord leest vanaf het begin.
-- In het Engels wordt het woord "index" soms gebruikt om een telefoongids aan te duiden. Hiermee kan je heel snel iemand terugvinden als je de juiste plaatsnaam kent en een stukje informatie over de gezochte persoon kent (vaak een achternaam of beroep).
+* In studieboeken staat vaak achteraan een alfabetisch geordende woordenlijst met paginanummers. Hiermee raak je veel sneller aan de gewenste informatie dan wanneer je een boek woord per woord leest vanaf het begin.
+* In het Engels wordt het woord "index" soms gebruikt om een telefoongids aan te duiden. Hiermee kan je heel snel iemand terugvinden als je de juiste plaatsnaam kent en een stukje informatie over de gezochte persoon kent \(vaak een achternaam of beroep\).
 
 Indexen kunnen ook gebruikt worden om heel snel een databasetabel te doorlopen. Net zoals je zelf tijd verliest door altijd vanaf de eerste pagina te beginnen lezen, verliest een database engine tijd door altijd elk databaserecord te controleren.
 
