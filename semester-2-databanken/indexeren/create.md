@@ -17,6 +17,8 @@ Je kan een index op twee manieren creëren.
 **1. bij creatie van de tabel zelf**
 
 ```sql
+-- mogen meerdere colum_names zijn, gescheiden door komma
+-- length is optioneel
 CREATE TABLE Table_name(
 column_list,
 INDEX(column_name(length))
@@ -26,6 +28,7 @@ INDEX(column_name(length))
 **2. nadien toevoegen aan een bestaande tabel**
 
 ```sql
+-- zelfde opmerking als boven
 CREATE INDEX index_name
 ON table_name(column_name(length));
 ```
