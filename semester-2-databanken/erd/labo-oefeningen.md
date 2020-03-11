@@ -2,7 +2,25 @@
 
 ## Oefening 1 \(deel 1\)
 
-We maken een entity-relationshipmodel voor iets als [Trakt](https://trakt.tv/). Dit is een website waarmee je kan bijhouden welke films en series je hebt bekeken of aan het bekijken bent. Teken zelf een voorstel voor een ERD uit, op basis van volgende informatie:
+Onderstaand diagram is in de minder technische ERD-notatie die we vorig semester hebben gezien:
+
+![diagram hogeschool](../../.gitbook/assets/hogeschool.png)
+
+Hermaak dit diagram in de diagrameditor van MySQL Workbench. Deze editor ondersteunt een verwante, maar andere notatie. Zie eventueel het filmpje over deze editor in de cursus. Zet via de knop "model" in de werkbalk bovenaan de objectnotatie op "Workbench (simplified)" en de notatie van relaties op "classic". Zet ook via "edit" → "preferences" → "diagram" de optie "show captions" aan.
+
+De betekenis van de icoontjes voor elke kolom vind je [hier](https://stackoverflow.com/questions/10778561/what-do-the-mysql-workbench-column-icons-mean) terug.
+
+## Oefening 1 \(deel 2\)
+
+* Genereer SQL-code uit je model via "export"
+* Je hoeft geen van de opties aan te vinken om bestaande tabellen te droppen,...
+* Controleer dat dit script uitvoerbaar is en overeenstemt met wat je zelf zou schrijven
+  * onderdelen die we nog niet behandeld hebben mag je negeren
+  * namen van keys,... moeten wel de afspraken volgen die wij volgen
+
+## Oefening 2 \(deel 1\)
+
+We maken een entity-relationshipmodel voor iets als [Trakt](https://trakt.tv/). Dit is een website waarmee je kan bijhouden welke films en series je hebt bekeken of aan het bekijken bent. Teken zelf een diagram uit, op basis van volgende informatie:
 
 * We willen zowel films als series kunnen opvolgen. Beide hebben titels.
 * Zowel films als series kunnen behoren tot één of meer genres.
@@ -12,17 +30,6 @@ We maken een entity-relationshipmodel voor iets als [Trakt](https://trakt.tv/). 
 * Gebruikers kunnen een rating van 1 tot 5 geven aan films of afleveringen die ze gezien hebben.
 * Gebruikers kunnen bijhouden wanneer ze een film of aflevering gezien hebben. Ze kunnen een film of aflevering meermaals bekeken hebben.
 
-### Omzetting naar tabellen
+## Oefening 2 \(deel 2\)
 
-Het ERM houdt zich iets minder bezig met de implementatiedetails. We hebben alle nodige technische achtergrond om deze concepten te vertalen naar tabellen:
-
-* entiteiten worden tabellen
-* relaties worden tabellen als de cardinaliteit langs minstens één kant niet exact 1 is
-* gewone attributen worden kolommen
-* multivalued attributen worden voorgesteld met tabellen met een vreemde sleutel voor de entiteit
-* derived attributen worden zelden bijgehouden en worden berekend waar nodig om inconsistentie te vermijden
-
-## Oefening 1 \(deel 2\)
-
-Zet je schema om naar SQL-code. 
-
+Zelfde als oefening 1, deel 2.
