@@ -10,6 +10,10 @@ Hermaak dit diagram in de diagrameditor van MySQL Workbench. Deze editor onderst
 
 De betekenis van de icoontjes voor elke kolom vind je [hier](https://stackoverflow.com/questions/10778561/what-do-the-mysql-workbench-column-icons-mean) terug.
 
+{% hint style="important" %}
+Van het verschil tussen identifying en non-identifying relations moet je je niets aantrekken als je dit labo hebt voor de theorie.
+{% endhint %}
+
 ## Oefening 1 \(deel 2\)
 
 * Genereer SQL-code uit je model via "export"
