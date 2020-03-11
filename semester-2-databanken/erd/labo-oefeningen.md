@@ -14,6 +14,10 @@ De betekenis van de icoontjes voor elke kolom vind je [hier](https://stackoverfl
 Van het verschil tussen identifying en non-identifying relations moet je je niets aantrekken als je dit labo hebt voor de theorie.
 {% endhint %}
 
+Een ander ERD met de juiste instellingen zie je hier:
+
+![voorbeeld ERD](../../.gitbook/assets/workbench-erd.png)
+
 ## Oefening 1 \(deel 2\)
 
 * Genereer SQL-code uit je model via "export"
