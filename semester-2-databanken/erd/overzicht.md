@@ -2,7 +2,9 @@
 description: Herhaling ERM
 ---
 
-# Overzicht met klassieke notatie
+# Overzicht
+
+## Overzicht met klassieke notatie
 
 Een entity-relationshipmodel \(ERM\) van een databank drukt uit welke informatie aanwezig is in een databank en hoe deze informatie gestructureerd is. Het entity-relationshipdiagram \(ERD\) is hier een grafische weergave van.
 
@@ -16,13 +18,13 @@ Elk van deze zaken wordt in een ER diagram weergegeven met een bepaald symbool w
 
 ![ER-Diagram-Elements](http://programming-emu.com/myap/it/image/sql/ER-Diagram-Elements.png)
 
-### Entiteittypes
+#### Entiteittypes
 
-#### Wat zijn entiteitstypes?
+**Wat zijn entiteitstypes?**
 
 Zoals we bij het programmeren een onderscheid maken tussen klassen en objecten, maken we hier een onderscheid tussen entiteitstypes en entiteiten. Een entiteitstype is het begrip zelf: "een klant", "een leverancier", "een beroep", "een lied",... Uit deze voorbeelden blijkt dat een entiteittype iets concreet of iets abstract kan zijn. Een entiteit is een specifiek voorkomen hiervan: "_deze_ klant", "_die_ leverancier", "_dat_ beroep", "_mijn lievelingslied_",... Entiteiten hebben eigenschappen, die we voorstellen als attributen. Bijvoorbeeld: "klantnummer", "firmanaam", "barema",... Entiteitstypes zijn gelinkt aan attribuuttypes voor alle eigenschappen die een entiteit kan hebben.
 
-#### Verschillende soorten entiteittypen
+**Verschillende soorten entiteittypen**
 
 Op de figuur hierboven zie je dat er verschillende soorten entiteiten bestaan.
 
@@ -30,7 +32,7 @@ Op de figuur hierboven zie je dat er verschillende soorten entiteiten bestaan.
 * Zwakke entiteiten: deze entiteiten zijn op zichzelf niet zinvol en hun attributen volstaan niet om een sleutel uit af te leiden. Bijvoorbeeld: een hotelkamer heeft een nummer, maar meerdere kamers in meerdere hotels hebben hetzelfde nummer. Je kan een hotelkamer wel uniek identificeren door het kamernummer te combineren met een aanduiding van het hotel waartoe de kamer behoort. Met andere woorden: het kamernummer en de vreemde sleutel voor het hotel \(de bijbehorende sterke entiteit\) vormen de primaire sleutel.
 * Associative entities: dit zijn eigenlijk tegelijkertijd entiteiten en relaties. We stellen deze voor als relaties met eigen attributen. Bijvoorbeeld: een relatie tussen personen en boeken om aan te duiden wie welk boek heeft geleend is een associative entity als we de uitleenperiode zien als eigenschap van de relatie.
 
-### Attribuuttypes
+#### Attribuuttypes
 
 Er zijn ook verschillende soorten attribuuttypes:
 
@@ -39,7 +41,7 @@ Er zijn ook verschillende soorten attribuuttypes:
 * Afgeleide attribuuttypes: dit zijn attribuuttypes die wel interessant lijken vanuit het oogpunt van een model, maar die afgeleid kunnen worden uit reeds aanwezige informatie.
 * Sleutelattribuuttypes: deze attributen kunnen gebruikt worden als \(deel van\) een primaire sleutel.
 
-### Verwantschapstypes
+#### Verwantschapstypes
 
 Een relationshiptype stelt verbanden tussen entiteitstypes voor:
 
@@ -75,17 +77,18 @@ Cardinaliteit van een rol: het aantal keren dat een entiteit in die rol kan of m
   * n: als een entiteit, in een rol, met een onbepaald aantal entiteiten mag zijn gekoppeld
 * 4 veelgebruikte combinaties: 0..1, 0..n, 1..1, 1..n
 
-### Voorbeeld
+#### Voorbeeld
 
 ERD Boeken Personen Aanspreektitel
 
 ![ERD Boeken Personen Aanspreektitel](http://programming-emu.com/myap/it/image/sql/erd/ERD%20Boeken%20Personen%20Aanspreektitel.png)
 
-# EER-notatie in MySQL Workbench
+## EER-notatie in MySQL Workbench
 
-[hier](..) vind je een filmpje terug dat uitlegt hoe je een gelijkaardige notatie gebruikt in MySQL Workbench. Dit is een "extended entity relationship diagram", d.w.z. een meer technisch diagram.
+[hier](https://github.com/v-nys/cursusdatabanken/tree/dc967248ad7b90fd9060e5af27b14ef10576e6fb/semester-2-databanken/README.md) vind je een filmpje terug dat uitlegt hoe je een gelijkaardige notatie gebruikt in MySQL Workbench. Dit is een "extended entity relationship diagram", d.w.z. een meer technisch diagram.
 
-## identifying vs. non-identifying relaties
+### identifying vs. non-identifying relaties
+
 In Workbench moet je soms kiezen tussen een "identifying" en een "non-identifying" relaties. Het verschil tussen de twee is dat er bij een "identifying" relatie een "existence dependency" is, d.w.z. dat één record niet kan blijven voortbestaan als het andere verdwijnt. Een voorbeeld van een identifying relatie is de inschrijving van een persoon voor een evenement. Als de persoon uit het systeem wordt geschrapt, moet de inschrijving ook worden geschrapt, want ze kan niet op zichzelf bestaan: de persoon is **deel van de identiteit** van de inschrijving.
 
 Een voorbeeld van een non-identifying relatie is die tussen een persoon en een land. Een land kan gekoppeld zijn aan een persoon, maar de persoon kan blijven bestaan in het systeem als het land wordt geschrapt. Het land is geen **deel van de identiteit** van de persoon.
@@ -96,23 +99,29 @@ Theoretisch gesproken betekent dit dat de primaire sleutel van de afhankelijke e
 In de praktijk worden deze concepten niet altijd even strikt gevolgd!
 {% endhint %}
 
-## vertaling van ER naar EER
-### entiteiten
-- gewone entiteiten worden tabellen
-- zwakke entiteiten worden tabellen die gelinkt zijn via een identifying relationship (want ze hebben een andere entiteit nodig om hun identiteit te bepalen)
-- associatieve entiteiten worden identifying n-to-m relaties (hier is een knop voor voorzien in Workbench)
+### vertaling van ER naar EER
 
-### relaties
-- zwakke relaties zijn de identifying relaties voor zwakke entiteiten
-- voor het overige herbekijk je of iets identifying is of niet
+#### entiteiten
 
-### attributen
-- gewone attributen worden kolommen
-- afgeleide (derived) attributen worden niet bijgehouden
-- multivalued attributen worden geen kolommen, maar worden bijgehouden in een tabel en gelinkt via een identifying relatie
-  - bv. om personen met meerdere telefoonnummers voor te stellen, maken we een tabel `Telefoonnummers`, die met vreemde sleutel verwijst naar tabel `Personen`
+* gewone entiteiten worden tabellen
+* zwakke entiteiten worden tabellen die gelinkt zijn via een identifying relationship \(want ze hebben een andere entiteit nodig om hun identiteit te bepalen\)
+* associatieve entiteiten worden identifying n-to-m relaties \(hier is een knop voor voorzien in Workbench\)
 
-## betekenis van de icoontjes in Workbench
-Zie [hier](https://stackoverflow.com/questions/10778561/what-do-the-mysql-workbench-column-icons-mean). Merk op dat hier sprake is van "(part of) primary/foreign key".
+#### relaties
 
-Die "part of" staat er omdat het niet verplicht is getallen te gebruiken die automatisch ophogen. Het kan ook zijn dat je een combinatie van attributen gebruikt die een record uniek identificeert (zoals naam in combinatie met adres).
+* zwakke relaties zijn de identifying relaties voor zwakke entiteiten
+* voor het overige herbekijk je of iets identifying is of niet
+
+#### attributen
+
+* gewone attributen worden kolommen
+* afgeleide \(derived\) attributen worden niet bijgehouden
+* multivalued attributen worden geen kolommen, maar worden bijgehouden in een tabel en gelinkt via een identifying relatie
+  * bv. om personen met meerdere telefoonnummers voor te stellen, maken we een tabel `Telefoonnummers`, die met vreemde sleutel verwijst naar tabel `Personen`
+
+### betekenis van de icoontjes in Workbench
+
+Zie [hier](https://stackoverflow.com/questions/10778561/what-do-the-mysql-workbench-column-icons-mean). Merk op dat hier sprake is van "\(part of\) primary/foreign key".
+
+Die "part of" staat er omdat het niet verplicht is getallen te gebruiken die automatisch ophogen. Het kan ook zijn dat je een combinatie van attributen gebruikt die een record uniek identificeert \(zoals naam in combinatie met adres\).
+
