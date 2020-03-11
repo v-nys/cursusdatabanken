@@ -2,7 +2,7 @@
 description: Herhaling ERM
 ---
 
-# Overzicht
+# Overzicht met klassieke notatie
 
 Een entity-relationshipmodel \(ERM\) van een databank drukt uit welke informatie aanwezig is in een databank en hoe deze informatie gestructureerd is. Het entity-relationshipdiagram \(ERD\) is hier een grafische weergave van.
 
@@ -81,3 +81,38 @@ ERD Boeken Personen Aanspreektitel
 
 ![ERD Boeken Personen Aanspreektitel](http://programming-emu.com/myap/it/image/sql/erd/ERD%20Boeken%20Personen%20Aanspreektitel.png)
 
+# EER-notatie in MySQL Workbench
+
+[hier](..) vind je een filmpje terug dat uitlegt hoe je een gelijkaardige notatie gebruikt in MySQL Workbench. Dit is een "extended entity relationship diagram", d.w.z. een meer technisch diagram.
+
+## identifying vs. non-identifying relaties
+In Workbench moet je soms kiezen tussen een "identifying" en een "non-identifying" relaties. Het verschil tussen de twee is dat er bij een "identifying" relatie een "existence dependency" is, d.w.z. dat één record niet kan blijven voortbestaan als het andere verdwijnt. Een voorbeeld van een identifying relatie is de inschrijving van een persoon voor een evenement. Als de persoon uit het systeem wordt geschrapt, moet de inschrijving ook worden geschrapt, want ze kan niet op zichzelf bestaan: de persoon is **deel van de identiteit** van de inschrijving.
+
+Een voorbeeld van een non-identifying relatie is die tussen een persoon en een land. Een land kan gekoppeld zijn aan een persoon, maar de persoon kan blijven bestaan in het systeem als het land wordt geschrapt. Het land is geen **deel van de identiteit** van de persoon.
+
+Theoretisch gesproken betekent dit dat de primaire sleutel van de afhankelijke entiteit de verwijzing naar de onafhankelijke entiteit bevat. Zo zal een tabel voor inschrijvingen vreemde sleutels hebben om te verwijzen naar een persoon en een evenement. Deze vreemde sleutels vormen **samen** de **primaire sleutel van een inschrijving**. Anders gesteld: de identiteit van een inschrijving wordt bepaald door die van de bijbehorende persoon en evenement.
+
+{% hint style="danger" %}
+In de praktijk worden deze concepten niet altijd even strikt gevolgd!
+{% endhint %}
+
+## vertaling van ER naar EER
+### entiteiten
+- gewone entiteiten worden tabellen
+- zwakke entiteiten worden tabellen die gelinkt zijn via een identifying relationship (want ze hebben een andere entiteit nodig om hun identiteit te bepalen)
+- associatieve entiteiten worden identifying n-to-m relaties (hier is een knop voor voorzien in Workbench)
+
+### relaties
+- zwakke relaties zijn de identifying relaties voor zwakke entiteiten
+- voor het overige herbekijk je of iets identifying is of niet
+
+### attributen
+- gewone attributen worden kolommen
+- afgeleide (derived) attributen worden niet bijgehouden
+- multivalued attributen worden geen kolommen, maar worden bijgehouden in een tabel en gelinkt via een identifying relatie
+  - bv. om personen met meerdere telefoonnummers voor te stellen, maken we een tabel `Telefoonnummers`, die met vreemde sleutel verwijst naar tabel `Personen`
+
+## betekenis van de icoontjes in Workbench
+Zie [hier](https://stackoverflow.com/questions/10778561/what-do-the-mysql-workbench-column-icons-mean). Merk op dat hier sprake is van "(part of) primary/foreign key".
+
+Die "part of" staat er omdat het niet verplicht is getallen te gebruiken die automatisch ophogen. Het kan ook zijn dat je een combinatie van attributen gebruikt die een record uniek identificeert (zoals naam in combinatie met adres).
