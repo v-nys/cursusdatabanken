@@ -15,5 +15,11 @@
 
 Helaas biedt MySQL geen faciliteiten om stored procedures te debuggen. Andere enterprise database producten zoals Oracle en SQL Server bieden deze mogelijkheid wel.
 
+## De voorbeelddatabase
 
+![](../../.gitbook/assets/aptunes_erd.png)
+
+Hieronder kan je het calibratiescript downloaden.
+
+{% file src="../../.gitbook/assets/calibratedb.sql" caption="Calibratiescript" %}
 
