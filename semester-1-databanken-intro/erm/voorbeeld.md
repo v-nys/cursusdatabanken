@@ -16,5 +16,5 @@ description: Informatisering van een bank
 * Een lening wordt steeds toegestaan door een bepaald filiaal. Meerdere klanten kunnen samen een lening afsluiten, en één klant kan meerdere leningen hebben.
 * Een lening wordt gekenmerkt door een uniek nummer. Per lening bewaart de bank volgende gegevens: geleend bedrag en aflossingen. Elke aflossing heeft een uniek volgnummer, althans voor de lening waarvoor ze dient. Een aflossing van een andere lening kan hetzelfde volgnummer hebben. Per aflossing bewaart de bank volgende gegevens: datum, bedrag.
 
-![](../../.gitbook/assets/image%20%2847%29.png)
+![](../../.gitbook/assets/image%20%2849%29.png)
 

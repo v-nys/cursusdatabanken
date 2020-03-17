@@ -19,9 +19,9 @@ De "ondergeschikte" entiteit moet steeds horen bij een "dominante" entiteit.
 * Gevolg: als we een lening uit de database verwijderen, moeten we alle afbetalingen voor die lening mee verwijderen. Het is wel mogelijk om een bepaalde afbetaling te verwijderen, zonder de lening waarvoor ze bedoeld was, mee te verwijderen.
 * Gevolg: de deelname van de entity set afbetalingen aan de relatie leningen-afbetalingen, is "totaal". De deelname van de entity set leningen aan de relatie leningen-afbetalingen is "partieel": het is mogelijk een lening te hebben waarvoor \(nog\) geen afbetalingen gebeurd zijn.
 
-![](../../.gitbook/assets/image%20%2824%29.png)
-
 ![](../../.gitbook/assets/image%20%2825%29.png)
+
+![](../../.gitbook/assets/image%20%2826%29.png)
 
 ## Vormen van integriteit
 
