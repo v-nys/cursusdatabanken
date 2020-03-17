@@ -111,5 +111,6 @@
 * [ERD](semester-2-databanken/erd/README.md)
   * [Overzicht](semester-2-databanken/erd/overzicht.md)
   * [Labo oefeningen](semester-2-databanken/erd/labo-oefeningen.md)
-* [Stored procedures](semester-2-databanken/stored-procedures.md)
+* [Stored procedures](semester-2-databanken/stored-procedures/README.md)
+  * [Inleiding](semester-2-databanken/stored-procedures/inleiding.md)
 
