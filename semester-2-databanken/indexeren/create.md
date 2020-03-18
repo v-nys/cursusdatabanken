@@ -29,6 +29,7 @@ INDEX(column_name(length))
 
 ```sql
 -- zelfde opmerking als boven
+-- je mag een index op meerdere kolommen samen maken
 CREATE INDEX index_name
 ON table_name(column_name(length));
 ```

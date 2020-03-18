@@ -27,7 +27,7 @@ MySQL Workbench heeft ook een grafische weergave van je uitvoeringsplan. Deze ka
 
 ![](../../.gitbook/assets/querystats2.png)
 
-Als je op deze knop klikt, krijg je een diagram waarin wordt uitgelegd welke stappen nodig zijn om je query uit te voeren. Een volledig overzicht van de betekenis van de elementen in zo'n diagram vind je [hier](https://dev.mysql.com/doc/workbench/en/wb-performance-explain.html). Je hoeft niet elk onderdeel te kennen. Belangrijk is dat je rode boxes met daarin "full table scan" zo veel mogelijk vermijdt.
+Als je op deze knop klikt, krijg je een diagram waarin wordt uitgelegd welke stappen nodig zijn om je query uit te voeren. Een volledig overzicht van de betekenis van de elementen in zo'n diagram vind je [hier](https://dev.mysql.com/doc/workbench/en/wb-performance-explain.html). **Je hoeft niet elk onderdeel te kennen, maar bekijk de pagina kort. Belangrijk is dat je rode boxes met daarin "full table scan" zo veel mogelijk vermijdt.**
 
 Als je op een element van het diagram gaat staan met je muis, krijg je ook een technische uitleg over waarom dat onderdeel van je query waarschijnlijk niet efficiënt is. Let op! Het betreft hier nog steeds vuistregels. Een "full table scan" is bijvoorbeeld geen ramp als je tabel erg klein is. Dat wordt ook vermeld in de kleine lettertjes.
 
@@ -39,5 +39,9 @@ Als je een bepaalde `SELECT`-query wil optimaliseren, kan je onderstaand stappen
    a. Een kolom die niet rechtstreeks wordt vergeleken met een waarde, maar wel in een bereik moet liggen (via `BETWEEN`, `>`, `<`, `LIKE` waarbij het eerste karakter geen wildcard is)
    b. Alle kolommen die in een `GROUP BY` worden gebruikt, in de volgorde waarin ze in de `GROUP BY` worden vermeld
    c. Alle kolommen die in een `ORDER BY` worden gebruikt, in de volgorde waarin ze in de `ORDER BY` worden vermeld, maar enkel als er geen mix van `ASC` en `DESC` voorkomt in de `ORDER BY`
+
+{% hint style="info" %}
+Als er staat dat een kolom rechtstreeks vergeleken wordt met een waarde, betekent dat bijvoorbeeld dat er staat `WHERE MYCOLUMN = ...`. Wat niet zou gaan is `WHERE RIGHT(MYCOLUMN,3) = ...` omdat we daar de kolom eerst verder verwerken en dan pas vergelijken. Dan heeft een index op de kolom geen zin.
+{% endhint %}
 
 Bovenstaand stappenplan is afkomstig uit [de documentatie van MariaDB](https://mariadb.com/kb/en/building-the-best-index-for-a-given-select/). Dit is een zeer nauwe verwant van MySQL. Als je de pagina bekijkt, zie je dat het laatste woord over indexen nog niet gezegd is. Voor deze cursus volstaat het algoritme, maar als je ooit in je carrière geconfronteerd wordt met performantieproblemen in een database, raadpleeg dan deze uitleg voor je nieuwe (virtuele) hardware aankoopt!
