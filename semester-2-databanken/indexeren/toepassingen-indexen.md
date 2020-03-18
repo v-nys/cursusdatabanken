@@ -29,3 +29,4 @@ Je zal waarschijnlijk pas indexen nodig hebben als je met grotere databases gaat
 * hoe "duur" dergelijke queries zijn
 
 Als je weet dat bepaalde queries vaak voorkomen en/of veel zoekwerk doorheen kolommen vereisen, is het zinvol de betrokken kolommen te indexeren op een manier die goed past bij hun typische gebruik. In de praktijk zal je ook de eventuele snelheidswinsten die je indexen opleveren opmeten. Hiervoor gebruik je het `EXPLAIN`-statement, dat een overzicht geeft van hoe een bepaald statement is uitgevoerd.
+

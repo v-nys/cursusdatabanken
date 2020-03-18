@@ -16,7 +16,7 @@ ORDER BY 1,2,3;
 
 Resultaat:
 
-![](../../.gitbook/assets/image%20%2835%29.png)
+![](../../.gitbook/assets/storedp1.JPG)
 
 ## CREATE PROCEDURE
 
@@ -24,7 +24,7 @@ Als we van bovenstaand sql-statement een stored procedure maken die we ten alle 
 
 Binnen MySQL kiezen we binnen de sectie "Stored Procedures" via de rechtermuisknop voor "Create Stored Procedure".
 
-![](../../.gitbook/assets/image%20%283%29.png)
+![](../../.gitbook/assets/storedp2.jpg)
 
 ```sql
 DELIMITER $$
@@ -45,7 +45,7 @@ DELIMITER ;
 
 U voert bovenstaande sql-code toe en kiest vervolgens voor "Apply"
 
-![](../../.gitbook/assets/image%20%2853%29.png)
+![](../../.gitbook/assets/storedp3.jpg)
 
 Wat we nu hebben gedaan is louter een stored procedure gecreëerd onder de naam `GetMuzikanten`.
 
