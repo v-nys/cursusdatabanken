@@ -12,6 +12,9 @@ Om in alle gevallen betrouwbare timings te krijgen, schakelen we een beperking o
 
 ![](../../.gitbook/assets/prefs.png)
 
+## Naamgeving indexen
+Noem je indexen steeds `Col1Col2Col3...Idx`, waarbij je `Col1`, `Col2`,... vervangt door de naam van de kolom die je indexeert. Zet de kolommen ook in de volgorde waarin je ze hebt geïndexeerd, dus een index op (eerst) `Voornaam` en dan `Familienaam` zou `VoornaamFamilienaamIdx` heten.
+
 # Vraag 1
 Activeer eerst deze database (met naam `aptunes`). Voor deze labosessie doe je dat **maar één keer**, niet in elk script. Dat komt omdat je alleen analyses kan krijgen voor scripts die uit één opdracht bestaan.
 
