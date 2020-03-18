@@ -7,6 +7,10 @@ Je krijgt een startscript (zie link op Digitap). Voor deze labosessie maakt het 
 
 Let op: dit script is te groot om op de gewoonlijke manier te openen in het tekstvenster van MySQL Workbench. Voer het daarom rechtstreeks uit via "Run SQL script" (onder "File"). Je mag de default (lege) opties laten aanstaan.
 
+{% hint style="info" %}
+Krijg je een ERROR 2006? Verhoog dan de toegelaten maximale scriptgrootte. Zoek op waar je `my.ini` bestand staat (voor wie een AMPPS stack gebruikt is dat het configuratiebestand dat je via het AMPPS-menu kan openen). Vul in dat bestand deze regel in: `max_allowed_packet=64M`. Als er al een regel is die begint met `max_allowed_packet`, dan overschrijf je die.
+{% endhint %}
+
 ## Uitschakelen beperkingen
 Om in alle gevallen betrouwbare timings te krijgen, schakelen we een beperking op het aantal resultaten uit. Ga naar "Edit", dan "Preferences" en zorg dat de limiet uit staat zoals op deze screenshot:
 
