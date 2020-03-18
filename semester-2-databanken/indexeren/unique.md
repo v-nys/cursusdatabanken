@@ -54,7 +54,7 @@ Met het commando `SHOW INDEXES FROM table_name`kan je zien dat de unieke index w
 SHOW INDEXES FROM people;
 ```
 
-![](../../.gitbook/assets/image%20%2845%29.png)
+![](../../.gitbook/assets/image%20%2847%29.png)
 
 Vervolgens voegen wat data toe aan de tabel `people`.
 
@@ -75,9 +75,9 @@ INSERT INTO people(first_name,last_name,mail)
 VALUES ('Jef','Doe','john.doe@modernways.be');
 ```
 
-![](../../.gitbook/assets/image%20%2827%29.png)
+![](../../.gitbook/assets/image%20%2828%29.png)
 
-![](../../.gitbook/assets/image%20%2865%29.png)
+![](../../.gitbook/assets/image%20%2868%29.png)
 
 ### Opgave
 
