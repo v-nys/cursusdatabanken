@@ -58,12 +58,11 @@ select Titel, Naam
 from Liedjesgenres inner join Liedjes
 on Liedjesgenres.Liedjes_Id = Liedjes.Id
 inner join Genres
-on Liedjesgenres.Genres_Id = Genres.Id;
+on Liedjesgenres.Genres_Id = Genres.Id
+where Naam = 'Rock';
 ```
 
 Je script noem je `0623__Oefening.sql`.
-
-(Tip: hier zal je zoekopdracht normaal niet sneller worden, omdat je een full table search van een kleine tabel vervangt door een full index search. Deze oefening laat zien dat er ook veel afhangt van welke data je hebt en hoe ze doorzocht wordt.)
 
 ## deel 2
 De te optimaliseren query is:
