@@ -21,5 +21,5 @@ Helaas biedt MySQL geen faciliteiten om stored procedures te debuggen. Andere en
 
 Hieronder kan je het calibratiescript downloaden.
 
-{% file src="../../.gitbook/assets/calibratedb.sql" caption="Calibratiescript" %}
+{% file src="../../.gitbook/assets/calibratedb \(1\).sql" caption="Calibratiescript" %}
 
