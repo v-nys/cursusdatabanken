@@ -122,4 +122,5 @@
   * [Inleiding](semester-2-databanken/stored-procedures/inleiding.md)
   * [CREATE](semester-2-databanken/stored-procedures/create-stored-procedure.md)
   * [DELIMITER](semester-2-databanken/stored-procedures/delimiter.md)
+  * [DROP](semester-2-databanken/stored-procedures/drop.md)
 
