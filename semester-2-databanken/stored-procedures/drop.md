@@ -53,3 +53,13 @@ Uiteraard kan je de stored procedure ook verwijderen door de mogelijkheden van M
 
 ![](../../.gitbook/assets/drop3.jpg)
 
+Om te bekijken wat er juist zal uitgevoerd worden kies je de optie "review sql".
+
+![](../../.gitbook/assets/drop4.jpg)
+
+Volgend resultaat verkrijg je.
+
+![](../../.gitbook/assets/drop5.jpg)
+
+Door op de knop "execute" te klikken verwijder je permanent de stored procedure.
+
