@@ -18,7 +18,6 @@ Scalars zijn belangrijk omdat een belangrijke groep subqueries specifiek bedoeld
 #### vergelijkingen met behulp van scalaire subqueries
 
 We kunnen een subquery gebruiken om de oudste personen in onze database te tonen, zonder dat we op voorhand weten over welke leeftijdsgroep we het dan hebben.
-TODO: query testen
 
 ```sql
 select Voornaam, Familienaam
@@ -27,10 +26,6 @@ where Leeftijd >= (select max(Leeftijd) from Personen) - 10;
 ```
 
 Als de oudste persoon in onze database 91 jaar oud is, krijgen we info over iedereen die 81 jaar of ouder is. We kunnen ook kijken naar iedereen die "ongeveer de gemiddelde leeftijd" heeft:
-
-TODO: query testen
-TODO: between wordt niet vermeld in docs mysql
-TODO: kan herhaling vermeden worden via max?
 
 ```sql
 select Voornaam, Familienaam
@@ -58,51 +53,67 @@ from Studenten
 where Cijfer < (select avg(Cijfer) from Studenten inner join Cijfers on Cijfers.Studenten_Id = Studenten.Id)
 ```
 
-Subqueries kunnen dus ook simpel of complex zijn. Ze kunnen zelfs op meerdere niveaus genest zijn:
+Subqueries kunnen dus ook simpel of complex zijn.
 
-"Iedereen met de vaakst voorkomende familienaam" kunnen we als volgt opvragen:
-TODO: kan dit misschien met een ORDER BY in plaats van dubbel geneste query?
-
-```sql
-select Voornaam, Familienaam
-from Personen
-where Familienaam = (select Familienaam from Personen group by Familienaam where count(*) = (select max(count(*)) from Personen group by Familienaam));
-```
-
-Misschien zijn we op zoek naar variaties op deze familienaam. Dan zouden we dit kunnen schrijven:
+Je kan in principe gebruik maken van subqueries in om het even welke `WHERE`, niet alleen in een `WHERE` die hoort bij een `SELECT`. **Let op, in MySQL heb je hier een belangrijke beperking:** je kan de tabel niet aanpassen die je gebruikt voor de geneste `SELECT`. Iets als dit, waarbij we de jongste personen willen wissen, gaat dus niet:
 
 ```sql
-select Voornaam, Familienaam
-from Personen
-where Familienaam LIKE CONCAT(LEFT((select Familienaam from Personen group by Familienaam where count(*) = (select max(count(*)) from Personen group by Familienaam)),50),'%');
+delete from Personen
+where Leeftijd = (select min(Leeftijd) from Personen);
 ```
-
-{% hint style="info" %}
-We zullen geen subqueries met meerdere niveaus van nesting vragen, maar nu weet je dus dat ze bestaan.
-{% endhint %}
-
-Je kan trouwens gebruik maken van subqueries in om het even welke `WHERE`, niet alleen in een `WHERE` die hoort bij een `SELECT`. Je zou bijvoorbeeld ook de deelnemer met het laagste aantal stemmen kunnen verwijderen uit een tabel als volgt:
-
-TODO
 
 ## Subqueries voor vergelijkingen met lijsten resultaten
 (`ANY`, `IN` en `SOME`)
 
 Scalaire subqueries zijn niet de enige subqueries die we hebben. Als je subquery één kolom als resultaat produceert, kan je deze kolom gebruiken als een lijst waarden waarmee je wil vergelijken. De meest gebruikte manier om een waarde en een lijst te vergelijken is door na te gaan of de waarde gewoonweg voorkomt in die lijst. Dat is ook wat we eerder deden met het sleutelwoordje `IN`, dus het zal niet verbazen dat `IN` gevolgd mag worden door een subquery die een kolom produceert.
 
-"Iedereen met een van de vijf populairste achternamen" kunnen we zo schrijven:
+"Iedereen met een van de vijf populairste achternamen" zou je in principe zo kunnen schrijven:
 
 ```
 select Voornaam, Familienaam
 from Personen
-where Familienaam in (select Familienaam from Personen group by Familienaam order by count(*) limit 5);
+where Familienaam in (select Familienaam from Personen group by Familienaam order by count(*) desc limit 5);
 ```
 
-Maar je kan meer doen. Je kan ook vergelijken met de waarden in een lijst door middel van `ANY` en `ALL`.
+{% hint style="info" %}
+Mogelijk werkt dit nog niet. De query klopt, maar MySQL ondersteunt de combinatie van `IN` en `LIMIT` nog niet. Ik laat het staan omdat het een nuttige, mogelijke toepassing zou zijn, maar je zal deze query op een andere manier moeten schrijven...
+{% endhint %}
 
-Als je een tabel hebt met atletiektijden, kan je bijvoorbeeld de records van elke atleet als volgt opvragen: TODO met ALL
+Je kan bijvoorbeeld wel alle personen tonen wiens voornaam ook bestaat als achternaam (de `distinct` is niet noodzakelijk):
 
-Of als je een hebt met studieresultaten, kan je nagaan wie deelneemt aan tweede zit door na te gaan wie minstens een resultaat onder de 10 heeft: TODO met ANY
+```
+select Voornaam, Familienaam
+from Personen
+where Voornaam in (select distinct Familienaam from Personen);
+```
+
+Maar je kan meer doen. Je kan ook vergelijken met de waarden in een lijst door middel van `ANY` en `ALL`. Met `ANY` kan je een vergelijking toepassen op een hele kolom. Ze moet maar één keer slagen en dan zal de `where` slagen.
+
+Bijvoorbeeld:
+
+```
+select Voornaam, Familienaam, Leeftijd
+from Personen
+where Leeftijd = any (select Leeftijd + 50 from Personen);
+```
+
+Dit toont je iedereen die exact 50 jaar ouder is dan minstens één andere persoon. Als er bijvoorbeeld niemand 12 jaar oud is, zal je in het resultaat gegarandeerd niemand van 62 tegenkomen. Dat is zelfs zo als er wel personen van bijvoorbeeld 11 jaar zijn.
+
+{% hint style="info" %}
+Je kan deze vergelijkingen luidop lezen. Lees hier bijvoorbeeld: "waarvoor de leeftijd 50 hoger is dan de leeftijd van **een of andere** persoon.
+{% endhint %}
+
+Met `ALL` kan je vergelijken met *alle* waarden. Op volgende manier kan je bijvoorbeeld de oudste personen in je database vinden zonder gebruik te maken van `max`:
+
+```
+select Voornaam, Familienaam, Leeftijd
+from Personen
+where (Leeftijd >= all (select Leeftijd from Personen));
+```
+
+{% hint style="info" %}
+Lees hier bijvoorbeeld: "waarvoor de leeftijd groter of gelijk is dan de leeftijd van **elke** persoon.
+{% endhint %}
 
 ## Subqueries om uit een tijdelijke tabel te selecteren
 (Zie derived tables? ook "MySQL subquery in the FROM clause" op MySQLTutorial.)
