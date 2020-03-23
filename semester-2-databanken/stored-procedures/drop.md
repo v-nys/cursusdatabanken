@@ -61,5 +61,5 @@ Volgend resultaat verkrijg je.
 
 ![](../../.gitbook/assets/drop5.jpg)
 
-Door op de knop "execute" te klikken verwijder je permanent de stored procedure.
+Door op de knop "execute" te klikken verwijder je permanent de stored procedure. 
 
