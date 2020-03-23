@@ -1,4 +1,4 @@
-# CREATE stored procedure
+# CREATE
 
 We baseren ons op de voorbeelddatabase vermeld binnen de rubriek [inleiding](inleiding.md).
 

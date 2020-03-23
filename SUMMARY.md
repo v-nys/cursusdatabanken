@@ -120,5 +120,5 @@
   * [Labo oefeningen](semester-2-databanken/erd/labo-oefeningen.md)
 * [Stored procedures](semester-2-databanken/stored-procedures/README.md)
   * [Inleiding](semester-2-databanken/stored-procedures/inleiding.md)
-  * [CREATE stored procedure](semester-2-databanken/stored-procedures/create-stored-procedure.md)
+  * [CREATE](semester-2-databanken/stored-procedures/create-stored-procedure.md)
 
