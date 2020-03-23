@@ -109,7 +109,7 @@
   * [UNIQUE](semester-2-databanken/indexeren/unique.md)
   * [trage queries opvolgen](semester-2-databanken/indexeren/trage-queries-opvolgen.md)
   * [Labo oefeningen](semester-2-databanken/indexeren/labo-oefeningen.md)
-* [subqueries](semester-2-databanken/subqueries/README.md)
+* [Subqueries](semester-2-databanken/subqueries/README.md)
   * [Een onafhankelijke subquery](semester-2-databanken/subqueries/voorbeeld-onafhankelijke-subquery.md)
   * [Typische subqueries](semester-2-databanken/subqueries/typische-subqueries.md)
   * [Gecorreleerde subqueries](semester-2-databanken/subqueries/gecorreleerde-subqueries.md)
