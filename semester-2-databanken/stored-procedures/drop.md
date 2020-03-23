@@ -49,3 +49,7 @@ DROP PROCEDURE IF EXISTS eenonbestaandesp;
 
 ![](../../.gitbook/assets/sp_ifexists2.JPG)
 
+Uiteraard kan je de stored procedure ook verwijderen door de mogelijkheden van MySQL Workbench te benutten.
+
+![](../../.gitbook/assets/drop3.jpg)
+
