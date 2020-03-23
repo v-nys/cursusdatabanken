@@ -33,5 +33,11 @@ Om deze stored procedure te verwijderen is het voldoende volgend statement uit t
 DROP PROCEDURE GetMuzikanten;
 ```
 
+Indien we de `DROP PROCEDURE` gebruiken zonder de `IF EXIST` clausule, dan zou dit kunnen resulteren in volgende.
 
+```sql
+DROP PROCEDURE eenonbestaandesp;
+```
+
+![](../../.gitbook/assets/sp_ifexists.JPG)
 
