@@ -41,3 +41,11 @@ DROP PROCEDURE eenonbestaandesp;
 
 ![](../../.gitbook/assets/sp_ifexists.JPG)
 
+Als we ditzelfde statement met de IF EXIST clausule uitvoeren krijgen we volgend resulaat.
+
+```sql
+DROP PROCEDURE IF EXISTS eenonbestaandesp;
+```
+
+![](../../.gitbook/assets/sp_ifexists2.JPG)
+
