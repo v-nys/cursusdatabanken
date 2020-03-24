@@ -1,12 +1,6 @@
 # Een onafhankelijke subquery
 
-{% hint style="info" %}
-De voorbeelden hier zijn gebaseerd op [MySQL Tutorial](https://www.mysqltutorial.org/mysql-subquery/).
-{% endhint %}
-
-## Wat zijn het?
-
-Onafhankelijke subqueries zijn subqueries die je op zich kan uitschrijven en uitvoeren. Dat is handig, want het maakt onafhankelijke subqueries makkelijk te testen.
+Onafhankelijke subqueries zijn subqueries die je op zich kan uitschrijven en uitvoeren. Dat is handig, want het maakt onafhankelijke subqueries makkelijk te testen. Dit zijn de enige soorten die wij in deze cursus zullen behandelen.
 
 ### Eenvoudig voorbeeld
 
