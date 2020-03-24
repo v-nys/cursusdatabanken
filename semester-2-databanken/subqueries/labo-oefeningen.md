@@ -1,5 +1,5 @@
 # Labo oefeningen
-Start vanaf het gegeven calibratiescript, `0626__Oefening.sql` (Digitap). Dit vult de database `ModernWays` in met onderstaande structuren:
+Start vanaf het gegeven calibratiescript, `0626__CalibrateDB.sql` (Digitap). Dit vult de database `ModernWays` in met onderstaande structuren:
 
 {% hint style="warning" %}
 De database die je hier krijgt is niet elegant ontworpen, maar ze maakt de subqueries die we hier zoeken makkelijker uit te schrijven dan een beter opgesplitste database.
