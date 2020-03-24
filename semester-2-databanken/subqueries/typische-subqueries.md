@@ -35,7 +35,7 @@ where Leeftijd between (select avg(Leeftijd) from Personen) - 5 AND (select avg(
 
 Er is hier niets speciaals aan `max` of `avg`. Je kan ook andere functies gebruiken die je al kent. Je kan ook andere vergelijkingen gebruiken: `=`, `>`, `<`, `>=`, `<=`, `<>`, `!=`, `<=>` en zelfs `LIKE` zijn mogelijk.
 
-Nog enkele voorbeeldjes:
+Nog een voorbeeldje:
 
 "Studenten die minder hbben behaald dan het gemiddelde" gaat zo, bij een tabel `Studenten` met onder andere een kolom `Cijfer`:
 
