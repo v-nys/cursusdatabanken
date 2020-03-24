@@ -13,7 +13,7 @@ select avg(Leeftijd) from Personen;
 
 Hier is geen `group` by aanwezig, dus het gemiddelde wordt over alle personen beschouwd. We zijn ook alleen geïnteresseerd in de leeftijd. Bijgevolg hebben we uiteindelijk maar één rij en één kolom, dus één uiteindelijk waarde. Met andere woorden: een scalar.
 
-Scalars zijn belangrijk omdat een belangrijke groep subqueries specifiek bedoeld is om één resultaat te produceren. We spreken dan over **scalaire subqueries**. In oude databasesystemen konden subqueries zelfs **alleen** gebruikt worden om te vergelijken met een scalar!
+Scalars zijn belangrijk omdat een belangrijke groep subqueries specifiek bedoeld is om één resultaat te produceren. We spreken dan over **scalaire subqueries**. In oude databasesystemen konden subqueries zelfs **alleen** gebruikt worden om te vergelijken met een scalar! In nieuwere systemen kan je een scalaire subquery gewoonweg gebruiken waar je een enkele waarde kan gebruiken.
 
 #### vergelijkingen met behulp van scalaire subqueries
 
