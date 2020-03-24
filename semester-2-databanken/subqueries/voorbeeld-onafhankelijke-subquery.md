@@ -33,6 +33,6 @@ Start van binnen \(de haakjes\) en kijk dan naar buiten: `select Kantoornummer f
 > Wat je hier ziet is trouwens een algemene regel: subqueries zetten we tussen haakjes!
 
 {% hint style="info" %}
-Toegegeven, deze query had je kunnen vervangen door een query met een `JOIN`, zonder geneste query. Maar dat zou niet werken als je de werknemers niet wou `SELECT`eren, maar wel wou `DELETE`n.
+Toegegeven, deze query had je kunnen vervangen door een query met een `JOIN`, zonder geneste query. Maar dat zou niet werken als je de werknemers niet wou selecteren, maar wel wou deleten.
 {% endhint %}
 
