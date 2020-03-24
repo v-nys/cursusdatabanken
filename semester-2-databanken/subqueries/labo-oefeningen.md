@@ -107,7 +107,7 @@ Het formaat:
 ### Oefening 9
 Toon in een script `0634__Oefening.sql` het gemiddelde loon van personeelsleden per leeftijdscategorie. Dit is een iets lastigere, maar wel realistische query, dus lees aandachtig volgende tips:
 
-- schrijf eerst een query die personen koppelt aan een leeftijdscategorie
+- schrijf eerst een query die personen toont met een leeftijdscategorie
   - leeftijdscategorieën zijn per tien jaar, dus iemand van 7 behoort tot de leeftijdscategorie 0, iemand van 12 behoort tot de leeftijdscategorie 10, iemand van 15 ook, iemand van 37 behoort tot de leeftijdscategorie 30, enzovoort
   - start vanaf een query om personen te tonen met hun leeftijd
   - zet de leeftijd om naar een categorie door hem te delen door 10, af te ronden naar beneden (met de functie `floor`) en dan terug te vermenigvuldigen met 10. Zo is floor(15 / 10) * 10 bijvoorbeeld 10.
