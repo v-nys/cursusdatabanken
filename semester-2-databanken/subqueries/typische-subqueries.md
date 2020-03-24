@@ -63,23 +63,9 @@ where Leeftijd = (select min(Leeftijd) from Personen);
 ```
 
 ## Subqueries voor vergelijkingen met lijsten resultaten
-(`ANY`, `IN` en `SOME`)
-
 Scalaire subqueries zijn niet de enige subqueries die we hebben. Als je subquery één kolom als resultaat produceert, kan je deze kolom gebruiken als een lijst waarden waarmee je wil vergelijken. De meest gebruikte manier om een waarde en een lijst te vergelijken is door na te gaan of de waarde gewoonweg voorkomt in die lijst. Dat is ook wat we eerder deden met het sleutelwoordje `IN`, dus het zal niet verbazen dat `IN` gevolgd mag worden door een subquery die een kolom produceert.
 
-"Iedereen met een van de vijf populairste achternamen" zou je in principe zo kunnen schrijven:
-
-```
-select Voornaam, Familienaam
-from Personen
-where Familienaam in (select Familienaam from Personen group by Familienaam order by count(*) desc limit 5);
-```
-
-{% hint style="info" %}
-Mogelijk werkt dit nog niet. De query klopt, maar MySQL ondersteunt de combinatie van `IN` en `LIMIT` nog niet. Ik laat het staan omdat het een nuttige, mogelijke toepassing zou zijn, maar je zal deze query op een andere manier moeten schrijven...
-{% endhint %}
-
-Je kan bijvoorbeeld wel alle personen tonen wiens voornaam ook bestaat als achternaam (de `distinct` is niet noodzakelijk):
+Je kan bijvoorbeeld alle personen tonen wiens voornaam ook bestaat als achternaam (de `distinct` is niet noodzakelijk):
 
 ```
 select Voornaam, Familienaam
@@ -97,10 +83,10 @@ from Personen
 where Leeftijd = any (select Leeftijd + 50 from Personen);
 ```
 
-Dit toont je iedereen die exact 50 jaar ouder is dan minstens één andere persoon. Als er bijvoorbeeld niemand 12 jaar oud is, zal je in het resultaat gegarandeerd niemand van 62 tegenkomen. Dat is zelfs zo als er wel personen van bijvoorbeeld 11 jaar zijn.
+Dit toont je iedereen die exact 50 jaar ouder is dan minstens één andere persoon. Als er bijvoorbeeld niemand 12 jaar oud is, zal je in het resultaat gegarandeerd niemand van 62 tegenkomen, want omgekeerd is niemand exact 50 jaar jonger dan 62.
 
 {% hint style="info" %}
-Je kan deze vergelijkingen luidop lezen. Lees hier bijvoorbeeld: "waarvoor de leeftijd 50 hoger is dan de leeftijd van **een of andere** persoon.
+Je kan deze vergelijkingen luidop lezen. Lees hier bijvoorbeeld: "waarvoor de leeftijd exact 50 hoger is dan de leeftijd van **een of andere** persoon.
 {% endhint %}
 
 Met `ALL` kan je vergelijken met *alle* waarden. Op volgende manier kan je bijvoorbeeld de oudste personen in je database vinden zonder gebruik te maken van `max`:
@@ -115,8 +101,51 @@ where (Leeftijd >= all (select Leeftijd from Personen));
 Lees hier bijvoorbeeld: "waarvoor de leeftijd groter of gelijk is dan de leeftijd van **elke** persoon.
 {% endhint %}
 
-## Subqueries om uit een tijdelijke tabel te selecteren
-(Zie derived tables? ook "MySQL subquery in the FROM clause" op MySQLTutorial.)
-Misschien is het niet de moeite om een view uit te schrijven.
+## Je subquery "materializen": "afgeleide" tabellen
+Een subquery kan naast één waarde of één kolom ook een volledige tabel produceren. Zo'n tabel noemen we een "afgeleide" tabel ("derived table", ook soms "materialized table"). Deze mogelijkheid komt van pas als je informatie in meerdere stappen moet verwerken.
 
-Je hebt dus het sleutelwoordje `AS` nodig om je tijdelijke tabel een naam te geven.
+Afgeleide tabellen zijn vooral nuttig als je operaties in stappen moet toepassen. Bijvoorbeeld als je data wil groeperen en daarna verder wil verwerken.
+
+Een voorbeeld: We willen de leeftijd van de "jongste" voornaam in ons systeem bepalen. Zo zijn mensen met de voornaam "Maurice" misschien gemiddeld 64 jaar en mensen met de voornaam "An" misschien gemiddeld 57 jaar. Wat zou de jongst mogelijke leeftijd per naam zijn?
+
+Dit gaat niet:
+
+```sql
+select min(avg(Leeftijd))
+from Personen
+group by Voornaam;
+```
+
+Dat komt omdat we met onze `group by` hebben aangegeven dat we onze functies willen toepassen over groepjes. `avg` kan je toepassen op een groepje leeftijden, maar dat levert dan één uitkomst. Daar kan je niet nog een keer `min` op toepassen. Je bedoelt dat `min` over heel de resulterende kolom moet worden toegepast, maar dat wordt zo niet geïnterpreteerd door MySQL.
+
+Wat wel werkt, is dit:
+
+```sql
+select min(GemiddeldeLeeftijd)
+from
+(select avg(Leeftijd) as GemiddeldeLeeftijd
+ from Personen
+ group by Voornaam) as GemiddeldeLeeftijden
+```
+
+Dat komt omdat de `group by` hier enkel zegt dat je in de geneste query je functies per groepje wil bekijken. In de buitenste query gaan de functies weer over heel de geproduceerde kolom. Je hebt het sleutelwoordje `AS` trouwens altijd nodig om je derived table een naam te geven.
+
+{% hint style="info" %}
+De informatie die we hier opvragen lijkt misschien wat onzinnig, maar we kunnen er mee verder bouwen. We zouden onze query bijvoorbeeld kunnen uitbreiden om te weten te komen **welke voornaam** de "jongste" is. We doen dat hier niet omdat het afleidt van de essentie.
+{% endhint %}
+
+{% hint style="info" %}
+Je kan problemen die je oplost met derived tables ook oplossen met views, maar een view is blijvend in je systeem.
+{% endhint %}
+
+## Oefening: ontleed volgende complexe subquery
+Volgende subquery is een stuk complexer dan wat je moet kunnen schrijven, maar probeer hem eens te lezen en te zien of je de betekenis kan achterhalen.
+
+```
+select Voornaam,Familienaam
+from Personen
+where Familienaam = (select Familienaam
+                     from Personen
+                     group by Familienaam
+                     having count(*) = (select max(Aantal) from (select count(*) as Aantal from Personen group by Familienaam) as Voorkomens));
+```
