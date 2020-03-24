@@ -109,7 +109,7 @@
   * [UNIQUE](semester-2-databanken/indexeren/unique.md)
   * [trage queries opvolgen](semester-2-databanken/indexeren/trage-queries-opvolgen.md)
   * [Labo oefeningen](semester-2-databanken/indexeren/labo-oefeningen.md)
-* [subqueries](semester-2-databanken/subqueries/README.md)
+* [Subqueries](semester-2-databanken/subqueries/README.md)
   * [Een onafhankelijke subquery](semester-2-databanken/subqueries/voorbeeld-onafhankelijke-subquery.md)
   * [Typische subqueries](semester-2-databanken/subqueries/typische-subqueries.md)
   * [Meer over subqueries](semester-2-databanken/subqueries/meer-over-subqueries.md)
@@ -119,5 +119,7 @@
   * [Labo oefeningen](semester-2-databanken/erd/labo-oefeningen.md)
 * [Stored procedures](semester-2-databanken/stored-procedures/README.md)
   * [Inleiding](semester-2-databanken/stored-procedures/inleiding.md)
-  * [CREATE stored procedure](semester-2-databanken/stored-procedures/create-stored-procedure.md)
+  * [CREATE](semester-2-databanken/stored-procedures/create-stored-procedure.md)
+  * [DELIMITER](semester-2-databanken/stored-procedures/delimiter.md)
+  * [DROP](semester-2-databanken/stored-procedures/drop.md)
 

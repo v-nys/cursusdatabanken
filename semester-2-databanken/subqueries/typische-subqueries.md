@@ -65,7 +65,6 @@ where Leeftijd = (select min(Leeftijd) from Personen);
 ## Subqueries voor vergelijkingen met lijsten resultaten
 Scalaire subqueries zijn niet de enige subqueries die we hebben. Als je subquery één kolom als resultaat produceert, kan je deze kolom gebruiken als een lijst waarden waarmee je wil vergelijken. De meest gebruikte manier om een waarde en een lijst te vergelijken is door na te gaan of de waarde gewoonweg voorkomt in die lijst. Dat is ook wat we eerder deden met het sleutelwoordje `IN`, dus het zal niet verbazen dat `IN` gevolgd mag worden door een subquery die een kolom produceert.
 
-Je kan bijvoorbeeld alle personen tonen wiens voornaam ook bestaat als achternaam (de `distinct` is niet noodzakelijk):
 
 ```
 select Voornaam, Familienaam
