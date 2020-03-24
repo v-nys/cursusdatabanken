@@ -45,16 +45,6 @@ from Studenten
 where Cijfer < (select avg(Cijfer) from Studenten)
 ```
 
-Dit is geen ontwerp dat we zouden aanraden. In een goed opgesteld (genormaliseerd) schema staan de cijfers in een aparte tabel met een vreemde sleutel die toestaat te linken aan studenten.
-
-```sql
-select Naam
-from Studenten
-where Cijfer < (select avg(Cijfer) from Studenten inner join Cijfers on Cijfers.Studenten_Id = Studenten.Id)
-```
-
-Subqueries kunnen dus ook simpel of complex zijn.
-
 Je kan in principe gebruik maken van subqueries in om het even welke `WHERE`, niet alleen in een `WHERE` die hoort bij een `SELECT`. **Let op, in MySQL heb je hier een belangrijke beperking:** je kan de tabel niet aanpassen die je gebruikt voor de geneste `SELECT`. Iets als dit, waarbij we de jongste personen willen wissen, gaat dus niet:
 
 ```sql
