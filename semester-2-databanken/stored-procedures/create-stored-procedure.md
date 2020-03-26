@@ -63,3 +63,26 @@ Een stored procedure kan parameters hebben, zodat u er waarden aan kunt doorgeve
 
 Tevens kan een stored procedure controlemechanismen bevatten, zoals IF, CASE en LOOP. Dit komt verder nog aan bod.
 
+## Stored procedure aanpassen
+
+Meest eenvoudige is om binnen MySQL Workbench rechts te klikken op de stored procedure die je wil wijzigen en dan voor de optie "alter stored procedure" te kiezen.
+
+![](../../.gitbook/assets/sp_alter.jpg)
+
+Nu krijg je opnieuw de definitie van de stored procedure en kan je wijzigen aanbrengen.  
+Als je klaar bent, klik je op "apply".
+
+![](../../.gitbook/assets/sp_alter2.jpg)
+
+MySQL Workbech zal het review venster openen.
+
+![](../../.gitbook/assets/sp_alter3.jpg)
+
+In dit review venster zie je dat er eerst een `DROP PROCEDURE` wordt uitgevoerd, waarna de gewijzigde stored procedure opnieuw wordt aangemaakt met het `CREATE PROCEDURE.`
+
+Druk nogmaals op "apply".
+
+![](../../.gitbook/assets/sp_alter4.jpg)
+
+Finaal klik je op "finish" om de wijzigingen door te voeren.
+

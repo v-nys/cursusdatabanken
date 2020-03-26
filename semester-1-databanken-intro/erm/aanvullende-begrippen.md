@@ -22,13 +22,13 @@ Voorlopig moet je specialisatie en generalisatie enkel op het conceptuele niveau
 
 Aggregatie in een ERM houdt in dat een relatie tussen twee entiteittypes wordt behandeld als een entiteit op zich. Aggregatie wordt oa. gebruikt om relaties tussen relaties te leggen.
 
-![](../../.gitbook/assets/image%20%2818%29.png)
+![](../../.gitbook/assets/image%20%2819%29.png)
 
 Dit is een n op n relatie, het attribuut filiaal hoort dus bij de relationship set, en kan niet verplaatst worden naar een van de entity sets.
 
 Door aggregatie kunnen we het attribuut filiaal verzelfstandigen tot entity set.
 
-![](../../.gitbook/assets/image%20%2835%29.png)
+![](../../.gitbook/assets/image%20%2836%29.png)
 
 In deze laatste afbeelding is er een associatieve entiteit `Lening` aanwezig.
 
