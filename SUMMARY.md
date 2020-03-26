@@ -124,4 +124,5 @@
   * [DELIMITER](semester-2-databanken/stored-procedures/delimiter.md)
   * [VARIABELEN](semester-2-databanken/stored-procedures/variabelen.md)
   * [PARAMETERS](semester-2-databanken/stored-procedures/parameters.md)
+  * [IF -THEN](semester-2-databanken/stored-procedures/if-then.md)
 
