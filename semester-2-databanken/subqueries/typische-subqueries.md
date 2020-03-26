@@ -57,7 +57,7 @@ where Leeftijd = (select min(Leeftijd) from Personen);
 
 Scalaire subqueries zijn niet de enige subqueries die we hebben. Als je subquery één kolom als resultaat produceert, kan je deze kolom gebruiken als een lijst waarden waarmee je wil vergelijken. De meest gebruikte manier om een waarde en een lijst te vergelijken is door na te gaan of de waarde gewoonweg voorkomt in die lijst. Dat is ook wat we eerder deden met het sleutelwoordje `IN`, dus het zal niet verbazen dat `IN` gevolgd mag worden door een subquery die een kolom produceert.
 
-```text
+```sql
 select Voornaam, Familienaam
 from Personen
 where Voornaam in (select distinct Familienaam from Personen);
@@ -67,7 +67,7 @@ Maar je kan meer doen. Je kan ook vergelijken met de waarden in een lijst door m
 
 Bijvoorbeeld:
 
-```text
+```sql
 select Voornaam, Familienaam, Leeftijd
 from Personen
 where Leeftijd = any (select Leeftijd + 50 from Personen);
@@ -81,7 +81,7 @@ Je kan deze vergelijkingen luidop lezen. Lees hier bijvoorbeeld: "waarvoor de le
 
 Met `ALL` kan je vergelijken met _alle_ waarden. Op volgende manier kan je bijvoorbeeld de oudste personen in je database vinden zonder gebruik te maken van `max`:
 
-```text
+```sql
 select Voornaam, Familienaam, Leeftijd
 from Personen
 where (Leeftijd >= all (select Leeftijd from Personen));
@@ -133,7 +133,7 @@ Je kan problemen die je oplost met derived tables ook oplossen met views, maar e
 
 Volgende subquery is een stuk complexer dan wat je moet kunnen schrijven, maar probeer hem eens te lezen en te zien of je de betekenis kan achterhalen.
 
-```text
+```sql
 select Voornaam,Familienaam
 from Personen
 where Familienaam = (select Familienaam
