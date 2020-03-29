@@ -1,4 +1,4 @@
-# IF -THEN-ELSE
+# IF -THEN-ELSE-ELSEIF
 
 Drie mogelijkheden:
 
