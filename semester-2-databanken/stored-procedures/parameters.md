@@ -67,7 +67,11 @@ END$$
 DELIMITER ;
 ```
 
+Als we deze stored procedure oproepen moeten we voor wat de `OUT-parameter` in het oproepend statement gebruik maken van het **@-symbool**. 
+
 ![](../../.gitbook/assets/out.JPG)
+
+Het is niet nodig om de `OUT-parameter` aan te roepen door dezelfde benaming te gebruiken, je had in bovenstaand voorbeeld perfect @totaal kunnen gebruiken.
 
 ### INOUT
 
