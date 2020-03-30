@@ -117,6 +117,7 @@
 * [ERD](semester-2-databanken/erd/README.md)
   * [Overzicht](semester-2-databanken/erd/overzicht.md)
   * [Labo oefeningen](semester-2-databanken/erd/labo-oefeningen.md)
+  * [Normaliseren in de praktijk](semester-2-databanken/erd/normaliseren-in-de-praktijk.md)
 * [Stored procedures](semester-2-databanken/stored-procedures/README.md)
   * [Inleiding](semester-2-databanken/stored-procedures/inleiding.md)
   * [CREATE](semester-2-databanken/stored-procedures/create-stored-procedure.md)

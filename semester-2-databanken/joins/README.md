@@ -15,7 +15,7 @@ Om de integriteit van een database te bewaren normaliseren we de gegevens in de 
 
 Als je wil mee volgen, gebruik dan onderstaand calibratiescript. Noem het 0100\_\_CalibrateDB.sql. **Let op: dit maakt dezelfde tabelstructuur aan als de voorbeelden, maar gebruikt andere data.**
 
-```text
+```sql
 drop database if exists `ModernWays`;
 CREATE DATABASE  IF NOT EXISTS `ModernWays` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `ModernWays`;
