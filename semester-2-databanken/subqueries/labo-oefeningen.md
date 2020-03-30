@@ -103,24 +103,3 @@ Het formaat:
 | Gemiddelde |
 |---|
 | Een cijfer | (Hier staat maar één rij!)
-
-### Oefening 9
-Toon in een script `0635__Oefening.sql` het gemiddelde loon van personeelsleden per leeftijdscategorie. Dit is een iets lastigere, maar wel realistische query, dus lees aandachtig volgende tips:
-
-- schrijf eerst een query die personen toont met een leeftijdscategorie
-  - leeftijdscategorieën zijn per tien jaar, dus iemand van 7 behoort tot de leeftijdscategorie 0, iemand van 12 behoort tot de leeftijdscategorie 10, iemand van 15 ook, iemand van 37 behoort tot de leeftijdscategorie 30, enzovoort
-  - start vanaf een query om personen te tonen met hun leeftijd
-  - zet de leeftijd om naar een categorie door hem te delen door 10, af te ronden naar beneden (met de functie `floor`) en dan terug te vermenigvuldigen met 10. Zo is floor(15 / 10) * 10 bijvoorbeeld 10.
-- gebruik deze query als derived table en zorg dat deze een kolom `Leeftijdscategorie` heeft
-- (inner) join deze derived table met de tabel met lonen
-- achter de inner join kan je `group by Leeftijdscategorie` schrijven
-- en na een group by kan je een gemiddelde nemen met `avg`
-
-Het formaat:
-
-| Leeftijdscategorie | Gemiddeld loon |
-|---|---|
-| 20 | (een getal) |
-| 30 | (een getal) |
-| 40 | (een getal) |
-| ... | ... |
