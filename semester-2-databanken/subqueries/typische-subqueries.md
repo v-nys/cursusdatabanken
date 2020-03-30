@@ -3,6 +3,7 @@
 ## Subqueries om met een waarde te vergelijken
 
 ### scalars
+
 Subqueries komen vaak van pas om één waarde te berekenen die dan gebruikt wordt in een grotere query. Wanneer we een query gebruiken om precies één waarde te produceren, noemen we die waarde een **scalar**.
 
 Volgende query produceert een scalar:
@@ -53,10 +54,10 @@ where Leeftijd = (select min(Leeftijd) from Personen);
 ```
 
 ## Subqueries voor vergelijkingen met lijsten resultaten
+
 Scalaire subqueries zijn niet de enige subqueries die we hebben. Als je subquery één kolom als resultaat produceert, kan je deze kolom gebruiken als een lijst waarden waarmee je wil vergelijken. De meest gebruikte manier om een waarde en een lijst te vergelijken is door na te gaan of de waarde gewoonweg voorkomt in die lijst. Dat is ook wat we eerder deden met het sleutelwoordje `IN`, dus het zal niet verbazen dat `IN` gevolgd mag worden door een subquery die een kolom produceert.
 
-
-```
+```sql
 select Voornaam, Familienaam
 from Personen
 where Voornaam in (select distinct Familienaam from Personen);
@@ -66,7 +67,7 @@ Maar je kan meer doen. Je kan ook vergelijken met de waarden in een lijst door m
 
 Bijvoorbeeld:
 
-```
+```sql
 select Voornaam, Familienaam, Leeftijd
 from Personen
 where Leeftijd = any (select Leeftijd + 50 from Personen);
@@ -78,9 +79,9 @@ Dit toont je iedereen die exact 50 jaar ouder is dan minstens één andere perso
 Je kan deze vergelijkingen luidop lezen. Lees hier bijvoorbeeld: "waarvoor de leeftijd exact 50 hoger is dan de leeftijd van **een of andere** persoon.
 {% endhint %}
 
-Met `ALL` kan je vergelijken met *alle* waarden. Op volgende manier kan je bijvoorbeeld de oudste personen in je database vinden zonder gebruik te maken van `max`:
+Met `ALL` kan je vergelijken met _alle_ waarden. Op volgende manier kan je bijvoorbeeld de oudste personen in je database vinden zonder gebruik te maken van `max`:
 
-```
+```sql
 select Voornaam, Familienaam, Leeftijd
 from Personen
 where (Leeftijd >= all (select Leeftijd from Personen));
@@ -91,7 +92,8 @@ Lees hier bijvoorbeeld: "waarvoor de leeftijd groter of gelijk is dan de leeftij
 {% endhint %}
 
 ## Je subquery "materializen": "afgeleide" tabellen
-Een subquery kan naast één waarde of één kolom ook een volledige tabel produceren. Zo'n tabel noemen we een "afgeleide" tabel ("derived table", ook soms "materialized table"). Deze mogelijkheid komt van pas als je informatie in meerdere stappen moet verwerken.
+
+Een subquery kan naast één waarde of één kolom ook een volledige tabel produceren. Zo'n tabel noemen we een "afgeleide" tabel \("derived table", ook soms "materialized table"\). Deze mogelijkheid komt van pas als je informatie in meerdere stappen moet verwerken.
 
 Afgeleide tabellen zijn vooral nuttig als je operaties in stappen moet toepassen. Bijvoorbeeld als je data wil groeperen en daarna verder wil verwerken.
 
@@ -128,9 +130,10 @@ Je kan problemen die je oplost met derived tables ook oplossen met views, maar e
 {% endhint %}
 
 ## Oefening: ontleed volgende complexe subquery
+
 Volgende subquery is een stuk complexer dan wat je moet kunnen schrijven, maar probeer hem eens te lezen en te zien of je de betekenis kan achterhalen.
 
-```
+```sql
 select Voornaam,Familienaam
 from Personen
 where Familienaam = (select Familienaam
@@ -138,3 +141,4 @@ where Familienaam = (select Familienaam
                      group by Familienaam
                      having count(*) = (select max(Aantal) from (select count(*) as Aantal from Personen group by Familienaam) as Voorkomens));
 ```
+

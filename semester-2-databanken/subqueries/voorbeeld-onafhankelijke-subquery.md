@@ -2,7 +2,7 @@
 
 Onafhankelijke subqueries zijn subqueries die je op zich kan uitschrijven en uitvoeren. Dat is handig, want het maakt onafhankelijke subqueries makkelijk te testen. Dit zijn de enige soorten die wij in deze cursus zullen behandelen.
 
-### Eenvoudig voorbeeld
+## Eenvoudig voorbeeld
 
 Veronderstel je hebt een tabel `Werknemers` van volgende vorm:
 
