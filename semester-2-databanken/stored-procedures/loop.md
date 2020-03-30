@@ -40,5 +40,13 @@ END$$
 DELIMITER ;
 ```
 
+Om deze stored procedure op te roepen, hanteren we volgend statement. Waarbij we in onderstaand geval vragen om 10 cijfers weer te geven.
 
+```sql
+CALL loop_(10);
+```
+
+Resultaat:
+
+![](../../.gitbook/assets/loop.JPG)
 
