@@ -127,4 +127,5 @@
   * [IF -THEN-ELSE-ELSEIF](semester-2-databanken/stored-procedures/if-then.md)
   * [CASE](semester-2-databanken/stored-procedures/case.md)
   * [LOOP](semester-2-databanken/stored-procedures/loop.md)
+  * [WHILE](semester-2-databanken/stored-procedures/while.md)
 
