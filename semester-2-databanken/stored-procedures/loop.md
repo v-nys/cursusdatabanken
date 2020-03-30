@@ -10,5 +10,35 @@ Een herhaling dient, zoals het woord doet veronderstellen, dat code of statement
 END LOOP
 ```
 
+Hieronder een simpel voorbeeld van een stored procedure dewelke als input parameter een aantal wil kennen en het resultaat is dan louter een opsomming van nummers + 1 tot aantal is bereikt.
+
+```sql
+USE `aptunes`;
+DROP procedure IF EXISTS `loop_`;
+
+DELIMITER $$
+USE `aptunes`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `loop_`(
+	IN aantal INT)
+BEGIN
+	DECLARE i INT DEFAULT 0;
+    DECLARE tekst VARCHAR(255) DEFAULT '';
+        
+    loop_demo:  LOOP
+		SET  i = i + 1;
+        IF  i >= aantal THEN
+			SET  tekst = CONCAT(tekst,i);
+            LEAVE  loop_demo;
+		ELSE
+			SET  tekst = CONCAT(tekst,i,',');
+        END  IF;
+    END LOOP;
+    
+    SELECT tekst; 
+END$$
+
+DELIMITER ;
+```
+
 
 
