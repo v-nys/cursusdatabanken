@@ -100,21 +100,21 @@ In de tabel `Boeken` hebben we een nieuwe kolom nodig die de foreign key bevat d
 
 ```sql
 use ModernWays;
-alter table Boeken add IdAuteur int not null;
+alter table Boeken add Personen_Id int not null;
 ```
 
 Als je dit script uitvoert krijg je (ongeveer) de volgende foutmelding:
 
 ```sql
 Msg 4901, Level 16, State 1, Line 6
-ALTER TABLE only allows columns to be added that can contain nulls, or have a DEFAULT definition specified, or the column being added is an identity or timestamp column, or alternatively if none of the previous conditions are satisfied the table must be empty to allow addition of this column. Column 'IdAuteur' cannot be added to non-empty table 'Boeken' because it does not satisfy these conditions.
+ALTER TABLE only allows columns to be added that can contain nulls, or have a DEFAULT definition specified, or the column being added is an identity or timestamp column, or alternatively if none of the previous conditions are satisfied the table must be empty to allow addition of this column. Column 'Personen_Id' cannot be added to non-empty table 'Boeken' because it does not satisfy these conditions.
 ```
 
  We moeten bij het toevoegen van de kolom de `not null` constraint laten vallen. Dan de foreign key invullen en dan pas de `not null` constraint toevoegen. Dat gebeurt impliciet op het moment dat we de foreign key constraint toevoegen.
 
 ```sql
 use ModernWays;
-alter table Boeken add IdAuteur int null;
+alter table Boeken add Personen_Id int null;
 ```
 
 ## De foreign key kolom in de tabel Boeken invullen
@@ -125,7 +125,7 @@ Om de `Id` van `Personen` te kopiëren in de tabel `Boeken` moeten we eerst een 
 use ModernWays;
 select Boeken.Voornaam,
    Boeken.Familienaam,
-   Boeken.IdAuteur,
+   Boeken.Personen_Id,
    Personen.Voornaam,
    Personen.Familienaam,
    Personen.Id
@@ -134,9 +134,9 @@ where Boeken.Voornaam = Personen.Voornaam and
     Boeken.Familienaam = Personen.Familienaam;
 ```
 
-Om de waarde van `Id` van de `Personen` tabel te kopiëren naar de `IdAuteur` kolom van `Boeken` volstaat het om in de where clausule van de `update` instructie de voorwaarde mee te geven dat de waarden beide kolommen aan elkaar gelijk moeten zijn.
+Om de waarde van `Id` van de `Personen` tabel te kopiëren naar de `Personen_Id` kolom van `Boeken` volstaat het om in de where clausule van de `update` instructie de voorwaarde mee te geven dat de waarden beide kolommen aan elkaar gelijk moeten zijn.
 
-In de `set` clausule van de `update` instructie bepalen we dat de waarde van de `Id` van `Personen` in de kolom `IdAuteur` van `Boeken` gekopiëerd moet worden. Met de `from` clause geven we aan dat de `Id` waarde uit de `Personen` tabel moet worden gehaald.
+In de `set` clausule van de `update` instructie bepalen we dat de waarde van de `Id` van `Personen` in de kolom `Personen_Id` van `Boeken` gekopiëerd moet worden. Met de `from` clause geven we aan dat de `Id` waarde uit de `Personen` tabel moet worden gehaald.
 
 ```sql
 use ModernWays;
@@ -146,24 +146,24 @@ use ModernWays;
 -- foreign kopiren vanuit de tabel Personen in de tabel Boeken
 use ModernWays;
 update Boeken, Personen
-    set Boeken.IdAuteur = Personen.Id
+    set Boeken.Personen_Id = Personen.Id
 where Boeken.Voornaam = Personen.Voornaam and
     Boeken.Familienaam = Personen.Familienaam
 
 select * from Boeken;
 ```
 
- Nu kunnen we de `not null` constraint aan de kolom `IdAuteur` in de tabel `Boeken` terug toevoegen:
+ Nu kunnen we de `not null` constraint aan de kolom `Personen_Id` in de tabel `Boeken` terug toevoegen:
 
 ```sql
---set FK IdAuteur op not null
-alter table Boeken alter column IdAuteur int not null;
+--set FK Personen_Id op not null
+alter table Boeken alter column Personen_Id int not null;
 ```
 
 We testen als we hebben wat we wilden:
 
 ```sql
-select Voornaam, Familienaam, IdAuteur from Boeken;
+select Voornaam, Familienaam, Personen_Id from Boeken;
 ```
 
 Met als resultaat:
@@ -184,12 +184,12 @@ alter table Boeken drop column Voornaam,
 select * from Boeken;
 ```
 
-## De foreign key constraint op de kolom IdAuteur toevoegen
+## De foreign key constraint op de kolom Personen_Id toevoegen
 
 ```sql
 -- dan de constraint toevoegen
-alter table Boeken add constraint fk_BoekenPersonen_IdAuteur
-   foreign key(IdAuteur) references Personen(Id);
+alter table Boeken add constraint fk_BoekenPersonen_Personen_Id
+   foreign key(Personen_Id) references Personen(Id);
 ```
 
 **Afspraak: de naam van de foreign key bestaat uit een prefix fk\_, gevolgd door de naam van de tabel waarin de de foreign key kolom staat, gevolgd door de naam van de tabel waarnaar verwezen wordt, gevolgd door een underscore en de naam van de foreign key kolom.**
@@ -231,7 +231,7 @@ Onthoud de primary key waarde van Hilary Mantel. In ons voorbeeld is dat 16. Ver
 ```sql
 insert into Boeken (
    Titel, Stad, Uitgeverij, Verschijningsjaar,
-   Herdruk, Commentaar, Categorie, IdAuteur
+   Herdruk, Commentaar, Categorie, Personen_Id
 )
 values (
    'Wolf Hall', '', 'Fourth Estate; First Picador Edition First Printing edition',
@@ -241,7 +241,7 @@ values (
 select * from Boeken;
 ```
 
- De relatie tussen het boek en de persoon die het boek geschreven heeft wordt bepaald door foreign key `IdAuteur` in de tabel `Boeken`. De waarde 16 in die kolom verwijst naar een waarde in de primary key `Id` van de tabel `Personen`.
+ De relatie tussen het boek en de persoon die het boek geschreven heeft wordt bepaald door foreign key `Personen_Id` in de tabel `Boeken`. De waarde 16 in die kolom verwijst naar een waarde in de primary key `Id` van de tabel `Personen`.
 
 ### Oefening 2
 
@@ -249,7 +249,7 @@ Voeg het volgende boek toe:
 
 Jean-Paul Sartre, De Woorden, 1961, De Bezige Bij.
 
-Vul de waarde in de kolom `IdAuteur` niet letterlijk in maar door middel van een SQL statement. M.a.w. hoe kan je de waarde die in de kolom `IdAuteur` moet komen opvragen?
+Vul de waarde in de kolom `Personen_Id` niet letterlijk in maar door middel van een SQL statement. M.a.w. hoe kan je de waarde die in de kolom `Personen_Id` moet komen opvragen?
 
 We gebruiken hiervoor een subquery:
 
@@ -263,7 +263,7 @@ insert into Boeken (
    Verschijningsjaar,
    Commentaar,
    Categorie,
-   IdAuteur
+   Personen_Id
 )
 values (
    'De Woorden',
