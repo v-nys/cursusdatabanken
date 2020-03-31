@@ -6,7 +6,7 @@ Volgende oefening is oorspronkelijk opgesteld door [Jef Inghelbrecht](https://mo
 
 ## Probleem
 
-We gaan het eerst in een eenvoudig voorbeeld toepassen en pas achteraf de theorie zien. In het normalisatieproces komt het erop neer ervoor te zorgen dat een betekenisvol stukje informatie slechts 1 keer voorkomt in je database. De letters a en b bijvoorbeeld zijn niet betekenisvol. Op zichzelf hebben ze geen enkele betekenis. Dus moet je ze ook niet normaliseren.
+We gaan het eerst in een eenvoudig voorbeeld toepassen en pas achteraf de theorie zien. In het normalisatieproces komt het erop neer ervoor te zorgen dat een betekenisvol stukje informatie slechts 1 keer voorkomt in je database. De letters "a" en "b" bijvoorbeeld zijn niet betekenisvol. Op zichzelf hebben ze geen enkele betekenis. Dus moet je ze ook niet normaliseren.
 
 ## Oplossing
 
@@ -16,13 +16,11 @@ We selecteren de database [`ModernWays`](../joins/#startpunt) en voeren een sele
 
 ![](../../.gitbook/assets/n1.JPG)
 
-Die auteurs hebben ook een adres, een biografie en misschien nog andere relevante gegevens. Dat wil zeggen dat we voor elk boek van één auteur al die gegevens moeten herhalen. Als er één van die gegevens gewijzigd moet worden mogen we niet vergeten dat gegeven bij alle boeken te gaan wijzigen. Vergeten we dat bij één boek is de integriteit van onze database zoek.
+Die auteurs zouden ook een adres, een biografie en misschien nog andere relevante gegevens kunnen hebben. Dat wil zeggen dat we voor elk boek van één auteur al die gegevens moeten herhalen. Als er één van die gegevens gewijzigd moet worden mogen we niet vergeten dat gegeven bij alle boeken te gaan wijzigen. Vergeten we dat bij één boek, dan is de integriteit van onze database zoek.
 
-We doen er dus goed aan de gegevens van auteur uit de tabel Book te halen en een nieuwe tabel te creëren voor auteurs.
+We doen er dus goed aan de gegevens van auteur uit de tabel `Boeken` te halen en een nieuwe tabel te creëren voor auteurs. Maar dan krijgen we een ander probleem. Wat als de auteur ook boeken uit onze bibliotheek ontleent? Dat zullen de gegevens van auteur weer ontdubbeld worden. Ze gaan zitten in de tabel `Auteurs` en in de tabel `Ontleners`.
 
-Maar dan krijgen we een ander probleem. Wat als de auteur ook boeken uit onze bibliotheek ontleent? Dat zullen de gegevens van auteur weer ontdubbeld worden. Ze gaan zitten in de tabel Auteur en in de tabel Ontlener.
-
-Als we die dubbels willen vermijden moeten we nog een stap verder gaan. Auteurs en ontleners zijn allebei Personen. We maken dus beter van de eerste keer een meer algemenere tabel `Personen`.
+Als we die dubbels willen vermijden moeten we nog een stap verder gaan. Auteurs en ontleners kunnen samen voorgesteld worden in een tabel `Personen`. We maken dus beter van de eerste keer een meer algemenere tabel `Personen`.
 
 ## De tabel Personen creëren op basis van de tabel Boeken
 
@@ -39,7 +37,7 @@ create table Personen (
 );
 ```
 
- Met `INSERT INTO FROM` worden de geselecteerde rijen in de INTO tabel geïnserted:
+Met een subquery die een tabel materialiseert, kunnen we we de tabel `Personen` meteen invullen:
 
 ```sql
 -- gegevens uit de tabel Boeken overzetten naar de tabel Personen
@@ -49,7 +47,7 @@ insert into Personen (Voornaam, Familienaam)
    select distinct Voornaam, Familienaam from Boeken;
 ```
 
- Je kan verifiëren als de dubbele eruit zijn. Gebruik de `ORDER BY` clausule om het verifiëren te vergemakkelijken:
+ Je kan verifiëren dat de dubbele eruit zijn. Gebruik de `ORDER BY` clausule om het verifiëren te vergemakkelijken:
 
 ```sql
 use ModernWays;
@@ -62,19 +60,16 @@ select Voornaam, Familienaam from Personen
 We hebben nu een nieuwe tabel `Personen`. Maar met slechts twee kolommen. Met de alter instructie voegen we de andere kolommen toe, evenals de primary key en de identity eigenschap:
 
 ```sql
--- JI
--- 24 september 2012
 use ModernWays;
 
 alter table Personen add (
-   Id int auto_incrment not null,
-   AanspreekTitel nvarchar(30) null,
-   Straat nvarchar(80) null,
+   Id int auto_increment not null,
+   AanspreekTitel varchar(30) null,
+   Straat varchar(80) null,
    Huisnummer varchar (5) null,
-   Stad nvarchar (50) null,
-   Commentaar nvarchar (100) null,
-   Biografie nvarchar(400) null
-   constraint pk_Personen_Id primary key (Id));
+   Stad varchar (50) null,
+   Commentaar varchar (100) null,
+   Biografie varchar(400) null);
 ```
 
 We testen om te zien als we hebben wat we wilden, namelijk een tabel met de voornamen en familienamen van de auteurs:
