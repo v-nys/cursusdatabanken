@@ -163,27 +163,22 @@ Met als resultaat:
 
 ## Dubbele kolommen verwijderen uit de tabel Boeken
 
-We zijn er nog niet van af. De gekopiëerde kolommen uit de tabel `Boeken`, `Voornaam` en `Familienaam`, moeten nog gedeletet worden:
+We zijn er nog niet van af. De intussen overbodige kolommen uit de tabel `Boeken` (`Voornaam` en `Familienaam`), moeten nog gedeletet worden:
 
 ```sql
--- JI
--- 26 september 2012
-use ModernWays;
 alter table Boeken drop column Voornaam,
     drop column Familienaam;
-
-select * from Boeken;
 ```
 
 ## De foreign key constraint op de kolom Personen_Id toevoegen
 
+Nu kunnen we de kolom `Personen_Id` "promoveren" tot een echte foreign key kolom:
+
 ```sql
 -- dan de constraint toevoegen
-alter table Boeken add constraint fk_BoekenPersonen_Personen_Id
+alter table Boeken add constraint fk_Boeken_Personen
    foreign key(Personen_Id) references Personen(Id);
 ```
-
-**Afspraak: de naam van de foreign key bestaat uit een prefix fk\_, gevolgd door de naam van de tabel waarin de de foreign key kolom staat, gevolgd door de naam van de tabel waarnaar verwezen wordt, gevolgd door een underscore en de naam van de foreign key kolom.**
 
 ## Opdracht
 
