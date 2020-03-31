@@ -57,13 +57,13 @@ select Voornaam, Familienaam from Personen
 
 ## Overige kolommen aan de tabel Personen toevoegen
 
-We hebben nu een nieuwe tabel `Personen`. Maar met slechts twee kolommen. Met de alter instructie voegen we de andere kolommen toe, evenals de primary key en de identity eigenschap:
+We hebben nu een nieuwe tabel `Personen`. Maar met slechts twee kolommen. Met de alter instructie voegen we de andere kolommen toe, evenals de primary key:
 
 ```sql
 use ModernWays;
 
 alter table Personen add (
-   Id int auto_increment not null,
+   Id int auto_increment primary key,
    AanspreekTitel varchar(30) null,
    Straat varchar(80) null,
    Huisnummer varchar (5) null,
@@ -81,6 +81,8 @@ select * from Personen order by Familienaam, Voornaam;
 En dat geeft:
 
 ![](../../.gitbook/assets/n2.JPG)
+
+Merk op dat elke auteur één keer voorkomt en dat alle auteurs een unieke `Id` hebben.
 
 ## De tabel Boeken en Personen linken
 
