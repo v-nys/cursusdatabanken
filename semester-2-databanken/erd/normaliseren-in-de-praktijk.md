@@ -119,10 +119,9 @@ alter table Boeken add Personen_Id int null;
 
 ## De foreign key kolom in de tabel Boeken invullen
 
-Om de `Id` van `Personen` te kopiëren in de tabel `Boeken` moeten we eerst een relatie leggen tussen de twee tabellen. Welke kolommen zijn in beide tabellen gelijk? De kolom `Voornaam` en `Familienaam` want we hebben ze net gekopieerd. We kunnen de twee tabellen linken op basis van deze twee kolommen:
+Om de `Id` van `Personen` te kopiëren in de tabel `Boeken` moeten we eerst een relatie leggen tussen de twee tabellen. Welke kolommen zijn in beide tabellen gelijk? De kolom `Voornaam` en `Familienaam` want we hebben ze net gekopieerd. We kunnen bekijken hoe we de twee tabellen zullen linken op basis van deze twee kolommen:
 
 ```sql
-use ModernWays;
 select Boeken.Voornaam,
    Boeken.Familienaam,
    Boeken.Personen_Id,
@@ -134,23 +133,15 @@ where Boeken.Voornaam = Personen.Voornaam and
     Boeken.Familienaam = Personen.Familienaam;
 ```
 
-Om de waarde van `Id` van de `Personen` tabel te kopiëren naar de `Personen_Id` kolom van `Boeken` volstaat het om in de where clausule van de `update` instructie de voorwaarde mee te geven dat de waarden beide kolommen aan elkaar gelijk moeten zijn.
+We kunnen dezelfde redenering gebruiken in een `update`. Om de waarde van `Id` van de `Personen` tabel te kopiëren naar de `Personen_Id` kolom van `Boeken` volstaat het dan om in de `where` clausule van de `update` instructie de voorwaarde mee te geven dat de waarden beide kolommen aan elkaar gelijk moeten zijn.
 
 In de `set` clausule van de `update` instructie bepalen we dat de waarde van de `Id` van `Personen` in de kolom `Personen_Id` van `Boeken` gekopiëerd moet worden. Met de `from` clause geven we aan dat de `Id` waarde uit de `Personen` tabel moet worden gehaald.
 
 ```sql
-use ModernWays;
--- select * from Boeken
--- JI
--- 26 september 2012
--- foreign kopiren vanuit de tabel Personen in de tabel Boeken
-use ModernWays;
-update Boeken, Personen
+update Boeken cross join Personen
     set Boeken.Personen_Id = Personen.Id
 where Boeken.Voornaam = Personen.Voornaam and
     Boeken.Familienaam = Personen.Familienaam
-
-select * from Boeken;
 ```
 
  Nu kunnen we de `not null` constraint aan de kolom `Personen_Id` in de tabel `Boeken` terug toevoegen:
