@@ -182,7 +182,7 @@ alter table Boeken add constraint fk_Boeken_Personen
 
 ## Opdracht
 
-Stel, op basis van bovenstaande instructies, het volledige script om de tabel `Boeken` te normaliseren (een tabel `Personen` uitsplitsen) en sla het op in een bestand met de naam BoekenPersonNormalize.sql. **Schrijf commentaar bij elke stap.**
+Combineer bovenstaande instructies tot één volledig script om de tabel `Boeken` te normaliseren (een tabel `Personen` uitsplitsen). Sla het op in een bestand met de naam `0637__Oefening.sql`. **Schrijf commentaar bij elke stap (dit is verplicht).**
 
 ### Oefening 1
 
@@ -193,60 +193,47 @@ Als voorbeeld nemen we een boek geschreven door Hilary Mantel. De gegevens halen
 We hebben nu twee tabellen. We beginnen met het inserten van de persoonsgevens:
 
 ```sql
--- ji
--- 8 januari 2013
---
-use ModernWays;
--- alle boeken zijn geschreven door mannen
--- we gaan eerst een boek van een vrouw toevoegen
--- bestandnaam: BoekenNormalizeInsertOne.sql
---
--- auteur toevoegen
 insert into Personen (
    Voornaam, Familienaam, AanspreekTitel
 )
 values (
    'Hilary', 'Mantel', 'Mevrouw'
 );
-
-select * from Personen;
 ```
 
-Onthoud de primary key waarde van Hilary Mantel. In ons voorbeeld is dat 16. Vervolgens voegen we het boek toe:
+Zoek de primary key waarde van Hilary Mantel. In ons voorbeeld is dat 11. Vervolgens voegen we het boek toe:
 
 ```sql
 insert into Boeken (
-   Titel, Stad, Uitgeverij, Verschijningsjaar,
+   Titel, Stad, Uitgeverij, Verschijningsdatum,
    Herdruk, Commentaar, Categorie, Personen_Id
 )
 values (
    'Wolf Hall', '', 'Fourth Estate; First Picador Edition First Printing edition',
-   '2010', '', 'Goed boek', 'Thriller', 16
+   '2010', '', 'Goed boek', 'Thriller', 11
 );
 
 select * from Boeken;
 ```
 
- De relatie tussen het boek en de persoon die het boek geschreven heeft wordt bepaald door foreign key `Personen_Id` in de tabel `Boeken`. De waarde 16 in die kolom verwijst naar een waarde in de primary key `Id` van de tabel `Personen`.
+ De relatie tussen het boek en de persoon die het boek geschreven heeft wordt bepaald door foreign key `Personen_Id` in de tabel `Boeken`. De waarde 11 in die kolom verwijst naar een waarde in de primary key `Id` van de tabel `Personen`.
 
 ### Oefening 2
 
 Voeg het volgende boek toe:
 
-Jean-Paul Sartre, De Woorden, 1961, De Bezige Bij.
+Jean-Paul Sartre (auteur), De Woorden (titel), 1961 (verschijningsdatum), De Bezige Bij (uitgeverij).
 
 Vul de waarde in de kolom `Personen_Id` niet letterlijk in maar door middel van een SQL statement. M.a.w. hoe kan je de waarde die in de kolom `Personen_Id` moet komen opvragen?
 
 We gebruiken hiervoor een subquery:
 
 ```sql
--- bestandnaam: BoekenNormalizeInsertOne2.sql
-
 use ModernWays;
 insert into Boeken (
    Titel,
    Stad,
-   Verschijningsjaar,
+   Verschijningsdatum,
    Commentaar,
    Categorie,
    Personen_Id
@@ -261,7 +248,7 @@ values (
        Familienaam = 'Sartre' and Voornaam = 'Jean-Paul'))
 ```
 
- Let erop dat de `Id` van de auteur in de tabel `Boeken` opgehaald uit de tabel `Personen` met behulp van een subquerie.
+ Let erop dat de `Id` van de auteur in de tabel `Boeken` opgehaald uit de tabel `Personen` met behulp van een subquery. Alternatief zou je dit met een `join` kunnen klaarspelen.
 
 # Normalisatie: het idee samengevat
 Er zijn boeken geschreven over normalisatie, maar in de praktijk is de richtlijn heel simpel: vermijd dubbele informatie. Je doet dit door informatie in een tabel te koppelen aan de sleutel. Als twee rijen verschillende sleutels hebben, zou er geen verborgen veronderstelling mogen zijn dat bepaalde data in deze twee rijen moet overeenstemmen.
