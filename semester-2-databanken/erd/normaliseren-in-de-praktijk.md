@@ -135,7 +135,7 @@ where Boeken.Voornaam = Personen.Voornaam and
 
 We kunnen dezelfde redenering gebruiken in een `update`. Om de waarde van `Id` van de `Personen` tabel te kopiëren naar de `Personen_Id` kolom van `Boeken` volstaat het dan om in de `where` clausule van de `update` instructie de voorwaarde mee te geven dat de waarden beide kolommen aan elkaar gelijk moeten zijn.
 
-In de `set` clausule van de `update` instructie bepalen we dat de waarde van de `Id` van `Personen` in de kolom `Personen_Id` van `Boeken` gekopiëerd moet worden. Met de `from` clause geven we aan dat de `Id` waarde uit de `Personen` tabel moet worden gehaald.
+In de `set` clausule van de `update` instructie bepalen we dat de waarde van de `Id` van `Personen` in de kolom `Personen_Id` van `Boeken` gekopieerd moet worden. Met de `from` clause geven we aan dat de `Id` waarde uit de `Personen` tabel moet worden gehaald.
 
 ```sql
 update Boeken cross join Personen
