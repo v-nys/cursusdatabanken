@@ -226,7 +226,9 @@ select * from Boeken;
 
 ### Oefening 2
 
-Voeg het volgende boek toe:
+Voeg eerst de auteur Jean-Paul Sartre toe. Buiten de naam heb je geen andere info.
+
+Voeg dan het volgende boek toe:
 
 Jean-Paul Sartre (auteur), De Woorden (titel), 1961 (verschijningsdatum), De Bezige Bij (uitgeverij).
 
