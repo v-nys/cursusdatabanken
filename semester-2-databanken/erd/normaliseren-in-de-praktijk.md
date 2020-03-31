@@ -147,11 +147,11 @@ where Boeken.Voornaam = Personen.Voornaam and
  Nu kunnen we de `not null` constraint aan de kolom `Personen_Id` in de tabel `Boeken` terug toevoegen:
 
 ```sql
---set FK Personen_Id op not null
+-- foreign key verplicht maken
 alter table Boeken alter column Personen_Id int not null;
 ```
 
-We testen als we hebben wat we wilden:
+We testen of we hebben wat we wilden:
 
 ```sql
 select Voornaam, Familienaam, Personen_Id from Boeken;
