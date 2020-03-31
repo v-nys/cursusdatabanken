@@ -10,7 +10,9 @@ We gaan het eerst in een eenvoudig voorbeeld toepassen en pas achteraf de theori
 
 ## Oplossing
 
-We nemen terug ons voorbeeld met de boeken.
+We starten van onderstaand calibratiescript, dat ons een (niet erg goed gestructureerde) tabel met boeken levert.
+
+{% file src="../../.gitbook/assets/0636\_\_CalibrateDB.sql" caption="0636\_\_CalibrateDB.sql" %}
 
 We selecteren de database [`ModernWays`](../joins/#startpunt) en voeren een select query uit op de tabel `Boeken`. Als we de lijst met de kolommen grondig analyseren zien we dat er nogal wat dubbele waarden in sommige kolommen zitten:
 
@@ -183,6 +185,10 @@ alter table Boeken add constraint fk_Boeken_Personen
 ## Opdracht
 
 Combineer bovenstaande instructies tot één volledig script om de tabel `Boeken` te normaliseren (een tabel `Personen` uitsplitsen). Sla het op in een bestand met de naam `0637__Oefening.sql`. **Schrijf commentaar bij elke stap (dit is verplicht).**
+
+{% hint style="warning" %}
+Het is de bedoeling dat je scripts 636 en 637 meteen na elkaar kan uitvoeren en zo de gewenste tabelstructuren krijgt. Controleer hiervoor in elke stap je tussenresultaten.
+{% endhint %}
 
 ### Oefening 1
 
