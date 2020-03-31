@@ -27,7 +27,7 @@ Als we die dubbels willen vermijden moeten we nog een stap verder gaan. Auteurs 
 Om de gegevens van de auteur uit de tabel `Boeken` naar de tabel `Personen` te kopiëren, kopiëren we de twee kolommen `Voornaam` en `Familienaam` naar een nieuwe tabel `Personen`. We gebruiken de clausule `distinct` om slects één boek van dezelfde auteur over te houden. In de tabel `Personen` mag de auteur slechts 1 keer voorkomen:
 
 {% hint style="danger" %}
-Dit mag wel alleen omdat we weten dat er geen meerdere auteurs zijn met dezelfde combinatie van voornaam en familienaam. Je kan dit niet aflezen uit de gegeven database. Je hebt eigenlijk een stel kolommen nodig dat volstaat om de identiteit vast te leggen en dat is precies de algemene definitie van een sleutel.
+Dit mag wel alleen omdat we weten dat er geen meerdere auteurs zijn met dezelfde combinatie van voornaam en familienaam. Je kan dit niet aflezen uit de gegeven database. Je hebt eigenlijk een stel kolommen nodig dat volstaat om de identiteit vast te leggen en dat is precies de algemene definitie van een sleutel. Wij gebruiken met andere woorden voornaam en familienaam samen als een mogelijke sleutel, maar in de praktijk moet je voorzichtiger zijn.
 {% endhint %}
 
 ```sql
