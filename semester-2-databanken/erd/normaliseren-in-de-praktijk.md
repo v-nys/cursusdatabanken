@@ -129,7 +129,7 @@ select Boeken.Voornaam,
    Personen.Voornaam,
    Personen.Familienaam,
    Personen.Id
-from Boeken, Personen
+from Boeken cross join Personen
 where Boeken.Voornaam = Personen.Voornaam and
     Boeken.Familienaam = Personen.Familienaam;
 ```
