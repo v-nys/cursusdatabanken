@@ -1,5 +1,9 @@
 # Normaliseren in de praktijk
 
+{% hint style="info" %}
+Volgende oefening is oorspronkelijk opgesteld door [Jef Inghelbrecht](https://modernways.be/myap/it/page/sql/mysql/ddl/MySQL%20Normaliseren%20in%20de%20praktijk.html). Deze versie is licht gewijzigd om te voldoen aan de afspraken die we gemaakt hebben met betrekking tot de cursus.
+{% endhint %}
+
 ## Probleem
 
 We gaan het eerst in een eenvoudig voorbeeld toepassen en pas achteraf de theorie zien. In het normalisatieproces komt het erop neer ervoor te zorgen dat een betekenisvol stukje informatie slechts 1 keer voorkomt in je database. De letters a en b bijvoorbeeld zijn niet betekenisvol. Op zichzelf hebben ze geen enkele betekenis. Dus moet je ze ook niet normaliseren.
@@ -12,7 +16,7 @@ We selecteren de database [`ModernWays`](../joins/#startpunt) en voeren een sele
 
 ![](../../.gitbook/assets/n1.JPG)
 
-Die auteurs hebben ook een adres, een biografie en misschien nog andere relevante gegevens. Dat wil zeggen dat we voor elk boek van één auteur al die gegevens moeten herhalen. Als er één van die gegevens gewijzigd moet worden mogen we niet vergeten dat gegeven bij alle boeken te gaan wijzigen. Vergeten we dat bij één boek is de integreteit van onze database zoek.
+Die auteurs hebben ook een adres, een biografie en misschien nog andere relevante gegevens. Dat wil zeggen dat we voor elk boek van één auteur al die gegevens moeten herhalen. Als er één van die gegevens gewijzigd moet worden mogen we niet vergeten dat gegeven bij alle boeken te gaan wijzigen. Vergeten we dat bij één boek is de integriteit van onze database zoek.
 
 We doen er dus goed aan de gegevens van auteur uit de tabel Book te halen en een nieuwe tabel te creëren voor auteurs.
 
@@ -25,27 +29,21 @@ Als we die dubbels willen vermijden moeten we nog een stap verder gaan. Auteurs 
 Om de gegevens van de auteur uit de tabel `Boeken` naar de tabel `Personen` te kopiëren, kopiëren we de twee kolommen `Voornaam` en `Familienaam` naar een nieuwe tabel `Personen`. We gebruiken de clausule `distinct` om slects één boek van dezelfde auteur over te houden. In de tabel `Personen` mag de auteur slechts 1 keer voorkomen:
 
 ```sql
--- JI
--- 24 september 2012
--- gegevens uit de tabel Boeken overzetten naar de tabel Personen
---
 -- creer een nieuwe tabel met de auteursgegevens
 -- Voornaam en Familienaam
 use ModernWays;
 drop table if exists Personen;
 create table Personen (
-    Voornaam nvarchar(255) not null,
-    Familienaam nvarchar(255) not null
+    Voornaam varchar(255) not null,
+    Familienaam varchar(255) not null
 );
 ```
 
  Met `INSERT INTO FROM` worden de geselecteerde rijen in de INTO tabel geïnserted:
 
 ```sql
--- JI
--- 24 september 2012
 -- gegevens uit de tabel Boeken overzetten naar de tabel Personen
---
+-- we gebruiken hiervoor een subquery
 use ModernWays;
 insert into Personen (Voornaam, Familienaam)
    select distinct Voornaam, Familienaam from Boeken;
@@ -179,7 +177,7 @@ Met als resultaat:
 
 ## Dubbele kolommen verwijderen uit de tabel Boeken
 
-We zijn er nog niet van af. De gekopiëerde kolommen uit de tabel `Boeken`, `Voornaam` en `Familienaam`, moeten nog gedeleted worden:
+We zijn er nog niet van af. De gekopiëerde kolommen uit de tabel `Boeken`, `Voornaam` en `Familienaam`, moeten nog gedeletet worden:
 
 ```sql
 -- JI
@@ -203,7 +201,7 @@ alter table Boeken add constraint fk_BoekenPersonen_IdAuteur
 
 ## Opdracht
 
-Schrijf het volledige script om de tabel `Boeken` gedeeltelijk \(alleen de persoon\) te normaliseren en sla het op in een bestand met de naam BoekenPersonNormalize.sql. Schrijf commentaar bij elke stap.
+Stel, op basis van bovenstaande instructies, het volledige script om de tabel `Boeken` te normaliseren (een tabel `Personen` uitsplitsen) en sla het op in een bestand met de naam BoekenPersonNormalize.sql. **Schrijf commentaar bij elke stap.**
 
 ### Oefening 1
 
@@ -284,9 +282,9 @@ values (
 
  Let erop dat de `Id` van de auteur in de tabel `Boeken` opgehaald uit de tabel `Personen` met behulp van een subquerie.
 
+# Normalisatie: het idee samengevat
+Er zijn boeken geschreven over normalisatie, maar in de praktijk is de richtlijn heel simpel: vermijd dubbele informatie. Je doet dit door informatie in een tabel te koppelen aan de sleutel. Als twee rijen verschillende sleutels hebben, zou er geen verborgen veronderstelling mogen zijn dat bepaalde data in deze twee rijen moet overeenstemmen.
 
+Dat was wel het geval bij de oorspronkelijke tabel met boeken. Als je daar twee keer dezelfde auteur had, moesten zijn adres,... in overeenstemming gehouden worden tussen alle rijen waarin deze auteur voorkwam.
 
-
-
-
-
+We hebben hier nog niet heel de tabel genormaliseerd! Je zou bijvoorbeeld ook een tabel voor de uitgeverij kunnen voorzien of voor de verschillende edities van eenzelfde boek.
