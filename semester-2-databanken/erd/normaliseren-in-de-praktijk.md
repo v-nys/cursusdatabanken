@@ -1,18 +1,20 @@
 # Normaliseren in de praktijk
 
+## Normaliseren in de praktijk
+
 {% hint style="info" %}
 Volgende oefening is oorspronkelijk opgesteld door [Jef Inghelbrecht](https://modernways.be/myap/it/page/sql/mysql/ddl/MySQL%20Normaliseren%20in%20de%20praktijk.html). Deze versie is licht gewijzigd om te voldoen aan de afspraken die we gemaakt hebben met betrekking tot de cursus.
 {% endhint %}
 
-## Probleem
+### Probleem
 
 We gaan het eerst in een eenvoudig voorbeeld toepassen en pas achteraf de theorie zien. In het normalisatieproces komt het erop neer ervoor te zorgen dat een betekenisvol stukje informatie slechts 1 keer voorkomt in je database. De letters "a" en "b" bijvoorbeeld zijn niet betekenisvol. Op zichzelf hebben ze geen enkele betekenis. Dus moet je ze ook niet normaliseren.
 
-## Oplossing
+### Oplossing
 
-We starten van onderstaand calibratiescript, dat ons een (niet erg goed gestructureerde) tabel met boeken levert.
+We starten van onderstaand calibratiescript, dat ons een \(niet erg goed gestructureerde\) tabel met boeken levert.
 
-{% file src="../../.gitbook/assets/0636\_\_CalibrateDB.sql" caption="0636\_\_CalibrateDB.sql" %}
+{% file src="../../.gitbook/assets/0636\_\_calibratedb.sql" caption="0636\_\_CalibrateDB.sql" %}
 
 We selecteren de database ModernWays en voeren een select query uit op de tabel `Boeken`. Als we de lijst met de kolommen grondig analyseren zien we dat er nogal wat dubbele waarden in sommige kolommen zitten:
 
@@ -24,7 +26,7 @@ We doen er dus goed aan de gegevens van auteur uit de tabel `Boeken` te halen en
 
 Als we die dubbels willen vermijden moeten we nog een stap verder gaan. Auteurs en ontleners kunnen samen voorgesteld worden in een tabel `Personen`. We maken dus beter van de eerste keer een meer algemenere tabel `Personen`.
 
-## De tabel Personen creëren op basis van de tabel Boeken
+### De tabel Personen creëren op basis van de tabel Boeken
 
 Om de gegevens van de auteur uit de tabel `Boeken` naar de tabel `Personen` te kopiëren, kopiëren we de twee kolommen `Voornaam` en `Familienaam` naar een nieuwe tabel `Personen`. We gebruiken de clausule `distinct` om slechts één rij voor elke auteur over te houden.
 
@@ -53,7 +55,7 @@ insert into Personen (Voornaam, Familienaam)
    select distinct Voornaam, Familienaam from Boeken;
 ```
 
- Je kan verifiëren dat de dubbele eruit zijn. Gebruik de `ORDER BY` clausule om het verifiëren te vergemakkelijken:
+Je kan verifiëren dat de dubbele eruit zijn. Gebruik de `ORDER BY` clausule om het verifiëren te vergemakkelijken:
 
 ```sql
 use ModernWays;
@@ -61,7 +63,7 @@ select Voornaam, Familienaam from Personen
     order by Voornaam, Familienaam;
 ```
 
-## Overige kolommen aan de tabel Personen toevoegen
+### Overige kolommen aan de tabel Personen toevoegen
 
 We hebben nu een nieuwe tabel `Personen`. Maar met slechts twee kolommen. Met de alter instructie voegen we de andere kolommen toe, evenals de primary key:
 
@@ -90,7 +92,7 @@ En dat geeft:
 
 Merk op dat elke auteur één keer voorkomt en dat alle auteurs een unieke `Id` hebben.
 
-## De tabel Boeken en Personen linken
+### De tabel Boeken en Personen linken
 
 We hebben nu wel een tabel `Personen` met de naam en de voornaam van de auteur. Maar er is geen relatie tussen die twee. M.a.w. we kunnen niet weten welke boeken door wie geschreven zijn.
 
@@ -105,21 +107,21 @@ use ModernWays;
 alter table Boeken add Personen_Id int not null;
 ```
 
-Als je dit script uitvoert krijg je (ongeveer) de volgende foutmelding:
+Als je dit script uitvoert krijg je \(ongeveer\) de volgende foutmelding:
 
 ```sql
 Msg 4901, Level 16, State 1, Line 6
 ALTER TABLE only allows columns to be added that can contain nulls, or have a DEFAULT definition specified, or the column being added is an identity or timestamp column, or alternatively if none of the previous conditions are satisfied the table must be empty to allow addition of this column. Column 'Personen_Id' cannot be added to non-empty table 'Boeken' because it does not satisfy these conditions.
 ```
 
- We moeten bij het toevoegen van de kolom de `not null` constraint laten vallen. Dan de foreign key invullen en dan pas de `not null` constraint toevoegen. Dat gebeurt impliciet op het moment dat we de foreign key constraint toevoegen.
+We moeten bij het toevoegen van de kolom de `not null` constraint laten vallen. Dan de foreign key invullen en dan pas de `not null` constraint toevoegen. Dat gebeurt impliciet op het moment dat we de foreign key constraint toevoegen.
 
 ```sql
 use ModernWays;
 alter table Boeken add Personen_Id int null;
 ```
 
-## De foreign key kolom in de tabel Boeken invullen
+### De foreign key kolom in de tabel Boeken invullen
 
 Om de `Id` van `Personen` te kopiëren in de tabel `Boeken` moeten we eerst een relatie leggen tussen de twee tabellen. Welke kolommen zijn in beide tabellen gelijk? De kolom `Voornaam` en `Familienaam` want we hebben ze net gekopieerd. We kunnen bekijken hoe we de twee tabellen zullen linken op basis van deze twee kolommen:
 
@@ -146,7 +148,7 @@ where Boeken.Voornaam = Personen.Voornaam and
     Boeken.Familienaam = Personen.Familienaam
 ```
 
- Nu kunnen we de `not null` constraint aan de kolom `Personen_Id` in de tabel `Boeken` terug toevoegen:
+Nu kunnen we de `not null` constraint aan de kolom `Personen_Id` in de tabel `Boeken` terug toevoegen:
 
 ```sql
 -- foreign key verplicht maken
@@ -163,16 +165,16 @@ Met als resultaat:
 
 ![](../../.gitbook/assets/n3.JPG)
 
-## Dubbele kolommen verwijderen uit de tabel Boeken
+### Dubbele kolommen verwijderen uit de tabel Boeken
 
-We zijn er nog niet van af. De intussen overbodige kolommen uit de tabel `Boeken` (`Voornaam` en `Familienaam`), moeten nog gedeletet worden:
+We zijn er nog niet van af. De intussen overbodige kolommen uit de tabel `Boeken` \(`Voornaam` en `Familienaam`\), moeten nog gedeletet worden:
 
 ```sql
 alter table Boeken drop column Voornaam,
     drop column Familienaam;
 ```
 
-## De foreign key constraint op de kolom Personen_Id toevoegen
+### De foreign key constraint op de kolom Personen\_Id toevoegen
 
 Nu kunnen we de kolom `Personen_Id` "promoveren" tot een echte foreign key kolom:
 
@@ -182,15 +184,15 @@ alter table Boeken add constraint fk_Boeken_Personen
    foreign key(Personen_Id) references Personen(Id);
 ```
 
-## Opdracht
+### Opdracht
 
-Combineer bovenstaande instructies tot één volledig script om de tabel `Boeken` te normaliseren (een tabel `Personen` uitsplitsen). Sla het op in een bestand met de naam `0637__Oefening.sql`. **Schrijf commentaar bij elke stap (dit is verplicht).**
+Combineer bovenstaande instructies tot één volledig script om de tabel `Boeken` te normaliseren \(een tabel `Personen` uitsplitsen\). Sla het op in een bestand met de naam `0637__Oefening.sql`. **Schrijf commentaar bij elke stap \(dit is verplicht\).**
 
 {% hint style="warning" %}
 Het is de bedoeling dat je scripts 636 en 637 meteen na elkaar kan uitvoeren en zo de gewenste tabelstructuren krijgt. Controleer hiervoor in elke stap je tussenresultaten.
 {% endhint %}
 
-### Oefening 1
+#### Oefening 1
 
 Een boek en de auteur inserten in de 'genormaliseerde' database
 
@@ -222,15 +224,15 @@ values (
 select * from Boeken;
 ```
 
- De relatie tussen het boek en de persoon die het boek geschreven heeft wordt bepaald door foreign key `Personen_Id` in de tabel `Boeken`. De waarde 11 in die kolom verwijst naar een waarde in de primary key `Id` van de tabel `Personen`.
+De relatie tussen het boek en de persoon die het boek geschreven heeft wordt bepaald door foreign key `Personen_Id` in de tabel `Boeken`. De waarde 11 in die kolom verwijst naar een waarde in de primary key `Id` van de tabel `Personen`.
 
-### Oefening 2
+#### Oefening 2
 
 Voeg eerst de auteur Jean-Paul Sartre toe. Buiten de naam heb je geen andere info.
 
 Voeg dan het volgende boek toe:
 
-Jean-Paul Sartre (auteur), De Woorden (titel), 1961 (verschijningsdatum), De Bezige Bij (uitgeverij).
+Jean-Paul Sartre \(auteur\), De Woorden \(titel\), 1961 \(verschijningsdatum\), De Bezige Bij \(uitgeverij\).
 
 Vul de waarde in de kolom `Personen_Id` niet letterlijk in maar door middel van een SQL statement. M.a.w. hoe kan je de waarde die in de kolom `Personen_Id` moet komen opvragen?
 
@@ -256,11 +258,13 @@ values (
        Familienaam = 'Sartre' and Voornaam = 'Jean-Paul'))
 ```
 
- Let erop dat de `Id` van de auteur in de tabel `Boeken` opgehaald uit de tabel `Personen` met behulp van een subquery. Alternatief zou je dit met een `join` kunnen klaarspelen.
+Let erop dat de `Id` van de auteur in de tabel `Boeken` opgehaald uit de tabel `Personen` met behulp van een subquery. Alternatief zou je dit met een `join` kunnen klaarspelen.
 
-# Normalisatie: het idee samengevat
+## Normalisatie: het idee samengevat
+
 Er zijn boeken geschreven over normalisatie, maar in de praktijk is de richtlijn heel simpel: vermijd dubbele informatie. Je doet dit door informatie in een tabel te koppelen aan de sleutel. Als twee rijen verschillende sleutels hebben, zou er geen verborgen veronderstelling mogen zijn dat bepaalde data in deze twee rijen moet overeenstemmen.
 
 Dat was wel het geval bij de oorspronkelijke tabel met boeken. Als je daar twee keer dezelfde auteur had, moesten zijn adres,... in overeenstemming gehouden worden tussen alle rijen waarin deze auteur voorkwam.
 
 We hebben hier nog niet heel de tabel genormaliseerd! Je zou bijvoorbeeld ook een tabel voor de uitgeverij kunnen voorzien of voor de verschillende edities van eenzelfde boek.
+
