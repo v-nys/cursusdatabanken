@@ -26,6 +26,10 @@ Als we die dubbels willen vermijden moeten we nog een stap verder gaan. Auteurs 
 
 Om de gegevens van de auteur uit de tabel `Boeken` naar de tabel `Personen` te kopiëren, kopiëren we de twee kolommen `Voornaam` en `Familienaam` naar een nieuwe tabel `Personen`. We gebruiken de clausule `distinct` om slects één boek van dezelfde auteur over te houden. In de tabel `Personen` mag de auteur slechts 1 keer voorkomen:
 
+{% hint style="danger" %}
+Dit mag wel alleen omdat we weten dat er geen meerdere auteurs zijn met dezelfde combinatie van voornaam en familienaam. Je kan dit niet aflezen uit de gegeven database. Je hebt eigenlijk een stel kolommen nodig dat volstaat om de identiteit vast te leggen en dat is precies de algemene definitie van een sleutel.
+{% endhint %}
+
 ```sql
 -- creer een nieuwe tabel met de auteursgegevens
 -- Voornaam en Familienaam
@@ -95,14 +99,11 @@ Een foreign key kolom aanmaken in de tabel `Boeken`
 In de tabel `Boeken` hebben we een nieuwe kolom nodig die de foreign key bevat die verwijst naar de persoon die het boek geschreven heeft:
 
 ```sql
--- JI
--- 24 september 2012
--- Een foreign key toevoegen aan de tabel Boeken
 use ModernWays;
 alter table Boeken add IdAuteur int not null;
 ```
 
-Als je dit script uitvoert krijg je de volgende foutmelding:
+Als je dit script uitvoert krijg je (ongeveer) de volgende foutmelding:
 
 ```sql
 Msg 4901, Level 16, State 1, Line 6
@@ -112,16 +113,13 @@ ALTER TABLE only allows columns to be added that can contain nulls, or have a DE
  We moeten bij het toevoegen van de kolom de `not null` constraint laten vallen. Dan de foreign key invullen en dan pas de `not null` constraint toevoegen. Dat gebeurt impliciet op het moment dat we de foreign key constraint toevoegen.
 
 ```sql
--- JI
--- 24 september 2012
--- Een foreign key toevoegen aan de tabel Boeken
 use ModernWays;
 alter table Boeken add IdAuteur int null;
 ```
 
 ## De foreign key kolom in de tabel Boeken invullen
 
-Om de `Id` van `Personen` te kopiëren in de tabel `Boeken` moeten we eerst een relatie leggen tussen de twee tabellen. Welke kolommen zijn in beide tabellen gelijk? De kolom `Voornaam` en `Familienaam` want we hebben ze net gekopiëerd. We kunnen de twee tabellen linken op basis van deze twee kolommen:
+Om de `Id` van `Personen` te kopiëren in de tabel `Boeken` moeten we eerst een relatie leggen tussen de twee tabellen. Welke kolommen zijn in beide tabellen gelijk? De kolom `Voornaam` en `Familienaam` want we hebben ze net gekopieerd. We kunnen de twee tabellen linken op basis van deze twee kolommen:
 
 ```sql
 use ModernWays;
