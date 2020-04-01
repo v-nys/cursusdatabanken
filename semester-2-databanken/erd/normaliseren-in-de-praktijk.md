@@ -218,11 +218,11 @@ values (
    'Wolf Hall', '', 'Fourth Estate; First Picador Edition First Printing edition',
    '2010', '', 'Goed boek', 'Thriller', 11
 );
-
-select * from Boeken;
 ```
 
  De relatie tussen het boek en de persoon die het boek geschreven heeft wordt bepaald door foreign key `Personen_Id` in de tabel `Boeken`. De waarde 11 in die kolom verwijst naar een waarde in de primary key `Id` van de tabel `Personen`.
+
+Noem het script dat deze taak uitvoert `0638__Oefening.sql`.
 
 ### Oefening 2
 
@@ -257,6 +257,8 @@ values (
 ```
 
  Let erop dat de `Id` van de auteur in de tabel `Boeken` opgehaald uit de tabel `Personen` met behulp van een subquery. Alternatief zou je dit met een `join` kunnen klaarspelen.
+
+Noem je script `0639__Oefening.sql`.
 
 # Normalisatie: het idee samengevat
 Er zijn boeken geschreven over normalisatie, maar in de praktijk is de richtlijn heel simpel: vermijd dubbele informatie. Je doet dit door informatie in een tabel te koppelen aan de sleutel. Als twee rijen verschillende sleutels hebben, zou er geen verborgen veronderstelling mogen zijn dat bepaalde data in deze twee rijen moet overeenstemmen.
