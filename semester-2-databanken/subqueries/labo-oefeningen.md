@@ -2,7 +2,7 @@
 
 Start vanaf het gegeven calibratiescript, `0626__CalibrateDB.sql`. Dit vult de database `ModernWays` in met onderstaande structuren:
 
-{% file src="../../.gitbook/assets/0626\_calibratiedb.sql" caption="0626\_\_CalibrateDB.sql" %}
+{% file src="../../.gitbook/assets/0626_calibratiedb.sql" caption="0626\_\_CalibrateDB.sql" %}
 
 {% hint style="warning" %}
 De database die je hier krijgt is niet elegant ontworpen, maar ze maakt de subqueries die we hier zoeken makkelijker uit te schrijven dan een beter opgesplitste database.
