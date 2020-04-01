@@ -12,7 +12,7 @@ We gaan het eerst in een eenvoudig voorbeeld toepassen en pas achteraf de theori
 
 We starten van onderstaand calibratiescript, dat ons een \(niet erg goed gestructureerde\) tabel met boeken levert.
 
-{% file src="../../.gitbook/assets/0636\_\_calibratedb.sql" caption="0636\_\_CalibrateDB.sql" %}
+{% file src="../../.gitbook/assets/0636\_\_CalibrateDB.sql" caption="0636\_\_CalibrateDB.sql" %}
 
 We selecteren de database ModernWays en voeren een select query uit op de tabel `Boeken`. Als we de lijst met de kolommen grondig analyseren zien we dat er nogal wat dubbele waarden in sommige kolommen zitten:
 
