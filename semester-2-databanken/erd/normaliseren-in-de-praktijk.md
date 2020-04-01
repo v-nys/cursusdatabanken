@@ -222,6 +222,8 @@ values (
 
 De relatie tussen het boek en de persoon die het boek geschreven heeft wordt bepaald door foreign key `Personen_Id` in de tabel `Boeken`. De waarde 11 in die kolom verwijst naar een waarde in de primary key `Id` van de tabel `Personen`.
 
+Noem het script hiervoor `0638\_\_Oefening.sql`.
+
 #### Oefening 2
 
 Voeg eerst de auteur Jean-Paul Sartre toe. Buiten de naam heb je geen andere info.
@@ -254,7 +256,9 @@ values (
        Familienaam = 'Sartre' and Voornaam = 'Jean-Paul'))
 ```
 
-Let erop dat de `Id` van de auteur in de tabel `Boeken` opgehaald uit de tabel `Personen` met behulp van een subquery. Alternatief zou je dit met een `join` kunnen klaarspelen.
+Let erop dat de `Id` van de auteur in de tabel `Boeken` opgehaald wordt uit de tabel `Personen` met behulp van een subquery. Alternatief zou je dit met een `join` kunnen klaarspelen.
+
+Noem het script hiervoor `0639\_\_Oefening.sql`.
 
 ## Normalisatie: het idee samengevat
 
