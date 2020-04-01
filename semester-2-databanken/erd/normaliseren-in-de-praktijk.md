@@ -150,7 +150,7 @@ Nu kunnen we de `not null` constraint aan de kolom `Personen_Id` in de tabel `Bo
 
 ```sql
 -- foreign key verplicht maken
-alter table Boeken alter column Personen_Id int not null;
+alter table Boeken change Personen_Id Personen_Id int not null;
 ```
 
 We testen of we hebben wat we wilden:
