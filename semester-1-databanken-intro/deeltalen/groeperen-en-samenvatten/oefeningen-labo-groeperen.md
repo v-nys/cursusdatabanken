@@ -173,7 +173,7 @@ Schrijf een script, 0539\_\_Oefening.sql, dat je toont:
 * hoe oud het oudste huisdier is
 * hoeveel huisdieren er zijn
 
-Als je het script uitvoert, moet je de resultaten in volgend formaat te zien krijgen \(met de juiste hoofding per kolom en een berekende `waarde`, maar met meer rijen\):
+Als je het script uitvoert, moet je de resultaten in volgend formaat te zien krijgen \(met de juiste hoofding per kolom en een berekende `waarde`\):
 
 | Gemiddelde leeftijd | Hoogste leeftijd | Totaal aantal |
 | :--- | :--- | :--- |
