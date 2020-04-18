@@ -129,4 +129,5 @@
   * [CASE](semester-2-databanken/stored-procedures/case.md)
   * [LOOP](semester-2-databanken/stored-procedures/loop.md)
   * [WHILE](semester-2-databanken/stored-procedures/while.md)
+  * [REPEAT](semester-2-databanken/stored-procedures/repeat.md)
 

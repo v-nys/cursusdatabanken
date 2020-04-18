@@ -12,7 +12,7 @@ We gaan het eerst in een eenvoudig voorbeeld toepassen en pas achteraf de theori
 
 We starten van onderstaand calibratiescript, dat ons een \(niet erg goed gestructureerde\) tabel met boeken levert.
 
-{% file src="../../.gitbook/assets/0636\_\_CalibrateDB.sql" caption="0636\_\_CalibrateDB.sql" %}
+{% file src="../../.gitbook/assets/0636\_\_calibratedb.sql" caption="0636\_\_CalibrateDB.sql" %}
 
 We selecteren de database ModernWays en voeren een select query uit op de tabel `Boeken`. Als we de lijst met de kolommen grondig analyseren zien we dat er nogal wat dubbele waarden in sommige kolommen zitten:
 
@@ -267,3 +267,4 @@ Er zijn boeken geschreven over normalisatie, maar in de praktijk is de richtlijn
 Dat was wel het geval bij de oorspronkelijke tabel met boeken. Als je daar twee keer dezelfde auteur had, moesten zijn adres,... in overeenstemming gehouden worden tussen alle rijen waarin deze auteur voorkwam.
 
 We hebben hier nog niet heel de tabel genormaliseerd! Je zou bijvoorbeeld ook een tabel voor de uitgeverij kunnen voorzien of voor de verschillende edities van eenzelfde boek.
+
