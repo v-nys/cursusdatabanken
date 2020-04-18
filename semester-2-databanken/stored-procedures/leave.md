@@ -24,9 +24,41 @@ spLabel: BEGIN
 END$$
 ```
 
+## Het gebruik van LEAVE commando in combinatie van herhalingsstructuren
 
+`LEAVE` in combinatie met `LOOP`
 
+```sql
+[label]: LOOP
+    IF conditie THEN
+        LEAVE [label];
+    END IF;
+    -- vervolg
+END LOOP [label];
+```
 
+`LEAVE` in combinatie met `REPEAT`
+
+```sql
+[label:] REPEAT
+    IF conditie THEN
+        LEAVE [label];
+    END IF;
+    -- vervolg
+UNTIL conditie
+END REPEAT [label];
+```
+
+`LEAVE` in combinatie met `WHILE`
+
+```sql
+[label:] WHILE conditie DO
+    IF conditie THEN
+        LEAVE [label];
+    END IF;
+    -- vervolg
+END WHILE [label];
+```
 
 
 
