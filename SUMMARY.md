@@ -131,4 +131,5 @@
   * [WHILE](semester-2-databanken/stored-procedures/while.md)
   * [REPEAT](semester-2-databanken/stored-procedures/repeat.md)
   * [LEAVE](semester-2-databanken/stored-procedures/leave.md)
+  * [ERROR HANDLING](semester-2-databanken/stored-procedures/error-handling.md)
 
