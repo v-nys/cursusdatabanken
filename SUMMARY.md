@@ -130,4 +130,5 @@
   * [LOOP](semester-2-databanken/stored-procedures/loop.md)
   * [WHILE](semester-2-databanken/stored-procedures/while.md)
   * [REPEAT](semester-2-databanken/stored-procedures/repeat.md)
+  * [LEAVE](semester-2-databanken/stored-procedures/leave.md)
 
