@@ -4,3 +4,11 @@ Een procedure is net hetzelfde als een functie. Maar in tegenstelling tot een fu
 
 Een voordeel van stored procedures is de snelle verwerking van de data doordat het programma in de database zelf draait en daarmee bovenop de data zit. De verwerking gaat, vooral door het ontbreken van netwerk overhead, sneller dan verwerking door een programma dat op een andere machine draait.
 
+
+
+Bibliografie:  
+https://www.mysqltutorial.org/mysql-stored-procedure  
+
+
+
+
