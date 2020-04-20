@@ -133,4 +133,5 @@
   * [REPEAT](semester-2-databanken/stored-procedures/repeat.md)
   * [LEAVE](semester-2-databanken/stored-procedures/leave.md)
   * [ERROR HANDLING](semester-2-databanken/stored-procedures/error-handling.md)
+  * [oefeningen tot parameters](semester-2-databanken/stored-procedures/oefeningen-deel-1.md)
 

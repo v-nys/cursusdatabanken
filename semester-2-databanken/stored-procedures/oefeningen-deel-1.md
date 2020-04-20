@@ -32,4 +32,6 @@ Er verschijnt niets op het scherm wanneer je de stored procedure oproept. Je zou
 Tip: je kan niet meer zien hoe veel lidmaatschappen verwijderd zijn als ze al weg zijn, dus hou eerst de waarde bij en verwijder dan pas de lidmaatschappen...
 
 ## Vraag 4
-Een handige toepassing van stored procedures is 
+Schrijf een stored procedure, `CreateAndReleaseAlbum`. Deze maakt een nieuw album aan en koppelt het meteen aan een artiest door ook een record toe te voegen aan `AlbumReleases`.
+
+Deze procedure heeft twee parameters: een parameter `titel` voor de titel (van type `VARCHAR(100)`) en een parameter `bands_Id` (van type `INT`). Ze levert geen output en je het is mogelijk dat meerdere personen tegelijkertijd gebruik maken van de database.
