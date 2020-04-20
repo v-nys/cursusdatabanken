@@ -30,7 +30,7 @@ Binnen MySQL kiezen we binnen de sectie "Stored Procedures" via de rechtermuiskn
 ![](../../.gitbook/assets/storedp2.jpg)
 
 ```sql
-DELIMITER $$ -- betekent dat een instructie pas mag uitgevoerd worden na $$ i.p.v. ;
+DELIMITER $$ -- betekent dat een statement pas afgesloten is na $$ i.p.v. ;
 USE `aptunes`$$ -- we willen de procedure koppelen aan deze database
 CREATE PROCEDURE `GetMuzikanten` ()
 BEGIN

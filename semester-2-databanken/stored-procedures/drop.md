@@ -6,7 +6,7 @@ Met dit statement verwijder je de stored procedure uit de database.
 DROP PROCEDURE [IF EXISTS] storedprocedure_name;
 ```
 
-Het is aan te raden om het `IF EXIST` onderdeel in te bouwen, gezien indien de stored procedure niet zou bestaan, er een error wordt gegenereerd. 
+Het is aan te raden om het `IF EXISTS` onderdeel in te bouwen, gezien indien de stored procedure niet zou bestaan, er een error wordt gegenereerd. 
 
 Verwijzende naar de aangemaakte stored procedure binnen het onderdeel CREATE, hieronder voor de volledigheid dit statement opnieuw.
 
@@ -15,13 +15,13 @@ DELIMITER $$
 USE `aptunes`$$
 CREATE PROCEDURE `GetMuzikanten` ()
 BEGIN
-	SELECT 
-		  Voornaam,
-		Familienaam,
-		Geboortedatum
-	FROM 
-		  muzikanten
-	ORDER BY 1,2,3;
+    SELECT 
+        Voornaam,
+        Familienaam,
+        Geboortedatum
+    FROM 
+        Muzikanten
+    ORDER BY 1,2,3;
 END$$
 
 DELIMITER ;
