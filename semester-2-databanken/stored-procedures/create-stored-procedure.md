@@ -6,11 +6,12 @@ Wanneer we onderstaand sql-statement uitvoeren, krijgen we de inhoud van de tabe
 
 ```sql
 SELECT 
-	  Voornaam,
+    Voornaam,
     Familienaam,
     Geboortedatum
 FROM 
-	  muzikanten
+    Muzikanten
+-- onderstaande syntax is verkorte notatie voor kolom 1, kolom 2, kolom 3
 ORDER BY 1,2,3;
 ```
 
@@ -18,38 +19,38 @@ Resultaat:
 
 ![](../../.gitbook/assets/storedp1.JPG)
 
+Mogelijk willen we deze opdracht wel vaker uitvoeren, of willen we een bepaalde gebruiker toestaan deze opdracht uit te voeren maar niets anders. Eén optie zou zijn om een view te creëren. Een tweede optie is om hier een stored procedure van te maken.
+
 ## CREATE PROCEDURE
 
 Als we van bovenstaand sql-statement een stored procedure maken die we ten alle tijde kunnen aanroepen, doen we dit als volgt.
 
-Binnen MySQL kiezen we binnen de sectie "Stored Procedures" via de rechtermuisknop voor "Create Stored Procedure".
+Binnen MySQL kiezen we binnen de sectie "Stored Procedures" via de rechtermuisknop voor "Create Stored Procedure". Daarna vullen we aan tot we dit hebben (bij de deeltjes over de "delimiter" staat uitleg in commentaar, maar we leggen iets verderop uit wat dit precies betekent):
 
 ![](../../.gitbook/assets/storedp2.jpg)
 
 ```sql
-DELIMITER $$
-USE `aptunes`$$
+DELIMITER $$ -- betekent dat een instructie pas mag uitgevoerd worden na $$ i.p.v. ;
+USE `aptunes`$$ -- we willen de procedure koppelen aan deze database
 CREATE PROCEDURE `GetMuzikanten` ()
 BEGIN
-	SELECT 
-		  Voornaam,
-		Familienaam,
-		Geboortedatum
-	FROM 
-		  muzikanten
-	ORDER BY 1,2,3;
-END$$
+    SELECT 
+        Voornaam,
+        Familienaam,
+        Geboortedatum
+    FROM 
+        Muzikanten
+    ORDER BY 1,2,3; -- deze ; betekent niet dat de instructie mag uitgevoerd worden! ze is deel van de procedure
+END$$ -- nu mag de CREATE PROCEDURE pas worden uitgevoerd
 
-DELIMITER ;
+DELIMITER ; -- vanaf hier betekent ; weer dat een instructie mag worden uitgevoerd
 ```
 
-U voert bovenstaande sql-code toe en kiest vervolgens voor "Apply"
-
-![](../../.gitbook/assets/storedp3.jpg)
+U voert bovenstaande sql-code toe en kiest vervolgens voor de knop "Apply" (rechts onderaan)
 
 Wat we nu hebben gedaan is louter een stored procedure gecreëerd onder de naam `GetMuzikanten`.
 
-Om deze stored procedure aan te roepen gebruiken we het `CALL` statement.
+Om deze stored procedure aan te roepen gebruiken we het `CALL` statement. Dit komt op hetzelfde neer als het oproepen van een methode in een "general purpose" programmeertaal zoals C♯ of Java.
 
 ```sql
 CALL GetMuzikanten();
@@ -57,11 +58,11 @@ CALL GetMuzikanten();
 
 U zal zien dat hetzelfde resultaat wordt weergegeven als bij het gewone sql-statement hierboven.
 
-Als u dezelfde stored procedure in dezelfde sessie opnieuw aanroept, voert MySQL de stored procedure gewoon uit vanuit de cache zonder deze opnieuw te hoeven compileren.
+Als u dezelfde stored procedure in dezelfde sessie opnieuw aanroept, voert MySQL de stored procedure gewoon uit vanuit de cache zonder deze opnieuw te hoeven compileren. Met andere woorden: MySQL hoeft niet opnieuw uit te dokteren wat de efficiëntste manier is om je je resultaten te tonen.
 
-Een stored procedure kan parameters hebben, zodat u er waarden aan kunt doorgeven.U kunt bijvoorbeeld een stored procedure hebben die muzikanten per geboortedatum weergeeft. In dit geval is de geboortedatum dan de parameters van de stored procedure.
+Tot hiertoe lijkt een stored procedure erg op een view, maar dat is omdat we `SELECT` gebruikt hebben ter illustratie. Met een stored procedure kan je heel algemene taken voorstellen. Een stored procedure kan ook parameters hebben, zodat u er waarden aan kunt doorgeven. U kunt bijvoorbeeld een stored procedure hebben die muzikanten met een specifieke geboortedatum weergeeft, die wordt ingevuld door de gebruiker. In dit geval is de geboortedatum dan de parameters van de stored procedure.
 
-Tevens kan een stored procedure controlemechanismen bevatten, zoals IF, CASE en LOOP. Dit komt verder nog aan bod.
+Tevens kan een stored procedure controlemechanismen bevatten, zoals IF, CASE en LOOP. Dit komt verder nog aan bod, maar erg veel van wat je leert in een cursus programmeren komt terug in stored procedures.
 
 ## STORED PROCEDURE AANPASSEN
 
@@ -72,9 +73,7 @@ Meest eenvoudige is om binnen MySQL Workbench rechts te klikken op de stored pro
 Nu krijg je opnieuw de definitie van de stored procedure en kan je wijzigen aanbrengen.  
 Als je klaar bent, klik je op "apply".
 
-![](../../.gitbook/assets/sp_alter2.jpg)
-
-MySQL Workbech zal het review venster openen.
+MySQL Workbench zal het review venster openen. (Hieronder getoond voor een andere procedure)
 
 ![](../../.gitbook/assets/sp_alter3.jpg)
 
