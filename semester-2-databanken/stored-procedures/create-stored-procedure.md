@@ -25,9 +25,23 @@ Mogelijk willen we deze opdracht wel vaker uitvoeren, of willen we een bepaalde 
 
 Als we van bovenstaand sql-statement een stored procedure maken die we ten alle tijde kunnen aanroepen, doen we dit als volgt.
 
-Binnen MySQL kiezen we binnen de sectie "Stored Procedures" via de rechtermuisknop voor "Create Stored Procedure". Daarna vullen we aan tot we dit hebben (bij de deeltjes over de "delimiter" staat uitleg in commentaar, maar we leggen iets verderop uit wat dit precies betekent):
+Binnen MySQL kiezen we binnen de sectie "Stored Procedures" via de rechtermuisknop voor "Create Stored Procedure". Daarna vullen we aan tot we dit hebben:
 
 ![](../../.gitbook/assets/storedp2.jpg)
+
+```sql
+CREATE PROCEDURE `GetMuzikanten` ()
+BEGIN
+    SELECT 
+        Voornaam,
+        Familienaam,
+        Geboortedatum
+    FROM 
+        Muzikanten
+    ORDER BY 1,2,3; -- deze ; betekent niet dat de instructie mag uitgevoerd worden! ze is deel van de procedure
+END
+```
+Dit genereert dan code die je als script zou kunnen uitvoeren. De uitvoer zal zijn (de betekenis van de gegenereerde extra's komt verderop aan bod):
 
 ```sql
 DELIMITER $$ -- betekent dat een statement pas afgesloten is na $$ i.p.v. ;
