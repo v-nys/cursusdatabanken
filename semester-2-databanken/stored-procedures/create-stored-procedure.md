@@ -41,7 +41,8 @@ BEGIN
     ORDER BY 1,2,3; -- deze ; betekent niet dat de instructie mag uitgevoerd worden! ze is deel van de procedure
 END
 ```
-Dit genereert dan code die je als script zou kunnen uitvoeren. De uitvoer zal zijn (de betekenis van de gegenereerde extra's komt verderop aan bod):
+
+Dan klik je op "Apply". Dit genereert dan code die je als script zou kunnen uitvoeren. De uitvoer zal zijn (de betekenis van de gegenereerde extra's komt verderop aan bod):
 
 ```sql
 DELIMITER $$ -- betekent dat een statement pas afgesloten is na $$ i.p.v. ;
@@ -60,9 +61,7 @@ END$$ -- nu mag de CREATE PROCEDURE pas worden uitgevoerd
 DELIMITER ; -- vanaf hier betekent ; weer dat een instructie mag worden uitgevoerd
 ```
 
-U voert bovenstaande sql-code toe en kiest vervolgens voor de knop "Apply" (rechts onderaan)
-
-Wat we nu hebben gedaan is louter een stored procedure gecreëerd onder de naam `GetMuzikanten`.
+Wat we nu hebben gedaan is een stored procedure creëren onder de naam `GetMuzikanten`.
 
 Om deze stored procedure aan te roepen gebruiken we het `CALL` statement. Dit komt op hetzelfde neer als het oproepen van een methode in een "general purpose" programmeertaal zoals C♯ of Java.
 
