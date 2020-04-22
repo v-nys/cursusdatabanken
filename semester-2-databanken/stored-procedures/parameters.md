@@ -8,19 +8,20 @@ Er zijn drie mogelijkheden, nl. `IN`, `OUT` en `INOUT`.
 
 Dit is de standaard.
 
-Net zoals bij methoden binnen een programmeertaal dient een argument worden meegegeven wanneer een stored procedure wordt aangeroepen die één of meerdere parameters verwacht. 
+Net zoals bij methoden binnen een programmeertaal dient een argument worden meegegeven wanneer een stored procedure wordt aangeroepen die één of meerdere parameters verwacht.
 
 IN betekent dat de waarde die als argument via een andere variabele wordt doorgegeven, niet wijzigt buiten de stored procedure. Enkel binnen de stored procedure kan de waarde van de parameter worden aangepast. Dit stemt overeen met een "call by value" in een algemene programmeertaal.
 
 ### OUT parameters
 
-Zoals al doet vermoeden kan de waarde van een OUT-parameter wel binnen de opgeslagen procedure worden gewijzigd. Deze waarde kan dan worden doorgegeven aan het programma dat de stored procedure heeft opgeroepen. 
+Zoals al doet vermoeden kan de waarde van een OUT-parameter wel binnen de opgeslagen procedure worden gewijzigd. Deze waarde kan dan worden doorgegeven aan het programma dat de stored procedure heeft opgeroepen.
 
 In tegenstelling tot de `IN parameter`, kan je geen waarde meegeven voor een `OUT` parameter. Alleen de stored procedure kan er zelf een waarde voor invullen, die je dan kan lezen nadat de de stored procedure is afgelopen.
 
-Zelfs als je een cursus programmeren hebt gevolgd, is het mogelijk dat je dit niet meteen herkent. De meeste programmeertalen gebruiken `return` om een resultaat terug te geven. Sommige (vaak oudere) programmeertalen gebruiken wel out parameters.
+Zelfs als je een cursus programmeren hebt gevolgd, is het mogelijk dat je dit niet meteen herkent. De meeste programmeertalen gebruiken `return` om een resultaat terug te geven. Sommige \(vaak oudere\) programmeertalen gebruiken wel out parameters.
 
 ### INOUT parameters
+
 Dit betreft de combinatie van de `IN parameter` en de `OUT parameter`. Dus zowel bij de start kan de inhoud worden bepaald en de stored procedure kan deze bij uitvoering ook aanpassen.
 
 ## VOORBEELDEN
@@ -68,7 +69,7 @@ Als we deze stored procedure oproepen moeten we voor wat de `OUT-parameter` in h
 
 ![](../../.gitbook/assets/out.JPG)
 
-Het is niet nodig om de `OUT-parameter` aan te roepen door dezelfde benaming te gebruiken, je had in bovenstaand voorbeeld perfect @totaal (met twee `a`'s) kunnen gebruiken. Ook dit is hetzelfde als in algemene programmeertalen: als een parameter van een functie bijvoorbeeld `name` heet, mag jij als argument een variabele `naam` invullen.
+Het is niet nodig om de `OUT-parameter` aan te roepen door dezelfde benaming te gebruiken, je had in bovenstaand voorbeeld perfect @totaal \(met twee `a`'s\) kunnen gebruiken. Ook dit is hetzelfde als in algemene programmeertalen: als een parameter van een functie bijvoorbeeld `name` heet, mag jij als argument een variabele `naam` invullen.
 
 ### INOUT
 
