@@ -6,7 +6,7 @@ Binnen een stored procedure is het mogelijk om variabelen te declareren die dan 
 
 ## DECLARE
 
-Een variabele declareer je als volg.
+Een variabele declareer je als volgt.
 
 ```sql
 DECLARE naam_variabele datatype(grootte) [DEFAULT default_waarde];
@@ -17,6 +17,10 @@ De verschillende datatypes kan je vinden op:
 {% embed url="https://dev.mysql.com/doc/refman/8.0/en/data-types.html" %}
 
 Dit zijn dezelfde types die je koppelt aan een kolom, bv. `INT`, `DATE`, enz.
+
+{% hint style="warning" %}
+Je kan een variabele **alleen** declareren vlak na een `BEGIN` (of na declaratie van een andere variabele). Dat is geen probleem, want je kan hem wel nog van waarde veranderen na andere statements.
+{% endhint %}
 
 ## SCOPE
 
