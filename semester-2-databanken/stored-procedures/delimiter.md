@@ -1,12 +1,12 @@
 # DELIMITER
 
-Sql statements worden normaal afgesloten door een puntkomma \(;\). 
+Sql statements worden normaal afgesloten door een puntkomma \(;\).
 
 M.a.w. worden alle sql statements die door een puntkomma van elkaar worden gescheiden afzonderlijk uitgevoerd.
 
 Bij een stored procedure is de situatie lichtjes verschillend. Als de definitie van een stored procedure die een puntkomma bevat, betekent dat niet dat de definitie af is. We willen dat de stored procedure pas gedefinieerd wordt als we dat toelaten.
 
-Dat is de reden waarom de zgn. delimiter (de string die het einde van een instructie aanduidt) bij stored procedures opnieuw wordt bepaald. Dit zorgt er dan voor dat de stored procedure als één geheel aan de server kan doorgegeven worden.
+Dat is de reden waarom de zgn. delimiter \(de string die het einde van een instructie aanduidt\) bij stored procedures opnieuw wordt bepaald. Dit zorgt er dan voor dat de stored procedure als één geheel aan de server kan doorgegeven worden.
 
 Om de delimiter te wijzigen, gebruiken we het keyword `DELIMITER`. Het gebruikte karakter mag bestaan uit één karakter of meerdere, bv. `//` of `$$`.
 
@@ -14,12 +14,12 @@ Een stored procedure bevat meestal meerdere statements die door puntkomma's van 
 
 ```sql
 DELIMITER $$
- 
+
 CREATE PROCEDURE storedprocedure_name()
 BEGIN
   -- statements die gescheiden worden door ;
 END $$
- 
+
 DELIMITER ;
 ```
 

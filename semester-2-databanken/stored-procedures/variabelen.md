@@ -1,6 +1,6 @@
 # VARIABELEN
 
-Een variabele heeft als bedoeling data tijdelijk te bewaren. 
+Een variabele heeft als bedoeling data tijdelijk te bewaren.
 
 Binnen een stored procedure is het mogelijk om variabelen te declareren die dan binnen deze stored procedure kunnen gebruikt worden.
 
@@ -14,7 +14,7 @@ DECLARE naam_variabele datatype(grootte) [DEFAULT default_waarde];
 
 De verschillende datatypes kan je vinden op:
 
-{% embed url="https://dev.mysql.com/doc/refman/8.0/en/data-types.html" %}
+{% embed url="https://dev.mysql.com/doc/refman/8.0/en/data-types.html" caption="" %}
 
 Dit zijn dezelfde types die je koppelt aan een kolom, bv. `INT`, `DATE`, enz.
 
@@ -50,4 +50,5 @@ END$$
 DELIMITER ;
 ```
 
-Hierbij declareren we een (lokale) INT variabele totalLidmaatschap, dewelke we dan een waarde geven met het uitvoeren van het SQL-statement, waarna de inhoud van deze variabele via de tweede `SELECT` wordt geselecteerd. Je hebt de variabele niet nodig voor deze taak, maar het voorbeeld toont de syntax.
+Hierbij declareren we een \(lokale\) INT variabele totalLidmaatschap, dewelke we dan een waarde geven met het uitvoeren van het SQL-statement, waarna de inhoud van deze variabele via de tweede `SELECT` wordt geselecteerd. Je hebt de variabele niet nodig voor deze taak, maar het voorbeeld toont de syntax.
+

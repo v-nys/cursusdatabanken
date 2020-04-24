@@ -42,7 +42,7 @@ BEGIN
 END
 ```
 
-Dan klik je op "Apply". Dit genereert dan code die je als script zou kunnen uitvoeren. De uitvoer zal zijn (de betekenis van de gegenereerde extra's komt verderop aan bod):
+Dan klik je op "Apply". Dit genereert dan code die je als script zou kunnen uitvoeren. De uitvoer zal zijn \(de betekenis van de gegenereerde extra's komt verderop aan bod\):
 
 ```sql
 DELIMITER $$ -- betekent dat een statement pas afgesloten is na $$ i.p.v. ;
@@ -86,7 +86,7 @@ Meest eenvoudige is om binnen MySQL Workbench rechts te klikken op de stored pro
 Nu krijg je opnieuw de definitie van de stored procedure en kan je wijzigen aanbrengen.  
 Als je klaar bent, klik je op "apply".
 
-MySQL Workbench zal het review venster openen. (Hieronder getoond voor een andere procedure)
+MySQL Workbench zal het review venster openen. \(Hieronder getoond voor een andere procedure\)
 
 ![](../../.gitbook/assets/sp_alter3.jpg)
 
