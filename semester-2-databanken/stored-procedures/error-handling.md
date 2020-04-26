@@ -121,5 +121,52 @@ We voeren dezelfde `CALL` opnieuw uit en krijgen dan:
 
 ### Handler volgorde
 
+Ingeval er verschillende `HANDLERS` zijn gedefinieerd die dezelfde `ERROR` afhandelen, dan zal MySQL de `HANDLER` uitvoeren die het meest aansluit bij de error op basis van onderstaande volgorde:
+
+1. Je hebt gebruik gemaakt van een `ERROR`-code \(zie voorbeeld hierboven\);
+2. Je maakt gebruik van een `SQLSTATE`, maar dit kan resulteren in meerdere error codes waardoor deze manier minder specifiek is;
+3. Je gebruikt `SQLEXCEPTION` of `SQLWARNING` voor de `SQLSTATE` waarde. Dit is de meest generieke manier.
+
+Als we dit toepassen op het gegeven voorbeeld, dan krijgen we hetvolgende.
+
+```sql
+USE `aptunes`;
+DROP procedure IF EXISTS `InsertAlbumReleases`;
+
+DELIMITER $$
+USE `aptunes`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertAlbumReleases`(
+	IN inBands_Id INT,
+  IN inAlbums_Id INT)
+BEGIN
+  DECLARE EXIT HANDLER FOR 1062 SELECT '1. Dubbele waarde niet toegestaan' Message; 
+  DECLARE EXIT HANDLER FOR SQLEXCEPTION SELECT '2. SQLException' Message; 
+  DECLARE EXIT HANDLER FOR SQLSTATE '23000' SELECT '3. SQLSTATE 23000' ErrorCode;
+	
+	INSERT INTO albumreleases(Bands_Id,Albums_Id)
+  VALUES(inBands_id,inAlbums_Id);
+    
+  SELECT COUNT(*)
+  FROM albumreleases
+  WHERE Bands_Id = inBands_Id;
+END$$
+
+DELIMITER ;
+```
+
+Als we dan volgende CALL uitvoeren, krijgen we onderliggend resultaat.
+
+```sql
+CALL InsertAlbumReleases(1,1);
+```
+
+![](../../.gitbook/assets/sp_errorhandling3.JPG)
+
+Je merkt op dat de eerste handler werd uitgevoerd en dit omdat de error 1062 exact aansluit bij de exception.
+
+
+
+
+
 
 
