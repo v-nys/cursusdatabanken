@@ -19,7 +19,7 @@ De verschillende datatypes kan je vinden op:
 Dit zijn dezelfde types die je koppelt aan een kolom, bv. `INT`, `DATE`, enz.
 
 {% hint style="warning" %}
-Je kan een variabele **alleen** declareren vlak na een `BEGIN` (of na declaratie van een andere variabele). Dat is geen probleem, want je kan hem wel nog van waarde veranderen na andere statements.
+Je kan een variabele **alleen** declareren vlak na een `BEGIN` \(of na declaratie van een andere variabele\). Dat is geen probleem, want je kan hem wel nog van waarde veranderen na andere statements.
 {% endhint %}
 
 ## SCOPE

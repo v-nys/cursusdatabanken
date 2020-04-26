@@ -31,9 +31,95 @@ DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
 SET heeftError = 1;
 ```
 
+Als we een boodschap willen weergeven wanneer er zich een error voordoet dan kan dit met onderstaand voorbeeld waarbij tevens een `ROLLBACK` wordt uitgevoerd, waardoor alle mogelijke wijzigingen die de stored procedure zou hebben uitgevoerd teniet worden gedaan. Hierbij is het wel belangrijk om de  handler binnen de `BEGIN` en `END` van de stored procedure te schrijven, enkel dan zal de stored procedure worden gestopt wanneer er zich een error voordoet.
 
+```sql
+CREATE PROCEDURE spNaam()
+spLabel: BEGIN
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+        ROLLBACK;
+        SELECT 'Error: stored procdure is beëindigd en alle wijzigingen zijn ongedaan gemaakt.';
+    END;
+    -- vervolg van de sp...
+END$$
+```
 
+Je kan ook handlers voor specifieke statements of error-codes schrijven, hieronder enkele voorbeelden.
 
+Deze voorbeelden zijn allemaal met de `CONTINUE` optie, maar kan evengoed met de `EXIT` mogelijkheid worden geschreven.
+
+```sql
+DECLARE CONTINUE HANDLER FOR 1051
+```
+
+```sql
+DECLARE CONTINUE HANDLER FOR SQLSTATE '123AB'
+```
+
+```sql
+DECLARE CONTINUE HANDLER FOR SQLWARNING
+```
+
+```sql
+DECLARE CONTINUE HANDLER FOR NOT FOUND
+```
+
+```sql
+DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
+```
+
+### Uitgewerkt voorbeeld
+
+We werken voor dit voorbeeld met de tabel `albumreleases` binnen onze voorbeelddatabase aptunes. 
+
+![](../../.gitbook/assets/sp_errorhandling1.JPG)
+
+```sql
+USE `aptunes`;
+DROP procedure IF EXISTS `InsertAlbumReleases`;
+
+DELIMITER $$
+USE `aptunes`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertAlbumReleases`(
+	IN inBands_Id INT,
+  IN inAlbums_Id INT)
+BEGIN
+	DECLARE EXIT HANDLER FOR 1062
+  BEGIN
+		SELECT CONCAT('Dubbele waarde (',inBands_Id,',',inAlbums_Id,') niet toegestaan') AS message;
+  END;
+
+	INSERT INTO albumreleases(Bands_Id,Albums_Id)
+  VALUES(inBands_id,inAlbums_Id);
+    
+  SELECT COUNT(*)
+  FROM albumreleases
+  WHERE Bands_Id = inBands_Id;
+END$$
+
+DELIMITER ;
+```
+
+Bovenstaande stored procedure zal ingeval een dubbele waarde zou worden ingegeven, ttz. hetzelfde band\_id en album\_id, de boodschap geven dat dit niet is toegestaan.
+
+In het andere geval zal het aantal albums voor een band\_id worden weergegeven.
+
+**Uitvoering**
+
+We voeren onderstaande `CALL` uit.
+
+```sql
+CALL InsertAlbumReleases(1,1);
+```
+
+En krijgen als resultaat het cijfer 1 van de `COUNT(*)` terug.
+
+We voeren dezelfde `CALL` opnieuw uit en krijgen dan:
+
+![](../../.gitbook/assets/sp_errorhandling2.JPG)
+
+### Handler volgorde
 
 
 
