@@ -134,5 +134,7 @@
   * [LEAVE](semester-2-databanken/stored-procedures/leave.md)
   * [ERROR HANDLING](semester-2-databanken/stored-procedures/error-handling.md)
   * [SIGNAL/RESIGNAL](semester-2-databanken/stored-procedures/signal-resignal.md)
+  * [CURSORS](semester-2-databanken/stored-procedures/cursors.md)
+  * [ACCESS CONTROL](semester-2-databanken/stored-procedures/access-control.md)
   * [Oefeningen deel 1](semester-2-databanken/stored-procedures/oefeningen-deel-1.md)
 
