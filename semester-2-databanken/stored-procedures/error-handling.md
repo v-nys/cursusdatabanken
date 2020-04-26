@@ -69,6 +69,8 @@ DECLARE CONTINUE HANDLER FOR NOT FOUND
 DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
 ```
 
+Enzovoort...
+
 ## Uitgewerkt voorbeeld
 
 We werken voor dit voorbeeld met de tabel `albumreleases` binnen onze voorbeelddatabase aptunes. 

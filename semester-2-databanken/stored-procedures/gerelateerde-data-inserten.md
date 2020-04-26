@@ -1,4 +1,4 @@
-# Gerelateerde data inserten
+# GERELATEERDE DATA INSERTEN
 
 Stored procedures komen erg van pas als we werken met verschillende records tegelijk die op een bepaalde manier verwant zijn. Bijvoorbeeld als we een nieuwe band toevoegen aan ons databasesysteem. Elke band heeft namelijk leden, dus we gaan minstens één lidmaatschap moeten toevoegen.
 

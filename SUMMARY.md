@@ -125,7 +125,7 @@
   * [DELIMITER](semester-2-databanken/stored-procedures/delimiter.md)
   * [VARIABELEN](semester-2-databanken/stored-procedures/variabelen.md)
   * [PARAMETERS](semester-2-databanken/stored-procedures/parameters.md)
-  * [Gerelateerde data inserten](semester-2-databanken/stored-procedures/gerelateerde-data-inserten.md)
+  * [GERELATEERDE DATA INSERTEN](semester-2-databanken/stored-procedures/gerelateerde-data-inserten.md)
   * [IF -THEN-ELSE-ELSEIF](semester-2-databanken/stored-procedures/if-then.md)
   * [CASE](semester-2-databanken/stored-procedures/case.md)
   * [LOOP](semester-2-databanken/stored-procedures/loop.md)
