@@ -6,7 +6,7 @@ Dit gepast reageren kan zijn van verder te gaan of het huidige blok code niet me
 
 Hieronder wordt het gebruik van handlers summier uitgelegd.
 
-### Declare handler
+## Declare handler
 
 **Syntax**
 
@@ -69,7 +69,7 @@ DECLARE CONTINUE HANDLER FOR NOT FOUND
 DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
 ```
 
-### Uitgewerkt voorbeeld
+## Uitgewerkt voorbeeld
 
 We werken voor dit voorbeeld met de tabel `albumreleases` binnen onze voorbeelddatabase aptunes. 
 
@@ -119,7 +119,7 @@ We voeren dezelfde `CALL` opnieuw uit en krijgen dan:
 
 ![](../../.gitbook/assets/sp_errorhandling2.JPG)
 
-### Handler volgorde
+## Handler volgorde
 
 Ingeval er verschillende `HANDLERS` zijn gedefinieerd die dezelfde `ERROR` afhandelen, dan zal MySQL de `HANDLER` uitvoeren die het meest aansluit bij de error op basis van onderstaande volgorde:
 
@@ -164,9 +164,41 @@ CALL InsertAlbumReleases(1,1);
 
 Je merkt op dat de eerste handler werd uitgevoerd en dit omdat de error 1062 exact aansluit bij de exception.
 
+## Named handler
 
+Zoals we in bovenstaande voorbeelden hebben gezien, gebruiken we error code 1062. Dit staat voor een "duplicate entry for key".
 
+Het is waarschijnlijk minder goed verstaanbaar om een error-nummer te gebruiken en daardoor kunnen we de handler best een meer beschrijvende naam geven.
 
+```sql
+USE `aptunes`;
+DROP procedure IF EXISTS `InsertAlbumReleases`;
 
+DELIMITER $$
+USE `aptunes`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertAlbumReleases`(
+	IN inBands_Id INT,
+  IN inAlbums_Id INT)
+BEGIN
+	DECLARE DubbeleWaarde CONDITION FOR 1062;
+    
+  DECLARE EXIT HANDLER FOR DubbeleWaarde
+  BEGIN
+		SELECT CONCAT('Dubbele waarde (',inBands_Id,',',inAlbums_Id,') niet toegestaan') AS message;
+  END;
 
+	INSERT INTO albumreleases(Bands_Id,Albums_Id)
+  VALUES(inBands_id,inAlbums_Id);
+    
+  SELECT COUNT(*)
+  FROM albumreleases
+  WHERE Bands_Id = inBands_Id;
+END$$
+
+DELIMITER ;
+```
+
+Zoals we zien, hebben we een `CONDITIE` gedeclareerd voor error code 1062. 
+
+Nadien gebruiken we voor de `EXIT HANDLER` de verwijzing naar deze `CONDITIE`.
 
