@@ -10,6 +10,8 @@ Een herhaling dient, zoals het woord doet veronderstellen, dat code of statement
 END LOOP
 ```
 
+Merk op dat er geen loopconditie aanwezig is. Om de lus te verlaten, schirjf je `LEAVE`, gevolgd door de benaming van de lus die je wil verlaten.
+
 Hieronder een simpel voorbeeld van een stored procedure dewelke als input parameter een aantal wil kennen en het resultaat is dan louter een opsomming van nummers + 1 tot aantal is bereikt.
 
 ```sql

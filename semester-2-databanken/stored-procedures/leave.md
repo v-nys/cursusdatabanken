@@ -2,7 +2,7 @@
 
 Met dit commando kunnen we stored procedure verlaten.
 
-Als we een label aan een herhalingsstructuur geven, kunnen we ook enkel de lus verlaten \(zie verder\).
+Als we een label (d.w.z. een benaming) aan een herhalingsstructuur geven, kunnen we met `LEAVE` ook enkel die lus verlaten.
 
 **Syntax**
 
