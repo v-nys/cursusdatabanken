@@ -1,6 +1,10 @@
 # CASE
 
-Het CASE-statement kennen we ook in programmeeromgevingen.
+Het CASE-statement kennen we ook in veel programmeeromgevingen. Soms heet het daar ook een "switch" statement. Het maakt lange reeksen van "ifs" en "elseifs" overzichtelijker.
+
+{% hint style="info" %}
+De werking is niet 100% identiek aan de switch die je misschien kent uit C\#, maar het idee is gelijkaardig. Je merkt misschien dat je hier de case niet toepast op een bepaalde waarde, wat je bij een switch wel doet.
+{% endhint %}
 
 Behalve het [`IF-THEN-ELSE-ELSEIF`](if-then.md) statement, kunnen we ook conditionele stored procedures creëren met behulp van het CASE-statement.
 
