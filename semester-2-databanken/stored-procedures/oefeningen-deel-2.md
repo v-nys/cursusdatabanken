@@ -3,13 +3,15 @@
 We werken verder met de `aptunes`-database. **Activeer deze database in elk script.** Gebruik telkens het meest specifieke parametertype dat je kan toepassen. Gebruik dus geen `INOUT` parameters als het ook met een gewone `IN` of `OUT` parameter kan.
 
 ## Extra info
+
 We zullen gebruik maken van stored procedures om testdata te genereren. In het Engels wordt hier vaak over "mock data" gesproken. Dit is erg nuttig om te experimenteren met een database. Het is ook wat wij als lectoren doen om een grote database zoals aptunes op te vullen.
 
 Deze data hoeft geen steek te houden, maar ze moet voldoende gevarieerd zijn. Daarom voeren we willekeurige waarden in. Met de functie `RAND()` kan je een willekeurig getal tussen 0 en 1 genereren. Exact 0 kan gegenereerd worden, maar exact 1 niet.
 
-Wil je een getal tussen 0 en een andere waarde (bijvoorbeeld `ANDER_GETAL`) genereren, dan schrijf je: `FLOOR(RAND() * ANDER_GETAL);`. `FLOOR` dient om naar beneden af te ronden, zodat je een `INT` verkrijgt. `ANDER_GETAL` kan dan nooit gegenereerd worden. Wil je een getal tussen 1 en `ANDER_GETAL` genereren, dan tel je er gewoon 1 bij: `FLOOR(RAND() * ANDER_GETAL) + 1`.
+Wil je een getal tussen 0 en een andere waarde \(bijvoorbeeld `ANDER_GETAL`\) genereren, dan schrijf je: `FLOOR(RAND() * ANDER_GETAL);`. `FLOOR` dient om naar beneden af te ronden, zodat je een `INT` verkrijgt. `ANDER_GETAL` kan dan nooit gegenereerd worden. Wil je een getal tussen 1 en `ANDER_GETAL` genereren, dan tel je er gewoon 1 bij: `FLOOR(RAND() * ANDER_GETAL) + 1`.
 
 ## Vraag 1
+
 Bekijk de tabel `Albumreleases`. Je zal merken dat deze nog leeg is. We zouden deze graag opvullen met geldige waarden. Deze hoeven niet overeen te stemmen met de werkelijkheid, maar de tabel bevat foreign key kolommen dus we mogen er enkel waarden in plaatsen die ergens anders een primary key vormen.
 
 We zullen hier gebruik maken van het feit dat onze primary keys getallen zijn van 1 tot het aantal records in een gegeven tabel.
@@ -21,8 +23,7 @@ Schrijf een stored procedure,`MockAlbumRelease`, die een nieuwe albumrelease zal
 3. Ze past `randomAlbumId` aan naar een willekeurige getal tussen 1 en het aantal albums en past `randomBandId` aan naar een willekeurig getal tussen 1 en het aantal bands.
 4. Als `(randomBandId,randomBandId)` nog niet voorkomt in de tabel `Albumreleases`, voegt ze deze combinatie toe door middel van een `INSERT`.
 
-Plaats enkel de definitie in het script, geen oproep. Noem het script dat voor de definitie zorgt `0644__Oefening.sql`.
-Test je procedure uit door ze enkele keren op te roepen en dan `Albumreleases` te bekijken. Na calibratie was deze tabel leeg, dus na enkele calls zouden er een paar records moeten staan.
+Plaats enkel de definitie in het script, geen oproep. Noem het script dat voor de definitie zorgt `0644__Oefening.sql`. Test je procedure uit door ze enkele keren op te roepen en dan `Albumreleases` te bekijken. Na calibratie was deze tabel leeg, dus na enkele calls zouden er een paar records moeten staan.
 
 ## Vraag 2
 

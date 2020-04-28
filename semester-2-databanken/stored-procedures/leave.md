@@ -2,7 +2,7 @@
 
 Met dit commando kunnen we stored procedure verlaten.
 
-Als we een label (d.w.z. een benaming) aan een herhalingsstructuur geven, kunnen we met `LEAVE` ook enkel die lus verlaten.
+Als we een label \(d.w.z. een benaming\) aan een herhalingsstructuur geven, kunnen we met `LEAVE` ook enkel die lus verlaten.
 
 **Syntax**
 
@@ -29,7 +29,6 @@ END$$
 `LEAVE` in combinatie met `LOOP`
 
 ```sql
-[label]: LOOP
     IF conditie THEN
         LEAVE [label];
     END IF;

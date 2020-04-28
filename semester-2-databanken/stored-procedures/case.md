@@ -35,25 +35,25 @@ DELIMITER $$
 USE `aptunes`$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `case_`(
-	IN pLiedjesId INT,
-	OUT pResult VARCHAR(30))
+    IN pLiedjesId INT,
+    OUT pResult VARCHAR(30))
 BEGIN
-	DECLARE song_length INT DEFAULT 0;
-    
-	SELECT Lengte 
-	INTO song_length
-	FROM Liedjes
-	WHERE Id = pLiedjesId;
-    
+    DECLARE song_length INT DEFAULT 0;
+
+    SELECT Lengte 
+    INTO song_length
+    FROM Liedjes
+    WHERE Id = pLiedjesId;
+
   CASE 
     WHEN song_length = 0 THEN 
       SET pResult = 'Geen duurtijd';
     WHEN song_length >= 1 AND song_length < 70 THEN
       SET pResult = 'Korte duurtijd';
-		WHEN song_length >= 70 AND song_length < 80 THEN
+        WHEN song_length >= 70 AND song_length < 80 THEN
       SET pResult = 'Normale duurtijd';
-		WHEN song_length >= 80 THEN
-			SET pResult = 'Lange duurtijd';
+        WHEN song_length >= 80 THEN
+            SET pResult = 'Lange duurtijd';
     ELSE
       SET pResult = 'Geen informatie beschikbaar';
   END CASE;    
@@ -64,13 +64,11 @@ DELIMITER ;
 
 ## VERSCHIL TUSSEN [`IF`](if-then.md) EN [`CASE`](case.md)\`\`
 
-Zowel de `IF`- als `CASE`-statements laten u toe om een blok code uit te voeren op basis van een specifieke conditie. 
+Zowel de `IF`- als `CASE`-statements laten u toe om een blok code uit te voeren op basis van een specifieke conditie.
 
-De keuze tussen `IF` of `CASE` is een kwestie van persoonlijke voorkeur. 
+De keuze tussen `IF` of `CASE` is een kwestie van persoonlijke voorkeur.
 
 * Een eenvoudig CASE-statement is meestal beter leesbaarder dan een IF-statement.
 * Het IF-statement is beter geschikt wanneer complexe constructies op basis van meerdere waarden worden opgezet. 
 * Bij het CASE-statement is het van belang dat ten minste één van de condities de waarde TRUE oplevert, anders moet je foutafhandeling gaan toepassen.  Bij het IF-statement is dit niet nodig.
-
-
 

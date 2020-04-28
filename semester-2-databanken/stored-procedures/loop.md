@@ -2,7 +2,7 @@
 
 Een herhaling dient, zoals het woord doet veronderstellen, dat code of statements een aantal keer achter elkaar kunnen uitgevoerd worden.
 
- **Syntax:**
+**Syntax:**
 
 ```sql
 [loop_benaming:] LOOP
@@ -21,21 +21,21 @@ DROP procedure IF EXISTS `loop_`;
 DELIMITER $$
 USE `aptunes`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `loop_`(
-	IN aantal INT)
+    IN aantal INT)
 BEGIN
-	DECLARE i INT DEFAULT 0;
+    DECLARE i INT DEFAULT 0;
     DECLARE tekst VARCHAR(255) DEFAULT '';
-        
+
     loop_demo:  LOOP
-		SET  i = i + 1;
+        SET  i = i + 1;
         IF  i >= aantal THEN
-			SET  tekst = CONCAT(tekst,i);
+            SET  tekst = CONCAT(tekst,i);
             LEAVE  loop_demo;
-		ELSE
-			SET  tekst = CONCAT(tekst,i,',');
+        ELSE
+            SET  tekst = CONCAT(tekst,i,',');
         END  IF;
     END LOOP;
-    
+
     SELECT tekst; 
 END$$
 
