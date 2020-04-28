@@ -137,4 +137,5 @@
   * [CURSORS](semester-2-databanken/stored-procedures/cursors.md)
   * [OBJECT ACCESS CONTROL](semester-2-databanken/stored-procedures/access-control.md)
   * [Oefeningen deel 1](semester-2-databanken/stored-procedures/oefeningen-deel-1.md)
+  * [Oefeningen deel 2](semester-2-databanken/stored-procedures/oefeningen-deel-2.md)
 
