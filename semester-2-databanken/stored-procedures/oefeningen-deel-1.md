@@ -18,7 +18,7 @@ Plaats enkel de definitie in het script, geen oproep. Noem het script dat voor d
 
 ## Vraag 2
 
-Schrijf een stored procedure, `NumberOfGenres`, die je vertelt hoe veel verschillende genres er zijn. Het aantal zal een `TINYINT` zijn.
+Schrijf een stored procedure, `NumberOfGenres`, die je vertelt hoeveel verschillende genres er zijn. Het aantal zal een `TINYINT` zijn.
 
 Je moet ze als volgt kunnen oproepen: `CALL NumberOfGenres(@Aantal)`. De procedure toont niets, maar nadat ze is uitgevoerd, moet de gebruiker `SELECT @Aantal` kunnen uitvoeren.
 
