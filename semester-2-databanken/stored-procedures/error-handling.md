@@ -36,7 +36,7 @@ Op deze manier kunnen we er voor zorgen dat onze code niet volledig blokkeert, m
 
 Als we een boodschap willen weergeven wanneer er zich een error voordoet dan kan dit met onderstaand voorbeeld waarbij tevens een `ROLLBACK` wordt uitgevoerd, waardoor alle mogelijke wijzigingen die de huidige transactie zou hebben uitgevoerd teniet worden gedaan.
 
-Hierbij is het wel belangrijk om de handler binnen de `BEGIN` en `END` van de stored procedure te schrijven. Meerbepaald: handlers mogen **alleen in stored procedures** voorkomen en **alleen na declaraties van variabelen** (of condities, maar daar gaan we niet verder op in).
+Hierbij is het wel belangrijk om de handler binnen de `BEGIN` en `END` van de stored procedure te schrijven. Meerbepaald: handlers mogen **alleen in stored procedures** voorkomen en **alleen na declaraties van variabelen** (of condities, die worden verder op deze pagina gebruikt voor named handlers).
 
 {% hint style="warning" %}
 Dit is wat verschillend van general purpose programmeertalen. In pakweg C♯, Java, C++, Python,... kan je op elk niveau van je programma fouten opvangen met een zeer gelijkaardig mechanisme.
