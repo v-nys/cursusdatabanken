@@ -32,7 +32,15 @@ DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
 SET heeftError = 1;
 ```
 
-Als we een boodschap willen weergeven wanneer er zich een error voordoet dan kan dit met onderstaand voorbeeld waarbij tevens een `ROLLBACK` wordt uitgevoerd, waardoor alle mogelijke wijzigingen die de stored procedure zou hebben uitgevoerd teniet worden gedaan. Hierbij is het wel belangrijk om de  handler binnen de `BEGIN` en `END` van de stored procedure te schrijven, enkel dan zal de stored procedure worden gestopt wanneer er zich een error voordoet.
+Op deze manier kunnen we er voor zorgen dat onze code niet volledig blokkeert, maar dat we wel nog steeds zien dat er iets is misgelopen.
+
+Als we een boodschap willen weergeven wanneer er zich een error voordoet dan kan dit met onderstaand voorbeeld waarbij tevens een `ROLLBACK` wordt uitgevoerd, waardoor alle mogelijke wijzigingen die de huidige transactie zou hebben uitgevoerd teniet worden gedaan.
+
+Hierbij is het wel belangrijk om de handler binnen de `BEGIN` en `END` van de stored procedure te schrijven. Meerbepaald: handlers mogen **alleen in stored procedures** voorkomen en **alleen na declaraties van variabelen** (of condities, maar daar gaan we niet verder op in).
+
+{% hint style="warning" %}
+Dit is wat verschillend van general purpose programmeertalen. In pakweg C♯, Java, C++, Python,... kan je op elk niveau van je programma fouten opvangen met een zeer gelijkaardig mechanisme.
+{% endhint %}
 
 ```sql
 CREATE PROCEDURE spNaam()
@@ -40,41 +48,51 @@ spLabel: BEGIN
     DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
         ROLLBACK;
-        SELECT 'Error: stored procdure is beëindigd en alle wijzigingen zijn ongedaan gemaakt.';
+        SELECT 'Error: stored procedure is beëindigd en alle wijzigingen zijn ongedaan gemaakt.';
     END;
-    -- vervolg van de sp...
+    -- START TRANSACTION is geen verplichte syntax, maar anders heeft de rollback geen zin
+    -- dan is elke instructie op zich een mini-transactie
+    START TRANSACTION;
+    -- instructies, bv. INSERT, UPDATE,...
+    -- COMMIT hoort bij START TRANSACITON
+    COMMIT;
 END$$
 ```
 
 Je kan ook handlers voor specifieke statements of error-codes schrijven, hieronder enkele voorbeelden.
 
-Deze voorbeelden zijn allemaal met de `CONTINUE` optie, maar kan evengoed met de `EXIT` mogelijkheid worden geschreven.
+Deze voorbeelden zijn allemaal met de `CONTINUE` optie, maar kan evengoed met de `EXIT` mogelijkheid worden geschreven als je wil dat je stored procedure wordt stopgezet.
 
 ```sql
+-- voor een specifieke MySQL error code (een getal)
 DECLARE CONTINUE HANDLER FOR 1051
 ```
 
 ```sql
+-- voor een SQL state (een code van 5 symbolen)
 DECLARE CONTINUE HANDLER FOR SQLSTATE '123AB'
 ```
 
 ```sql
+-- alle waarschuwingen (een groep codes)
 DECLARE CONTINUE HANDLER FOR SQLWARNING
 ```
 
 ```sql
+-- onbeschikbare data (een groep codes)
 DECLARE CONTINUE HANDLER FOR NOT FOUND
 ```
 
 ```sql
+-- alle foutmeldingen (een groep codes)
 DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
 ```
 
 Enzovoort...
 
-## Uitgewerkt voorbeeld
+## Uitgewerkt voorbeeld 1
 
-We werken voor dit voorbeeld met de tabel `albumreleases` binnen onze voorbeelddatabase aptunes. 
+We werken voor dit voorbeeld met de tabel `Albumreleases` binnen onze voorbeelddatabase `aptunes`.  We hebben de foutcodes opgezocht [in de officiële documentatie](https://dev.mysql.com/doc/refman/8.0/en/server-error-reference.html).
 
 ![](../../.gitbook/assets/sp_errorhandling1.JPG)
 
@@ -104,9 +122,9 @@ END$$
 DELIMITER ;
 ```
 
-Bovenstaande stored procedure zal ingeval een dubbele waarde zou worden ingegeven, ttz. hetzelfde band\_id en album\_id, de boodschap geven dat dit niet is toegestaan.
+Bovenstaande stored procedure zal ingeval een dubbele waarde zou worden ingegeven, ttz. hetzelfde `Bands_Id` en `Albums_Id`, de boodschap geven dat dit niet is toegestaan.
 
-In het andere geval zal het aantal albums voor een band\_id worden weergegeven.
+In het andere geval zal het aantal albums voor een `Bands_Id` worden weergegeven.
 
 **Uitvoering**
 
