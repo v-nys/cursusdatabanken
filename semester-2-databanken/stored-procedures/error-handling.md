@@ -1,10 +1,8 @@
 # ERROR HANDLING
+Indien binnen een stored procedure zich een onverwachte fout zou voordoen is het belangrijk hierop gepast te reageren. Een fout wordt aangegeven door middel van een signaal. We kunnen MySQL dus instructies geven over hoe elk signaal moet worden afgehandeld. Dit gepast reageren kan zijn van verder te gaan of het huidige blok code niet meer uit te voeren of een boodschap te geven.
 
-Indien binnen een stored procedure zich een onverwachte fout zou voordoen is het belangrijk hierop gepast te reageren. 
-
-Dit gepast reageren kan zijn van verder te gaan of het huidige blok code niet meer uit te voeren of een boodschap te geven.
-
-Hieronder wordt het gebruik van handlers summier uitgelegd.
+## Voorbeeld uit het echte leven
+In de uitleg rond signalen werd omschreven hoe je best reageert wanneer het brandalarm afgaat. Er stond een reeks stappen (maak iedereen wakker, probeer kort te blussen, loop naar buiten met de huisdieren,...). Deze reeks stappen stemt overeen met het idee van een "handler". Of, in het Nederlands, een "afhandelaar". Een manier om een probleem op te lossen of toch om de impact ervan te beperken.
 
 ## Declare handler
 
@@ -19,8 +17,11 @@ Zoals reeds blijkt uit bovenstaande syntax moet je voor actie ofwel `CONTINUE` o
 Het onderdeel statement\(s\) kan één van onderstaande elementen zijn.
 
 * MySQL-foutcode
+  * Dit is bijna hetzelfde als een SQL state, zoals die bij signals aan bod is gekomen. Een verschil is dat MySQL-foutcodes specifiek zijn voor MySQL. SQL states zijn meer compatibel met andere databases. Het tweede verschil is dat MySQL-foutcodes getallen zijn, terwijl SQL states codes van 5 tekens zijn, dus strings.
 * Een SQLSTATE-waarde, m.n. een SQLWARNING, NOTFOUND of SQLEXCEPTION-voorwaarde 
+  * SQLWARNING, NOTFOUND of SQLEXCEPTION zijn eigenlijk groepen van SQL states. SQLEXCEPTION dekt bijvoorbeeld alle SQL states die niet beginnen met `'00'`, `'01'` of `'02'`.
 * Een voorwaarde gekoppeld aan een MySQL-foutcode of SQLSTATE-waarde.
+  * Dit staat toe nog specifieker te werken dan per error code, maar wij behandelen het hier niet. Weet alleen dat het kan (bijvoorbeeld enkel SQL states `'45000'` die afkomstig zijn uit de tabel `Albums`).
 
 **Hieronder enkele voorbeelden.**
 
