@@ -228,7 +228,7 @@ Via de instructie `ROLLBACK` kan je voorlopige wijzigingen ongedaan maken. Dit k
 
 Voer zelf de voorbeelden mee uit om te zien wat er gebeurt.
 
-### Voorbeeld 1
+### Voorbeeld 1 (hoe het moet)
 
 Onderstaande code start uitdrukkelijk een transactie en de handler bevat een `ROLLBACK`. Tijdens de transactie doet zich een fout voor die afgehandeld kan worden door de handler:
 
@@ -253,7 +253,7 @@ END$$
 
 Voer de code uit om de procedure te creëren. Kijk welke genres momenteel in je database zitten. Voer vervolgens een `CALL` van deze procedure uit. Het resultaat? Er is geen nieuwe genre toegevoegd aan het systeem. De `INSERT` is wel uitgevoerd, maar alleen op een voorlopige wijze. De `COMMIT` is niet bereikt en er heeft zich een `ROLLBACK` voorgedaan, dus de wijziging is niet definitief gemaakt.
 
-### Voorbeeld 2
+### Voorbeeld 2 (hoe het niet moet)
 
 ```sql
 use aptunes;
@@ -274,7 +274,7 @@ END$$
 
 Als je deze procedure definieert en oproept, zie je dat het nieuwe genre **wel** is toegevoegd. Dat komt omdat je geen transactie hebt gestart. Als je dat niet doet, is **elk statement** standaard definitief. **Stored procedures vormen niet vanzelf een transactie**.
 
-### Voorbeeld 3
+### Voorbeeld 3 (hoe het niet moet)
 Verwijder eerst even zelf het nieuwe genre en gebruik dan volgende procedure:
 
 ```sql
@@ -291,7 +291,7 @@ END$$
 
 Hier hebben we de handler weggelaten ten opzichte van het vorige voorbeeld. Omdat in het vorige voorbeeld de `INSERT` niet ongedaan werd gemaakt, gebeurt dat hier zeker niet. Er is niet eens een rollback (die in het vorige voorbeeld dus al niets deed). Wat wel anders is: hier is geen handler. Dus de fout wordt niet afgehandeld binnen de stored procedure en levert een "klassieke" fout in je MySQL Workbench.
 
-### Voorbeeld 4
+### Voorbeeld 4 (om voor op te letten)
 Volgend voorbeeld is **geen** stored procedure:
 
 ```sql
