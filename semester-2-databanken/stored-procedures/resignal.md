@@ -1,11 +1,13 @@
 # RESIGNAL
 
-Met dit statement kan je een fout (gedeeltelijk) afhandelen, maar toch de omringende omgeving op de hoogte brengen van wat zich heeft voorgedaan.
+Met dit statement kan je een fout (gedeeltelijk) afhandelen, maar toch de omringende omgeving op de hoogte brengen van wat zich heeft voorgedaan. Vergelijk het met de lector die een vraag krijgt van een student en deze niet volledig kan afhandelen. Hij onderneemt een aantal stappen, maar brengt uiteindelijk de vakgroepcoördinator op de hoogte. Die kan eventueel zelfs het opleidingshoofd op de hoogte brengen. Een fout kan dus steeds "naar boven" doorgegeven worden.
 
-Dit statement is gelijkaardig aan het `SIGNAL`-statement, behalve:
+Ee ander voorbeeld is een telefoontje naar de helpdesk. Typisch kan de persoon aan de telefoon je helpen. Als dat niet zo is, belt die naar een technische dienst of ombudsman. Indien het om een zeer ernstige klacht gaat, wordt ze doorgegeven aan management,...
 
-* `RESIGNAL` kan je enkel gebruiken binnen een error of warning handler \(`SIGNAL` daarentegen kan je eender waar gebruiken\)
-* Je kan alle attributen weglaten, zelfs de `SQLSTATE`
+Het `RESIGNAL`-statement (dat een signaal "doorgeeft") is gelijkaardig aan het `SIGNAL`-statement, behalve:
+
+* `RESIGNAL` kan je enkel gebruiken binnen een handler \(`SIGNAL` daarentegen kan je eender waar gebruiken\)
+* Je kan alle attributen aanpassen of weglaten, zelfs de `SQLSTATE`
 
 Hieronder een voorbeeld.
 
@@ -24,6 +26,7 @@ DECLARE DubbeleWaarde CONDITION FOR 1062;
     DECLARE EXIT HANDLER FOR DubbeleWaarde 
     BEGIN
 		SELECT CONCAT('Dubbele waarde (',inBands_Id,',',inAlbums_Id,') niet toegestaan') AS message;
+	-- aanpassing van een attribuut
         RESIGNAL SET MESSAGE_TEXT = 'RESIGNAL voorbeeld: Dubbele waarde niet toegestaan';
     END;
 
