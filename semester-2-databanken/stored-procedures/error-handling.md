@@ -1,8 +1,10 @@
 # ERROR HANDLING
+
 Indien binnen een stored procedure zich een onverwachte fout zou voordoen is het belangrijk hierop gepast te reageren. Een fout wordt aangegeven door middel van een signaal. We kunnen MySQL dus instructies geven over hoe elk signaal moet worden afgehandeld. Dit gepast reageren kan zijn van verder te gaan of het huidige blok code niet meer uit te voeren of een boodschap te geven.
 
 ## Voorbeeld uit het echte leven
-In de uitleg rond signalen werd omschreven hoe je best reageert wanneer het brandalarm afgaat. Er stond een reeks stappen (maak iedereen wakker, probeer kort te blussen, loop naar buiten met de huisdieren,...). Deze reeks stappen stemt overeen met het idee van een "handler". Of, in het Nederlands, een "afhandelaar". Een manier om een probleem op te lossen of toch om de impact ervan te beperken.
+
+In de uitleg rond signalen werd omschreven hoe je best reageert wanneer het brandalarm afgaat. Er stond een reeks stappen \(maak iedereen wakker, probeer kort te blussen, loop naar buiten met de huisdieren,...\). Deze reeks stappen stemt overeen met het idee van een "handler". Of, in het Nederlands, een "afhandelaar". Een manier om een probleem op te lossen of toch om de impact ervan te beperken.
 
 ## Declare handler
 
@@ -36,7 +38,7 @@ Op deze manier kunnen we er voor zorgen dat onze code niet volledig blokkeert, m
 
 Als we een boodschap willen weergeven wanneer er zich een error voordoet dan kan dit met onderstaand voorbeeld waarbij tevens een `ROLLBACK` wordt uitgevoerd, waardoor alle mogelijke wijzigingen die de huidige transactie zou hebben uitgevoerd teniet worden gedaan.
 
-Hierbij is het wel belangrijk om de handler binnen de `BEGIN` en `END` van de stored procedure te schrijven. Meerbepaald: handlers mogen **alleen in stored procedures** voorkomen en **alleen na declaraties van variabelen** (of condities, die worden verder op deze pagina gebruikt voor named handlers).
+Hierbij is het wel belangrijk om de handler binnen de `BEGIN` en `END` van de stored procedure te schrijven. Meerbepaald: handlers mogen **alleen in stored procedures** voorkomen en **alleen na declaraties van variabelen** \(of condities, die worden verder op deze pagina gebruikt voor named handlers\).
 
 {% hint style="warning" %}
 Dit is wat verschillend van general purpose programmeertalen. In pakweg C♯, Java, C++, Python,... kan je op elk niveau van je programma fouten opvangen met een zeer gelijkaardig mechanisme.
@@ -92,7 +94,7 @@ Enzovoort...
 
 ## Uitgewerkt voorbeeld 1
 
-We werken voor dit voorbeeld met de tabel `Albumreleases` binnen onze voorbeelddatabase `aptunes`.  We hebben de foutcodes opgezocht [in de officiële documentatie](https://dev.mysql.com/doc/refman/8.0/en/server-error-reference.html).
+We werken voor dit voorbeeld met de tabel `Albumreleases` binnen onze voorbeelddatabase `aptunes`. We hebben de foutcodes opgezocht [in de officiële documentatie](https://dev.mysql.com/doc/refman/8.0/en/server-error-reference.html).
 
 ![](../../.gitbook/assets/sp_errorhandling1.JPG)
 
@@ -103,17 +105,17 @@ DROP procedure IF EXISTS `InsertAlbumReleases`;
 DELIMITER $$
 USE `aptunes`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertAlbumReleases`(
-	IN inBands_Id INT,
+    IN inBands_Id INT,
   IN inAlbums_Id INT)
 BEGIN
-	DECLARE EXIT HANDLER FOR 1062
+    DECLARE EXIT HANDLER FOR 1062
   BEGIN
-		SELECT CONCAT('Dubbele waarde (',inBands_Id,',',inAlbums_Id,') niet toegestaan') AS message;
+        SELECT CONCAT('Dubbele waarde (',inBands_Id,',',inAlbums_Id,') niet toegestaan') AS message;
   END;
 
-	INSERT INTO albumreleases(Bands_Id,Albums_Id)
+    INSERT INTO albumreleases(Bands_Id,Albums_Id)
   VALUES(inBands_id,inAlbums_Id);
-    
+
   SELECT COUNT(*)
   FROM albumreleases
   WHERE Bands_Id = inBands_Id;
@@ -157,16 +159,16 @@ DROP procedure IF EXISTS `InsertAlbumReleases`;
 DELIMITER $$
 USE `aptunes`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertAlbumReleases`(
-	IN inBands_Id INT,
+    IN inBands_Id INT,
   IN inAlbums_Id INT)
 BEGIN
   DECLARE EXIT HANDLER FOR 1062 SELECT '1. Dubbele waarde niet toegestaan' Message; 
   DECLARE EXIT HANDLER FOR SQLEXCEPTION SELECT '2. SQLException' Message; 
   DECLARE EXIT HANDLER FOR SQLSTATE '23000' SELECT '3. SQLSTATE 23000' ErrorCode;
-	
-	INSERT INTO albumreleases(Bands_Id,Albums_Id)
+
+    INSERT INTO albumreleases(Bands_Id,Albums_Id)
   VALUES(inBands_id,inAlbums_Id);
-    
+
   SELECT COUNT(*)
   FROM albumreleases
   WHERE Bands_Id = inBands_Id;
@@ -198,19 +200,19 @@ DROP procedure IF EXISTS `InsertAlbumReleases`;
 DELIMITER $$
 USE `aptunes`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertAlbumReleases`(
-	IN inBands_Id INT,
+    IN inBands_Id INT,
   IN inAlbums_Id INT)
 BEGIN
-	DECLARE DubbeleWaarde CONDITION FOR 1062;
-    
+    DECLARE DubbeleWaarde CONDITION FOR 1062;
+
   DECLARE EXIT HANDLER FOR DubbeleWaarde
   BEGIN
-		SELECT CONCAT('Dubbele waarde (',inBands_Id,',',inAlbums_Id,') niet toegestaan') AS message;
+        SELECT CONCAT('Dubbele waarde (',inBands_Id,',',inAlbums_Id,') niet toegestaan') AS message;
   END;
 
-	INSERT INTO albumreleases(Bands_Id,Albums_Id)
+    INSERT INTO albumreleases(Bands_Id,Albums_Id)
   VALUES(inBands_id,inAlbums_Id);
-    
+
   SELECT COUNT(*)
   FROM albumreleases
   WHERE Bands_Id = inBands_Id;
@@ -219,16 +221,17 @@ END$$
 DELIMITER ;
 ```
 
-Zoals we zien, hebben we een `CONDITIE` gedeclareerd voor error code 1062. 
+Zoals we zien, hebben we een `CONDITIE` gedeclareerd voor error code 1062.
 
 Nadien gebruiken we voor de `EXIT HANDLER` de verwijzing naar deze `CONDITIE`.
 
 ## Correct uitvoeren van `ROLLBACK`
+
 Via de instructie `ROLLBACK` kan je voorlopige wijzigingen ongedaan maken. Dit kwam eerder al even aan bod. We bekijken het hier wat meer in detail.
 
 Voer zelf de voorbeelden mee uit om te zien wat er gebeurt.
 
-### Voorbeeld 1 (hoe het moet)
+### Voorbeeld 1 \(hoe het moet\)
 
 Onderstaande code start uitdrukkelijk een transactie en de handler bevat een `ROLLBACK`. Tijdens de transactie doet zich een fout voor die afgehandeld kan worden door de handler:
 
@@ -253,7 +256,7 @@ END$$
 
 Voer de code uit om de procedure te creëren. Kijk welke genres momenteel in je database zitten. Voer vervolgens een `CALL` van deze procedure uit. Het resultaat? Er is geen nieuwe genre toegevoegd aan het systeem. De `INSERT` is wel uitgevoerd, maar alleen op een voorlopige wijze. De `COMMIT` is niet bereikt en er heeft zich een `ROLLBACK` voorgedaan, dus de wijziging is niet definitief gemaakt.
 
-### Voorbeeld 2 (hoe het niet moet)
+### Voorbeeld 2 \(hoe het niet moet\)
 
 ```sql
 use aptunes;
@@ -274,7 +277,8 @@ END$$
 
 Als je deze procedure definieert en oproept, zie je dat het nieuwe genre **wel** is toegevoegd. Dat komt omdat je geen transactie hebt gestart. Als je dat niet doet, is **elk statement** standaard definitief. **Stored procedures vormen niet vanzelf een transactie**.
 
-### Voorbeeld 3 (hoe het niet moet)
+### Voorbeeld 3 \(hoe het niet moet\)
+
 Verwijder eerst even zelf het nieuwe genre en gebruik dan volgende procedure:
 
 ```sql
@@ -289,9 +293,10 @@ BEGIN
 END$$
 ```
 
-Hier hebben we de handler weggelaten ten opzichte van het vorige voorbeeld. Omdat in het vorige voorbeeld de `INSERT` niet ongedaan werd gemaakt, gebeurt dat hier zeker niet. Er is niet eens een rollback (die in het vorige voorbeeld dus al niets deed). Wat wel anders is: hier is geen handler. Dus de fout wordt niet afgehandeld binnen de stored procedure en levert een "klassieke" fout in je MySQL Workbench.
+Hier hebben we de handler weggelaten ten opzichte van het vorige voorbeeld. Omdat in het vorige voorbeeld de `INSERT` niet ongedaan werd gemaakt, gebeurt dat hier zeker niet. Er is niet eens een rollback \(die in het vorige voorbeeld dus al niets deed\). Wat wel anders is: hier is geen handler. Dus de fout wordt niet afgehandeld binnen de stored procedure en levert een "klassieke" fout in je MySQL Workbench.
 
-### Voorbeeld 4 (om voor op te letten)
+### Voorbeeld 4 \(om voor op te letten\)
+
 Volgend voorbeeld is **geen** stored procedure:
 
 ```sql
@@ -302,7 +307,7 @@ signal sqlstate '45000';
 commit;
 ```
 
-In MySQL hangt het effect hier af van de omgeving (bv. command line client, Workbench, nog andere omgevingen waarin je SQL-commando's kan intypen en uitvoeren). **In sommige omgevingen zorgen fouten in transacties vanzelf voor een `ROLLBACK` en in sommige niet.** Als je zeker wil zijn van het gewenste gedrag, programmeer het dan met behulp van een handler. Op mijn systeem blijft dit nieuwe genre in het systeem staan, maar bij jou zou het afwezig kunnen zijn! Meer informatie vind je [hier](https://stackoverflow.com/questions/6121917/automatic-rollback-if-commit-transaction-is-not-reached).
+In MySQL hangt het effect hier af van de omgeving \(bv. command line client, Workbench, nog andere omgevingen waarin je SQL-commando's kan intypen en uitvoeren\). **In sommige omgevingen zorgen fouten in transacties vanzelf voor een `ROLLBACK` en in sommige niet.** Als je zeker wil zijn van het gewenste gedrag, programmeer het dan met behulp van een handler. Op mijn systeem blijft dit nieuwe genre in het systeem staan, maar bij jou zou het afwezig kunnen zijn! Meer informatie vind je [hier](https://stackoverflow.com/questions/6121917/automatic-rollback-if-commit-transaction-is-not-reached).
 
 {% hint style="info" %}
 Let wel op: hier kan je eigenlijk geen handler zetten want er is geen stored procedure. Maar voor een stored procedure gelden dezelfde regels.
@@ -311,3 +316,4 @@ Let wel op: hier kan je eigenlijk geen handler zetten want er is geen stored pro
 {% hint style="danger" %}
 We herhalen het nogmaals: in MySQL is de body van een stored procedure geen transactie. Als je een rollback wil kunnen doen, moet je dus `START TRANSACTION` schrijven en eindigen met een `COMMIT`.
 {% endhint %}
+
