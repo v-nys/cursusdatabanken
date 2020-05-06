@@ -21,7 +21,7 @@ Schrijf een stored procedure,`MockAlbumRelease`, die een nieuwe albumrelease zal
 1. Ze declareert vier variabelen van type `INT`: `numberOfAlbums`, `numberOfBands`, `randomAlbumId` en `randomBandId`. De initiële waarde hiervan is 0.
 2. Ze past `numberOfAlbums` aan naar het aantal albums in je systeem en `numberOfBands` naar het aantal bands.
 3. Ze past `randomAlbumId` aan naar een willekeurige getal tussen 1 en het aantal albums en past `randomBandId` aan naar een willekeurig getal tussen 1 en het aantal bands.
-4. Als `(randomBandId,randomBandId)` nog niet voorkomt in de tabel `Albumreleases`, voegt ze deze combinatie toe door middel van een `INSERT`.
+4. Als `(randomBandId,randomBandId)` nog niet voorkomt in de tabel `Albumreleases`, voegt ze deze combinatie toe door middel van een `INSERT`. Je moet hier zelf gebruik maken van een `IF`, een `IN` en een subquery (op `Albumreleases`) om te beslissen of de insert mag plaatsvinden.
 
 Plaats enkel de definitie in het script, geen oproep. Noem het script dat voor de definitie zorgt `0644__Oefening.sql`. Test je procedure uit door ze enkele keren op te roepen en dan `Albumreleases` te bekijken. Na calibratie was deze tabel leeg, dus na enkele calls zouden er een paar records moeten staan.
 
