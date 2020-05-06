@@ -26,9 +26,9 @@ Schrijf hiervoor een script, `0649__Oefening.sql`.
 
 ## Vraag 3
 
-Schrijf een stored procedure, `DangerousInsertAlbumreleases`. Deze stored procedure voegt drie willekeurige albumreleases in \(zoals in vorige reeks oefeningen: een combinatie van een willekeurig album en een willekeurige band\), maar signaleert ook met een kans van 1 op 3 een SQL state '45000' na het invoegen van de tweede albumrelease.
+Schrijf een stored procedure, `DangerousInsertAlbumreleases`. Deze stored procedure voegt drie willekeurige albumreleases in \(zoals in vorige reeks oefeningen: een combinatie van een willekeurig album en een willekeurige band, maar **niet via de stored procedure die je in de vorige reeks oefeningen hebt geschreven**\), maar signaleert ook met een kans van 1 op 3 een SQL state '45000' na het invoegen van de tweede albumrelease.
 
-Schrijf in deze stored procedure een handler zodat het niet mogelijk is dat er slechts één of twee albumreleases worden ingevoegd. Als er iets mis loopt, mag er geen enkele nieuwe release zijn toegevoegd. In plaats daarvan wordt deze foutboodschap getoond: "Nieuwe releases konden niet worden toegevoegd." Let op: SQL state '45000' is niet het enige foutsignaal dat je hier kan krijgen, want het kan bijvoorbeeld ook zijn dat een willekeurige albumrelease al in het systeem zit. Schrijf je handler dus zo dat **alle** fouten worden tegengehouden.
+Schrijf in deze stored procedure een handler zodat het niet mogelijk is dat er slechts één of twee albumreleases worden ingevoegd. Als er iets mis loopt, mag er geen enkele nieuwe release zijn toegevoegd. In plaats daarvan wordt deze foutboodschap getoond: "Nieuwe releases konden niet worden toegevoegd." Let op: SQL state '45000' is niet het enige foutsignaal dat je hier kan krijgen, want het kan bijvoorbeeld ook zijn dat een willekeurige albumrelease al in het systeem zit. Schrijf je handler zo dat **alle** fouten worden tegengehouden: via `SQLEXCEPTION` uds.
 
 Lees voor je deze oefening maakt zeker de instructies rond het correct uitvoeren van een `ROLLBACK` na.
 
