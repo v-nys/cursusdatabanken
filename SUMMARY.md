@@ -140,4 +140,5 @@
   * [Oefeningen deel 1](semester-2-databanken/stored-procedures/oefeningen-deel-1.md)
   * [Oefeningen deel 2](semester-2-databanken/stored-procedures/oefeningen-deel-2.md)
   * [Oefeningen deel 3](semester-2-databanken/stored-procedures/oefeningen-deel-3.md)
+  * [Oefeningen deel 4](semester-2-databanken/stored-procedures/oefeningen-deel-4.md)
 
