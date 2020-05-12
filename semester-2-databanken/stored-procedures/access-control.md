@@ -76,6 +76,8 @@ GRANT EXECUTE ON aptunes.*
 TO ap@localhost;
 ```
 
+Hier staat de `*` voor *alle* stored procedures. Je kan ook specifieke stored procedures toegankelijk maken. Je kan ook rechten op bepaalde databases, tabellen,... geven. We kunnen hier geen volledige lijst geven, maar de mogelijkheden vind je terug in [de officiële documentatie](https://dev.mysql.com/doc/refman/8.0/en/grant.html).
+
 Vervolgens gaan we met deze gebruiker binnen MySQL inloggen. Doe dit als volgt.
 
 ![](../../.gitbook/assets/sp_security1.JPG)
