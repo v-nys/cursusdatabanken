@@ -97,6 +97,6 @@ Zoals je merkt, uit het schema-venster heb je enkel rechten op de stored procedu
 Om een stored procedure uit te voeren geef je volgende opdracht.
 
 ```sql
-CALL VoorbeeldSecurity("Test vanuit aphogeschool user");
+CALL VoorbeeldSecurity("Test vanuit ap user");
 ```
 
