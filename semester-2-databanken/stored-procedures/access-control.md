@@ -45,6 +45,10 @@ In onderstaande stored procedure hebben we via het DEFINER-object bepaald dat de
 
 Dit wil dus zeggen dat iedere gebruiker, ongeacht zijn security level, deze stored procedure kan uitvoeren met root-rechten.
 
+{% hint style="danger" %}
+Let op! `DEFINER` is de defaultwaarde. Als je niet aandachtig bent, kan het dus zijn dat je users meer rechten geeft dan bedoeld.
+{% endhint %}
+
 ```sql
 USE `aptunes`;
 DROP procedure IF EXISTS `VoorbeeldSecurity`;
