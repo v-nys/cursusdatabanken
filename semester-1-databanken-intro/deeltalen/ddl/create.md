@@ -3,7 +3,7 @@
 ## Opgelet!
 
 {% hint style="danger" %}
-Onder Unix \(macOS en Linux\) zijn databasenamen hoofdlettergevoelig \(in tegenstelling tot SQL trefwoorden\). Je moet dus je altijd verwijzen naar je database met de zelfde naam als de naam waaronder je database hebt aangemaakt. Dit geldt overigens ook voor de tabelnamen. Onder Windows is deze beperking standaard niet van toepassing, maar het is een goede gewoonte. Volg daarom de gemaakte afspraken wat betreft naamgeving heel nauwkeurig. Als de code op jouw Windowsmachine werkt maar niet op onze server omdat de code de afspraken niet volgt, bevat ze een fout!
+Onder Unix \(macOS en Linux\) zijn databasenamen hoofdlettergevoelig \(in tegenstelling tot SQL trefwoorden\). Dit geldt overigens ook voor de tabelnamen. Onder Windows is deze beperking standaard niet van toepassing, maar het is een goede gewoonte te doen alsof het wel zo is. Volg daarom de gemaakte afspraken wat betreft naamgeving heel nauwkeurig. Als de code op jouw Windowsmachine werkt maar niet op onze server omdat de code de afspraken niet volgt, bevat ze een fout!
 {% endhint %}
 
 ## Aanmaken van je eerste database
@@ -12,18 +12,10 @@ Onder Unix \(macOS en Linux\) zijn databasenamen hoofdlettergevoelig \(in tegens
 Je kan geen nieuwe databases aanmaken als je verbindt met de gedeelde server. Je kan het wel doen als je MySQL installeert op je eigen systeem of in een virtuele machine.
 {% endhint %}
 
-Gebruik het volgende SQL statement om een database te maken:
+Je zou het volgende SQL statement gebruiken om een database te maken:
 
 ```sql
 CREATE DATABASE ApDB;
-```
-
-We kunnen ook eerst nagaan als de database al bestaat:
-
-```sql
--- Maak alleen een databank als er nog geen bestaat met dezelfde naam.
--- Dit is trouwens hoe je commentaar schrijft in MySQL.
-CREATE DATABASE IF NOT EXISTS ApDB;
 ```
 
 Het creëren van een database volstaat niet om die vervolgens te kunnen gebruiken. Je moet in een script expliciet opgeven dat je een bepaalde database wilt gebruiken met de instructie `USE`:
@@ -40,19 +32,19 @@ Het niveau onder dat van de databank is het niveau van de tabel. Een tabel bevat
 
 We willen volgende gegevens in het systeem bijhouden:
 
-favorite.png
+![](../../../.gitbook/assets/lievelingsboek.png)
 
-Gebruik eerst `USE` om je database te activeren.
+Gebruik eerst `USE` om je database te activeren. Eerst leggen we vast we welke tabellen en welke datatypes we nodig hebben:
 
-Eerst leggen we vast we welke tabellen en welke datatypes we nodig hebben:
-
-eerste-ERD.png
+![](../../../.gitbook/assets/eerste-erd.png)
 
 Negeer de "1 more" onder "Geboortejaar". Negeer ook het gele sleuteltje. Die zaken komen later. Om de tabel "Personen" aan te maken, schrijven we:
 
-CREATE TABLE Personen\(Voornaam VARCHAR\(50\), Familienaam VARCHAR\(50\), Geboortejaar INT\);
+```sql
+CREATE TABLE Personen(Voornaam VARCHAR(50), Familienaam VARCHAR(50), Geboortejaar INT);
+```
 
-Schrijf nu zelf de code om de tabel Boeken aan te maken. Sla beide instructies \(die voor personen en voor boeken\) onder elkaar op in een script met naam 0001\_\_CreateTables.sql.
+Schrijf nu zelf de code om de tabel `Boeken` aan te maken. Sla beide instructies \(die voor personen en voor boeken\) onder elkaar op in een script met naam 0001\_\_CreateTables.sql.
 
 ### Commentaar toevoegen
 
@@ -64,17 +56,21 @@ Zoals eerder aangegeven, moet je eerst een database selecteren waar de nieuwe ta
 
 ### Verplichte kolommen
 
-Soms kunnen we met ontbrekende waarden leven, soms niet. Indien we bijvoorbeeld kunstwerken uit de oudheid bijhouden in een tabel Kunstwerken met een kolom Artiest, zullen we niet in elke rij een artiest kunnen invullen, want we zullen het niet altijd weten. Langs de andere kant is het soms verplicht een waarde in te vullen. In de database van een bibliotheek zal elk boek een identificatiecode moeten krijgen, bijvoorbeeld. Dit geven we aan door in het CREATE-statement het datatype \(d.w.z. het soort gegevens in de kolom\) te laten volgen door NOT NULL. Als we dit schrijven, is het onmogelijk een boek zonder identificatiecode in het systeem te plaatsen.
+Soms kunnen we met ontbrekende waarden leven, soms niet. Indien we bijvoorbeeld kunstwerken uit de oudheid bijhouden in een tabel Kunstwerken met een kolom Artiest, zullen we niet in elke rij een artiest kunnen invullen, want we zullen het niet altijd weten. Langs de andere kant is het soms verplicht een waarde in te vullen. In de database van een bibliotheek zal elk boek een identificatiecode moeten krijgen, bijvoorbeeld. Dit geven we aan door in het `CREATE`-statement het datatype \(d.w.z. het soort gegevens in de kolom\) te laten volgen door `NOT NULL`. Als we dit schrijven, is het onmogelijk een boek zonder identificatiecode in het systeem te plaatsen.
 
 #### Voorbeeld
 
--- de titel en voornaam van de auteur zijn verplicht -- het nummer van de druk is niet verplicht CREATE TABLE Boeken \(Titel VARCHAR\(100\) NOT NULL, VoornaamAuteur VARCHAR\(100\) NOT NULL, Druk TINYINT UNSIGNED\);
+```sql
+-- de titel en voornaam van de auteur zijn verplicht
+-- het nummer van de druk is niet verplicht
+CREATE TABLE Boeken (Titel VARCHAR(100) NOT NULL, VoornaamAuteur VARCHAR(100) NOT NULL, Druk TINYINT UNSIGNED);
+```
 
 Schrijf nu zelf code om een tabel `Kunstwerken` aan te maken, met een niet-verplichte kolom `Artiest` en een verplichte kolom `Titel`, beide van het datatype `VARCHAR(100)`. Noem je script 0002\_\_CreateTable.sql
 
 ### Enkel aanmaken wat niet bestaat
 
-Via het CREATE-commando maak je een nieuwe structuur aan met een bepaalde naam. Als die naam al bestaat, levert dat een foutmelding. Daarom moeten we voorzichtig omspringen met het CREATE commando. We doen dit door onze CREATE enkel uit te voeren als de naam die we willen gebruiken \(voor een database of een tabel of een andere structuur\) nog niet gebruikt wordt. Hiervoor vervangen we bijvoorbeeld CREATE TABLE MyTable \(Column VARCHAR\(100\)\); door CREATE TABLE IF NOT EXISTS MyTable \(Column VARCHAR\(100\)\);. Dit vermijdt dat we op een foutmelding botsen. Het kan wel een waarschuwing opleveren, maar dat is op zich niet erg.
+Via het `CREATE`-commando maak je een nieuwe structuur aan met een bepaalde naam. Als die naam al bestaat, levert dat een foutmelding. Daarom moeten we voorzichtig omspringen met het `CREATE` commando. We doen dit door onze `CREATE` enkel uit te voeren als de naam die we willen gebruiken \(voor een database of een tabel of een andere structuur\) nog niet gebruikt wordt. Hiervoor vervangen we bijvoorbeeld `CREATE TABLE MyTable (Column VARCHAR(100));` door `CREATE TABLE IF NOT EXISTS MyTable (Column VARCHAR(100));`. Dit vermijdt dat we op een foutmelding botsen. Het kan wel een waarschuwing opleveren, maar dat is op zich niet erg.
 
-Maak een nieuwe versie van script 0002\_\_CreateTable om een tabel met kunstwerken aan te maken, maar zorg dat er geen foutmelding verschijnt als deze tabel al bestaat. Noem je script 0003\_\_CreateTable.sql.
+Maak een variatie op script 0002\_\_CreateTable om een tabel met kunstwerken aan te maken, maar zorg dat er geen foutmelding verschijnt als deze tabel al bestaat. Noem je script 0003\_\_CreateTable.sql.
 

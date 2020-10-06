@@ -16,7 +16,7 @@ Dit is een vereenvoudigde weergave, bedoeld om je op weg te helpen met de couran
 
 ### sleutelbegrippen
 
-{% hint style="info" %}
+{% hint style="success" %}
 [Kennisclip over CHAR, VARCHAR en strings schrijven](https://youtu.be/iMVUZCQkXvc)
 {% endhint %}
 
@@ -52,11 +52,11 @@ Soms kom je online misschien ook `NVARCHAR` tegen. Dit is een wat achterhaalde m
 
 ### Boolean
 
-Dit is het simpelste type. Het kent twee waarden: `TRUE` en `FALSE`, vaak voorgesteld als `1` en `0`. Je kan beide schrfijwijzen hanteren.
+Dit is het simpelste type. Het kent twee waarden: `TRUE` en `FALSE`, vaak voorgesteld als `1` en `0`. Je kan beide schrijfwijzen hanteren.
 
 ### `INT` en varianten
 
-{% hint style="info" %}
+{% hint style="success" %}
 [Kennisclip voor deze inhoud](https://youtu.be/qsqh8IJRJ1c)
 {% endhint %}
 
