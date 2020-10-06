@@ -9,11 +9,13 @@
 ## Semester 1: databanken intro
 
 * [Installatie van alle software](semester-1-databanken-intro/installatie-software.md)
-* [Scripts](semester-1-databanken-intro/scripts.md)
 * [Databanken](semester-1-databanken-intro/databanken/README.md)
   * [Inleiding](semester-1-databanken-intro/databanken/inleiding.md)
   * [Voorbeeld](semester-1-databanken-intro/databanken/voorbeeld.md)
   * [Waarom een databank?](semester-1-databanken-intro/databanken/waarom-een-databank.md)
+  * [Wat is een relationele databank](semester-1-databanken-intro/databanken/wat-is-een-relationele-databank.md)
+  * [Basisstructuren van een relationele databank](semester-1-databanken-intro/databanken/basisstructuren-relationele-databank.md)
+  * [Basisstructuren van een relationele databank](semester-1-databanken-intro/databanken/diagramnotatie.md)
   * [Data dictionary](semester-1-databanken-intro/databanken/data-dictionary.md)
   * [Architectuur van een databank](semester-1-databanken-intro/databanken/architectuur-van-een-databank.md)
   * [Logische databankstructuren](semester-1-databanken-intro/databanken/logische-databankstructuren.md)

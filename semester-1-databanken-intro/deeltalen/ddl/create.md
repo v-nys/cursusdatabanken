@@ -3,15 +3,19 @@
 ## Opgelet!
 
 {% hint style="danger" %}
-Onder Unix \(macOS en Linux\) zijn databasenamen hoofdlettergevoelig \(in tegenstelling tot SQL trefwoorden\). Je moet dus je altijd verwijzen naar je database met de zelfde naam als de naam waaronder je database hebt aangemaakt. Dit geldt overigens ook voor de tabelnamen. Onder Windows is deze beperking standaard niet van toepassing, maar het is een goede gewoonte. Volg daarom de gemaakte afspraken wat betreft naamgeving heel nauwkeurig. Als de code op jouw Windowsmachine werkt maar niet op onze testserver omdat de code de afspraken niet volgt, bevat ze een fout!
+Onder Unix \(macOS en Linux\) zijn databasenamen hoofdlettergevoelig \(in tegenstelling tot SQL trefwoorden\). Je moet dus je altijd verwijzen naar je database met de zelfde naam als de naam waaronder je database hebt aangemaakt. Dit geldt overigens ook voor de tabelnamen. Onder Windows is deze beperking standaard niet van toepassing, maar het is een goede gewoonte. Volg daarom de gemaakte afspraken wat betreft naamgeving heel nauwkeurig. Als de code op jouw Windowsmachine werkt maar niet op onze server omdat de code de afspraken niet volgt, bevat ze een fout!
 {% endhint %}
 
 ## Aanmaken van je eerste database
 
+{% hint style="info" %}
+Je kan geen nieuwe databases aanmaken als je verbindt met de gedeelde server. Je kan het wel doen als je MySQL installeert op je eigen systeem of in een virtuele machine.
+{% endhint %}
+
 Gebruik het volgende SQL statement om een database te maken:
 
 ```sql
-CREATE DATABASE ModernWays;
+CREATE DATABASE ApDB;
 ```
 
 We kunnen ook eerst nagaan als de database al bestaat:
@@ -19,41 +23,36 @@ We kunnen ook eerst nagaan als de database al bestaat:
 ```sql
 -- Maak alleen een databank als er nog geen bestaat met dezelfde naam.
 -- Dit is trouwens hoe je commentaar schrijft in MySQL.
-CREATE DATABASE IF NOT EXISTS ModernWays;
+CREATE DATABASE IF NOT EXISTS ApDB;
 ```
 
 Het creëren van een database volstaat niet om die vervolgens te kunnen gebruiken. Je moet in een script expliciet opgeven dat je een bepaalde database wilt gebruiken met de instructie `USE`:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 ```
 
 Een database moet slechts één keer gemaakt worden, maar je moet vooraleer die te gebruiken ze telkens weer selecteren. Dat doe je met de `USE` instructie zoals in het voorgaande voorbeeld.
 
-Sla de code die de database aanmaakt op in een eerste script met als naam 0001\_\_CreateDatabase.sql.
+## Aanmaken van je eerste tabellen
 
-{% hint style="warning" %}
-Je mag het script 0001\_\_CreateDatabase.sql dat je aangemaakt hebt tijdens de installatie van een lokale MySQL gewoon overschrijven.
-{% endhint %}
+Het niveau onder dat van de databank is het niveau van de tabel. Een tabel bevat typisch informatie over één entiteit, d.w.z. één soort interessante data. Dat is bijvoorbeeld bijvoorbeeld een tabel `Boeken` in een bibliotheeksysteem. We vertrekken van een voorstelling voor boeken en personen.
 
-## Aanmaken van je eerste tabel
+We willen volgende gegevens in het systeem bijhouden:
 
-Het niveau onder dat van de databank is het niveau van de tabel. Een tabel bevat typisch informatie over één entiteit, d.w.z. één soort interessante data. Dat is bijvoorbeeld bijvoorbeeld een tabel `Boeken` in een bibliotheeksysteem. We vertrekken van een model van een boek.
+favorite.png
 
-![Een boek, voorgesteld als entiteitstype.](../../../.gitbook/assets/erd-boeken.png)
+Gebruik eerst `USE` om je database te activeren.
 
-Hieronder krijg je een vereenvoudigd logisch model van een boek. Hier staat "CHAR" voor een aantal karakters. Soms moet dat aantal precies zijn, soms is het alleen begrensd. Hier zijn de aantallen alleen begrensd. Een voorbeeld van een precies aantal is een postcode in België: die bestaat uit precies vier cijfers. Internationale tekens zijn tekens die typisch niet gebruikt worden in Engelstalige teksten.
+Eerst leggen we vast we welke tabellen en welke datatypes we nodig hebben:
 
-| Kolomnaam | Type | Maximale lengte | Variabele lengte | Internationale tekens |
-| :--- | :--- | :--- | :--- | :--- |
-| Voornaam | CHAR | 50 | JA | JA |
-| Familienaam | CHAR | 80 | JA | JA |
-| Titel | CHAR | 255 | JA | JA |
-| Stad | CHAR | 50 | JA | JA |
-| Verschijningsjaar | CHAR | 4 | JA | NEE |
-| Uitgeverij | CHAR | 80 | JA | JA |
-| Herdruk | CHAR | 4 | JA | NEE |
-| Commentaar | CHAR | 1000 | JA | NEE |
+eerste-ERD.png
+
+Negeer de "1 more" onder "Geboortejaar". Negeer ook het gele sleuteltje. Die zaken komen later. Om de tabel "Personen" aan te maken, schrijven we:
+
+CREATE TABLE Personen(Voornaam VARCHAR(50), Familienaam VARCHAR(50), Geboortejaar INT);
+
+Schrijf nu zelf de code om de tabel Boeken aan te maken. Sla beide instructies (die voor personen en voor boeken) onder elkaar op in een script met naam 0001\_\_CreateTables.sql.
 
 ### Commentaar toevoegen
 
@@ -61,29 +60,20 @@ Schrijf bovenaan in je script, in commentaar, de tekst "dit is mijn eerste tabel
 
 ### Database selecteren
 
-Zoals eerder aangegeven, moet je eerst een database selecteren waar de nieuwe tabel onderdeel van zal worden. Dit doe je met de USE-instructie. Je gebruikt de database die we met het eerste script hebben aangemaakt. Verwijs er naar met de juiste naam, volgens de afspraak over hoofdlettergevoeligheid!
+Zoals eerder aangegeven, moet je eerst een database selecteren waar de nieuwe tabel onderdeel van zal worden. Dit doe je met de USE-instructie.
 
-### Tabel aanmaken
+### Verplichte kolommen
+Soms kunnen we met ontbrekende waarden leven, soms niet. Indien we bijvoorbeeld kunstwerken uit de oudheid bijhouden in een tabel Kunstwerken met een kolom Artiest, zullen we niet in elke rij een artiest kunnen invullen, want we zullen het niet altijd weten. Langs de andere kant is het soms verplicht een waarde in te vullen. In de database van een bibliotheek zal elk boek een identificatiecode moeten krijgen, bijvoorbeeld. Dit geven we aan door in het CREATE-statement het datatype (d.w.z. het soort gegevens in de kolom) te laten volgen door NOT NULL. Als we dit schrijven, is het onmogelijk een boek zonder identificatiecode in het systeem te plaatsen.
 
-Dit doe je met CREATE TABLE. Kijk naar de tabelvoorstelling hierboven en kijk naar het verband met de code. Dit wordt later toegelicht.
+#### Voorbeeld
 
-```sql
-CREATE TABLE Boeken(
-    Voornaam VARCHAR(50) CHAR SET utf8mb4,
-    Familienaam VARCHAR(80) CHAR SET utf8mb4,
-    Titel VARCHAR(255) CHAR SET utf8mb4,
-    Stad VARCHAR(50) CHAR SET utf8mb4,
-    -- alleen het jaartal, geen datetime
-    -- omdat de kleinste datum daarin 1753 is
-    -- varchar omdat we ook jaartallen kleiner dan 1000 hebben
-    Verschijningsjaar VARCHAR(4),
-    Uitgeverij VARCHAR(80) CHAR SET utf8mb4,
-    Herdruk VARCHAR(4),
-    Commentaar VARCHAR(1000)
-);
-```
+-- de titel en voornaam van de auteur zijn verplicht
+-- het nummer van de druk is niet verplicht
+CREATE TABLE Boeken (Titel VARCHAR(100) NOT NULL, VoornaamAuteur VARCHAR(100) NOT NULL, Druk TINYINT UNSIGNED);
 
-### Benoemen en opslaan van het script
+Schrijf nu zelf code om een tabel `Kunstwerken` aan te maken, met een niet-verplichte kolom `Artiest` en een verplichte kolom `Titel`, beide van het datatype `VARCHAR(100)`. Noem je script 0002\_\_CreateTable.sql
 
-We spreken af dat alle scripts een duidelijke naam krijgen die uitdrukt wat de volgorde is ten opzichte van bestaande scripts, wat voor operatie plaatsvindt en welke data worden aangepast. We zullen het script dat deze tabel aanmaakt 0002\_\_CreateBoeken.sql noemen.
+### Enkel aanmaken wat niet bestaat
+Via het CREATE-commando maak je een nieuwe structuur aan met een bepaalde naam. Als die naam al bestaat, levert dat een foutmelding. Daarom moeten we voorzichtig omspringen met het CREATE commando. We doen dit door onze CREATE enkel uit te voeren als de naam die we willen gebruiken (voor een database of een tabel of een andere structuur) nog niet gebruikt wordt. Hiervoor vervangen we bijvoorbeeld CREATE TABLE MyTable (Column VARCHAR(100)); door CREATE TABLE IF NOT EXISTS MyTable (Column VARCHAR(100));. Dit vermijdt dat we op een foutmelding botsen. Het kan wel een waarschuwing opleveren, maar dat is op zich niet erg.
 
+Maak een nieuwe versie van script 0002\_\_CreateTable om een tabel met kunstwerken aan te maken, maar zorg dat er geen foutmelding verschijnt als deze tabel al bestaat. Noem je script 0003\_\_CreateTable.sql.

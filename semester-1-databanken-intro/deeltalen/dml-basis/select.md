@@ -9,14 +9,14 @@ Je kan in MySQL Workbench wel rechtstreeks naar je tabellen kijken, maar om geri
 De simpelste vorm van het `SELECT` commando toont gewoon alle data in een bepaalde tabel, bijvoorbeeld:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT * FROM Boeken;
 ```
 
 De asterisk is een "wildcard" of "joker". Ze geeft aan dat we **alle** kolommen willen zien. We kunnen ook kijken naar specifieke kolommen:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT Voornaam, Familienaam FROM Boeken;
 ```
 
@@ -31,25 +31,42 @@ SELECT Boeken.Voornaam, Boeken.Familienaam FROM Boeken;
 Er zijn veel manieren om geselecteerde data te groeperen, maar de simpelste is `ORDER BY`. Als je dit toevoegt aan een `SELECT`-statement, kan je de rijen in een andere volgorde weergeven. Bijvoorbeeld:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT * FROM Boeken ORDER BY Familienaam;
 ```
 
 Je kan ook een tweede \(en derde,...\) kolom gebruiken om knopen door te hakken:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT * FROM Boeken ORDER BY Familienaam, Voornaam, Titel;
 ```
 
-Let op: je moet weten welke sorteermethode gebruikt wordt. Zeker bij strings is dit niet zo evident, want je moet rekening houden met de collation. Zo zal `'5'` normaal gesorteerd worden **na** `'0006'`, omdat er niet naar de betekenis van een getal gekeken wordt maar wel naar de gebruikte tekens.
+De kolomnamen die je op deze manier gebruikt, hoeven **niet** getoond te worden in je resultaat.
+
+{% hint style="warning" %}
+Let op: de sorteervolgorde zal niet altijd overeenstemmen met wat je intuïtief verwacht. Ze hangt af van de gebruikte methode om stukken tekst te vergelijken, de zogenaamde "collation".
+{% endhint %}
+
+Er is ook een kortere, maar beperktere manier om te sorteren:
+
+```sql
+USE ApDB;
+SELECT * FROM Boeken ORDER BY 1, 2;
+```
+
+Dit sorteert eerst volgens de eerste kolom en dan volgens de tweede.
+
+Schrijf een script dat de namen van auteurs toont die je in script met nummer 0005 hebt toegevoegd, gesorteerd volgens `Titel`. Noem het 0006\_\_Select.sql.
+
+Schrijf ook een script dat alle kolommen toont die je in het script met nummer 0005 hebt toegevoegd, gesorteerd volgens de inhoud van de tweede kolom. Noem het 0007\_\_Select.sql.
 
 ### data verwerken met functies
 
 Je hoeft niet altijd een kolom te tonen in je uitvoer. Je kan ook een afgeleid resultaat tonen met behulp van **functies**. Concatenatie van strings of het bepalen van substrings vallen hieronder.
 
 ```sql
-USE ModernWays;
+USE ApDB;
 -- om alleen de initalen te tonen, we starten
 -- met het eerste karakter en we nemen 1 karakter.
 -- begint niet met 0, maar bij 1!

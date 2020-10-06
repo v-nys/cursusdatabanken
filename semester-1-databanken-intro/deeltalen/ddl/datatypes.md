@@ -16,29 +16,36 @@ Dit is een vereenvoudigde weergave, bedoeld om je op weg te helpen met de couran
 
 ### sleutelbegrippen
 
-#### karakterset
+{% hint style="info" %}
+[Kennisclip over CHAR, VARCHAR en strings schrijven](https://youtu.be/iMVUZCQkXvc)
+{% endhint %}
 
-Een karakterset is een systeem om letters voor te stellen. Ze koppelt bepaalde lettertekens aan een achterliggende voorstelling. Er zijn enorm veel tekensets en ze zijn niet allemaal evenwaardig. Sommig tekensets kunnen maar een klein aantal karakters voorstellen, sommige kunnen er bijna eindeloos veel voorstellen. Standaard gebruikt MySQL de karakterset `latin1`, die beperkt is tot westerse tekens.
+### `CHAR` en `VARCHAR`
+
+`CHAR` stelt een stukje tekst voor. Het heeft ook een vaste lengte. Je schrijft bijvoorbeeld `CHAR(50)` voor een stukje tekst van 50 karakters. Dan hebben alle waarden van dat type precies 50 tekens nodig aan opslagruimte. Als je niet op voorhand weet hoe veel lettertekens een gegeven waarde zal bevatten, gebruik je beter `VARCHAR`. Ook hier moet je een lengte voorzien, maar dit is een maximum. Zo is een kolom met type `VARCHAR(50)` beperkt tot _maximum_ 50 karakters.
+
+Gebruik `CHAR` voor stukken tekst van gelijke lengte \(bijvoorbeeld serienummers van producten\). Gebruik `VARCHAR` voor zaken als namen.
+
+### strings schrijven
+
+Als je data van een van deze types hebt, zet je deze tussen enkele aanhalingstekens. Bijvoorbeeld `'Do,Re,Mi,Fa,Sol,La,Si'`. Als je data zelf enkele aanhalingstekens bevat, moet je ze ontdubbelen. Bijvoorbeeld `'do''s en don''ts'`.
+
+{% hint style="warning" %}
+Let op! Alles wat tussen aanhalingstekens staat is tekst. Zelfs cijfers. Met andere woorden: '42' is tekst en 42 is een getal. Met tekst kan je niet rekenen, met een getal wel. MySQL probeert wel te raden wat je bedoelt als je bijvoorbeeld '42' + '1' schrijft, maar niet elke taal doet dit. Daarom spreken we af dat je MySQL niet laat raden, maar altijd het juiste datatype gebruikt.
+{% endhint %}
+
+#### karakterset
+Computers werken met bytes, niet met tekst. Om bytes te interpreteren, wordt een karakterset gebruikt. Een karakterset is een systeem om letters voor te stellen. Ze koppelt bepaalde lettertekens aan een achterliggende voorstelling. Er zijn enorm veel tekensets en ze zijn niet allemaal evenwaardig. Sommige tekensets kunnen maar een klein aantal karakters voorstellen, sommige kunnen er bijna eindeloos veel voorstellen. Standaard gebruikt MySQL de karakterset `utf8mb4`, die voor zowat alle talen volstaat.
 
 #### collation
 
 Een collation is een set regels om stukken tekst met dezelfde karakterset te vergelijken. Een collation kan bijvoorbeeld bepalen of hoofdletters en kleine letters beschouwd worden als onderling verschillend. Ze kan ook bepalen of accenten op letters genegeerd worden.
-
-### `CHAR` en `VARCHAR`
-
-`CHAR` stelt een stukje tekst voor. Dat stukje tekst heeft een bepaalde tekenset en een collation. Het heeft ook een vaste lengte. Je schrijft bijvoorbeeld `CHAR(50)` voor een stukje tekst van 50 karakters. Dan hebben alle waarden van dat type precies 50 tekens nodig aan opslagruimte. Als je niet op voorhand weet hoe veel lettertekens een gegeven waarde zal bevatten, gebruik je beter `VARCHAR`. Ook hier moet je een lengte voorzien, maar dit is een maximum. Zo is een kolom met type `VARCHAR(50)` beperkt tot _maximum_ 50 karakters.
-
-Gebruik `CHAR` voor stukken tekst van gelijke lengte \(bijvoorbeeld serienummers van producten\). Gebruik `VARCHAR` voor zaken als namen.
 
 ### een karakterset koppelen
 
 Als je voor een bepaalde kolom een andere tekenset dan de default voor jouw databank wil gebruiken, kan je dat aangeven door je datatype te laten volgen door `CHAR SET`, gevolgd door de naam van de tekenset in kwestie, bijvoorbeeld `utf8mb4` om op een efficiënte manier een heleboel niet-westerse tekens te kunnen voorstellen.
 
 Soms kom je online misschien ook `NVARCHAR` tegen. Dit is een wat achterhaalde manier om niet-westerse tekens voor te stellen. Onthoud gewoon dat je voor niet-westerse tekens best de tekenset `utf8mb4` specifieert voor je kolom.
-
-### strings schrijven
-
-Als je data van een van deze types hebt, zet je deze tussen enkele aanhalingstekens. Bijvoorbeeld `'Do,Re,Mi,Fa,Sol,La,Si'`. Als je data zelf enkele aanhalingstekens bevat, moet je ze ontdubbelen. Bijvoorbeeld `'do''s en don''ts'`.
 
 ## numerieke types
 
@@ -47,6 +54,10 @@ Als je data van een van deze types hebt, zet je deze tussen enkele aanhalingstek
 Dit is het simpelste type. Het kent twee waarden: `TRUE` en `FALSE`, vaak voorgesteld als `1` en `0`. Je kan beide schrfijwijzen hanteren.
 
 ### `INT` en varianten
+
+{% hint style="info" %}
+[Kennisclip voor deze inhoud](https://youtu.be/qsqh8IJRJ1c)
+{% endhint %}
 
 `INT` dient \(net als enkele varianten van diverse groottes, hieronder opgelijst\) voor de opslag van gehele getallen. Standaard kan een `INT` positieve en negatieve gehele getallen voorstellen. We zeggen dat hij dan `SIGNED` is, dus dat hij vergezeld is van een teken. Als je alleen positieve getallen wil, laat je je datatype volgen door `UNSIGNED`, bijvoorbeeld `Leeftijd TINYINT UNSIGNED`.
 
@@ -78,6 +89,15 @@ Deze data hoeft niet tussen enkele quotes. Je gebruikt een punt in plaats van ee
 
 ## temporele types
 
+Temporele types worden gebruikt om tijdstippen voor te stellen. Hierbij wordt volgende notatie gebruikt om een formaat voor te stellen:
+
+- Y: cijfer van een jaar
+- M: cijfer van een maand
+- D: cijfer van een dag
+- H: cijfer van een uur
+- m: cijfer van een minuut
+- S: cijfer van een seconde
+
 ### `DATE`
 
 Dit type dient voor het bijhouden van datums in de vorm `'YYYY-MM-DD'`. Je kan alleen jaartallen van 1000 tot 9999 bijhouden.
@@ -97,4 +117,3 @@ Voor wanneer een volledige datum meer is dan je nodig hebt. Je kan wel minder ja
 ### datums schrijven
 
 Je schrijft datums alsof het strings waren in een afgesproken formaat, dus ook tussen enkele aanhalingstekens.
-
