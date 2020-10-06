@@ -14,6 +14,7 @@
   * [Voorbeeld](semester-1-databanken-intro/databanken/voorbeeld.md)
   * [Waarom een databank?](semester-1-databanken-intro/databanken/waarom-een-databank.md)
   * [Wat is een relationele databank](semester-1-databanken-intro/databanken/wat-is-een-relationele-databank.md)
+  * [Basisstructuren van een relationele databank](semester-1-databanken-intro/databanken/basisstructuren-van-een-relationele-databank.md)
   * [Diagramnotatie](semester-1-databanken-intro/databanken/diagramnotatie.md)
   * [Data dictionary](semester-1-databanken-intro/databanken/data-dictionary.md)
   * [Architectuur van een databank](semester-1-databanken-intro/databanken/architectuur-van-een-databank.md)
