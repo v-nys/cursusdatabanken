@@ -42,7 +42,7 @@ Er zijn 4 soorten no-sql databanken:
 * Graph databank  Bv. Neo4J
 * Column databank  Bv. Google bigtable 
 
-![](../.gitbook/assets/image%20%2839%29.png)
+![](../.gitbook/assets/image%20%2835%29%20%281%29.png)
 
 
 
@@ -57,21 +57,21 @@ Er zijn 4 soorten no-sql databanken:
 
 #### NoSQL – Key-value databank
 
-![](../.gitbook/assets/image%20%2818%29.png)
+![](../.gitbook/assets/image%20%2816%29.png)
 
 * Vergelijkbaar met document databank Maar geen queries mogelijk Enkel informatie opvragen via de sleutel\(Key\) Dit gaat bijzonder snel
 * Bv.: Twitter geschiedenis
 
 #### NoSQL – Graph databank
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image%20%283%29%20%281%29.png)
 
 * Ontworpen om ‘sociale eigenschappen’ van personen op te slaan, bvb: persoon a is bevriend met persoon b Persoon a houd van product x
 * Zeer handig voor sociale media
 
 #### NoSQL – \(wide\) Column databank
 
-![](../.gitbook/assets/image%20%2871%29.png)
+![](../.gitbook/assets/image%20%2866%29.png)
 
 * Gebruikt tabellen, rijen en kolommen, maar anders dan een relationele databank.
 * De namen en formaat van de kolommen kan verschillen van rij tot rij in binnen dezelfde tabel.
@@ -82,7 +82,7 @@ Vaak worden combinaties gebruikt van meerdere soorten DB’s en dit afhankelijk 
 
 Ter info, hieronder een lijstje met ranking van de meest populaire databases met bijzondere aandacht voor het database model \([https://db-engines.com/en/ranking](https://db-engines.com/en/ranking)\).
 
-![](../.gitbook/assets/image%20%2832%29.png)
+![](../.gitbook/assets/image%20%2829%29.png)
 
 {% hint style="info" %}
 _Extra info_  

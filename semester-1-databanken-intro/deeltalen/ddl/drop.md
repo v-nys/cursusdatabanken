@@ -16,3 +16,4 @@ DROP TABLE Boeken;
 ### uitproberen
 
 Schrijf eerst een script, 0004\_\_DropTables.sql, dat de tabel `Kunstwerken` verwijdert.
+

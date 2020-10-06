@@ -35,6 +35,7 @@ Let op! Alles wat tussen aanhalingstekens staat is tekst. Zelfs cijfers. Met and
 {% endhint %}
 
 #### karakterset
+
 Computers werken met bytes, niet met tekst. Om bytes te interpreteren, wordt een karakterset gebruikt. Een karakterset is een systeem om letters voor te stellen. Ze koppelt bepaalde lettertekens aan een achterliggende voorstelling. Er zijn enorm veel tekensets en ze zijn niet allemaal evenwaardig. Sommige tekensets kunnen maar een klein aantal karakters voorstellen, sommige kunnen er bijna eindeloos veel voorstellen. Standaard gebruikt MySQL de karakterset `utf8mb4`, die voor zowat alle talen volstaat.
 
 #### collation
@@ -91,12 +92,12 @@ Deze data hoeft niet tussen enkele quotes. Je gebruikt een punt in plaats van ee
 
 Temporele types worden gebruikt om tijdstippen voor te stellen. Hierbij wordt volgende notatie gebruikt om een formaat voor te stellen:
 
-- Y: cijfer van een jaar
-- M: cijfer van een maand
-- D: cijfer van een dag
-- H: cijfer van een uur
-- m: cijfer van een minuut
-- S: cijfer van een seconde
+* Y: cijfer van een jaar
+* M: cijfer van een maand
+* D: cijfer van een dag
+* H: cijfer van een uur
+* m: cijfer van een minuut
+* S: cijfer van een seconde
 
 ### `DATE`
 
@@ -117,3 +118,4 @@ Voor wanneer een volledige datum meer is dan je nodig hebt. Je kan wel minder ja
 ### datums schrijven
 
 Je schrijft datums alsof het strings waren in een afgesproken formaat, dus ook tussen enkele aanhalingstekens.
+

@@ -50,9 +50,9 @@ eerste-ERD.png
 
 Negeer de "1 more" onder "Geboortejaar". Negeer ook het gele sleuteltje. Die zaken komen later. Om de tabel "Personen" aan te maken, schrijven we:
 
-CREATE TABLE Personen(Voornaam VARCHAR(50), Familienaam VARCHAR(50), Geboortejaar INT);
+CREATE TABLE Personen\(Voornaam VARCHAR\(50\), Familienaam VARCHAR\(50\), Geboortejaar INT\);
 
-Schrijf nu zelf de code om de tabel Boeken aan te maken. Sla beide instructies (die voor personen en voor boeken) onder elkaar op in een script met naam 0001\_\_CreateTables.sql.
+Schrijf nu zelf de code om de tabel Boeken aan te maken. Sla beide instructies \(die voor personen en voor boeken\) onder elkaar op in een script met naam 0001\_\_CreateTables.sql.
 
 ### Commentaar toevoegen
 
@@ -63,17 +63,18 @@ Schrijf bovenaan in je script, in commentaar, de tekst "dit is mijn eerste tabel
 Zoals eerder aangegeven, moet je eerst een database selecteren waar de nieuwe tabel onderdeel van zal worden. Dit doe je met de USE-instructie.
 
 ### Verplichte kolommen
-Soms kunnen we met ontbrekende waarden leven, soms niet. Indien we bijvoorbeeld kunstwerken uit de oudheid bijhouden in een tabel Kunstwerken met een kolom Artiest, zullen we niet in elke rij een artiest kunnen invullen, want we zullen het niet altijd weten. Langs de andere kant is het soms verplicht een waarde in te vullen. In de database van een bibliotheek zal elk boek een identificatiecode moeten krijgen, bijvoorbeeld. Dit geven we aan door in het CREATE-statement het datatype (d.w.z. het soort gegevens in de kolom) te laten volgen door NOT NULL. Als we dit schrijven, is het onmogelijk een boek zonder identificatiecode in het systeem te plaatsen.
+
+Soms kunnen we met ontbrekende waarden leven, soms niet. Indien we bijvoorbeeld kunstwerken uit de oudheid bijhouden in een tabel Kunstwerken met een kolom Artiest, zullen we niet in elke rij een artiest kunnen invullen, want we zullen het niet altijd weten. Langs de andere kant is het soms verplicht een waarde in te vullen. In de database van een bibliotheek zal elk boek een identificatiecode moeten krijgen, bijvoorbeeld. Dit geven we aan door in het CREATE-statement het datatype \(d.w.z. het soort gegevens in de kolom\) te laten volgen door NOT NULL. Als we dit schrijven, is het onmogelijk een boek zonder identificatiecode in het systeem te plaatsen.
 
 #### Voorbeeld
 
--- de titel en voornaam van de auteur zijn verplicht
--- het nummer van de druk is niet verplicht
-CREATE TABLE Boeken (Titel VARCHAR(100) NOT NULL, VoornaamAuteur VARCHAR(100) NOT NULL, Druk TINYINT UNSIGNED);
+-- de titel en voornaam van de auteur zijn verplicht -- het nummer van de druk is niet verplicht CREATE TABLE Boeken \(Titel VARCHAR\(100\) NOT NULL, VoornaamAuteur VARCHAR\(100\) NOT NULL, Druk TINYINT UNSIGNED\);
 
 Schrijf nu zelf code om een tabel `Kunstwerken` aan te maken, met een niet-verplichte kolom `Artiest` en een verplichte kolom `Titel`, beide van het datatype `VARCHAR(100)`. Noem je script 0002\_\_CreateTable.sql
 
 ### Enkel aanmaken wat niet bestaat
-Via het CREATE-commando maak je een nieuwe structuur aan met een bepaalde naam. Als die naam al bestaat, levert dat een foutmelding. Daarom moeten we voorzichtig omspringen met het CREATE commando. We doen dit door onze CREATE enkel uit te voeren als de naam die we willen gebruiken (voor een database of een tabel of een andere structuur) nog niet gebruikt wordt. Hiervoor vervangen we bijvoorbeeld CREATE TABLE MyTable (Column VARCHAR(100)); door CREATE TABLE IF NOT EXISTS MyTable (Column VARCHAR(100));. Dit vermijdt dat we op een foutmelding botsen. Het kan wel een waarschuwing opleveren, maar dat is op zich niet erg.
+
+Via het CREATE-commando maak je een nieuwe structuur aan met een bepaalde naam. Als die naam al bestaat, levert dat een foutmelding. Daarom moeten we voorzichtig omspringen met het CREATE commando. We doen dit door onze CREATE enkel uit te voeren als de naam die we willen gebruiken \(voor een database of een tabel of een andere structuur\) nog niet gebruikt wordt. Hiervoor vervangen we bijvoorbeeld CREATE TABLE MyTable \(Column VARCHAR\(100\)\); door CREATE TABLE IF NOT EXISTS MyTable \(Column VARCHAR\(100\)\);. Dit vermijdt dat we op een foutmelding botsen. Het kan wel een waarschuwing opleveren, maar dat is op zich niet erg.
 
 Maak een nieuwe versie van script 0002\_\_CreateTable om een tabel met kunstwerken aan te maken, maar zorg dat er geen foutmelding verschijnt als deze tabel al bestaat. Noem je script 0003\_\_CreateTable.sql.
+

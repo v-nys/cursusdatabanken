@@ -9,28 +9,28 @@ DROP procedure IF EXISTS `VoorbeeldCursors`;
 DELIMITER $$
 USE `aptunes`$$
 CREATE PROCEDURE `VoorbeeldCursors` (
-	INOUT inoutGenresList VARCHAR(1000))
+    INOUT inoutGenresList VARCHAR(1000))
 BEGIN
   DECLARE ok INTEGER DEFAULT 0;
   DECLARE genre VARCHAR(50) DEFAULT "";
-    
+
   DECLARE currentGenre
   CURSOR FOR SELECT Naam FROM Genres;
-    
+
   DECLARE CONTINUE HANDLER
   FOR NOT FOUND SET ok = 1;
-    
+
   OPEN currentGenre;
-    
+
   getGenre: LOOP
-		FETCH currentGenre INTO genre;
+        FETCH currentGenre INTO genre;
     IF ok = 1
     THEN
-			LEAVE getGenre;
-		END IF;
+            LEAVE getGenre;
+        END IF;
     SET inoutGenresList = CONCAT(genre,";",inoutGenresList);
-	END LOOP getGenre;
-    
+    END LOOP getGenre;
+
   CLOSE currentGenre;
 END$$
 
@@ -49,7 +49,7 @@ Als resultaat krijgen we dan.
 
 ![](../../.gitbook/assets/sp_cursors1.JPG)
 
-We hebben dus eerst een `CURSOR` gedeclareerd om de verschillende genres te doorlopen. Daarbij hebben we ook een `NOT FOUND HANDLER` gedeclareerd. 
+We hebben dus eerst een `CURSOR` gedeclareerd om de verschillende genres te doorlopen. Daarbij hebben we ook een `NOT FOUND HANDLER` gedeclareerd.
 
 ![](../../.gitbook/assets/sp_cursors2.JPG)
 
@@ -61,5 +61,5 @@ Hierna behandelen we de lijst met genres en concateneren we deze met als tussenv
 
 ![](../../.gitbook/assets/sp_cursors4.JPG)
 
-In deze lus gebruiken we de `ok`-variabele om na te gaan of er nog een naam van een genre voorkomt in de lijst en indien niet de lus te beëindigen. We moeten uiteindelijk ook de `CURSOR` sluiten door het `CLOSE`-statement. 
+In deze lus gebruiken we de `ok`-variabele om na te gaan of er nog een naam van een genre voorkomt in de lijst en indien niet de lus te beëindigen. We moeten uiteindelijk ook de `CURSOR` sluiten door het `CLOSE`-statement.
 

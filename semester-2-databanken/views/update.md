@@ -31,7 +31,7 @@ Inspecteer `TakenLeden` en `Leden` nadat je deze opdracht hebt uitgevoerd. Wat z
 
 In een updatable view kan bepaald worden waar dergelijke aanpassingen echt moeten plaatsvinden. Volgende figuur toont het idee:
 
-![Aan de linkerkant staat de view. Aan de rechterkant de tabellen die er deel van uitmaken.](../../.gitbook/assets/image%20%2868%29.png)
+![Aan de linkerkant staat de view. Aan de rechterkant de tabellen die er deel van uitmaken.](../../.gitbook/assets/image%20%2863%29.png)
 
 Er zijn helaas grenzen aan wat mogelijk is. Experimenteer met enkele DML-operaties met `TakenLeden`. Probeer o.a. een `INSERT` en een `DELETE` van telkens één rij.
 
