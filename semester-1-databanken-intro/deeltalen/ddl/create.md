@@ -63,7 +63,7 @@ Soms kunnen we met ontbrekende waarden leven, soms niet. Indien we bijvoorbeeld 
 ```sql
 -- de titel en voornaam van de auteur zijn verplicht
 -- het nummer van de druk is niet verplicht
-CREATE TABLE Boeken (Titel VARCHAR(100) NOT NULL, VoornaamAuteur VARCHAR(100) NOT NULL, Druk TINYINT UNSIGNED);
+CREATE TABLE Boeken (Titel VARCHAR(100) NOT NULL, Voornaam VARCHAR(100) NOT NULL, Druk TINYINT UNSIGNED);
 ```
 
 Schrijf nu zelf code om een tabel `Kunstwerken` aan te maken, met een niet-verplichte kolom `Artiest` en een verplichte kolom `Titel`, beide van het datatype `VARCHAR(100)`. Noem je script 0002\_\_CreateTable.sql

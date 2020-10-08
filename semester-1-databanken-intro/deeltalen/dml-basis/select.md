@@ -17,13 +17,13 @@ De asterisk is een "wildcard" of "joker". Ze geeft aan dat we **alle** kolommen 
 
 ```sql
 USE ApDB;
-SELECT Voornaam, Familienaam FROM Boeken;
+SELECT Voornaam, Titel FROM Boeken;
 ```
 
 Tip: als je de namen van de kolommen niet uit het hoofd kent, typ dan eerst de naam van de tabel, gevolgd door een punt. Dan kan Workbench slim aanvullen:
 
 ```sql
-SELECT Boeken.Voornaam, Boeken.Familienaam FROM Boeken;
+SELECT Boeken.Voornaam, Boeken.Titel FROM Boeken;
 ```
 
 ### data ordenen
@@ -32,14 +32,14 @@ Er zijn veel manieren om geselecteerde data te groeperen, maar de simpelste is `
 
 ```sql
 USE ApDB;
-SELECT * FROM Boeken ORDER BY Familienaam;
+SELECT * FROM Boeken ORDER BY Titel;
 ```
 
 Je kan ook een tweede \(en derde,...\) kolom gebruiken om knopen door te hakken:
 
 ```sql
 USE ApDB;
-SELECT * FROM Boeken ORDER BY Familienaam, Voornaam, Titel;
+SELECT * FROM Boeken ORDER BY Voornaam, Titel;
 ```
 
 De kolomnamen die je op deze manier gebruikt, hoeven **niet** getoond te worden in je resultaat.

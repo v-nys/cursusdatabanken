@@ -24,10 +24,10 @@ Dit zou moeten werken. Merk op: de volgorde van de vernoemde kolommen moet overe
 Je hoeft geen INSERT statement te schrijven per stukje data. Je kan meerdere rijen tegelijk invoegen door ze te scheiden met komma's:
 
 ```sql
-INSERT INTO Boeken ( Voornaam, Titel, )
+INSERT INTO Boeken ( Voornaam, Titel )
 VALUES
 ('Gerard', 'Heideggers vraag naar de techniek'),
-('Diderik', 'Logicaboek')
+('Diderik', 'Logicaboek');
 ```
 
 ## Opdracht
