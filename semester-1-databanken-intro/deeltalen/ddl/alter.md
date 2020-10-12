@@ -6,6 +6,8 @@
 
 {% hint style="info" %}
 Maak voor jezelf een cheat sheet van de verschillende clausules die je in `ALTER TABLE` kan gebruiken!
+
+Voorbeeld: [https://www.sqltutorial.org/sql-cheat-sheet/](https://www.sqltutorial.org/sql-cheat-sheet/)
 {% endhint %}
 
 ### een kolom schrappen
@@ -17,7 +19,7 @@ ALTER TABLE Boeken DROP COLUMN Commentaar;
 
 #### Script bijhouden
 
-Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0003\_\_AlterBoeken.sql.
+Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0005\_\_AlterBoeken.sql.
 
 ### een kolom toevoegen
 
@@ -34,7 +36,7 @@ Je merkt in bovenstaand script dat er opgave wordt gegeven van een `CHAR SET`. S
 
 #### Script bijhouden
 
-Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0004\_\_AlterBoeken.sql.
+Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0006\_\_AlterBoeken.sql.
 
 ### beperkingen toevoegen
 
@@ -53,7 +55,7 @@ ALTER TABLE Boeken CHANGE Familienaam Familienaam VARCHAR(200) CHAR SET utf8mb4 
 
 #### Script bijhouden
 
-Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0005\_\_AlterBoeken.sql.
+Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0007\_\_AlterBoeken.sql.
 
 ### tabelnamen wijzigen
 
