@@ -2,15 +2,6 @@
 
 ## Oefeningen
 
-**Voor je deze oefeningen maakt, gebruik je onderstaand script om zeker te zijn dat je databank in de gewenste toestand is:**
-
-```sql
-DROP DATABASE IF EXISTS ApDb;
-CREATE DATABASE ApDb;
-```
-
-Sla dit op als 0500\_\_CalibrateDB.sql in je map met scripts.
-
 ### nummers
 
 Schrijf een script dat een tabel `Nummers` voor muzieknummers toevoegt aan je databank met volgende karakteristieken:
@@ -76,9 +67,12 @@ git push
 
 Herstel ook je databank naar de toestand zodat ze weer gelijk loopt met de theorie met volgend script en sla op als 0017\_\_CalibrateDB.sql:
 
+{% hint style="info" %}
+Zie lijn 1 van onderstaand script m.b.t. USE !!!
+{% endhint %}
+
 ```sql
-DROP DATABASE IF EXISTS `ApDb`;
-CREATE DATABASE `ModernWays` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+-- Gebruik i.p.v. ApDb de naam van jouw databank !!!
 USE `ApDb`;
 -- MySQL dump 10.13  Distrib 8.0.17, for Linux (x86_64)
 --
@@ -136,8 +130,6 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2019-10-09 11:47:25
 ```
 
 Vul op Digitap ook de link in naar je Bitbucket repository.
