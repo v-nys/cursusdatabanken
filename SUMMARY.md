@@ -42,7 +42,7 @@
     * [SELECT](semester-1-databanken-intro/deeltalen/dml-basis/select.md)
     * [UPDATE](semester-1-databanken-intro/deeltalen/dml-basis/update.md)
     * [DELETE](semester-1-databanken-intro/deeltalen/dml-basis/delete.md)
-    * [Labo-oefeningen basis](semester-1-databanken-intro/deeltalen/dml-basis/oefeningen-labo.md)
+    * [Labo-oefeningen](semester-1-databanken-intro/deeltalen/dml-basis/oefeningen-labo.md)
   * [DML medium](semester-1-databanken-intro/deeltalen/dml-medium/README.md)
     * [SELECT met clausules](semester-1-databanken-intro/deeltalen/dml-medium/select-met-clausules.md)
     * [SELECT met WHERE](semester-1-databanken-intro/deeltalen/dml-medium/select-met-where.md)

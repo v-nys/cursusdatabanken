@@ -5,8 +5,8 @@
 **Voor je deze oefeningen maakt, gebruik je onderstaand script om zeker te zijn dat je databank in de gewenste toestand is:**
 
 ```sql
-DROP DATABASE IF EXISTS ModernWays;
-CREATE DATABASE ModernWays;
+DROP DATABASE IF EXISTS ApDb;
+CREATE DATABASE ApDb;
 ```
 
 Sla dit op als 0500\_\_CalibrateDB.sql in je map met scripts.
@@ -77,9 +77,9 @@ git push
 Herstel ook je databank naar de toestand zodat ze weer gelijk loopt met de theorie met volgend script en sla op als 0017\_\_CalibrateDB.sql:
 
 ```sql
-DROP DATABASE IF EXISTS `ModernWays`;
+DROP DATABASE IF EXISTS `ApDb`;
 CREATE DATABASE `ModernWays` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `ModernWays`;
+USE `ApDb`;
 -- MySQL dump 10.13  Distrib 8.0.17, for Linux (x86_64)
 --
 -- Host: localhost    Database: ModernWays
