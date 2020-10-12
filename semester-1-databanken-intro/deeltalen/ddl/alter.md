@@ -30,6 +30,8 @@ USE ApDb;
 ALTER TABLE Boeken ADD COLUMN Commentaar VARCHAR(150) CHAR SET utf8mb4;
 ```
 
+Je merkt in bovenstaand script dat er opgave wordt gegeven van een `CHAR SET`. Standaard is `utf8mb4` van toepassing voor MySql, maar om goed gebruik aan te leren is het toch nuttig deze expliciet te vermelden.
+
 #### Script bijhouden
 
 Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0004\_\_AlterBoeken.sql.
