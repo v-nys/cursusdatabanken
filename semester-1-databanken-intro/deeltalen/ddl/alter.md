@@ -11,7 +11,7 @@ Maak voor jezelf een cheat sheet van de verschillende clausules die je in `ALTER
 ### een kolom schrappen
 
 ```sql
-USE ModernWays;
+USE ApDb;
 ALTER TABLE Boeken DROP COLUMN Commentaar;
 ```
 
@@ -21,12 +21,12 @@ Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0003\_\_AlterBo
 
 ### een kolom toevoegen
 
-Om een kolom toe te voegen maak je gebruik van de `ADD` clausule bij het ALTER statement. Je zou hier misschien het woordje `CREATE` verwachten. In SQL gebruik je namelijk het keyword `CREATE` om een structuur aan te maken. Maar binnenin `ALTER` is het dus `ADD`!
+Om een kolom toe te voegen maak je gebruik van de `ADD` clausule bij het ALTER statement. Je zou hier misschien het woordje `CREATE` verwachten. Zoals je ondertussen weet, gebruik je in sql namelijk het keyword `CREATE` om een structuur aan te maken. Maar binnenin `ALTER` is het dus `ADD`! Je moet m.a.w. aangeven dat je iets, in dit geval een kolom, wil toevoegen aan de tabel.
 
 ```sql
 -- herstel de kolom
 -- deze mag tot 150 (mogelijk internationale) karakters bevatten
-USE ModernWays;
+USE ApDb;
 ALTER TABLE Boeken ADD COLUMN Commentaar VARCHAR(150) CHAR SET utf8mb4;
 ```
 
@@ -45,7 +45,7 @@ ALTER TABLE TableName CHANGE OldColumnName NewColumnName NewColumnType;
 In ons voorbeeld wordt het:
 
 ```sql
-USE ModernWays;
+USE ApDb;
 ALTER TABLE Boeken CHANGE Familienaam Familienaam VARCHAR(200) CHAR SET utf8mb4 NOT NULL;
 ```
 
@@ -64,7 +64,7 @@ RENAME TABLE `OldTableName` TO `NewTableName`;
 In ons voorbeeld:
 
 ```sql
-USE ModernWays;
+USE ApDb;
 RENAME TABLE `Boeken` TO `MijnBoeken`;
 ```
 
