@@ -4,9 +4,12 @@
 
 **Voor je deze oefeningen maakt, gebruik je onderstaand script om zeker te zijn dat je databank in de gewenste toestand is.**
 
+{% hint style="info" %}
+Zie lijn 1 van onderstaand script m.b.t. USE !!!
+{% endhint %}
+
 ```sql
-DROP DATABASE IF EXISTS `ApDb`;
-CREATE DATABASE  IF NOT EXISTS `ApDb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+-- Gebruik i.p.v. ApDb de naam van jouw databank !!!
 USE `ApDb`;
 -- MySQL dump 10.13  Distrib 8.0.17, for Linux (x86_64)
 --
