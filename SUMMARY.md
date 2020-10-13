@@ -28,7 +28,6 @@
     * [CREATE](semester-1-databanken-intro/deeltalen/ddl/create.md)
     * [ALTER](semester-1-databanken-intro/deeltalen/ddl/alter.md)
     * [DROP](semester-1-databanken-intro/deeltalen/ddl/drop.md)
-    * [Labo](semester-1-databanken-intro/deeltalen/ddl/ddl-basis-dml-basis--labo.md)
     * [Enum](semester-1-databanken-intro/deeltalen/ddl/enum.md)
     * [Sleutels voor identificatie](semester-1-databanken-intro/deeltalen/ddl/sleutels-voor-identificatie.md)
     * [Primaire sleutel toevoegen/verwijderen](semester-1-databanken-intro/deeltalen/ddl/primaire-sleutel-toevoegen-verwijderen.md)
