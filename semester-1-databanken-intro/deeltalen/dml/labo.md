@@ -173,5 +173,15 @@ Schrijf een script, 0516\_\_Oefening.sql, dat per dier een tabel met één kolom
 | Suerta de hond |
 | Фёдор de hond |
 
-### 
+### afronden
+
+Wanneer je klaar bent, voer dan de gewoonlijke commando's uit om je scripts te delen:
+
+```text
+git add --all
+git commit -m "Scripts DML"
+git push
+```
+
+Ze hierna je database terug zoals ze was na de theorieles met het script van het einde van vorige labosessie.
 
