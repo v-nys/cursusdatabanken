@@ -14,6 +14,27 @@ Maak voor jezelf een cheat sheet van de verschillende clausules die je in `ALTER
 Voorbeeld: [https://www.sqltutorial.org/sql-cheat-sheet/](https://www.sqltutorial.org/sql-cheat-sheet/)
 {% endhint %}
 
+### MySql laat niet zomaar wijzigingen toe
+
+Default is MySql ingesteld om niet zomaar wijzigingen aan een tabel toe te staan.
+
+Je kan dit uiteraard uitschakelen, maar het is in deze fase wel een goed idee om na jouw wijzigingen deze optie terug in te schakelen.
+
+**Uitschakelen**  
+`SET SQL_SAFE_UPDATES = 0;`
+
+**Inschakelen**  
+`SET SQL_SAFE_UPDATES = 1;`
+
+Hieronder hoe je dit op een correcte wijze gebruikt.
+
+```sql
+USE ApDb;
+SET SQL_SAFE_UPDATES = 0;
+ALTER TABLE ...
+SET SQL_SAFE_UPDATES = 1;
+```
+
 ### een kolom schrappen
 
 ```sql
@@ -55,6 +76,21 @@ ALTER TABLE TableName CHANGE OldColumnName NewColumnName NewColumnType;
 ```
 
 In ons voorbeeld wordt het:
+
+Eerst moeten we ervoor zorgen dat de nieuw toegevoegde kolom voor iedere rij een waarde krijgt, tot nu is deze waarde `NULL`.
+
+![](../../../.gitbook/assets/image%20%2873%29.png)
+
+{% hint style="info" %}
+Het UPDATE-commando, hieronder, hebben we tot nu nog niet gezien en je kan dit gewoon copy/pasten om vervolgens uit te voeren.
+{% endhint %}
+
+```sql
+USE ApDb;
+UPDATE Boeken SET Familienaam = "Niet gekend";
+```
+
+Vervolgens gaan we de kolom Familienaam qua structuur wijzigen en een beperking opleggen. 
 
 ```sql
 USE ApDb;
