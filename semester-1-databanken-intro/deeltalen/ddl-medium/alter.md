@@ -14,12 +14,16 @@ Voorbeeld: [https://www.sqltutorial.org/sql-cheat-sheet/](https://www.sqltutoria
 
 ```sql
 USE ApDb;
-ALTER TABLE Boeken DROP COLUMN Druk;
+ALTER TABLE Boeken DROP COLUMN Voornaam;
 ```
 
 #### Script bijhouden
 
-Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0010\_\_AlterBoeken.sql.
+{% hint style="info" %}
+Voer eerst het calibratiescript op de [indexpagina](./) van dit deel uit. Pas het script eerst aan om je persoonlijke database te gebruiken in plaats van `ApDB`.
+{% endhint %}
+
+Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0008\_\_AlterBoeken.sql.
 
 ### een kolom toevoegen
 
@@ -36,7 +40,7 @@ Je merkt in bovenstaand script dat er opgave wordt gegeven van een `CHAR SET`. S
 
 #### Script bijhouden
 
-Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0011\_\_AlterBoeken.sql.
+Pas dit script aan om naast de kolom `Commentaar` ook de kolom `Voornaam` terug toe te voegen en een kolom Familienaam toe te voegen, beide `VARCHAR(100)` en niet verplicht. Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0009\_\_AlterBoeken.sql.
 
 ### beperkingen toevoegen
 
@@ -55,7 +59,7 @@ ALTER TABLE Boeken CHANGE Familienaam Familienaam VARCHAR(200) CHAR SET utf8mb4 
 
 #### Script bijhouden
 
-Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0012\_\_AlterBoeken.sql.
+Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0010\_\_AlterBoeken.sql.
 
 ### tabelnamen wijzigen
 
@@ -73,6 +77,6 @@ RENAME TABLE `Boeken` TO `MijnBoeken`;
 ```
 
 {% hint style="info" %}
-Deze wijziging hoef je niet op te slaan.
+Deze wijziging hoef je niet op te slaan. Het is maar een voorbeeld.
 {% endhint %}
 
