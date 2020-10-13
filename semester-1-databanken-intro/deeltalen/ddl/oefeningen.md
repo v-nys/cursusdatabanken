@@ -8,17 +8,17 @@ Klassificatie van boeken is een wetenschap op zich. Er zijn veel systemen voor, 
 
 Schrijf zelf een script dat een verplichte kolom met naam `Categorie` toevoegt aan de bestaande tabel met boeken. De categorie van een boek wordt uitgedrukt in maximaal 40 lettertekens. Dit zijn "gewone" lettertekens die je zou aantreffen in een typische Engelstalige tekst.
 
-Noem je script 0010\_\_Oefening.sql.
+Noem je script 0011\_\_Oefening.sql.
 
 ## een langere kolom
 
 Blijkbaar hebben we ons vergist! Er bestaan ook systemen waarin langere codes gebruikt worden, met internationale lettertekens. Schrijf zelf een script dat de kolom `Categorie` aanpast zodat je tot 120 internationale lettertekens kan gaan.
 
-Noem je script 0011\_\_Oefening.sql.
+Noem je script 0012\_\_Oefening.sql.
 
 ## een kolom voor de klasseur
 
-Het is handig om bij te houden wie een boek in het systeem heeft geplaatst. Daarom willen we een extra kolom met de naam `IngevoegdDoor` die maximaal 255 karakters lang is en internationale karakters moet kunnen bevatten. Deze kolom is niet verplicht.
+Het is handig om bij te houden wie een boek in het systeem heeft geplaatst. Daarom willen we een extra kolom met de naam `IngevoegdDoor` die maximaal 255 karakters lang is en zeker internationale karakters moet kunnen bevatten. Deze kolom is niet verplicht.
 
-Noem je script 0012\_\_Oefening.sql.
+Noem je script 0013\_\_Oefening.sql.
 

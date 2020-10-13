@@ -1,4 +1,4 @@
-# Labo-oefeningen
+# Labo
 
 ## Oefeningen
 
@@ -6,14 +6,18 @@
 
 Schrijf een script dat een tabel `Nummers` voor muzieknummers toevoegt aan je databank met volgende karakteristieken:
 
+{% hint style="warning" %}
+"Variabele lengte" betekent dat de tekst niet altijd de maximale hoeveelheid ruimte in beslag neemt.
+{% endhint %}
+
 | Kolomnaam | Type | Maximale lengte | Variabele lengte | Internationale tekens | Verplicht |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Titel | CHAR | 100 | JA | JA | JA |
-| Artiest | CHAR | 100 | JA | JA | JA |
-| Genre | CHAR | 50 | JA | NEE | NEE |
-| Jaar | CHAR | 4 | NEE | NEE | NEE |
+| Titel | tekst | 100 | JA | zeker nodig | JA |
+| Artiest | tekst | 100 | JA | zeker nodig | JA |
+| Genre | tekst | 50 | JA | niet zeker nodig | NEE |
+| Jaar | tekst | 4 | NEE | niet zeker nodig | NEE |
 
-Sla op als 0501\_\_Oefening.sql.
+Sla op als 0014\_\_Oefening.sql.
 
 ### huisdieren
 
@@ -21,11 +25,53 @@ Doe hetzelfde voor een tabel `Huisdieren` met huisdieren, met volgende kenmerken
 
 | Kolomnaam | Type | Maximale lengte | Variabele lengte | Internationale tekens | Verplicht |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Naam | CHAR | 100 | JA | JA | JA |
+| Naam | tekst | 100 | JA | zeker nodig | JA |
 | Leeftijd | een geheel positief getal | tot 300 jaar | NVT | NVT | JA |
-| Soort | CHAR | 50 | JA | NEE | JA |
+| Soort | tekst | 50 | JA | niet zeker nodig | JA |
 
-Sla op als 0502\_\_Oefening.sql.
+Sla op als 0015\_\_Oefening.sql.
+
+### data nummers
+
+Plaats volgende data in je tabel met muzieknummers:
+
+1. het nummer "John the Revelator" van de groep "Larkin Poe". Het genre is "Blues" en het verschijningsjaar is 2017.
+
+2. het nummer "Missionary Man" van de groep "Ghost". Het genre is "Metal" en het verschijningsjaar is 2016.
+
+Sla op als 0016\_\_Oefening.sql.
+
+### data huisdieren
+
+Plaats volgende data in je tabel met huisdieren:
+
+1. Ming, 9 jaar oud, is de hond van Christiane
+2. Bientje, 12 jaar oud, is de kat van Esther
+3. Misty, 7 jaar oud, is de hond van Vincent
+
+Sla op als 0017\_\_Oefening.sql.
+
+### zoekopdracht huisdieren
+
+{% hint style="info" %}
+Je hebt hier de `concat` functie nodig, uitgelegd op [de pagina over SELECT](../dml-medium/select.md).
+{% endhint %}
+
+Toon met een `SELECT` de duo's met huisdieren en baasjes in het formaat `H+B`, gerangschikt volgens de leeftijd van het huisdier.
+
+De juiste oplossing toont volgende rijen in MySQL Workbench, in exact deze volgorde:
+
+| \(wat hier staat is niet belangrijk\) |
+| :--- |
+| M+V |
+| M+C |
+| B+E |
+
+Sla op als 0018\_\_Oefening.sql.
+
+{% hint style="danger" %}
+Alle oefeningen hieronder zijn nog niet herwerkt voor 2020-2021!
+{% endhint %}
 
 ### hernoemen
 

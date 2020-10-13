@@ -1,10 +1,6 @@
-# DDL basis
+# DDL
 
-De basiscommando's van de DDL zijn:
+Hier zien we iets meer in verband met het aanmaken van structuren voor je data. We starten onze database met behulp van onderstaand calibratiescript:
 
-* `CREATE`: Hiermee maak je nieuwe structuren aan.
-* `ALTER`: Hiermee verander je bestaande structuren.
-* `DROP`: Hiermee wis je bestaande structuren.
-
-Let op! In de DML kom je commando's tegen die gelijkaardig klinken. Je doet er goed aan te onthouden dat bovenstaande drie commando's specifiek zijn voor de DDL.
+{% file src="../../../.gitbook/assets/calibratie.sql" caption="Calibratiescript DDL medium" %}
 
