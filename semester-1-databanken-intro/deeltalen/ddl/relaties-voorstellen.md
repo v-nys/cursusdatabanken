@@ -90,7 +90,7 @@ FOREIGN KEY (Taken_Id)
 REFERENCES Taken(Id);
 ```
 
-Om de data te combineren, moet je nu [gebruik maken van een `JOIN`-operatie](../dml-gevorderd/joins-simpele-relaties.md). Voor een een-op-een-relatie is dit iets makkelijker.
+Om de data te combineren, moet je nu [gebruik maken van een `JOIN`-operatie](../joins/joins-simpele-relaties.md). Voor een een-op-een-relatie is dit iets makkelijker.
 
 ### een-op-veel relaties
 
@@ -139,7 +139,7 @@ Voor het laatste script bespaart onderstaande gedeeltelijke SQL je het copy-past
 
 Een een-op-max-een relatie is een relatie waarbij één entiteit A gelinkt is aan **hooguit** één andere entiteit B. Het kan ook zijn dat A aan geen enkele B gelinkt is. Deze stel je voor zoals een 1-op-N relatie, dus met de vreemde sleutel in de tabel aan de niet-exact-1-kant. Dit voorkomt vreemde sleutels met de waarde `NULL`.
 
-Hoe je de tweets terug koppelt aan de juiste account, lees je ook bij de uitleg rond [`JOIN`-operaties bij simpele relaties](../dml-gevorderd/joins-simpele-relaties.md). Koppel users aan de juiste tweets met dit script, 0065\_\_SelectUsersTweets.sql:
+Hoe je de tweets terug koppelt aan de juiste account, lees je ook bij de uitleg rond [`JOIN`-operaties bij simpele relaties](../joins/joins-simpele-relaties.md). Koppel users aan de juiste tweets met dit script, 0065\_\_SelectUsersTweets.sql:
 
 ```sql
 USE ModernWays;
@@ -235,7 +235,7 @@ values
 (4,4);
 ```
 
-[`JOIN`-operaties bij simpele relaties](../dml-gevorderd/joins-via-tussenliggende-tabel.md) legt uit hoe je nu toont welke games op welk platform verschenen zijn. Dit wordt hier gedaan in 0068\_\_SelectReleases.sql:
+[`JOIN`-operaties bij simpele relaties](../joins/joins-via-tussenliggende-tabel.md) legt uit hoe je nu toont welke games op welk platform verschenen zijn. Dit wordt hier gedaan in 0068\_\_SelectReleases.sql:
 
 ```sql
 USE ModernWays;
