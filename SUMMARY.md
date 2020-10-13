@@ -60,7 +60,7 @@
     * [IN](semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/in.md)
     * [BETWEEN](semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/between.md)
     * [SELECT DISTINCT](semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/distinct.md)
-    * [Labo-oefeningen groeperen en samenvatten](semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/oefeningen-labo-groeperen.md)
+    * [Labo](semester-1-databanken-intro/deeltalen/groeperen-en-samenvatten/oefeningen-labo-groeperen.md)
   * [JOINS](semester-1-databanken-intro/deeltalen/joins/README.md)
     * [JOINs bij simpele relaties](semester-1-databanken-intro/deeltalen/joins/joins-simpele-relaties.md)
     * [JOINs via tussenliggende tabel](semester-1-databanken-intro/deeltalen/joins/joins-via-tussenliggende-tabel.md)

@@ -1,4 +1,4 @@
-# Labo-oefeningen groeperen en samenvatten
+# Labo
 
 ## Calibreren
 
