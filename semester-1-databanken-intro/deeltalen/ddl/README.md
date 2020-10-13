@@ -1,6 +1,8 @@
 # DDL
 
-Hier zien we iets meer in verband met het aanmaken van structuren voor je data. We starten onze database met behulp van onderstaand calibratiescript:
+De belangrijkste commando's van de DDL zijn:
 
-{% file src="../../../.gitbook/assets/calibratie.sql" caption="Calibratiescript DDL medium" %}
+* `CREATE`: Hiermee maak je nieuwe structuren aan.
+* `ALTER`: Hiermee verander je bestaande structuren.
+* `DROP`: Hiermee wis je bestaande structuren.
 

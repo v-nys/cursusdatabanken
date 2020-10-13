@@ -2,7 +2,7 @@
 
 Views kunnen **onder bepaalde omstandigheden** worden aangepast, ttz. de inhoud van de view kan op dezelfde wijze worden benaderd als een gewone tabel.
 
-M.a.w. de [DML-commando's](../../semester-1-databanken-intro/deeltalen/dml-medium/) zijn ook hier te gebruiken \(met bepaalde technische beperkingen\).
+M.a.w. de [DML-commando's](../../semester-1-databanken-intro/deeltalen/dml/) zijn ook hier te gebruiken \(met bepaalde technische beperkingen\).
 
 Er zijn hierbij wel enkele uitzonderingen in die zin dat **bij de creatie van de view** de query o.a. geen van volgende statements mag bevatten.
 

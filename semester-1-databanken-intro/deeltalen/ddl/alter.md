@@ -1,5 +1,9 @@
 # ALTER
 
+Hier zien we iets meer in verband met het aanmaken van structuren voor je data. We starten onze database met behulp van onderstaand calibratiescript:
+
+{% file src="../../../.gitbook/assets/calibratie.sql" caption="Calibratiescript DDL medium" %}
+
 ## `ALTER TABLE`
 
 `ALTER TABLE` verandert de structuur van een tabel, zonder bestaande data te beschadigen. Je kan het gebruiken om kolommen toe te voegen of te verwijderen. Je kan het ook gebruiken om het soort data in een kolom aan te passen, specifieker of juist breder te maken. Voor deze taken heb je binnenin een `ALTER TABLE` statement extra clausules nodig.
