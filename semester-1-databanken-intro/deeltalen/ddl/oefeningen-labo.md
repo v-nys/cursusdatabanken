@@ -28,6 +28,7 @@ Doe hetzelfde voor een tabel `Huisdieren` met huisdieren, met volgende kenmerken
 | Naam | tekst | 100 | JA | zeker nodig | JA |
 | Leeftijd | een geheel positief getal | tot 300 jaar | NVT | NVT | JA |
 | Soort | tekst | 50 | JA | niet zeker nodig | JA |
+| Baasje | tekst | 100 | JA | zeker nodig | JA |
 
 Sla op als 0015\_\_Oefening.sql.
 
