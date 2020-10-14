@@ -77,6 +77,16 @@ ALTER TABLE TableName CHANGE OldColumnName NewColumnName NewColumnType;
 
 In ons voorbeeld wordt het:
 
+**Optie 1**
+
+Je kan bij het toevoegen van een kolom ook een default waarde meegeven, nl.
+
+```sql
+ALTER TABLE Boeken ADD COLUMN ISBN VARCHAR(25) DEFAULT ("ABC123");
+```
+
+**Optie 2**
+
 Eerst moeten we ervoor zorgen dat de nieuw toegevoegde kolom voor iedere rij een waarde krijgt, tot nu is deze waarde `NULL`.
 
 ![](../../../.gitbook/assets/image%20%2873%29.png)
