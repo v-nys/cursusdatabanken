@@ -48,7 +48,7 @@ ALTER TABLE Boeken DROP COLUMN Voornaam;
 Voer eerst het calibratiescript op de [indexpagina](./) van dit deel uit. Pas het script eerst aan om je persoonlijke database te gebruiken in plaats van `ApDB`.
 {% endhint %}
 
-Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0008\_\_AlterBoeken.sql.
+Sla het script om de voornaam te verwijderen op wanneer je klaar bent. Geef het de naam 0008\_\_AlterBoeken.sql.
 
 ### een kolom toevoegen
 
@@ -99,7 +99,7 @@ ALTER TABLE Boeken CHANGE Familienaam Familienaam VARCHAR(200) CHAR SET utf8mb4 
 
 #### Script bijhouden
 
-Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0010\_\_AlterBoeken.sql.
+Sla een script met bovenstaande `UPDATE` en `ALTER` achter elkaar opnieuw op wanneer je klaar bent. Geef het de naam 0010\_\_AlterBoeken.sql.
 
 ### tabelnamen wijzigen
 
