@@ -23,6 +23,10 @@ Sla op als 0014\_\_Oefening.sql.
 
 Doe hetzelfde voor een tabel `Huisdieren` met huisdieren, met volgende kenmerken:
 
+{% hint style="success" %}
+Je hoeft niet in te stellen dat 300 de maximale leeftijd is. Je moet alleen zorgen dat 300 zeker past in de kolom in kwestie, zonder dat er daarbij opslagruimte verspild wordt.
+{% endhint %}
+
 | Kolomnaam | Type | Maximale lengte | Variabele lengte | Internationale tekens | Verplicht |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Naam | tekst | 100 | JA | zeker nodig | JA |
