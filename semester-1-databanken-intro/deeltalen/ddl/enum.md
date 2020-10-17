@@ -1,5 +1,9 @@
 # Enum
 
+{% hint style="warning" %}
+TODO: filmpje, hernummering,...
+{% endhint %}
+
 Vaak kan je in een bepaalde kolom maar een beperkt aantal mogelijke waarden invullen. Een datatype zoals `INT` of `VARCHAR` is dan niet op zijn plaats, omdat die heel veel mogelijke waarden toelaten. Dat zorgt voor inefficiëntie en een grotere kans op foute invoer.
 
 Voor dergelijke kolommen is het beter enumeraties te gebruiken, of `ENUM`s, om het met de woordenschat van MySQL te zeggen. Een `ENUM` is een stuk tekst met een waarde uit een op voorhand aangegeven stel mogelijkheden.
@@ -23,7 +27,7 @@ Als de winkel alleen polo's, broeken en truien verkoopt en als er maar drie form
 Dat gaat als volgt:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 CREATE TABLE Kledingstukken (
 Nummer INT NOT NULL,
 Soort ENUM('polo','broek','trui'),
@@ -36,7 +40,7 @@ Noem die code 0033\_\_CreateKledingstukken.sql.
 Vervolgens kan je data aanmaken alsof de tweede en derde kolom tekst bevatten, met 0034\_\_InsertKledingstukken.sql:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 INSERT INTO Kledingstukken
 VALUES
 (1, 'polo', 'small'),
@@ -53,7 +57,7 @@ VALUES
 Wat **niet** gaat, is dit \(hoef je niet op te slaan\):
 
 ```sql
-USE ModernWays;
+USE ApDB;
 INSERT INTO Kledingstukken
 VALUES
 (10,'hemd','extra large');
@@ -71,7 +75,7 @@ Let wel op! Enumeraties lijken op strings, maar ze worden anders gesorteerd. De 
 Dit kan je afleiden uit volgend script \(0035\_\_SelectKledingstukken.sql\):
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT *
 FROM Kledingstukken
 ORDER BY Formaat;
