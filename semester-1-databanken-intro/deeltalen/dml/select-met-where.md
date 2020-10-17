@@ -1,7 +1,7 @@
 # SELECT met WHERE
 
 {% hint style="warning" %}
-Denk eraan je database te [kalibreren ](https://apwt.gitbook.io/cursus-databanken/semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo)indien nodig, zodat je meteen met de scripts kan inpikken.
+TODO: calibratie, nummering, filmpje werking met true/false, filmpje met uitleg booleaanse expressies
 {% endhint %}
 
 In de meeste gevallen zijn we niet geïnterresseerd om alle rijen uit een tabel te selecteren. We willen over de mogelijkheid beschikken om alleen de rijen, die aan een bepaalde voorwaarde voldoen, te kunnen selecteren.
@@ -10,7 +10,7 @@ De oplossing bestaat erin de `WHERE`-clausule te gebruiken. De `WHERE`-clausule 
 
 Om de `WHERE` te gebruiken, zet je hem na de `FROM Tabel`.
 
-Bijvoorbeeld \(sla op als 0018\_\_SelectBoeken.sql\):
+Bijvoorbeeld \(sla op):
 
 ```sql
 USE ModernWays;
@@ -49,8 +49,3 @@ WHERE Titel <> NULL;
 ```
 
 **Het ligt niet aan de data! Vergelijkingen met `NULL` via `=` en `<>` zijn zinloos!**
-
-{% hint style="info" %}
-Wat je hier leert over `WHERE` is overdraagbaar naar andere DML-statements. Je kan bijvoorbeeld enkel specifieke rijen updaten of wissen.
-{% endhint %}
-
