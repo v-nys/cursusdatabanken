@@ -59,7 +59,7 @@ Sla op als 0017\_\_Oefening.sql.
 ### zoekopdracht huisdieren
 
 {% hint style="info" %}
-Je hebt hier de `concat` functie nodig, uitgelegd op [de pagina over SELECT](../dml/select.md).
+Je hebt hier de `concat` functie nodig, uitgelegd op [de pagina over SELECT](../dml/select/).
 {% endhint %}
 
 Toon met een `SELECT` de duo's met huisdieren en baasjes in het formaat `H+B`, gerangschikt volgens de leeftijd van het huisdier.

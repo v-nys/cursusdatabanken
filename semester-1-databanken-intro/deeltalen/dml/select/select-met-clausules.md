@@ -26,3 +26,4 @@ Hiermee kan je:
 * de uitvoer sorteren
 
 In de loop van deze cursus komen al deze clausules aan bod.
+
