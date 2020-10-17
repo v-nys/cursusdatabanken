@@ -6,7 +6,7 @@ Voor dergelijke kolommen is het beter enumeraties te gebruiken, of `ENUM`s, om h
 
 Veronderstel dat je een database met stukken kledij bijhoudt, bijvoorbeeld deze:
 
-| artikelnummer | type kledij | formaat |
+| artikelnummer | soort kledij | formaat |
 | :--- | :--- | :--- |
 | 1 | polo | small |
 | 2 | polo | medium |
@@ -26,7 +26,7 @@ Dat gaat als volgt:
 USE ModernWays;
 CREATE TABLE Kledingstukken (
 Nummer INT NOT NULL,
-Type ENUM('polo','broek','trui'),
+Soort ENUM('polo','broek','trui'),
 Formaat ENUM('small','medium','large')
 );
 ```
