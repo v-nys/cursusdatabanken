@@ -2,6 +2,7 @@
 
 {% hint style="warning" %}
 TODO: calibratie, nummering, filmpje,...
+uitleg over Categorie klopt niet meer.
 {% endhint %}
 
 Het `UPDATE` DML statement lijkt op het `ALTER` DDL statement. Beide brengen één of meerdere wijzigingen aan in de database. Daar waar `ALTER` de structuur van een tabel wijzigt, wijzigt `UPDATE` de gegevens die in een tabel zitten.
@@ -13,7 +14,7 @@ We hebben eerder de kolom `Categorie` toegevoegd aan de tabel `Boeken`. Maar dez
 MySQL staat dit om veiligheidsredenen niet zomaar toe, maar voorlopig zijn we aan het verkennen. Om dit dus toch mogelijk te maken, moet je `SET SQL_SAFE_UPDATES = 0` toevoegen voor een "onveilig" commando en achteraf `SET SQL_SAFE_UPDATES = 1` toevoegen.
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SET SQL_SAFE_UPDATES = 0;
 UPDATE Boeken SET Categorie = 'Metafysica';
 SET SQL_SAFE_UPDATES = 1;
@@ -26,7 +27,7 @@ Inspecteer je data. Zie je het effect?
 Je kan ook de inhoud van meer dan één kolom aanpassen. Dat zou je als volgt doen \(maar hoef je niet uit te voeren\):
 
 ```sql
-USE ModernWays;
+USE ApDB;
 UPDATE Boeken SET Categorie = 'Wetenschap', Titel = 'Een boek';
 ```
 
