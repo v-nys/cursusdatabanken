@@ -10,7 +10,7 @@ De oplossing bestaat erin de `WHERE`-clausule te gebruiken. De `WHERE`-clausule 
 
 Om de `WHERE` te gebruiken, zet je hem na de `FROM Tabel`.
 
-Bijvoorbeeld \(sla op):
+Bijvoorbeeld \(sla op\):
 
 ```sql
 USE ModernWays;
@@ -49,3 +49,4 @@ WHERE Titel <> NULL;
 ```
 
 **Het ligt niet aan de data! Vergelijkingen met `NULL` via `=` en `<>` zijn zinloos!**
+
