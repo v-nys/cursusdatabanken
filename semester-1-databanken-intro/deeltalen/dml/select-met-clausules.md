@@ -25,9 +25,4 @@ Hiermee kan je:
 * statistische eigenschappen van de getoonde data afdwingen
 * de uitvoer sorteren
 
-In de volgende pagina's komen al deze clausules aan bod.
-
-{% hint style="info" %}
-Wat je hier leert over `WHERE` is overdraagbaar naar andere DML-statements. Je kan bijvoorbeeld enkel specifieke rijen updaten of wissen.
-{% endhint %}
-
+In de loop van deze cursus komen al deze clausules aan bod.
