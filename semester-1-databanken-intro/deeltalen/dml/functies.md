@@ -22,6 +22,12 @@ Je kan wel net zo goed dit doen:
 SELECT 'Ha';
 ```
 
+Als je alleen het begin van een string wil, kan je ook `LEFT` gebruiken:
+
+```sql
+SELECT LEFT('Hallo',2);
+```
+
 ## CONCAT
 
 Deze functie gebruik je om stukken tekst aan elkaar te hangen. Je kan dus dit doen om de volledige naam van auteurs te tonen:
