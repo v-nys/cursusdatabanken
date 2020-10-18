@@ -6,7 +6,7 @@ TODO: filmpje werking met true/false, filmpje met uitleg booleaanse expressies
 
 {% file src="../../../../.gitbook/assets/calibratie0018.sql" caption="Calibratiescript" %}
 
-In de meeste gevallen zijn we niet geïnterresseerd om alle rijen uit een tabel te selecteren. We willen over de mogelijkheid beschikken om alleen de rijen, die aan een bepaalde voorwaarde voldoen, te kunnen selecteren.
+In de meeste gevallen zijn we niet geïnteresseerd om alle rijen uit een tabel te selecteren. We willen over de mogelijkheid beschikken om alleen de rijen, die aan een bepaalde voorwaarde voldoen, te kunnen selecteren.
 
 De oplossing bestaat erin de `WHERE`-clausule te gebruiken. De `WHERE`-clausule bevat een **booleaanse expressie**. Dit is een expressie die als resultaat voor een bepaalde rij in principe `TRUE` of `FALSE` moet opleveren. In tegenstelling tot de meeste programmeertalen gebruikt SQL ook een derde mogelijke waarde: `NULL`. Deze waarde komt voor wanneer we niet kunnen bepalen of iets waar of niet waar is.
 
