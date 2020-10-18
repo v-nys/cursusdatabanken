@@ -4,7 +4,7 @@
 TODO: filmpje werking met true/false, filmpje met uitleg booleaanse expressies
 {% endhint %}
 
-{% file src="../../../.gitbook/assets/calibratie0018.sql" caption="Calibratiescript SELECT met WHERE" %}
+{% file src="../../../../.gitbook/assets/calibratie0018.sql" caption="Calibratiescript" %}
 
 In de meeste gevallen zijn we niet geïnterresseerd om alle rijen uit een tabel te selecteren. We willen over de mogelijkheid beschikken om alleen de rijen, die aan een bepaalde voorwaarde voldoen, te kunnen selecteren.
 
@@ -51,3 +51,4 @@ WHERE Titel <> NULL;
 ```
 
 **Het ligt niet aan de data! Vergelijkingen met `NULL` via `=` en `<>` zijn zinloos!** Als je wil controleren of de waarde in een bepaalde kolom ontbreekt, schrijf dan `IS NULL` in plaats van `= NULL`!
+

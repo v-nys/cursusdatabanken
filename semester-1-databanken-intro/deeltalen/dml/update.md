@@ -49,6 +49,7 @@ De vergelijking van strings in MySQL is standaard **niet hoofdlettergevoelig**! 
 {% endhint %}
 
 ### Collations
+
 Naast een tekenset, zoals utf8mb4, heeft elke kolom ook een **collation**. Dit is een stel regels om tekens in een bepaalde karakterset met elkaar te vergelijken. De reden dat MySQL standaard hoofdletters negeert in een `WHERE`-clause is dat de standaard collation van MySQL uft8mb4\_0900\_ai\_ci is. Het deeltje "\_ci" betekent "case insensitive" of "hoofdletterongevoelig". Soms zie je ook "ai" en dat betekent accentongevoelig.
 
 Je kan het een specifieke collation gebruiken door `COLLATE`, gevolgd door een op je systeem aanwezige collation na een kolomnaam te gebruiken. Bijvoorbeeld:
@@ -100,3 +101,4 @@ WHERE left(Categorie, 3) = '[1]';
 ```
 
 Je hoeft geen van bovenstaande twee scripts op te slaan.
+
