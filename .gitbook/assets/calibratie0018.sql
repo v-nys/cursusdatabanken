@@ -133,3 +133,8 @@ set Voornaam = 'Gerard' where Titel like '%degger%';
 update Boeken
 set Voornaam = 'Diderik' where Titel like 'Logica%';
 set sql_safe_updates = 1;
+insert into Boeken (Titel, Commentaar, Voornaam, Familienaam, Categorie)
+values 
+('Blochs blog','internetarchief','Cornelius','Bloch','Knipsels'),
+('Leren rekenen','didactisch boek',NULL,'Bernard','Wiskunde'),
+('De stad van God',NULL,NULL,'Haste','Fictie');
