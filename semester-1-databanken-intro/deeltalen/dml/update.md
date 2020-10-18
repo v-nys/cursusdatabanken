@@ -88,11 +88,11 @@ Waar je een nieuwe waarde instelt, mag je ook weer een expressie gebruiken die e
 
 ```sql
 UPDATE Boeken SET Categorie = concat('[1]', Categorie)
-WHERE Categorie = 'Wiskunde';
+WHERE Categorie = 'Geschiedenis';
 ```
 
 ```sql
--- Hier heb je '[1]' gezet voor de tekst als er 'Wiskunde' staat.
+-- Hier heb je '[1]' gezet voor de tekst als er 'Geschiedenis' staat.
 -- nu halen we dat weer weg
 -- left(X,Y) is zoals substring(X,1,Y)
 UPDATE Boeken SET Categorie = substring(Categorie, 4, length(Categorie) -3)
