@@ -1,9 +1,5 @@
 # UPDATE
 
-{% hint style="warning" %}
-TODO: filmpje,...
-{% endhint %}
-
 Het `UPDATE` DML statement lijkt op het `ALTER` DDL statement. Beide brengen één of meerdere wijzigingen aan in de database. Daar waar `ALTER` de structuur van een tabel wijzigt, wijzigt `UPDATE` de gegevens die in een tabel zitten.
 
 ## basisprincipe
