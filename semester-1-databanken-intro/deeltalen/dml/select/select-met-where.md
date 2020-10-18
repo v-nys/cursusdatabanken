@@ -1,9 +1,5 @@
 # SELECT met WHERE
 
-{% hint style="warning" %}
-TODO: filmpje werking met true/false, filmpje met uitleg booleaanse expressies
-{% endhint %}
-
 {% file src="../../../../.gitbook/assets/calibratie0018.sql" caption="Calibratiescript" %}
 
 In de meeste gevallen zijn we niet geïnteresseerd om alle rijen uit een tabel te selecteren. We willen over de mogelijkheid beschikken om alleen de rijen, die aan een bepaalde voorwaarde voldoen, te kunnen selecteren.
