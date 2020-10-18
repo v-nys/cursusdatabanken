@@ -1,9 +1,5 @@
 # DELETE
 
-{% hint style="warning" %}
-TODO: nummering
-{% endhint %}
-
 Net zoals het DROP statement verwijdert het DELETE statement objecten uit de database. Het DROP statement verwijdert een tabel uit de database, het DELETE statement verwijdert hele rijen uit de tabel maat laat de tabelstructuur staan.
 
 Meestal willen we specifieke records verwijderen en geen volledige tabellen leegmaken. Daarom ondersteunt `DELETE` dezelfde `WHERE`-clausule als `SELECT`. Als je geen WHERE clausule gebruikt, worden alle rijen uit de tabel verwijderd en blijft alleen de structuur van de tabel over. Wees daar dus voorzittig mee want als de rijen gedeletet zijn kan je ze niet meer terughalen. Net als bij `UPDATE` verbiedt MySQL standaard bepaalde "onveilige" operaties. Ook hier gebruik je `SET SQL_SAFE_UPDATES = 0` en `SET SQL_SAFE_UPDATES = 1` waar nodig.
@@ -14,5 +10,5 @@ De syntax van `DELETE` lijkt erg op die van `SELECT`, maar in plaats van bepaald
 De gelijkenis tussen `SELECT` en `DELETE` is erg handig. Voer altijd eerst een `SELECT *` uit in plaats van een `DELETE` en dan weet je steeds welke gegevens precies gewist zullen worden.
 {% endhint %}
 
-Schrijf een script ???\_\_DeleteBoeken.sql dat alle boeken van een auteur met voornaam "Gerard" wist.
+Schrijf een script 0022\_\_DeleteBoeken.sql dat alle boeken van een auteur met voornaam "Gerard" wist.
 
