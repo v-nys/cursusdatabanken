@@ -1,7 +1,7 @@
 # Enum
 
-{% hint style="warning" %}
-TODO: filmpje
+{% hint style="success" %}
+[Kennisclip voor deze inhoud](https://youtu.be/IUgiBMOFX5s)
 {% endhint %}
 
 Vaak kan je in een bepaalde kolom maar een beperkt aantal mogelijke waarden invullen. Een datatype zoals `INT` of `VARCHAR` is dan niet op zijn plaats, omdat die heel veel mogelijke waarden toelaten. Dat zorgt voor inefficiëntie en een grotere kans op foute invoer.
