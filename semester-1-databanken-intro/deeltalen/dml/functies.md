@@ -1,5 +1,9 @@
 # Functies
 
+{% hint style="success" %}
+[Kennisclip voor deze inhoud](https://youtu.be/u8wtx8u5Xc0)
+{% endhint %}
+
 Functies in SQL staan je toe een waarde te berekenen in plaats van een vaste waarde of de waarde in een of andere kolom.
 
 ## SUBSTRING
