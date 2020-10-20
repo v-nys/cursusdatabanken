@@ -24,7 +24,7 @@ We zeggen uitdrukkelijk "prototype". Je zal de nodige data kunnen bijhouden en o
 
 We starten vanaf een voorstelling die we steeds beter en beter zullen maken:
 
-![ERD van eerste poging apTunes](../../.gitbook/assets/aptunes-start.png)
+![ERD van eerste poging apTunes](../../.gitbook/assets/aptunes__0002%20%281%29.sql)
 
 Schrijf zelf code die deze twee tabellen aanmaakt en noem ze _**aptunes\_\_0001.sql**_. Merk op dat de duurtijd uitgedrukt wordt in seconden.
 
@@ -44,7 +44,7 @@ Als gevraagd wordt om "een nummer" of "alle nummers" te tonen, lees dan "alle ko
 * Schrijf een script, aptunes\_\_0003.sql, dat alle nummers van Led Zeppelin in het systeem toont volgens titel.
 * Schrijf een script, aptunes\_\_0004.sql, dat alle nummers van Ghostface Killah en alle nummers van Blues Pills samen toont, eerst volgens artiest en dan volgens titel. Dus eerst komen alle nummers van Blues Pills in alfabetische volgorde en dan alle nummers van Ghostface Killah in alfabetische volgorde.
 * Wis alle nummers die geen releasedatum hebben. Noem je script _**aptunes\_\_0005.sql**_.
-* Schrijf een script, _**aptunes\_\_0006.sql**_, dat alle nummers die **zeker** geen klassieke muziek zijn toont. Je kan de klassieke nummers herkennen omdat in de kolom `Genre` staat: `'Klassiek'`. Het woordje "zeker" is hier belangrijk!
+* Schrijf een script, _**aptunes\_\_0006.sql**_, dat alle nummers die geen klassieke muziek zijn toont. Bekijk de data om te achterhalen hoe je klassieke nummers kan herkennen.
 * Schrijf een script _**aptunes\_\_0007.sql**_ dat de titels van alle nummers toont die strikt minder dan 2 minuten duren en daarnaast ook toont hoe veel minder. Je zou dus iets als dit kunnen zien als "Kortjakje" 55 seconden duurt en "'k Zag twee beren" 40 seconden duurt:
 
 | titel | \(wat hier staat is niet belangrijk\) |
