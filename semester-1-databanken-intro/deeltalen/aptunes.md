@@ -24,7 +24,7 @@ We zeggen uitdrukkelijk "prototype". Je zal de nodige data kunnen bijhouden en o
 
 We starten vanaf een voorstelling die we steeds beter en beter zullen maken:
 
-![ERD van eerste poging apTunes](../../.gitbook/assets/aptunes__0002%20%282%29.sql)
+![](../../.gitbook/assets/aptunes-start.png)
 
 Schrijf zelf code die deze twee tabellen aanmaakt en noem ze _**aptunes\_\_0001.sql**_. Merk op dat de duurtijd uitgedrukt wordt in seconden.
 
