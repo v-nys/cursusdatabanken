@@ -38,7 +38,9 @@ Voer je een foute instructie uit? Voer dan in volgorde elk script uit dat in het
 Als gevraagd wordt om "een nummer" of "alle nummers" te tonen, lees dan "alle kolommen uit de tabel `Nummers`" in hun oorspronkelijke volgorde.
 {% endhint %}
 
-* Voer dit script uit en zet het in je map met scripts met de naam _**aptunes\_\_0002.sql**_.
+{% file src="../../.gitbook/assets/aptunes\_\_0002.sql" caption="aptunes\_\_0002.sql" %}
+
+* Voer bovenstaand script uit en zet het in je map met scripts met de naam _**aptunes\_\_0002.sql**_.
 * Schrijf een script, aptunes\_\_0003.sql, dat alle nummers van Led Zeppelin in het systeem toont volgens titel.
 * Schrijf een script, aptunes\_\_0004.sql, dat alle nummers van Ghostface Killah en alle nummers van Blues Pills samen toont, eerst volgens artiest en dan volgens titel. Dus eerst komen alle nummers van Blues Pills in alfabetische volgorde en dan alle nummers van Ghostface Killah in alfabetische volgorde.
 * Wis alle nummers die geen releasedatum hebben. Noem je script _**aptunes\_\_0005.sql**_.
