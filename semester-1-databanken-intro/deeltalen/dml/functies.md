@@ -64,3 +64,12 @@ SELECT Length('abc');
 
 Dan zal je als resultaat `3` krijgen.
 
+## Wiskundige operaties
+
+Ook standaard wiskundige operaties zijn functies. Bijvoorbeeld:
+
+```sql
+SELECT 1 + Duurtijd FROM Nummers;
+SELECT Duurtijd - 1 FROM Nummers;
+```
+
