@@ -67,9 +67,9 @@ WHERE Titel COLLATE utf8mb4_0900_as_cs = 'logicaboek';
 Je kan ook meerdere rijen in één keer updaten. Dat doe je door bijvoorbeeld de logische operator `OR` te gebruiken:
 
 ```sql
-update Boeken
-set Categorie = 'Geschiedenis'
-where Familienaam = 'Braudel' or
+UPDATE Boeken
+SET Categorie = 'Geschiedenis'
+WHERE Familienaam = 'Braudel' or
       Familienaam = 'Bernard' or
       Familienaam = 'Bloch';
 ```
@@ -80,9 +80,9 @@ Verder leer je meer over logische operatoren. Meerdere kolommen tegelijk kunnen 
 
 ```sql
 UPDATE Boeken
-  SET Voornaam = 'Geert',
-      Familienaam = 'Hoste'
-  WHERE Titel = 'De stad van God';
+SET Voornaam = 'Geert',
+    Familienaam = 'Hoste'
+WHERE Titel = 'De stad van God';
 ```
 
 Sla op als 0025\_\_Update.sql.
