@@ -27,7 +27,9 @@ Je kan ook de inhoud van meer dan één kolom aanpassen. Dat zou je als volgt do
 
 ```sql
 USE ApDB;
-UPDATE Boeken SET Categorie = 'Wetenschap', Titel = 'Een boek';
+UPDATE Boeken 
+SET Categorie = 'Wetenschap', 
+    Titel = 'Een boek';
 ```
 
 Zonder verdere specificatie zet het eerste stukje code de kolom `Categorie` van alle rijen op 'Metafysica'.
