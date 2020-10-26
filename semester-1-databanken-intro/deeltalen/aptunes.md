@@ -59,6 +59,29 @@ Denk nu even na over een aantal zoekopdrachten die je met dit model nog niet zou
 Voor onze streamingdienst is het handiger te werken met een vaste set van genres. Anders krijgen we zo veel subgenres dat het niet meer handig is genres te gebruiken. Vandaar volgende wijziging:
 
 * Voeg met script _**aptunes\_\_0008.sql**_ een kolom GenreEnum toe. Deze is voorlopig niet verplicht en kan alleen volgende waardes bevatten: `Klassiek`, `Pop`, `Jazz`, `Metal`, `Rap`, `Electro`, `Folk`, `Wereldmuziek`, `Blues`. Het is niet de bedoeling dat je de oude kolom `Genre` verwijdert of dat je de nieuwe kolom al invult! Verderop zullen we vertalen van de oude kolom naar de nieuwe!
+* Vul met script _**aptunes\_\_0009.sql**_ de kolom GenreEnum in. Doe dit door gebruik te maken van de LIKE operator om volgende "vertalingen" toe te passen:
+  * alles met de \(hoofdletterongevoelige\) substring "klass" in de oude kolom wordt "Klassiek" in de nieuwe kolom
+  * alles dat eindigt op de \(hoofdletterongevoelige\) substring "rock" in de oude kolom wordt "Rock" in de nieuwe kolom
+  * "rap" en "hiphop" \(hoofdletterongevoelig\) worden gegroepeerd onder "Rap"
+  * alles met het woord "metal" \(hoofdletterongevoelig\) in wordt "Metal"
+  * alles dat eindigt op "blues" \(hoofdletterongevoelig\) wordt "Blues"
+* Test met script aptunes\_\_0010.sql of alle nummers nu een \(nieuw\) genre hebben door de nummers zonder genre te selecteren.
+* Verwijder met script _**aptunes\_\_0011**_.sql de oude kolom `Genre` en hernoem `GenreEnum` naar `Genre`. Maak hierbij het nieuwe genre ook een verplichte kolom.
+
+We merken ook dat het niet erg nuttig is om een exacte datum bij te houden per nummer. We willen alleen het jaar. Je kan het jaar uit een datum halen door er de `YEAR`-functie op toe te passen.
+
+* Maak met script _**aptunes\_\_0012.sql**_ een kolom `ReleaseJaar` aan, vul deze automatisch in op basis van de releasedatum die je al hebt, maak de nieuwe kolom verplicht en verwijder ten slotte de kolom `ReleaseDatum`.
+
+### Functionaliteit toevoegen
+
+Nu willen we weten wat de prijs is die de artiest verdient \(in eurocent\) wanneer een nummer gestreamd wordt. We zullen dit bijhouden met een kolom `Royalties`.  Er is een vuistregel voor het vastleggen van royalties, maar voor sommige nummers is er een speciale regeling. Omdat er alleen in gehele bedragen in eurocent wordt gewerkt, heb je de functie `ROUND` nodig om een getal af te ronden.
+
+* Voeg met script _**aptunes\_\_0013.sql**_ deze kolom toe. Vul ze in als volgt:
+  * Klassieke nummers krijgen normaal 1 eurocent per 60 seconden, dus je stelt de royalties in als de duurtijd gedeeld door 60 \(afgerond\).
+  * Rocknummers en metalnummers krijgen 1 eurocent per 20 seconden.
+  * Rap krijgt 1 eurocent per 15 seconden.
+  * Nummers van Led Zeppelin krijgen 1 eurocent per 10 seconden.
+* Er is een wijziging in de prijsstructuur! Verhoog met script _**aptunes\_\_0014.sql**_ alle royalties met 20%. Rond opnieuw af om een geheel bedrag te krijgen.
 
 
 
