@@ -43,7 +43,7 @@
       * [SELECT met WHERE](semester-1-databanken-intro/deeltalen/dml/select/select-met-where.md)
     * [UPDATE](semester-1-databanken-intro/deeltalen/dml/update.md)
     * [DELETE](semester-1-databanken-intro/deeltalen/dml/delete.md)
-    * [LIKE: rijen beschrijven](semester-1-databanken-intro/deeltalen/dml/like.md)
+    * [LIKE](semester-1-databanken-intro/deeltalen/dml/like.md)
     * [Logische operatoren](semester-1-databanken-intro/deeltalen/dml/logische-operatoren.md)
     * [Praktijkvoorbeeld](semester-1-databanken-intro/deeltalen/dml/praktijkvoorbeeld-logische-operatoren.md)
     * [Vergelijkingen](semester-1-databanken-intro/deeltalen/dml/vergelijkingen-in-mysql.md)

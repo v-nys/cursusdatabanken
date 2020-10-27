@@ -1,4 +1,4 @@
-# LIKE: rijen beschrijven
+# LIKE
 
 In veel gevallen weten we maar half wat we willen zoeken. We kennen een deel van de naam, het begin of het einde of iets tussenin. Met de `LIKE` operator kan je in SQL naar patronen zoeken \(pattern matching\). Je kan met de `LIKE` operator naar patronen in tekst zoeken. Je combineert de `LIKE` operator met jokers \(**wildcards**\) om een booleaanse expressie te vormen. De set van jokers bestaat uit symbolen die één of meer ontbrekende tekens voorstellen.
 
