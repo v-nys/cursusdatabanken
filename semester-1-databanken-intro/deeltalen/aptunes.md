@@ -58,7 +58,7 @@ Denk nu even na over een aantal zoekopdrachten die je met dit model nog niet zou
 
 Voor onze streamingdienst is het handiger te werken met een vaste set van genres. Anders krijgen we zo veel subgenres dat het niet meer handig is genres te gebruiken. Vandaar volgende wijziging:
 
-* Voeg met script _**aptunes\_\_0008.sql**_ een kolom GenreEnum toe. Deze is voorlopig niet verplicht en kan alleen volgende waardes bevatten: `Klassiek`, `Pop`, `Jazz`, `Metal`, `Rap`, `Electro`, `Folk`, `Wereldmuziek`, `Blues`. Het is niet de bedoeling dat je de oude kolom `Genre` verwijdert of dat je de nieuwe kolom al invult! Verderop zullen we vertalen van de oude kolom naar de nieuwe!
+* Voeg met script _**aptunes\_\_0008.sql**_ een kolom GenreEnum toe. Deze is voorlopig niet verplicht en kan alleen volgende waardes bevatten: `Klassiek`, `Pop`, `Jazz`, `Metal`, `Rap`, `Electro`, `Folk`, `Wereldmuziek`, `Blues`, `Rock`. Het is niet de bedoeling dat je de oude kolom `Genre` verwijdert of dat je de nieuwe kolom al invult! Verderop zullen we vertalen van de oude kolom naar de nieuwe!
 * Vul met script _**aptunes\_\_0009.sql**_ de kolom GenreEnum in. Doe dit door gebruik te maken van de LIKE operator om volgende "vertalingen" toe te passen:
   * alles met de \(hoofdletterongevoelige\) substring "klass" in de oude kolom wordt "Klassiek" in de nieuwe kolom
   * alles dat eindigt op de \(hoofdletterongevoelige\) substring "rock" in de oude kolom wordt "Rock" in de nieuwe kolom
