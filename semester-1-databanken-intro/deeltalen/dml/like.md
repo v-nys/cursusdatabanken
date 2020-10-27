@@ -12,48 +12,50 @@ De betekenis van de wildcards in SQL is als volgt:
 Om alle boeken te selecteren waarvan de familienaam van de auteur begint met A als de collation niet hoofdlettergevoelig is:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT Voornaam, Familienaam, Titel
-   FROM Boeken
-   WHERE Familienaam LIKE 'b%';
+FROM Boeken
+WHERE Familienaam LIKE 'b%';
 ```
 
 Wanneer de collation niet hoofdlettergevoelig is, geeft dit statement hetzelfde resultaat:
 
 ```sql
+USE ApDB;
 SELECT Voornaam, Familienaam, Titel
-   FROM Boeken
-   WHERE Familienaam LIKE 'B%';
+FROM Boeken
+WHERE Familienaam LIKE 'B%';
 ```
 
 Om alle boeken te selecteren waarvan de familenaam van de auteur eindigt op een s:
 
 ```sql
+USE ApDB;
 SELECT Voornaam, Familienaam, Titel
-   FROM Boeken
-   WHERE Familienaam LIKE '%s';
+FROM Boeken
+WHERE Familienaam LIKE '%s';
 ```
 
 Om boeken waarvoor in de titel het woord economie voorkomt, te selecteren:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT Voornaam, Familienaam, Titel, Verschijningsjaar
-   FROM Boeken
-   WHERE Titel LIKE '%economie%';
+FROM Boeken
+WHERE Titel LIKE '%economie%';
 ```
 
 Het is belangrijk dat je toepassing van de LIKE operator en de wildcard ziet. Bijvoorbeeld \(0032\_\_SelectBoeken.sql\):
 
 ```sql
-USE ModernWays;
+USE ApDB;
 -- eerst wordt een boek ingevoegd
 INSERT INTO Boeken (Voornaam,Familienaam,Titel)
 VALUES ('Mathijs','Degrote','Leren werken met SQL');
 -- er gaat wat tijd voorbij en ik weet niet meer of het "Mathijs" of "Matijs" is
 -- ik los dit op met LIKE
 SELECT Voornaam from Boeken
-   WHERE Voornaam LIKE 'ma%ijs';
+WHERE Voornaam LIKE 'ma%ijs';
 ```
 
 Je kan ook voor `LIKE` gebruik maken van `COLLATE` om te bepalen of het patroon rekening houdt met hoofdletters of niet.
