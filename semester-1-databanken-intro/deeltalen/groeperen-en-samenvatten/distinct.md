@@ -4,10 +4,10 @@ Met `GROUP BY` kan je er voor zorgen dat bepaalde waarden worden samengenomen. O
 
 Er is een andere \(en meer expliciete\) manier om dubbels te vermijden: `SELECT` laten volgen door het sleutelwoordje `DISTINCT`. Hierdoor worden alle dubbele resultaten verwijderd.
 
-Volgende query geeft je alle hondennamen \(0054\_\_SelectHonden.sql\) precies één keer:
+Volgende query geeft je alle hondennamen \(0047\_\_SelectHonden.sql\) precies één keer:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT DISTINCT Naam
 FROM Honden;
 ```
@@ -15,7 +15,7 @@ FROM Honden;
 Na `DISTINCT` kan je schrijven wat je bij een gewone `SELECT` zou kunnen schrijven, dus dit gaat ook:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT DISTINCT Naam, Geslacht
 FROM Honden;
 ```
