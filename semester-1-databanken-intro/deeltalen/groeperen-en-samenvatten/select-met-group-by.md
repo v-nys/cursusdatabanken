@@ -1,5 +1,9 @@
 # SELECT met GROUP BY
 
+{% hint style="success" %}
+[Kennisclip](https://youtu.be/KT9GinlTHM0)
+{% endhint %}
+
 Eerst hebben we een relationele databank vooral gebruikt om individuele records bij te houden en op te vragen. Via aggregaatfuncties hebben we informatie over alle records gebundeld. Soms zoeken we iets dat in het midden ligt: informatie die niet handelt over individuele records, maar over groepen records. Typisch zijn dit records met dezelfde waarde in bepaalde velden. De oplossing schuilt in een `GROUP BY` clausule.
 
 ## basisidee

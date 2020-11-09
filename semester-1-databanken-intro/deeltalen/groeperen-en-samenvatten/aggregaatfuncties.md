@@ -1,5 +1,9 @@
 # Aggregaatfuncties
 
+{% hint style="success" %}
+[Kennisclip](https://youtu.be/VhBOMD5jc9g)
+{% endhint %}
+
 Aggregaatfuncties lijken op de functies die je al kent \(`substring`, `concat`, `length`, `round`\). Het verschil is dat, als je een kolomnaam invult, de aggregaatfunctie op **heel de kolom** wordt toegepast. Anders gezegd, aggregaatfuncties worden niet binnen een rij toegepast, maar over meerdere rijen heen. Voor elke rij wordt er een waarde geproduceerd en een aggregaatfunctie gebruikt al deze waarden samen als invoer.
 
 Op deze pagina geven we een overzicht van de belangrijkste aggregatiefuncties, maar er bestaan er nog.
