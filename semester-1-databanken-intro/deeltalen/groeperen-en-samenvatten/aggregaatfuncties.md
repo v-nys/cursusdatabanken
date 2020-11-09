@@ -221,7 +221,7 @@ Dit geeft hetzelfde resultaat, want `Naam` was toch een verplichte kolom.
 Deze aggregaatfunctie krijgt een expressie en berekent voor de som van het toepassen van deze expressie voor elk record. Een eenvoudig voorbeeld van een expressie is hier \(in `0034__SelectHonden.sql`\) een kolomnaam:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT SUM(Leeftijd)
 FROM Honden;
 ```
@@ -231,7 +231,7 @@ Merk op: hier zal je niet zomaar `*` in plaats van `Leeftijd` kunnen invullen. J
 Je kan wel iets algemener een expressie die een getal oplevert invullen, niet gewoon een kolomnaam. Dus je kan ook dit doen:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT SUM(Leeftijd+1)
 FROM Honden;
 ```
@@ -245,7 +245,7 @@ Wat levert dit dan? De gezamenlijke leeftijd van alle honden, verhoogd met het a
 Deze aggregaatfuncties krijgen een expressie en berekenen het minimum of het maximum voor het toepassen van deze expressie voor elk record. Een eenvoudig voorbeeld van een expressie is hier \(in `0035__SelectHonden.sql`\) een kolomnaam:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT MAX(Leeftijd)
 FROM Honden;
 ```
@@ -257,7 +257,7 @@ Dit vertelt je wat de leeftijd van de oudste hond in het systeem is.
 Deze aggregaatfunctie krijgt een expressie en berekent het gemiddelde voor het toepassen van deze expressie voor elk record. Een eenvoudig voorbeeld van een expressie is hier \(in `0036__SelectHonden.sql`\) een kolomnaam:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT AVG(Leeftijd)
 FROM Honden;
 ```
@@ -267,7 +267,7 @@ FROM Honden;
 Onder normale omstandigheden kan je geen combinatie maken van geaggregeerde resultaten en niet-geaggregeerde resultaten. Iets als het volgende gaat dus niet:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT COUNT(*), Naam
 FROM Honden;
 ```
