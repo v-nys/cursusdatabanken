@@ -83,7 +83,29 @@ Nu willen we weten wat de prijs is die de artiest verdient \(in eurocent\) wanne
   * Nummers van Led Zeppelin krijgen 1 eurocent per 10 seconden.
 * Er is een wijziging in de prijsstructuur! Verhoog met script _**aptunes\_\_0014.sql**_ alle royalties met 20%. Rond opnieuw af om een geheel bedrag te krijgen.
 
+### Informatie voor de eigenaars
 
+De eigenaars van onze streamingdienst willen statistieken over de artiesten.
 
+Gebruik eerst volgend script aptunes\_\_0015.sql om meer data in het systeem te plaatsen:
 
+{% file src="../../.gitbook/assets/aptunes\_\_0015.sql" caption="bijkomende data voor je streamingdienst" %}
+
+Nu er redelijk wat data is, moeten we die gaan samenvatten eerder dan rij per rij te bekijken.
+
+* Schrijf een script aptunes\_\_0016.sql dat toont hoe veel rocknummers er in het systeem zijn.
+* Schrijf een script aptunes\_\_0017.sql dat voor elk genre toont hoe veel nummers er zijn. Het formaat van de uitvoer is als volgt en de genres zijn gesorteerd volgens de volgorde van de enum die de genres voorstelt:
+
+| Genre | \(titel maakt niet uit\) |
+| :--- | :--- |
+| Genre 1 | \(aantal nummers in genre 1\) |
+| Genre 2 | \(aantal nummers in genre 2\) |
+| ... | ... |
+
+* Toon het releasejaar van het oudste nummer in het systeem. De uitvoer is één rij met één kolom. De titel van deze kolom maakt niet uit. Noem je script aptunes\_\_0018.sql.
+* Herschrijf volgende query zonder `DISTINCT` zodat je toch nog hetzelfde resultaat krijgt en noem je script aptunes\_\_0019.sql: `SELECT DISTINCT Artiest FROM Nummers;`
+* Herschrijf volgende query zonder BETWEEN zodat je toch nog hetzelfde resultaat krijgt en noem je script aptunes\_\_0020.sql: `SELECT Titel From Nummers WHERE ReleaseJaar BETWEEN 1975 AND 1985;`
+* Toon alle nummers die minstens 5 minuten duren. Noem je script aptunes\_\_0021.sql.
+* Toon alle genres waarvan de nummers gemiddeld minstens 5 minuten duren. Noem je script aptunes\_\_0022.sql.
+* Het blijkt dat erg lange klassieke nummers niet erg winstgevend zijn voor onze dienst. Toon daarom alle artiesten die klassieke nummers hebben, maar enkel als die klassieke nummers ook gemiddeld langer dan 8 minuten duren. Noem je script aptunes\_\_0023.sql.
 

@@ -41,7 +41,7 @@ WHERE Naam COLLATE utf8mb4_0900_as_cs IN ('Bailey','Cookie','Lola','Iggy','Snoop
 De `IN` is niet specifiek gelinkt aan `WHERE`, maar is gewoon een andere operator om een booleaanse expressie te bekomen. Je kan dus ook dit doen \(`0045__SelectHonden.sql`\), met `HAVING` in plaats van `WHERE`:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT MAX(Leeftijd)
 FROM Honden
 GROUP BY Geslacht
