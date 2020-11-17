@@ -103,11 +103,6 @@ Nu er redelijk wat data is, moeten we die gaan samenvatten eerder dan rij per ri
 | ... | ... |
 
 * Toon het releasejaar van het oudste nummer in het systeem. De uitvoer is één rij met één kolom. De titel van deze kolom maakt niet uit. Noem je script aptunes\_\_0018.sql.
-
-{% hint style="info" %}
-Tip: sommige nummers hebben geen releasejaar. Filter die er uit met behulp van WHERE om te controleren of het releasejaar is ingevuld.
-{% endhint %}
-
 * Herschrijf volgende query zonder `DISTINCT` zodat je toch nog hetzelfde resultaat krijgt en noem je script aptunes\_\_0019.sql: `SELECT DISTINCT Artiest FROM Nummers;`
 * Herschrijf volgende query zonder BETWEEN zodat je toch nog hetzelfde resultaat krijgt en noem je script aptunes\_\_0020.sql: `SELECT Titel From Nummers WHERE ReleaseJaar BETWEEN 1975 AND 1985;`
 * Toon alle nummers die minstens 5 minuten duren volgens titel. Noem je script aptunes\_\_0021.sql.
