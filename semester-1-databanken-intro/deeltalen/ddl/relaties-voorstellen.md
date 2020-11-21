@@ -4,13 +4,15 @@
 
 Afhankelijk van hoe entiteiten aan elkaar gekoppeld kunnen zijn, delen we de koppelingen tussen deze entiteiten op in categorieën:
 
-* een-op-een-relaties
-* een-op-veel-relaties \(ook wel 1-op-N relaties genoemd\)
+* een-op-een-relaties, d.w.z. één entiteit van een entiteittype hoort bij exact één entiteit van een gekoppeld type
+* een-op-veel-relaties, d.w.z. één entiteit van een entiteittype hoort niet bij 0, 1 of meerdere entiteiten van een gekoppeld type
 * veel-op-veel-relaties \(ook wel M-op-N relaties genoemd\)
+
+Er is nog een indeling in relaties: identificerende tegenover niet-identificerende relaties. Dit onderscheid heeft niet veel impact op het basisgebruik van een databank. Met de werkwijze die wij volgen, kan je steeds niet-identificerende relaties gebruiken, tenzij het om veel-op-veel relaties gaat.
 
 ### een-op-een relaties
 
-De simpelste verbanden zijn één-op-één verbanden. Dat wil zeggen: precies twee rijen nemen deel aan de relatie. Normaal zijn dit rijen van verschillende entiteittypes.
+De simpelste verbanden zijn één-op-één verbanden. Dat wil zeggen: precies twee rijen nemen deel aan de relatie. Normaal zijn dit rijen van verschillende entiteittypes, al is het niet verplicht.
 
 Een voorbeeld: een sportclub organiseert een jaarlijks etentje en alle leden krijgen precies één taak. Eén lid zorgt bijvoorbeeld voor bestek, een ander voor frisdrank, een ander voor onderleggers, enzovoort. De club gebruikt een database om de taken en de leden bij te houden en de taken zijn elk jaar dezelfde. Bijvoorbeeld:
 
@@ -23,17 +25,21 @@ Een voorbeeld: een sportclub organiseert een jaarlijks etentje en alle leden kri
   * Bavo
   * Max
 
-Onderstaande figuur stelt deze indeling voor in een ERD in [Chen-notatie](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model):
+Onderstaande figuur stelt deze indeling voor in een ERD getekend in de editor van MySQL Workbench:
 
-![](../../../.gitbook/assets/taak-persoon-1-1.svg)
+![E&#xE9;n taak hoort bij &#xE9;&#xE9;n lid \(en dus ook omgekeerd\).](../../../.gitbook/assets/taken_leden_bewerkt.png)
 
-In dit geval is het logisch om een aparte tabel \(`Taken`\) voor taken en een aparte tabel \(`Leden`\) voor leden te gebruiken. Het is onhandig om uit te leggen dat één rij in de databank een lid en een taak voorstelt, omdat de tabellen best zo goed mogelijk overeenstemmen met duidelijke concepten. Het is logischer de leden en de taken als aparte entiteiten te beschouwen en een relatie tussen beide vast te leggen.
+In dit geval is het logisch om een aparte tabel \(`Taken`\) voor taken en een aparte tabel \(`Leden`\) voor leden te gebruiken. Het is onhandig om uit te leggen dat één rij in de databank een lid _en_ een taak voorstelt, omdat de tabellen best zo goed mogelijk overeenstemmen met duidelijke concepten. Het is logischer de leden en de taken als aparte entiteiten te beschouwen en een relatie tussen beide vast te leggen.
+
+{% hint style="warning" %}
+Er zijn wel systemen die je dwingen om dit soort relatie voor te stellen door Taken en Personen samen te smelten tot één tabel.
+{% endhint %}
 
 #### voorstelling van één-op-één relaties
 
 Om een relaties tussen rijen van de tabellen vast te leggen, maken we de rijen eerst identificeerbaar met een primaire sleutel. Bijvoorbeeld, voor de taken:
 
-| omschrijving | Id |
+| Omschrijving | Id |
 | :--- | :--- |
 | bestek voorzien | 1 |
 | frisdrank meebrengen | 2 |
@@ -41,13 +47,13 @@ Om een relaties tussen rijen van de tabellen vast te leggen, maken we de rijen e
 
 Voor de leden:
 
-| voornaam | Id |
+| Naam | Id |
 | :--- | :--- |
 | Yannick | 1 |
 | Bavo | 2 |
 | Max | 3 |
 
-Zet de structuur van de twee tabellen om in SQL-tabellen met een script 0052\_\_CreateTakenLeden.sql. Elke normale kolom bestaat uit een reeks van maximaal 50 karakters \(zonder accenten e.d.\) en is verplicht. De `Id`-kolom stel je voor met een `INT` die automatisch ophoogt.
+Zet de structuur van de twee tabellen om in SQL-tabellen met een script 0052\_\_CreateTakenLeden.sql. Elke normale kolom bestaat uit een reeks van maximaal 45 karakters en is verplicht. De `Id`-kolom stel je voor met een `INT` die automatisch ophoogt. Elke kolom heeft dezelfde naam die gebruikt wordt in de hoofdingen hierboven.
 
 Vul de twee tabellen, `Taken` en `Leden` in met een script 0053\_\_InsertTakenLeden.sql.
 
@@ -61,7 +67,7 @@ Als Bavo bestek voorziet, Yannick frisdrank meebrengt en Max aardappelsla maakt,
 
 In de praktijk wordt er normaal niet voor gekozen om deze relatie in een aparte tabel vast te leggen. Dat zou gaan, maar het is gewoon een beetje te veel van het goede. Je hebt geen aparte tabel nodig. Eén van de twee tabellen wordt uitgebreid met een foreign key. Er zijn twee mogelijkheden:
 
-| omschrijving | Id | Leden\_Id |
+| Omschrijving | Id | Leden\_Id |
 | :--- | :--- | :--- |
 | bestek voorzien | 1 | 2 |
 | frisdrank meebrengen | 2 | 1 |
@@ -69,28 +75,39 @@ In de praktijk wordt er normaal niet voor gekozen om deze relatie in een aparte 
 
 of
 
-| voornaam | Id | Taken\_Id |
+| Naam | Id | Taken\_Id |
 | :--- | :--- | :--- |
 | Yannick | 1 | 2 |
 | Bavo | 2 | 1 |
 | Max | 3 | 3 |
 
-Beide zijn even goed. Typisch wordt gekozen om de foreign key in de tabel te zetten met het kleinste aantal kolommen, om alles een beetje in evenwicht te houden. Hier hebben beide even veel kolommen dus het maakt helemaal niet uit.
+Beide zijn even goed. Typisch wordt \(in geval van een niet-identificerende relatie en die gebruiken wij altijd\) gekozen om de foreign key in de tabel te zetten met het kleinste aantal kolommen, om alles een beetje in evenwicht te houden. Hier hebben beide even veel kolommen dus het maakt helemaal niet uit.
 
-Pas je tabel Leden aan zodat ze de tweede mogelijkheid van hierboven implementeert in een script 0054\_\_AlterLeden.sql. Je mag **niet** verhinderen dat de vreemde sleutel de waarde `NULL` aanneemt.
+Pas je tabel Leden aan zodat ze de tweede mogelijkheid van hierboven implementeert in een script 0054\_\_AlterLeden.sql. Je moet eerst de kolom toevoegen, dan invullen, dan verplicht maken. 
 
 Dit ziet er zo uit:
 
 ```sql
 USE ApDB;
 ALTER TABLE Leden
-ADD COLUMN Taken_Id INT,
+ADD COLUMN Taken_Id INT, -- d.w.z. de taak die bij dit lid hoort
 ADD CONSTRAINT fk_Leden_Taken
-FOREIGN KEY (Taken_Id)
-REFERENCES Taken(Id);
+FOREIGN KEY (Taken_Id) -- dit is de kolom (uit de eigen tabel) waarmee we verwijzen
+REFERENCES Taken(Id); -- dit is hetgeen waar we naar verwijzen (kolom andere tabel)
+UPDATE Leden
+SET Taken_Id = 2
+WHERE Naam = 'Yannick';
+UPDATE Leden
+SET Taken_Id = 1
+WHERE Naam = 'Bavo';
+UPDATE Leden
+SET Taken_Id = 3
+WHERE Naam = 'Max';
+ALTER TABLE Leden
+CHANGE Taken_Id Taken_Id INT NOT NULL;
 ```
 
-Om de data te combineren, moet je nu [gebruik maken van een `JOIN`-operatie](../joins/joins-simpele-relaties.md). Voor een een-op-een-relatie is dit iets makkelijker.
+Je zou de data nu kunnen combineren, maar daar heb je een JOIN-operatie voor nodig. Die komt later.
 
 ### een-op-veel relaties
 
@@ -120,7 +137,9 @@ Zoals in het geval van de 1-op-1 relatie, kunnen we deze relatie tussen gebruike
 | 2 | 5 |
 | 2 | 6 |
 
-Dit is opnieuw iets meer dan we nodig hebben. We kunnen een foreign key van één tabel toevoegen aan een andere. Maar, in tegenstelling tot de precieze 1-op-1-relatie, mogen we niet kiezen. We zetten de foreign key in de tabel die niet aan de "exact-1"-kant van de relatie zit. Zorg er ook voor dat de vreemde sleutel nooit NULL is met een constraint.
+Dit is opnieuw iets meer dan we nodig hebben. We kunnen een foreign key van één tabel toevoegen aan een andere. Maar, in tegenstelling tot de precieze 1-op-1-relatie, mogen we niet kiezen. We zetten de foreign key in de tabel die **niet aan de "exact-1"-kant** van de relatie zit. Zorg er ook voor dat de vreemde sleutel nooit NULL is met een constraint.
+
+![E&#xE9;n user kan meerdere tweets hebben, elke tweet komt van exact &#xE9;&#xE9;n user.](../../../.gitbook/assets/screenshot-from-2020-11-21-10-05-24.png)
 
 Voer dit zelfstandig uit voor de reeks tweets hierboven. Volg de reeds afgesproken afspraken: één tabel `Users` voor users \(met een kolom `Handle`\), één tabel `Tweets` voor tweets \(met een kolom Bericht\), beide voorzien van primaire sleutels, met de vreemde sleutel aan de "N-kant". Stel gebruikersnamen en tweets voor met kolommen van variabele lengte \(tot 144 tekens\), zonder internationale tekens. De @ maakt geen deel uit van een gebruikersnaam. Zet de SQL-code die je nodig hebt om de \(lege\) tabellen te maken in een script 0055\_\_CreateUsersTweets.sql. Zet de code die je nodig hebt om de vreemde sleutel toe te voegen in 0056\_\_AlterTweets.sql. Zet ten slotte de code om de tabellen in te vullen in een script 0057\_\_InsertUsersTweets.sql. Begin met een `INSERT` voor de users, doe dan pas die voor de tweets.
 
@@ -137,7 +156,7 @@ Voor het laatste script bespaart onderstaande gedeeltelijke SQL je het copy-past
 
 #### speciaal geval: een-op-max-een-relaties
 
-Een een-op-max-een relatie is een relatie waarbij één entiteit A gelinkt is aan **hooguit** één andere entiteit B. Het kan ook zijn dat A aan geen enkele B gelinkt is. Deze stel je voor zoals een 1-op-N relatie, dus met de vreemde sleutel in de tabel aan de niet-exact-1-kant. Dit voorkomt vreemde sleutels met de waarde `NULL`.
+Een een-op-max-een relatie is een relatie waarbij één entiteit A gelinkt is aan **hooguit** één andere entiteit B. Het kan ook zijn dat A aan geen enkele B gelinkt is. Deze stel je voor zoals een 1-op-N relatie, dus met de vreemde sleutel in de tabel aan de niet-exact-1-kant.
 
 Hoe je de tweets terug koppelt aan de juiste account, lees je ook bij de uitleg rond [`JOIN`-operaties bij simpele relaties](../joins/joins-simpele-relaties.md). We tonen hier alleen dat het mogelijk is. Koppel users aan de juiste tweets met dit script, 0058\_\_SelectUsersTweets.sql:
 
@@ -153,7 +172,7 @@ ON Users_Id = Users.Id;
 
 Een auteur kan meerdere boeken hebben en een boek kan verschillende auteurs hebben. Een game kan op verschillende platformen uitgebracht zijn en voor elk platform zijn er verschillende games beschikbaar. Een student volgt verschillende vakken en in elk vak zitten verschillende studenten. Dit zijn allemaal voorbeelden waar één rij uit een tabel A gekoppeld kan zijn aan meerdere rijen uit een tabel B en één rij uit dezelfde tabel B gekoppeld kan zijn aan meerdere rijen uit dezelfde tabel A. We zeggen dan ook dat er een veel-op-veel of M-op-N-relatie bestaat tussen de entiteiten A en B.
 
-Bij 1-op-1-relaties mochten we de vreemde sleutel in tabel A of B zetten. Bij 1-op-max-1 of 1-op-N relaties zetten we de vreemde sleutel in de tabel die niet precies één keer gekoppeld was. Dit werd vooral gedaan om geen overbodige tabellen toe te voegen. We konden in principe de takenverdeling voor het etentje ook als volgt voorstellen, met een aparte tabel:
+Bij 1-op-1-relaties mochten we de vreemde sleutel in tabel A of B zetten \(en sommige systemen vereisen zelfs dat je de tabellen gewoon samensmelt\). Bij 1-op-max-1 of 1-op-N relaties zetten we de vreemde sleutel in de tabel die niet precies één keer gekoppeld was. Dit werd vooral gedaan om geen overbodige tabellen toe te voegen. We konden in principe de takenverdeling voor het etentje ook als volgt voorstellen, met een aparte tabel:
 
 | Leden\_Id | Taken\_Id |
 | :--- | :--- |
@@ -201,6 +220,10 @@ CREATE TABLE Releases(Games_Id INT NOT NULL,
               CONSTRAINT fk_Releases_Games FOREIGN KEY (Games_Id) REFERENCES Games(Id),
               CONSTRAINT fk_Releases_Platformen FOREIGN KEY (Platformen_Id) REFERENCES Platformen(Id));
 ```
+
+Dit stemt overeen met een diagram in Workbench dat er zo uitziet:
+
+![Diagram voor een veel-op-veel relatie. Je tekent deze als twee &#xE9;&#xE9;n-op-veel relaties.](../../../.gitbook/assets/screenshot-from-2020-11-21-10-15-27.png)
 
 Voor 0060:
 
@@ -266,7 +289,7 @@ Attributen horen meestal bij entiteiten, maar kunnen ook bij relaties horen. Bov
 
 In een ERD stellen we dit als volgt voor:
 
-![](../../../.gitbook/assets/releases-m-n-met-datum.svg)
+![](../../../.gitbook/assets/screenshot-from-2020-11-21-10-18-08.png)
 
 In dit geval is `Releases` niet gewoon een tabel die een **relatie** voorstelt, maar wel een **associative entity**: een relatie tussen `Games` en `Platformen` die eigen kenmerken bezit, zodat je ze eigenlijk ook als een entiteit zou kunnen zien.
 
@@ -282,5 +305,5 @@ Hier komen geen nieuwe ideeën aan bod, maar je moet de eerdere stappen goed beg
 
 ## Verdere soorten relaties
 
-Tabellen kunnen meer dan twee entiteiten verbinden. Voor releases van games kan je bijvoorbeeld een spel, een uitgever en een platform aan elkaar linken met een M-op-N-op-K relatie. Dit is wel niet vaak nodig, dus denk altijd even goed na voor je dit doet. De keuze berust vooral op een goede analyse en goed overleg met de klant! In deze cursus zal je nooit een ternaire \(d.w.z. tussen drie entiteiten\) of hogere relatie nodig hebben.
+Tabellen kunnen meer dan twee entiteiten verbinden. Voor releases van games kan je bijvoorbeeld een spel, een uitgever en een platform aan elkaar linken met een M-op-N-op-K relatie. Dit is wel niet vaak nodig, dus denk altijd even goed na voor je dit doet. De keuze berust vooral op een goede analyse en goed overleg met de klant! In deze cursus zal je nooit een ternaire \(d.w.z. tussen drie entiteiten\) of hogere relatie nodig hebben. En, zoals eerder gezegd, gaan we niet verder in op het onderscheid tussen identificerende en niet-identificerende relaties.
 
