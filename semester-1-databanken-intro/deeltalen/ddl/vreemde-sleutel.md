@@ -21,7 +21,7 @@ Dat ziet er bijvoorbeeld zo uit, als je een tabel met boeken koppelt aan hun aut
 ```sql
 CREATE TABLE Boeken (
   Id INT PRIMARY KEY AUTO_INCREMENT,
-  Personen_Id INT,
+  Personen_Id INT, -- = persoon die bij dit boek hoort
   CONSTRAINT fk_Boeken_Personen FOREIGN KEY (Personen_Id)
   REFERENCES Personen(Id)
 );
@@ -36,17 +36,21 @@ Hierbij gebruiken we enkele **afspraken**:
 * De naam van de kolom die dienst doet als foreign key is de naam van de tabel waarnaar verwezen wordt, gevolgd door `_Id`.
 * De naam van een foreign key constraint is altijd `fk_`, gevolgd door de naam van de tabel waarop de constraint toegepast is, gevolgd door de naam van de tabel waarnaar verwezen wordt.
 
+{% hint style="warning" %}
+**Prent** het heel goed in: een kolom met als naam **Id** dient om een rij uit de tabel te identificeren waartoe de kolom behoort. Een kolom met als naam **\(Tabelnaam\)\_Id** \(waarbij de tabelnaam vanalles kan zijn\) dient om een rij uit een andere tabel te identificeren, die hoort bij een rij uit deze tabel. **Je zou nooit mogen twijfelen over hoe je een sleutelkolom moet noemen. Dit is een afspraak die wij steeds zullen volgen.**
+{% endhint %}
+
 ## Gebruik \(bestaande tabel\)
 
 Als je al een tabel hebt en deze wil uitbreiden met een foreign key, doe je dat via de DDL `ALTER`-instructie. Als je bijvoorbeeld al een tabel voor boeken had zoals hierboven, maar zonder de kolom `Personen_Id`, zou je dit schrijven:
 
 ```sql
 ALTER TABLE Boeken
-ADD COLUMN Personen_Id INT,
+ADD COLUMN Personen_Id INT, -- = persoon die bij dit boek hoort
 ADD CONSTRAINT fk_Boeken_Personen
   FOREIGN KEY (Personen_Id)
   REFERENCES Personen(Id);
 ```
 
-Sla op als 0058\_\_AlterBoeken.sql en voer uit.
+Sla op als 0051\_\_AlterBoeken.sql en voer uit.
 

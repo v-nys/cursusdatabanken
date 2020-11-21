@@ -2,14 +2,14 @@
 
 ## Primaire sleutel toevoegen/verwijderen voor een bestaande tabel
 
-We vertrekken hier van volgend script, 0055\_\_CalibrateDB.sql:
+We vertrekken hier van volgend script, 0048\_\_CalibrateDB.sql:
 
 ```sql
-CREATE DATABASE  IF NOT EXISTS `ModernWays` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `ModernWays`;
+CREATE DATABASE IF NOT EXISTS `ApDB` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `ApDB`;
 -- MySQL dump 10.13  Distrib 5.7.28, for Linux (x86_64)
 --
--- Host: localhost    Database: ModernWays
+-- Host: localhost    Database: ApDB
 -- ------------------------------------------------------
 -- Server version    8.0.17
 
@@ -125,7 +125,7 @@ Om een primaire sleutel toe te voegen aan een reeds bestaande tabel, gebruik je 
 ALTER TABLE Boeken ADD Id INT auto_increment PRIMARY KEY;
 ```
 
-Sla die instructie op in 0056\_\_AlterBoeken.sql.
+Sla die instructie op in 0049\_\_AlterBoeken.sql.
 
 Je kan ook nagaan of de primaire sleutel is toegevoegd door het volgende statement uit te voeren:
 
@@ -140,7 +140,7 @@ Het feit dat een kolom een primaire sleutel is, is een **constraint**. Men spree
 Het is beter om de `Id` door SQL zelf te laten toekennen. Zo hoef je niet telkens na te kijken welke waarde beschikbaar is voor `Id`. Om dat te doen, gebruik je de eigenschap `AUTO_INCREMENT`. Als je een nieuwe tabel maakt voeg je de eigenschap toe na de declaratie van de kolom. Zorg ervoor dat je op die kolom een primary key constraint hebt staan:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 CREATE TABLE Personen (
     Id INT AUTO_INCREMENT PRIMARY KEY,
     Voornaam varchar(255) char set utf8mb4 NOT NULL,
@@ -149,7 +149,7 @@ CREATE TABLE Personen (
 );
 ```
 
-Sla op als 0057\_\_CreatePersonen.sql.
+Sla op als 0050\_\_CreatePersonen.sql.
 
 Je kan de beginwaarde zelf bepalen. Bijvoorbeeld, als je de boeken wil nummeren vanaf 5 in plaats van 1 \(de default\):
 
@@ -168,7 +168,7 @@ Eerder hebben we `AUTO_INCREMENT` al gebruikt voor boeken. Bekijk eens wat er ge
 Een constraint behoort tot de definitie van de tabel, dus moet je DROP gebruiken:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 ALTER TABLE Boeken DROP PRIMARY KEY;
 ```
 

@@ -3,7 +3,7 @@
 Het is niet erg handig om telkens de primaire sleutel achteraf toe te voegen. Als je een nieuwe tabel maakt, kan je in één keer een kolom aanduiden als primaire sleutel:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 DROP TABLE IF EXISTS Boeken;
 
 CREATE TABLE Boeken(
