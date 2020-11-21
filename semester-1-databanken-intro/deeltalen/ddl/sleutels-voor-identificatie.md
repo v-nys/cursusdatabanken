@@ -25,7 +25,7 @@ Als je een tabel van \(oude en nieuwe\) games aanmaakt, met als kolommen hun tit
 
 Voor SQL is er geen verschil tussen de oude en de nieuwe versies van deze games, maar het gaat in werkelijkheid wel om verschillende zaken. Je zou het jaar van uitgave als kolom kunnen toevoegen om elke rij uit elkaar te houden. Of de spelconsole waarop het spel uitkwam. Of misschien is de uitgever steeds veranderd. Dan kan je elke rij uniek maken door die toe te voegen. Maar niets verhindert een ontwikkelaar om twee gelijknamige games meteen na elkaar uit te geven bij eenzelfde uitgever.
 
-Het idee om elke rij uniek te maken is goed, maar je volgt best een voorzichtige aanpak. Dit kan door een speciale kolom aan de tabel toe te voegen, een primaire sleutel of primary key. Deze kolom bevat geen informatie over de rij in kwestie, maar dient alleen om een specifieke rij aan te duiden. Vaak is het gewoon een getal, zoals in dit voorbeeld, waarin de kolom `Id` een primaire sleutel is:
+Het idee om elke rij uniek te maken is goed, maar je volgt best een voorzichtige aanpak. Dit kan door kolommen toe te voegen die een rij uniek kunnen identificeren. Een stel kolommen waarmee je een rij uniek kan identificeren, kan dan aangeduid worden als **primaire sleutel of primary key**. Deze verzameling kolommen \(of ene kolom\) hoeft niet noodzakelijk "leesbare" informatie te bevatten. Vaak is het gewoon een getal, zoals in dit voorbeeld, waarin de kolom `Id` een primaire sleutel is:
 
 | Titel | Ontwikkelaar | Id |
 | :--- | :--- | :--- |
