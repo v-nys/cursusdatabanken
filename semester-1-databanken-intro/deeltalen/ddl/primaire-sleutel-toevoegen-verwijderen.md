@@ -1,5 +1,9 @@
 # Primaire sleutel toevoegen/verwijderen
 
+{% hint style="success" %}
+[Kennisclip](https://youtu.be/ImgMRg79zJY)
+{% endhint %}
+
 ## Primaire sleutel toevoegen/verwijderen voor een bestaande tabel
 
 We vertrekken hier van volgend script, 0048\_\_CalibrateDB.sql:

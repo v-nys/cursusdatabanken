@@ -1,5 +1,9 @@
 # Vreemde sleutels
 
+{% hint style="success" %}
+[Kennisclip](https://youtu.be/24FRpONsFYU)
+{% endhint %}
+
 ## Concept
 
 In [het voorbeeld met games](sleutels-voor-identificatie.md) heb je gezien dat er verschillende redenen zijn om rijen uniek te identificeren. Dit is alleen zinvol als we de primaire sleutelattributen ook ergens anders vermelden. Met andere woorden, als we in kolom A van tabel B een primaire sleutel plaatsen, is het logisch dat we in kolom C van tabel D over deze sleutel spreken.

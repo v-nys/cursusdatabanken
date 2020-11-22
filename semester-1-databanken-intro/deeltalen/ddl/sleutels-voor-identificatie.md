@@ -1,5 +1,9 @@
 # Sleutels voor identificatie
 
+{% hint style="success" %}
+[Kennisclip](https://youtu.be/As96me65U7A)
+{% endhint %}
+
 ## Sleutels in MySQL: motivatie
 
 De tabellen die je tot hiertoe gemaakt hebt in MySQL, groeperen heel veel informatie in één record. Informatie groeperen is een belangrijk doel van databanken, maar het gebeurt beter pas wanneer de groepering zelf nodig is. Anders krijg je databanken die meer plaats innemen dan nodig, die makkelijker fouten zullen bevatten en die moeilijker te navigeren zijn. Het belangrijkste principe om de data pas te groeperen wanneer dat nodig is, is dat van een sleutel. Hier bekijken we het binnen MySQL.

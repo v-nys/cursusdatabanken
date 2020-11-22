@@ -1,5 +1,17 @@
 # Relaties-voorstellen
 
+{% hint style="success" %}
+[Kennisclip 1-op-1 relaties](https://youtu.be/Z3NAO4TIETA)
+{% endhint %}
+
+{% hint style="success" %}
+[Kennisclip 1-op-M relaties](https://youtu.be/wP3v5JCL0TA)
+{% endhint %}
+
+{% hint style="success" %}
+[Kennisclip N-op-M relaties](https://youtu.be/KOU0e-cEVyk)
+{% endhint %}
+
 ## Relatietypes voorstellen
 
 Afhankelijk van hoe entiteiten aan elkaar gekoppeld kunnen zijn, delen we de koppelingen tussen deze entiteiten op in categorieën:
