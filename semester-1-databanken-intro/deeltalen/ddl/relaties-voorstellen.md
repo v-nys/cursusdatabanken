@@ -89,6 +89,7 @@ Dit ziet er zo uit:
 
 ```sql
 USE ApDB;
+SET SQL_SAFE_UPDATES = 0;
 ALTER TABLE Leden
 ADD COLUMN Taken_Id INT, -- d.w.z. de taak die bij dit lid hoort
 ADD CONSTRAINT fk_Leden_Taken
@@ -105,6 +106,7 @@ SET Taken_Id = 3
 WHERE Naam = 'Max';
 ALTER TABLE Leden
 CHANGE Taken_Id Taken_Id INT NOT NULL;
+SET SQL_SAFE_UPDATES = 1;
 ```
 
 Je zou de data nu kunnen combineren, maar daar heb je een JOIN-operatie voor nodig. Die komt later.
