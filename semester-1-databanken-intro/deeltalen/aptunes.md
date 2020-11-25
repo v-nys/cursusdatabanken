@@ -109,3 +109,31 @@ Nu er redelijk wat data is, moeten we die gaan samenvatten eerder dan rij per ri
 * Toon alle genres waarvan de nummers gemiddeld minstens 5 minuten duren, in de volgorde die is vastgelegd voor de genre enum. Noem je script aptunes\_\_0022.sql.
 * Het blijkt dat erg lange klassieke nummers niet erg winstgevend zijn voor onze dienst. Toon daarom alfabetisch alle artiesten die klassieke nummers hebben, maar enkel als hun klassieke nummers ook gemiddeld langer dan 8 minuten duren. Noem je script aptunes\_\_0023.sql. **Tip: je hebt hier een combinatie van** [**alle clausules** ](dml/select/select-met-clausules.md)**nodig.**
 
+## Normalisatie van de apTunes databank
+
+De apTunes database, zoals ze ontwikkeld is met scripts 1 tot 23, is niet erg efficiënt ontworpen. We zullen ze herstructureren met relationele concepten.
+
+### 1-op-N relaties
+
+Volg eerst volgende [kennisclip](https://youtu.be/XM6X_X3gMTM) **\(let vooral goed op bij de uitleg over wat de getallen bij een relatie betekenen\)**. Maak zelf mee de scripts \(voer eerst het calibratiescript uit!\) en nummer als volgt:
+
+* het script om een tabel `Artiesten` te maken is `aptunes__0024.sql`
+* het script om data te migreren naar `Artiesten` is `aptunes__0025.sql`
+* het script om `Nummers` te voorzien van een foreign key is `aptunes__0026.sql`
+* het script om de artiesten te linken hoef je op dit moment niet te begrijpen, maar krijg je hieronder \(`aptunes__0027.sql`\)
+* het script om de kolom `Artiest` uit `Nummers` te verwijderen is `aptunes__0028.sql`
+* het script om `Albums` te maken is `aptunes__0029.sql` \(schrijf je zelf\)
+* het script om data te migreren naar `Albums` is `aptunes__0030.sql` \(schrijf je zelf\)
+* het script om `Albums` te voorzien van een foreign key is `aptunes__0031.sql` \(schrijf je zelf\)
+* het script om de albums te linken krijg je hieronder \(`aptunes__0032.sql`\)
+* het script om de kolom `Album` uit `Nummers` te verwijderen is `aptunes__0033.sql` \(schrijf je zelf\)
+* het script om gebruikers toe te voegen krijg je hieronder \(`aptunes__0034.sql`\)
+
+{% file src="../../.gitbook/assets/aptunes\_\_0027.sql" caption="aptunes\_\_0027.sql" %}
+
+{% file src="../../.gitbook/assets/aptunes\_\_0032.sql" caption="aptunes\_\_0032.sql" %}
+
+{% file src="../../.gitbook/assets/aptunes\_\_0034.sql" caption="aptunes\_\_0034.sql" %}
+
+
+
