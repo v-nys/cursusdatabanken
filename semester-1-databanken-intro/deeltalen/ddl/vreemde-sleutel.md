@@ -24,7 +24,7 @@ Dat ziet er bijvoorbeeld zo uit, als je een tabel met boeken koppelt aan hun aut
 
 ```sql
 CREATE TABLE Boeken (
-  Id INT PRIMARY KEY AUTO_INCREMENT,
+  Id INT AUTO_INCREMENT PRIMARY KEY,
   Personen_Id INT, -- = persoon die bij dit boek hoort
   CONSTRAINT fk_Boeken_Personen FOREIGN KEY (Personen_Id)
   REFERENCES Personen(Id)

@@ -126,7 +126,7 @@ We voegen een `Id` kolom toe aan de tabel `Boeken` die we als primaire sleutel g
 Om een primaire sleutel toe te voegen aan een reeds bestaande tabel, gebruik je de DDL `ALTER TABLE` instructie in combinatie met een DDL `ADD` instructie:
 
 ```sql
-ALTER TABLE Boeken ADD Id INT auto_increment PRIMARY KEY;
+ALTER TABLE Boeken ADD Id INT AUTO_INCREMENT PRIMARY KEY;
 ```
 
 Sla die instructie op in 0049\_\_AlterBoeken.sql.

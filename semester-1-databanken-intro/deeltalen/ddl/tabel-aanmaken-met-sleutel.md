@@ -7,6 +7,7 @@ USE ApDB;
 DROP TABLE IF EXISTS Boeken;
 
 CREATE TABLE Boeken(
+    Id INT AUTO_INCREMENT PRIMARY KEY,
     Voornaam varchar(50) char set utf8mb4,
     Familienaam varchar(80) char set utf8mb4,
     Titel varchar(255) char set utf8mb4,
@@ -15,8 +16,7 @@ CREATE TABLE Boeken(
     Verschijningsdatum varchar(4),
     Herdruk varchar(4),
     Commentaar varchar(2000) char set utf8mb4,
-    Categorie varchar(120) char set utf8mb4,
-    Id INT AUTO_INCREMENT PRIMARY KEY
+    Categorie varchar(120) char set utf8mb4
 );
 ```
 
