@@ -135,5 +135,20 @@ Volg eerst volgende [kennisclip](https://youtu.be/XM6X_X3gMTM) **\(let vooral go
 
 {% file src="../../.gitbook/assets/aptunes\_\_0034.sql" caption="aptunes\_\_0034.sql" %}
 
+### Veel-op-veel \(M-op-N\) relaties
 
+Volg eerst [deze kennisclip](https://youtu.be/QEPXHLC9Nqw). Dit is het vervolg van de vorige kennisclips. Fris het vorige deel dus op indien je ergens niet kan volgen, want deze leerstof bouwt rechtstreeks voort op de vorige.
+
+* Het script om `GebruikerHeeftAlbum` toe te voegen noem je `aptunes__0035.sql`
+* Het script om de data toe te voegen \(`aptunes__0036.sql`\) vind je hieronder terug.
+* Het script om `NummerOpAlbum` toe te voegen noem je `aptunes__0037.sql`. Het tracknummer past in een `tinyint` en is altijd positief en is verplicht 
+  * In deze tabel sla je volgende informatie op met een eigen script `aptunes__0038.sql`. \(Om dit te doen zoek je met de hand de `Id` van het nummer en van het album op in hun tabellen en `INSERT` je hun combinatie in de nieuwe tabel `NummerOpAlbum`. De werkwijze is dus dezelfde als in script 36.\)
+    * Het nummer met titel _Stairway to Heaven_ is het vierde nummer op het album Led Zeppelin IV
+    * Het nummer met titel _Problem Child_ is het tweede nummer op het album met titel Let There Be Rock
+* Het script om `GebruikerHeeftNummer` toe te voegen noem je `aptunes__0039.sql`
+  * In deze tabel sla je volgende informatie op met een eigen script `aptunes__0040.sql`. De werkwijze is dezelfde als eerder.
+    * tuneBoY5 heeft het nummer _Little Sun_, maar het is geen favoriet
+    * musicfan111 heeft het nummer _Eat the Rich_ en het is een favoriet
+
+{% file src="../../.gitbook/assets/aptunes\_\_0036.sql" caption="aptunes\_\_0036.sql" %}
 
