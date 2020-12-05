@@ -115,7 +115,11 @@ De apTunes database, zoals ze ontwikkeld is met scripts 1 tot 23, is niet erg ef
 
 ### 1-op-N relaties
 
-Volg eerst volgende [kennisclip](https://youtu.be/XM6X_X3gMTM) **\(let vooral goed op bij de uitleg over wat de getallen bij een relatie betekenen\)**. Maak zelf mee de scripts \(voer eerst het calibratiescript uit!\) en nummer als volgt:
+Volg eerst volgende [kennisclip](https://youtu.be/PBBrW4f14Dg) **\(let vooral goed op bij de uitleg over wat de getallen bij een relatie betekenen\)**. Maak zelf mee de scripts \(voer eerst het calibratiescript en script 0015 uit!\) en nummer als volgt:
+
+{% hint style="danger" %}
+Een eerdere versie van deze instructies bevatte een fout die niet was opgemerkt tot na het labo. Waarschijnlijk heb je de foute instructies gebruikt. Zie de modeloplossing.
+{% endhint %}
 
 * het script om een tabel `Artiesten` te maken is `aptunes__0024.sql`
 * het script om data te migreren naar `Artiesten` is `aptunes__0025.sql`
@@ -124,18 +128,20 @@ Volg eerst volgende [kennisclip](https://youtu.be/XM6X_X3gMTM) **\(let vooral go
 * het script om de kolom `Artiest` uit `Nummers` te verwijderen is `aptunes__0028.sql`
 * het script om `Albums` te maken is `aptunes__0029.sql` \(schrijf je zelf\)
 * het script om data te migreren naar `Albums` is `aptunes__0030.sql` \(schrijf je zelf\)
-* het script om `Albums` te voorzien van een foreign key is `aptunes__0031.sql` \(schrijf je zelf\)
+* het script om `Albums` te voorzien van een foreign key waarmee je naar de artiest verwijst is `aptunes__0031.sql` \(schrijf je zelf\)
 * het script om de albums te linken krijg je hieronder \(`aptunes__0032.sql`\)
-* het script om de kolom `Album` uit `Nummers` te verwijderen is `aptunes__0033.sql` \(schrijf je zelf\)
+* **er is geen script aptunes\_\_0033.sql omwille van een fout in een eerdere versie van deze opgave**
 * het script om gebruikers toe te voegen krijg je hieronder \(`aptunes__0034.sql`\)
 
 {% file src="../../.gitbook/assets/aptunes\_\_0027.sql" caption="aptunes\_\_0027.sql" %}
 
-{% file src="../../.gitbook/assets/aptunes\_\_0032.sql" caption="aptunes\_\_0032.sql" %}
+{% file src="../../.gitbook/assets/aptunes\_\_0032 \(1\).sql" caption="aptunes\_\_0032.sql" %}
 
 {% file src="../../.gitbook/assets/aptunes\_\_0034.sql" caption="aptunes\_\_0034.sql" %}
 
 ### Veel-op-veel \(M-op-N\) relaties
+
+{% file src="../../.gitbook/assets/dump20201205.sql" caption="Calibratiescript" %}
 
 Volg eerst [deze kennisclip](https://youtu.be/QEPXHLC9Nqw). Dit is het vervolg van de vorige kennisclips. Fris het vorige deel dus op indien je ergens niet kan volgen, want deze leerstof bouwt rechtstreeks voort op de vorige.
 
