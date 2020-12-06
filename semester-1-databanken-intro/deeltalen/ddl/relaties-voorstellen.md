@@ -207,7 +207,7 @@ Een game kan beschikbaar zijn op meerdere platformen en op elk platform zijn er 
 
 Veronderstel dat Anthem ID 1 heeft, Sekiro 2, enzovoort. Veronderstel ook dat PS4 ID 1 heeft, Xbox One ID 2, Windows ID 3 en Nintendo Switch ID 4. Dan kunnen we voorstellen welke games uitgebracht zijn op welke platformen als volgt:
 
-| Games.Id | Platformen.Id |
+| Games\_Id | Platformen\_Id |
 | :--- | :--- |
 | 1 | 1 |
 | 1 | 2 |
