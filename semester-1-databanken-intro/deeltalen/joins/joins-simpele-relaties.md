@@ -1,5 +1,9 @@
 # JOINs bij simpele relaties
 
+{% hint style="success" %}
+[Kennisclip](https://youtu.be/O6rJEnv65qs)
+{% endhint %}
+
 Om de integriteit van de database te bewaren, normaliseren we de gegevens in de database. Door normalisering geraakt de informatie echter verspreid over meer dan één tabel. De gebruiker heeft daar echter niet veel aan. Primaire en vreemde sleutels zeggen de gebruiker niets. Anders gesteld, een tabel vol getallen zoals onderaan op [de pagina over primary keys](../ddl/sleutels-voor-identificatie.md) is op zich niet leesbaar. We moeten dus een manier vinden om de informatie weer voor te stellen alsof die uit één tabel komt.
 
 ## CROSS JOIN

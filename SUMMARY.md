@@ -60,7 +60,6 @@
   * [JOINS](semester-1-databanken-intro/deeltalen/joins/README.md)
     * [JOINs bij simpele relaties](semester-1-databanken-intro/deeltalen/joins/joins-simpele-relaties.md)
     * [JOINs via tussenliggende tabel](semester-1-databanken-intro/deeltalen/joins/joins-via-tussenliggende-tabel.md)
-    * [Labo](semester-1-databanken-intro/deeltalen/joins/labo-oefeningen.md)
   * [apTunes project](semester-1-databanken-intro/deeltalen/aptunes.md)
 * [NoSQL](semester-1-databanken-intro/nosql.md)
 * [ERM](semester-1-databanken-intro/erm/README.md)

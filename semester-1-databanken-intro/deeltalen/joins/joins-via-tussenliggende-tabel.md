@@ -1,5 +1,9 @@
 # JOINs via tussenliggende tabel
 
+{% hint style="success" %}
+[Kennisclip](https://youtu.be/3bTAcpAzVKk)
+{% endhint %}
+
 We weten wel hoe we leden aan taken kunnen koppelen door middel van INNER JOIN, maar die aanpak werkt niet wanneer er meer dan twee tabellen nodig zijn om de data terug te combineren, zoals in het geval van releases van games op platformen.
 
 Om entiteiten gekoppeld via een M-op-N-relatie aan elkaar te koppelen, moet je eerst de informatie langs de M-kant koppelen met de tabel die de relatie voorstelt en vervolgens de informatie langs de N-kant koppelen.
