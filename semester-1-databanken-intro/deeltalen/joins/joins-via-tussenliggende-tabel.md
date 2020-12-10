@@ -45,3 +45,5 @@ INNER JOIN Platformen
 ON Platformen_Id = Platformen.Id;
 ```
 
+
+
