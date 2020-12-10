@@ -28,20 +28,20 @@ Onze tabel met info over releases van games was:
 We kunnen deze tonen met informatie over de game als volgt:
 
 ```sql
-select Games_Id, Platformen_Id, Titel
-from Releases
-inner join Games
-on Games_Id = Games.Id;
+SELECT Games_Id, Platformen_Id, Titel
+FROM Releases
+INNER JOIN Games
+ON Games_Id = Games.Id;
 ```
 
 Dit voegt langs de rechterkant gewoon de details over de uitgebrachte game. Het is dus een meer uitgebreide versie van de tabel Releases. Daarom kunnen we dezelfde techniek herhalen en enkel de interessante info tonen:
 
 ```sql
-select Titel, Naam
-from Releases
-inner join Games
-on Games_Id = Games.Id
-inner join Platformen
-on Platformen_Id = Platformen.Id;
+SELECT Titel, Naam
+FROM Releases
+INNER JOIN Games
+ON Games_Id = Games.Id
+INNER JOIN Platformen
+ON Platformen_Id = Platformen.Id;
 ```
 
