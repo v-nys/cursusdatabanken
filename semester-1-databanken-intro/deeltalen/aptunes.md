@@ -158,3 +158,31 @@ Volg eerst [deze kennisclip](https://youtu.be/QEPXHLC9Nqw). Dit is het vervolg v
 
 {% file src="../../.gitbook/assets/aptunes\_\_0036.sql" caption="aptunes\_\_0036.sql" %}
 
+### Joins
+
+{% file src="../../.gitbook/assets/dump20201205.sql" caption="Calibratiescript" %}
+
+* Toon de titel en de artiest van alle nummers. Maak hierbij gebruik van een inner join. Noem dit script `aptunes__0041.sql`.
+* Toon de titel van het album samen met de artiest waarvan de naam begint met de letter A. Maak ook hier gebruik van een inner join. Noem dit script `aptunes__0042.sql`.
+* Maak een nieuwe tabel auteurs met volgende kolommen: Id \(primary key & autonummering\), Familienaam, Voornaam \(beiden met maximaal 100 karakters\). Bewaar dit script onder `aptunes__0043.sql`.
+
+Voer het volgende calibratiescript uit voordat je volgende oefeningen maakt.
+
+{% file src="../../.gitbook/assets/calibratiescript-1-boeken.sql" caption="Calibratiescript Boeken \(1\)" %}
+
+* Voeg de unieke familienaam en voornaam uit de tabel boeken toe aan de nieuwe tabel auteurs. Bewaar dit script onder `aptunes__0044.sql`.
+* Voeg een foreign key toe aan de tabel boeken die verwijst naar de primary key van de tabel auteurs. Noem dit script `aptunes__0045.sql`.
+
+Voer het volgende calibratiescript uit voordat je verder gaat met de oefeningen.
+
+{% file src="../../.gitbook/assets/calibratiescript-1-boeken \(1\).sql" caption="Calibratiescript Boeken \(2\)" %}
+
+* Verwijder uit de tabel boeken de familienaam en voornaam. Noem dit script `aptunes__0046.sql`.
+* Toon alle boeken met hun auteur, ttz. titel van het boek samen met de voornaam en familienaam. De voornaam en familienaam worden in één kolom weergegeven. Noem dit script `aptunes__0047.sql`.
+* Voorzie de tabel Boeken van een primary key Id met als type autonummering. Noem dit script `aptunes__0048.sql`.
+* Maak een nieuwe \(koppel\) tabel BoekenAuteurs met volgende kolommen: Id \(primary keuy & autonummering\), foreign key Auteurs\_Id en foreign key Boeken\_Id. Bewaar dit script onder `aptunes__0049.sql`.
+* Vul deze nieuwe tabel BoekenAuteurs met de juiste waarden uit de tabel boeken. Bewaar dit scirpt onder `aptunes__0050.sql`.
+* Verwijder uit de tabel boeken het veld Auteurs\_id en bewaar dit script onder `aptunes__0051.sql`.
+* Voeg volgende boeken toe:  Titel                       Auteur  ApDB                     Peter Spaas                                 Vincent Nys  Xchk                      Vincent Nys  Standaard SQL    Peter Spaas  Je dient het Id van het boek en de auteur op te zoeken om dit dan te gebruiken in je script.  Bewaar dit script onder `aptunes__0052.sql`.
+* Toon de titel van het boek en de familienaam van de auteur van alle boeken. Bewaar dit script onder `aptunes_0053.sql`.
+
