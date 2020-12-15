@@ -169,11 +169,11 @@ Voer het volgende calibratiescript uit voordat je volgende oefeningen maakt.
 {% file src="../../.gitbook/assets/calibratiescript-1-boeken.sql" caption="Calibratiescript Boeken \(1\)" %}
 
 * Voeg de unieke familienaam en voornaam uit de tabel boeken toe aan de nieuwe tabel auteurs. Bewaar dit script onder `aptunes__0044.sql`.
-* Voeg een foreign key toe aan de tabel boeken die verwijst naar de primary key van de tabel auteurs. Noem dit script `aptunes__0045.sql`.
+* Voeg een foreign key toe aan de tabel boeken die verwijst naar de primary key van de tabel auteurs. Uiteraard is hierbij ook het bepalen van een constraint noodzakelijk. Noem dit script `aptunes__0045.sql`.
 
 Voer het volgende calibratiescript uit voordat je verder gaat met de oefeningen.
 
-{% file src="../../.gitbook/assets/calibratiescript-1-boeken \(1\).sql" caption="Calibratiescript Boeken \(2\)" %}
+{% file src="../../.gitbook/assets/calibratiescript-2-boeken.sql" caption="Calibratiescript Boeken \(2\)" %}
 
 * Verwijder uit de tabel boeken de familienaam en voornaam. Noem dit script `aptunes__0046.sql`.
 * Toon alle boeken met hun auteur, ttz. titel van het boek samen met de voornaam en familienaam. De voornaam en familienaam worden in één kolom weergegeven. Noem dit script `aptunes__0047.sql`.
