@@ -160,8 +160,6 @@ Volg eerst [deze kennisclip](https://youtu.be/QEPXHLC9Nqw). Dit is het vervolg v
 
 ### Joins
 
-{% file src="../../.gitbook/assets/dump20201205.sql" caption="Calibratiescript" %}
-
 * Toon de titel en de artiest van alle nummers. Maak hierbij gebruik van een inner join. Noem dit script `aptunes__0041.sql`.
 * Toon de titel van het album samen met de artiest waarvan de naam begint met de letter A. Maak ook hier gebruik van een inner join. Noem dit script `aptunes__0042.sql`.
 * Maak een nieuwe tabel auteurs met volgende kolommen: Id \(primary key & autonummering\), Familienaam, Voornaam \(beiden met maximaal 100 karakters\). Bewaar dit script onder `aptunes__0043.sql`.
