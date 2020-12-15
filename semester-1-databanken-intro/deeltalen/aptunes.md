@@ -182,5 +182,5 @@ Voer het volgende calibratiescript uit voordat je verder gaat met de oefeningen.
 * Vul deze nieuwe tabel BoekenAuteurs met de juiste waarden uit de tabel boeken. Bewaar dit scirpt onder `aptunes__0050.sql`.
 * Verwijder uit de tabel boeken het veld Auteurs\_id en bewaar dit script onder `aptunes__0051.sql`.
 * Voeg volgende boeken toe:  Titel                       Auteur  ApDB                     Peter Spaas                                 Vincent Nys  Xchk                      Vincent Nys  Standaard SQL    Peter Spaas  Het is duidelijk dat je hier meerdere scripts dient te maken. Je dient het Id van het boek en de auteur op te zoeken om dit dan te gebruiken in je script.  Bewaar dit script onder `aptunes__0052.sql`.
-* Toon de titel van het boek en de familienaam van de auteur van alle boeken. Bewaar dit script onder `aptunes_0053.sql`.
+* Toon de titel van het boek en de familienaam van de auteur van alle boeken. Je moet hier inner join gebruiken. Bewaar dit script onder `aptunes_0053.sql`.
 
