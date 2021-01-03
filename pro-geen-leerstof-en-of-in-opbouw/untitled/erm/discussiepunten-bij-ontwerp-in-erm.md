@@ -21,5 +21,5 @@
 
 Een relationship tussen meer dan twee entity sets kan steeds herleid worden tot meerdere relationship sets die binaire zijn \(dwz. tussen twee entity sets\).
 
-![](../../.gitbook/assets/image%20%288%29.png)
+![](../../../.gitbook/assets/image%20%288%29.png)
 

@@ -18,7 +18,7 @@ Afspraken:
 * Gebruik de onderlijnde attributen als primary keys. Studentennummer en personeelsnummer mag je als automatisch ophogende `INT` definiëren; de sleutelattributen `Naam` definieer je als tekst met daarop de constraint `PRIMARY KEY`. In dit geval hoef je de primary key dus **niet** `Id` te noemen.
 * Vreemde sleutels volgen dezelfde afspraken als eerder.
 
-![Entity Relationship Diagram voor de hogeschool.](../../.gitbook/assets/hogeschool.png)
+![Entity Relationship Diagram voor de hogeschool.](../../../.gitbook/assets/hogeschool.png)
 
 Noem het script dat deze tabellen toevoegt 0564\_\_Oefening.sql.
 
