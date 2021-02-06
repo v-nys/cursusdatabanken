@@ -1,24 +1,31 @@
 # OUTER JOIN
 
-De `OUTER JOIN` ziet er als volgt uit: ![venn diagram outer join](https://modernways.be/myap/it/image/sql/venn%20diagram%20outer%20join.png)
+De `OUTER JOIN` ziet er als volgt uit:
+
+![Venn diagram outer join](../../.gitbook/assets/venn-diagram-outer-join.png)
 
 MySQL ondersteunt deze constructie niet, in tegenstelling tot sommige andere databanken. Maar je kan ze wel nabootsen door een \(gewone\) left join boven een excluding right join te plaatsen met behulp van `UNION ALL`, dat resultaten samen neemt:
 
 ```sql
-SELECT <select_list>
-FROM
-  Table_A LEFT JOIN Table_B
-  ON Table_A.Key = Table_B.Key
+SELECT <kolommen uit A of uit B>
+FROM A 
+LEFT JOIN B 
+ON A.Id = B.A_Id
 
 UNION ALL -- plaats de resultaten onder elkaar -> maak de kolommen expliciet! geen *
 
 SELECT <select_list>
-FROM
-  Table_A RIGHT JOIN Table_B
-  ON Table_A.Key = Table_B.Key
-WHERE
-  Table_A.Key IS NULL
+FROM A
+RIGHT JOIN B
+ON A.B_Id = B.Id
+WHERE A.B_Id IS NULL
 ```
+
+{% hint style="danger" %}
+Selecteer dezelfde kolommen uit beide joins! Het is mogelijk om dat niet te doen, maar dan krijg je mogelijk onzinnige resultaten.
+{% endhint %}
+
+Je kan ook een left excluding join combineren met een gewone right join.
 
 ## Opmerking
 

@@ -4,13 +4,15 @@ Deze query retourneert alle records in de rechtse tabel \(tabel B\) die niet ove
 
 ```sql
 SELECT <select_list>
-FROM Table_A 
-RIGHT JOIN Table_B 
-ON Table_A.Key = Table_B.Key
-WHERE Table_A.Key IS NULL
+FROM A
+RIGHT JOIN B
+-- ook hier kan het zijn dat de linkertabel de primary key bevat
+ON A.B_Id = B.Id
+WHERE A.B_Id IS NULL
+-- LET OP:
+-- hier moet je altijd de foreign key kolom gebruiken
+-- een primary key kan immers nooit NULL zijn
 ```
 
-![venn diagram right excluding join](https://modernways.be/myap/it/image/sql/venn%20diagram%20right%20excluding%20join.png)
-
-venn diagram right excluding join
+![Venn diagram right excluding join](../../.gitbook/assets/venn-diagram-right-excluding-join.png)
 
