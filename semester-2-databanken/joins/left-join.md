@@ -3,15 +3,20 @@
 ## Syntax
 
 ```sql
-SELECT <select_list>
-FROM Table_A 
-LEFT JOIN Table_B 
-ON Table_A.Key = Table_B.Key
+SELECT <kolommen uit A of uit B>
+FROM A 
+LEFT JOIN B 
+-- hier veronderstellen we dat de vreemde sleutel in B staat
+ON A.Id = B.A_Id
+-- alternatief met vreemde sleutel in A:
+-- ON A.B_Id = B.Id
 ```
 
 ![venn diagram left join](https://modernways.be/myap/it/image/sql/venn%20diagram%20left%20join.png)
 
-Als je alle personen wilt tonen ongeacht of ze een boek hebben geschreven of niet kan je een `LEFT JOIN` gebruiken. De 'linkse' tabel is de master tabel. Dus met een `LEFT JOIN` worden alle rijen uit de linkse tabel `Personen` geselecteerd ongeacht of ze een boek hebben geschreven of niet.
+Als je alle personen wilt tonen ongeacht of ze een boek hebben geschreven of niet kan je een `LEFT JOIN` gebruiken. In tegenstelling tot bij `INNER JOIN` maakt het een groot verschil of je `A LEFT JOIN B` schrijft of `B LEFT JOIN A`. Met een `LEFT JOIN` worden alle rijen uit de linkse tabel geselecteerd, of er nu een match is of niet op basis van de sleutelkolommen.
+
+Terug naar het voorbeeld, maar dan met LEFT JOIN:
 
 ```sql
 SELECT Personen.Voornaam, Personen.Familienaam,
