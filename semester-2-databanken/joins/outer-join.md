@@ -7,6 +7,9 @@ De `OUTER JOIN` ziet er als volgt uit:
 MySQL ondersteunt deze constructie niet, in tegenstelling tot sommige andere databanken. Maar je kan ze wel nabootsen door een \(gewone\) left join boven een excluding right join te plaatsen met behulp van `UNION ALL`, dat resultaten samen neemt:
 
 ```sql
+-- net als tevoren kan de code wat variëren
+-- de foreign key staat hier in de rechtertabel
+-- hij kan (mits aanpassingen) ook in de linkertabel
 SELECT <kolommen uit A of uit B>
 FROM A 
 LEFT JOIN B 
