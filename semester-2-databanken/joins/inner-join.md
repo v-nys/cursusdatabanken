@@ -29,7 +29,7 @@ INNER JOIN B ON A.Id = B.A_Id
 We combineren informatie uit twee tabellen: de linkertabel \(`A`\) en de rechtertabel \(`B`\). We zeggen dat er overlapping is tussen de tabellen als de gebruikte sleutelkolommen dezelfde waarde bevatten. Het stuk van `A` dat we bekijken \(`A.Id`\) matcht met het stuk van `B` dat we bekijken \(`B.A_Id`\) en dat tekenen we als een overlappend gedeelte.
 
 {% hint style="info" %}
-Als je dat begrepen hebt, zou het je niet mogen verbazen dat je net zo goed `B INNER JOIN A` kan schrijven als `A INNER JOIN B`. Enkel bij SELECT \* maakt dit een \(klein\) verschil, namelijk dat de kolommen in een andere volgorde zullen staan.
+Als je dat begrepen hebt, zou het je niet mogen verbazen dat je net zo goed `B INNER JOIN A` kan schrijven als `A INNER JOIN B`. Enkel bij `SELECT *` maakt dit een \(klein\) verschil, namelijk dat de kolommen in een andere volgorde zullen staan.
 {% endhint %}
 
 ## Voorbeeld
