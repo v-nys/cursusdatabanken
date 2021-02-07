@@ -89,6 +89,7 @@
   * [RIGHT EXCLUDING JOIN](semester-2-databanken/joins/right-excluding-join.md)
   * [OUTER JOIN](semester-2-databanken/joins/outer-join.md)
   * [OUTER EXCLUDING JOIN](semester-2-databanken/joins/outer-excluding-join.md)
+  * [Samenvattende flowchart](semester-2-databanken/joins/samenvattende-flowchart.md)
   * [Labo oefeningen](semester-2-databanken/joins/labo-oefeningen.md)
 * [Views](semester-2-databanken/views/README.md)
   * [CREATE](semester-2-databanken/views/create.md)
