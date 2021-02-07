@@ -16,13 +16,3 @@ WHERE A.B_Id IS NULL
 
 ![Venn diagram left excluding join](../../.gitbook/assets/venn-diagram-left-excluding-join.png)
 
-Aandachtige lezers vragen zich misschien af of je hier wel een JOIN nodig hebt, want je gebruikt alleen data uit `A`. Je zou dus bijna hetzelfde krijgen met volgende query:
-
-```sql
-SELECT <select_list>
-FROM A
-WHERE A.B_Id IS NULL
-```
-
-Er is een verschil, maar het is klein: je kan nu in de lijst met te selecteren kolommen geen kolommen van B meer kan vernoemen. Dat lijkt misschien geen groot gemis omdat ze alleen maar NULL bevatten, maar de left excluding join is een bouwsteen voor de outer join en die is wel zinvol.
-
