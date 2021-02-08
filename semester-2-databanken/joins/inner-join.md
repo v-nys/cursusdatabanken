@@ -1,5 +1,13 @@
 # INNER JOIN
 
+{% hint style="success" %}
+[Kennisclip diagramnotatie](https://youtu.be/bqNvWc0AXjw)
+{% endhint %}
+
+{% hint style="success" %}
+[Kennisclip demo](https://youtu.be/XyhEl8Gt8Rg)
+{% endhint %}
+
 Deze is in het eerste semester al aan bod gekomen. We herhalen hem hier en we introduceren een Venn diagram als visueel geheugensteuntje. **Let op: het Venn diagram mag je niet lezen als twee verzamelingen records en hun doorsnede. Het heeft hier een andere betekenis!**
 
 {% hint style="danger" %}

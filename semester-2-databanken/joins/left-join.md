@@ -1,5 +1,13 @@
 # LEFT JOIN
 
+{% hint style="success" %}
+[Kennisclip diagramnotatie](https://youtu.be/v42nKNbcHtQ)
+{% endhint %}
+
+{% hint style="success" %}
+[Kennisclip demo](https://youtu.be/6lkC3AD8s1A)
+{% endhint %}
+
 ## Syntax
 
 ```sql

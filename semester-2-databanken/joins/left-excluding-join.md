@@ -1,5 +1,9 @@
 # LEFT EXCLUDING JOIN
 
+{% hint style="success" %}
+[Kennisclip](https://youtu.be/GLuxqI8LZXQ)
+{% endhint %}
+
 Deze query retourneert alle records in de linkertabel \(tabel A\) die **niet overeenkomen** met records in de rechtse tabel \(tabel B\). Eventuele kolommen uit de tabel B die vermeld worden in de select list bevatten sowieso de waarde `NULL`. Deze join wordt als volgt geschreven:
 
 ```sql

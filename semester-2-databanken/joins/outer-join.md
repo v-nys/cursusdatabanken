@@ -1,5 +1,9 @@
 # OUTER JOIN
 
+{% hint style="success" %}
+[Kennisclip](https://youtu.be/UcFgBdSn844)
+{% endhint %}
+
 De `OUTER JOIN` ziet er als volgt uit:
 
 ![Venn diagram outer join](../../.gitbook/assets/venn-diagram-outer-join.png)

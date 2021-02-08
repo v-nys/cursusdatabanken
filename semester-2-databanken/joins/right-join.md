@@ -1,5 +1,9 @@
 # RIGHT JOIN
 
+{% hint style="success" %}
+[Kennisclip](https://youtu.be/X5EvIazPais)
+{% endhint %}
+
 **Syntax**
 
 ```sql

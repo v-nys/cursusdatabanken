@@ -1,5 +1,9 @@
 # COALESCE
 
+{% hint style="success" %}
+[Kennisclip](https://youtu.be/zvEnDNEc0ZQ)
+{% endhint %}
+
 De functie `COALESCE` \(Engels voor "samensmelten"\) in SQL retourneert de eerste niet-NULL expressie tussen de argumenten. Met deze functie kan je eenvoudig aangeven wat erin een `NULL` kolom moet worden getoond:
 
 ```sql
