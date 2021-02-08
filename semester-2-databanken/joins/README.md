@@ -2,7 +2,7 @@
 
 ## Situatie
 
-Om de integriteit van een database te bewaren normaliseren we de gegevens in de database. Ruwweg betekent dit dat we tabellen splitsen in kleinere, zinvollere tabellen om ontdubbeling te vermijden. Door de normalisering geraakt de informatie echter verspreid over meer dan één tabel. De gebruiker heeft daar echter niet veel aan. Primaire - en vreemde sleutels zeggen de gebruiker niets. We moeten dus een manier vinden om de informatie weer voor te stellen _alsof_ die uit één tabel komt.
+Om de integriteit van een database te bewaren, normaliseren we de gegevens in de database. Ruwweg betekent dit dat we tabellen splitsen in kleinere, zinvollere tabellen om ontdubbeling te vermijden. Door de normalisering geraakt de informatie echter verspreid over meer dan één tabel. De gebruiker heeft daar echter niet veel aan. Primaire - en vreemde sleutels zeggen de gebruiker niets. We moeten dus een manier vinden om de informatie weer voor te stellen _alsof_ die uit één tabel komt.
 
 ## Oplossing
 
@@ -13,12 +13,12 @@ Om de integriteit van een database te bewaren normaliseren we de gegevens in de 
 
 ## Startpunt
 
-Als je wil mee volgen, gebruik dan onderstaand calibratiescript. Noem het 0100\_\_CalibrateDB.sql. **Let op: dit maakt dezelfde tabelstructuur aan als de voorbeelden, maar gebruikt andere data.**
+Als je wil mee volgen, gebruik dan onderstaand calibratiescript. **Let op: dit maakt dezelfde tabelstructuur aan als de voorbeelden, maar gebruikt andere data.**
 
 ```sql
-drop database if exists `ModernWays`;
-CREATE DATABASE  IF NOT EXISTS `ModernWays` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `ModernWays`;
+drop database if exists `ApDB`;
+CREATE DATABASE  IF NOT EXISTS `ApDB` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `ApDB`;
 -- MySQL dump 10.13  Distrib 8.0.19, for Linux (x86_64)
 --
 -- Host: localhost    Database: ModernWays
