@@ -235,7 +235,7 @@ DROP TABLE IF EXISTS `Taken`;
 CREATE TABLE `Taken` (
   `Omschrijving` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `Leden_Id` int(11) NOT NULL,
+  `Leden_Id` int(11),
   PRIMARY KEY (`Id`),
   KEY `fk_Taken_Leden` (`Leden_Id`),
   CONSTRAINT `fk_Taken_Leden` FOREIGN KEY (`Leden_Id`) REFERENCES `Leden` (`Id`)
@@ -248,7 +248,7 @@ CREATE TABLE `Taken` (
 
 LOCK TABLES `Taken` WRITE;
 /*!40000 ALTER TABLE `Taken` DISABLE KEYS */;
-INSERT INTO `Taken` VALUES ('bestek voorzien',1,2),('frisdrank meebrengen',2,1),('aardappelsla maken',3,3);
+INSERT INTO `Taken` VALUES ('bestek voorzien',1,2),('frisdrank meebrengen',2,1),('aardappelsla maken',3,3),('papieren bordjes meebrengen',4,null);
 /*!40000 ALTER TABLE `Taken` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -403,28 +403,34 @@ FROM Releases
      INNER JOIN Games ON Releases.Games_Id = Games.Id
 ```
 
+### Oefening 4
+
+Toon nu zelf het overzicht van wie welk boek heeft uitgeleend en in welke periode. Doe dit in script 0506\_\_Oefening.sql. Gebruik `coalesce` om duidelijk aan te geven wanneer een boek nog niet is teruggebracht en zorg dat de kolomtitel leesbaar is met `as`.
+
+| Persoon | Boek | Startdatum | Einddatum |
+| :--- | :--- | :--- | :--- |
+| Max | Norwegian Wood | 1 februari 2019 | 15 februari 2019 |
+| ... | ... | ... | ... |
+| Yannick | Pet Sematary | 1 mei 2019 | nog niet teruggebracht |
+
 ## Andere soorten JOINs
 
 ### Oefening 5
 
-Er is een tabel `Taken` en een tabel `Leden`. Bij taken staat \(door middel van een verwijzing\) welk lid een bepaalde taak uitvoert \(zoals eerder in de cursus "Databanken Intro"\). Toon nu alle taken die niet aan iemand zijn toegewezen. Noem je script 0506\_\_Oefening.sql.
-
-### Oefening 6
-
-Toon alle taken, met het lid dat de taak uitvoert. Als de taak door niemand wordt uitgevoerd, staat er een `NULL`. Doe dit met een soort JOIN die je nog niet hebt gebruikt, dus geen CROSS JOIN of INNER JOIN. Voorbeeldoutput \(kan anders zijn voor jouw data\):
+Toon alle taken, met het lid dat de taak uitvoert. Als de taak door niemand wordt uitgevoerd, staat er "taak niet toegewezen". **Maak voor jezelf eerst de tekening met overlappende cirkels zodat je weet hoe je dit kan uitschrijven, zoals in de theorie.** Gebruik `COALESCE` en `AS om` je output leesbaar te maken, zoals in de voorbeeldoutput hieronder:
 
 | Voornaam | Omschrijving |
 | :--- | :--- |
 | Yannick | frisdrank meebrengen |
 | Bavo | bestek voorzien |
 | Max | aardappelsla maken |
-| NULL | papieren bordjes meebrengen |
+| Taak niet toegewezen | papieren bordjes meebrengen |
 
 Noem het script 0507\_\_Oefening.sql.
 
-### Oefening 7
+### Oefening 6
 
-Toon alle titels van games met hun bijbehorend platform, als er een is. Toon ook games waarvoor het platform niet meer ondersteund wordt \(d.w.z. waarvoor geen info in `Releases` staat\). Gebruik hiervoor een samenstelling van twee JOINs. Noem het script 0508\_\_Oefening.sql.
+Toon alle titels van games met hun bijbehorend platform, als er een is. Toon ook games waarvoor het platform niet meer ondersteund wordt \(d.w.z. waarvoor geen info in `Releases` staat\). Gebruik hiervoor een samenstelling van twee JOINs. Gebruik opnieuw `COALESCE` en `AS` voor mooiere output. Noem het script 0508\_\_Oefening.sql.
 
 Voorbeeldoutput:
 
@@ -435,20 +441,9 @@ Voorbeeldoutput:
 | Anthem | Windows |
 | ... | ... |
 | Mega Man 11 | Switch |
-| Oregon Trail | NULL |
+| Oregon Trail | Platform niet meer ondersteund |
 
-### Oefening 8
-
-Toon alle platformen waarvoor games beschikbaar zijn. Toon dus geen platformen indien geen games beschikbaar zijn. Noem je script 0509\_\_Oefening.sql.
-
-### Oefening 9 \(Een uitdaging!\)
-
-Toon alle games waarvoor het platform onbekend is, samen met alle platformen waarvoor geen games beschikbaar zijn. Het resultaat ziet er als volgt uit:
-
-| Titel | Naam |
-| :--- | :--- |
-| Oregon Trail | Geen platformen gekend |
-| Geen games gekend | Master System |
-
-Noem je script 0510\_\_Oefening.sql.
+{% hint style="info" %}
+Tip: **Probeer dit niet in één keer.** Koppel eerst releases aan platformen. Controleer je output. Plaats het deel van de query dat deze koppeling doet tussen haakjes. Dit deel kan je nu ook zien als een cirkel in de tekening voor de verschillende soorten joins. Denk dan na over de tekening om ook games te betrekken en schrijf daarna pas de volledige query.
+{% endhint %}
 
