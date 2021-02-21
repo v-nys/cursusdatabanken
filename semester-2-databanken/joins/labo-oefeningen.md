@@ -7,7 +7,7 @@ Start vanaf onderstaand script, 0600\_\_CalibrateDB.sql:
 ```sql
 -- MySQL dump 10.13  Distrib 8.0.16, for Linux (x86_64)
 --
--- Host: localhost    Database: ModernWays
+-- Host: localhost    Database: ApDB
 -- ------------------------------------------------------
 -- Server version    8.0.16
 
@@ -25,9 +25,9 @@ Start vanaf onderstaand script, 0600\_\_CalibrateDB.sql:
 --
 -- Table structure for table `Auteurs`
 --
-DROP DATABASE ModernWays;
-CREATE DATABASE ModernWays;
-USE ModernWays;
+DROP DATABASE if exists ApDB;
+CREATE DATABASE ApDB;
+USE ApDB;
 
 DROP TABLE IF EXISTS `Auteurs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -317,29 +317,31 @@ UNLOCK TABLES;
 
 ### Oefening 1
 
-Merk op dat er tabellen zijn met de namen `Boeken` en tabel `Auteurs`. Gebruik volgende informatie om de tabel `BoekenNaarAuteurs` in te vullen met 0601\_\_Oefening.sql:
+Merk op dat er tabellen zijn met de namen `Boeken` en tabel `Auteurs`. Gebruik volgende informatie om de tabel `BoekenNaarAuteurs` in te vullen met 0501\_\_Oefening.sql:
 
 * Haruki Murakami schreef Norwegian Wood en Kafka on the Shore
 * Neil Gaiman schreef American Gods en The Ocean at the End of the Lane
-* Stephen King schreef Pet Sematary
 * Terry Pratchett en Neil Gaiman schreven **samen** Good Omens
-* Stephen King en Peter Straub schreven **samen** The Talisman
+
+{% hint style="info" %}
+Tip: zoek eerst de primary key van de auteur en van het boek in `Auteurs` en in `Boeken`. Maak dan in `BoekenNaarAuteurs` een rij aan die de twee aan elkaar linkt.
+{% endhint %}
 
 ### Tussenstappen
 
-Noem volgend script 0602\_\_Oefening.sql en voer uit. Je hoeft het niet helemaal te begrijpen.:
+Noem volgend script 0502\_\_Oefening.sql en voer uit:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 
 ALTER TABLE Releases
 add Datum DATE;
 ```
 
-Noem volgend script het 0603\_\_Oefening.sql en voer uit. Je hoeft het niet helemaal te begrijpen.:
+Noem volgend script het 0503\_\_Oefening.sql en voer uit. Je hoeft het niet helemaal te begrijpen.:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 
 UPDATE Releases, Games
 SET Datum = '2019-02-22'
@@ -360,11 +362,11 @@ WHERE Games.Titel = 'Mega Man 11' AND Releases.Games_Id = Games.Id;
 
 ### Oefening 2
 
-Schrijf zelf een tabel, `Uitleningen`, die leden koppelt aan boeken die ze hebben uitgeleend in de bibliotheek. Een uitlening heeft een startdatum en eventueel een einddatum. Deze datums stel je voor met het `DATE`-datatype. Noem het script dat deze tabel aanmaakt 0604\_\_Oefening.sql.
+Schrijf zelf een tabel, `Uitleningen`, die leden koppelt aan boeken die ze hebben uitgeleend in de bibliotheek. Een uitlening heeft een verplichte startdatum en **eventueel** \(dus niet verplicht\) een einddatum. Deze datums stel je voor met het `DATE`-datatype. Noem het script dat deze tabel aanmaakt 0504\_\_Oefening.sql.
 
 ### Oefening 3
 
-Schrijf een script, 0605\_\_Oefening.sql, dat volgende informatie in de databank plaatst:
+Schrijf een script, 0505\_\_Oefening.sql, dat volgende informatie in de databank plaatst:
 
 * Max heeft Norwegian Wood geleend van 1 februari 2019 tot 15 februari 2019.
 * Bavo heeft Norwegian Wood geleend van 16 februari 2019 tot 2 maart 2019.
@@ -373,7 +375,7 @@ Schrijf een script, 0605\_\_Oefening.sql, dat volgende informatie in de databank
 
 ## Tabellen samenvoegen bij veel-op-veel relaties
 
-### Voorbeeld
+### Opfrissing eerste semester
 
 We hebben een tabel die bijhoudt wanneer een bepaalde videogame is uitgebracht op een bepaald platform. Die ziet er zo uit:
 
@@ -401,15 +403,11 @@ FROM Releases
      INNER JOIN Games ON Releases.Games_Id = Games.Id
 ```
 
-### Oefening 4
-
-Gebruik nu INNER JOIN met de tabel `Personen`, de tabel `Boeken` en de tabel die deze twee entiteiten koppelt om weer te geven welke personen ooit een boek hebben uitgeleend \(en welk boek dat was\). Schrijf je oplossing in een script 0606\_\_Oefening.sql. Je toont alleen de naam van de persoon \(als eerste kolom\) en de titel van het boek \(als tweede kolom\).
-
 ## Andere soorten JOINs
 
 ### Oefening 5
 
-Er is een tabel `Taken` en een tabel `Leden`. Bij taken staat \(door middel van een verwijzing\) welk lid een bepaalde taak uitvoert \(zoals eerder in de cursus "Databanken Intro"\). Toon nu alle taken die niet aan iemand zijn toegewezen. Noem je script 0607\_\_Oefening.sql.
+Er is een tabel `Taken` en een tabel `Leden`. Bij taken staat \(door middel van een verwijzing\) welk lid een bepaalde taak uitvoert \(zoals eerder in de cursus "Databanken Intro"\). Toon nu alle taken die niet aan iemand zijn toegewezen. Noem je script 0506\_\_Oefening.sql.
 
 ### Oefening 6
 
@@ -422,11 +420,11 @@ Toon alle taken, met het lid dat de taak uitvoert. Als de taak door niemand word
 | Max | aardappelsla maken |
 | NULL | papieren bordjes meebrengen |
 
-Noem het script 0608\_\_Oefening.sql.
+Noem het script 0507\_\_Oefening.sql.
 
 ### Oefening 7
 
-Toon alle titels van games met hun bijbehorend platform, als er een is. Toon ook games waarvoor het platform niet meer ondersteund wordt \(d.w.z. waarvoor geen info in `Releases` staat\). Gebruik hiervoor een samenstelling van twee JOINs. Noem het script 0609\_\_Oefening.sql.
+Toon alle titels van games met hun bijbehorend platform, als er een is. Toon ook games waarvoor het platform niet meer ondersteund wordt \(d.w.z. waarvoor geen info in `Releases` staat\). Gebruik hiervoor een samenstelling van twee JOINs. Noem het script 0508\_\_Oefening.sql.
 
 Voorbeeldoutput:
 
@@ -441,7 +439,7 @@ Voorbeeldoutput:
 
 ### Oefening 8
 
-Toon alle platformen waarvoor games beschikbaar zijn. Toon dus geen platformen indien geen games beschikbaar zijn. Noem je script 0610\_\_Oefening.sql.
+Toon alle platformen waarvoor games beschikbaar zijn. Toon dus geen platformen indien geen games beschikbaar zijn. Noem je script 0509\_\_Oefening.sql.
 
 ### Oefening 9 \(Een uitdaging!\)
 
@@ -452,5 +450,5 @@ Toon alle games waarvoor het platform onbekend is, samen met alle platformen waa
 | Oregon Trail | Geen platformen gekend |
 | Geen games gekend | Master System |
 
-Noem je script 0611\_\_Oefening.sql.
+Noem je script 0510\_\_Oefening.sql.
 
