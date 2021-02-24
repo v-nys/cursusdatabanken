@@ -2,7 +2,7 @@
 
 ## Calibratie
 
-Start vanaf onderstaand script, 0600\_\_CalibrateDB.sql:
+Start vanaf onderstaand script, 0500\_\_CalibrateDB.sql:
 
 ```sql
 -- MySQL dump 10.13  Distrib 8.0.16, for Linux (x86_64)
