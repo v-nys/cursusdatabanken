@@ -2,7 +2,7 @@
 
 ## Labo oefeningen
 
-Start vanaf volgend calibratiescript, `0612__Oefening.sql`:
+Start vanaf volgend calibratiescript, `0512__Calibratie.sql`:
 
 ```sql
 DROP DATABASE  IF EXISTS `ApDB`;
@@ -142,13 +142,13 @@ Je oplossing zou er exact zo moeten uitzien:
 
 ![](../../.gitbook/assets/exact-zo-boeken-auteurs.png)
 
-Noem het script om deze view aan te maken `0613__Oefening.sql`.
+Noem het script om deze view aan te maken `0513__Oefening.sql`.
 
 ## Oefening 2
 
 Pas, niet rechtstreeks in de tabel `Boeken` maar wel via de view `AuteursBoeken`, de titel _Pet Sematary_ aan naar _Pet Cemetery_.
 
-Noem het script hiervoor `0614__Oefening.sql`.
+Noem het script hiervoor `0514__Oefening.sql`.
 
 Wat gebeurt er als je de naam "Stephen King" via deze view in "Steven King" wil veranderen? Waarom, denk je?
 
@@ -156,9 +156,9 @@ Wat gebeurt er als je de naam "Stephen King" via deze view in "Steven King" wil 
 
 We willen een complexere versie van de bestaande view `AuteursBoeken`. We zullen hierbij ook de gemiddelde rating van elk boek plaatsen in een uitgebreide versie van de view, namelijk `AuteursBoekenRatings`. We zullen dit in stappen doen. Lees eerst de stappen, bekijk dan de figuren, voer dan de stappen uit.
 
-1. Gebruik een `ALTER VIEW` om je bestaande view `AuteursBoeken` te voorzien van het `Id` uit de tabel`Boeken`. Toon `Id` hier wel als `Boeken_Id`. Noem het script dat de view aanpast `0615__Oefening.sql`.
-2. Maak een view `GemiddeldeRatings` aan op basis van `Reviews`. Noem de kolom met het gemiddelde `Rating`. Noem het script dat de view maakt `0616__Oefening.sql`.
-3. Maak de view`AuteursBoekenRatings` aan door een nieuwe view te maken gebaseerd op `AuteursBoeken` en `GemiddeldeRatings`. Noem het script dat de view maakt `0617__Oefening.sql`.
+1. Gebruik een `ALTER VIEW` om je bestaande view `AuteursBoeken` te voorzien van het `Id` uit de tabel`Boeken`. Toon `Id` hier wel als `Boeken_Id`. Noem het script dat de view aanpast `0515__Oefening.sql`.
+2. Maak een view `GemiddeldeRatings` aan op basis van `Reviews`. Noem de kolom met het gemiddelde `Rating`. Noem het script dat de view maakt `0516__Oefening.sql`.
+3. Maak de view`AuteursBoekenRatings` aan door een nieuwe view te maken gebaseerd op `AuteursBoeken` en `GemiddeldeRatings`. Noem het script dat de view maakt `0517__Oefening.sql`.
 
 ![](../../.gitbook/assets/auteursboeken.png)
 
@@ -173,4 +173,3 @@ Vraag via de metadatabank op welke van je views updatable zijn en welke niet. Sc
 ## Besluit
 
 Uit de laatste oefening zie je dat er meerdere redenen zijn om een view op te bouwen uit andere views. Enerzijds om stap per stap het resultaat op te bouwen. Anderzijds omdat een view die niet-updatable views bevat zelf toch nog updatable kan zijn. Uiteraard zijn niet alle kolommen dan noodzakelijk updatable, maar het kan beter zijn dan het opbouwen van één grote niet-updatable view.
-
