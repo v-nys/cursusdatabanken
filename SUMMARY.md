@@ -101,7 +101,6 @@
 * [Subqueries](semester-2-databanken/subqueries/README.md)
   * [Een onafhankelijke subquery](semester-2-databanken/subqueries/voorbeeld-onafhankelijke-subquery.md)
   * [Typische subqueries](semester-2-databanken/subqueries/typische-subqueries.md)
-  * [Meer over subqueries](semester-2-databanken/subqueries/meer-over-subqueries.md)
   * [Labo oefeningen](semester-2-databanken/subqueries/labo-oefeningen.md)
 * [Indexeren](semester-2-databanken/indexeren/README.md)
   * [mogelijkheden](semester-2-databanken/indexeren/toepassingen-indexen.md)

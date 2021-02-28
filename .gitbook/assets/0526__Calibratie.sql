@@ -8,20 +8,20 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema ModernWays
+-- Schema ApDB
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `ModernWays` ;
+DROP SCHEMA IF EXISTS `ApDB` ;
 
 -- -----------------------------------------------------
--- Schema ModernWays
+-- Schema ApDB
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `ModernWays` ;
-USE `ModernWays` ;
+CREATE SCHEMA IF NOT EXISTS `ApDB` ;
+USE `ApDB` ;
 
 -- -----------------------------------------------------
--- Table `ModernWays`.`Studenten`
+-- Table `ApDB`.`Studenten`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ModernWays`.`Studenten` (
+CREATE TABLE IF NOT EXISTS `ApDB`.`Studenten` (
   `Id` INT NOT NULL AUTO_INCREMENT,
   `Voornaam` VARCHAR(45) NOT NULL,
   `Familienaam` VARCHAR(45) NOT NULL,
@@ -30,9 +30,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `ModernWays`.`Vakken`
+-- Table `ApDB`.`Vakken`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ModernWays`.`Vakken` (
+CREATE TABLE IF NOT EXISTS `ApDB`.`Vakken` (
   `Id` INT NOT NULL AUTO_INCREMENT,
   `Titel` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`Id`),
@@ -41,9 +41,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `ModernWays`.`Evaluaties`
+-- Table `ApDB`.`Evaluaties`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ModernWays`.`Evaluaties` (
+CREATE TABLE IF NOT EXISTS `ApDB`.`Evaluaties` (
   `Studenten_Id` INT NOT NULL,
   `Vakken_Id` INT NOT NULL,
   `Cijfer` TINYINT NOT NULL,
@@ -53,37 +53,37 @@ CREATE TABLE IF NOT EXISTS `ModernWays`.`Evaluaties` (
   INDEX `fk_Studenten_has_Vakken_Studenten_idx` (`Studenten_Id` ASC) VISIBLE,
   CONSTRAINT `fk_Evaluaties_Studenten`
     FOREIGN KEY (`Studenten_Id`)
-    REFERENCES `ModernWays`.`Studenten` (`Id`)
+    REFERENCES `ApDB`.`Studenten` (`Id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Evaluaties_Vakken`
     FOREIGN KEY (`Vakken_Id`)
-    REFERENCES `ModernWays`.`Vakken` (`Id`)
+    REFERENCES `ApDB`.`Vakken` (`Id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `ModernWays`.`VerenigingRollen`
+-- Table `ApDB`.`VerenigingRollen`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ModernWays`.`VerenigingRollen` (
+CREATE TABLE IF NOT EXISTS `ApDB`.`VerenigingRollen` (
   `Titel` ENUM('Schacht', 'Hofnar', 'Bard', 'Koning', 'Kok', 'Tovenaar') NOT NULL,
   `Studenten_Id` INT NOT NULL,
   INDEX `fk_VerenigingRollen_Studenten1_idx` (`Studenten_Id` ASC) VISIBLE,
   PRIMARY KEY (`Titel`, `Studenten_Id`),
   CONSTRAINT `fk_VerenigingRollen_Studenten`
     FOREIGN KEY (`Studenten_Id`)
-    REFERENCES `ModernWays`.`Studenten` (`Id`)
+    REFERENCES `ApDB`.`Studenten` (`Id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `ModernWays`.`Personeelsleden`
+-- Table `ApDB`.`Personeelsleden`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ModernWays`.`Personeelsleden` (
+CREATE TABLE IF NOT EXISTS `ApDB`.`Personeelsleden` (
   `Id` INT NOT NULL AUTO_INCREMENT,
   `Voornaam` VARCHAR(45) NOT NULL,
   `Familienaam` VARCHAR(45) NOT NULL,
@@ -94,9 +94,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `ModernWays`.`Directieleden`
+-- Table `ApDB`.`Directieleden`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ModernWays`.`Directieleden` (
+CREATE TABLE IF NOT EXISTS `ApDB`.`Directieleden` (
   `Id` INT NOT NULL AUTO_INCREMENT,
   `Voornaam` VARCHAR(45) NOT NULL,
   `Familienaam` VARCHAR(45) NOT NULL,
@@ -111,7 +111,7 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
-use ModernWays;
+use ApDB;
 insert into Studenten(Voornaam,Familienaam)
 values
 ('Sarah','Walter'),
