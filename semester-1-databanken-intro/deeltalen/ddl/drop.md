@@ -17,5 +17,5 @@ DROP TABLE IF EXISTS Boeken;
 
 ### uitproberen
 
-Schrijf eerst een script, 0004\_\_DropTables.sql, dat de tabel `Kunstwerken` verwijdert op voorwaarde dat deze aanwezig is in de database.
+Schrijf eerst een script, 0009\_\_DropTables.sql, dat de tabel `Kunstwerken` verwijdert op voorwaarde dat deze aanwezig is in de database.
 

@@ -44,7 +44,7 @@ Negeer de "1 more" onder "Geboortejaar". Negeer ook het gele sleuteltje. Die zak
 CREATE TABLE Personen(Voornaam VARCHAR(50), Familienaam VARCHAR(50), Geboortejaar INT);
 ```
 
-Schrijf nu zelf de code om de tabel `Boeken` aan te maken. Sla beide instructies \(die voor personen en voor boeken\) onder elkaar op in een script met naam 0001\_\_CreateTables.sql.
+Schrijf nu zelf de code om de tabel `Boeken` aan te maken. Sla beide instructies \(die voor personen en voor boeken\) onder elkaar op in een script met naam 0006\_\_CreateTables.sql.
 
 ### Commentaar toevoegen
 
@@ -52,7 +52,7 @@ Schrijf bovenaan in je script, in commentaar, de tekst "dit is mijn eerste tabel
 
 ### Database selecteren
 
-Zoals eerder aangegeven, moet je eerst een database selecteren waar de nieuwe tabel onderdeel van zal worden. Dit doe je met de USE-instructie.
+Zoals eerder aangegeven, moet je eerst een database selecteren waar de nieuwe tabel onderdeel van zal worden. Dit doe je met de `USE`-instructie.
 
 ### Verplichte kolommen
 
@@ -66,11 +66,11 @@ Soms kunnen we met ontbrekende waarden leven, soms niet. Indien we bijvoorbeeld 
 CREATE TABLE Boeken (Titel VARCHAR(100) NOT NULL, Voornaam VARCHAR(100) NOT NULL, Druk TINYINT UNSIGNED);
 ```
 
-Schrijf nu zelf code om een tabel `Kunstwerken` aan te maken, met een niet-verplichte kolom `Artiest` en een verplichte kolom `Titel`, beide van het datatype `VARCHAR(100)`. Noem je script 0002\_\_CreateTable.sql
+Schrijf nu zelf code om een tabel `Kunstwerken` aan te maken, met een niet-verplichte kolom `Artiest` en een verplichte kolom `Titel`, beide van het datatype `VARCHAR(100)`. Noem je script 0007\_\_CreateTable.sql
 
 ### Enkel aanmaken wat niet bestaat
 
 Via het `CREATE`-commando maak je een nieuwe structuur aan met een bepaalde naam. Als die naam al bestaat, levert dat een foutmelding. Daarom moeten we voorzichtig omspringen met het `CREATE` commando. We doen dit door onze `CREATE` enkel uit te voeren als de naam die we willen gebruiken \(voor een database of een tabel of een andere structuur\) nog niet gebruikt wordt. Hiervoor vervangen we bijvoorbeeld `CREATE TABLE MyTable (Column VARCHAR(100));` door `CREATE TABLE IF NOT EXISTS MyTable (Column VARCHAR(100));`. Dit vermijdt dat we op een foutmelding botsen. Het kan wel een waarschuwing opleveren, maar dat is op zich niet erg.
 
-Maak een variatie op script 0002\_\_CreateTable om een tabel met kunstwerken aan te maken, maar zorg dat er geen foutmelding verschijnt als deze tabel al bestaat. Noem je script 0003\_\_CreateTable.sql.
+Maak een variatie op script 0007\_\_CreateTable om een tabel met kunstwerken aan te maken, maar zorg dat er geen foutmelding verschijnt als deze tabel al bestaat. Noem je script 0008\_\_CreateTable.sql.
 

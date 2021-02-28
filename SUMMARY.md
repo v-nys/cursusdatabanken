@@ -34,7 +34,6 @@
     * [Primaire sleutel in een nieuwe tabel](semester-1-databanken-intro/deeltalen/ddl/tabel-aanmaken-met-sleutel.md)
     * [Vreemde sleutels](semester-1-databanken-intro/deeltalen/ddl/vreemde-sleutel.md)
     * [Relaties-voorstellen](semester-1-databanken-intro/deeltalen/ddl/relaties-voorstellen.md)
-    * [Basisoefeningen](semester-1-databanken-intro/deeltalen/ddl/oefeningen.md)
     * [Labo](semester-1-databanken-intro/deeltalen/ddl/oefeningen-labo.md)
   * [DML](semester-1-databanken-intro/deeltalen/dml/README.md)
     * [INSERT](semester-1-databanken-intro/deeltalen/dml/insert.md)

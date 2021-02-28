@@ -32,5 +32,5 @@ VALUES
 
 ## Opdracht
 
-Schrijf een script dat een eventueel bestaande tabel `Boeken` verwijdert, de gevraagde tabel `Boeken` aanmaakt en dan de drie boeken hierboven in één instructie toevoegt. Noem het 0005\_\_InsertData.sql.
+Schrijf een script dat een eventueel bestaande tabel `Boeken` verwijdert, de gevraagde tabel `Boeken` aanmaakt en dan de drie boeken hierboven in één instructie toevoegt. Noem het 0010\_\_InsertData.sql.
 

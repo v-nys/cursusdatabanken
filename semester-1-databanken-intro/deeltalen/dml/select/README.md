@@ -57,9 +57,9 @@ SELECT * FROM Boeken ORDER BY 1, 2;
 
 Dit sorteert eerst volgens de eerste kolom en dan volgens de tweede.
 
-Schrijf een script dat de namen van auteurs toont die je in script met nummer 0005 hebt toegevoegd, gesorteerd volgens `Titel`. Noem het 0006\_\_Select.sql.
+Schrijf een script dat de namen van auteurs toont die je in script met nummer 0010 hebt toegevoegd, gesorteerd volgens `Titel`. Noem het 0011\_\_Select.sql.
 
-Schrijf ook een script dat alle kolommen toont die je in het script met nummer 0005 hebt toegevoegd, gesorteerd volgens de inhoud van de tweede kolom. Noem het 0007\_\_Select.sql.
+Schrijf ook een script dat alle kolommen toont die je in het script met nummer 0010 hebt toegevoegd, gesorteerd volgens de inhoud van de tweede kolom. Noem het 0012\_\_Select.sql.
 
 ### data verwerken met functies
 

@@ -1,6 +1,6 @@
 # ALTER
 
-Hier zien we iets meer in verband met het aanmaken van structuren voor je data. We starten onze database met behulp van onderstaand calibratiescript:
+Hier zien we iets meer in verband met het aanmaken van structuren voor je data. We starten onze database met behulp van onderstaand calibratiescript, dat je 0013\_\_Calibratie.sql mag noemen:
 
 {% file src="../../../.gitbook/assets/calibratie.sql" caption="Calibratiescript DDL medium" %}
 
@@ -29,7 +29,7 @@ Je kan dit uiteraard uitschakelen, maar het is in deze fase wel een goed idee om
 Hieronder hoe je dit op een correcte wijze gebruikt.
 
 ```sql
-USE ApDb;
+USE ApDB;
 SET SQL_SAFE_UPDATES = 0;
 ALTER TABLE ...
 SET SQL_SAFE_UPDATES = 1;
@@ -38,7 +38,7 @@ SET SQL_SAFE_UPDATES = 1;
 ### een kolom schrappen
 
 ```sql
-USE ApDb;
+USE ApDB;
 ALTER TABLE Boeken DROP COLUMN Voornaam;
 ```
 
@@ -48,7 +48,7 @@ ALTER TABLE Boeken DROP COLUMN Voornaam;
 Voer eerst het calibratiescript op de [indexpagina](./) van dit deel uit. Pas het script eerst aan om je persoonlijke database te gebruiken in plaats van `ApDB`.
 {% endhint %}
 
-Sla het script om de voornaam te verwijderen op wanneer je klaar bent. Geef het de naam 0008\_\_AlterBoeken.sql.
+Sla het script om de voornaam te verwijderen op wanneer je klaar bent. Geef het de naam 0014\_\_AlterBoeken.sql.
 
 ### een kolom toevoegen
 
@@ -57,7 +57,7 @@ Om een kolom toe te voegen maak je gebruik van de `ADD` clausule bij het ALTER s
 ```sql
 -- herstel de kolom
 -- deze mag tot 150 (mogelijk internationale) karakters bevatten
-USE ApDb;
+USE ApDB;
 ALTER TABLE Boeken ADD COLUMN Commentaar VARCHAR(150) CHAR SET utf8mb4;
 ```
 
@@ -65,7 +65,7 @@ Je merkt in bovenstaand script dat er opgave wordt gegeven van een `CHAR SET`. S
 
 #### Script bijhouden
 
-Pas dit script aan om naast de kolom `Commentaar` ook de kolom `Voornaam` terug toe te voegen en een kolom Familienaam toe te voegen, beide `VARCHAR(100)` en niet verplicht. Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0009\_\_AlterBoeken.sql.
+Pas dit script aan om naast de kolom `Commentaar` ook de kolom `Voornaam` terug toe te voegen en een kolom Familienaam toe te voegen, beide `VARCHAR(100)` en niet verplicht. Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0015\_\_AlterBoeken.sql.
 
 ### beperkingen toevoegen
 
@@ -96,20 +96,20 @@ Het UPDATE-commando, hieronder, hebben we tot nu nog niet gezien en je kan dit g
 {% endhint %}
 
 ```sql
-USE ApDb;
+USE ApDB;
 UPDATE Boeken SET Familienaam = "Niet gekend";
 ```
 
 Vervolgens gaan we de kolom Familienaam qua structuur wijzigen en een beperking opleggen. 
 
 ```sql
-USE ApDb;
+USE ApDB;
 ALTER TABLE Boeken CHANGE Familienaam Familienaam VARCHAR(200) CHAR SET utf8mb4 NOT NULL;
 ```
 
 #### Script bijhouden
 
-Sla een script met bovenstaande `UPDATE` en `ALTER` achter elkaar opnieuw op wanneer je klaar bent. Geef het de naam 0010\_\_AlterBoeken.sql.
+Sla een script met bovenstaande `UPDATE` en `ALTER` achter elkaar opnieuw op wanneer je klaar bent. Geef het de naam 0016\_\_AlterBoeken.sql.
 
 ### tabelnamen wijzigen
 
@@ -122,7 +122,7 @@ RENAME TABLE `OldTableName` TO `NewTableName`;
 In ons voorbeeld:
 
 ```sql
-USE ApDb;
+USE ApDB;
 RENAME TABLE `Boeken` TO `MijnBoeken`;
 ```
 
