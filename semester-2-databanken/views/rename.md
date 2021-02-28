@@ -3,7 +3,7 @@
 Het is mogelijk om de naam van de view te wijzigen.
 
 ```sql
-USE ModernWays;
+USE ApDB;
 RENAME TABLE Takenleden
 TO TakenLeden_Updated;
 ```

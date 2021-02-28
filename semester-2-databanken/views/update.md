@@ -21,7 +21,7 @@ Waarom zijn juist deze clausules niet toegelaten? De meeste ervan groeperen info
 We baseren ons op de view die we onder de rubriek [CREATE ](create.md#voorbeeld)hebben aangemaakt. Deze gebruikt een `INNER JOIN`, maar dat verbiedt niet dat we updates doen.
 
 ```sql
-USE ModernWays;
+USE ApDB;
 UPDATE TakenLeden
 SET Omschrijving = 'frisdrank voorzien'
 WHERE Voornaam = 'Yannick';
@@ -42,7 +42,7 @@ Je kan nagaan of een view aanpasbaar is door in de metadatabank te kijken.
 ```sql
 SELECT table_name, is_updatable
 FROM information_schema.views
-WHERE table_schema = 'ModernWays';
+WHERE table_schema = 'ApDB';
 ```
 
 

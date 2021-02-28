@@ -5,12 +5,12 @@
 Start vanaf volgend calibratiescript, `0612__Oefening.sql`:
 
 ```sql
-DROP DATABASE  IF EXISTS `ModernWays`;
-CREATE DATABASE  IF NOT EXISTS `ModernWays` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `ModernWays`;
+DROP DATABASE  IF EXISTS `ApDB`;
+CREATE DATABASE  IF NOT EXISTS `ApDB` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `ApDB`;
 -- MySQL dump 10.13  Distrib 8.0.19, for Linux (x86_64)
 --
--- Host: localhost    Database: ModernWays
+-- Host: localhost    Database: ApDB
 -- ------------------------------------------------------
 -- Server version    8.0.17
 
