@@ -72,11 +72,11 @@ Dit is het simpelste type. Het kent twee waarden: `TRUE` en `FALSE`, vaak voorge
 
 ### `FLOAT` en `DOUBLE`
 
-Deze twee types dienen om getallen bij benadering op te slaan. Ze werken op dezelfde manier, maar `DOUBLE` heeft een groter bereik. We gaan verder niet in op de details.
+Deze twee types dienen om getallen **bij benadering** op te slaan. Dit wil zeggen dat \(vaak héél kleine\) afrondingen toegestaan zijn wanneer je data in het systeem plaatst. Beide types werken op dezelfde manier, maar `DOUBLE` heeft een groter bereik. Hierdoor neemt `DOUBLE` ook wel meer opslag in dan `FLOAT`. We gaan verder niet in op de details.
 
 ### `DECIMAL`
 
-Dit type dienst voor het bijhouden van exacte getallen. Je specifieert het aantal cijfers en het \(maximaal even grote\) aantal cijfers na de komma, bijvoorbeeld: `DECIMAL(10,5)` voor een getal met tien cijfers, waarvan vijf na de komma.
+Dit type dienst voor het bijhouden van **exacte** getallen. Je specifieert het aantal cijfers en het \(maximaal even grote\) aantal cijfers na de komma, bijvoorbeeld: `DECIMAL(10,5)` voor een getal met tien cijfers, waarvan vijf na de komma.
 
 ### getallen schrijven
 

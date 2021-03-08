@@ -92,3 +92,54 @@ Het is handig om bij te houden wie een boek in het systeem heeft geplaatst. Daar
 
 Noem je script 0018\_\_Oefening.sql.
 
+## observaties \(structuur\)
+
+We willen wetenschappelijke observaties van het grondwaterniveau bijhouden. Maak hiervoor een tabel GrondwaterObservaties met twee verplichte kolommen: één kolom voor het tijdstip van de observatie \(dag, maand, jaar, uur, minuten én seconden\) en één kolom voor het grondwaterniveau uitgedrukt als kommagetal. Het grondwaterniveau hoeft niet met perfecte precisie voorgesteld te worden en je hoeft er niet veel opslagruimte voor te gebruiken. Bepaal zelf het meest geschikte kolomtype.
+
+Noem je script 0024\_\_Oefening.sql
+
+## observaties \(data\)
+
+Plaats volgende informatie in je nieuwe tabel:
+
+| tijdstip | meting |
+| :--- | :--- |
+| 4 februari 2020 om 8u35m9s | 80.2 |
+| 7 februari 2020 om 10u12m13s | 76.4 |
+| 12 februari om 11u13m52s | 83.5 |
+
+Noem je script 0025\_\_Oefening.sql
+
+## aankopen \(structuur en data\)
+
+In een winkelsysteem willen we alle aankopen registreren. Maak daarom een tabel `Aankopen` met drie stukjes informatie:
+
+* de naam van het artikel, uitgedrukt als verplichte tekst van maximum 100 karakters
+* het aantal stuks, uitgedrukt als positief getal dat past in één byte
+* de aankoopprijs per stuk, uitgedrukt als **exact** kommagetal dat bestaat uit vijf cijfers, waarvan twee na de komma
+
+Plaats, in hetzelfde script, volgende gegevens in deze tabel:
+
+| naam | aantal stuks | aankoopprijs per stuk |
+| :--- | :--- | :--- |
+| paar schoenen | 2 | 60.99 |
+| waterfles | 1 | 8.99 |
+
+Noem je script 0026\_\_Oefening.sql
+
+## bestellingen auto's
+
+Maak een tabel `Bestellingen` die kan dienen voor het bestelsysteem van een autodealer. Deze bevat drie zaken:
+
+* het tijdstip waarop de bestelling geplaatst is
+* het model - dit kan alleen een van onderstaande opties zijn **\(tip: gebruik een enum datatype\)**
+  * Qivic
+  * Nexus
+  * Yugo
+* de kleur - dit kan alleen een van onderstaande opties zijn
+  * zwart
+  * geel
+  * rood
+
+Noem je script 0027\_\_Oefening.sql
+
