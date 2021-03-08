@@ -125,7 +125,7 @@ Plaats, in hetzelfde script, volgende gegevens in deze tabel:
 | paar schoenen | 2 | 60.99 |
 | waterfles | 1 | 8.99 |
 
-Noem je script 0026\_\_Oefening.sql
+Noem je script 0029\_\_Oefening.sql
 
 ## bestellingen auto's
 
@@ -141,5 +141,5 @@ Maak een tabel `Bestellingen` die kan dienen voor het bestelsysteem van een auto
   * geel
   * rood
 
-Noem je script 0027\_\_Oefening.sql
+Noem je script 0030\_\_Oefening.sql
 
