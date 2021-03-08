@@ -72,17 +72,11 @@ Dit is het simpelste type. Het kent twee waarden: `TRUE` en `FALSE`, vaak voorge
 
 ### `FLOAT` en `DOUBLE`
 
-Deze twee types dienen om getallen bij benadering op te slaan. Ze werken op dezelfde manier, maar `DOUBLE` heeft een groter bereik. Je geeft een kolom niet gewoon het type `FLOAT` of `DOUBLE`, maar `FLOAT(M,D)` of `DOUBLE(M,D)`. Dit betekent dat je tot `M` cijfers wil bijhouden, waarvan `D` na de komma kunnen komen. Als je een waarde opslaat die meer precisie vereist, wordt ze afgerond! Bovendien is het soms lastig om benaderde getallen te vergelijken.
-
-{% hint style="warning" %}
-In de toekomst zal de werking van `FLOAT` en `DOUBLE` veranderen zodat je een andere syntax moet gebruiken. Wij houden het op deze, omdat dit nog even zal duren en omdat deze syntax verstaanbaarder is dan het nieuwe alternatief.
-{% endhint %}
+Deze twee types dienen om getallen bij benadering op te slaan. Ze werken op dezelfde manier, maar `DOUBLE` heeft een groter bereik. We gaan verder niet in op de details.
 
 ### `DECIMAL`
 
-Dit type dienst voor het bijhouden van exacte getallen. Je specifieert net als bij `FLOAT` en `DOUBLE` het aantal cijfers en het \(maximaal even grote\) aantal cijfers na de komma.
-
-Een gelijkaardig onderscheid tussen numerieke types ken je misschien uit de cursus C♯.
+Dit type dienst voor het bijhouden van exacte getallen. Je specifieert het aantal cijfers en het \(maximaal even grote\) aantal cijfers na de komma, bijvoorbeeld: `DECIMAL(10,5)` voor een getal met tien cijfers, waarvan vijf na de komma.
 
 ### getallen schrijven
 

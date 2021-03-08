@@ -6,12 +6,12 @@ description: Normaliseren
 
 ## **Voorbeeld 1**
 
-![](../../.gitbook/assets/databanken-intro-afbeelding-6%20%282%29.JPG)
+![](../../.gitbook/assets/databanken-intro-afbeelding-6%20%284%29%20%282%29.JPG)
 
 **0e normaalvorm** \(onderdeel 1/2\)  
 ****Verzamel alle gegevens \(waarbij uiteraard de groepssleutel wordt bepaald\) \[...\]
 
-![](../../.gitbook/assets/databanken-intro-afbeelding-7.JPG)
+![](../../.gitbook/assets/databanken-intro-afbeelding-7%20%281%29.JPG)
 
 Hoofd\(groeps\)sleutel: elk factuur wordt aangeduid door een uniek factuurnummer. Door dit nummer kunnen we dus elke factuur op een eenvoudige wijze terugvinden.
 
@@ -41,7 +41,7 @@ Door deze opsplitsing van gegevens is er een gegevensverlies, ttz. we weten niet
 Dit probleem is evenwel door een eenvoudige ingreep te verhelpen, nl. als de sleutel “Factuurnummer” uit tabel 1 ook wordt opgenomen in tabel 2.   
 Vanaf dat moment is er geen gegevensverlies meer en kunnen we spreken van de eerste normaalvorm.
 
-![](../../.gitbook/assets/image%20%2871%29.png)
+![](../../.gitbook/assets/image%20%2863%29%20%282%29.png)
 
 **2e normaalvorm**  
 Plaats die gegevens in een nieuwe deelgroep die niet afhankelijk zijn van de groepsleutel. 
@@ -58,7 +58,7 @@ M.a.w. is het de bedoeling om die gegevens op te sporen die binnen een deelgroep
 
 Zo bemerken we in deelgroep 1 dat de gegevens betreffende de klant \(“Klantnaam”, “Adres” en “Gemeente”\) niet afhankelijk zijn van de factuurnummer. Als we ervoor zorgen dat het “Klantnummer” in de nieuw te creëren deelgroepen telkens aanwezig is om gegevensverlies tegen te gaan, kunnen we voormelde gegevens afsplitsen. Hieruit kunnen we dan concluderen dat de klantgegevens niet rechtstreeks afhankelijk zijn van de groepsleutel. Deze gegevens zijn echter wel afhankelijk van de sleutel “Klantnummer”.
 
-![](../../.gitbook/assets/image%20%2844%29.png)
+![](../../.gitbook/assets/image%20%286%29%20%281%29.png)
 
 > Functionele afhankelijkheid: Een attribuut A is functioneel afhankelijk van een attribuut B als bij een bepaalde waarde van A slechts één waarde voor B hoort. Bijvoorbeeld de artikelnaam \(cfr. voorbeeld 1\) is volledig afhankelijk van het artikelnummer. Het is namelijk zo dat bij één artikelnummer slechts één omschrijving of artikelnaam hoort.
 
@@ -134,7 +134,7 @@ De lokaalcode en lokaalomschrijving wordt telkens herhaald, terwijl deze gegeven
 
 Hierdoor kunnen we nog een afsplitsing doorvoeren.
 
-![](../../.gitbook/assets/image%20%2869%29.png)
+![](../../.gitbook/assets/image%20%2869%29%20%281%29.png)
 
 Door deze bewerking, zijn alle problemen opgelost. 
 

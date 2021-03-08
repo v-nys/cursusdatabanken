@@ -16,7 +16,7 @@ Er zijn hierbij wel enkele uitzonderingen in die zin dat **bij de creatie van de
 
 Waarom zijn juist deze clausules niet toegelaten? De meeste ervan groeperen informatie op zo'n manier dat je de groepering niet altijd ongedaan kan maken. De niet-toegelaten `JOIN`s combineren informatie met `NULL`-waarden. Het zou niet zinvol zijn deze `NULL`-waarden aan te passen, want de aanpassingen zouden verloren gaan bij het herberekenen van de view.
 
-### UPDATE VIEW
+## UPDATE VIEW
 
 We baseren ons op de view die we onder de rubriek [CREATE ](create.md#voorbeeld)hebben aangemaakt. Deze gebruikt een `INNER JOIN`, maar dat verbiedt niet dat we updates doen.
 
@@ -35,7 +35,7 @@ In een updatable view kan bepaald worden waar dergelijke aanpassingen echt moete
 
 Er zijn helaas grenzen aan wat mogelijk is. Experimenteer met enkele DML-operaties met `TakenLeden`. Probeer o.a. een `INSERT` en een `DELETE` van telkens één rij.
 
-### UPDATE VIEW INFORMATIE
+## UPDATE VIEW INFORMATIE
 
 Je kan nagaan of een view aanpasbaar is door in de metadatabank te kijken.
 
@@ -44,6 +44,4 @@ SELECT table_name, is_updatable
 FROM information_schema.views
 WHERE table_schema = 'ApDB';
 ```
-
-
 

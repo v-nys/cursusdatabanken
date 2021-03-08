@@ -42,7 +42,7 @@ Er zijn 4 soorten no-sql databanken:
 * Graph databank  Bv. Neo4J
 * Column databank  Bv. Google bigtable 
 
-![](../../.gitbook/assets/image%20%2835%29%20%281%29.png)
+![](../../.gitbook/assets/image%20%2835%29%20%281%29%20%281%29.png)
 
 
 

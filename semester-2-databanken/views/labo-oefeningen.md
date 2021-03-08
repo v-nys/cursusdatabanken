@@ -173,3 +173,4 @@ Vraag via de metadatabank op welke van je views updatable zijn en welke niet. Sc
 ## Besluit
 
 Uit de laatste oefening zie je dat er meerdere redenen zijn om een view op te bouwen uit andere views. Enerzijds om stap per stap het resultaat op te bouwen. Anderzijds omdat een view die niet-updatable views bevat zelf toch nog updatable kan zijn. Uiteraard zijn niet alle kolommen dan noodzakelijk updatable, maar het kan beter zijn dan het opbouwen van één grote niet-updatable view.
+
