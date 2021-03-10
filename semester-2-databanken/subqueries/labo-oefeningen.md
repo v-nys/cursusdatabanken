@@ -50,8 +50,7 @@ Schrijf een script, `0529__Oefening.sql`, dat je alle studenten \(enkel de `Id`'
 
 Tips:
 
-* studenten koppel je eerst aan hun evaluaties via een `inner join` van studenten en evaluaties
-* evaluaties van één student neem je dan samen met `group by Studenten.Id`
+* evaluaties van één student neem je samen door te groeperen op het ID van de student aan wie de evaluatie toebehoort
 * gebruik daarna `having` om het gemiddelde van één student te vergelijken met het algemene gemiddelde
   * het algemene gemiddelde vraag je me een scalaire query
 
