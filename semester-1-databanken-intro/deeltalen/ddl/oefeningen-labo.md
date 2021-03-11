@@ -82,7 +82,7 @@ Sla op als 0023\_\_Oefening.sql.
 
 Klassificatie van boeken is een wetenschap op zich. Er zijn veel systemen voor, maar ze gebruiken allemaal een code van een vrij klein aantal letters om aan te geven in welke cluster een bepaald boek thuishoort.
 
-Schrijf zelf een script dat een verplichte kolom met naam `Categorie` toevoegt aan de bestaande tabel met boeken. De categorie van een boek wordt uitgedrukt in maximaal 40 lettertekens. Dit zijn "gewone" lettertekens die je zou aantreffen in een typische Engelstalige tekst.
+Schrijf zelf een script dat een verplichte kolom met naam `Categorie` toevoegt aan de bestaande tabel met boeken. De categorie van een boek wordt uitgedrukt in maximaal 40 lettertekens. Dit zijn "gewone" lettertekens die je zou aantreffen in een typische Engelstalige tekst. Deze kolom heeft ook een defaultwaarde, namelijk "Zonder categorie".
 
 Noem je script 0017\_\_Oefening.sql.
 
