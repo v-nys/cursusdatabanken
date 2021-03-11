@@ -112,7 +112,7 @@ Noem je script 0025\_\_Oefening.sql
 
 ## aankopen \(structuur en data\)
 
-In een winkelsysteem willen we alle aankopen registreren. Maak daarom een tabel `Aankopen` met drie stukjes informatie:
+In een winkelsysteem willen we alle aankopen registreren. Maak daarom een tabel `Aankopen` met drie stukjes informatie, die allemaal verplicht zijn:
 
 * de naam van het artikel, uitgedrukt als verplichte tekst van maximum 100 karakters
 * het aantal stuks, uitgedrukt als positief getal dat past in één byte
@@ -129,7 +129,7 @@ Noem je script 0029\_\_Oefening.sql
 
 ## bestellingen auto's
 
-Maak een tabel `Bestellingen` die kan dienen voor het bestelsysteem van een autodealer. Deze bevat drie zaken:
+Maak een tabel `Bestellingen` die kan dienen voor het bestelsysteem van een autodealer. Deze bevat drie \(verplichte\) zaken:
 
 * het tijdstip waarop de bestelling geplaatst is
 * het model - dit kan alleen een van onderstaande opties zijn **\(tip: gebruik een enum datatype\)**
