@@ -27,13 +27,6 @@ ColName VARCHAR(100) UNIQUE
 );
 ```
 
-Als je de index achteraf wil bepalen doe je dit door het alter commando te gebruiken.
-
-```sql
-ALTER TABLE table_name
-ADD CONSTRAINT constraint_name UNIQUE KEY(index_column_1,index_column_2,...);
-```
-
 ## Voorbeeld
 
 We creëren een tabel met een primary key en een unieke index.

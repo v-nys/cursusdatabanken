@@ -35,7 +35,7 @@ Als je op een element van het diagram gaat staan met je muis, krijg je ook een t
 
 Als je een bepaalde `SELECT`-query wil optimaliseren, kan je onderstaand stappenplan volgen:
 
-1. Als er een `WHERE` voorkomt in je `SELECT`, voorzie dan een index op alle kolommen die via `AND` verbonden zijn en die rechtstreeks vergeleken worden met een waarde.
+1. Als er een `WHERE` voorkomt in je `SELECT`, voorzie dan één index op alle kolommen samen die via `AND` verbonden zijn en die rechtstreeks vergeleken worden met een waarde.
 2. Voeg aan je index ook de **eerste van de volgende mogelijkheden** toe die je hieronder krijgt.
 
    a. Een kolom die niet rechtstreeks wordt vergeleken met een waarde, maar wel in een bereik moet liggen \(via `BETWEEN`, `>`, `<`, `LIKE` waarbij het eerste karakter geen wildcard is\)

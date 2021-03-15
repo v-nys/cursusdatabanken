@@ -68,6 +68,8 @@ rollen bepalen de zin waarin een verband moet worden opgevat
 * bv. het verband \(‘in bestelling’\) tussen leveranciers en aankooporders kan zowel vanaf leverancier, als vanaf aankooporder beschouwd worden \(d.w.z. je kan leven "heeft besteld" of "is besteld door"\)
 * iedere rol heeft een naam om dit op te helderen
   * bv. relationshiptype "in\_bestelling": rollen leverancier-besteller
+  * deze namen worden vaak weggelaten als de rol meteen duidelijk is uit het entiteittype
+    * dit is bijvoorbeeld niet duidelijk als er een relatietype is\_overste Persoon - Persoon is
 
 Cardinaliteit van een rol: het aantal keren dat een entiteit in die rol kan of moet optreden
 
