@@ -2,7 +2,7 @@
 
 ## Oefening 1 \(deel 1\)
 
-Onderstaand diagram is in de minder technische ERD-notatie die we vorig semester hebben gezien:
+Onderstaand diagram is in een minder technische ERD-notatie:
 
 ![diagram hogeschool](../../.gitbook/assets/hogeschool.png)
 

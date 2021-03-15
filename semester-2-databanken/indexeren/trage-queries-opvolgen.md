@@ -27,7 +27,7 @@ MySQL Workbench heeft ook een grafische weergave van je uitvoeringsplan. Deze ka
 
 ![](../../.gitbook/assets/querystats2.png)
 
-Als je op deze knop klikt, krijg je een diagram waarin wordt uitgelegd welke stappen nodig zijn om je query uit te voeren. Een volledig overzicht van de betekenis van de elementen in zo'n diagram vind je [hier](https://dev.mysql.com/doc/workbench/en/wb-performance-explain.html). **Je hoeft niet elk onderdeel te kennen, maar bekijk de pagina kort. Belangrijk is dat je rode boxes met daarin "full table scan" zo veel mogelijk vermijdt.**
+Als je op deze knop klikt, krijg je een diagram waarin wordt uitgelegd welke stappen nodig zijn om je query uit te voeren. Een volledig overzicht van de betekenis van de elementen in zo'n diagram vind je [hier](https://dev.mysql.com/doc/workbench/en/wb-performance-explain.html). **Je hoeft niet elk onderdeel te kennen, maar bekijk de pagina kort. Belangrijk is dat je rode boxes met daarin "full table scan" zo veel mogelijk vermijdt, zeker als het gaat om tabellen met veel data in.**
 
 Als je op een element van het diagram gaat staan met je muis, krijg je ook een technische uitleg over waarom dat onderdeel van je query waarschijnlijk niet efficiënt is. Let op! Het betreft hier nog steeds vuistregels. Een "full table scan" is bijvoorbeeld geen ramp als je tabel erg klein is. Dat wordt ook vermeld in de kleine lettertjes.
 

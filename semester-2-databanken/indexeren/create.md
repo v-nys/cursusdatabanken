@@ -51,26 +51,26 @@ In bovenstaande voorbeelden is de lengte het aantal tekens voor de datatypes zoa
 Als we onderstaande query uitvoeren, dan zal heel de tabel worden doorlopen omdat er geen index is bepaald op het veld waarop het zoekcriterium werd ingesteld.
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT *
-FROM taken
-WHERE omschrijving LIKE 'aardappel%';
+FROM Taken
+WHERE Omschrijving LIKE 'aardappel%';
 ```
 
 Als we deze query met het `EXPLAIN` statement uitvoeren, krijgen we volgende resultaat.
 
 ```sql
-USE ModernWays;
+USE ApDB;
 EXPLAIN SELECT *
-FROM taken
-WHERE omschrijving LIKE 'aardappel%';
+FROM Taken
+WHERE Omschrijving LIKE 'aardappel%';
 ```
 
-Als je de tabel taken veel bevraagt terwijl je filtert op de omschrijvin, is het zinvol om voor deze kolom een index te creëren waardoor de uitvoering een heel stuk sneller zal verlopen.
+Als je de tabel taken veel bevraagt terwijl je filtert op de omschrijving, is het zinvol om voor deze kolom een index te creëren waardoor de uitvoering een heel stuk sneller zal verlopen.
 
 De grootte van de kolom omschrijving is bij design ingesteld op 50 karakters.
 
-Voor de index moet je de lengte van het zgn. voorvoegsel bepalen. Soms wordt er gezegd dat je dit zo efficiënt mogelijk dient te doen door de prefixlengte zo kort mogelijk te houden. Hier schuilt wel een gevaar in: wanneer de tabel met nieuwe data wordt uitgebreid, is de index misschien niet meer zo uniek. Dat leidt niet tot fouten maar mogelijk wel tot performantieverlies.
+Voor de index moet je de lengte van het voorvoegsel bepalen. Soms wordt er gezegd dat je dit zo efficiënt mogelijk dient te doen door de prefixlengte zo kort mogelijk te houden. Hier schuilt wel een gevaar in: wanneer de tabel met nieuwe data wordt uitgebreid, is de index misschien niet meer zo uniek. Dat leidt niet tot fouten maar mogelijk wel tot performantieverlies.
 
 Hoe zoek je nu de ideale lengte van de prefix op? Een vuistregel: zorg dat de index meteen naar een uniek resultaat leidt, maar dat hij niet groter is dan nodig om dit te bereiken.
 
@@ -91,9 +91,9 @@ from Taken;
 Indien 20 de perfecte lengte van de prefix is, dan gaan we de index opbouwen.
 
 ```sql
-USE modernways;
-CREATE INDEX idx_omschrijving 
-ON taken(omschrijving(20));
+USE ApDB;
+CREATE INDEX OmschrijvingIdx
+ON Taken(Omschrijving(20));
 ```
 
 Binnen de schema navigation kan je nu de index zien. Als je nu bovenstaande select-query opnieuw uitvoert zal deze efficiënter en sneller verlopen.
@@ -105,8 +105,4 @@ De lengte van het "ideale" prefix kan wijzigen naarmate je meer data toevoegt aa
 ## Aflopende indexen
 
 Indien je een aflopend gesorteerde index wil \(bijvoorbeeld van "Z" naar "A" in plaats van omgekeerd\), schrijf je `DESC` na de kolomnaam. Bijvoorbeeld `ON Personen (Voornaam DESC)`.
-
-{% hint style="info" %}
-[https://www.mysqltutorial.org/mysql-index/mysql-prefix-index/](https://www.mysqltutorial.org/mysql-index/mysql-prefix-index/)
-{% endhint %}
 

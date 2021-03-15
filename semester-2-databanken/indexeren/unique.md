@@ -39,7 +39,7 @@ ADD CONSTRAINT constraint_name UNIQUE KEY(index_column_1,index_column_2,...);
 We creëren een tabel met een primary key en een unieke index.
 
 ```sql
-CREATE TABLE IF NOT EXISTS people (
+CREATE TABLE IF NOT EXISTS People (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS people (
 Met het commando `SHOW INDEXES FROM table_name`kan je zien dat de unieke index werd aangemaakt.
 
 ```sql
-SHOW INDEXES FROM people;
+SHOW INDEXES FROM People;
 ```
 
 ![](../../.gitbook/assets/image%20%2845%29.png)
@@ -59,7 +59,7 @@ SHOW INDEXES FROM people;
 Vervolgens voegen wat data toe aan de tabel `people`.
 
 ```sql
-INSERT INTO people(first_name,last_name,mail)
+INSERT INTO People(first_name,last_name,mail)
 VALUES
 ('John','Doe','john.doe@modernways.be'),
 ('Jane','Doe','jane.doe@modernways.be'),
@@ -71,7 +71,7 @@ VALUES
 Omdat we op mail een unieke index hebben gelegd is het niet meer mogelijk personen toe te voegen met opgave van een mailadres dat al bestaat. Concreet, wanneer we Jef Doe met als mailadres john.doe@modernways.be zouden willen toevoegen, zal dit resulteren in een fout, want het opgegeven mailadres komt reeds voor.
 
 ```sql
-INSERT INTO people(first_name,last_name,mail)
+INSERT INTO People(first_name,last_name,mail)
 VALUES ('Jef','Doe','john.doe@modernways.be');
 ```
 

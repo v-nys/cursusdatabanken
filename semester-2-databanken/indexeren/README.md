@@ -17,7 +17,3 @@ Indexeren verhoogt de snelheid waarmee gegevens worden geselecteerd, maar vertra
 
 Een index kun je op elk willekeurig moment creëren/wijzigen/verwijderen, zonder dat dit invloed heeft op de opgeslagen data in de bijhorende tabellen. Anders gesteld: het is niet omdat het telefoonboek niet meer wordt uitgegeven, dat je plots geen telefoonnummer meer hebt.
 
-{% hint style="info" %}
-[https://www.mysqltutorial.org/mysql-index/mysql-prefix-index/](https://www.mysqltutorial.org/mysql-index/mysql-prefix-index/)
-{% endhint %}
-
