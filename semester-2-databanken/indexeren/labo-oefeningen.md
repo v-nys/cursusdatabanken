@@ -6,7 +6,7 @@
 
 {% file src="../../.gitbook/assets/calibratedb.sql" caption="Startscript aptunes" %}
 
-Het startscript kan je via de link hierboven downloaden. Voor deze labosessie maakt het geen database `ModernWays` aan, maar een database `aptunes`. Deze heeft onderstaande structuur:
+Het startscript kan je via de link hierboven downloaden. Voor deze labosessie maakt een database `aptunes`. Deze heeft onderstaande structuur:
 
 ![](../../.gitbook/assets/aptunes.png)
 

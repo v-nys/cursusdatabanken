@@ -106,3 +106,9 @@ De lengte van het "ideale" prefix kan wijzigen naarmate je meer data toevoegt aa
 
 Indien je een aflopend gesorteerde index wil \(bijvoorbeeld van "Z" naar "A" in plaats van omgekeerd\), schrijf je `DESC` na de kolomnaam. Bijvoorbeeld `ON Personen (Voornaam DESC)`.
 
+## De rol van kolomvolgorde
+
+Als je een index op meerdere kolommen aanmaakt, is de volgorde van deze kolommen belangrijk. Vergelijk met het telefoonboek. Daar heb je een index op plaatsnaam en familienaam. Dit staat je toe snel iemand terug te vinden. Als je geen idee hebt van waar elke plaatsnaam inhet telefoonboek staat en alleen iemands familienaam kent, moet je toch elke pagina doorzoeken om zeker te zijn dat je de persoon in kwestie niet over het hoofd ziet.
+
+Wat betekent dit in de praktijk? Je kan een index op meerdere kolommen \(bijvoorbeeld A, B en C\) gebruiken om snel opzoekingen te doen als je werkt met een doorlopende reeks van de eerste kolommen \(bv. A of A en B of A, B en C\). Maar je kan niet sneller zoeken met deze index als je bijvoorbeeld enkel B en C betrekt in je zoekopdracht.
+
