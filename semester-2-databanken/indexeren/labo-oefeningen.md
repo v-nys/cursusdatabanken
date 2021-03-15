@@ -5,10 +5,10 @@
 ### Startscript
 
 {% hint style="danger" %}
-Let op: dit script is te groot om op de gewoonlijke manier te openen in het tekstvenster van MySQL Workbench. Voer het daarom rechtstreeks uit via "Run SQL script" \(onder "File"\). Je mag de default \(lege\) opties laten aanstaan.
+Let op: dit script gaat een tijdje blijven hangen als je het uitvoert. Dat is niets. Sluit het tabblad voor het script wel als je klaar bent. Dat neemt minder geheugen in.
 {% endhint %}
 
-{% file src="../../.gitbook/assets/calibratedb.sql" caption="Startscript aptunes" %}
+{% file src="../../.gitbook/assets/calibratedba.sql" %}
 
 Het startscript kan je via de link hierboven downloaden. Voor deze labosessie maakt een database `aptunes`. Deze heeft onderstaande structuur:
 
@@ -84,7 +84,7 @@ Je script noem je `0623__Oefening.sql`.
 
 De te optimaliseren query is:
 
-```text
+```sql
 -- toont combinaties van liedjes en bands
 -- doet dit enkel voor liedjestitels die beginnen met 'A'
 -- gaat van kort naar lang
