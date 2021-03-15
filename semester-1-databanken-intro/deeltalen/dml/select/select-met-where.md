@@ -4,7 +4,7 @@
 [Kennisclip voor deze inhoud](https://youtu.be/NZuOU_vvbqs)
 {% endhint %}
 
-{% file src="../../../../.gitbook/assets/calibratie0018.sql" caption="Calibratiescript" %}
+{% file src="../../../../.gitbook/assets/0031\_\_calibratie.sql" %}
 
 In de meeste gevallen zijn we niet geïnteresseerd om alle rijen uit een tabel te selecteren. We willen over de mogelijkheid beschikken om alleen de rijen, die aan een bepaalde voorwaarde voldoen, te kunnen selecteren.
 
@@ -22,7 +22,7 @@ FROM Boeken
 WHERE Familienaam = 'Augustinus';
 ```
 
-Ofwel \(sla volgend script op als 0019\_\_SelectBoeken.sql\):
+Ofwel \(sla volgend script op als 0032\_\_SelectBoeken.sql\):
 
 ```sql
 USE ApDB;
@@ -31,7 +31,7 @@ FROM Boeken
 WHERE Voornaam = 'Diderik';
 ```
 
-Je krijgt `NULL` wanneer je bijvoorbeeld vergelijkt met een niet-ingevulde waarde, ook geschreven als `NULL`. Zelfs `NULL` is niet gelijk aan `NULL`. Probeer maar eens alle boeken zonder titel op te vragen met een vergelijking \(0020\_\_SelectBoeken.sql\):
+Je krijgt `NULL` wanneer je bijvoorbeeld vergelijkt met een niet-ingevulde waarde, ook geschreven als `NULL`. Zelfs `NULL` is niet gelijk aan `NULL`. Probeer maar eens alle boeken zonder titel op te vragen met een vergelijking \(0033\_\_SelectBoeken.sql\):
 
 ```sql
 USE ApDB;
@@ -40,7 +40,7 @@ FROM Boeken
 WHERE Titel = NULL;
 ```
 
-Maar probeer ook deze eens \(0021\_\_SelectBoeken.sql\):
+Maar probeer ook deze eens \(0034\_\_SelectBoeken.sql\):
 
 ```sql
 USE ApDB;

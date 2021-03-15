@@ -19,7 +19,7 @@ UPDATE Boeken SET Categorie = 'Metafysica';
 SET SQL_SAFE_UPDATES = 1;
 ```
 
-Pas toe en sla op als 0023\_\_UpdateBoeken.sql.
+Pas toe en sla op als 0036\_\_UpdateBoeken.sql.
 
 Inspecteer je data. Zie je het effect?
 
@@ -74,7 +74,7 @@ WHERE Familienaam = 'Braudel' or
       Familienaam = 'Bloch';
 ```
 
-Sla op als 0024\_\_Update.sql.
+Sla op als 0037\_\_Update.sql.
 
 Verder leer je meer over logische operatoren. Meerdere kolommen tegelijk kunnen ook gewijzigd worden.
 
@@ -85,7 +85,7 @@ SET Voornaam = 'Geert',
 WHERE Titel = 'De stad van God';
 ```
 
-Sla op als 0025\_\_Update.sql.
+Sla op als 0038\_\_Update.sql.
 
 Waar je een nieuwe waarde instelt, mag je ook weer een expressie gebruiken die een waarde oplevert. Net als in programmeren. Je kan bijvoorbeeld een waarde instellen die berekend wordt door strings aan elkaar te hangen of een substring te bepalen:
 

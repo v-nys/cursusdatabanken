@@ -10,5 +10,5 @@ De syntax van `DELETE` lijkt erg op die van `SELECT`, maar in plaats van bepaald
 De gelijkenis tussen `SELECT` en `DELETE` is erg handig. Voer altijd eerst een `SELECT *` uit in plaats van een `DELETE` en dan weet je steeds welke gegevens precies gewist zullen worden.
 {% endhint %}
 
-Schrijf een script 0022\_\_DeleteBoeken.sql dat alle boeken van een auteur met voornaam "Gerard" wist.
+Schrijf een script 0035\_\_DeleteBoeken.sql dat alle boeken van een auteur met voornaam "Gerard" wist.
 

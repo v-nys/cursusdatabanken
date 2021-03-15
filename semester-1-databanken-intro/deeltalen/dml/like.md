@@ -45,7 +45,7 @@ FROM Boeken
 WHERE Titel LIKE '%economie%';
 ```
 
-Het is belangrijk dat je toepassing van de LIKE operator en de wildcard ziet. Bijvoorbeeld \(0032\_\_SelectBoeken.sql\):
+Het is belangrijk dat je toepassing van de LIKE operator en de wildcard ziet. Bijvoorbeeld \(0039\_\_SelectBoeken.sql\):
 
 ```sql
 USE ApDB;
