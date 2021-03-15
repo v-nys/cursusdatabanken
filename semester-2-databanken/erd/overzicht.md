@@ -10,13 +10,15 @@ Een entity-relationshipmodel \(ERM\) van een databank drukt uit welke informatie
 
 Een ER model bestaat uit de volgende onderdelen:
 
-* entiteiten: een entiteit kan worden gezien als een ding, een "tastbaar" iets dat deel uitmaakt van het datamodel. Voorbeelden hiervan zijn: een auto, een werknemer, een lied of een gebied.
+* entiteittypes: een entiteittype kan worden gezien als een ding, een "tastbaar" iets dat deel uitmaakt van het datamodel. Voorbeelden hiervan zijn: een auto, een werknemer, een lied of een gebied.
 * verwantschappen of relaties: een verwantschap geeft het verband weer tussen twee of meer entiteiten, zoals "een werknemer werkt in een fabriek"; "werkt in" is hier de verwantschap tussen de entiteiten werknemer en fabriek.
 * attributen: een attribuut is een eigenschap van een entiteit of verwantschap. Zo heeft een werknemer \(onder andere\) een voornaam, een achternaam, een woonplaats en een sofinummer. Het attribuut dat \(of de attributen die\) wordt gebruikt als unieke aanduiding van de entiteit \(de primaire sleutel\), wordt onderstreept weergegeven.
 
-Elk van deze zaken wordt in een ER diagram weergegeven met een bepaald symbool weergegeven. Een entiteit wordt met een rechthoek weergegeven, een verwantschap met een ruit \(verbonden met lijnen aan de betrokken entiteiten\) en een attribuut wordt als een ovaal weergegeven. Van elk van deze zaken bestaan ook specifiekere varianten.[ER-Diagram-Elements](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning)
+Elk van deze zaken wordt in een ER diagram weergegeven met een bepaald symbool weergegeven. Een entiteit wordt met een rechthoek weergegeven, een verwantschap met een ruit \(verbonden met lijnen aan de betrokken entiteiten\) en een attribuut wordt als een ovaal weergegeven. Van elk van deze zaken bestaan ook specifiekere varianten.
 
-![ER-Diagram-Elements](http://programming-emu.com/myap/it/image/sql/ER-Diagram-Elements.png)
+![Basiselementen.](../../.gitbook/assets/er-diagram-elements.jpeg)
+
+Een goede plaats voor alles wat met visuele notatie te maken heeft, is [LucidChart](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning). Hier vind je ook notatie voor de verschillende varianten.
 
 #### Entiteittypes
 
@@ -59,7 +61,7 @@ Graad van een relationshiptype: het aantal entiteittypen dat gebruikt is bij het
 
 * 1 -&gt; unair relationshiptype \(bijvoorbeeld: "houdt van" tussen personen\)
 * 2 -&gt; binair relationshiptype \(bv. relationshiptype "heeft besteld" tussen klant en product\)
-* 3 -&gt; ternair relationshiptype \(bv. "game X is geport naar platform Y door developer Z"\). Dit soort relatie heb je niet zo vaak nodig.
+* 3 -&gt; ternair relationshiptype \(bv. "game X is geport naar platform Y door developer Z"\). Dit soort relatie heb je niet zo vaak nodig. Je kan ze ook altijd vervangen door drie binaire relaties met een nieuw entiteittype \(bijvoorbeeld "Port" in dit geval\).
 
 rollen bepalen de zin waarin een verband moet worden opgevat
 
@@ -79,13 +81,11 @@ Cardinaliteit van een rol: het aantal keren dat een entiteit in die rol kan of m
 
 #### Voorbeeld
 
-ERD Boeken Personen Aanspreektitel
-
-![ERD Boeken Personen Aanspreektitel](http://programming-emu.com/myap/it/image/sql/erd/ERD%20Boeken%20Personen%20Aanspreektitel.png)
+![](../../.gitbook/assets/taak-persoon-1-1.svg)
 
 ## EER-notatie in MySQL Workbench
 
-[hier](https://github.com/v-nys/cursusdatabanken/tree/dc967248ad7b90fd9060e5af27b14ef10576e6fb/semester-2-databanken/README.md) vind je een filmpje terug dat uitlegt hoe je een gelijkaardige notatie gebruikt in MySQL Workbench. Dit is een "extended entity relationship diagram", d.w.z. een meer technisch diagram.
+Workbench beschikt over een editor voor "extended" entity relationship diagrammen, dus ER-diagrammen met wat extra info.
 
 ### identifying vs. non-identifying relaties
 

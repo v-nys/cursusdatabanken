@@ -56,7 +56,7 @@ SHOW INDEXES FROM People;
 
 ![](../../.gitbook/assets/image%20%2845%29.png)
 
-Vervolgens voegen wat data toe aan de tabel `people`.
+Vervolgens voegen wat data toe aan de tabel `People`.
 
 ```sql
 INSERT INTO People(first_name,last_name,mail)

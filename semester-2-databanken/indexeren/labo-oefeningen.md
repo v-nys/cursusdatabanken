@@ -4,13 +4,15 @@
 
 ### Startscript
 
+{% hint style="danger" %}
+Let op: dit script is te groot om op de gewoonlijke manier te openen in het tekstvenster van MySQL Workbench. Voer het daarom rechtstreeks uit via "Run SQL script" \(onder "File"\). Je mag de default \(lege\) opties laten aanstaan.
+{% endhint %}
+
 {% file src="../../.gitbook/assets/calibratedb.sql" caption="Startscript aptunes" %}
 
 Het startscript kan je via de link hierboven downloaden. Voor deze labosessie maakt een database `aptunes`. Deze heeft onderstaande structuur:
 
 ![](../../.gitbook/assets/aptunes.png)
-
-Let op: dit script is te groot om op de gewoonlijke manier te openen in het tekstvenster van MySQL Workbench. Voer het daarom rechtstreeks uit via "Run SQL script" \(onder "File"\). Je mag de default \(lege\) opties laten aanstaan.
 
 {% hint style="info" %}
 Krijg je een ERROR 2006? Verhoog dan de toegelaten maximale scriptgrootte. Normaal is dat in `C:\ProgramData\MySQL\MySQL Server 8.0\`. `ProgramData` is een verborgen map, dus je moet dit invullen in de adresbalk van je verkenner. Open dat bestand met kladblok en vul deze regel in: `max_allowed_packet=32M`. Als er al een regel is die begint met `max_allowed_packet`, dan overschrijf je die. **Let op: sla de gewijzigde file op met de ANSI-encodering als volgt. Ga in kladblok naar "opslaan als". Naast de knop "opslaan" staat "Codering" \(of "Encoding"\). Zorg dat dit op ANSI staat. Zet het bestandstype op "alle bestanden" en dubbelklik op `my.ini`. Dan mag je oveschrijven.** Herstart daarna.
