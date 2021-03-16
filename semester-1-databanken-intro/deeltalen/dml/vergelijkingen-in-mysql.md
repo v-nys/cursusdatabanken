@@ -21,10 +21,10 @@ Voor "gelijk aan" heb je maar één `=` nodig, waar veel programmeertalen `==` g
 
 Voor getallen betekenen bovenstaande operatoren precies wat je zou verwachten. Je moet in het achterhoofd houden dat `FLOAT` en `DOUBLE` niet helemaal precies zijn, maar voor de rest betekenen ze wat je verwacht uit de wiskunde.
 
-Voor tekst is het wat complexer. Je kan wel degelijk iets als het volgende \(0028\_\_SelectBoeken.sql\) schrijven:
+Voor tekst is het wat complexer. Je kan wel degelijk iets als het volgende \(0040\_\_SelectBoeken.sql\) schrijven:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT Familienaam, Titel FROM Boeken WHERE Familienaam < 'B';
 ```
 
@@ -33,16 +33,16 @@ Dit `SELECT` statement retourneert alle rijen uit de tabel `Boeken` waarvan de `
 Als de familienaam Beth in je tabel voorkomt, wordt deze niet in de selectie opgenomen. Om ook die rij te selecteren, zou je kunnen denken om de expressie `Familienaam <= 'B'` te gebruiken:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT Familienaam, Titel FROM Boeken WHERE Familienaam <= 'B';
 ```
 
 Dit zal niet werken. Dat komt omdat we de boeken opvragen waarvan de familienaam van de auteur kleiner of gelijk is aan 'B'. De tekst `'Beth'` is niet gelijk aan `'B'` en is zeker niet kleiner! In het algemeen mag je dit onthouden: als een string A een **prefix** is van een string B, d.w.z. als string B letterlijk begint met de inhoud van A en dan nog meer tekst bevat, dan zal A altijd voor B gesorteerd worden. Zo wordt 'schoen' gesorteerd voor 'schoenmaker', omdat 'schoen' een prefix is van 'schoenmaker'. Maar er wordt éérst naar de letters gekeken en dan pas naar de lengte van de tekst. Zo wordt 'schoeisel' voor 'schoen' gesorteerd, omdat 'i' voor 'n' komt.
 
-Ter verduidelijking: als we `'B'` als familienaam toevoegen \(in script 0029\_\_InsertBoeken.sql\), wordt het resultaat wel geselecteerd:
+Ter verduidelijking: als we `'B'` als familienaam toevoegen \(in script 0041\_\_InsertBoeken.sql\), wordt het resultaat wel geselecteerd:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 INSERT INTO Boeken (Familienaam,Titel,Voornaam,Categorie)
 VALUES
 ('B','Het Boek','Jef','Filosofie');
@@ -53,16 +53,16 @@ SELECT Titel, Familienaam FROM Boeken
 Stel dat je alle titels wilt van de auteurs wilt waarvan de familienaam begint met een' A' of een 'B'. Dan moet je de WHERE clausule verfijnen. Je zou dit kunnen proberen:
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT Familienaam, Titel FROM Boeken where Familienaam <= 'Bz';
 ```
 
 Maar hier zijn verschillende problemen mee. Als `'Bz'` een prefix is van de naam van een auteur \(niet erg waarschijnlijk, maar het zou kunnen\), zal dit niet werken. Nog lastiger: dit is erg afhankelijk van de collation. Het is niet in elke collation zo dat 'Bz' voor 'Bé' komt, bijvoorbeeld. Sommige collations sorteren eerst de gebruikelijke 26 letters van het alfabet en pas daarna de letters met accenten.
 
-0030\_\_SelectBoeken.sql is beter \(je mag er in het algemeen wel vanuit gaan dat `'B'` voor `'C'` komt\):
+0042\_\_SelectBoeken.sql is beter \(je mag er in het algemeen wel vanuit gaan dat `'B'` voor `'C'` komt\):
 
 ```sql
-USE ModernWays;
+USE ApDB;
 SELECT Familienaam, Titel FROM Boeken where Familienaam < 'C'
 ```
 

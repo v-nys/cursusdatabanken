@@ -7,10 +7,10 @@ Om te sorteren gebruiken we de clausule `ORDER BY`. Het sorteren kan op 2 manier
 * oplopend
 * aflopend
 
-In het Engels is dat _ascending_ en _descending_. In SQL wordt dat afgekort naar `ASC` en `DESC`. Stel dat je de namen uit de tabel boeken wil opvragen gesorteerd op de voornaam, de familienaam en titel van de boeken. De query ziet er dan zo uit \(0031\_\_SelectBoeken.sql\):
+In het Engels is dat _ascending_ en _descending_. In SQL wordt dat afgekort naar `ASC` en `DESC`. Stel dat je de namen uit de tabel boeken wil opvragen gesorteerd op de voornaam, de familienaam en titel van de boeken. De query ziet er dan zo uit \(0043\_\_SelectBoeken.sql\):
 
 ```sql
-USE ModernWays;
+USE ApDB;
 -- oplopend sorteren volgens familienaam
 -- ascending
 SELECT Voornaam, Familienaam, Titel FROM Boeken
@@ -27,5 +27,5 @@ De eerste bovenstaande `SELECT` clausule toont dus eerst boeken in alfabetische 
 
 Voor de tweede query komen de familienamen met een 'Z' voor die met een 'A'. Let op: de voornamen met een 'A' komen wel voor de voornamen met een 'Z'!
 
-Merk op uit bovenstaand voorbeeld: de volgorde van de kolommen in de ORDER BY clausule hoeft niet dezelfde te zijn als de volgorde van de weergave in de SELECT clausule. Het kan perfect zijn dat je wil sorteren op familienaam, maar wel eerst de voornaam wil tonen en dan pas de achternaam. Sterker nog: je kan zelfs ordenen op kolommen die je niet toont in de uitvoer.
+Merk op uit bovenstaand voorbeeld: de volgorde van de kolommen in de `ORDER BY` clausule hoeft niet dezelfde te zijn als de volgorde van de weergave in de `SELECT` clausule. Het kan perfect zijn dat je wil sorteren op familienaam, maar wel eerst de voornaam wil tonen en dan pas de achternaam. Sterker nog: je kan zelfs ordenen op kolommen die je niet toont in de uitvoer.
 
