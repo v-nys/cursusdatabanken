@@ -9,7 +9,7 @@ De betekenis van de wildcards in SQL is als volgt:
 * `%`: nul, één of meer willekeurige tekens
 * `_`: exact één willekeurig teken
 
-Om alle boeken te selecteren waarvan de familienaam van de auteur begint met A als de collation niet hoofdlettergevoelig is:
+Om alle boeken te selecteren waarvan de familienaam van de auteur begint met B als de collation niet hoofdlettergevoelig is:
 
 ```sql
 USE ApDB;
