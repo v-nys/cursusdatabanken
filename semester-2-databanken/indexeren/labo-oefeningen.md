@@ -46,7 +46,7 @@ Zoek, volgens de uitleg in de cursus de ideale prefixlengte voor de kolommen `Vo
 
 ### Algemene uitleg
 
-Deze vraag bestaat uit drie delen. Eerst deze algemene uitleg. Je krijgt in ieder deel een query en je moet een "ideale" index voor deze query zoeken. Lees hiervoor zeker het theoriegedeelte rond het opvolgen van trage queries!
+Deze vraag bestaat uit twee delen. Eerst deze algemene uitleg. Je krijgt in ieder deel een query en je moet een "ideale" index voor deze query zoeken. Lees hiervoor zeker het theoriegedeelte rond het opvolgen van trage queries!
 
 Voer per vraag eerst de gegeven query uit. Ga na het uitvoeren telkens de timing na opgemeten door de server \(onder "Query Stats", zie screenshot\).
 
@@ -94,23 +94,4 @@ order by Lengte;
 Je script noem je `0624__Oefening.sql`.
 
 \(Tip: normaal zou je hier **geen enkele** rode box meer mogen zien in je uitvoeringsdiagram. De query zou ook merkbaar sneller moeten worden als je hem opnieuw uitvoert.\)
-
-### deel 3
-
-De te optimaliseren query is:
-
-```sql
--- toont per naam het aantal keer dat iemand met die naam lid is van een groep
--- iemand die lid is van twee groepen, wordt dus twee keer geteld
--- naamgenoten zijn mogelijk en worden samen geteld
-select Voornaam, Familienaam, count(Lidmaatschappen.Muzikanten_Id)
-from Muzikanten inner join Lidmaatschappen
-on Lidmaatschappen.Muzikanten_Id = Muzikanten.Id
-group by Familienaam, Voornaam
-order by Voornaam, Familienaam;
-```
-
-Je script noem je `0625__Oefening.sql`.
-
-\(Tip: je zal nog wel een rode box zien, maar het snelheidsverschil zou merkbaar moeten zijn.\)
 
