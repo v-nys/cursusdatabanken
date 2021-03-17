@@ -60,6 +60,10 @@ Pas daarna het algoritme voor een goede index toe \(zie stap 3 op de theoriepagi
 
 Voer in elke vraag de code uit om de goede index aan te maken en run de query opnieuw. Normaal zou er geen full table search meer mogen zijn.
 
+{% hint style="warning" %}
+Hieronder wordt gebruik gemaakt van twee tabellen omwille van `JOIN`, maar de `WHERE` wordt uitgevoerd voor het samenvoegen. Dus dat vertelt je op welke tabel je het algoritme best toepast.
+{% endhint %}
+
 ### deel 1
 
 De te optimaliseren query is:
