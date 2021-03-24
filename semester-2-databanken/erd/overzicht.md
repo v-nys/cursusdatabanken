@@ -123,7 +123,8 @@ In de praktijk worden deze concepten niet altijd even strikt gevolgd!
 
 * gewone attributen worden kolommen
 * afgeleide \(derived\) attributen worden niet bijgehouden
-* multivalued attributen worden geen kolommen, maar worden bijgehouden in een tabel en gelinkt via een identifying relatie
+* multivalued attributen worden geen kolommen, maar worden bijgehouden in een tabel en gelinkt via een identifying relatie. Dit kan een één-op-veel relatie of een veel-op-veel relatie zijn.
+  * bv. om muzieknummers met meerdere genres voor te stellen, maken we een tabel `Genres` en een tabel `NummerGenres`, waarin twee vreemde sleutels zitten
   * bv. om personen met meerdere telefoonnummers voor te stellen, maken we een tabel `Telefoonnummers`, die met vreemde sleutel verwijst naar tabel `Personen`
 
 ### betekenis van de icoontjes in Workbench
