@@ -107,7 +107,12 @@ In de praktijk worden deze concepten niet altijd even strikt gevolgd!
 
 * gewone entiteiten worden tabellen
 * zwakke entiteiten worden tabellen die gelinkt zijn via een identifying relationship \(want ze hebben een andere entiteit nodig om hun identiteit te bepalen\)
-* associatieve entiteiten worden identifying n-to-m relaties \(hier is een knop voor voorzien in Workbench\)
+* associatieve entiteiten worden:
+  * tabellen als het gaat om N-op-M relaties
+  * opgenomen aan de "veel"-kant bij 1-op-N relaties
+    * dit wil zeggen dat de N-kant voorzien wordt van een extra foreign key kolom
+    * hierbij worden ook attributen van de relatie aan de veel-kant gezet
+  * opgenomen aan een kant naar keuze bij een 1-op-1 relatie
 
 #### relaties
 
