@@ -6,7 +6,7 @@ Onderstaand diagram is in een minder technische ERD-notatie:
 
 ![diagram hogeschool](../../.gitbook/assets/hogeschool.png)
 
-Hermaak dit diagram in de diagrameditor van MySQL Workbench. Deze editor ondersteunt een verwante, maar andere notatie. Zie eventueel het filmpje over deze editor in de cursus. Zet via de knop "model" in de werkbalk bovenaan de objectnotatie op "Workbench \(simplified\)" en de notatie van relaties op "classic". Zet ook via "edit" → "preferences" → "diagram" de optie "show captions" aan.
+Hermaak dit diagram in de diagrameditor van MySQL Workbench. Deze editor ondersteunt een verwante, maar andere notatie. Zie eventueel het [filmpje](https://www.youtube.com/watch?v=yq9iCb2JRHk) over deze editor in de cursus. Zet via de knop "model" in de werkbalk bovenaan de objectnotatie op "Workbench \(simplified\)" en de notatie van relaties op "classic". Zet ook via "edit" → "preferences" → "diagram" de optie "show captions" aan.
 
 De betekenis van de icoontjes voor elke kolom vind je [hier](https://stackoverflow.com/questions/10778561/what-do-the-mysql-workbench-column-icons-mean) terug.
 
