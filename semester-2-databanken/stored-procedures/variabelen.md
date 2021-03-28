@@ -1,22 +1,20 @@
 # VARIABELEN
 
-Een variabele heeft als bedoeling data tijdelijk te bewaren.
-
-Binnen een stored procedure is het mogelijk om variabelen te declareren die dan binnen deze stored procedure kunnen gebruikt worden.
+Een variabele dient om data via een naam te kunnen aanspreken. Binnen een stored procedure is het mogelijk om variabelen te declareren die dan binnen deze stored procedure kunnen gebruikt worden.
 
 ## DECLARE
 
 Een variabele declareer je als volgt.
 
 ```sql
-DECLARE naam_variabele datatype(grootte) [DEFAULT default_waarde];
+DECLARE naam_variabele datatype [DEFAULT default_waarde];
 ```
 
 De verschillende datatypes kan je vinden op:
 
 {% embed url="https://dev.mysql.com/doc/refman/8.0/en/data-types.html" caption="" %}
 
-Dit zijn dezelfde types die je koppelt aan een kolom, bv. `INT`, `DATE`, enz.
+Dit zijn dezelfde types die je koppelt aan een kolom, bv. `INT`, `DATE`, `VARCHAR(100)`, enz.
 
 {% hint style="warning" %}
 Je kan een variabele **alleen** declareren vlak na een `BEGIN` \(of na declaratie van een andere variabele\). Dat is geen probleem, want je kan hem wel nog van waarde veranderen na andere statements.
@@ -40,15 +38,15 @@ DELIMITER $$
 USE `aptunes`$$
 CREATE PROCEDURE `GetAantalLidmaatschappen` ()
 BEGIN
-    DECLARE totalLidmaatschap INT DEFAULT 0;
+    DECLARE TotaalLidmaatschap INT DEFAULT 0;
     SELECT COUNT(*)
-    INTO totalLidmaatschap
-    FROM lidmaatschappen;
-    SELECT totalLidmaatschap;
+    INTO TotaalLidmaatschap
+    FROM Lidmaatschappen;
+    SELECT TotalLidmaatschap;
 END$$
 
 DELIMITER ;
 ```
 
-Hierbij declareren we een \(lokale\) INT variabele totalLidmaatschap, dewelke we dan een waarde geven met het uitvoeren van het SQL-statement, waarna de inhoud van deze variabele via de tweede `SELECT` wordt geselecteerd. Je hebt de variabele niet nodig voor deze taak, maar het voorbeeld toont de syntax.
+Hierbij declareren we een \(lokale\) `INT` variabele `TotaalLidmaatschap`, die we dan een waarde geven met het uitvoeren van het SQL-statement, waarna de inhoud van deze variabele via de tweede `SELECT` wordt geselecteerd. Je hebt de variabele niet nodig voor deze taak, maar het voorbeeld toont de syntax.
 

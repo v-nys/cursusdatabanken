@@ -4,7 +4,7 @@ Sql statements worden normaal afgesloten door een puntkomma \(;\).
 
 M.a.w. worden alle sql statements die door een puntkomma van elkaar worden gescheiden afzonderlijk uitgevoerd.
 
-Bij een stored procedure is de situatie lichtjes verschillend. Als de definitie van een stored procedure die een puntkomma bevat, betekent dat niet dat de definitie af is. We willen dat de stored procedure pas gedefinieerd wordt als we dat toelaten.
+Bij een stored procedure is de situatie lichtjes verschillend. Als de definitie van een stored procedure die een puntkomma bevat, betekent dat niet dat de definitie af is. Alles vanaf `CREATE PROCEDURE` tot `END` moet gezien worden als één instructie \(om de procedure aan te maken in de database\). 
 
 Dat is de reden waarom de zgn. delimiter \(de string die het einde van een instructie aanduidt\) bij stored procedures opnieuw wordt bepaald. Dit zorgt er dan voor dat de stored procedure als één geheel aan de server kan doorgegeven worden.
 
@@ -23,5 +23,5 @@ END $$
 DELIMITER ;
 ```
 
-Zoals je merkt uit bovenstaand voorbeeld wijzig je de delimiter bij aanvang naar $$ om deze op het einde opnieuw te wijzigen in puntkomma \(;\).
+Zoals je merkt uit bovenstaand voorbeeld wijzig je de delimiter bij aanvang naar `$$` om deze op het einde opnieuw te wijzigen in puntkomma \(;\).
 
