@@ -31,6 +31,7 @@ Een variabele die met het @-symbool begint is een zgn. sessie-variabele. Deze is
 Je kan een variabele een waarde geven op twee manieren:
 
 * via `SELECT <uitdrukking> FROM <TABEL> INTO <naam variabele>`
+  * je mag de `INTO` ook voor de `FROM` zetten
 * via `SET <variabele> = <waarde>`
 
 ## VOORBEELD

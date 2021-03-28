@@ -18,7 +18,7 @@ IF conditie THEN
 END IF;
 ```
 
-Toegepast op onze voobeelddatabase en meer bepaald op de tabel liedjes.
+Toegepast op onze voobeelddatabase en meer bepaald op de tabel `Liedjes`.
 
 ```sql
 USE `aptunes`;
