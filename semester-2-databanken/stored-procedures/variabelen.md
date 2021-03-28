@@ -22,11 +22,16 @@ Je kan een variabele **alleen** declareren vlak na een `BEGIN` \(of na declarati
 
 ## SCOPE
 
-Zoals ook het geval bij programmeertalen heeft een variabele een bepaalde "scope", d.w.z. een bereik of levensduur. Als je een variabele binnen een stored procedure declareert, dan zal deze niet meer bruikbaar zijn wanneer het `END` statement van deze stored procedure wordt bereikt. Dit stemt overeen met een lokale variabele in een algemene programmeertaal.
+Zoals ook het geval bij programmeertalen heeft een variabele een bepaalde "scope", d.w.z. een bereik of levensduur. Als je een variabele binnen een stored procedure declareert, dan zal deze niet meer bruikbaar zijn wanneer het `END` statement van deze stored procedure wordt bereikt. Dit stemt overeen met een lokale variabele in een algemene programmeertaal: de variabele **bestaat enkel binnen die uitvoering van de body**.
 
-Je kan uiteraard meerdere variabelen tegelijk declareren.
+Een variabele die met het @-symbool begint is een zgn. sessie-variabele. Deze is beschikbaar zolang de sessie \(verbinding met de DB, bijvoorbeeld via Workbench\) niet is beëindigd en je hoeft hem niet te declareren. Dit stemt **ruwweg** overeen met een globale variabele in een algemene programmeertaal. Daarom gebruiken we variabelen zonder `@` waar we kunnen en enkel variabelen met `@` wanneer lokale scope te begrensd is.
 
-Een variabele die met het @-symbool begint is een zgn. sessie-variabele. Deze is beschikbaar zolang de sessie niet is beëindigd en je hoeft hem niet te declareren. Dit stemt **ruwweg** overeen met een globale variabele in een algemene programmeertaal. Daarom gebruiken we variabelen zonder `@` waar we kunnen en enkel variabelen met `@` wanneer lokale scope te begrensd is.
+### Waarden geven
+
+Je kan een variabele een waarde geven op twee manieren:
+
+* via `SELECT <uitdrukking> FROM <TABEL> INTO <naam variabele>`
+* via `SET <variabele> = <waarde>`
 
 ## VOORBEELD
 

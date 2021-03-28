@@ -20,5 +20,5 @@ delimiter ;
 
 Via `CALL InsertBandAndFounder(<naam van de band>, <ID van de stichter>, <datum 1>, <datum 2>)` kunnen we meteen een lidmaatschap aanmaken dat hoort bij deze band. Dat komt omdat `LAST_INSERT_ID()` ons het meest recent automatisch gegenereerde ID oplevert, dus het ID van de nieuwe band.
 
-Het meest recent gegenereerde ID wordt per databaseconnectie bijgehouden. Er is dus geen risico dat het tussen de twee insert statements in verandert.
+Het meest recent gegenereerde ID wordt per databaseconnectie bijgehouden. Er is dus geen risico dat het tussen de twee insert statements in verandert omdat een andere gebruiker net op dat moment ook een insert uitvoert.
 

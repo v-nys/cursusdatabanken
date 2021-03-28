@@ -22,7 +22,7 @@ Zelfs als je een cursus programmeren hebt gevolgd, is het mogelijk dat je dit ni
 
 ### INOUT parameters
 
-Dit betreft de combinatie van de `IN parameter` en de `OUT parameter`. Dus zowel bij de start kan de inhoud worden bepaald en de stored procedure kan deze bij uitvoering ook aanpassen.
+Dit betreft de combinatie van de `IN parameter` en de `OUT parameter`. Dus zowel bij de start kan de inhoud worden bepaald en de stored procedure kan deze bij uitvoering ook aanpassen. **Als je kan kiezen voor een van de types hierboven, doe dat dan.** Dat is duidelijker.
 
 ## VOORBEELDEN
 

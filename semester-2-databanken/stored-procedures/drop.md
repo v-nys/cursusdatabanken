@@ -33,7 +33,7 @@ Om deze stored procedure te verwijderen is het voldoende volgend statement uit t
 DROP PROCEDURE ToonMuzikanten;
 ```
 
-Indien we de `DROP PROCEDURE` gebruiken zonder de `IF EXIST` clausule, dan zou dit kunnen resulteren in volgende.
+Indien we de `DROP PROCEDURE` gebruiken zonder de `IF EXISTS` clausule, dan zou dit kunnen resulteren in volgende.
 
 ```sql
 DROP PROCEDURE eenonbestaandesp;
