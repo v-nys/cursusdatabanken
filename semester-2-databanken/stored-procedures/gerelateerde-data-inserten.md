@@ -20,23 +20,5 @@ delimiter ;
 
 Via `CALL InsertBandAndFounder(<naam van de band>, <ID van de stichter>, <datum 1>, <datum 2>)` kunnen we meteen een lidmaatschap aanmaken dat hoort bij deze band. Dat komt omdat `LAST_INSERT_ID()` ons het meest recent automatisch gegenereerde ID oplevert, dus het ID van de nieuwe band.
 
-Let wel op: **hier is een addertje onder het gras**. De twee `insert` statements worden na elkaar uitgevoerd. Als er meerdere verbindingen met de database tegelijk mogelijk zijn, kan iemand anders **na de eerste `insert`** en **voor de tweede `insert`** nog een andere operatie uitvoeren \(eventueel ook een `insert`\). Dan kan het fout lopen.
-
-In een database met maar één gebruiker zal dit niet voorvallen. In een database met meerdere gebruiker, moet je zorgen dat je code als één geheel uitvoert, via de statements `START TRANSACTION` en `COMMIT`.
-
-```sql
-delimiter $$
-
-use `aptunes`$$
-CREATE PROCEDURE `InsertBandAndFounder` (IN bandName VARCHAR(50), IN founderId INT, IN foundingDate DATE, IN founderExitDate DATE)
-BEGIN
-  start transaction;
-  insert into Bands (Naam) values (bandName);
-  -- let op de volgende regel: last_insert_id
-  insert into Lidmaatschappen (Bands_Id, Muzikanten_Id, StartDatum, Einddatum) values (LAST_INSERT_ID(),founderId,foundingDate,founderExitDate);
-  commit;
-END$$
-
-delimiter ;
-```
+Het meest recent gegenereerde ID wordt per databaseconnectie bijgehouden. Er is dus geen risico dat het tussen de twee insert statements in verandert.
 

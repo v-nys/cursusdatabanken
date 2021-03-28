@@ -25,8 +25,6 @@ USE `aptunes`;
 DROP procedure IF EXISTS `if_then`;
 
 DELIMITER $$
-USE `aptunes`$$
-
 CREATE DEFINER=`root`@`localhost` PROCEDURE `if_then`(
 	IN pLiedjesId INT,
   OUT pResult VARCHAR(30))
@@ -94,8 +92,6 @@ USE `aptunes`;
 DROP procedure IF EXISTS `if_then_else`;
 
 DELIMITER $$
-USE `aptunes`$$
-
 CREATE PROCEDURE `if_then_else` (
 	IN pLiedjesId INT,
   OUT pResult VARCHAR(30))
@@ -153,8 +149,6 @@ USE `aptunes`;
 DROP procedure IF EXISTS `if_then_elseif_else`;
 
 DELIMITER $$
-USE `aptunes`$$
-
 CREATE PROCEDURE `if_then_elseif_else` (
 	IN pLiedjesId INT,
   OUT pResult VARCHAR(30))

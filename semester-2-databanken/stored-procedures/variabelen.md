@@ -26,7 +26,7 @@ Zoals ook het geval bij programmeertalen heeft een variabele een bepaalde "scope
 
 Je kan uiteraard meerdere variabelen tegelijk declareren.
 
-Een variabele die met het @-symbool begint is een zgn. sessie-variabele. Deze is beschikbaar zolang de sessie niet is beëindigd. Dit stemt **ruwweg** overeen met een globale variabele in een algemene programmeertaal. Daarom gebruiken we variabelen zonder `@` waar we kunnen en enkel variabelen met `@` wanneer lokale scope te begrensd is.
+Een variabele die met het @-symbool begint is een zgn. sessie-variabele. Deze is beschikbaar zolang de sessie niet is beëindigd en je hoeft hem niet te declareren. Dit stemt **ruwweg** overeen met een globale variabele in een algemene programmeertaal. Daarom gebruiken we variabelen zonder `@` waar we kunnen en enkel variabelen met `@` wanneer lokale scope te begrensd is.
 
 ## VOORBEELD
 
@@ -35,7 +35,6 @@ USE `aptunes`;
 DROP procedure IF EXISTS `GetAantalLidmaatschappen`;
 
 DELIMITER $$
-USE `aptunes`$$
 CREATE PROCEDURE `GetAantalLidmaatschappen` ()
 BEGIN
     DECLARE TotaalLidmaatschap INT DEFAULT 0;

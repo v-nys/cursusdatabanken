@@ -37,7 +37,7 @@ USE `aptunes`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAlbums`(IN nameAlbum VARCHAR(100))
 BEGIN
     SELECT *
-    FROM albums
+    FROM Albums
     WHERE Titel LIKE CONCAT(nameAlbum, '%');
 END$$
 
@@ -53,19 +53,18 @@ USE `aptunes`;
 DROP procedure IF EXISTS `GetAlbumsCount`;
 
 DELIMITER $$
-USE `aptunes`$$
 CREATE PROCEDURE `GetAlbumsCount` (IN nameAlbum VARCHAR(100), OUT total INT)
 BEGIN
     SELECT COUNT(*)
     INTO total
-    FROM albums
+    FROM Albums
     WHERE Titel LIKE CONCAT(nameAlbum, '%');
 END$$
 
 DELIMITER ;
 ```
 
-Als we deze stored procedure oproepen moeten we voor wat de `OUT-parameter` in het oproepend statement gebruik maken van het **@-symbool**. De variabele is namelijk niet lokaal binnen de stored procedure.
+Als we deze stored procedure oproepen moeten we voor wat de `OUT-parameter` in het oproepend statement gebruik maken van het **@-symbool**. Dit duidt op een sessievariabele. De variabele is namelijk niet lokaal binnen de stored procedure.
 
 ![](../../.gitbook/assets/out.JPG)
 
@@ -80,7 +79,6 @@ USE `aptunes`;
 DROP procedure IF EXISTS `SetCounter`;
 
 DELIMITER $$
-USE `aptunes`$$
 CREATE PROCEDURE `SetCounter` (INOUT counter INT, IN startNumber INT)
 BEGIN
     SET counter = counter + startNumber;
