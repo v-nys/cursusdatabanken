@@ -13,7 +13,7 @@ Verwijzende naar de aangemaakte stored procedure binnen het onderdeel CREATE, hi
 ```sql
 DELIMITER $$
 USE `aptunes`$$
-CREATE PROCEDURE `GetMuzikanten` ()
+CREATE PROCEDURE `ToonMuzikanten` ()
 BEGIN
     SELECT 
         Voornaam,
@@ -30,7 +30,7 @@ DELIMITER ;
 Om deze stored procedure te verwijderen is het voldoende volgend statement uit te voeren.
 
 ```sql
-DROP PROCEDURE GetMuzikanten;
+DROP PROCEDURE ToonMuzikanten;
 ```
 
 Indien we de `DROP PROCEDURE` gebruiken zonder de `IF EXIST` clausule, dan zou dit kunnen resulteren in volgende.

@@ -30,7 +30,7 @@ Binnen MySQL kiezen we binnen de sectie "Stored Procedures" via de rechtermuiskn
 ![](../../.gitbook/assets/storedp2.jpg)
 
 ```sql
-CREATE PROCEDURE `GetMuzikanten` ()
+CREATE PROCEDURE `ToonMuzikanten` ()
 BEGIN
     SELECT 
         Voornaam,
@@ -47,7 +47,7 @@ Dan klik je op "Apply". Dit genereert dan code die je als script zou kunnen uitv
 ```sql
 DELIMITER $$ -- betekent dat een statement pas afgesloten is na $$ i.p.v. ;
 USE `aptunes`$$ -- we willen de procedure koppelen aan deze database
-CREATE PROCEDURE `GetMuzikanten` ()
+CREATE PROCEDURE `ToonMuzikanten` ()
 BEGIN
     SELECT 
         Voornaam,
@@ -61,19 +61,17 @@ END$$ -- nu mag de CREATE PROCEDURE pas worden uitgevoerd
 DELIMITER ; -- vanaf hier betekent ; weer dat een instructie mag worden uitgevoerd
 ```
 
-Wat we nu hebben gedaan is een stored procedure creëren onder de naam `GetMuzikanten`.
+Wat we nu hebben gedaan is een stored procedure creëren onder de naam `ToonMuzikanten`.
 
 Om deze stored procedure aan te roepen gebruiken we het `CALL` statement. Dit komt op hetzelfde neer als het oproepen van een methode in een "general purpose" programmeertaal zoals C♯ of Java.
 
 ```sql
-CALL GetMuzikanten();
+CALL ToonMuzikanten();
 ```
 
 U zal zien dat hetzelfde resultaat wordt weergegeven als bij het gewone sql-statement hierboven.
 
-Als u dezelfde stored procedure in dezelfde sessie opnieuw aanroept, voert MySQL de stored procedure gewoon uit vanuit de cache zonder deze opnieuw te hoeven compileren. Met andere woorden: MySQL hoeft niet opnieuw uit te dokteren wat de efficiëntste manier is om je je resultaten te tonen.
-
-Tot hiertoe lijkt een stored procedure erg op een view, maar dat is omdat we `SELECT` gebruikt hebben ter illustratie. Met een stored procedure kan je heel algemene taken voorstellen. Een stored procedure kan ook parameters hebben, zodat u er waarden aan kunt doorgeven. U kunt bijvoorbeeld een stored procedure hebben die muzikanten met een specifieke geboortedatum weergeeft, die wordt ingevuld door de gebruiker. In dit geval is de geboortedatum dan de parameters van de stored procedure.
+Tot hiertoe lijkt een stored procedure erg op een view, maar dat is omdat we `SELECT` gebruikt hebben ter illustratie. Met een stored procedure kan je heel algemene taken voorstellen. Een stored procedure kan ook parameters hebben, zodat je er waarden aan kan doorgeven. Je kan bijvoorbeeld een stored procedure hebben die muzikanten met een specifieke geboortedatum weergeeft, die wordt ingevuld door de gebruiker. In dit geval is de geboortedatum dan de parameters van de stored procedure.
 
 Tevens kan een stored procedure controlemechanismen bevatten, zoals IF, CASE en LOOP. Dit komt verder nog aan bod, maar erg veel van wat je leert in een cursus programmeren komt terug in stored procedures.
 
