@@ -20,7 +20,7 @@ OR    Naam = 'Leo'
 
 We moeten steeds het gedeelte `Naam =` herhalen. Dit komt omdat de `WHERE`-clausule een booleaanse expressie moet bevatten.
 
-Gelukkig is er een andere manier om sneller de gewenste booleaanse expressie te vormen \(`0043__SelectHonden.sql`\):
+Gelukkig is er een andere manier om sneller de gewenste booleaanse expressie te vormen \(`0052__SelectHonden.sql`\):
 
 ```sql
 USE ApDB;
@@ -30,7 +30,7 @@ WHERE Naam IN ('Bailey','Cookie','Lola','Iggy','Snoopy','Leo')
 
 Je schrijft dus een lijst van alle mogelijkheden met ronde haakjes en met elementen die gescheiden worden door komma's. De `IN`-operator wil dan zeggen dat de gevraagde waarde voorkomt in de lijst. Dit doet hetzelfde als de eerdere code, maar kost veel minder typwerk.
 
-Als we uitdrukkelijk rekening willen houden met hoofdletters en accenten, kunnen we ook hier de gebruikte collation aanpassen \(`0044__SelectHonden.sql`\):
+Als we uitdrukkelijk rekening willen houden met hoofdletters en accenten, kunnen we ook hier de gebruikte collation aanpassen \(`0053__SelectHonden.sql`\):
 
 ```sql
 USE ApDB;
@@ -38,7 +38,7 @@ SELECT * FROM Honden
 WHERE Naam COLLATE utf8mb4_0900_as_cs IN ('Bailey','Cookie','Lola','Iggy','Snoopy','Leo')
 ```
 
-De `IN` is niet specifiek gelinkt aan `WHERE`, maar is gewoon een andere operator om een booleaanse expressie te bekomen. Je kan dus ook dit doen \(`0045__SelectHonden.sql`\), met `HAVING` in plaats van `WHERE`:
+De `IN` is niet specifiek gelinkt aan `WHERE`, maar is gewoon een andere operator om een booleaanse expressie te bekomen. Je kan dus ook dit doen \(`0054__SelectHonden.sql`\), met `HAVING` in plaats van `WHERE`:
 
 ```sql
 USE ApDB;

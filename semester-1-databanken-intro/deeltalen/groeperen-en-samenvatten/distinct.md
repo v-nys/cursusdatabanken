@@ -24,3 +24,5 @@ FROM Honden;
 Als je ergens heel expliciet dubbele rijen wel wil weergeven, schrijf je `ALL` in plaats van `DISTINCT`. Dit is het standaardgedrag van MySQL, maar het kan nuttig zijn dit te schrijven om je collega-programmeurs duidelijk te maken dat je de dubbels **echt** wil bijhouden. Commentaar wordt niet zo aandachtig gelezen als code.
 {% endhint %}
 
+Je kan `DISTINCT` ook gebruiken binnen sommige aggregatiefuncties. Bijvoorbeeld: `COUNT(DISTINCT Naam)` om het aantal **verschillende** namen te weten te komen. Over welke aggregatiefuncties het gaat, vind je [hier](https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html) terug.
+

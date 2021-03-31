@@ -1,7 +1,7 @@
 # SELECT met HAVING
 
 {% hint style="success" %}
-[Kennisclip](https://youtu.be/HY33DT72jpo)
+[Kennisclip](https://youtu.be/HY33DT72jpo) \(ondertiteling beschikbaar\)
 {% endhint %}
 
 Met de `WHERE`-clausule kon je voorwaarden uitdrukken voor het selecteren \(of updaten of wissen\) van records. Je kan met `WHERE` echter **geen** voorwaarden uitdrukken op kolommen die vermeld zijn in de `GROUP BY`-clause of op geaggregeerde waarden. Met andere woorden, dit gaat niet:
@@ -26,7 +26,7 @@ WHERE Geslacht = 'mannelijk';
 
 Dat komt omdat `WHERE` rij per rij bekijkt en beslist of die rij behouden of verworpen wordt.
 
-Als je voorwaarden op gegroepeerde data wil uitdrukken, maak je gebruik van `HAVING` \(`0041__SelectHonden.sql`\) en \(`0042__SelectHonden.sql`\):
+Als je voorwaarden op gegroepeerde data wil uitdrukken, maak je gebruik van `HAVING` \(`0050__SelectHonden.sql`\) en \(`0051__SelectHonden.sql`\):
 
 ```sql
 -- een voorbeeld met een gegroepeerde kolom
