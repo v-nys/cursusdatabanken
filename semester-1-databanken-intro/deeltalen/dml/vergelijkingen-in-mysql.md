@@ -117,7 +117,7 @@ Je kan in MySQL Workbench ook rechtsklikken op de tabel in kwestie en dan via "T
 Als je dus bijvoorbeeld enkel een boek van Breton wil, zonder boeken van "Bréton" of "breton", schrijf je:
 
 ```sql
-SELECT * FROM Boeken WHERE Familienaam COLLATE utf8mb4_as_cs = 'Breton';
+SELECT * FROM Boeken WHERE Familienaam COLLATE utf8mb4_0900_as_cs = 'Breton';
 ```
 
 {% hint style="info" %}
