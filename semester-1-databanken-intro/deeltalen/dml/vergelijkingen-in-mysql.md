@@ -70,16 +70,11 @@ Hoe weet je precies wat er met accenten en hoofdletters gebeurt? Dat hangt ervan
 
 Probeer dit eens uit \(hoeft niet in een script\):
 
-```text
+```sql
 INSERT INTO Boeken (
    Voornaam,
    Familienaam,
    Titel,
-   Stad,
-   Uitgeverij,
-   Verschijningsjaar,
-   Herdruk,
-   Commentaar,
    Categorie
 )
 VALUES
@@ -87,22 +82,12 @@ VALUES
    'Emile',
    'Bréhier',
    'Cours de Philosophie',
-   'Paris',
-   'Gallimard',
-   '1935',
-   '1960',
-   'Goed boek',
    'Filosofie'
 ),
 (
    'Andre',
    'Breton',
    'Nadja',
-   'Paris',
-   'NRF',
-   '1928',
-   '?',
-   'Nog te lezen',
    'Roman'
 );
 
