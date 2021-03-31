@@ -28,7 +28,9 @@ USE ApDB;
 SELECT Familienaam, Titel FROM Boeken WHERE Familienaam < 'B';
 ```
 
-Dit `SELECT` statement retourneert alle rijen uit de tabel `Boeken` waarvan de `Familienaam` een waarde heeft die "kleiner" is dan `'B'`. Wanneer is een string "kleiner" dan een andere string? Om op die vraag te antwoorden moet je eerst weten dat de namen in een bepaalde, **gewoonlijk** alfabetische volgorde \(in het Engels **collation order**\) worden gerangschikt. "Alle namen kleiner dan 'B'" wil dan zeggen "alle namen die na het sorteren voor 'B' komen." De **collation** is dus een stel regels voor het vergelijken van tekens in een tekenset.
+Dit `SELECT` statement retourneert alle rijen uit de tabel `Boeken` waarvan de `Familienaam` een waarde heeft die "kleiner" is dan `'B'`. Wanneer is een string "kleiner" dan een andere string? Om op die vraag te antwoorden moet je eerst weten dat de namen in een bepaalde, **gewoonlijk** alfabetische volgorde \(in het Engels **collation order**\) worden gerangschikt. "Alle namen kleiner dan 'B'" wil dan zeggen "alle namen die na het sorteren voor 'B' komen."
+
+De **collation** is een stel regels voor het vergelijken van tekens in een tekenset. De tekenset bepaalt dat A een symbool is dat je kan weergeven en bepaalt welke bytes nodig zijn om dit symbool voor te stellen. De collation legt vast dat "A" voor "B" komt en of "A" voor, na of op dezelfde plaats als "a" komt.
 
 Als de familienaam Beth in je tabel voorkomt, wordt deze niet in de selectie opgenomen. Om ook die rij te selecteren, zou je kunnen denken om de expressie `Familienaam <= 'B'` te gebruiken:
 
