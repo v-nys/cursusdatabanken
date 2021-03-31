@@ -1,5 +1,9 @@
 # Vergelijkingen
 
+{% hint style="success" %}
+[Kennisclip](https://youtu.be/X4Eb3Qu2oJk)
+{% endhint %}
+
 ## overzicht operatoren
 
 Om waarden te vergelijken, maakt MySQL gebruik van enkele operatoren die erg lijken op wat je mogelijk kent uit andere programmeertalen:

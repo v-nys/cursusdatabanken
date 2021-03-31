@@ -1,5 +1,9 @@
 # SELECT sorteren
 
+{% hint style="success" %}
+[Kennisclip](https://youtu.be/sIxtTy2hPFI)
+{% endhint %}
+
 Het is niet genoeg gegevens uit een tabel te kunnen opvragen, je moet ze ook kunnen sorteren of ordenen. We willen lijsten in alfanumerieke volgorde weergeven omdat het gemakkelijker is in een geordende lijst te zoeken.
 
 Om te sorteren gebruiken we de clausule `ORDER BY`. Het sorteren kan op 2 manieren:
