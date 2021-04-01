@@ -39,7 +39,7 @@ HAVING Geslacht = 'mannelijk';
 
 ```sql
 -- een voorbeeld met een geaggregeerde waarde
-USE ModernWays;
+USE ApDB;
 SELECT Geslacht
 FROM Honden
 GROUP BY Geslacht
