@@ -89,7 +89,7 @@ De eigenaars van onze streamingdienst willen statistieken over de artiesten.
 
 Gebruik eerst volgend script _**aptunes\_\_0015.sql**_ om meer data in het systeem te plaatsen:
 
-{% file src="../../.gitbook/assets/aptunes\_\_0015.sql" caption="bijkomende data voor je streamingdienst" %}
+{% file src="../../.gitbook/assets/aptunes.sql" %}
 
 Nu er redelijk wat data is, moeten we die gaan samenvatten eerder dan rij per rij te bekijken.
 
