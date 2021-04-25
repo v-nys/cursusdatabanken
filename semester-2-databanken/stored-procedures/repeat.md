@@ -49,7 +49,6 @@ De uitvoering van deze stored procedure geeft volgend resultaat.
 
 Kort uitgelegd:
 
-Er worden twee variabelen gedeclareerd, nl. teller en resultaat.
-
-Zolang de teller niet groter of gelijk is aan 25 worden de statements waarbij de `CONCAT`-functie wordt gebruikt uitgevoerd.
+* Er worden twee variabelen gedeclareerd, nl. teller en resultaat.
+* Zolang de teller niet groter of gelijk is aan 25 worden de statements waarbij de `CONCAT`-functie wordt gebruikt uitgevoerd.
 

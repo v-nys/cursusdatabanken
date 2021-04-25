@@ -24,7 +24,9 @@ spLabel: BEGIN
 END$$
 ```
 
-## Het gebruik van LEAVE commando in combinatie van herhalingsstructuren
+## Het gebruik van LEAVE commando in combinatie met herhalingsstructuren
+
+Je kan LEAVE gebruiken met alle herhalingsstructuren. Toch wordt aangeraden dat je er niet te veel gebruik van gemaakt: `WHILE` en `REPEAT` drukken in de eerste plaats via hun voorwaarde uit wanneer de lust verlaten wordt. 
 
 `LEAVE` in combinatie met `LOOP`
 

@@ -16,16 +16,15 @@ Onderstaand schema illustreert dit principe.
 
 ![](../../.gitbook/assets/sp_while.JPG)
 
-Om het principe van de `WHILE`-lus te tonen, maken we eerst een nieuwe tabel `kalender` aan.
+Om het principe van de `WHILE`-lus te tonen, maken we eerst een nieuwe tabel `KalenderMomenten` aan.
 
 ```sql
-CREATE TABLE kalender(
-    id INT AUTO_INCREMENT,
+CREATE TABLE KalenderMomenten(
+    id INT AUTO_INCREMENT PRIMARY KEY,
     datum DATE UNIQUE,
     dag TINYINT NOT NULL,
     maand TINYINT NOT NULL,
-    jaar INT NOT NULL,
-    PRIMARY KEY(id)
+    jaar INT NOT NULL
 );
 ```
 
@@ -39,7 +38,7 @@ DELIMITER $$
 USE `aptunes`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `KalenderToevoegen`(dd DATE)
 BEGIN
-INSERT INTO kalender(
+INSERT INTO KalenderMomenten(
         datum,
         dag,
         maand,
@@ -47,33 +46,34 @@ INSERT INTO kalender(
     )
     VALUES(
         dd, 
-        EXTRACT(DAY FROM dd),
-        EXTRACT(MONTH FROM dd),
-        EXTRACT(YEAR FROM dd)
+        day(dd),
+        month(dd),
+        year(dd)
     );
 END$$
 
 DELIMITER ;
 ```
 
-Vervolgens zorgen we via een nieuwe stored procedure `KalenderVoegtoe` dat de zojuist gecreëerde tabel wordt gevuld met data beginnende vanaf een datum.
+Vervolgens zorgen we via een nieuwe stored procedure `KalenderMeerdereToevoegen` dat de zojuist gecreëerde tabel wordt gevuld met data beginnende vanaf een datum.
 
 ```sql
 USE `aptunes`;
-DROP procedure IF EXISTS `KalenderVoegtoe`;
+DROP procedure IF EXISTS `KalenderMeerdereToevoegen`;
 
 DELIMITER $$
 USE `aptunes`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `KalenderVoegtoe`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `KalenderMeerdereToevoegen`(
 	datumStart DATE,
-    day INT)
+    aantalDagen INT)
 BEGIN
 	DECLARE teller INT DEFAULT 1;
     DECLARE dd DATE DEFAULT datumStart;
 
-    WHILE teller <= day DO
+    WHILE teller <= aantalDagen DO
         CALL KalenderToevoegen(dd);
         SET teller = teller + 1;
+        // dit betekent: voeg één dag toe aan de datum
         SET dd = DATE_ADD(dd, INTERVAL 1 day);
     END WHILE;
 END$$
@@ -86,10 +86,10 @@ In bovenstaande stored procedure gebruiken we de `WHILE`-lus.
 Zolang de teller kleiner of gelijk is aan het opgegeven aantal dagen, dan zullen data worden toegevoegd aan de gecreëerde tabel `kalender`. Dit door in de `WHILE`-lus de stored procedure `KalenderToevoegen` met als parameter een datum aan te roepen.
 
 ```sql
-CALL KalenderVoegtoe('2020-04-19', 90);
+CALL KalenderMeerdereToevoegen('2020-04-19', 90);
 ```
 
-Deze uitvoering van de stored procedure `KalenderVoegtoe` geeft volgend resultaat.
+Deze uitvoering van de stored procedure `KalenderMeerdereToevoegen` geeft volgend resultaat.
 
 ![](../../.gitbook/assets/storedp_while_result.JPG)
 

@@ -1,6 +1,6 @@
 # LOOP
 
-Een herhaling dient, zoals het woord doet veronderstellen, dat code of statements een aantal keer achter elkaar kunnen uitgevoerd worden.
+Een herhaling dient, zoals het woord doet veronderstellen, om code of statements een aantal keer achter elkaar uit te voeren.
 
 **Syntax:**
 
@@ -12,7 +12,7 @@ END LOOP
 
 Merk op dat er geen loopconditie aanwezig is. Om de lus te verlaten, schirjf je `LEAVE`, gevolgd door de benaming van de lus die je wil verlaten.
 
-Hieronder een simpel voorbeeld van een stored procedure dewelke als input parameter een aantal wil kennen en het resultaat is dan louter een opsomming van nummers + 1 tot aantal is bereikt.
+Hieronder een simpel voorbeeld van een stored procedure die een getal als parameter heeft en dan de getallen vanaf 1 tot het getal in kwestie in een tekenreeks plaatst en deze toont.
 
 ```sql
 USE `aptunes`;

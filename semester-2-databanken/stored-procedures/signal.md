@@ -75,7 +75,7 @@ Het eerste doet niets. Het tweede toont je toch `'hallo'`. Dat komt omdat een fo
 
 Meestal schrijf je geen signals in reeksen instructies. Ze komen vaker voor in stored procedures. Hier zie je een stored procedure die die liedjes op een bepaald album opzoekt. Een album zonder liedjes is waarschijnlijk verkeerd, dus als we dat vinden, signaleren we dat er een probleem is.
 
-Hieronder zie je ook hoe extra informatie kan worden toegevoegd aan het signaal: `SET MESSAGE TEXT` enz. maakt nog steeds deel uit van het `SIGNAL` statement \(want de `;` komt pas verder\). Dus het signaal krijgt extra informatie mee, waarmee we beter kunnen debuggen.
+Hieronder zie je ook hoe extra informatie kan worden toegevoegd aan het signaal: `SET MESSAGE TEXT` enz. **maakt nog steeds deel uit van het `SIGNAL` statement \(want de `;` komt pas verder\)**. Dus het signaal krijgt extra informatie mee, waarmee we beter kunnen debuggen.
 
 ```sql
 USE `aptunes`;
@@ -94,9 +94,9 @@ BEGIN
 
   IF(Teller < 1)
   THEN
-        SIGNAL SQLSTATE '45000'
+    SIGNAL SQLSTATE '45000' -- GEEN PUNTKOMMA!
     SET MESSAGE_TEXT = 'Geen liedjes voor gekozen album gevonden!';
-    END IF;
+  END IF;
 
   -- andere code van de stored procedure
 
