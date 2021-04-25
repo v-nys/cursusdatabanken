@@ -89,16 +89,16 @@ BEGIN
     DECLARE Teller INT;
 
   SELECT COUNT(Albums_Id) INTO Teller
-  FROM liedjes
+  FROM Liedjes
   WHERE Albums_Id = inAlbums_id;
 
   IF(Teller < 1)
   THEN
     SIGNAL SQLSTATE '45000' -- GEEN PUNTKOMMA!
     SET MESSAGE_TEXT = 'Geen liedjes voor gekozen album gevonden!';
+  else
+    select * from Liedjes where Albums_Id = inAlbums_id;
   END IF;
-
-  -- andere code van de stored procedure
 
 END$$
 

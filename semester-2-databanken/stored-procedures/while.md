@@ -73,7 +73,7 @@ BEGIN
     WHILE teller <= aantalDagen DO
         CALL KalenderToevoegen(dd);
         SET teller = teller + 1;
-        // dit betekent: voeg één dag toe aan de datum
+        -- dit betekent: voeg één dag toe aan de datum
         SET dd = DATE_ADD(dd, INTERVAL 1 day);
     END WHILE;
 END$$
@@ -83,7 +83,7 @@ DELIMITER ;
 
 In bovenstaande stored procedure gebruiken we de `WHILE`-lus.
 
-Zolang de teller kleiner of gelijk is aan het opgegeven aantal dagen, dan zullen data worden toegevoegd aan de gecreëerde tabel `kalender`. Dit door in de `WHILE`-lus de stored procedure `KalenderToevoegen` met als parameter een datum aan te roepen.
+Zolang de teller kleiner of gelijk is aan het opgegeven aantal dagen, dan zullen data worden toegevoegd aan de gecreëerde tabel `KalenderMomenten`. Dit door in de `WHILE`-lus de stored procedure `KalenderToevoegen` met als parameter een datum aan te roepen.
 
 ```sql
 CALL KalenderMeerdereToevoegen('2020-04-19', 90);
