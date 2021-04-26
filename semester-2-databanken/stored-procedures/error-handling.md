@@ -11,7 +11,7 @@ In de uitleg rond signalen werd omschreven hoe je best reageert wanneer het bran
 **Syntax**
 
 ```sql
-DECLARE actie [CONTINUE of EXIT] HANDLER FOR statement(s);
+DECLARE (CONTINUE or EXIT) HANDLER FOR statement(s);
 ```
 
 Zoals reeds blijkt uit bovenstaande syntax moet je voor actie ofwel `CONTINUE` of `EXIT` gebruiken.
@@ -22,6 +22,9 @@ Het onderdeel statement\(s\) kan één van onderstaande elementen zijn.
   * Dit is bijna hetzelfde als een SQL state, zoals die bij signals aan bod is gekomen. Een verschil is dat MySQL-foutcodes specifiek zijn voor MySQL. SQL states zijn meer compatibel met andere databases. Het tweede verschil is dat MySQL-foutcodes getallen zijn, terwijl SQL states codes van 5 tekens zijn, dus strings.
 * Een SQLSTATE-waarde, m.n. een SQLWARNING, NOTFOUND of SQLEXCEPTION-voorwaarde 
   * SQLWARNING, NOTFOUND of SQLEXCEPTION zijn eigenlijk groepen van SQL states. SQLEXCEPTION dekt bijvoorbeeld alle SQL states die niet beginnen met `'00'`, `'01'` of `'02'`.
+    * een warning is er voor zaken die niet noodzakelijk een probleem zijn, maar waarmee je wel moet opletten
+    * een notfound is er voor wanneer je data zoekt die niet gevonden kan worden
+    * een exception is voor situaties die wel zeker een probleem vormen
 * Een conditie gekoppeld aan een MySQL-foutcode of SQLSTATE-waarde.
   * Dit verhoogt de leesbaarheid, zie beneden bij "named handlers".
 
@@ -36,30 +39,7 @@ SET heeftError = 1;
 
 Op deze manier kunnen we er voor zorgen dat onze code niet volledig blokkeert, maar dat we wel nog steeds zien dat er iets is misgelopen.
 
-Als we een boodschap willen weergeven wanneer er zich een error voordoet dan kan dit met onderstaand voorbeeld waarbij tevens een `ROLLBACK` wordt uitgevoerd, waardoor alle mogelijke wijzigingen die de huidige transactie zou hebben uitgevoerd teniet worden gedaan.
-
 Hierbij is het wel belangrijk om de handler binnen de `BEGIN` en `END` van de stored procedure te schrijven. Meerbepaald: handlers mogen **alleen in stored procedures** voorkomen en **alleen na declaraties van variabelen** \(of condities, die worden verder op deze pagina gebruikt voor named handlers\).
-
-{% hint style="warning" %}
-Dit is wat verschillend van general purpose programmeertalen. In pakweg C♯, Java, C++, Python,... kan je op elk niveau van je programma fouten opvangen met een zeer gelijkaardig mechanisme.
-{% endhint %}
-
-```sql
-CREATE PROCEDURE spNaam()
-spLabel: BEGIN
-    DECLARE EXIT HANDLER FOR SQLEXCEPTION
-    BEGIN
-        ROLLBACK;
-        SELECT 'Error: stored procedure is beëindigd en alle wijzigingen zijn ongedaan gemaakt.';
-    END;
-    -- START TRANSACTION is geen verplichte syntax, maar anders heeft de rollback geen zin
-    -- dan is elke instructie op zich een mini-transactie
-    START TRANSACTION;
-    -- instructies, bv. INSERT, UPDATE,...
-    -- COMMIT hoort bij START TRANSACITON
-    COMMIT;
-END$$
-```
 
 Je kan ook handlers voor specifieke statements of error-codes schrijven, hieronder enkele voorbeelden.
 
@@ -72,7 +52,7 @@ DECLARE CONTINUE HANDLER FOR 1051
 
 ```sql
 -- voor een SQL state (een code van 5 symbolen)
-DECLARE CONTINUE HANDLER FOR SQLSTATE '123AB'
+DECLARE CONTINUE HANDLER FOR SQLSTATE '12345'
 ```
 
 ```sql
@@ -113,11 +93,11 @@ BEGIN
         SELECT CONCAT('Dubbele waarde (',inBands_Id,',',inAlbums_Id,') niet toegestaan') AS message;
   END;
 
-    INSERT INTO albumreleases(Bands_Id,Albums_Id)
+    INSERT INTO Albumreleases(Bands_Id,Albums_Id)
   VALUES(inBands_id,inAlbums_Id);
 
   SELECT COUNT(*)
-  FROM albumreleases
+  FROM Albumreleases
   WHERE Bands_Id = inBands_Id;
 END$$
 
@@ -166,11 +146,11 @@ BEGIN
   DECLARE EXIT HANDLER FOR SQLEXCEPTION SELECT '2. SQLException' Message; 
   DECLARE EXIT HANDLER FOR SQLSTATE '23000' SELECT '3. SQLSTATE 23000' ErrorCode;
 
-    INSERT INTO albumreleases(Bands_Id,Albums_Id)
+    INSERT INTO Albumreleases(Bands_Id,Albums_Id)
   VALUES(inBands_id,inAlbums_Id);
 
   SELECT COUNT(*)
-  FROM albumreleases
+  FROM Albumreleases
   WHERE Bands_Id = inBands_Id;
 END$$
 
@@ -210,11 +190,11 @@ BEGIN
         SELECT CONCAT('Dubbele waarde (',inBands_Id,',',inAlbums_Id,') niet toegestaan') AS message;
   END;
 
-    INSERT INTO albumreleases(Bands_Id,Albums_Id)
+    INSERT INTO Albumreleases(Bands_Id,Albums_Id)
   VALUES(inBands_id,inAlbums_Id);
 
   SELECT COUNT(*)
-  FROM albumreleases
+  FROM Albumreleases
   WHERE Bands_Id = inBands_Id;
 END$$
 
