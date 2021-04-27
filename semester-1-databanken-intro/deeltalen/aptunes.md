@@ -117,10 +117,6 @@ De apTunes database, zoals ze ontwikkeld is met scripts 1 tot 23, is niet erg ef
 
 Volg eerst volgende [kennisclip](https://youtu.be/PBBrW4f14Dg) **\(let vooral goed op bij de uitleg over wat de getallen bij een relatie betekenen\)**. Maak zelf mee de scripts \(voer eerst het calibratiescript en script 0015 uit!\) en nummer als volgt:
 
-{% hint style="danger" %}
-Een eerdere versie van deze instructies bevatte een fout die niet was opgemerkt tot na het labo. Waarschijnlijk heb je de foute instructies gebruikt. Zie de modeloplossing.
-{% endhint %}
-
 * het script om een tabel `Artiesten` te maken is `aptunes__0024.sql`
 * het script om data te migreren naar `Artiesten` is `aptunes__0025.sql`
 * het script om `Nummers` te voorzien van een foreign key is `aptunes__0026.sql`
