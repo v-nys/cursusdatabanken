@@ -115,7 +115,7 @@ De apTunes database, zoals ze ontwikkeld is met scripts 1 tot 23, is niet erg ef
 
 ### 1-op-N relaties
 
-Volg eerst volgende [kennisclip](https://youtu.be/PBBrW4f14Dg) **\(let vooral goed op bij de uitleg over wat de getallen bij een relatie betekenen\)**. Maak zelf mee de scripts \(voer eerst het calibratiescript en script 0015 uit!\) en nummer als volgt:
+Volg eerst volgende [kennisclip](https://youtu.be/PBBrW4f14Dg) **\(let vooral goed op bij de uitleg over wat de getallen bij een relatie betekenen\)**. Maak zelf mee de scripts \(voer eerst het recentste calibratiescript hierboven uit!\) en nummer als volgt:
 
 * het script om een tabel `Artiesten` te maken is `aptunes__0024.sql`
 * het script om data te migreren naar `Artiesten` is `aptunes__0025.sql`
