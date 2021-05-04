@@ -26,19 +26,29 @@ Schrijf hiervoor een script, `0649__Oefening.sql`.
 
 ## Vraag 3
 
-Schrijf een stored procedure, `Welcome` die een promotiebericht toont dat je aan toekomstige gebruikers van je systeem zou kunnen tonen. Dit bericht lijst alle genres in het systeem op in volgende vorm: "Welkom bij APTunes! Wij hebben Blues, Classical, Country, Electronic, Folk, Hip-hop, Jazz, New age, Reggae, Rock"
+Pas de procedure [VoorbeeldCursors](cursors.md) aan zodat de genres gescheiden worden door een komma en zodat er géén komma na het laatste genre staat. Hierbij mag je de volgorde waarin de genres getoond worden wijzigen indien nodig, maar ze moeten er allemaal wel blijven staan.
 
-**Tip**: gebruik een cursor. Gebruik ook gerust een extra hulpprocedure, dat mag.
+**Tip:** gebruik een hulpvariabele om te onthouden dat je het eerste genre al hebt verwerkt.
 
-Noem het script dat deze procedure\(s\) aanmaakt `0650__Oefening.sql`.
+Noem het script dat deze procedure aanmaakt `0650__Oefening.sql`.
 
 ## Vraag 4
 
-Schrijf een stored procedure, `AltWelcome`, die een tweede promotiebericht aan de gebruikers van je systeem zou kunnen tonen. Dit bericht toont automatisch de namen van de drie meest bekende bands in het systeem. Voor ons betekent dit: de drie bands met het hoogste aantal nummers. Dit bericht ziet er bijvoorbeeld zo uit: "Welkom bij APTunes! Wij hebben de nieuwst nummers van matrix innovative portals, engage end-to-end-schemas, integrate front-end functionalities".
+Schrijf een stored procedure, `Welcome` die een promotiebericht toont dat je aan toekomstige gebruikers van je systeem zou kunnen tonen. Dit bericht lijst alle genres in het systeem op in volgende vorm: "Welkom bij APTunes! Wij hebben Blues, Classical, Country, Electronic, Folk, Hip-hop, Jazz, New age, Reggae, Rock" Je mag ook veronderstellen dat er niet zo veel genres zijn dat je meer dan 1000 karakters nodig hebt voor het bericht.
+
+![](../../.gitbook/assets/screenshot-from-2021-05-04-16-17-58.png)
+
+Noem het script dat deze procedure\(s\) aanmaakt `0651__Oefening.sql`.
+
+## Vraag 5
+
+Schrijf een stored procedure, `AltWelcome`, die een tweede promotiebericht aan de gebruikers van je systeem zou kunnen tonen. Dit bericht toont automatisch de namen van de drie meest bekende bands in het systeem. Voor ons betekent dit: de drie bands met het hoogste aantal nummers. Dit bericht ziet er bijvoorbeeld zo uit: "Welkom bij APTunes! Wij hebben de nieuwste nummers van matrix innovative portals, engage end-to-end-schemas, integrate front-end functionalities".
 
 **Tip 1**: gebruik een LIMIT clausule om enkel de 3 populairste bands te krijgen.
 
 **Tip 2**: start vanaf een query om alle bands aan hun nummers te koppelen. Breid uit vanaf daar.
 
-Noem het script `0651__Oefening.sql`.
+![Voorbeelduitvoer van een call van de procedure](../../.gitbook/assets/screenshot-from-2021-05-04-16-28-54.png)
+
+Noem het script `0652__Oefening.sql`.
 
