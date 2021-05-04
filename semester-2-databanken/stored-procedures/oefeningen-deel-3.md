@@ -4,7 +4,7 @@ We werken verder met de `aptunes`-database. **Activeer deze database in elk scri
 
 ## Extra info
 
-In de uitleg rond `SIGNAL` vind je een link naar de officiële MySQL documentatie. Deze kan je gebruiken om de gepaste MySQL codes en SQL states op te zoeken.
+In de uitleg rond [`SIGNAL`](signal.md) vind je een link naar de officiële MySQL documentatie. Deze kan je gebruiken om de gepaste MySQL codes en SQL states op te zoeken.
 
 ## Vraag 1
 
@@ -20,7 +20,7 @@ Na het lezen van de theorie zou duidelijk moeten zijn waarom de tweede handler n
 
 ## Vraag 2
 
-Pas je handler voor de fouten '45001' en '45003' aan zodat er geen `SELECT` meer plaatsvindt. In de plaats daarvan wordt het `MESSAGE_TEXT` attribuut van het signaal aangepast naar `'Ik heb mijn best gedaan!'` en wordt de fout verder niet afgehandeld. Zie hiervoor `RESIGNAL`.
+Pas je handler voor de fouten '45001' en '45003' aan zodat er geen `SELECT` meer plaatsvindt. In de plaats daarvan wordt het `MESSAGE_TEXT` attribuut van het signaal aangepast naar `'Ik heb mijn best gedaan!'` en wordt de fout verder niet afgehandeld. Zie hiervoor [`RESIGNAL`](resignal.md).
 
 Schrijf hiervoor een script, `0649__Oefening.sql`.
 

@@ -30,11 +30,11 @@ DECLARE DubbeleWaarde CONDITION FOR 1062;
         RESIGNAL SET MESSAGE_TEXT = 'RESIGNAL voorbeeld: Dubbele waarde niet toegestaan';
     END;
 
-    INSERT INTO albumreleases(Bands_Id,Albums_Id)
+    INSERT INTO Albumreleases(Bands_Id,Albums_Id)
     VALUES(inBands_id,inAlbums_Id);
 
     SELECT COUNT(*)
-    FROM albumreleases
+    FROM Albumreleases
     WHERE Bands_Id = inBands_Id;
 END$$
 
