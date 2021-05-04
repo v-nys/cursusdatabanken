@@ -2,26 +2,15 @@
 
 We werken verder met de `aptunes`-database. **Activeer deze database in elk script.** Schrijf je stored procedures ook zoals je ze zou schrijven in het algemene venster van Workbench, dus met gebruik van `DELIMITER $$`, enzoverder. Maak je parametertypes zo specifiek mogelijk, dus gebruik geen `INOUT` wanneer `IN` of `OUT` voldoende is.
 
-## Vraag 1
+## Vraag 3
 
-Schrijf een stored procedure, `GetAlbumDuration` die de totale lengte van een gegeven album bepaalt, **zonder gebruik te maken van `SUM`**. Doe dit met behulp van een cursor. Meerbepaald: doorloop alle liedjes op het album en tel hun lengtes op via een instructie `SET totalDuration = totalDuration + songDuration`.
+Schrijf een stored procedure, `DangerousInsertAlbumreleases`. Deze stored procedure voegt drie willekeurige albumreleases in \(zoals in vorige reeks oefeningen: een combinatie van een willekeurig album en een willekeurige band, maar **niet via de stored procedure die je in de vorige reeks oefeningen hebt geschreven**\), maar signaleert ook met een kans van 1 op 3 een SQL state '45000' na het invoegen van de tweede albumrelease.
 
-Voorbeeld van hoe je deze stored procedure zou gebruiken:
+Schrijf in deze stored procedure een handler zodat het niet mogelijk is dat er slechts één of twee albumreleases worden ingevoegd. Als er iets mis loopt, mag er geen enkele nieuwe release zijn toegevoegd. In plaats daarvan wordt deze foutboodschap getoond: "Nieuwe releases konden niet worden toegevoegd." Let op: SQL state '45000' is niet het enige foutsignaal dat je hier kan krijgen, want het kan bijvoorbeeld ook zijn dat een willekeurige albumrelease al in het systeem zit. Schrijf je handler zo dat **alle** fouten worden tegengehouden: via `SQLEXCEPTION` uds.
 
-```sql
-CALL GetAlbumDuration(12,@totalDuration);
-SELECT @albumduration;
-```
+Lees voor je deze oefening maakt zeker de instructies rond het correct uitvoeren van een `ROLLBACK` na.
 
-De duur van één liedje kan uitgedrukt worden als `TINYINT UNSIGNED`, maar voor de totale duur van een album gebruik je een `SMALLINT UNSIGNED`.
-
-Noem het script dat deze procedure aanmaakt `0651__Oefening.sql`.
-
-Enkele resultaten om je eigen code te controleren:
-
-* album 2945 duur 341 seconden
-* album 2879 duurt 163 seconden
-* album 1 duurt 0 seconden \(want bevat geen liedjes\)
+Schrijf je stored procedure als een script, `0650__Oefening.sql`.
 
 ## Vraag 2
 

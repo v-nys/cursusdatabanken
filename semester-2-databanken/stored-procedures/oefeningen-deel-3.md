@@ -26,11 +26,19 @@ Schrijf hiervoor een script, `0649__Oefening.sql`.
 
 ## Vraag 3
 
-Schrijf een stored procedure, `DangerousInsertAlbumreleases`. Deze stored procedure voegt drie willekeurige albumreleases in \(zoals in vorige reeks oefeningen: een combinatie van een willekeurig album en een willekeurige band, maar **niet via de stored procedure die je in de vorige reeks oefeningen hebt geschreven**\), maar signaleert ook met een kans van 1 op 3 een SQL state '45000' na het invoegen van de tweede albumrelease.
+Schrijf een stored procedure, `Welcome` die een promotiebericht toont dat je aan toekomstige gebruikers van je systeem zou kunnen tonen. Dit bericht lijst alle genres in het systeem op in volgende vorm: "Welkom bij APTunes! Wij hebben Blues, Classical, Country, Electronic, Folk, Hip-hop, Jazz, New age, Reggae, Rock"
 
-Schrijf in deze stored procedure een handler zodat het niet mogelijk is dat er slechts één of twee albumreleases worden ingevoegd. Als er iets mis loopt, mag er geen enkele nieuwe release zijn toegevoegd. In plaats daarvan wordt deze foutboodschap getoond: "Nieuwe releases konden niet worden toegevoegd." Let op: SQL state '45000' is niet het enige foutsignaal dat je hier kan krijgen, want het kan bijvoorbeeld ook zijn dat een willekeurige albumrelease al in het systeem zit. Schrijf je handler zo dat **alle** fouten worden tegengehouden: via `SQLEXCEPTION` uds.
+**Tip**: gebruik een cursor. Gebruik ook gerust een extra hulpprocedure, dat mag.
 
-Lees voor je deze oefening maakt zeker de instructies rond het correct uitvoeren van een `ROLLBACK` na.
+Noem het script dat deze procedure\(s\) aanmaakt `0650__Oefening.sql`.
 
-Schrijf je stored procedure als een script, `0650__Oefening.sql`.
+## Vraag 4
+
+Schrijf een stored procedure, `AltWelcome`, die een tweede promotiebericht aan de gebruikers van je systeem zou kunnen tonen. Dit bericht toont automatisch de namen van de drie meest bekende bands in het systeem. Voor ons betekent dit: de drie bands met het hoogste aantal nummers. Dit bericht ziet er bijvoorbeeld zo uit: "Welkom bij APTunes! Wij hebben de nieuwst nummers van matrix innovative portals, engage end-to-end-schemas, integrate front-end functionalities".
+
+**Tip 1**: gebruik een LIMIT clausule om enkel de 3 populairste bands te krijgen.
+
+**Tip 2**: start vanaf een query om alle bands aan hun nummers te koppelen. Breid uit vanaf daar.
+
+Noem het script `0651__Oefening.sql`.
 
