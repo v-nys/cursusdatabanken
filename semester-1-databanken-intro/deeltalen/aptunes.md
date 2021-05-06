@@ -139,7 +139,7 @@ Volg eerst volgende [kennisclip](https://youtu.be/PBBrW4f14Dg) **\(let vooral go
 
 {% file src="../../.gitbook/assets/dump20201205.sql" caption="Calibratiescript" %}
 
-Voer eerst het calibratiescript hierboven uit. Volg dan [deze kennisclip](https://youtu.be/QEPXHLC9Nqw). Dit is het vervolg van de vorige kennisclips. Fris het vorige deel dus op indien je ergens niet kan volgen, want deze leerstof bouwt rechtstreeks voort op de vorige.
+Voer eerst een USE uit om jouw database te activeren. Voer dan het calibratiescript hierboven uit. Volg vervolgens [deze kennisclip](https://youtu.be/QEPXHLC9Nqw). Dit is het vervolg van de vorige kennisclips. Fris het vorige deel dus op indien je ergens niet kan volgen, want deze leerstof bouwt rechtstreeks voort op de vorige.
 
 * Het script om `GebruikerHeeftAlbum` toe te voegen noem je `aptunes__0035.sql`
 * Het script om de data toe te voegen \(`aptunes__0036.sql`\) vind je hieronder terug.
