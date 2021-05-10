@@ -1,8 +1,25 @@
 # Transacties en rollbacks
 
-Via de instructie `ROLLBACK` kan je voorlopige wijzigingen ongedaan maken. Dit kwam eerder al even aan bod. We bekijken het hier wat meer in detail.
+## Transacties
 
-Voer zelf de voorbeelden mee uit om te zien wat er gebeurt.
+### Wat is een transactie?
+
+Bij het woord "transactie" denk je waarschijnlijk aan een uitwisseling van geld en/of goederen. Belangrijk bij zo'n uitwisseling is dat ze volledig wordt afgewerkt, of volledig wordt geannuleerd. Soms is dit ook van belang in een SQL-script.
+
+Een voorbeeld: Je gaat naar de dokter en betaalt met Bancontact. Op dat moment gaat het bedrag op jouw rekening naar beneden **en** gaat het bedrag op de rekening van de dokter naar omhoog. Dit kan misschien voorgesteld zijn met `UPDATE`-statements. Bijvoorbeeld iets als dit:
+
+```sql
+update Rekeningen set Totaal = Totaal - Bedrag where Rekeningen.Eigenaars_Id = <id-patient>;
+update Rekeningen set Totaal = Totaal + Bedrag where Rekeningen.Eigenaars_Id = <id-arts>;
+```
+
+Het is absoluut ontoelaatbaar dat slechts één van deze instructies uitvoert en de andere niet. Dat zou betekenen dat iemands geld zomaar verdwijnt of zomaar aangroeit. Maar, als je deze instructies zomaar in een script plakt en de tweede loopt fout \(bijvoorbeeld omwille van een storing, of omdat de rekening van de dokter niet meer actief is, of tal van andere mogelijke redenen\), is dat wel wat gebeurt: als een instructie fout loopt, is het effect van de voorgaande instructies nog steeds zichtbaar.
+
+Om dit te vermijden, geven we aan dat de instructies "alles of niets" zijn. Dat doen we door ze aan te duiden als een transactie met de tekst `START TRANSACTION`. Via de instructie `ROLLBACK` kan je voorlopige wijzigingen ongedaan maken. Deze instructie voer je normaal uit in een handler.
+
+{% hint style="warning" %}
+We behandelen in deze cursus niet het "isolation level" van transacties. Dit geeft aan hoe je moet omspringen met transacties die tegelijkertijd lopen en dezelfde data gebruiken. Dit is complexer dan gewoon "alles of niets doen". Als je denkt dat dit mogelijk is in jouw systeem,  moet je het juiste isolatieniveau instellen. Meer uitleg over wat fout kan lopen en welk niveau je best kiest, vind je [hier](https://www.youtube.com/watch?v=-gxyut1VLcs&t=229s). Dit is geen vereiste leerstof.
+{% endhint %}
 
 ### Voorbeeld 1 \(hoe het moet\)
 
