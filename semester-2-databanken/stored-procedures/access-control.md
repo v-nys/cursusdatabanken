@@ -4,13 +4,42 @@ description: (security)
 
 # OBJECT ACCESS CONTROL
 
+## Gebruiksrechten
+
+Het is meestal niet de bedoeling dat elke gebruiker van een database alle data kan opvragen, alle stored procedures kan uitvoeren, enzovoort. Iedere gebruiker heeft bepaalde **rechten**. Denk maar aan een onderneming met een centrale database en veel rollen binnen de onderneming. Beeld je bijvoorbeeld een ziekenhuis in:
+
+* de boekhoudkundige dienst moet aan financiële gegevens kunnen, maar niet aan medische gegevens
+* de artsen moeten aan medische gegevens kunnen, maar niet aan financiële gegevens
+* de IT-dienst moet de werking van de database zelf kunnen aanpassen
+* ...
+
+Om dit niet aan de verantwoordelijkheidszin van de gebruikers over te laten, creëren we gebruikers met beperkte rechten.
+
+### Een gebruiker creëren
+
+We demonstreren dit door een gebruiker `'ap'@'%'` aan te maken. Het percentteken betekent dat het niet uitmaakt of de user op dezelfde machine werkt als die waarop de MySQL-server draait. Als je dat wel wil afdwingen, gebruik je localhost in plaats van %.
+
+{% hint style="warning" %}
+Als je de cursus mee hebt gevolgd zoals bedoeld, dus met een virtuele machine waarin je server draait, is localhost geen optie. Je virtuele machine wordt niet beschouwd als dezelfde machine als je fysieke machine.
+{% endhint %}
+
+```sql
+CREATE USER 'ap'@'%' -- dit is de gebruikersnaam en de machine waarop hij kan inloggen
+IDENTIFIED BY 'abcde'; -- dit is het wachtwoord
+```
+
+Standaard heeft deze nieuwe gebruiker geen rechten. We verlenen het recht om stored procedures uit te voeren als volgt:
+
+```sql
+GRANT EXECUTE ON aptunes.*
+TO 'ap'@'%';
+```
+
+Hier staat de `*` voor _alle_ stored procedures. Je kan ook specifieke stored procedures toegankelijk maken. Je kan ook rechten op bepaalde databases, tabellen,... geven. We kunnen hier geen volledige lijst geven, maar de mogelijkheden vind je terug in [de officiële documentatie](https://dev.mysql.com/doc/refman/8.0/en/grant.html).
+
+Maar wat betekent het om een _stored procedure_ te mogen uitvoeren als je niet alle instructies in die stored procedure mag uitvoeren? Als je bijvoorbeeld `DoeBetaling` mag uitvoeren maar niet het recht hebt om een tabel `Rekeningen` aan te passen, terwijl `DoeBetaling` dat achter de schermen wel doet? Het hangt ervan af. Om daar een antwoord op te geven, moeten we weten of de stored procedure uitvoert als definer \(de user die deze stored procedure gedefinieerd heeft\) of als invoker \(de user die nu de stored procedure wil uitvoeren\).
+
 ## Definer
-
-Hiermee kan je bepalen met welke MySQL account-privileges de stored procedure zal worden uitgevoerd.
-
-Zonder `DEFINER` is de default de actuele gebruiker zijn rechten.
-
-Enkel ingeval je `SYSTEM` rechten hebt, kan je een `DEFINER` bepalen voor de uitvoering van de stored procedure.
 
 **Syntax**:
 
@@ -18,9 +47,11 @@ Enkel ingeval je `SYSTEM` rechten hebt, kan je een `DEFINER` bepalen voor de uit
 CREATE [DEFINER=gebruiker] PROCEDURE StoredProcedureName(parameter(s))
 ```
 
+Als je zelf geen definer invult, is de definer van een stored procedure sowieso de account waarmee de stored procedure is aangemaakt.
+
 ## Sql Security
 
-Een stored procedure een `SECURITY` clausule bevatten met een waarde voor de `DEFINER` of de `INVOKER`.
+Een stored procedure een `SECURITY` clausule bevatten met een waarde voor de `DEFINER` of de `INVOKER`. Dit bepaalt hoe de procedure zich gedraagt wanneer ze wordt uitgevoerd door een user met beperkte rechten.
 
 **Syntax:**
 
@@ -66,29 +97,9 @@ END$$
 DELIMITER ;
 ```
 
-We gaan een beetje verder en creëren een gebruiker ap@%. Het percentteken betekent dat het niet uitmaakt of de user op dezelfde machine werkt als die waarop de MySQL-server draait. Als je dat wel wil afdwingen, gebruik je localhost in plaats van %.
+Vervolgens gaan we met de voorbeeldgebruiker inloggen. Doe dit als volgt.
 
-{% hint style="warning" %}
-Als je de cursus mee hebt gevolgd zoals bedoeld, dus met een virtuele machine waarin je server draait, is localhost geen optie. Je virtuele machine wordt niet beschouwd als dezelfde machine als je fysieke machine.
-{% endhint %}
-
-```sql
-CREATE USER 'ap'@'%' 
-IDENTIFIED BY 'abcde';
-```
-
-Wat is belangrijk als volgende stap om te doen is deze gebruiker rechten geven om stored procedures uit te voeren.
-
-```sql
-GRANT EXECUTE ON aptunes.*
-TO 'ap'@'%';
-```
-
-Hier staat de `*` voor _alle_ stored procedures. Je kan ook specifieke stored procedures toegankelijk maken. Je kan ook rechten op bepaalde databases, tabellen,... geven. We kunnen hier geen volledige lijst geven, maar de mogelijkheden vind je terug in [de officiële documentatie](https://dev.mysql.com/doc/refman/8.0/en/grant.html).
-
-Vervolgens gaan we met deze gebruiker binnen MySQL inloggen. Doe dit als volgt.
-
-![](../../.gitbook/assets/sp_security1.JPG)
+![](../../.gitbook/assets/sp_security2.jpg)
 
 Kijk even na op welke databases je enige rechten hebt.
 
