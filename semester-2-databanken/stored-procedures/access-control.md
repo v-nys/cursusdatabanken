@@ -4,6 +4,10 @@ description: (security)
 
 # OBJECT ACCESS CONTROL
 
+{% hint style="success" %}
+[Kennisclip](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=59d37d66-b071-4afd-9a73-ad2501048f8c)
+{% endhint %}
+
 ## Gebruiksrechten
 
 Het is meestal niet de bedoeling dat elke gebruiker van een database alle data kan opvragen, alle stored procedures kan uitvoeren, enzovoort. Iedere gebruiker heeft bepaalde **rechten**. Denk maar aan een onderneming met een centrale database en veel rollen binnen de onderneming. Beeld je bijvoorbeeld een ziekenhuis in:

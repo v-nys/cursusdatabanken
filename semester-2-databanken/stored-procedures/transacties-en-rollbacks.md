@@ -1,5 +1,9 @@
 # Transacties en rollbacks
 
+{% hint style="success" %}
+[Kennisclip](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=63f094e8-a235-4ad9-b4ff-ad2501041c5e)
+{% endhint %}
+
 ## Transacties
 
 ### Wat is een transactie?
