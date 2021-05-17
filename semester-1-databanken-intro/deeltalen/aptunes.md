@@ -159,7 +159,16 @@ Voer eerst een `USE` uit om jouw database te activeren. Voer dan het calibraties
 {% file src="../../.gitbook/assets/voor\_evaluatie\_2.sql" caption="calibratie voor oefeningen JOIN" %}
 
 * Toon de titel en de artiest van alle nummers. Maak hierbij gebruik van een inner join. Noem dit script `aptunes__0041.sql`.
-* Toon de titel van het album samen met de artiest waarvan de naam begint met de letter A. Maak ook hier gebruik van een inner join. Noem dit script `aptunes__0042.sql`.
+* Toon deze zelfde gegevens nu enkel voor nummers waarvan de titel begint met de letter "A". Noem dit script `aptunes__0042.sql`.
+* Toon de titel van elk album naast de naam van de artiest. Noem dit script `aptunes__0043.sql`.
+* Toon de titel van elk nummer naast de titel van het album waarop dat nummer staat. Noem dit script `aptunes__0044.sql`.
+* Toon per album hoe veel nummers er op dat album staan. Voor het album toon je de titel, maar je houdt er rekening mee dat twee verschillende albums dezelfde titel kunnen hebben. Je mag dus niet groeperen op titel. Noem dit script `aptunes__0045.sql`.
+* Maak een uitbreiding op script 44: Toon de titel van elk nummer naast de naam van de artiest **en** de titel van het album waarop dat nummer staat. Noem dit script `aptunes__0046.sql`.
+
+{% hint style="danger" %}
+De oefeningen hieronder zijn verouderd. Ze worden nog aangepast.
+{% endhint %}
+
 * Maak een nieuwe tabel auteurs met volgende kolommen: Id \(primary key & autonummering\), Familienaam, Voornaam \(beiden met maximaal 100 karakters\). Bewaar dit script onder `aptunes__0043.sql`.
 
 Voer het volgende calibratiescript uit voordat je volgende oefeningen maakt.
