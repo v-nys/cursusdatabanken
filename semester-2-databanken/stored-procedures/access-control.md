@@ -41,9 +41,13 @@ TO 'ap'@'%';
 
 Hier staat de `*` voor _alle_ stored procedures. Je kan ook specifieke stored procedures toegankelijk maken. Je kan ook rechten op bepaalde databases, tabellen,... geven. We kunnen hier geen volledige lijst geven, maar de mogelijkheden vind je terug in [de officiële documentatie](https://dev.mysql.com/doc/refman/8.0/en/grant.html).
 
-{% hint style="info" %}
-Als je toegang wil geven tot één specifieke stored procedure, moet je schrijven: `GRANT EXECUTE ON PROCEDURE <naam-van-de-procedure>`
-{% endhint %}
+Andere manieren om toegang te geven:
+
+```sql
+GRANT EXECUTE ON PROCEDURE ZegHallo TO 'ap'@'%'; -- voor EEN procedure schrijf je PROCEDURE
+GRANT SELECT ON TabelNaam TO 'ap'@'%'; -- om data te selecteren
+GRANT INSERT ON TabelNaam TO 'ap'@'%'; -- om data te inserten
+```
 
 Maar wat betekent het om een _stored procedure_ te mogen uitvoeren als je niet alle instructies in die stored procedure mag uitvoeren? Als je bijvoorbeeld `DoeBetaling` mag uitvoeren maar niet het recht hebt om een tabel `Rekeningen` aan te passen, terwijl `DoeBetaling` dat achter de schermen wel doet? Het hangt ervan af. Om daar een antwoord op te geven, moeten we weten of de stored procedure uitvoert als definer \(de user die deze stored procedure gedefinieerd heeft\) of als invoker \(de user die nu de stored procedure wil uitvoeren\).
 
