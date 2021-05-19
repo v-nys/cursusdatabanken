@@ -17,13 +17,13 @@ Schrijf je stored procedure als een script, `0653__Oefening.sql`.
 Schrijf een script, `0654__Oefening.sql`. Dit script doet volgende zaken:
 
 * Het maakt een gebruiker `student` met wachtwoord `'ikbeneenstudent'`.
-* Het geeft `student` de rechten om `GetAlbumDuration` uit te voeren \(uit de vorige vraag\), maar geen andere stored procedures.
+* Het geeft `student` de rechten om `DangerousInsertAlbumreleases` uit te voeren \(uit de vorige vraag\), maar geen andere stored procedures.
 
 Test of het script gewerkt heeft door in te loggen als `student` en te kijken dat die stored procedure \(en enkel die stored procedure\) kan worden uitgevoerd.
 
 ## Vraag 3
 
-Maak een kopie van je script `0654__Oefening.sql` en noem ze `0655__Oefening.sql`. Hernoem daarin de stored procedure naar `GetAlbumDuration2`. Pas verder de definitie aan zodat de gebruikers van deze stored procedure ook de rechten moeten hebben om de stappen die plaatsvinden in de stored procedure op zich uit te voeren.
+Maak een kopie van je script `0654__Oefening.sql` en noem ze `0655__Oefening.sql`. Hernoem daarin de stored procedure naar `DangerousInsertAlbumreleases`. Pas verder de definitie aan zodat de gebruikers van deze stored procedure ook de rechten moeten hebben om de stappen die plaatsvinden in de stored procedure op zich uit te voeren.
 
 Tip: je moet alleen het symbool "2" toevoegen en drie woordjes. Maak het dus niet te moeilijk.
 
