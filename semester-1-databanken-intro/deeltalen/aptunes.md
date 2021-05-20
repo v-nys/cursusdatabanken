@@ -161,9 +161,9 @@ Voer eerst een `USE` uit om jouw database te activeren. Voer dan het calibraties
 * Toon de titel en de artiest van alle nummers. Maak hierbij gebruik van een inner join. Noem dit script `aptunes__0041.sql`.
 * Toon deze zelfde gegevens nu enkel voor nummers waarvan de titel begint met de letter "A". Noem dit script `aptunes__0042.sql`.
 * Toon de titel van elk album naast de naam van de artiest. Noem dit script `aptunes__0043.sql`.
-* Toon de titel van elk nummer naast de titel van het album waarop dat nummer staat. Noem dit script `aptunes__0044.sql`.
-* Toon per album hoe veel nummers er op dat album staan. Voor het album toon je de titel, maar je houdt er rekening mee dat twee verschillende albums dezelfde titel kunnen hebben. Je mag dus niet groeperen op titel. Noem dit script `aptunes__0045.sql`.
-* Maak een uitbreiding op script 44: Toon de titel van elk nummer naast de naam van de artiest **en** de titel van het album waarop dat nummer staat. Noem dit script `aptunes__0046.sql`.
+* Toon de titel van elk nummer naast het nummer \(dus het `Id`\) van het album waarop dat nummer staat. Noem dit script `aptunes__0044.sql`. Hiervoor heb je de tabel `NummerOpAlbum` nodig.
+* Toon per nummer \(dus `Id`\) van een album hoe veel nummers er op dat album staan. Je hoeft nog **niet** de titel te tonen van het album. Noem dit script `aptunes__0045.sql`. 
+* Toon de titel van elk nummer naast de naam van de artiest **en** het nummer van het album waarop dat nummer staat. Noem dit script `aptunes__0046.sql`.
 
 {% hint style="danger" %}
 De oefeningen hieronder zijn verouderd. Ze worden nog aangepast.
