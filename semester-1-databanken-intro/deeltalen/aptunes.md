@@ -156,13 +156,13 @@ Voer eerst een `USE` uit om jouw database te activeren. Voer dan het calibraties
 
 ### Joins
 
-{% file src="../../.gitbook/assets/voor\_evaluatie\_2.sql" caption="calibratie voor oefeningen JOIN" %}
+{% file src="../../.gitbook/assets/voor\_evaluatie\_2 \(1\).sql" caption="calibratie join" %}
 
 * Toon de titel en de artiest van alle nummers. Maak hierbij gebruik van een inner join. Noem dit script `aptunes__0041.sql`.
 * Toon deze zelfde gegevens nu enkel voor nummers waarvan de titel begint met de letter "A". Noem dit script `aptunes__0042.sql`.
 * Toon de titel van elk album naast de naam van de artiest. Noem dit script `aptunes__0043.sql`.
-* Toon de titel van elk nummer naast het nummer van het album waarop dat nummer staat. Noem dit script `aptunes__0044.sql`.
-* Toon per albumnummer hoe veel nummers er op dat album staan. Je hoeft nog niet de titel te tonen van het album. Noem dit script `aptunes__0045.sql`.
+* Toon de titel van elk nummer naast het nummer \(dus het `Id`\) van het album waarop dat nummer staat. Noem dit script `aptunes__0044.sql`. Hiervoor heb je de tabel `NummerOpAlbum` nodig.
+* Toon per nummer \(dus `Id`\) van een album hoe veel nummers er op dat album staan. Je hoeft nog **niet** de titel te tonen van het album. Noem dit script `aptunes__0045.sql`. 
 * Toon de titel van elk nummer naast de naam van de artiest **en** het nummer van het album waarop dat nummer staat. Noem dit script `aptunes__0046.sql`.
 
 {% hint style="danger" %}
