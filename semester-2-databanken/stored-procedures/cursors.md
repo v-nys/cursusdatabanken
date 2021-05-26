@@ -61,5 +61,9 @@ Hierna behandelen we de lijst met genres en concateneren we deze met als tussenv
 
 ![](../../.gitbook/assets/sp_cursors4.JPG)
 
-In deze lus gebruiken we de `ok`-variabele om na te gaan of er nog een naam van een genre voorkomt in de lijst en indien niet de lus te beëindigen. We moeten uiteindelijk ook de `CURSOR` sluiten door het `CLOSE`-statement.
+In deze lus gebruiken we de `ok`-variabele om na te gaan of er nog een naam van een genre voorkomt in de lijst en indien niet de lus te beëindigen. We sluiten hier ook de cursor via `CLOSE`. Hier maakt dat niet veel uit, want een cursor sluit vanzelf wanneer de `END` bereikt wordt voor de `BEGIN`. 
+
+{% hint style="info" %}
+Schrijf deze code als oefening voor jezelf eens met een exit handler. Dat gaat ook.
+{% endhint %}
 
