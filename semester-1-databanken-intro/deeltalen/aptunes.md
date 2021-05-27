@@ -162,33 +162,10 @@ Voer eerst een `USE` uit om jouw database te activeren. Voer dan het calibraties
 * Toon deze zelfde gegevens nu enkel voor nummers waarvan de titel begint met de letter "A". Noem dit script `aptunes__0042.sql`.
 * Toon de titel van elk album naast de naam van de artiest. Noem dit script `aptunes__0043.sql`.
 * Toon hoe veel nummers Led Zeppelin heeft. Noem dit script `aptunes__0044.sql`.
-
-{% hint style="danger" %}
-De oefeningen hieronder zijn verouderd. Ze worden nog aangepast.
-{% endhint %}
-
-*  * Toon de titel van elk nummer naast het nummer \(dus het `Id`\) van het album waarop dat nummer staat. Noem dit script `aptunes__0044.sql`. Hiervoor heb je de tabel `NummerOpAlbum` nodig.
-  * Toon per nummer \(dus `Id`\) van een album hoe veel nummers er op dat album staan. Je hoeft nog **niet** de titel te tonen van het album. Noem dit script `aptunes__0045.sql`. 
-  * Toon de titel van elk nummer naast de naam van de artiest **en** het nummer van het album waarop dat nummer staat. Noem dit script `aptunes__0046.sql`.
-* Maak een nieuwe tabel auteurs met volgende kolommen: Id \(primary key & autonummering\), Familienaam, Voornaam \(beiden met maximaal 100 karakters\). Bewaar dit script onder `aptunes__0043.sql`.
-
-Voer het volgende calibratiescript uit voordat je volgende oefeningen maakt.
-
-{% file src="../../.gitbook/assets/calibratiescript-1-boeken.sql" caption="Calibratiescript Boeken \(1\)" %}
-
-* Voeg de unieke familienaam en voornaam uit de tabel boeken toe aan de nieuwe tabel auteurs. Bewaar dit script onder `aptunes__0044.sql`.
-* Voeg een foreign key toe aan de tabel boeken die verwijst naar de primary key van de tabel auteurs. Uiteraard is hierbij ook het bepalen van een constraint noodzakelijk. Noem dit script `aptunes__0045.sql`.
-
-Voer het volgende calibratiescript uit voordat je verder gaat met de oefeningen.
-
-{% file src="../../.gitbook/assets/calibratiescript-2-boeken.sql" caption="Calibratiescript Boeken \(2\)" %}
-
-* Verwijder uit de tabel boeken de familienaam en voornaam. Noem dit script `aptunes__0046.sql`.
-* Toon alle boeken met hun auteur, ttz. titel van het boek samen met de voornaam en familienaam. De voornaam en familienaam worden in één kolom weergegeven. Noem dit script `aptunes__0047.sql`.
-* Voorzie de tabel Boeken van een primary key Id met als type autonummering. Noem dit script `aptunes__0048.sql`.
-* Maak een nieuwe \(koppel\) tabel BoekenAuteurs met volgende kolommen: Id \(primary keuy & autonummering\), foreign key Auteurs\_Id en foreign key Boeken\_Id. Bewaar dit script onder `aptunes__0049.sql`.
-* Vul deze nieuwe tabel BoekenAuteurs met de juiste waarden uit de tabel boeken. Bewaar dit scirpt onder `aptunes__0050.sql`.
-* Verwijder uit de tabel boeken het veld Auteurs\_id en bewaar dit script onder `aptunes__0051.sql`.
-* Voeg volgende boeken toe:  Titel                       Auteur  ApDB                     Peter Spaas                                 Vincent Nys  Xchk                      Vincent Nys  Standaard SQL    Peter Spaas  Het is duidelijk dat je hier meerdere scripts dient te maken. Je dient het Id van het boek en de auteur op te zoeken om dit dan te gebruiken in je script.  Bewaar dit script onder `aptunes__0052.sql`.
-* Toon de titel van het boek en de familienaam van de auteur van alle boeken. Je moet hier inner join gebruiken. Bewaar dit script onder `aptunes_0053.sql`.
+* Toon de titel van elk nummer naast het nummer \(dus het `Id`\) van het album waarop dat nummer staat. Noem dit script `aptunes__0045.sql`. Hiervoor heb je de tabel `NummerOpAlbum` nodig. Je hebt nog maar één join nodig.
+* Toon per nummer \(dus `Id`\) van een album hoe veel nummers er op dat album staan. Je hoeft nog **niet** de titel te tonen van het album. Noem dit script `aptunes__0046.sql`.  Je hebt nog maar één join nodig.
+* Toon elk nummer naast de titel van het album waarop het nummer staat. Noem dit script `aptunes__0047.sql`. Nu heb je twee joins nodig.
+* Toon hoe veel albums elke gebruiker heeft. Noem dit script `aptunes__0048.sql`. Je moet dus naast de naam van elke gebruiker een getal zien staan \(het aantal albums dat hij heeft\).
+* Toon alle combinaties van een gebruiker en een album in de collectie van die gebruiker. Toon hierbij ook de datum waarop de gebruiker het album heeft aangekocht. Noem dit script `aptunes__0049.sql`. Je moet dus een gebruikersnaam, titel en datum naast elkaar zien.
+* Toon alle combinaties van gebruikers en favoriete losse nummers. In deze dataset heeft maar één gebruiker een favoriet los nummer, maar je query zou ook moeten werken als er veel meer data is. Noem dit `aptunes__0050.sql`. Je moet dus een gebruikersnaam en liedjestitel naast elkaar zien.
 
