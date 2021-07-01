@@ -131,7 +131,7 @@ Je kan problemen die je oplost met derived tables ook oplossen met views, maar e
 
 ## Oefening: ontleed volgende complexe subquery
 
-Volgende subquery is een stuk complexer dan wat je moet kunnen schrijven, maar probeer hem eens te lezen en te zien of je de betekenis kan achterhalen.
+Volgende subquery is behoorlijk complex. Probeer zelf te achterhalen wat hij doet door hem van binnen naar buiten uit te werken \(d.w.z. eerst de diepst geneste query doen\).
 
 ```sql
 select Voornaam,Familienaam
