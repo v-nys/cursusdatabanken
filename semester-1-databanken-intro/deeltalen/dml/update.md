@@ -6,6 +6,27 @@
 
 Het `UPDATE` DML statement lijkt op het `ALTER` DDL statement. Beide brengen één of meerdere wijzigingen aan in de database. Daar waar `ALTER` de structuur van een tabel wijzigt, wijzigt `UPDATE` de gegevens die in een tabel zitten.
 
+### MySql laat niet zomaar wijzigingen toe
+
+Default is MySql ingesteld om niet zomaar wijzigingen aan een tabel toe te staan.
+
+Je kan dit uiteraard uitschakelen, maar het is in deze fase wel een goed idee om na jouw wijzigingen deze optie terug in te schakelen.
+
+**Uitschakelen**  
+`SET SQL_SAFE_UPDATES = 0;`
+
+**Inschakelen**  
+`SET SQL_SAFE_UPDATES = 1;`
+
+Hieronder hoe je dit op een correcte wijze gebruikt.
+
+```sql
+USE ApDB;
+SET SQL_SAFE_UPDATES = 0;
+ALTER TABLE ...
+SET SQL_SAFE_UPDATES = 1;
+```
+
 ## basisprincipe
 
 We hebben eerder de kolom `Categorie` toegevoegd aan de tabel `Boeken`. Maar deze kolom is voor de eerste boeken nog niet juist ingevuld, we hebben alleen `'niet gecategoriseerd'` ingevuld en dat vertelt ons niet meer dan `NULL`. We kunnen het `UPDATE` statement gebruiken om de categorieën voor de eerste boeken in te vullen.

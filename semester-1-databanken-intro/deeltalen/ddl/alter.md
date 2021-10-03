@@ -14,27 +14,6 @@ Maak voor jezelf een cheat sheet van de verschillende clausules die je in `ALTER
 Voorbeeld: [https://www.sqltutorial.org/sql-cheat-sheet/](https://www.sqltutorial.org/sql-cheat-sheet/)
 {% endhint %}
 
-### MySql laat niet zomaar wijzigingen toe
-
-Default is MySql ingesteld om niet zomaar wijzigingen aan een tabel toe te staan.
-
-Je kan dit uiteraard uitschakelen, maar het is in deze fase wel een goed idee om na jouw wijzigingen deze optie terug in te schakelen.
-
-**Uitschakelen**  
-`SET SQL_SAFE_UPDATES = 0;`
-
-**Inschakelen**  
-`SET SQL_SAFE_UPDATES = 1;`
-
-Hieronder hoe je dit op een correcte wijze gebruikt.
-
-```sql
-USE ApDB;
-SET SQL_SAFE_UPDATES = 0;
-ALTER TABLE ...
-SET SQL_SAFE_UPDATES = 1;
-```
-
 ### een kolom schrappen
 
 ```sql
