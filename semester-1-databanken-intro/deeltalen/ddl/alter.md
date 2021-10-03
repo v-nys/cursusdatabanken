@@ -24,7 +24,7 @@ ALTER TABLE Boeken DROP COLUMN Voornaam;
 #### Script bijhouden
 
 {% hint style="info" %}
-Voer eerst het calibratiescript op de [indexpagina](./) van dit deel uit. Pas het script eerst aan om je persoonlijke database te gebruiken in plaats van `ApDB`.
+Voer eerst het calibratiescript van dit deel uit. Pas het script eerst aan om je persoonlijke database te gebruiken in plaats van `ApDB`.
 {% endhint %}
 
 Sla het script om de voornaam te verwijderen op wanneer je klaar bent. Geef het de naam 0014\_\_AlterBoeken.sql.
@@ -40,7 +40,7 @@ USE ApDB;
 ALTER TABLE Boeken ADD COLUMN Commentaar VARCHAR(150) CHAR SET utf8mb4;
 ```
 
-Je merkt in bovenstaand script dat er opgave wordt gegeven van een `CHAR SET`. Standaard is `utf8mb4` van toepassing voor MySql, maar om goed gebruik aan te leren is het toch nuttig deze expliciet te vermelden.
+Je merkt in bovenstaand script dat er opgave wordt gegeven van een `CHAR SET`. Standaard is `utf8mb4` van toepassing voor MySql, maar we vermelden ze hier uitdrukkelijk, omdat er soms ook andere karaktersets worden gebruikt.
 
 #### Script bijhouden
 
@@ -92,7 +92,7 @@ Sla een script met bovenstaande `UPDATE` en `ALTER` achter elkaar opnieuw op wan
 
 ### tabelnamen wijzigen
 
-Het zou misschien te gemakkelijk geweest zijn als het wijzigigen van tabelnamen in MySQL met het ALTER statement kon worden uitgevoerd. Om de naam van een tabel te wijzigen kunnen we het `ALTER` statement niet gebruiken. Er bestaat daarvoor een apart `RENAME` statement. De generieke vorm is als volgt. Let op het gebruik van backticks rond de naam van de tabellen. Die zijn verplicht in het geval dat de naam van de tabel overeenkomt met een gereserveerd woord van MySQL:
+Het zou misschien te gemakkelijk geweest zijn als het wijzigen van tabelnamen in MySQL met het ALTER statement kon worden uitgevoerd. Om de naam van een tabel te wijzigen kunnen we het `ALTER` statement niet gebruiken. Er bestaat daarvoor een apart `RENAME` statement. De generieke vorm is als volgt. Let op het gebruik van backticks rond de naam van de tabellen. Die zijn verplicht in het geval dat de naam van de tabel overeenkomt met een gereserveerd woord van MySQL:
 
 ```sql
 RENAME TABLE `OldTableName` TO `NewTableName`;
