@@ -4,7 +4,7 @@
 [Kennisclip voor deze inhoud](https://youtu.be/NZuOU_vvbqs)
 {% endhint %}
 
-{% file src="../../../../.gitbook/assets/0031\_\_calibratie.sql" %}
+{% file src="../../../.gitbook/assets/0031\_\_calibratie.sql" %}
 
 In de meeste gevallen zijn we niet geïnteresseerd om alle rijen uit een tabel te selecteren. We willen over de mogelijkheid beschikken om alleen de rijen, die aan een bepaalde voorwaarde voldoen, te kunnen selecteren.
 
