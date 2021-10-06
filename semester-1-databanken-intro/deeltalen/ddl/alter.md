@@ -76,7 +76,9 @@ Het UPDATE-commando, hieronder, hebben we tot nu nog niet gezien en je kan dit g
 
 ```sql
 USE ApDB;
+set sql_safe_updates = 0;
 UPDATE Boeken SET Familienaam = "Niet gekend";
+set sql_safe_updates = 1;
 ```
 
 Vervolgens gaan we de kolom Familienaam qua structuur wijzigen en een beperking opleggen. 
