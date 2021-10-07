@@ -70,7 +70,7 @@ Schrijf nu zelf code om een tabel `Kunstwerken` aan te maken, met een niet-verpl
 
 ### Enkel aanmaken wat niet bestaat
 
-Via het `CREATE`-commando maak je een nieuwe structuur aan met een bepaalde naam. Als die naam al bestaat, levert dat een foutmelding. Daarom moeten we voorzichtig omspringen met het `CREATE` commando. We doen dit door onze `CREATE` enkel uit te voeren als de naam die we willen gebruiken \(voor een database of een tabel of een andere structuur\) nog niet gebruikt wordt. Hiervoor vervangen we bijvoorbeeld `CREATE TABLE MyTable (Column VARCHAR(100));` door `CREATE TABLE IF NOT EXISTS MyTable (Column VARCHAR(100));`. Dit vermijdt dat we op een foutmelding botsen. Het kan wel een waarschuwing opleveren, maar dat is op zich niet erg.
+Via het `CREATE`-commando maak je een nieuwe structuur aan met een bepaalde naam. Als die naam al bestaat, levert dat een foutmelding. Daarom moeten we voorzichtig omspringen met het `CREATE` commando. We doen dit door onze `CREATE` enkel uit te voeren als de naam die we willen gebruiken \(voor een database of een tabel of een andere structuur\) nog niet gebruikt wordt. Hiervoor vervangen we bijvoorbeeld `CREATE TABLE MyTable (MyColumn VARCHAR(100));` door `CREATE TABLE IF NOT EXISTS MyTable (MyColumn VARCHAR(100));`. Dit vermijdt dat we op een foutmelding botsen. Het kan wel een waarschuwing opleveren, maar dat is op zich niet erg.
 
 Maak een variatie op script 0007\_\_CreateTable om een tabel met kunstwerken aan te maken, maar zorg dat er geen foutmelding verschijnt als deze tabel al bestaat. Noem je script 0008\_\_CreateTable.sql.
 
