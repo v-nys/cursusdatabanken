@@ -4,13 +4,13 @@
 
 MySQL ondersteunt drie brede soorten datatypes, met per soort verschillende concretere vormen. Deze drie soorten zijn:
 
-1. string types \(ofwel "tekst"\)
-2. numerieke types \(ofwel "getallen"\)
-3. temporele types \(datums en/of tijdstippen\)
+1. string types (ofwel "tekst")
+2. numerieke types (ofwel "getallen")
+3. temporele types (datums en/of tijdstippen)
 
 In een databank is het belangrijk dat je de juiste types kiest om optimaal gebruik te maken van ruimte en om een goede performantie te verkrijgen.
 
-Dit is een vereenvoudigde weergave, bedoeld om je op weg te helpen met de courante scenario's. Je kan alle details terugvinden in de \(uitstekende\) officiële MySQL documentatie.
+Dit is een vereenvoudigde weergave, bedoeld om je op weg te helpen met de courante scenario's. Je kan alle details terugvinden in de (uitstekende) officiële MySQL documentatie.
 
 ## String types
 
@@ -24,7 +24,7 @@ Dit is een vereenvoudigde weergave, bedoeld om je op weg te helpen met de couran
 
 `CHAR` stelt een stukje tekst voor. Het heeft ook een vaste lengte. Je schrijft bijvoorbeeld `CHAR(50)` voor een stukje tekst van 50 karakters. Dan hebben alle waarden van dat type precies 50 tekens nodig aan opslagruimte. Als je niet op voorhand weet hoe veel lettertekens een gegeven waarde zal bevatten, gebruik je beter `VARCHAR`. Ook hier moet je een lengte voorzien, maar dit is een maximum. Zo is een kolom met type `VARCHAR(50)` beperkt tot _maximum_ 50 karakters.
 
-Gebruik `CHAR` voor stukken tekst van gelijke lengte \(bijvoorbeeld serienummers van producten\). Gebruik `VARCHAR` voor zaken als namen.
+Gebruik `CHAR` voor stukken tekst van gelijke lengte (bijvoorbeeld serienummers van producten). Gebruik `VARCHAR` voor zaken als namen.
 
 ### strings schrijven
 
@@ -60,23 +60,23 @@ Dit is het simpelste type. Het kent twee waarden: `TRUE` en `FALSE`, vaak voorge
 [Kennisclip voor deze inhoud](https://youtu.be/qsqh8IJRJ1c)
 {% endhint %}
 
-`INT` dient \(net als enkele varianten van diverse groottes, hieronder opgelijst\) voor de opslag van gehele getallen. Standaard kan een `INT` positieve en negatieve gehele getallen voorstellen. We zeggen dat hij dan `SIGNED` is, dus dat hij vergezeld is van een teken. Als je alleen positieve getallen wil, laat je je datatype volgen door `UNSIGNED`, bijvoorbeeld `Leeftijd TINYINT UNSIGNED`.
+`INT` dient (net als enkele varianten van diverse groottes, hieronder opgelijst) voor de opslag van gehele getallen. Standaard kan een `INT` positieve en negatieve gehele getallen voorstellen. We zeggen dat hij dan `SIGNED` is, dus dat hij vergezeld is van een teken. Als je alleen positieve getallen wil, laat je je datatype volgen door `UNSIGNED`, bijvoorbeeld `Leeftijd TINYINT UNSIGNED`.
 
-| Type | Gebruikt aantal bytes | Minimum signed | Minimum unsigned | Maximum signed | Maximum unsigned |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| TINYINT | 1 | -128 | 0 | 127 | 255 |
-| SMALLINT | 2 | -32768 | 0 | 32767 | 65535 |
-| MEDIUMINT | 3 | -8388608 | 0 | 8388607 | 16777215 |
-| INT | 4 | -2147483648 | 0 | 2147483647 | 4294967295 |
-| BIGINT | 8 | -2^63 | 0 | 2^63-1 | 2^64-1 |
+| Type      | Gebruikt aantal bytes | Minimum signed | Minimum unsigned | Maximum signed | Maximum unsigned |
+| --------- | --------------------- | -------------- | ---------------- | -------------- | ---------------- |
+| TINYINT   | 1                     | -128           | 0                | 127            | 255              |
+| SMALLINT  | 2                     | -32768         | 0                | 32767          | 65535            |
+| MEDIUMINT | 3                     | -8388608       | 0                | 8388607        | 16777215         |
+| INT       | 4                     | -2147483648    | 0                | 2147483647     | 4294967295       |
+| BIGINT    | 8                     | -2^63          | 0                | 2^63-1         | 2^64-1           |
 
 ### `FLOAT` en `DOUBLE`
 
-Deze twee types dienen om getallen **bij benadering** op te slaan. Dit wil zeggen dat \(vaak héél kleine\) afrondingen toegestaan zijn wanneer je data in het systeem plaatst. Beide types werken op dezelfde manier, maar `DOUBLE` heeft een groter bereik. Hierdoor neemt `DOUBLE` ook wel meer opslag in dan `FLOAT`. We gaan verder niet in op de details.
+Deze twee types dienen om kommagetallen **bij benadering** op te slaan. Dit wil zeggen dat (vaak héél kleine) afrondingen toegestaan zijn wanneer je data in het systeem plaatst. Beide types werken op dezelfde manier, maar `DOUBLE` heeft een groter bereik. Hierdoor neemt `DOUBLE` ook wel meer opslag in dan `FLOAT`. We gaan verder niet in op de details.
 
 ### `DECIMAL`
 
-Dit type dienst voor het bijhouden van **exacte** getallen. Je specifieert het aantal cijfers en het \(maximaal even grote\) aantal cijfers na de komma, bijvoorbeeld: `DECIMAL(10,5)` voor een getal met tien cijfers, waarvan vijf na de komma.
+Dit type dienst voor het bijhouden van **exacte** getallen. Je specifieert het aantal cijfers en het (maximaal even grote) aantal cijfers na de komma, bijvoorbeeld: `DECIMAL(10,5)` voor een getal met tien cijfers, waarvan vijf na de komma.
 
 ### getallen schrijven
 
@@ -112,4 +112,3 @@ Voor wanneer een volledige datum meer is dan je nodig hebt. Je kan wel minder ja
 ### datums schrijven
 
 Je schrijft datums alsof het strings waren in een afgesproken formaat, dus ook tussen enkele aanhalingstekens.
-
