@@ -1,18 +1,22 @@
 # SELECT met clausules
 
+{% hint style="success" %}
+[Kennisclip](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3e0ba6f3-fc38-4dec-950e-adc5007c0443)
+{% endhint %}
+
 Het is niet voldoende om rijen te kunnen opvragen. Je moet ook in staat zijn om specifieke informatie op te vragen, statistische gegevens te genereren, enz. Dit kan door uitdrukkingen en extra clausules te gebruiken in `SELECT` statements.
 
 ### Vorm
 
 De algemene vorm van een `SELECT` statement is:
 
-```text
+```
 SELECT expressie(s) waarin sleutelwoorden, namen en constanten zitten FROM Tabel
 ```
 
 Hierbij heb je al redelijk wat flexibiliteit: je kan gewoon kolomnamen gebruiken als expressies; je kan functies toepassen op kolomnamen; je kan vaste tekst of getallen mee opnemen in de resultaten. Maar er zijn nog meer mogelijkheden. In het algemeen ziet het `SELECT` statement er zo uit:
 
-```text
+```
 SELECT expression(s) waarin sleutelwoorden, namen en constanten zitten
 [FROM Tabel]
 [WHERE clause]
@@ -51,4 +55,3 @@ Waarschijnlijk ken je al deze clausules nog niet, maar dat is niet erg. Je kan t
 * per groepje kan je opnieuw bepalen of dat groepje verwerkt zal worden
 * de resultaten van je verwerking kan je behouden om weer te geven
 * en je kan vastleggen in welke volgorde deze resultaten uiteindelijk verschijnen
-
