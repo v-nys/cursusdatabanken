@@ -101,13 +101,11 @@ SELECT Voornaam, Familienaam, Titel FROM Boeken
    where Familienaam <= 'Breton';
 ```
 
-Als de collation voor `Familienaam` accentongevoelig is, zal je beide nieuwe records zien. Anders worden de zaken complexer. Dan moet je kijken naar het gebruikte collation algoritme en de accentgevoeligheid. Dit kan vrij complex worden en we laten het verder zo, maar weet dat er een verschil mogelijk is. Als je de collation van de kolommen van de tabel Boeken te weten wil komen, kan je in MySQL Workbench rechtsklikken op de tabel in kwestie en dan via "Table Inspector" naar "Columns" gaan om de collation te achterhalen. Er zijn véél collations, maar onthoud vooral volgende vuistregels:
+Als de collation voor `Familienaam` accentongevoelig is, zal je sowieso beide nieuwe records zien. Anders worden de zaken complexer. Dan moet je kijken naar het gebruikte collation algoritme en de accentgevoeligheid. Dan moet je bijvoorbeeld weten of de `é` pas ergens na de `z` komt of na de e maar voor de `f`. Als je de collation van de kolommen van de tabel Boeken te weten wil komen, kan je in MySQL Workbench rechtsklikken op de tabel in kwestie en dan via "Table Inspector" naar "Columns" gaan om de collation te achterhalen. Er zijn véél collations, maar onthoud vooral volgende vuistregels:
 
 * als ze `_bin` bevat (al dan niet met hoofdletters geschreven), worden de bytevoorstellingen van de karakters vergeleken
   * dit is zowat de strengste definitie van gelijkheid die je kan hebben
-  * bijvoorbeeld bij `utf8mb4_bin` komt `'Breton`' **voor** `'Bréhier'`
 * als ze `_as` bevat, is de collation accentgevoelig
-  * dit betekent niet noodzakelijk dat `'Breton`' voor `'Bréhier`'komt, maar wel dat `'e`' en `'é`' verschillend zijn
 * als ze `_ai` bevat, is de collation accentongevoelig
 * als ze `_cs` bevat, is de collation hoofdlettergevoelig
 * als ze `_ci` bevat, is de collation hoofdletterongevoelig
