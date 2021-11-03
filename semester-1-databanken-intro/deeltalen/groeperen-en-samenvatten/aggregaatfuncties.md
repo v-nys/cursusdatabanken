@@ -1,10 +1,10 @@
 # Aggregaatfuncties
 
 {% hint style="success" %}
-[Kennisclip](https://youtu.be/VhBOMD5jc9g) \(ondertiteling beschikbaar\)
+[Kennisclip](https://youtu.be/VhBOMD5jc9g) (ondertiteling beschikbaar)
 {% endhint %}
 
-Aggregaatfuncties lijken op de functies die je al kent \(`substring`, `concat`, `length`, `round`\). Het verschil is dat, als je een kolomnaam invult, de aggregaatfunctie op **heel de kolom** wordt toegepast. Anders gezegd, aggregaatfuncties worden niet binnen een rij toegepast, maar over meerdere rijen heen. Voor elke rij wordt er een waarde geproduceerd en een aggregaatfunctie gebruikt al deze waarden samen als invoer.
+Aggregaatfuncties lijken op de functies die je al kent (`substring`, `concat`, `length`, `round`). Het verschil is dat, als je een kolomnaam invult, de aggregaatfunctie op **heel de kolom** wordt toegepast. Anders gezegd, aggregaatfuncties worden niet binnen een rij toegepast, maar over meerdere rijen heen. Voor elke rij wordt er een waarde geproduceerd en een aggregaatfunctie gebruikt al deze waarden samen als invoer.
 
 Op deze pagina geven we een overzicht van de belangrijkste aggregatiefuncties, maar er bestaan er nog.
 
@@ -218,7 +218,7 @@ Dit geeft hetzelfde resultaat, want `Naam` was toch een verplichte kolom.
 
 ## aggregaatfunctie: `SUM`
 
-Deze aggregaatfunctie krijgt een expressie en berekent voor de som van het toepassen van deze expressie voor elk record. Een eenvoudig voorbeeld van een expressie is hier \(in `0043__SelectHonden.sql`\) een kolomnaam:
+Deze aggregaatfunctie krijgt een expressie en berekent voor de som van het toepassen van deze expressie voor elk record. Een eenvoudig voorbeeld van een expressie is hier (in `0043__SelectHonden.sql`) een kolomnaam:
 
 ```sql
 USE ApDB;
@@ -242,7 +242,7 @@ Wat levert dit dan? De gezamenlijke leeftijd van alle honden, verhoogd met het a
 
 ## aggregaatfuncties: `MIN` en `MAX`
 
-Deze aggregaatfuncties krijgen een expressie en berekenen het minimum of het maximum voor het toepassen van deze expressie voor elk record. Een eenvoudig voorbeeld van een expressie is hier \(in `0044__SelectHonden.sql`\) een kolomnaam:
+Deze aggregaatfuncties krijgen een expressie en berekenen het minimum of het maximum voor het toepassen van deze expressie voor elk record. Een eenvoudig voorbeeld van een expressie is hier (in `0044__SelectHonden.sql`) een kolomnaam:
 
 ```sql
 USE ApDB;
@@ -254,7 +254,7 @@ Dit vertelt je wat de leeftijd van de oudste hond in het systeem is.
 
 ## aggregaatfunctie: `AVG`
 
-Deze aggregaatfunctie krijgt een expressie en berekent het gemiddelde voor het toepassen van deze expressie voor elk record. Een eenvoudig voorbeeld van een expressie is hier \(in `0045__SelectHonden.sql`\) een kolomnaam:
+Deze aggregaatfunctie krijgt een expressie en berekent het gemiddelde voor het toepassen van deze expressie voor elk record. Een eenvoudig voorbeeld van een expressie is hier (in `0045__SelectHonden.sql`) een kolomnaam:
 
 ```sql
 USE ApDB;
@@ -272,3 +272,4 @@ SELECT COUNT(*), Naam
 FROM Honden;
 ```
 
+Dit komt omdat je uitvoer nog steeds een tabel is, bestaande uit één aantal rijen en één aantal kolommen. Als je `COUNT(*)` zou toepassen, zou je één rij overhouden en als je `Naam` zou opvragen, zou je even veel rijen overhouden als er honden zijn. Dus als deze query zou werken, zou je op basis van de eerste kolom maar één rij mogen hebben en op basis van de tweede kolom zou je er meerdere hebben. Dat gaat niet. Beide kolommen moeten leiden tot hetzelfde aantal rijen.
