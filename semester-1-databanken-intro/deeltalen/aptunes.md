@@ -1,6 +1,6 @@
 # apTunes project
 
-Relationele databases vormen regelmatig de ruggegraat van \(web\)applicaties. We zullen dat in de verdere labo-oefeningen demonstreren. Voor de verdere oefeningen zullen we voornamelijk werken met een database genaamd `apTunes`. Dit is een database die je zou kunnen gebruiken om een streamingdienst \(vergelijkbaar met Spotify, Deezer,...\) te ondersteunen.
+Relationele databases vormen regelmatig de ruggegraat van (web)applicaties. We zullen dat in de verdere labo-oefeningen demonstreren. Voor de verdere oefeningen zullen we voornamelijk werken met een database genaamd `apTunes`. Dit is een database die je zou kunnen gebruiken om een streamingdienst (vergelijkbaar met Spotify, Deezer,...) te ondersteunen.
 
 `apTunes` moet allerlei functionaliteit ondersteunen die je gewend bent van echte streamingdiensten, onder meer:
 
@@ -38,7 +38,9 @@ Voer je een foute instructie uit? Voer dan in volgorde elk script uit dat in het
 Als gevraagd wordt om "een nummer" of "alle nummers" te tonen, lees dan "alle kolommen uit de tabel `Nummers`" in hun oorspronkelijke volgorde.
 {% endhint %}
 
-{% file src="../../.gitbook/assets/aptunes\_\_0002.sql" caption="aptunes\_\_0002.sql" %}
+{% file src="../../.gitbook/assets/aptunes__0002.sql" %}
+aptunes\_\_0002.sql
+{% endfile %}
 
 * Voer bovenstaand script uit en zet het in je map met scripts met de naam _**aptunes\_\_0002.sql**_.
 * Schrijf een script, aptunes\_\_0003.sql, dat alle nummers van Led Zeppelin in het systeem toont volgens titel.
@@ -47,10 +49,10 @@ Als gevraagd wordt om "een nummer" of "alle nummers" te tonen, lees dan "alle ko
 * Schrijf een script, aptunes\_\_0006.sql, dat alle nummers die geen klassieke muziek zijn toont. Bekijk de data om te achterhalen hoe je klassieke nummers kan herkennen.
 * Schrijf een script aptunes\_\_0007.sql dat de titels van alle nummers toont die strikt minder dan 2 minuten duren en daarnaast ook toont hoe veel minder. Je zou dus iets als dit kunnen zien als "Kortjakje" 55 seconden duurt en "'k Zag twee beren" 40 seconden duurt:
 
-| titel | \(wat hier staat is niet belangrijk\) |
-| :--- | :--- |
-| Kortjakje | 65 |
-| 'k Zag twee beren | 80 |
+| titel             | (wat hier staat is niet belangrijk) |
+| ----------------- | ----------------------------------- |
+| Kortjakje         | 65                                  |
+| 'k Zag twee beren | 80                                  |
 
 Denk nu even na over een aantal zoekopdrachten die je met dit model nog niet zou kunnen doen. Noteer ze voor jezelf. Bespreek tijdens het labo klassikaal.
 
@@ -60,24 +62,24 @@ Voor onze streamingdienst is het handiger te werken met een vaste set van genres
 
 * Voeg met script _**aptunes\_\_0008.sql**_ een kolom GenreEnum toe. Deze is voorlopig niet verplicht en kan alleen volgende waardes bevatten: `Klassiek`, `Pop`, `Jazz`, `Metal`, `Rap`, `Electro`, `Folk`, `Wereldmuziek`, `Blues`, `Rock`. Het is niet de bedoeling dat je de oude kolom `Genre` verwijdert of dat je de nieuwe kolom al invult! Verderop zullen we vertalen van de oude kolom naar de nieuwe!
 * Vul met script _**aptunes\_\_0009.sql**_ de kolom GenreEnum in. Doe dit door gebruik te maken van de LIKE operator om volgende "vertalingen" toe te passen:
-  * alles met de \(hoofdletterongevoelige\) substring "klass" in de oude kolom wordt "Klassiek" in de nieuwe kolom
-  * alles dat eindigt op de \(hoofdletterongevoelige\) substring "rock" in de oude kolom wordt "Rock" in de nieuwe kolom
-  * "rap" en "hiphop" \(hoofdletterongevoelig\) worden gegroepeerd onder "Rap"
-  * alles met het woord "metal" \(hoofdletterongevoelig\) in wordt "Metal"
-  * alles dat eindigt op "blues" \(hoofdletterongevoelig\) wordt "Blues"
-* Test met script aptunes\_\_0010.sql of alle nummers nu een \(nieuw\) genre hebben door de nummers zonder genre te selecteren.
+  * alles met de (hoofdletterongevoelige) substring "klass" in de oude kolom wordt "Klassiek" in de nieuwe kolom
+  * alles dat eindigt op de (hoofdletterongevoelige) substring "rock" in de oude kolom wordt "Rock" in de nieuwe kolom
+  * "rap" en "hiphop" (hoofdletterongevoelig) worden gegroepeerd onder "Rap"
+  * alles met het woord "metal" (hoofdletterongevoelig) in wordt "Metal"
+  * alles dat eindigt op "blues" (hoofdletterongevoelig) wordt "Blues"
+* Test met script aptunes\_\_0010.sql of alle nummers nu een (nieuw) genre hebben door de nummers zonder genre te selecteren.
 * Verwijder met script _**aptunes\_\_0011**_.sql de oude kolom `Genre` en hernoem `GenreEnum` naar `Genre`. Maak hierbij het nieuwe genre ook een verplichte kolom.
 
 We merken ook dat het niet erg nuttig is om een exacte datum bij te houden per nummer. We willen alleen het jaar. Je kan het jaar uit een datum halen door er de `YEAR`-functie op toe te passen.
 
-* Maak met script _**aptunes\_\_0012.sql**_ een kolom `ReleaseJaar` aan, vul deze automatisch in op basis van de releasedatum die je al hebt, maak de nieuwe kolom verplicht en verwijder ten slotte de kolom `ReleaseDatum`. Dit zal niet werken voor de nummers van Debussy, omdat ze te oud zijn om met het YEAR-datatype voor te stellen. Vul daarom het jaar van de uitvoering in voor deze nummers: 1985.
+* Maak met script_** aptunes\_\_0012.sql**_ een kolom `ReleaseJaar` aan, vul deze automatisch in op basis van de releasedatum die je al hebt, maak de nieuwe kolom verplicht en verwijder ten slotte de kolom `ReleaseDatum`. Dit zal niet werken voor de nummers van Debussy, omdat ze te oud zijn om met het YEAR-datatype voor te stellen. Vul daarom het jaar van de uitvoering in voor deze nummers: 1985.
 
 ### Functionaliteit toevoegen
 
-Nu willen we weten wat de prijs is die de artiest verdient \(in eurocent\) wanneer een nummer gestreamd wordt. We zullen dit bijhouden met een kolom `Royalties`. Deze heeft type `TINYINT`en is unsigned.  Er is een vuistregel voor het vastleggen van royalties, maar voor sommige nummers is er een speciale regeling. Omdat er alleen in gehele bedragen in eurocent wordt gewerkt, heb je de functie `ROUND` nodig om een getal af te ronden.
+Nu willen we weten wat de prijs is die de artiest verdient (in eurocent) wanneer een nummer gestreamd wordt. We zullen dit bijhouden met een kolom `Royalties`. Deze heeft type `TINYINT`en is unsigned.  Er is een vuistregel voor het vastleggen van royalties, maar voor sommige nummers is er een speciale regeling. Omdat er alleen in gehele bedragen in eurocent wordt gewerkt, heb je de functie `ROUND` nodig om een getal af te ronden.
 
 * Voeg met script _**aptunes\_\_0013.sql**_ deze kolom toe. Vul ze in als volgt:
-  * Klassieke nummers krijgen normaal 1 eurocent per 60 seconden, dus je stelt de royalties in als de duurtijd gedeeld door 60 \(afgerond\).
+  * Klassieke nummers krijgen normaal 1 eurocent per 60 seconden, dus je stelt de royalties in als de duurtijd gedeeld door 60 (afgerond).
   * Rocknummers en metalnummers krijgen 1 eurocent per 20 seconden.
   * Rap krijgt 1 eurocent per 15 seconden.
   * Nummers van Led Zeppelin krijgen 1 eurocent per 10 seconden.
@@ -87,7 +89,7 @@ Nu willen we weten wat de prijs is die de artiest verdient \(in eurocent\) wanne
 
 De eigenaars van onze streamingdienst willen statistieken over de artiesten.
 
-Gebruik eerst volgend script _**aptunes\_\_0015.sql**_ om meer data in het systeem te plaatsen:
+Gebruik eerst volgend script _**aptunes\_\_0015.sql **_om meer data in het systeem te plaatsen:
 
 {% file src="../../.gitbook/assets/aptunes.sql" %}
 
@@ -96,18 +98,25 @@ Nu er redelijk wat data is, moeten we die gaan samenvatten eerder dan rij per ri
 * Schrijf een script aptunes\_\_0016.sql dat toont hoe veel rocknummers er in het systeem zijn.
 * Schrijf een script aptunes\_\_0017.sql dat voor elk genre toont hoe veel nummers er zijn. Het formaat van de uitvoer is als volgt en de genres zijn gesorteerd volgens de volgorde van de enum die de genres voorstelt:
 
-| Genre | \(titel maakt niet uit\) |
-| :--- | :--- |
-| Genre 1 | \(aantal nummers in genre 1\) |
-| Genre 2 | \(aantal nummers in genre 2\) |
-| ... | ... |
+| Genre   | (titel maakt niet uit)      |
+| ------- | --------------------------- |
+| Genre 1 | (aantal nummers in genre 1) |
+| Genre 2 | (aantal nummers in genre 2) |
+| ...     | ...                         |
 
 * Toon het releasejaar van het oudste nummer in het systeem. De uitvoer is één rij met één kolom. De titel van deze kolom maakt niet uit. Noem je script aptunes\_\_0018.sql.
 * Herschrijf volgende query zonder `DISTINCT` zodat je toch nog hetzelfde resultaat krijgt en noem je script aptunes\_\_0019.sql: `SELECT DISTINCT Artiest FROM Nummers;`
-* Herschrijf volgende query zonder BETWEEN zodat je toch nog hetzelfde resultaat krijgt en noem je script aptunes\_\_0020.sql: `SELECT Titel From Nummers WHERE ReleaseJaar BETWEEN 1975 AND 1985;`
-* Toon alle nummers die minstens 5 minuten duren volgens titel. Noem je script aptunes\_\_0021.sql.
-* Toon alle genres waarvan de nummers gemiddeld minstens 5 minuten duren, in de volgorde die is vastgelegd voor de genre enum. Noem je script aptunes\_\_0022.sql.
-* Het blijkt dat erg lange klassieke nummers niet erg winstgevend zijn voor onze dienst. Toon daarom alfabetisch alle artiesten die klassieke nummers hebben, maar enkel als hun klassieke nummers ook gemiddeld langer dan 8 minuten duren. Noem je script aptunes\_\_0023.sql. **Tip: je hebt hier een combinatie van** [**alle clausules** ](select/select-met-clausules.md)**nodig.**
+* Toon alle nummers die minstens 5 minuten duren volgens titel. Noem je script aptunes\_\_0020.sql.
+* Toon alle genres waarvan de nummers gemiddeld minstens 5 minuten duren, in de volgorde die is vastgelegd voor de genre enum. Noem je script aptunes\_\_0021.sql.
+* Toon per decennium het aantal uitgebrachte nummers, maar enkel als dat aantal hoger ligt dan 450. Om dit klaar te spelen, moet je afronden tot het dichtste tiental. Dat kan je doen met ROUND(getal,-1), bijvoorbeeld ROUND(1973,-1) levert 1970. Je output moet ook stijgen volgens het decennium. Je resultaat zou er uiteindelijk zo moeten uitzien:
+
+| Decennium | Aantal nummers |
+| --------- | -------------- |
+| 1970      | 459            |
+| 1990      | 456            |
+| 2000      | 458            |
+
+* Het blijkt dat erg lange klassieke nummers niet erg winstgevend zijn voor onze dienst. Toon daarom alfabetisch alle artiesten die klassieke nummers hebben, maar enkel als hun klassieke nummers ook gemiddeld langer dan 8 minuten duren. Noem je script aptunes\_\_0023.sql. **Tip: je hebt hier een combinatie van **[**alle clausules **](select/select-met-clausules.md)**nodig.**
 
 ## Normalisatie van de apTunes databank
 
@@ -115,36 +124,44 @@ De apTunes database, zoals ze ontwikkeld is met scripts 1 tot 23, is niet erg ef
 
 ### 1-op-N relaties
 
-Volg eerst volgende [kennisclip](https://youtu.be/PBBrW4f14Dg) **\(let vooral goed op bij de uitleg over wat de getallen bij een relatie betekenen\)**. Maak zelf mee de scripts \(voer eerst het recentste calibratiescript hierboven uit!\) en nummer als volgt:
+Volg eerst volgende [kennisclip](https://youtu.be/PBBrW4f14Dg) **(let vooral goed op bij de uitleg over wat de getallen bij een relatie betekenen)**. Maak zelf mee de scripts (voer eerst het recentste calibratiescript hierboven uit!) en nummer als volgt:
 
 * het script om een tabel `Artiesten` te maken is `aptunes__0024.sql`
 * het script om data te migreren naar `Artiesten` is `aptunes__0025.sql`
 * het script om `Nummers` te voorzien van een foreign key is `aptunes__0026.sql`
-* het script om de artiesten te linken hoef je op dit moment niet te begrijpen, maar krijg je hieronder \(`aptunes__0027.sql`\)
+* het script om de artiesten te linken hoef je op dit moment niet te begrijpen, maar krijg je hieronder (`aptunes__0027.sql`)
 * het script om de kolom `Artiest` uit `Nummers` te verwijderen is `aptunes__0028.sql`
-* het script om `Albums` te maken is `aptunes__0029.sql` \(schrijf je zelf\)
-* het script om data te migreren naar `Albums` is `aptunes__0030.sql` \(schrijf je zelf\)
-* het script om `Albums` te voorzien van een foreign key waarmee je naar de artiest verwijst is `aptunes__0031.sql` \(schrijf je zelf\)
-* het script om de albums te linken krijg je hieronder \(`aptunes__0032.sql`\)
+* het script om `Albums` te maken is `aptunes__0029.sql` (schrijf je zelf)
+* het script om data te migreren naar `Albums` is` aptunes__0030.sql` (schrijf je zelf)
+* het script om `Albums` te voorzien van een foreign key waarmee je naar de artiest verwijst is `aptunes__0031.sql` (schrijf je zelf)
+* het script om de albums te linken krijg je hieronder (`aptunes__0032.sql`)
 * **er is geen script aptunes\_\_0033.sql omwille van een fout in een eerdere versie van deze opgave**
-* het script om gebruikers toe te voegen krijg je hieronder \(`aptunes__0034.sql`\)
+* het script om gebruikers toe te voegen krijg je hieronder (`aptunes__0034.sql`)
 
-{% file src="../../.gitbook/assets/aptunes\_\_0027.sql" caption="aptunes\_\_0027.sql" %}
+{% file src="../../.gitbook/assets/aptunes__0027.sql" %}
+aptunes\_\_0027.sql
+{% endfile %}
 
-{% file src="../../.gitbook/assets/aptunes\_\_0032 \(1\).sql" caption="aptunes\_\_0032.sql" %}
+{% file src="../../.gitbook/assets/aptunes__0032 (1).sql" %}
+aptunes\_\_0032.sql
+{% endfile %}
 
-{% file src="../../.gitbook/assets/aptunes\_\_0034.sql" caption="aptunes\_\_0034.sql" %}
+{% file src="../../.gitbook/assets/aptunes__0034.sql" %}
+aptunes\_\_0034.sql
+{% endfile %}
 
-### Veel-op-veel \(M-op-N\) relaties
+### Veel-op-veel (M-op-N) relaties
 
-{% file src="../../.gitbook/assets/dump20201205.sql" caption="Calibratiescript" %}
+{% file src="../../.gitbook/assets/dump20201205.sql" %}
+Calibratiescript
+{% endfile %}
 
 Voer eerst een `USE` uit om jouw database te activeren. Voer dan het calibratiescript hierboven uit. Volg vervolgens [deze kennisclip](https://youtu.be/QEPXHLC9Nqw). Dit is het vervolg van de vorige kennisclips. **Fris het vorige deel dus op indien je ergens niet kan volgen, want deze leerstof bouwt rechtstreeks voort op de vorige.**
 
 * Het script om `GebruikerHeeftAlbum` toe te voegen noem je `aptunes__0035.sql`
-* Het script om de data toe te voegen \(`aptunes__0036.sql`\) vind je hieronder terug.
-* Het script om `NummerOpAlbum` toe te voegen noem je `aptunes__0037.sql`. Het tracknummer past in een `tinyint` en is altijd positief en is verplicht 
-  * In deze tabel sla je volgende informatie op met een eigen script `aptunes__0038.sql`. \(Om dit te doen zoek je met de hand de `Id` van het nummer en van het album op in hun tabellen en `INSERT` je hun combinatie in de nieuwe tabel `NummerOpAlbum`. De werkwijze is dus dezelfde als in script 36.\)
+* Het script om de data toe te voegen (`aptunes__0036.sql`) vind je hieronder terug.
+* Het script om `NummerOpAlbum` toe te voegen noem je `aptunes__0037.sql`. Het tracknummer past in een `tinyint` en is altijd positief en is verplicht&#x20;
+  * In deze tabel sla je volgende informatie op met een eigen script `aptunes__0038.sql`. (Om dit te doen zoek je met de hand de `Id` van het nummer en van het album op in hun tabellen en `INSERT` je hun combinatie in de nieuwe tabel `NummerOpAlbum`. De werkwijze is dus dezelfde als in script 36.)
     * Het nummer met titel _Stairway to Heaven_ is het vierde nummer op het album Led Zeppelin IV
     * Het nummer met titel _Problem Child_ is het tweede nummer op het album met titel Let There Be Rock
 * Het script om `GebruikerHeeftNummer` toe te voegen noem je `aptunes__0039.sql`
@@ -152,7 +169,9 @@ Voer eerst een `USE` uit om jouw database te activeren. Voer dan het calibraties
     * tuneBoY5 heeft het nummer _Little Sun_, maar het is geen favoriet
     * musicfan111 heeft het nummer _Eat the Rich_ en het is een favoriet
 
-{% file src="../../.gitbook/assets/aptunes\_\_0036.sql" caption="aptunes\_\_0036.sql" %}
+{% file src="../../.gitbook/assets/aptunes__0036.sql" %}
+aptunes\_\_0036.sql
+{% endfile %}
 
 ### Joins
 
@@ -162,10 +181,9 @@ Voer eerst een `USE` uit om jouw database te activeren. Voer dan het calibraties
 * Toon deze zelfde gegevens nu enkel voor nummers waarvan de titel begint met de letter "A". Noem dit script `aptunes__0042.sql`.
 * Toon de titel van elk album naast de naam van de artiest. Noem dit script `aptunes__0043.sql`.
 * Toon hoe veel nummers Led Zeppelin heeft. Noem dit script `aptunes__0044.sql`.
-* Toon de titel van elk nummer naast het nummer \(dus het `Id`\) van het album waarop dat nummer staat. Noem dit script `aptunes__0045.sql`. Hiervoor heb je de tabel `NummerOpAlbum` nodig. Je hebt nog maar één join nodig.
-* Toon per nummer \(dus `Id`\) van een album hoe veel nummers er op dat album staan. Je hoeft nog **niet** de titel te tonen van het album. Noem dit script `aptunes__0046.sql`.  Je kan dit zonder join.
+* Toon de titel van elk nummer naast het nummer (dus het `Id`) van het album waarop dat nummer staat. Noem dit script `aptunes__0045.sql`. Hiervoor heb je de tabel `NummerOpAlbum` nodig. Je hebt nog maar één join nodig.
+* Toon per nummer (dus `Id`) van een album hoe veel nummers er op dat album staan. Je hoeft nog **niet** de titel te tonen van het album. Noem dit script `aptunes__0046.sql`.  Je kan dit zonder join.
 * Toon elk nummer naast de titel van het album waarop het nummer staat. Noem dit script `aptunes__0047.sql`. Nu heb je twee joins nodig.
-* Toon hoe veel albums elke gebruiker heeft. Noem dit script `aptunes__0048.sql`. Je moet dus naast de naam van elke gebruiker een getal zien staan \(het aantal albums dat hij heeft\).
+* Toon hoe veel albums elke gebruiker heeft. Noem dit script `aptunes__0048.sql`. Je moet dus naast de naam van elke gebruiker een getal zien staan (het aantal albums dat hij heeft).
 * Toon alle combinaties van een gebruiker en een album in de collectie van die gebruiker. Toon hierbij ook de datum waarop de gebruiker het album heeft aangekocht. Noem dit script `aptunes__0049.sql`. Je moet dus een gebruikersnaam, titel en datum naast elkaar zien.
 * Toon alle combinaties van gebruikers en favoriete losse nummers. In deze dataset heeft maar één gebruiker een favoriet los nummer, maar je query zou ook moeten werken als er veel meer data is. Noem dit `aptunes__0050.sql`. Je moet dus een gebruikersnaam en liedjestitel naast elkaar zien.
-
