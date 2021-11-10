@@ -108,13 +108,13 @@ Nu er redelijk wat data is, moeten we die gaan samenvatten eerder dan rij per ri
 * Herschrijf volgende query zonder `DISTINCT` zodat je toch nog hetzelfde resultaat krijgt en noem je script aptunes\_\_0019.sql: `SELECT DISTINCT Artiest FROM Nummers;`
 * Toon alle nummers die minstens 5 minuten duren volgens titel. Noem je script aptunes\_\_0020.sql.
 * Toon alle genres waarvan de nummers gemiddeld minstens 5 minuten duren, in de volgorde die is vastgelegd voor de genre enum. Noem je script aptunes\_\_0021.sql.
-* Toon per decennium het aantal uitgebrachte nummers, maar enkel als dat aantal hoger ligt dan 450. Om dit klaar te spelen, moet je afronden tot het dichtste tiental. Dat kan je doen met TRUNCATE(getal,-1), bijvoorbeeld TRUNCATE(1973,-1) levert 1970. Je output moet ook stijgen volgens het decennium. Je resultaat zou er uiteindelijk zo moeten uitzien:
+* Toon per decennium het aantal uitgebrachte nummers, maar enkel als dat aantal hoger ligt dan 450. Om dit klaar te spelen, moet je afronden tot het dichtste tiental. Dat kan je doen met TRUNCATE(getal,-1), bijvoorbeeld TRUNCATE(1973,-1) levert 1970. Je output moet ook stijgen volgens het decennium. Je resultaat zou er bijvoorbeeld zo moeten uitzien:
 
 | Decennium | Aantal nummers |
 | --------- | -------------- |
-| 1970      | 459            |
-| 1990      | 456            |
-| 2000      | 458            |
+| 1970      | ...            |
+| 1990      | ...            |
+| 2000      | ...            |
 
 * Het blijkt dat erg lange klassieke nummers niet erg winstgevend zijn voor onze dienst. Toon daarom alfabetisch alle artiesten die klassieke nummers hebben, maar enkel als hun klassieke nummers ook gemiddeld langer dan 8 minuten duren. Noem je script aptunes\_\_0023.sql. **Tip: je hebt hier een combinatie van **[**alle clausules **](select/select-met-clausules.md)**nodig.**
 
