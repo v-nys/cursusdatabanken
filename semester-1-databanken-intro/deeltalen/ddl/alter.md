@@ -2,11 +2,13 @@
 
 Hier zien we iets meer in verband met het aanmaken van structuren voor je data. We starten onze database met behulp van onderstaand calibratiescript, dat je 0013\_\_Calibratie.sql mag noemen:
 
-{% file src="../../../.gitbook/assets/calibratie.sql" caption="Calibratiescript DDL medium" %}
+{% file src="../../../.gitbook/assets/calibratie.sql" %}
+Calibratiescript DDL medium
+{% endfile %}
 
 ## `ALTER TABLE`
 
-`ALTER TABLE` verandert de structuur van een tabel, zonder bestaande data te beschadigen. Je kan het gebruiken om kolommen toe te voegen of te verwijderen. Je kan het ook gebruiken om het soort data in een kolom aan te passen, specifieker of juist breder te maken. Voor deze taken heb je binnenin een `ALTER TABLE` statement extra clausules nodig. 
+`ALTER TABLE` verandert de structuur van een tabel, zonder bestaande data te beschadigen. Je kan het gebruiken om kolommen toe te voegen of te verwijderen. Je kan het ook gebruiken om het soort data in een kolom aan te passen, specifieker of juist breder te maken. Voor deze taken heb je binnenin een `ALTER TABLE` statement extra clausules nodig.&#x20;
 
 {% hint style="info" %}
 Maak voor jezelf een cheat sheet van de verschillende clausules die je in `ALTER TABLE` kan gebruiken!
@@ -44,7 +46,7 @@ Je merkt in bovenstaand script dat er opgave wordt gegeven van een `CHAR SET`. S
 
 #### Script bijhouden
 
-Pas dit script aan om naast de kolom `Commentaar` ook de kolom `Voornaam` terug toe te voegen en een kolom Familienaam toe te voegen, beide `VARCHAR(100)` en niet verplicht. Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0015\_\_AlterBoeken.sql.
+Pas dit script aan om naast de kolom `Commentaar` ook de kolom `Voornaam` terug toe te voegen en een kolom Familienaam toe te voegen, beide `VARCHAR(100) `en niet verplicht. Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0015\_\_AlterBoeken.sql.
 
 ### beperkingen toevoegen
 
@@ -68,7 +70,7 @@ ALTER TABLE Boeken ADD COLUMN ISBN VARCHAR(25) DEFAULT ("ABC123");
 
 Eerst moeten we ervoor zorgen dat de nieuw toegevoegde kolom voor iedere rij een waarde krijgt, tot nu is deze waarde `NULL`.
 
-![](../../../.gitbook/assets/image%20%2873%29.png)
+![](<../../../.gitbook/assets/image (73).png>)
 
 {% hint style="info" %}
 Het UPDATE-commando, hieronder, hebben we tot nu nog niet gezien en je kan dit gewoon copy/pasten om vervolgens uit te voeren.
@@ -81,7 +83,7 @@ UPDATE Boeken SET Familienaam = "Niet gekend";
 set sql_safe_updates = 1;
 ```
 
-Vervolgens gaan we de kolom Familienaam qua structuur wijzigen en een beperking opleggen. 
+Vervolgens gaan we de kolom Familienaam qua structuur wijzigen en een beperking opleggen.&#x20;
 
 ```sql
 USE ApDB;
@@ -110,4 +112,3 @@ RENAME TABLE `Boeken` TO `MijnBoeken`;
 {% hint style="info" %}
 Deze wijziging hoef je niet op te slaan. Het is maar een voorbeeld.
 {% endhint %}
-

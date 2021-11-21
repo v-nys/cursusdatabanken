@@ -1,6 +1,6 @@
 # WHILE
 
-`WHILE` is ook een herhalingsstructuur die zorgt dat code of statements achter elkaar kunnen uitgevoerd worden zolang de conditie waar \(`TRUE`\) is.
+`WHILE `is ook een herhalingsstructuur die zorgt dat code of statements achter elkaar kunnen uitgevoerd worden zolang de conditie waar (`TRUE`) is.
 
 **Syntax**
 
@@ -14,7 +14,7 @@ De `WHILE`-lus is controleert de conditie voordat het statement wordt uitgevoerd
 
 Onderstaand schema illustreert dit principe.
 
-![](../../.gitbook/assets/sp_while.JPG)
+![](../../.gitbook/assets/sp\_while.JPG)
 
 Om het principe van de `WHILE`-lus te tonen, maken we eerst een nieuwe tabel `KalenderMomenten` aan.
 
@@ -89,7 +89,6 @@ Zolang de teller kleiner of gelijk is aan het opgegeven aantal dagen, dan zullen
 CALL KalenderMeerdereToevoegen('2020-04-19', 90);
 ```
 
-Deze uitvoering van de stored procedure `KalenderMeerdereToevoegen` geeft volgend resultaat.
+Deze uitvoering van de stored procedure `KalenderMeerdereToevoegen `geeft volgend resultaat.
 
-![](../../.gitbook/assets/storedp_while_result.JPG)
-
+![](../../.gitbook/assets/storedp\_while\_result.JPG)

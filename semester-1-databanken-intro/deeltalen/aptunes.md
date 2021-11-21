@@ -122,21 +122,27 @@ Nu er redelijk wat data is, moeten we die gaan samenvatten eerder dan rij per ri
 
 De apTunes database, zoals ze ontwikkeld is met scripts 1 tot 23, is niet erg efficiënt ontworpen. We zullen ze herstructureren met relationele concepten.
 
-### 1-op-N relaties
+We willen ons ontwerp verbeteren, zodat we uiteindelijk volgende relaties krijgen:
 
-Volg eerst volgende [kennisclip](https://youtu.be/PBBrW4f14Dg) **(let vooral goed op bij de uitleg over wat de getallen bij een relatie betekenen)**. Maak zelf mee de scripts (voer eerst het recentste calibratiescript hierboven uit!) en nummer als volgt:
 
-* het script om een tabel `Artiesten` te maken is `aptunes__0024.sql`
-* het script om data te migreren naar `Artiesten` is `aptunes__0025.sql`
-* het script om `Nummers` te voorzien van een foreign key is `aptunes__0026.sql`
+
+![](../../.gitbook/assets/beter\_ontwerp.png)
+
+Dit ERD toont alleen de entiteittypes en de relatietypes. De precieze velden ervan moet je zelf kunnen afleiden uit de informatie waarvan je vertrekt.
+
+We zullen eerst de 1-op-N relaties voorstellen.
+
+* Maak een script dat een tabel `Artiesten` aanmaakt voor artiesten. Noem dit `aptunes__0024.sql`. Zorg ervoor dat elke artiest die we toevoegen automatisch genummerd wordt.
+* Maak een script om de data over artiesten in te vullen in deze tabel. Je mag veronderstellen dat twee artiesten met dezelfde naam dezelfde artiest zijn.
+  * Hiervoor kan je in een `INSERT` query het gedeelte `VALUES (...)` vervangen door een **subquery** waarvan de resultaten overeenstemmen met de values die je zou invullen. Met andere woorden: `INSERT INTO EenTabel (IngevuldeKolom1, IngevuldeKolom2) (select KolomWaarde1, KolomWaarde2 from EenAndereTabel);` Noem je script `aptunes__0025.sql`.
+* Maak een script om `Nummers` te voorzien van een foreign key kolom die verwijst naar de tabel `Artiesten`. Volg hierbij alle afspraken rond foreign keys! Voorlopig kan je deze niet verplicht maken. Noem je script `aptunes__0026.sql`.
 * het script om de artiesten te linken hoef je op dit moment niet te begrijpen, maar krijg je hieronder (`aptunes__0027.sql`)
-* het script om de kolom `Artiest` uit `Nummers` te verwijderen is `aptunes__0028.sql`
+* het script om de verwijzing naar een `Artiest` verplicht te maken en kolom `Artiest` uit `Nummers` te verwijderen is `aptunes__0028.sql`
 * het script om `Albums` te maken is `aptunes__0029.sql` (schrijf je zelf)
 * het script om data te migreren naar `Albums` is` aptunes__0030.sql` (schrijf je zelf)
 * het script om `Albums` te voorzien van een foreign key waarmee je naar de artiest verwijst is `aptunes__0031.sql` (schrijf je zelf)
 * het script om de albums te linken krijg je hieronder (`aptunes__0032.sql`)
-* **er is geen script aptunes\_\_0033.sql omwille van een fout in een eerdere versie van deze opgave**
-* het script om gebruikers toe te voegen krijg je hieronder (`aptunes__0034.sql`)
+* het script om gebruikers toe te voegen krijg je hieronder (`aptunes__0033.sql`)
 
 {% file src="../../.gitbook/assets/aptunes__0027.sql" %}
 aptunes\_\_0027.sql
@@ -146,17 +152,17 @@ aptunes\_\_0027.sql
 aptunes\_\_0032.sql
 {% endfile %}
 
-{% file src="../../.gitbook/assets/aptunes__0034.sql" %}
-aptunes\_\_0034.sql
+{% file src="../../.gitbook/assets/aptunes__0033.sql" %}
+aptunes\_\_0033.sql
 {% endfile %}
 
 ### Veel-op-veel (M-op-N) relaties
 
 {% file src="../../.gitbook/assets/dump20201205.sql" %}
-Calibratiescript
+Calibratiescript (0034) We werken hier verder naar het uiteindelijke ontwerp.
 {% endfile %}
 
-Voer eerst een `USE` uit om jouw database te activeren. Voer dan het calibratiescript hierboven uit. Volg vervolgens [deze kennisclip](https://youtu.be/QEPXHLC9Nqw). Dit is het vervolg van de vorige kennisclips. **Fris het vorige deel dus op indien je ergens niet kan volgen, want deze leerstof bouwt rechtstreeks voort op de vorige.**
+**Fris het vorige deel dus op indien je ergens niet kan volgen, want deze leerstof bouwt rechtstreeks voort op de vorige. We werken hier verder naar het ontwerp volgens het ERD.**
 
 * Het script om `GebruikerHeeftAlbum` toe te voegen noem je `aptunes__0035.sql`
 * Het script om de data toe te voegen (`aptunes__0036.sql`) vind je hieronder terug.

@@ -362,7 +362,7 @@ WHERE Games.Titel = 'Mega Man 11' AND Releases.Games_Id = Games.Id;
 
 ### Oefening 2
 
-Schrijf zelf een tabel, `Uitleningen`, die leden koppelt aan boeken die ze hebben uitgeleend in de bibliotheek. Een uitlening heeft een verplichte startdatum en **eventueel** \(dus niet verplicht\) een einddatum. Deze datums stel je voor met het `DATE`-datatype. Noem het script dat deze tabel aanmaakt 0504\_\_Oefening.sql.
+Schrijf zelf een tabel, `Uitleningen`, die leden koppelt aan boeken die ze hebben uitgeleend in de bibliotheek. Een uitlening heeft een verplichte startdatum en **eventueel** (dus niet verplicht) een einddatum. Deze datums stel je voor met het `DATE`-datatype. Noem het script dat deze tabel aanmaakt 0504\_\_Oefening.sql.
 
 ### Oefening 3
 
@@ -379,20 +379,20 @@ Schrijf een script, 0505\_\_Oefening.sql, dat volgende informatie in de databank
 
 We hebben een tabel die bijhoudt wanneer een bepaalde videogame is uitgebracht op een bepaald platform. Die ziet er zo uit:
 
-| Games.Id | Platformen.Id | Releasedatum |
-| :--- | :--- | :--- |
-| 1 | 1 | 22 februari 2019 |
-| 1 | 2 | 22 februari 2019 |
-| 1 | 3 | 22 februari 2019 |
-| 2 | 1 | 22 maart 2019 |
-| 2 | 2 | 22 maart 2019 |
-| 2 | 3 | 22 maart 2019 |
-| 3 | 1 | 8 maart 2019 |
-| 3 | 2 | 8 maart 2019 |
-| 4 | 1 | 2 oktober 2018 |
-| 4 | 2 | 2 oktober 2018 |
-| 4 | 3 | 2 oktober 2018 |
-| 4 | 4 | 2 oktober 2018 |
+| Games.Id | Platformen.Id | Releasedatum     |
+| -------- | ------------- | ---------------- |
+| 1        | 1             | 22 februari 2019 |
+| 1        | 2             | 22 februari 2019 |
+| 1        | 3             | 22 februari 2019 |
+| 2        | 1             | 22 maart 2019    |
+| 2        | 2             | 22 maart 2019    |
+| 2        | 3             | 22 maart 2019    |
+| 3        | 1             | 8 maart 2019     |
+| 3        | 2             | 8 maart 2019     |
+| 4        | 1             | 2 oktober 2018   |
+| 4        | 2             | 2 oktober 2018   |
+| 4        | 3             | 2 oktober 2018   |
+| 4        | 4             | 2 oktober 2018   |
 
 Als we deze tabel willen ontcijferen, d.w.z. als we de namen van de games en de platformen willen zien, combineren we deze tabel `Releases` eerst met de tabel `Platformen` en vervolgens met de tabel `games`. Dat ziet er zo uit:
 
@@ -407,11 +407,11 @@ FROM Releases
 
 Toon nu zelf het overzicht van wie welk boek heeft uitgeleend en in welke periode. Doe dit in script 0506\_\_Oefening.sql. Gebruik `coalesce` om duidelijk aan te geven wanneer een boek nog niet is teruggebracht en zorg dat de kolomtitel leesbaar is met `as`.
 
-| Persoon | Boek | Startdatum | Einddatum |
-| :--- | :--- | :--- | :--- |
-| Max | Norwegian Wood | 1 februari 2019 | 15 februari 2019 |
-| ... | ... | ... | ... |
-| Yannick | Pet Sematary | 1 mei 2019 | nog niet teruggebracht |
+| Persoon | Boek           | Startdatum      | Einddatum              |
+| ------- | -------------- | --------------- | ---------------------- |
+| Max     | Norwegian Wood | 1 februari 2019 | 15 februari 2019       |
+| ...     | ...            | ...             | ...                    |
+| Yannick | Pet Sematary   | 1 mei 2019      | nog niet teruggebracht |
 
 ## Andere soorten JOINs
 
@@ -419,31 +419,30 @@ Toon nu zelf het overzicht van wie welk boek heeft uitgeleend en in welke period
 
 Toon alle taken, met het lid dat de taak uitvoert. Als de taak door niemand wordt uitgevoerd, staat er "taak niet toegewezen". **Maak voor jezelf eerst de tekening met overlappende cirkels zodat je weet hoe je dit kan uitschrijven, zoals in de theorie.** Gebruik `COALESCE` en `AS om` je output leesbaar te maken, zoals in de voorbeeldoutput hieronder:
 
-| Voornaam | Omschrijving |
-| :--- | :--- |
-| Yannick | frisdrank meebrengen |
-| Bavo | bestek voorzien |
-| Max | aardappelsla maken |
+| Voornaam             | Omschrijving                |
+| -------------------- | --------------------------- |
+| Yannick              | frisdrank meebrengen        |
+| Bavo                 | bestek voorzien             |
+| Max                  | aardappelsla maken          |
 | Taak niet toegewezen | papieren bordjes meebrengen |
 
 Noem het script 0507\_\_Oefening.sql.
 
 ### Oefening 6
 
-Toon alle titels van games met hun bijbehorend platform, als er een is. Toon ook games waarvoor het platform niet meer ondersteund wordt \(d.w.z. waarvoor geen info in `Releases` staat\). Gebruik hiervoor een samenstelling van twee JOINs. Gebruik opnieuw `COALESCE` en `AS` voor mooiere output. Noem het script 0508\_\_Oefening.sql.
+Toon alle titels van games met hun bijbehorend platform, als er een is. Toon ook games waarvoor het platform niet meer ondersteund wordt (d.w.z. waarvoor geen info in `Releases` staat). Gebruik hiervoor een samenstelling van twee JOINs. Gebruik opnieuw `COALESCE` en `AS` voor mooiere output. Noem het script 0508\_\_Oefening.sql.
 
 Voorbeeldoutput:
 
-| Titel | Naam |
-| :--- | :--- |
-| Anthem | PS4 |
-| Anthem | XBox one |
-| Anthem | Windows |
-| ... | ... |
-| Mega Man 11 | Switch |
+| Titel        | Naam                           |
+| ------------ | ------------------------------ |
+| Anthem       | PS4                            |
+| Anthem       | XBox one                       |
+| Anthem       | Windows                        |
+| ...          | ...                            |
+| Mega Man 11  | Switch                         |
 | Oregon Trail | Platform niet meer ondersteund |
 
 {% hint style="info" %}
-Tip: **Probeer dit niet in één keer.** Koppel eerst releases aan platformen. Controleer je output. Plaats het deel van de query dat deze koppeling doet tussen haakjes. Dit deel kan je nu ook zien als een cirkel in de tekening voor de verschillende soorten joins. Denk dan na over de tekening om ook games te betrekken en schrijf daarna pas de volledige query.
+Tip: **Probeer dit niet in één keer. **Koppel eerst releases aan platformen. Controleer je output. Plaats het deel van de query dat deze koppeling doet tussen haakjes. Dit deel kan je nu ook zien als een cirkel in de tekening voor de verschillende soorten joins. Denk dan na over de tekening om ook games te betrekken en schrijf daarna pas de volledige query.
 {% endhint %}
-
