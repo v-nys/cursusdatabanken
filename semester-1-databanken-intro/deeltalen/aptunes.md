@@ -138,10 +138,10 @@ We zullen eerst de 1-op-N relaties voorstellen.
 * Maak een script om `Nummers` te voorzien van een foreign key kolom die verwijst naar de tabel `Artiesten`. Volg hierbij alle afspraken rond foreign keys! Voorlopig kan je deze niet verplicht maken. Noem je script `aptunes__0026.sql`.
 * het script om de artiesten te linken hoef je op dit moment niet te begrijpen, maar krijg je hieronder (`aptunes__0027.sql`)
 * het script om de verwijzing naar een `Artiest` verplicht te maken en kolom `Artiest` uit `Nummers` te verwijderen is `aptunes__0028.sql`
-* het script om `Albums` te maken is `aptunes__0029.sql` (schrijf je zelf)
+* het script om `Albums` te maken is `aptunes__0029.sql` (schrijf je zelf, moet alleen info zuiver over het album bevatten die nu in Nummers staat)
 * het script om data te migreren naar `Albums` is` aptunes__0030.sql` (schrijf je zelf)
 * het script om `Albums` te voorzien van een foreign key waarmee je naar de artiest verwijst is `aptunes__0031.sql` (schrijf je zelf)
-* het script om de albums te linken krijg je hieronder (`aptunes__0032.sql`)
+* het script om de albums te linken aan artiesten krijg je hieronder (`aptunes__0032.sql`)
 * het script om gebruikers toe te voegen krijg je hieronder (`aptunes__0033.sql`)
 
 {% file src="../../.gitbook/assets/aptunes__0027.sql" %}
@@ -153,10 +153,10 @@ aptunes\_\_0032.sql
 {% endfile %}
 
 {% file src="../../.gitbook/assets/aptunes__0033.sql" %}
-aptunes\_\_0033.sql
-{% endfile %}
 
 ### Veel-op-veel (M-op-N) relaties
+
+Als je bij de vorige scripts een fout hebt gemaakt, kan je dit script gebruiken:
 
 {% file src="../../.gitbook/assets/dump20201205.sql" %}
 Calibratiescript (0034) We werken hier verder naar het uiteindelijke ontwerp.
