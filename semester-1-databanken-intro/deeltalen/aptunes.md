@@ -164,7 +164,7 @@ Calibratiescript (0034) We werken hier verder naar het uiteindelijke ontwerp.
 
 **Fris het vorige deel dus op indien je ergens niet kan volgen, want deze leerstof bouwt rechtstreeks voort op de vorige. We werken hier verder naar het ontwerp volgens het ERD.**
 
-* Het script om `GebruikerHeeftAlbum` toe te voegen noem je `aptunes__0035.sql.` Naast de sleutelkolommen voorzie je ook een kolom`  DatumToevoeging  `om het tijdstip toe te voegen waarop dit album toegevoegd is aan de bibliotheek. Dit is een verplichte` datetime.`
+* Het script om `GebruikerHeeftAlbum` toe te voegen noem je `aptunes__0035.sql.` Naast de sleutelkolommen voorzie je ook een kolom`  DatumToevoeging  `om het tijdstip toe te voegen waarop dit album toegevoegd is aan de bibliotheek. Dit is een verplichte` date.`
 * Het script om de data toe te voegen (`aptunes__0036.sql`) vind je hieronder terug.
 * Het script om `NummerOpAlbum` toe te voegen noem je `aptunes__0037.sql`. Het tracknummer hou je bij in een kolom `TrackNummer`, het past in een `tinyint` en is altijd positief en is verplicht&#x20;
   * In deze tabel sla je volgende informatie op met een eigen script `aptunes__0038.sql`. (Om dit te doen zoek je met de hand de `Id` van het nummer en van het album op in hun tabellen en `INSERT` je hun combinatie in de nieuwe tabel `NummerOpAlbum`. De werkwijze is dus dezelfde als in script 36.)
