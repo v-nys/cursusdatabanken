@@ -164,13 +164,13 @@ Calibratiescript (0034) We werken hier verder naar het uiteindelijke ontwerp.
 
 **Fris het vorige deel dus op indien je ergens niet kan volgen, want deze leerstof bouwt rechtstreeks voort op de vorige. We werken hier verder naar het ontwerp volgens het ERD.**
 
-* Het script om `GebruikerHeeftAlbum` toe te voegen noem je `aptunes__0035.sql`
+* Het script om `GebruikerHeeftAlbum` toe te voegen noem je `aptunes__0035.sql.` Naast de sleutelkolommen voorzie je ook een kolom`  DatumToevoeging  `om het tijdstip toe te voegen waarop dit album toegevoegd is aan de bibliotheek. Dit is een verplichte` datetime.`
 * Het script om de data toe te voegen (`aptunes__0036.sql`) vind je hieronder terug.
-* Het script om `NummerOpAlbum` toe te voegen noem je `aptunes__0037.sql`. Het tracknummer past in een `tinyint` en is altijd positief en is verplicht&#x20;
+* Het script om `NummerOpAlbum` toe te voegen noem je `aptunes__0037.sql`. Het tracknummer hou je bij in een kolom `TrackNummer`, het past in een `tinyint` en is altijd positief en is verplicht&#x20;
   * In deze tabel sla je volgende informatie op met een eigen script `aptunes__0038.sql`. (Om dit te doen zoek je met de hand de `Id` van het nummer en van het album op in hun tabellen en `INSERT` je hun combinatie in de nieuwe tabel `NummerOpAlbum`. De werkwijze is dus dezelfde als in script 36.)
     * Het nummer met titel _Stairway to Heaven_ is het vierde nummer op het album Led Zeppelin IV
     * Het nummer met titel _Problem Child_ is het tweede nummer op het album met titel Let There Be Rock
-* Het script om `GebruikerHeeftNummer` toe te voegen noem je `aptunes__0039.sql`
+* Het script om `GebruikerHeeftNummer` toe te voegen noem je `aptunes__0039.sql.` Je hebt ook een kolom `Favoriet `nodig (van type bool) om bij te houden of een nummer een favoriet nummer van die gebruiker is.
   * In deze tabel sla je volgende informatie op met een eigen script `aptunes__0040.sql`. De werkwijze is dezelfde als eerder.
     * tuneBoY5 heeft het nummer _Little Sun_, maar het is geen favoriet
     * musicfan111 heeft het nummer _Eat the Rich_ en het is een favoriet
