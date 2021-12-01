@@ -41,7 +41,7 @@ Hierbij gebruiken we enkele **afspraken**:
 * De naam van een foreign key **constraint** is altijd `fk_`, gevolgd door de naam van de tabel waarop de constraint toegepast is, gevolgd door de naam van de tabel waarnaar verwezen wordt.
 
 {% hint style="warning" %}
-**Prent het heel goed in: **een kolom met als naam **Id** dient om een rij uit de tabel te identificeren waartoe de kolom behoort. Een kolom met als naam** (Tabelnaam)\_Id** (waarbij de tabelnaam vanalles kan zijn) dient om een rij uit een andere tabel te identificeren, die hoort bij een rij uit deze tabel. **Je zou nooit mogen twijfelen over hoe je een sleutelkolom moet noemen. Dit is een afspraak die wij steeds zullen volgen.**
+**Prent het heel goed in:** een kolom met als naam **Id** dient om een rij uit de tabel te identificeren waartoe de kolom behoort. Een kolom met als naam **(Tabelnaam)\_Id** (waarbij de tabelnaam vanalles kan zijn) dient om een rij uit een andere tabel te identificeren, die hoort bij een rij uit deze tabel. **Je zou nooit mogen twijfelen over hoe je een sleutelkolom moet noemen. Dit is een afspraak die wij steeds zullen volgen.**
 {% endhint %}
 
 ## Gebruik (bestaande tabel)

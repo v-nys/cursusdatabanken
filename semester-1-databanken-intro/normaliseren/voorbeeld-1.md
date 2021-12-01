@@ -8,14 +8,14 @@ description: Normaliseren
 
 ![](<../../.gitbook/assets/databanken-intro-afbeelding-6 (4) (2).JPG>)
 
-**0e normaalvorm **(onderdeel 1/2)\
+**0e normaalvorm** (onderdeel 1/2)\
 ****Verzamel alle gegevens (waarbij uiteraard de groepssleutel wordt bepaald) \[...]
 
 ![](<../../.gitbook/assets/databanken-intro-afbeelding-7 (1).JPG>)
 
 Hoofd(groeps)sleutel: elk factuur wordt aangeduid door een uniek factuurnummer. Door dit nummer kunnen we dus elke factuur op een eenvoudige wijze terugvinden.
 
-**0e normaalvorm **(onderdeel 2/2)\
+**0e normaalvorm** (onderdeel 2/2)\
 \[...] Verwijder alle afleidbare gegevens.
 
 De totaalprijs per artikel kunnen we berekenen (aantal vermenigvuldigen met de eenheidsprijs). \
@@ -87,14 +87,14 @@ Er zijn met dit systeem van registratie enige problemen, nl.&#x20;
 
 Al deze problemen kunnen we oplossen door de gegevens in verschillende tabellen onder te brengen, en dit met behulp van de normalisatietechnieken.
 
-**0e normaalvorm **(onderdeel 1/2)\
+**0e normaalvorm** (onderdeel 1/2)\
 Verzamel alle gegevens (waarbij uiteraard de groepssleutel wordt bepaald) \[...]
 
 ![](<../../.gitbook/assets/image (18).png>)
 
 Hoofd(groeps)sleutel: Elke student kunnen we terugvinden door het nummer dat de student toegewezen krijgt.
 
-**0e normaalvorm **(onderdeel 2/2)\
+**0e normaalvorm** (onderdeel 2/2)\
 \[...] Verwijder alle afleidbare gegevens.
 
 Hierbij is het duidelijk dat er geen gegevens afleidbaar zijn.

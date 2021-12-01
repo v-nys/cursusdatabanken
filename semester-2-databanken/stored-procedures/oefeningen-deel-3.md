@@ -28,7 +28,7 @@ Schrijf hiervoor een script, `0649__Oefening.sql`.
 
 Pas de procedure [VoorbeeldCursors](cursors.md) aan zodat de genres gescheiden worden door een komma en zodat er géén komma na het laatste genre staat. Hierbij mag je de volgorde waarin de genres getoond worden wijzigen indien nodig, maar ze moeten er allemaal wel blijven staan.
 
-**Tip: **gebruik een hulpvariabele om te onthouden dat je het eerste genre al hebt verwerkt.
+**Tip:** gebruik een hulpvariabele om te onthouden dat je het eerste genre al hebt verwerkt.
 
 Noem het script dat deze procedure aanmaakt `0650__Oefening.sql`.
 

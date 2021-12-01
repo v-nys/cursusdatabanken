@@ -37,7 +37,7 @@ Soorten databanken
   _Complexe SQL code omdat objecten in OO niet overeenkomen met tabellen in DB_\
   __Bv. personeel(object) heeft adres en bedrijfswagen waarbij de data verspreid zijn over verschillende tabellen
 
-### **NoSQLdatabank **
+### **NoSQLdatabank**&#x20;
 
 Er zijn 4 soorten no-sql databanken:
 
@@ -95,7 +95,7 @@ Er zijn 4 soorten no-sql databanken:
 * De namen en formaat van de kolommen kan verschillen van rij tot rij in binnen dezelfde tabel.
 * Er wordt ook wel eens gesproken over een twee dimenionale key-value store.
 
-**NoSQL **\
+**NoSQL** \
 Vaak worden combinaties gebruikt van meerdere soorten DB’s en dit afhankelijk van het doel.
 
 Ter info, hieronder een lijstje met ranking van de meest populaire databases met bijzondere aandacht voor het database model ([https://db-engines.com/en/ranking](https://db-engines.com/en/ranking)).

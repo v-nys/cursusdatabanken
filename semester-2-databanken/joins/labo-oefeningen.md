@@ -444,5 +444,5 @@ Voorbeeldoutput:
 | Oregon Trail | Platform niet meer ondersteund |
 
 {% hint style="info" %}
-Tip: **Probeer dit niet in één keer. **Koppel eerst releases aan platformen. Controleer je output. Plaats het deel van de query dat deze koppeling doet tussen haakjes. Dit deel kan je nu ook zien als een cirkel in de tekening voor de verschillende soorten joins. Denk dan na over de tekening om ook games te betrekken en schrijf daarna pas de volledige query.
+Tip: **Probeer dit niet in één keer.** Koppel eerst releases aan platformen. Controleer je output. Plaats het deel van de query dat deze koppeling doet tussen haakjes. Dit deel kan je nu ook zien als een cirkel in de tekening voor de verschillende soorten joins. Denk dan na over de tekening om ook games te betrekken en schrijf daarna pas de volledige query.
 {% endhint %}

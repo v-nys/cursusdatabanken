@@ -44,7 +44,7 @@ FROM Honden
 GROUP BY Geslacht;
 ```
 
-Als je `GROUP BY` gebruikt, wordt een aggregatiefunctie dus **niet meer over heel de kolom **toegepast, maar per groep. `Geslacht` mag je wel tonen want daar heb je op gegroepeerd, dus die data staan niet tussen rechte haakjes.
+Als je `GROUP BY` gebruikt, wordt een aggregatiefunctie dus **niet meer over heel de kolom** toegepast, maar per groep. `Geslacht` mag je wel tonen want daar heb je op gegroepeerd, dus die data staan niet tussen rechte haakjes.
 
 Een speciaal geval is `COUNT(*)`. Dit vertelt je hoe veel elementen er gegroepeerd zijn.
 

@@ -151,7 +151,7 @@ Zoals in het geval van de 1-op-1 relatie, kunnen we deze relatie tussen gebruike
 | 2    | 5     |
 | 2    | 6     |
 
-Dit is opnieuw iets meer dan we nodig hebben. We kunnen een foreign key van één tabel toevoegen aan een andere. Maar, in tegenstelling tot de precieze 1-op-1-relatie, mogen we niet kiezen. We zetten de foreign key in de tabel die **niet aan de "exact-1"-kant **van de relatie zit. Zorg er ook voor dat de vreemde sleutel nooit NULL is met een constraint.
+Dit is opnieuw iets meer dan we nodig hebben. We kunnen een foreign key van één tabel toevoegen aan een andere. Maar, in tegenstelling tot de precieze 1-op-1-relatie, mogen we niet kiezen. We zetten de foreign key in de tabel die **niet aan de "exact-1"-kant** van de relatie zit. Zorg er ook voor dat de vreemde sleutel nooit NULL is met een constraint.
 
 ![Eén user kan meerdere tweets hebben, elke tweet komt van exact één user.](../../../.gitbook/assets/screenshot-from-2020-11-21-10-05-24.png)
 

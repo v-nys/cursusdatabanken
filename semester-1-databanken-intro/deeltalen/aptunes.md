@@ -72,7 +72,7 @@ Voor onze streamingdienst is het handiger te werken met een vaste set van genres
 
 We merken ook dat het niet erg nuttig is om een exacte datum bij te houden per nummer. We willen alleen het jaar. Je kan het jaar uit een datum halen door er de `YEAR`-functie op toe te passen.
 
-* Maak met script_** aptunes\_\_0012.sql**_ een kolom `ReleaseJaar` aan, vul deze automatisch in op basis van de releasedatum die je al hebt, maak de nieuwe kolom verplicht en verwijder ten slotte de kolom `ReleaseDatum`. Dit zal niet werken voor de nummers van Debussy, omdat ze te oud zijn om met het YEAR-datatype voor te stellen. Vul daarom het jaar van de uitvoering in voor deze nummers: 1985.
+* Maak met script _**aptunes\_\_0012.sql**_ een kolom `ReleaseJaar` aan, vul deze automatisch in op basis van de releasedatum die je al hebt, maak de nieuwe kolom verplicht en verwijder ten slotte de kolom `ReleaseDatum`. Dit zal niet werken voor de nummers van Debussy, omdat ze te oud zijn om met het YEAR-datatype voor te stellen. Vul daarom het jaar van de uitvoering in voor deze nummers: 1985.
 
 ### Functionaliteit toevoegen
 
@@ -89,7 +89,7 @@ Nu willen we weten wat de prijs is die de artiest verdient (in eurocent) wanneer
 
 De eigenaars van onze streamingdienst willen statistieken over de artiesten.
 
-Gebruik eerst volgend script _**aptunes\_\_0015.sql **_om meer data in het systeem te plaatsen:
+Gebruik eerst volgend script _**aptunes\_\_0015.sql**_ om meer data in het systeem te plaatsen:
 
 {% file src="../../.gitbook/assets/aptunes.sql" %}
 
@@ -116,7 +116,7 @@ Nu er redelijk wat data is, moeten we die gaan samenvatten eerder dan rij per ri
 | 1990      | ...            |
 | 2000      | ...            |
 
-* Het blijkt dat erg lange klassieke nummers niet erg winstgevend zijn voor onze dienst. Toon daarom alfabetisch alle artiesten die klassieke nummers hebben, maar enkel als hun klassieke nummers ook gemiddeld langer dan 8 minuten duren. Noem je script aptunes\_\_0023.sql. **Tip: je hebt hier een combinatie van **[**alle clausules **](select/select-met-clausules.md)**nodig.**
+* Het blijkt dat erg lange klassieke nummers niet erg winstgevend zijn voor onze dienst. Toon daarom alfabetisch alle artiesten die klassieke nummers hebben, maar enkel als hun klassieke nummers ook gemiddeld langer dan 8 minuten duren. Noem je script aptunes\_\_0023.sql. **Tip: je hebt hier een combinatie van** [**alle clausules** ](select/select-met-clausules.md)**nodig.**
 
 ## Normalisatie van de apTunes databank
 
@@ -139,7 +139,7 @@ We zullen eerst de 1-op-N relaties voorstellen.
 * het script om de artiesten te linken hoef je op dit moment niet te begrijpen, maar krijg je hieronder (`aptunes__0027.sql`)
 * het script om de verwijzing naar een `Artiest` verplicht te maken en kolom `Artiest` uit `Nummers` te verwijderen is `aptunes__0028.sql`
 * het script om `Albums` te maken is `aptunes__0029.sql` (schrijf je zelf, moet alleen info zuiver over het album bevatten die nu in Nummers staat)
-* het script om data te migreren naar `Albums` is` aptunes__0030.sql` (schrijf je zelf)
+* het script om data te migreren naar `Albums` is `aptunes__0030.sql` (schrijf je zelf)
 * het script om `Albums` te voorzien van een foreign key waarmee je naar de artiest verwijst is `aptunes__0031.sql` (schrijf je zelf)
 * het script om de albums te linken aan artiesten krijg je hieronder (`aptunes__0032.sql`)
 * het script om gebruikers toe te voegen krijg je hieronder (`aptunes__0033.sql`)
@@ -158,19 +158,19 @@ aptunes\_\_0032.sql
 
 Als je bij de vorige scripts een fout hebt gemaakt, kan je dit script gebruiken:
 
-{% file src="../../.gitbook/assets/dump20201205.sql" %}
+{% file src="../../.gitbook/assets/Dump20201205 (1).sql" %}
 Calibratiescript (0034) We werken hier verder naar het uiteindelijke ontwerp.
 {% endfile %}
 
 **Fris het vorige deel dus op indien je ergens niet kan volgen, want deze leerstof bouwt rechtstreeks voort op de vorige. We werken hier verder naar het ontwerp volgens het ERD.**
 
-* Het script om `GebruikerHeeftAlbum` toe te voegen noem je `aptunes__0035.sql.` Naast de sleutelkolommen voorzie je ook een kolom`  DatumToevoeging  `om het tijdstip toe te voegen waarop dit album toegevoegd is aan de bibliotheek. Dit is een verplichte` date.`
+* Het script om `GebruikerHeeftAlbum` toe te voegen noem je `aptunes__0035.sql.` Naast de sleutelkolommen voorzie je ook een kolom `DatumToevoeging` om het tijdstip toe te voegen waarop dit album toegevoegd is aan de bibliotheek. Dit is een verplichte `date.`
 * Het script om de data toe te voegen (`aptunes__0036.sql`) vind je hieronder terug.
 * Het script om `NummerOpAlbum` toe te voegen noem je `aptunes__0037.sql`. Het tracknummer hou je bij in een kolom `TrackNummer`, het past in een `tinyint` en is altijd positief en is verplicht&#x20;
   * In deze tabel sla je volgende informatie op met een eigen script `aptunes__0038.sql`. (Om dit te doen zoek je met de hand de `Id` van het nummer en van het album op in hun tabellen en `INSERT` je hun combinatie in de nieuwe tabel `NummerOpAlbum`. De werkwijze is dus dezelfde als in script 36.)
     * Het nummer met titel _Stairway to Heaven_ is het vierde nummer op het album Led Zeppelin IV
     * Het nummer met titel _Problem Child_ is het tweede nummer op het album met titel Let There Be Rock
-* Het script om `GebruikerHeeftNummer` toe te voegen noem je `aptunes__0039.sql.` Je hebt ook een kolom `Favoriet `nodig (van type bool) om bij te houden of een nummer een favoriet nummer van die gebruiker is.
+* Het script om `GebruikerHeeftNummer` toe te voegen noem je `aptunes__0039.sql.` Je hebt ook een kolom `Favoriet` nodig (van type bool) om bij te houden of een nummer een favoriet nummer van die gebruiker is.
   * In deze tabel sla je volgende informatie op met een eigen script `aptunes__0040.sql`. De werkwijze is dezelfde als eerder.
     * tuneBoY5 heeft het nummer _Little Sun_, maar het is geen favoriet
     * musicfan111 heeft het nummer _Eat the Rich_ en het is een favoriet
