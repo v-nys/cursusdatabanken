@@ -446,3 +446,22 @@ Voorbeeldoutput:
 {% hint style="info" %}
 Tip: **Probeer dit niet in één keer.** Koppel eerst releases aan platformen. Controleer je output. Plaats het deel van de query dat deze koppeling doet tussen haakjes. Dit deel kan je nu ook zien als een cirkel in de tekening voor de verschillende soorten joins. Denk dan na over de tekening om ook games te betrekken en schrijf daarna pas de volledige query.
 {% endhint %}
+
+### Oefening 7
+
+Er is een tabel `Taken` en een tabel `Leden`. Bij taken staat (door middel van een verwijzing) welk lid een bepaalde taak uitvoert. Toon nu alle taken die niet aan iemand zijn toegewezen. Noem je script 0509\_\_Oefening.sql. (Doe dit met stof die tot hiertoe aan bod is gekomen, niet met constructies die we nog niet gezien hebben.)
+
+### Oefening 8
+
+Toon alle platformen waarvoor games beschikbaar zijn. Een platform wordt dus niet getoond als er geen games beschikbaar voor zijn, maar verschijnt zodra er minstens één game voor is. Noem je script 0510\_\_Oefening.sql. (Doe dit met stof die tot hiertoe aan bod is gekomen, niet met constructies die we nog niet gezien hebben.)
+
+### Oefening 9
+
+Toon alle games waarvoor het platform onbekend is, samen met alle platformen waarvoor geen games beschikbaar zijn. Het resultaat ziet er als volgt uit:
+
+| Titel             | Naam                   |
+| ----------------- | ---------------------- |
+| Oregon Trail      | Geen platformen gekend |
+| Geen games gekend | Master System          |
+
+Noem je script 0511\_\_Oefening.sql. (Doe dit met stof die tot hiertoe aan bod is gekomen, niet met constructies die we nog niet gezien hebben.)
