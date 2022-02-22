@@ -112,3 +112,13 @@ Voor wanneer een volledige datum meer is dan je nodig hebt. Je kan wel minder ja
 ### datums schrijven
 
 Je schrijft datums alsof het strings waren in een afgesproken formaat, dus ook tussen enkele aanhalingstekens.
+
+## defaultwaarden
+
+Je kan er bij het aanmaken of wijzigen van een kolom voor zorgen dat je een kolom niet uitdrukkelijk hoeft in te vullen. Dat doe je door, na de naam van de kolom, het woordje `default` noteren, gevolgd door een waarde van dat type. Bijvoorbeeld:
+
+```
+ALTER TABLE Boeken ADD COLUMN ISBN VARCHAR(25) DEFAULT ("ABC123");
+```
+
+Dit voegt een nieuwe kolom toe voor het ISBN-nummer aan een bestaande tabel boeken. Dit is een tekstkolom van maximum 25 symbolen. Als de gebruiker géén ISBN invult, krijgt een boek automatisch de waarde `ABC123` in die kolom.

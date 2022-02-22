@@ -46,27 +46,17 @@ Je merkt in bovenstaand script dat er opgave wordt gegeven van een `CHAR SET`. S
 
 #### Script bijhouden
 
-Pas dit script aan om naast de kolom `Commentaar` ook de kolom `Voornaam` terug toe te voegen en een kolom Familienaam toe te voegen, beide `VARCHAR(100) `en niet verplicht. Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0015\_\_AlterBoeken.sql.
+Pas dit script aan om naast de kolom `Commentaar` ook de kolom `Voornaam` terug toe te voegen en een kolom Familienaam toe te voegen, beide `VARCHAR(100)` en niet verplicht. Sla je script opnieuw op wanneer je klaar bent. Geef het de naam 0015\_\_AlterBoeken.sql.
 
 ### beperkingen toevoegen
 
-Het is goed om van meet af aan de integriteit van de database te denken. We gaan ervan uit dat de familienaam moet ingevuld worden. Zelfs al is de auteur onbekend, moet dan zoiets als "onbekend" worden ingevuld. Om een kolom verplicht te maken voegen we een constraint toe. In **pseudocode**:
+Het is goed om van meet af aan de integriteit van de database te denken. We gaan ervan uit dat de familienaam moet ingevuld worden. Zelfs al is de auteur onbekend, moet dan zoiets als "onbekend" worden ingevuld. Om een kolom verplicht te maken voegen we een constraint toe. In volgende code zijn `OldColumnName`, `NewColumnName` en `NewColumnType` **placeholders voor de namen van twee kolommen en een datatype met de nodige constraints**:
 
 ```sql
 ALTER TABLE TableName CHANGE OldColumnName NewColumnName NewColumnType;
 ```
 
-In ons voorbeeld wordt het:
-
-**Optie 1**
-
-Je kan bij het toevoegen van een kolom ook een default waarde meegeven, nl.
-
-```sql
-ALTER TABLE Boeken ADD COLUMN ISBN VARCHAR(25) DEFAULT ("ABC123");
-```
-
-**Optie 2**
+Via de `NOT NULL` constraint kunnen we zorgen dat een kolom een waarde moet bevatten, maar die regel mogen we enkel opleggen als er momenteel geen rijen zonder waarde in die kolom zijn.
 
 Eerst moeten we ervoor zorgen dat de nieuw toegevoegde kolom voor iedere rij een waarde krijgt, tot nu is deze waarde `NULL`.
 
