@@ -136,7 +136,7 @@ Volgende subquery is behoorlijk complex. Probeer zelf te achterhalen wat hij doe
 ```sql
 select Voornaam,Familienaam
 from Personen
-where Familienaam = (select Familienaam
+where Familienaam in (select Familienaam
                      from Personen
                      group by Familienaam
                      having count(*) = (select max(Aantal) from (select count(*) as Aantal from Personen group by Familienaam) as Voorkomens));
