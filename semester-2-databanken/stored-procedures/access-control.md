@@ -49,7 +49,7 @@ GRANT SELECT ON TabelNaam TO 'ap'@'%'; -- om data te selecteren
 GRANT INSERT ON TabelNaam TO 'ap'@'%'; -- om data te inserten
 ```
 
-Maar wat betekent het om een _stored procedure_ te mogen uitvoeren als je niet alle instructies in die stored procedure mag uitvoeren? Als je bijvoorbeeld `DoeBetaling` mag uitvoeren maar niet het recht hebt om een tabel `Rekeningen` aan te passen, terwijl `DoeBetaling` dat achter de schermen wel doet? Het hangt ervan af. Om daar een antwoord op te geven, moeten we weten of de stored procedure uitvoert als definer \(de user die deze stored procedure gedefinieerd heeft\) of als invoker \(de user die nu de stored procedure wil uitvoeren\).
+Maar wat betekent het om een _stored procedure_ te mogen uitvoeren als je niet alle instructies in die stored procedure mag uitvoeren? Als je bijvoorbeeld `DoeBetaling` mag uitvoeren maar niet het recht hebt om een tabel `Rekeningen` aan te passen, terwijl `DoeBetaling` dat achter de schermen wel doet? Het hangt ervan af. Om daar een antwoord op te geven, moeten we weten of de stored procedure uitvoert als definer (de user die deze stored procedure gedefinieerd heeft) of als invoker (de user die nu de stored procedure wil uitvoeren).
 
 ## Definer
 
@@ -111,11 +111,11 @@ DELIMITER ;
 
 Vervolgens gaan we met de voorbeeldgebruiker inloggen. Doe dit als volgt.
 
-![](../../.gitbook/assets/sp_security2.jpg)
+![](../../.gitbook/assets/sp\_security1.jpg)
 
 Kijk even na op welke databases je enige rechten hebt.
 
-![](../../.gitbook/assets/sp_signal2.JPG)
+![](../../.gitbook/assets/sp\_signal2.JPG)
 
 Geef vervolgens aan welke db je wilt gebruiken.
 
@@ -125,11 +125,10 @@ USE aptunes;
 
 Zoals je merkt, uit het schema-venster heb je enkel rechten op de stored procedures.
 
-![](../../.gitbook/assets/sp_signal3.JPG)
+![](../../.gitbook/assets/sp\_signal3.JPG)
 
 Om een stored procedure uit te voeren geef je volgende opdracht.
 
 ```sql
 CALL VoorbeeldSecurity("Test vanuit ap user");
 ```
-

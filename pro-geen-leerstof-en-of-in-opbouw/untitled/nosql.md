@@ -50,7 +50,7 @@ Er zijn 4 soorten no-sql databanken:
 * Column databank \
   Bv. Google bigtable&#x20;
 
-![](<../../.gitbook/assets/image (35) (1) (1).png>)
+![](<../../.gitbook/assets/image (35) (1).png>)
 
 
 
@@ -80,7 +80,7 @@ Er zijn 4 soorten no-sql databanken:
 
 #### NoSQL – Graph databank
 
-![](<../../.gitbook/assets/image (3) (1).png>)
+![](<../../.gitbook/assets/image (3).png>)
 
 * Ontworpen om ‘sociale eigenschappen’ van personen op te slaan, bvb:\
   persoon a is bevriend met persoon b\

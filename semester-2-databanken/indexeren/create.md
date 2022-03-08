@@ -4,7 +4,7 @@
 
 Wanneer je een secundaire index voor een kolom maakt, d.w.z. een index die niet over de primaire sleutel gaat, slaat MySQL de waarden van de kolommen op in een afzonderlijke gegevensstructuur. Dit zijn structuren waarin je snel kan opzoeken.
 
-In het geval dat de kolommen de tekenreekskolommen zijn \(`CHAR`, `VARCHAR` of `TEXT`\), zal de index veel schijfruimte in beslag nemen en mogelijk de INSERT-bewerkingen vertragen.
+In het geval dat de kolommen de tekenreekskolommen zijn (`CHAR`, `VARCHAR` of `TEXT`), zal de index veel schijfruimte in beslag nemen en mogelijk de INSERT-bewerkingen vertragen.
 
 Om dit probleem aan te pakken, kan je met MySQL een index maken voor het leidende deel van de kolomwaarden van de tekenreekskolommen met behulp van de volgende syntax:
 
@@ -34,19 +34,19 @@ CREATE INDEX index_name
 ON table_name(column_name(length));
 ```
 
-In bovenstaande voorbeelden is de lengte het aantal tekens voor de datatypes zoals CHAR, VARCHAR en TEXT \(en het aantal bytes voor binaire datatypes\).
+In bovenstaande voorbeelden is de lengte het aantal tekens voor de datatypes zoals CHAR, VARCHAR en TEXT (en het aantal bytes voor binaire datatypes).
 
 ## Voorbeeld
 
 **Taken**
 
-| omschrijving | Id |
-| :--- | :--- |
-| bestek voorzien | 1 |
-| frisdrank meebrengen | 2 |
-| aardappelsla maken | 3 |
-| ... | ... |
-| pasta koken | 4000 |
+| omschrijving         | Id   |
+| -------------------- | ---- |
+| bestek voorzien      | 1    |
+| frisdrank meebrengen | 2    |
+| aardappelsla maken   | 3    |
+| ...                  | ...  |
+| pasta koken          | 4000 |
 
 Als we onderstaande query uitvoeren, dan zal heel de tabel worden doorlopen omdat er geen index is bepaald op het veld waarop het zoekcriterium werd ingesteld.
 
@@ -81,7 +81,7 @@ select count(distinct Omschrijving)
 from Taken;
 ```
 
-**Stap 2**: zoek volgens verschillende lengtes de meest unieke prefix. Via `LEFT` krijg je alleen de eerste \(aantal\) tekens uit een string.
+**Stap 2**: zoek volgens verschillende lengtes de meest unieke prefix. Via `LEFT` krijg je alleen de eerste (aantal) tekens uit een string.
 
 ```sql
 select count(distinct left(Omschrijving,20))
@@ -102,13 +102,8 @@ Binnen de schema navigation kan je nu de index zien. Als je nu bovenstaande sele
 De lengte van het "ideale" prefix kan wijzigen naarmate je meer data toevoegt aan een tabel.
 {% endhint %}
 
-## Aflopende indexen
-
-Indien je een aflopend gesorteerde index wil \(bijvoorbeeld van "Z" naar "A" in plaats van omgekeerd\), schrijf je `DESC` na de kolomnaam. Bijvoorbeeld `ON Personen (Voornaam DESC)`.
-
 ## De rol van kolomvolgorde
 
 Als je een index op meerdere kolommen aanmaakt, is de volgorde van deze kolommen belangrijk. Vergelijk met het telefoonboek. Daar heb je een index op plaatsnaam en familienaam. Dit staat je toe snel iemand terug te vinden. Als je geen idee hebt van waar elke plaatsnaam inhet telefoonboek staat en alleen iemands familienaam kent, moet je toch elke pagina doorzoeken om zeker te zijn dat je de persoon in kwestie niet over het hoofd ziet.
 
-Wat betekent dit in de praktijk? Je kan een index op meerdere kolommen \(bijvoorbeeld A, B en C\) gebruiken om snel opzoekingen te doen als je werkt met een doorlopende reeks van de eerste kolommen \(bv. A of A en B of A, B en C\). Maar je kan niet sneller zoeken met deze index als je bijvoorbeeld enkel B en C betrekt in je zoekopdracht.
-
+Wat betekent dit in de praktijk? Je kan een index op meerdere kolommen (bijvoorbeeld A, B en C) gebruiken om snel opzoekingen te doen als je werkt met een doorlopende reeks van de eerste kolommen (bv. A of A en B of A, B en C). Maar je kan niet sneller zoeken met deze index als je bijvoorbeeld enkel B en C betrekt in je zoekopdracht.

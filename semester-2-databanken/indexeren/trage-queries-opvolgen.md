@@ -4,18 +4,18 @@
 
 Met de juiste instellingen kan je MySQL queries laten onthouden die langer duren dan een zekere drempelwaarde. Als het gaat om queries die regelmatig terugkomen, is het de moeite waard indexen aan te maken die deze queries kunnen versnellen.
 
-Je kan de trage queries opslaan door in het bestand `my.cnf` in je MySQL-installatie de variabele `slow_query_log` op `On` te zetten, `long_query_time` op het aantal seconden dat "te veel" is in te stellen \(bv. 0.2 voor 200 milliseconden\) en `slow_query_log_file` in te vullen met de locatie van het gewenste logbestand. Alle queries die je vanaf dan uitvoert zullen in het logbestand worden bijgehouden.
+Je kan de trage queries opslaan door in het bestand `my.cnf` in je MySQL-installatie de variabele `slow_query_log` op `On` te zetten, `long_query_time` op het aantal seconden dat "te veel" is in te stellen (bv. 0.2 voor 200 milliseconden) en `slow_query_log_file` in te vullen met de locatie van het gewenste logbestand. Alle queries die je vanaf dan uitvoert zullen in het logbestand worden bijgehouden.
 
 ## Stap 2a: uitpluizen zonder MySQL Workbench
 
 Je voert de queries in kwestie opnieuw uit, maar je laat ze voorafgaan door het sleutelwoordje `EXPLAIN`. Je krijgt dan één rij per doorzochte tabel in een uitgebreide versie van volgend formaat:
 
-| table | key | rows |
-| :--- | :--- | :--- |
-| naam van een doorzochte tabel | eventueel gebruikte index | aantal rijen doorzocht |
+| table                                | key                       | rows                   |
+| ------------------------------------ | ------------------------- | ---------------------- |
+| naam van een doorzochte tabel        | eventueel gebruikte index | aantal rijen doorzocht |
 | naam van een andere doorzochte tabel | eventueel gebruikte index | aantal rijen doorzocht |
 
-Als er voor een index `NULL` staat, betekent dat dat alle rijen van de eerste tot de laatste zijn beschouwd, wat typisch erg inefficiënt is \(zeker als het aantal rijen groot is\). Door een index toe te voegen aan een kolom met een gezochte waarde \(bv. een kolom vermeld in een `WHERE`\), kan je de `NULL` wegwerken en het aantal doorzochte rijen drastisch verlagen.
+Als er voor een index `NULL` staat, betekent dat dat alle rijen van de eerste tot de laatste zijn beschouwd, wat typisch erg inefficiënt is (zeker als het aantal rijen groot is). Door een index toe te voegen aan een kolom met een gezochte waarde (bv. een kolom vermeld in een `WHERE`), kan je de `NULL` wegwerken en het aantal doorzochte rijen drastisch verlagen.
 
 ## Stap 2b: uitpluizen met MySQL Workbench
 
@@ -35,18 +35,17 @@ Als je op een element van het diagram gaat staan met je muis, krijg je ook een t
 
 Als je een bepaalde `SELECT`-query wil optimaliseren, kan je onderstaand stappenplan volgen:
 
-1. Als er een `WHERE` voorkomt in je `SELECT`, voorzie dan één index op alle kolommen samen die via `AND` verbonden zijn en die rechtstreeks vergeleken worden met een waarde.
-2. Voeg aan je index ook de **eerste van de volgende mogelijkheden** toe die je hieronder krijgt.
+1. Als er een `WHERE` voorkomt in je `SELECT`, voorzie dan één index op alle kolommen samen die via `AND` verbonden zijn en die rechtstreeks vergeleken worden met een constante waarde.
+2.  Voeg aan je index ook de **eerste van de volgende mogelijkheden** toe die je hieronder krijgt.
 
-   a. Een kolom die niet rechtstreeks wordt vergeleken met een waarde, maar wel in een bereik moet liggen \(via `BETWEEN`, `>`, `<`, `LIKE` waarbij het eerste karakter geen wildcard is\)
+    a. Een kolom die niet rechtstreeks wordt vergeleken met een waarde, maar wel in een bereik moet liggen (via `BETWEEN`, `>`, `<`, `LIKE` waarbij het eerste karakter geen wildcard is)
 
-   b. Alle kolommen die in een `GROUP BY` worden gebruikt, in de volgorde waarin ze in de `GROUP BY` worden vermeld
+    b. Alle kolommen die in een `GROUP BY` worden gebruikt, in de volgorde waarin ze in de `GROUP BY` worden vermeld
 
-   c. Alle kolommen die in een `ORDER BY` worden gebruikt, in de volgorde waarin ze in de `ORDER BY` worden vermeld, maar enkel als er geen mix van `ASC` en `DESC` voorkomt in de `ORDER BY`
+    c. Alle kolommen die in een `ORDER BY` worden gebruikt, in de volgorde waarin ze in de `ORDER BY` worden vermeld, maar enkel als er geen mix van `ASC` en `DESC` voorkomt in de `ORDER BY`
 
 {% hint style="info" %}
 Als er staat dat een kolom rechtstreeks vergeleken wordt met een waarde, betekent dat bijvoorbeeld dat er staat `WHERE MYCOLUMN = ...`. Wat niet zou gaan is `WHERE RIGHT(MYCOLUMN,3) = ...` omdat we daar de kolom eerst verder verwerken en dan pas vergelijken. Dan heeft een index op de kolom geen zin.
 {% endhint %}
 
-Bovenstaand stappenplan is afkomstig uit [de documentatie van MariaDB](https://mariadb.com/kb/en/building-the-best-index-for-a-given-select/). Dit is een zeer nauwe verwant van MySQL. Als je de pagina bekijkt, zie je dat het laatste woord over indexen nog niet gezegd is. Voor deze cursus volstaat het algoritme, maar als je ooit in je carrière geconfronteerd wordt met performantieproblemen in een database, raadpleeg dan deze uitleg voor je nieuwe \(virtuele\) hardware aankoopt!
-
+Bovenstaand stappenplan is afkomstig uit [de documentatie van MariaDB](https://mariadb.com/kb/en/building-the-best-index-for-a-given-select/). Dit is een zeer nauwe verwant van MySQL. Als je de pagina bekijkt, zie je dat het laatste woord over indexen nog niet gezegd is. Voor deze cursus volstaat het algoritme, maar als je ooit in je carrière geconfronteerd wordt met performantieproblemen in een database, raadpleeg dan deze uitleg voor je nieuwe (virtuele) hardware aankoopt!

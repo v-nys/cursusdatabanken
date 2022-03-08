@@ -1,4 +1,4 @@
-# Keys \(Sleutels\)
+# Keys (Sleutels)
 
 ## Sleutel van een entity set
 
@@ -7,7 +7,7 @@
 * Er kunnen meerdere sleutels mogelijk zijn, we noemen die dan "kandidaat-sleutels".
 * We kiezen dan een "primaire sleutel" uit deze kandidaat-sleutels.
 
-![](../../../.gitbook/assets/image%20%2853%29%20%281%29.png)
+![](<../../../.gitbook/assets/image (53).png>)
 
 {% hint style="info" %}
 In SQL-databanken wordt typisch een eenvoudig numeriek sleutelattribuut `Id` toegevoegd. Dit neemt weinig ruimte in beslag, is makkelijk automatisch toe te kennen en uit te schrijven.
@@ -15,12 +15,12 @@ In SQL-databanken wordt typisch een eenvoudig numeriek sleutelattribuut `Id` toe
 
 ## Sleutel van een relationship set
 
-* Een relatie tussen twee entity sets wordt uniek bepaald door de sleutels van elk van de twee entiteiten waartussen de relatie ligt. Voorbeeld: \(klantnummer, rekeningnr\) is een sleutel voor de relatie "houder van" tussen klanten en rekeningen.
+* Een relatie tussen twee entity sets wordt uniek bepaald door de sleutels van elk van de twee entiteiten waartussen de relatie ligt. Voorbeeld: (klantnummer, rekeningnr) is een sleutel voor de relatie "houder van" tussen klanten en rekeningen.
 * Indien we een één op n-relatie hebben, volstaat de sleutel van de entity set aan de n-kant
 * Als we een één op één-relatie hebben, volstaat de sleutel van een van beide entity sets naar keuze.
 * De sleutel van een relationship set wordt niet aangeduid in het diagram.
 
-## Weak \(zwakke\) entity sets
+## Weak (zwakke) entity sets
 
 * Als een entity set onvoldoende attributen heeft om een sleutel te vormen, noemen we de entity set "zwak".
 * Dit kan alleen als de zwakke entity set ondergeschikt is aan een dominante sterke entity set.
@@ -29,4 +29,3 @@ In SQL-databanken wordt typisch een eenvoudig numeriek sleutelattribuut `Id` toe
 * Opmerking:existence dependency leidt niet automatisch tot een zwakke entity set.
 
 Een voorbeeld is een entity type `Hotelkamer` met een kolom `Nummer`. `Nummer` op zich kan niet als sleutel dienen. Een entiteit van dit type kan enkel uniek geïdentificeerd worden wanneer ze gelinkt wordt aan een hotel.
-

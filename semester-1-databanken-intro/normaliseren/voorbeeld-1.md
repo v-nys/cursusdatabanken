@@ -6,12 +6,12 @@ description: Normaliseren
 
 ## **Voorbeeld 1**
 
-![](<../../.gitbook/assets/databanken-intro-afbeelding-6 (4) (2).JPG>)
+![](<../../.gitbook/assets/databanken-intro-afbeelding-6 (4) (1) (3).JPG>)
 
 **0e normaalvorm** (onderdeel 1/2)\
 ****Verzamel alle gegevens (waarbij uiteraard de groepssleutel wordt bepaald) \[...]
 
-![](<../../.gitbook/assets/databanken-intro-afbeelding-7 (1).JPG>)
+![](<../../.gitbook/assets/databanken-intro-afbeelding-7 (1) (1).JPG>)
 
 Hoofd(groeps)sleutel: elk factuur wordt aangeduid door een uniek factuurnummer. Door dit nummer kunnen we dus elke factuur op een eenvoudige wijze terugvinden.
 
@@ -23,7 +23,7 @@ Ook het totaal bedrag te betalen kunnen we bereken (de verschillende totalen per
 Het is dus duidelijk dat we de velden “TotaalPerArtikel” en “Totaal- TeBetalen” verwijderen. \
 Onze gegevensverzameling ziet er desgevallend als volgt uit:
 
-![](<../../.gitbook/assets/image (26).png>)
+![](<../../.gitbook/assets/image (26) (1).png>)
 
 **1e normaalvorm**\
 ****Plaats de herhalende (verzameling) van gegevens in een nieuwe deelgroep en bepaal de sleutel van deze deelgroep.&#x20;
@@ -41,7 +41,7 @@ Door deze opsplitsing van gegevens is er een gegevensverlies, ttz. we weten niet
 Dit probleem is evenwel door een eenvoudige ingreep te verhelpen, nl. als de sleutel “Factuurnummer” uit tabel 1 ook wordt opgenomen in tabel 2. \
 Vanaf dat moment is er geen gegevensverlies meer en kunnen we spreken van de eerste normaalvorm.
 
-![](<../../.gitbook/assets/image (63) (2).png>)
+![](<../../.gitbook/assets/image (63) (1).png>)
 
 **2e normaalvorm**\
 Plaats die gegevens in een nieuwe deelgroep die niet afhankelijk zijn van de groepsleutel.&#x20;
@@ -49,7 +49,7 @@ Plaats die gegevens in een nieuwe deelgroep die niet afhankelijk zijn van de gro
 Het is duidelijk dat de sleutel van deelgroep 2 wordt bepaald door “Factuurnummer” en “Artikelnummer”, terwijl de sleutel “Artikelnummer” niet afhankelijk is van de groepssleutel, ttz. van de hoofdsleutel “Factuurnummer”. \
 Het is namelijk zo dat de omschrijving of eenheidsprijs van een artikel niet zal wijzigen bij een andere factuur. Dus artikelomschrijving en eenheidsprijs hangen niet af van artikelnummer en factuurnummer. Hierbij maken we dus weerom een nieuwe deelgroep aan.
 
-![](<../../.gitbook/assets/image (2).png>)
+![](<../../.gitbook/assets/image (2) (1).png>)
 
 **3e normaalvorm**\
 Plaats die gegevens in een nieuwe deelgroep, die functioneel afhankelijk zijn van niet sleutelgegevens.
@@ -58,7 +58,7 @@ M.a.w. is het de bedoeling om die gegevens op te sporen die binnen een deelgroep
 
 Zo bemerken we in deelgroep 1 dat de gegevens betreffende de klant (“Klantnaam”, “Adres” en “Gemeente”) niet afhankelijk zijn van de factuurnummer. Als we ervoor zorgen dat het “Klantnummer” in de nieuw te creëren deelgroepen telkens aanwezig is om gegevensverlies tegen te gaan, kunnen we voormelde gegevens afsplitsen. Hieruit kunnen we dan concluderen dat de klantgegevens niet rechtstreeks afhankelijk zijn van de groepsleutel. Deze gegevens zijn echter wel afhankelijk van de sleutel “Klantnummer”.
 
-![](<../../.gitbook/assets/image (6) (1).png>)
+![](<../../.gitbook/assets/image (6).png>)
 
 > Functionele afhankelijkheid: Een attribuut A is functioneel afhankelijk van een attribuut B als bij een bepaalde waarde van A slechts één waarde voor B hoort. Bijvoorbeeld de artikelnaam (cfr. voorbeeld 1) is volledig afhankelijk van het artikelnummer. Het is namelijk zo dat bij één artikelnummer slechts één omschrijving of artikelnaam hoort.
 
@@ -134,7 +134,7 @@ De lokaalcode en lokaalomschrijving wordt telkens herhaald, terwijl deze gegeven
 
 Hierdoor kunnen we nog een afsplitsing doorvoeren.
 
-![](<../../.gitbook/assets/image (69) (1).png>)
+![](<../../.gitbook/assets/image (69).png>)
 
 Door deze bewerking, zijn alle problemen opgelost.&#x20;
 
