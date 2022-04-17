@@ -14,6 +14,10 @@ Een functie kan **deterministisch** of **niet-deterministisch** zijn. Een **dete
 
 MySQL veronderstelt standaard dat een functie niet-deterministisch is als je het zelf niet aangeeft.
 
+{% hint style="warning" %}
+Om niet-deterministische functies te kunnen schrijven, kan het zijn dat je eerst de globale setting `log_bin_trust_function_creators` eenmalig moet aanzetten: `SET GLOBAL log_bin_trust_function_creators = TRUE;`
+{% endhint %}
+
 ### Aanmaken van functies
 
 De syntax om een functie aan te maken lijkt sterk op de syntax om een stored procedure aan te maken. Je doet dit dan ook via de **function editor** in Workbench:
