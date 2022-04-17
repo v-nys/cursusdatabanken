@@ -31,3 +31,7 @@ Een voorbeeld van een niet-deterministische functie:
 ![](../../.gitbook/assets/niet-deterministische-functie.png)
 
 Je kan niet afdwingen via het datatype dat een parameter niet-nullable is, maar je kan in het begin van de functie wel een fout signaleren als dat wel zo is.
+
+## De referentie
+
+MySQL voorziet veel ingebouwde functies. Als je algemene functionaliteit nodig hebt, is de kans groot dat deze al voorzien is. Raadpleeg [deze pagina van de officiële documentatie](https://dev.mysql.com/doc/refman/8.0/en/functions.html) om zeker te zijn van wat voorzien is en wat niet.
