@@ -1,8 +1,6 @@
----
-description: (security)
----
+# Object access control
 
-# OBJECT ACCESS CONTROL
+
 
 {% hint style="success" %}
 [Kennisclip](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=59d37d66-b071-4afd-9a73-ad2501048f8c)
