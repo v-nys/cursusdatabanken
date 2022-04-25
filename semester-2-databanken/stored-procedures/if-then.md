@@ -44,8 +44,8 @@ END$$
 DELIMITER ;
 ```
 
-In bovenstaand voorbeeld creëren we een `IN` en `OUT` parameter voor de stored procedure `if_then`.  
-De `pLiedjesId` wordt gebruikt om het Id van het liedje op te geven, hetgeen dan verder in de stored procedure wordt gebruikt.   
+In bovenstaand voorbeeld creëren we een `IN` en `OUT` parameter voor de stored procedure `if_then`.\
+De `pLiedjesId` wordt gebruikt om het Id van het liedje op te geven, hetgeen dan verder in de stored procedure wordt gebruikt. \
 De output-parameter`pResult` wordt dan weer gebruikt om een waarde weer te geven buiten de stored procedure.
 
 Het sql-statement gaat de lengte van het liedje met het `Id` dat bepaald is door de `IN-parameter pLiedjesId` bewaren in de lokale variabele `song_length`.
@@ -61,7 +61,7 @@ SELECT @Resultaat;
 
 Het resultaat is:
 
-![](../../.gitbook/assets/ifelse%20%281%29.JPG)
+![](<../../.gitbook/assets/ifelse (1).JPG>)
 
 Als je evenwel een id zou opgeven waarbij de lengte kleiner is dan 80, dan wordt er niets weergegeven.
 
@@ -113,7 +113,7 @@ END$$
 DELIMITER ;
 ```
 
-Hieronder het resultaat voor een id met een lengte van minder dan 80 sec. 
+Hieronder het resultaat voor een id met een lengte van minder dan 80 sec.&#x20;
 
 ```sql
 CALL if_then(1, @Resultaat);
@@ -132,7 +132,7 @@ In het geval dat de waarde groter is dan 80 sec., dan bekom je hetzelfde positie
 IF conditie THEN
    if-statement(s);
 ELSEIF conditie THEN
-   elseif-statement§s);
+   elseif-statement(s);
 ELSE
    else-statement(s);
 END IF;
@@ -180,4 +180,3 @@ SELECT @Resultaat;
 ```
 
 ![](../../.gitbook/assets/ifelseelseifthen.JPG)
-
