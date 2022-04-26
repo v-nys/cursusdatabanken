@@ -55,7 +55,7 @@ Vervolgens gaan we op basis van een `IF-THEN` constructie nagaan wat de inhoud v
 Om de stored procedure correct op te roepen, hanteren we volgend statement.
 
 ```sql
-CALL if_then(23, @Resultaat);
+CALL if_then(2716, @Resultaat);
 SELECT @Resultaat;
 ```
 
