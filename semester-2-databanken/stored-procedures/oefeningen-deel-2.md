@@ -1,4 +1,4 @@
-# Oefeningen deel 2
+# Oefeningen control flow
 
 We werken verder met de `aptunes`-database. **Activeer deze database in elk script.** Gebruik telkens het meest specifieke parametertype dat je kan toepassen. Gebruik dus geen `INOUT` parameters als het ook met een gewone `IN` of `OUT` parameter kan.
 
@@ -8,7 +8,7 @@ We zullen gebruik maken van stored procedures om testdata te genereren. In het E
 
 Deze data hoeft geen steek te houden, maar ze moet voldoende gevarieerd zijn. Daarom voeren we willekeurige waarden in. Met de functie `RAND()` kan je een willekeurig getal tussen 0 en 1 genereren. Exact 0 kan gegenereerd worden, maar exact 1 niet.
 
-Wil je een getal tussen 0 en een andere waarde \(bijvoorbeeld `ANDER_GETAL`\) genereren, dan schrijf je: `FLOOR(RAND() * ANDER_GETAL);`. `FLOOR` dient om naar beneden af te ronden, zodat je een `INT` verkrijgt. `ANDER_GETAL` kan dan nooit gegenereerd worden. Wil je een getal tussen 1 en `ANDER_GETAL` genereren, dan tel je er gewoon 1 bij: `FLOOR(RAND() * ANDER_GETAL) + 1`.
+Wil je een getal tussen 0 en een andere waarde (bijvoorbeeld `ANDER_GETAL`) genereren, dan schrijf je: `FLOOR(RAND() * ANDER_GETAL);`. `FLOOR` dient om naar beneden af te ronden, zodat je een `INT` verkrijgt. `ANDER_GETAL` kan dan nooit gegenereerd worden. Wil je een getal tussen 1 en `ANDER_GETAL` genereren, dan tel je er gewoon 1 bij: `FLOOR(RAND() * ANDER_GETAL) + 1`.
 
 ## Vraag 1
 
@@ -21,7 +21,7 @@ Schrijf een stored procedure,`MockAlbumRelease`, die een nieuwe albumrelease zal
 1. Ze declareert vier variabelen van type `INT`: `numberOfAlbums`, `numberOfBands`, `randomAlbumId` en `randomBandId`. De initiële waarde hiervan is 0.
 2. Ze past `numberOfAlbums` aan naar het aantal albums in je systeem en `numberOfBands` naar het aantal bands.
 3. Ze past `randomAlbumId` aan naar een willekeurige getal tussen 1 en het aantal albums en past `randomBandId` aan naar een willekeurig getal tussen 1 en het aantal bands.
-4. Als `(randomBandId,randomBandId)` nog niet voorkomt in de tabel `Albumreleases`, voegt ze deze combinatie toe door middel van een `INSERT`. Je moet hier zelf gebruik maken van een `IF`, een `IN` en een subquery \(op `Albumreleases`\) om te beslissen of de insert mag plaatsvinden. Je hoeft niets te doen als de release al bestaat.
+4. Als `(randomAlbumId,randomBandId)` nog niet voorkomt in de tabel `Albumreleases`, voegt ze deze combinatie toe door middel van een `INSERT`. Je moet hier zelf gebruik maken van een `IF`, een `IN` en een subquery (op `Albumreleases`) om te beslissen of de insert mag plaatsvinden. Je hoeft niets te doen als de release al bestaat.
 
 Plaats enkel de definitie in het script, geen oproep. Noem het script dat voor de definitie zorgt `0644__Oefening.sql`. Test je procedure uit door ze enkele keren op te roepen en dan `Albumreleases` te bekijken. Na calibratie was deze tabel leeg, dus na enkele calls zouden er een paar records moeten staan.
 
@@ -53,4 +53,3 @@ Plaats enkel de definitie in het script, geen oproep. Noem het script dat voor d
 Herschrijf `MockAlbumReleases` tot `MockAlbumReleasesLoop`, waarin gebruik gemaakt wordt van een `LOOP` in plaats van een `REPEAT`. Voor de rest doet de stored procedure net hetzelfde als de vorige versie.
 
 Plaats enkel de definitie in het script, geen oproep. Noem het script dat voor de definitie zorgt `0647__Oefening.sql`.
-
