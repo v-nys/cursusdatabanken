@@ -69,3 +69,10 @@ Dit doe je gewoonweg als volgt, waarbij `trigger_name` de naam is die je bij het
 ```sql
 DROP TRIGGER trigger_name
 ```
+
+### Uitvoering
+
+* Een `BEFORE`-trigger loopt voor er een **poging** gedaan wordt om een operatie uit te voeren. Het is dus niet gegarandeerd dat die operatie ook zal slagen.
+* Een `AFTER`-trigger loopt alleen als de operatie kan worden uitgevoerd.
+* Als er een fout optreedt tijdens een trigger (`BEFORE` of `AFTER`), faalt de operatie die de trigger heeft geactiveerd.
+
