@@ -19,10 +19,10 @@ Om dit niet aan de verantwoordelijkheidszin van de gebruikers over te laten, cre
 
 ### Een gebruiker creëren
 
-We demonstreren dit door een gebruiker `'ap'@'%'` aan te maken. Het percentteken betekent dat het niet uitmaakt of de user op dezelfde machine werkt als die waarop de MySQL-server draait. Als je dat wel wil afdwingen, gebruik je localhost in plaats van %.
+We demonstreren dit door een gebruiker `'ap'@'%'` aan te maken. Het percentteken betekent dat het niet uitmaakt of de user op dezelfde machine werkt als die waarop de MySQL-server draait. Als je dat wel wil afdwingen **en** je werkt op een UNIX-systeem, gebruik je localhost in plaats van %.
 
 {% hint style="warning" %}
-Als je de cursus mee hebt gevolgd zoals bedoeld, dus met een virtuele machine waarin je server draait, is localhost geen optie. Je virtuele machine wordt niet beschouwd als dezelfde machine als je fysieke machine.
+Als je de cursus mee hebt gevolgd zoals bedoeld, dus met een virtuele machine waarin je server draait, is localhost geen optie. Je virtuele machine (die inderdaad UNIX-gebaseerd is) wordt niet beschouwd als dezelfde machine als je fysieke machine.
 {% endhint %}
 
 ```sql
