@@ -18,8 +18,8 @@ CREATE PROCEDURE `MockAlbumReleaseBeter` ()
 BEGIN
 declare Albums_Id int;
 declare Bands_Id int;
-select Id from Albums order by rand() into Albums_Id;
-select Id from Bands order by rand() into Bands_Id;
+select Id from Albums order by rand() limit 1 into Albums_Id;
+select Id from Bands order by rand() limit 1 into Bands_Id;
 insert into AlbumReleases (Bands_Id, Albums_Id)
 values
 (Bands_Id, Albums_Id);
