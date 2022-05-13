@@ -15,6 +15,7 @@ DROP procedure IF EXISTS `MockAlbumReleaseBeter`;
 DELIMITER $$
 USE `aptunes`$$
 CREATE PROCEDURE `MockAlbumReleaseBeter` ()
+SQL SECURITY INVOKER
 BEGIN
 declare Albums_Id int;
 declare Bands_Id int;
