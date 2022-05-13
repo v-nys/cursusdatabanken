@@ -47,6 +47,6 @@ Test of het script gewerkt heeft door in te loggen als `student` en te kijken da
 
 ## Vraag 3
 
-Maak een kopie van je script `0654__Oefening.sql` en noem ze `0655__Oefening.sql`. Hernoem daarin de stored procedure naar `DangerousInsertAlbumreleases2`. Pas verder de definitie aan zodat de gebruikers van deze stored procedure ook de rechten moeten hebben om de stappen die plaatsvinden in de stored procedure op zich uit te voeren.
+Maak een kopie van je script `0653__Oefening.sql` en noem ze `0655__Oefening.sql`. Hernoem daarin de stored procedure naar `DangerousInsertAlbumreleases2`. Pas verder de definitie aan zodat de gebruikers van deze stored procedure ook de rechten moeten hebben om de stappen die plaatsvinden in de stored procedure op zich uit te voeren.
 
 Tip: je moet alleen het symbool "2" toevoegen en drie woordjes. Maak het dus niet te moeilijk.
