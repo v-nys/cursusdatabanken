@@ -4,7 +4,31 @@ We werken verder met de `aptunes`-database. **Activeer deze database in elk scri
 
 ## Vraag 1
 
-Schrijf een stored procedure, `DangerousInsertAlbumreleases`. Deze stored procedure voegt drie willekeurige albumreleases in (zoals in vorige reeks oefeningen: een combinatie van een willekeurig album en een willekeurige band, maar **niet via de stored procedure die je in de vorige reeks oefeningen hebt geschreven**), maar signaleert ook met een kans van 1 op 3 een SQL state '45000' na het invoegen van de tweede albumrelease.
+Schrijf een stored procedure, `DangerousInsertAlbumreleases`. Deze stored procedure voegt drie willekeurige albumreleases in, maar signaleert ook met een kans van 1 op 3 een SQL state '45000' na het invoegen van de tweede albumrelease.
+
+Om een willekeurige albumrelease te maken, kan je volgende procedure gebruiken:
+
+```sql
+USE `aptunes`;
+DROP procedure IF EXISTS `MockAlbumReleaseBeter`;
+
+DELIMITER $$
+USE `aptunes`$$
+CREATE PROCEDURE `MockAlbumReleaseBeter` ()
+BEGIN
+declare Albums_Id int;
+declare Bands_Id int;
+select Id from Albums order by rand() into Albums_Id;
+select Id from Bands order by rand() into Bands_Id;
+insert into AlbumReleases (Bands_Id, Albums_Id)
+values
+(Bands_Id, Albums_Id);
+END$$
+
+DELIMITER ;
+
+
+```
 
 Schrijf in deze stored procedure een handler zodat het niet mogelijk is dat er slechts één of twee albumreleases worden ingevoegd. Als er iets mis loopt, mag er geen enkele nieuwe release zijn toegevoegd. In plaats daarvan wordt deze foutboodschap getoond: "Nieuwe releases konden niet worden toegevoegd." Let op: SQL state '45000' is niet het enige foutsignaal dat je hier kan krijgen, want het kan bijvoorbeeld ook zijn dat een willekeurige albumrelease al in het systeem zit. Schrijf je handler zo dat **alle** fouten worden tegengehouden: via `SQLEXCEPTION` dus.
 
