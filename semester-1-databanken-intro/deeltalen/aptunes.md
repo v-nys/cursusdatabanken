@@ -152,7 +152,7 @@ aptunes\_\_0027.sql
 aptunes\_\_0032.sql
 {% endfile %}
 
-{% file src="../../.gitbook/assets/aptunes__0033.sql" %}
+{% file src="../../.gitbook/assets/aptunes__0034.sql" %}
 
 ### Veel-op-veel (M-op-N) relaties
 
@@ -187,8 +187,8 @@ aptunes\_\_0036.sql
 * Toon deze zelfde gegevens nu enkel voor nummers waarvan de titel begint met de letter "A". Noem dit script `aptunes__0042.sql`.
 * Toon de titel van elk album naast de naam van de artiest. Noem dit script `aptunes__0043.sql`.
 * Toon hoe veel nummers Led Zeppelin heeft. Noem dit script `aptunes__0044.sql`.
-* Toon de titel van elk nummer naast het nummer (dus het `Id`) van het album waarop dat nummer staat. Noem dit script `aptunes__0045.sql`. Hiervoor heb je de tabel `NummerOpAlbum` nodig. Je hebt nog maar één join nodig.
-* Toon per nummer (dus `Id`) van een album hoe veel nummers er op dat album staan. Je hoeft nog **niet** de titel te tonen van het album. Noem dit script `aptunes__0046.sql`.  Je kan dit zonder join.
+* Toon de titel van elk nummer naast het `Id` van het album waarop dat nummer staat. Noem dit script `aptunes__0045.sql`. Hiervoor heb je de tabel `NummerOpAlbum` nodig. Je hebt nog maar één join nodig.
+* Toon per `Id` van een album hoe veel nummers er op dat album staan. Je hoeft nog **niet** de titel te tonen van het album. Noem dit script `aptunes__0046.sql`.  Je kan dit zonder join.
 * Toon elk nummer naast de titel van het album waarop het nummer staat. Noem dit script `aptunes__0047.sql`. Nu heb je twee joins nodig.
 * Toon hoe veel albums elke gebruiker heeft. Noem dit script `aptunes__0048.sql`. Je moet dus naast de naam van elke gebruiker een getal zien staan (het aantal albums dat hij heeft).
 * Toon alle combinaties van een gebruiker en een album in de collectie van die gebruiker. Toon hierbij ook de datum waarop de gebruiker het album heeft aangekocht. Noem dit script `aptunes__0049.sql`. Je moet dus een gebruikersnaam, titel en datum naast elkaar zien.
