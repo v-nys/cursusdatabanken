@@ -17,8 +17,6 @@
   * [Basisstructuren van een relationele databank](semester-1-databanken-intro/databanken/basisstructuren-van-een-relationele-databank.md)
   * [Diagramnotatie](semester-1-databanken-intro/databanken/diagramnotatie.md)
   * [Een databank ontwerpen](semester-1-databanken-intro/databanken/een-databank-ontwerpen.md)
-* [Normaliseren](semester-1-databanken-intro/normaliseren/README.md)
-  * [Voorbeeld](semester-1-databanken-intro/normaliseren/voorbeeld-1.md)
 * [(My)SQL](semester-1-databanken-intro/deeltalen/README.md)
   * [DDL](semester-1-databanken-intro/deeltalen/ddl/README.md)
     * [Datatypes](semester-1-databanken-intro/deeltalen/ddl/datatypes/README.md)
