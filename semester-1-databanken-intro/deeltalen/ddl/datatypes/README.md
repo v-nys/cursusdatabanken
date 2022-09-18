@@ -36,7 +36,7 @@ Dit type dient om kommagetallen **bij benadering** op te slaan. Dit wil zeggen d
 
 ### getallen schrijven
 
-Deze data hoeft niet tussen enkele quotes. Je gebruikt een punt in plaats van een komma.
+Deze data zet je niet tussen quotes. **Je gebruikt een punt in plaats van een komma.**
 
 ## temporele types
 
@@ -55,7 +55,7 @@ Een `DATETIME` is een waarde die een specifiek ogenblik in de tijd voorstelt. Me
 
 ### datums schrijven
 
-Je schrijft datums alsof het strings waren in een afgesproken formaat, dus ook tussen enkele aanhalingstekens.
+Je schrijft datums alsof het strings waren in een afgesproken formaat, dus wel tussen quotes.
 
 ## defaultwaarden
 
