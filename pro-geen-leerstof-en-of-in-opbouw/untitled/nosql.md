@@ -56,7 +56,7 @@ Er zijn 4 soorten no-sql databanken:
 
 #### **NoSQL – Document databank**
 
-![](<../../.gitbook/assets/image (1).png>)
+![](<../../.gitbook/assets/image (1) (1).png>)
 
 * Database bevat ‘documenten’ (json objecten)\
   Bv.: { Id:1, Name: ‘Janssens’ FirstName:’Jan’}
@@ -80,7 +80,7 @@ Er zijn 4 soorten no-sql databanken:
 
 #### NoSQL – Graph databank
 
-![](<../../.gitbook/assets/image (3).png>)
+![](<../../.gitbook/assets/image (3) (1).png>)
 
 * Ontworpen om ‘sociale eigenschappen’ van personen op te slaan, bvb:\
   persoon a is bevriend met persoon b\
