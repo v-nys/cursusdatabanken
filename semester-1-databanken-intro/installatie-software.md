@@ -4,6 +4,8 @@ description: Installatiehandleiding
 
 # Installatie van alle software
 
+Download: [https://dev.mysql.com/downloads/workbench/](https://dev.mysql.com/downloads/workbench/)
+
 {% embed url="https://youtu.be/YTO44aLbGMk" %}
 installatie MySQL Workbench
 {% endembed %}
