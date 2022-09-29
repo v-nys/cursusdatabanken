@@ -35,7 +35,7 @@ USE ApDB;
 SELECT * FROM Boeken ORDER BY Titel;
 ```
 
-Je kan ook een tweede \(en derde,...\) kolom gebruiken om knopen door te hakken:
+Je kan ook een tweede (en derde,...) kolom gebruiken om knopen door te hakken:
 
 ```sql
 USE ApDB;
@@ -56,37 +56,3 @@ SELECT * FROM Boeken ORDER BY 1, 2;
 ```
 
 Dit sorteert eerst volgens de eerste kolom en dan volgens de tweede.
-
-Schrijf een script dat de namen van auteurs toont die je in script met nummer 0010 hebt toegevoegd, gesorteerd volgens `Titel`. Noem het 0011\_\_Select.sql.
-
-Schrijf ook een script dat alle kolommen toont die je in het script met nummer 0010 hebt toegevoegd, gesorteerd volgens de inhoud van de tweede kolom. Noem het 0012\_\_Select.sql.
-
-### data verwerken met functies
-
-Je hoeft niet altijd een kolom te tonen in je uitvoer. Je kan ook een afgeleid resultaat tonen met behulp van **functies**. Concatenatie van strings of het bepalen van substrings vallen hieronder.
-
-```sql
-USE ApDB;
--- om alleen de initalen te tonen, we starten
--- met het eerste karakter en we nemen 1 karakter.
--- begint niet met 0, maar bij 1!
--- dit is anders dan veel programmeertalen!
-SELECT Titel, substring(Voornaam, 1, 1),
-   substring(Familienaam, 1, 1)
-   FROM Boeken ORDER BY Familienaam, Titel;
-
--- om de initialen en een punt erachter te tonen
--- daarvoor gebruiken we 'string concatenation',
--- het aan elkaar plakken van strings
-SELECT Titel, concat(substring(Voornaam, 1, 1),'.',substring(Familienaam, 1, 1),'.') FROM Boeken ORDER BY Titel, Voornaam;
-```
-
-Dit is handig, maar de hoofdingen van de gegenereerde output kunnen beter. Je kan een afgeleide kolom ook een alternatieve hoofding geven met `AS`:
-
-```sql
-USE ApDB;
-SELECT Titel, concat(substring(Voornaam, 1, 1),'.',substring(Familienaam, 1, 1),'.') AS Initialen FROM Boeken ORDER BY Titel, Voornaam;
-```
-
-Als er spaties voorkomen in de hoofding, zet ze dan tussen enkele aanhalingstekens.
-
