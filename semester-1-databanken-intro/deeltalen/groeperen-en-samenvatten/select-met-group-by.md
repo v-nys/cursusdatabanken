@@ -22,7 +22,7 @@ In het eerdere calibratiescript staat veel meer data, maar voor een voorbeeld is
 | Swieber | 14       | mannelijk  |
 | Misty   | 7        | vrouwelijk |
 
-Informatie die over groepen records gaat kan dan zijn: "hoeveel mannelijke honden zijn er in het systeem?" of "wat is de gemiddelde leeftijd per geslacht?" Deze vragen kan je niet meteen beantwoorden met de eerdere DML-commando's, maar wel met behulp van `GROUP BY`. `Honden GROUP BY Honden.geslacht` moet je zien als een tijdelijke tabel die er als volgt uitziet:
+Informatie die over groepen records gaat kan dan zijn: "hoeveel mannelijke honden zijn er in het systeem?" of "wat is de gemiddelde leeftijd per geslacht?" Deze vragen kan je niet meteen beantwoorden met de eerdere DML-commando's, maar wel met behulp van `GROUP BY`. `Honden GROUP BY Honden.Geslacht` moet je zien als een tijdelijke tabel die er als volgt uitziet:
 
 | namen per geslacht | leeftijd per geslacht | geslacht   |
 | ------------------ | --------------------- | ---------- |
@@ -88,3 +88,18 @@ GROUP BY Leeftijd;
 ```
 
 Dit toont ons dat er 10 (dus 6 vrouwelijke en 4 mannelijke) honden zijn van 1 jaar oud. Anders gezegd: hoe meer kolommen je vermeldt na `GROUP BY`, hoe meer onderverdelingen je zal zien.
+
+## handige aggregaatfunctie: group\_concat
+
+
+
+Eerder zeiden we: "`Honden GROUP BY Honden.geslacht` moet je zien als een tijdelijke tabel die er als volgt uitziet:"
+
+| namen per geslacht | leeftijd per geslacht | geslacht   |
+| ------------------ | --------------------- | ---------- |
+| \[Ming,Swieber]    | \[10,14]              | mannelijk  |
+| \[Misty]           | \[7]                  | vrouwelijk |
+
+Je kan deze tabel niet echt op deze manier tonen, maar je kan ze wel bijna verkrijgen door middel van de group\_concat (aggregaat)functie. Deze aggregeert alle waarden in één groep door middel van concatentie (met andere woorden: ze plakt ze allemaal achter elkaar).
+
+Probeer maar eens volgende query: `select group_concat(Naam), group_concat(Leeftijd), Geslacht from Honden group by Honden.Geslacht`

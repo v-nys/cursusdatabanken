@@ -15,9 +15,9 @@ Voor deze voorbeelden gebruiken we volgende calibratiestap, die je moet opslaan 
 ```sql
 USE ApDB;
 CREATE TABLE Honden (
-Naam VARCHAR(50) CHAR SET utf8mb4 NOT NULL,
-Leeftijd TINYINT NOT NULL,
-Geslacht ENUM('mannelijk','vrouwelijk')
+Naam VARCHAR(50) NOT NULL,
+Leeftijd INT NOT NULL,
+Geslacht ENUM('mannelijk','vrouwelijk') -- "er zijn maar twee mogelijkheden"
 );
 INSERT INTO Honden (Naam,Leeftijd,Geslacht)
 VALUES
