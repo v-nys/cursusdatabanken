@@ -116,7 +116,7 @@ Nu er redelijk wat data is, moeten we die gaan samenvatten eerder dan rij per ri
 | 1990      | ...            |
 | 2000      | ...            |
 
-* Het blijkt dat erg lange klassieke nummers niet erg winstgevend zijn voor onze dienst. Toon daarom alfabetisch alle artiesten die klassieke nummers hebben, maar enkel als hun klassieke nummers ook gemiddeld langer dan 8 minuten duren. Noem je script aptunes\_\_0023.sql. **Tip: je hebt hier een combinatie van** [**alle clausules** ](select/select-met-clausules.md)**nodig.**
+* Het blijkt dat erg lange klassieke nummers niet erg winstgevend zijn voor onze dienst. Toon daarom alfabetisch alle artiesten die klassieke nummers hebben, maar enkel als hun klassieke nummers ook gemiddeld langer dan 8 minuten duren. Noem je script aptunes\_\_0023.sql. **Tip: afhankelijk van hoe je dit doet, heb je de meeste of zelfs alle clausules nodig.**
 
 ## Normalisatie van de apTunes databank
 
