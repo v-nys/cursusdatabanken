@@ -52,6 +52,7 @@
   * [JOINS](semester-1-databanken-intro/deeltalen/joins/README.md)
     * [JOINs bij simpele relaties](semester-1-databanken-intro/deeltalen/joins/joins-simpele-relaties.md)
     * [JOINs via tussenliggende tabel](semester-1-databanken-intro/deeltalen/joins/joins-via-tussenliggende-tabel.md)
+    * [UPDATE van JOIN](semester-1-databanken-intro/deeltalen/joins/update-van-join.md)
   * [apTunes project](semester-1-databanken-intro/deeltalen/aptunes.md)
 
 ## PRO (GEEN LEERSTOF EN/OF IN OPBOUW)

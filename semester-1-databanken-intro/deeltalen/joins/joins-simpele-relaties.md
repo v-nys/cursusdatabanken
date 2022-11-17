@@ -10,41 +10,42 @@ Om de integriteit van de database te bewaren, normaliseren we de gegevens in de 
 
 De "domste" manier om data uit meerdere tabellen te combineren tot data die uit één tabel lijkt te komen, is de "cross join". Deze "plakt" elke rij uit tabel A aan elke rij uit tabel B. Veronderstel bijvoorbeeld volgende tabellen voor taken en voor personen:
 
-| omschrijving | Id |
-| :--- | :--- |
-| bestek voorzien | 1 |
-| frisdrank meebrengen | 2 |
-| aardappelsla maken | 3 |
+| omschrijving         | Id |
+| -------------------- | -- |
+| bestek voorzien      | 1  |
+| frisdrank meebrengen | 2  |
+| aardappelsla maken   | 3  |
 
 | voornaam | Id | Taken\_Id |
-| :--- | :--- | :--- |
-| Yannick | 1 | 2 |
-| Bavo | 2 | 1 |
-| Max | 3 | 3 |
+| -------- | -- | --------- |
+| Yannick  | 1  | 2         |
+| Bavo     | 2  | 1         |
+| Max      | 3  | 3         |
 
 Deze kunnen we op deze manier combineren en tonen:
 
 ```sql
 SELECT *
 FROM Taken
-CROSS JOIN Leden;
+CROSS JOIN Leden
+ORDER BY Taken.Id, Leden.Id;
 ```
 
 Dit levert dan een resultaat dat er als volgt uitziet:
 
-| omschrijving | Taken.Id | voornaam | Leden.Id | Taken\_Id |
-| :--- | :--- | :--- | :--- | :--- |
-| bestek voorzien | 1 | Yannick | 1 | 2 |
-| bestek voorzien | 1 | Bavo | 2 | 1 |
-| bestek voorzien | 1 | Max | 3 | 3 |
-| frisdrank meebrengen | 2 | Yannick | 1 | 2 |
-| frisdrank meebrengen | 2 | Bavo | 2 | 1 |
-| frisdrank meebrengen | 2 | Max | 3 | 3 |
-| aardappelsla maken | 3 | Yannick | 1 | 2 |
-| aardappelsla maken | 3 | Bavo | 2 | 1 |
-| aardappelsla maken | 3 | Max | 3 | 3 |
+| omschrijving         | Taken.Id | voornaam | Leden.Id | Taken\_Id |
+| -------------------- | -------- | -------- | -------- | --------- |
+| bestek voorzien      | 1        | Yannick  | 1        | 2         |
+| bestek voorzien      | 1        | Bavo     | 2        | 1         |
+| bestek voorzien      | 1        | Max      | 3        | 3         |
+| frisdrank meebrengen | 2        | Yannick  | 1        | 2         |
+| frisdrank meebrengen | 2        | Bavo     | 2        | 1         |
+| frisdrank meebrengen | 2        | Max      | 3        | 3         |
+| aardappelsla maken   | 3        | Yannick  | 1        | 2         |
+| aardappelsla maken   | 3        | Bavo     | 2        | 1         |
+| aardappelsla maken   | 3        | Max      | 3        | 3         |
 
-Dit bevat nuttige informatie, maar ook rijen waar we niets aan hebben. De interessante rijen zijn die, die een persoon koppelen aan een taak. Dat zijn de rijen waarin `Taken.Id` gelijk is aan `Taken_Id` \(afkomstig uit `Leden`\).
+Dit bevat nuttige informatie, maar ook rijen waar we niets aan hebben. De interessante rijen zijn die, die een persoon koppelen aan een taak. Dat zijn de rijen waarin `Taken.Id` gelijk is aan `Taken_Id` (afkomstig uit `Leden`).
 
 Je kan dus personen koppelen aan hun taak via:
 
@@ -79,4 +80,3 @@ Het resultaat is hetzelfde, maar in dit scenario wordt `INNER JOIN` verkozen. `O
 {% hint style="info" %}
 Om precies te zijn: `ON` kan gebruikt worden in een `JOIN`-statement die geen `CROSS JOIN`-statement is. Er bestaan nog andere soorten `JOIN`s dan `CROSS` en `INNER`, maar die zijn voor een latere cursus.
 {% endhint %}
-
