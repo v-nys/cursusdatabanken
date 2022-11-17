@@ -124,6 +124,10 @@ De apTunes database, zoals ze ontwikkeld is met scripts 1 tot 23, is niet erg ef
 
 We willen ons ontwerp verbeteren, zodat we uiteindelijk volgende relaties krijgen:
 
+{% hint style="warning" %}
+Op deze figuur staat "Liedjes" in plaats van "Nummers". De eerstvolgende opdrachten gebruiken nog "Nummers", maar dat wordt verderop aangepast.
+{% endhint %}
+
 <figure><img src="../../.gitbook/assets/beter_ontwerp.png" alt=""><figcaption></figcaption></figure>
 
 Dit ERD toont alleen de entiteittypes en de relatietypes. De precieze velden ervan moet je zelf kunnen afleiden uit de informatie waarvan je vertrekt.
@@ -154,7 +158,15 @@ aptunes\_\_0032.sql
 
 ### Veel-op-veel (M-op-N) relaties
 
-**Fris het vorige deel dus op indien je ergens niet kan volgen, want deze leerstof bouwt rechtstreeks voort op de vorige. We werken hier verder naar het ontwerp volgens het ERD.**
+{% hint style="warning" %}
+Vanaf hier spreken we over "Liedjes" in plaats van "Nummers". "Nummers" werd verwarrend omdat we ook getallen ("nummers") als sleutelwaarden gebruiken.
+{% endhint %}
+
+**Fris het vorige deel op indien je ergens niet kan volgen, want deze leerstof bouwt rechtstreeks voort op de vorige. We werken hier verder naar het ontwerp volgens het ERD.**
+
+{% hint style="info" %}
+Voer eerst het calibratiescript op DigitAP uit.
+{% endhint %}
 
 * Het script om `GebruikerHeeftAlbum` toe te voegen noem je `aptunes__0035.sql.` Naast de sleutelkolommen voorzie je ook een kolom `DatumToevoeging` om het tijdstip toe te voegen waarop dit album toegevoegd is aan de bibliotheek. Dit is een verplichte `datetime.`
 * Het script om de data toe te voegen (`aptunes__0036.sql`) vind je hieronder terug.
