@@ -1,4 +1,4 @@
-# Typische subqueries
+# Subqueries met tijdelijke opslag
 
 ## Subqueries om met een waarde te vergelijken
 
@@ -53,6 +53,26 @@ delete from Personen
 where Leeftijd = (select min(Leeftijd) from Personen);
 ```
 
+Dit kan je wel oplossen door middel van sessievariabelen.
+
+### sessievariabelen
+
+Een sessievariabele is vergelijkbaar met een variabele uit een _general purpose_ programmeertaal zoals C# of TypeScript. Het is met andere woorden een koppeling tussen een naam en een waarde. Je kan een sessievariabele als volgt een waarde geven:
+
+```sql
+set @mySessionVariable = (select min(Leeftijd) from Personen);
+```
+
+Een sessievariabele begint **altijd** met `@`. Hiermee kan je bovenstaande beperking op subqueries dus ook omzeilen, want je kan het volgende doen:
+
+```sql
+set @minimumLeeftijd = (select min(Leeftijd) from Personen);
+delete from Personen
+where Leeftijd = @minimumLeeftijd;
+```
+
+Wanneer je verbinding met de MySQL-databank verbroken wordt, verdwijnen al je sessievariabelen.
+
 ## Subqueries voor vergelijkingen met lijsten resultaten
 
 Scalaire subqueries zijn niet de enige subqueries die we hebben. Als je subquery één kolom als resultaat produceert, kan je deze kolom gebruiken als een lijst waarden waarmee je wil vergelijken. De meest gebruikte manier om een waarde en een lijst te vergelijken is door na te gaan of de waarde gewoonweg voorkomt in die lijst. Dat is ook wat we eerder deden met het sleutelwoordje `IN`, dus het zal niet verbazen dat `IN` gevolgd mag worden door een subquery die een kolom produceert.
@@ -63,41 +83,13 @@ from Personen
 where Voornaam in (select distinct Familienaam from Personen);
 ```
 
-Maar je kan meer doen. Je kan ook vergelijken met de waarden in een lijst door middel van `ANY` en `ALL`. Met `ANY` kan je een vergelijking toepassen op een hele kolom. Ze moet maar één keer slagen en dan zal de `where` slagen.
+### Temporary tables
 
-Bijvoorbeeld:
+Subqueries van bovenstaande vorm kunnen nog meer doen, maar op het eerste gezicht zijn er veel beperkingen waar we hier niet dieper op in gaan. Om hier rond te werken, kan je gebruik maken van _temporary tables_ of tijdelijke tabellen. Deze lijken op sessievariabelen, maar ze dienen niet om een scalar op te slaan. Ze dienen om één of meerdere kolommen tijdelijk op te slaan. Ze verdwijnen ook wanneer je de connectie verbreekt.
 
-```sql
-select Voornaam, Familienaam, Leeftijd
-from Personen
-where Leeftijd = any (select Leeftijd + 50 from Personen);
-```
+Een tijdelijke tabel aanmaken doe je via `CREATE TEMPORARY TABLE`. De syntax is verder dezelfde als voor een gewone tabel. Een tijdelijke tabel is ook alleen maar zichtbaar binnen je eigen verbinding. Er is dus geen risico dat iemand anders tegelijk dezelfde naam voor een tijdelijke tabel gebruikt als jij.
 
-Dit toont je iedereen die exact 50 jaar ouder is dan minstens één andere persoon. Als er bijvoorbeeld niemand 12 jaar oud is, zal je in het resultaat gegarandeerd niemand van 62 tegenkomen, want omgekeerd is niemand exact 50 jaar jonger dan 62.
-
-{% hint style="info" %}
-Je kan deze vergelijkingen luidop lezen. Lees hier bijvoorbeeld: "waarvoor de leeftijd exact 50 hoger is dan de leeftijd van **een of andere** persoon.
-{% endhint %}
-
-Met `ALL` kan je vergelijken met _alle_ waarden. Op volgende manier kan je bijvoorbeeld de oudste personen in je database vinden zonder gebruik te maken van `max`:
-
-```sql
-select Voornaam, Familienaam, Leeftijd
-from Personen
-where (Leeftijd >= all (select Leeftijd from Personen));
-```
-
-{% hint style="info" %}
-Lees hier bijvoorbeeld: "waarvoor de leeftijd groter of gelijk is dan de leeftijd van **elke** persoon.
-{% endhint %}
-
-## Je subquery "materializen": "afgeleide" tabellen
-
-Een subquery kan naast één waarde of één kolom ook een volledige tabel produceren. Zo'n tabel noemen we een "afgeleide" tabel \("derived table", ook soms "materialized table"\). Deze mogelijkheid komt van pas als je informatie in meerdere stappen moet verwerken.
-
-Afgeleide tabellen zijn vooral nuttig als je operaties in stappen moet toepassen. Bijvoorbeeld als je data wil groeperen en daarna verder wil verwerken.
-
-Een voorbeeld: We willen de leeftijd van de "jongste" voornaam in ons systeem bepalen. Zo zijn mensen met de voornaam "Maurice" misschien gemiddeld 64 jaar en mensen met de voornaam "An" misschien gemiddeld 57 jaar. Wat zou de jongst mogelijke leeftijd per naam zijn?
+Tijdelijke tabellen kunnen complexere queries behapbaar maken. Veronderstel bijvoorbeeld dat we voor een demografische analyse willen weten welke naam gemiddeld de "jongste" is. We willen dus per naam de gemiddelde leeftijd berekenen en daarvan willen we het minimum.
 
 Dit gaat niet:
 
@@ -112,33 +104,19 @@ Dat komt omdat we met onze `group by` hebben aangegeven dat we onze functies wil
 Wat wel werkt, is dit:
 
 ```sql
-select min(GemiddeldeLeeftijd)
-from
-(select avg(Leeftijd) as GemiddeldeLeeftijd
- from Personen
- group by Voornaam) as GemiddeldeLeeftijden
+-- tijdelijke tabel maken
+drop temporary table if exists gemiddeldeLeeftijdPerNaam;
+create temporary table gemiddeldeLeeftijdPerNaam (
+Naam varchar(200) not null,
+Leeftijd int not null
+);
+-- tijdelijke tabel invullen
+insert into gemiddeldeLeeftijdPerNaam
+(select Voornaam, avg(Leeftijd) from Personen group by Personen.Voornaam);
+-- het resultaat aflezen
+select min(Leeftijd) from gemiddeldeLeeftijdPerNaam;
 ```
 
-Dat komt omdat de `group by` hier enkel zegt dat je in de geneste query je functies per groepje wil bekijken. In de buitenste query gaan de functies weer over heel de geproduceerde kolom. Je hebt het sleutelwoordje `AS` trouwens altijd nodig om je derived table een naam te geven.
-
-{% hint style="info" %}
-De informatie die we hier opvragen lijkt misschien wat onzinnig, maar we kunnen er mee verder bouwen. We zouden onze query bijvoorbeeld kunnen uitbreiden om te weten te komen **welke voornaam** de "jongste" is. We doen dat hier niet omdat het afleidt van de essentie.
+{% hint style="warning" %}
+Hier zijn kortere oplossingen voor, meerbepaald materialized subqueries, maar deze oplossing is makkelijker verstaanbaar en heeft minder beperkingen.
 {% endhint %}
-
-{% hint style="info" %}
-Je kan problemen die je oplost met derived tables ook oplossen met views, maar een view is blijvend in je systeem.
-{% endhint %}
-
-## Oefening: ontleed volgende complexe subquery
-
-Volgende subquery is behoorlijk complex. Probeer zelf te achterhalen wat hij doet door hem van binnen naar buiten uit te werken \(d.w.z. eerst de diepst geneste query doen\).
-
-```sql
-select Voornaam,Familienaam
-from Personen
-where Familienaam in (select Familienaam
-                     from Personen
-                     group by Familienaam
-                     having count(*) = (select max(Aantal) from (select count(*) as Aantal from Personen group by Familienaam) as Voorkomens));
-```
-
