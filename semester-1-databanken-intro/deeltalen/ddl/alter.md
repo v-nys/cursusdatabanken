@@ -60,7 +60,7 @@ Via de `NOT NULL` constraint kunnen we zorgen dat een kolom een waarde moet beva
 
 Eerst moeten we ervoor zorgen dat de nieuw toegevoegde kolom voor iedere rij een waarde krijgt, tot nu is deze waarde `NULL`.
 
-![](<../../../.gitbook/assets/image (73).png>)
+![](<../../../.gitbook/assets/image (7).png>)
 
 {% hint style="info" %}
 Het UPDATE-commando, hieronder, hebben we tot nu nog niet gezien en je kan dit gewoon copy/pasten om vervolgens uit te voeren.

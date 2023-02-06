@@ -1,4 +1,4 @@
-# Oefeningen deel 3
+# Oefeningen error handling
 
 We werken verder met de `aptunes`-database. **Activeer deze database in elk script.** Schrijf je stored procedures ook zoals je ze zou schrijven in het algemene venster van Workbench, dus met gebruik van `DELIMITER $$`, enzoverder.
 
@@ -36,7 +36,7 @@ Noem het script dat deze procedure aanmaakt `0650__Oefening.sql`.
 
 Schrijf een stored procedure, `Welcome` die een promotiebericht toont dat je aan toekomstige gebruikers van je systeem zou kunnen tonen. Dit bericht lijst alle genres in het systeem op in volgende vorm: "Welkom bij APTunes! Wij hebben Blues, Classical, Country, Electronic, Folk, Hip-hop, Jazz, New age, Reggae, Rock" Je mag ook veronderstellen dat er niet zo veel genres zijn dat je meer dan 1000 karakters nodig hebt voor het bericht.
 
-![](../../.gitbook/assets/screenshot-from-2021-05-04-16-17-58.png)
+![](<../../.gitbook/assets/Screenshot from 2021-05-04 16-17-58.png>)
 
 Noem het script dat deze procedure(s) aanmaakt `0651__Oefening.sql`.
 
@@ -48,6 +48,6 @@ Schrijf een stored procedure, `AltWelcome`, die een tweede promotiebericht aan d
 
 **Tip 2**: start vanaf een query om alle bands aan hun nummers te koppelen. Breid uit vanaf daar.
 
-![Voorbeelduitvoer van een call van de procedure](../../.gitbook/assets/screenshot-from-2021-05-04-16-28-54.png)
+![Voorbeelduitvoer van een call van de procedure](<../../.gitbook/assets/Screenshot from 2021-05-04 16-28-54.png>)
 
 Noem het script `0652__Oefening.sql`.

@@ -50,13 +50,13 @@ Er zijn 4 soorten no-sql databanken:
 * Column databank \
   Bv. Google bigtable&#x20;
 
-![](<../../.gitbook/assets/image (35) (1).png>)
+![](<../../.gitbook/assets/image (47).png>)
 
 
 
 #### **NoSQL – Document databank**
 
-![](<../../.gitbook/assets/image (1) (1).png>)
+![](<../../.gitbook/assets/image (49).png>)
 
 * Database bevat ‘documenten’ (json objecten)\
   Bv.: { Id:1, Name: ‘Janssens’ FirstName:’Jan’}
@@ -70,7 +70,7 @@ Er zijn 4 soorten no-sql databanken:
 
 #### NoSQL – Key-value databank
 
-![](<../../.gitbook/assets/image (16).png>)
+![](<../../.gitbook/assets/image (30).png>)
 
 * Vergelijkbaar met document databank\
   Maar geen queries mogelijk\
@@ -89,7 +89,7 @@ Er zijn 4 soorten no-sql databanken:
 
 #### NoSQL – (wide) Column databank
 
-![](<../../.gitbook/assets/image (66).png>)
+![](<../../.gitbook/assets/image (37).png>)
 
 * Gebruikt tabellen, rijen en kolommen, maar anders dan een relationele databank.
 * De namen en formaat van de kolommen kan verschillen van rij tot rij in binnen dezelfde tabel.
@@ -100,7 +100,7 @@ Vaak worden combinaties gebruikt van meerdere soorten DB’s en dit afhankelijk 
 
 Ter info, hieronder een lijstje met ranking van de meest populaire databases met bijzondere aandacht voor het database model ([https://db-engines.com/en/ranking](https://db-engines.com/en/ranking)).
 
-![](<../../.gitbook/assets/image (29).png>)
+![](<../../.gitbook/assets/image (34).png>)
 
 {% hint style="info" %}
 _Extra info_\

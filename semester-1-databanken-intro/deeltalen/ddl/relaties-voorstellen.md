@@ -153,7 +153,7 @@ Zoals in het geval van de 1-op-1 relatie, kunnen we deze relatie tussen gebruike
 
 Dit is opnieuw iets meer dan we nodig hebben. We kunnen een foreign key van één tabel toevoegen aan een andere. Maar, in tegenstelling tot de precieze 1-op-1-relatie, mogen we niet kiezen. We zetten de foreign key in de tabel die **niet aan de "exact-1"-kant** van de relatie zit. Zorg er ook voor dat de vreemde sleutel nooit NULL is met een constraint.
 
-![Eén user kan meerdere tweets hebben, elke tweet komt van exact één user.](../../../.gitbook/assets/screenshot-from-2020-11-21-10-05-24.png)
+![Eén user kan meerdere tweets hebben, elke tweet komt van exact één user.](<../../../.gitbook/assets/Screenshot from 2020-11-21 10-05-24.png>)
 
 Voer dit zelfstandig uit voor de reeks tweets hierboven. Volg de reeds afgesproken afspraken: één tabel `Users` voor users (met een kolom `Handle`), één tabel `Tweets` voor tweets (met een kolom Bericht), beide voorzien van primaire sleutels, met de vreemde sleutel aan de "N-kant". Stel gebruikersnamen en tweets voor met kolommen van variabele lengte (tot 144 tekens), zonder internationale tekens. De @ maakt geen deel uit van een gebruikersnaam. Zet de SQL-code die je nodig hebt om de (lege) tabellen te maken in een script 0055\_\_CreateUsersTweets.sql. Zet de code die je nodig hebt om de vreemde sleutel toe te voegen in 0056\_\_AlterTweets.sql. Zet ten slotte de code om de tabellen in te vullen in een script 0057\_\_InsertUsersTweets.sql. Begin met een `INSERT` voor de users, doe dan pas die voor de tweets.
 
@@ -237,7 +237,7 @@ CREATE TABLE Releases(Games_Id INT NOT NULL,
 
 Dit stemt overeen met een diagram in Workbench dat er zo uitziet:
 
-![Diagram voor een veel-op-veel relatie. Je tekent deze als twee één-op-veel relaties.](../../../.gitbook/assets/screenshot-from-2020-11-21-10-15-27.png)
+![Diagram voor een veel-op-veel relatie. Je tekent deze als twee één-op-veel relaties.](<../../../.gitbook/assets/Screenshot from 2020-11-21 10-15-27.png>)
 
 Voor 0060:
 
@@ -303,7 +303,7 @@ Attributen horen meestal bij entiteiten, maar kunnen ook bij relaties horen. Bov
 
 In een ERD stellen we dit als volgt voor:
 
-![](../../../.gitbook/assets/screenshot-from-2020-11-21-10-18-08.png)
+![](<../../../.gitbook/assets/Screenshot from 2020-11-21 10-18-08.png>)
 
 In dit geval is `Releases` niet gewoon een tabel die een **relatie** voorstelt, maar wel een **associative entity**: een relatie tussen `Games` en `Platformen` die eigen kenmerken bezit, zodat je ze eigenlijk ook als een entiteit zou kunnen zien.
 

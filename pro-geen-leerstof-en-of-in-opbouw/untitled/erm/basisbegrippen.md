@@ -8,7 +8,7 @@
 * De concrete samenstelling van een entity set zal regelmatig wijzigen (personeelsleden bij of weg, klanten
 * Voorstelling:&#x20;
 
-![](<../../../.gitbook/assets/image (31) (1).png>)
+![](<../../../.gitbook/assets/image (65).png>)
 
 ## Attributes, Values, Domain
 
@@ -21,14 +21,14 @@
 * Berekenbaar attribuut: bv. als het attribuut geboortedatum bestaat, kan het attribuut leeftijd berekend worden uit geboortedatum en huidige datum.
 * Voorstelling:
 
-![](<../../../.gitbook/assets/image (37).png>)
+![](<../../../.gitbook/assets/image (57).png>)
 
 ## Relation, Relationship set
 
 * Een relation is een verband tussen verschillende entiteiten. bv. de relatie "ontlener" tussen de entiteit "Janssens" uit de entity set klanten en de entiteit lening nr 0001 uit de entity set leningen.
 * Een relationship set (relatie) is de verzameling van alle gelijkaardige relaties tussen entiteiten uit dezelfde entity sets.
 
-![](<../../../.gitbook/assets/image (28) (1).png>)
+![](<../../../.gitbook/assets/image (28).png>)
 
 * In bovenstaande relatie speelt Janssens de rol van "lener" en 0001 de rol van "lening". Rollen zijn alleen echt van belang bij relaties van een entity set naar zichzelf, "recursieve" relaties.
 * Voorbeeld: de relatie "is manager van" van de entity set "personeel" naar zichzelf.
@@ -38,4 +38,4 @@
 * Relaties hoeven niet steeds binair te zijn, dwz. tussen twee entity sets. Er zijn ook relaties mogelijk tussen drie, vier,... entity sets. Dit noemt men de "graad" van een relationship set.
 * Voorstelling:
 
-![](<../../../.gitbook/assets/image (10).png>)
+![](<../../../.gitbook/assets/image (51).png>)

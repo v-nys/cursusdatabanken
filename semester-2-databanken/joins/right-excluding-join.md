@@ -1,6 +1,6 @@
 # RIGHT EXCLUDING JOIN
 
-Deze query retourneert alle records in de rechtse tabel \(tabel B\) die niet overeenkomen met records in de linkertabel \(tabel A\). Deze join wordt als volgt geschreven:
+Deze query retourneert alle records in de rechtse tabel (tabel B) die niet overeenkomen met records in de linkertabel (tabel A). Deze join wordt als volgt geschreven:
 
 ```sql
 SELECT <select_list>
@@ -14,5 +14,4 @@ WHERE A.B_Id IS NULL
 -- een primary key kan immers nooit NULL zijn
 ```
 
-![Venn diagram right excluding join](../../.gitbook/assets/venn-diagram-right-excluding-join.png)
-
+![Venn diagram right excluding join](<../../.gitbook/assets/venn diagram right excluding join.png>)

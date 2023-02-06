@@ -16,7 +16,7 @@ Een ER model bestaat uit de volgende onderdelen:
 
 Elk van deze zaken wordt in een ER diagram weergegeven met een bepaald symbool weergegeven. Een entiteit wordt met een rechthoek weergegeven, een verwantschap met een ruit (verbonden met lijnen aan de betrokken entiteiten) en een attribuut wordt als een ovaal weergegeven. Van elk van deze zaken bestaan ook specifiekere varianten.
 
-![Basiselementen.](../../.gitbook/assets/er-diagram-elements.jpeg)
+![Basiselementen.](../../.gitbook/assets/ER-Diagram-Elements.jpeg)
 
 Een goede plaats voor alles wat met visuele notatie te maken heeft, is [LucidChart](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning). Hier vind je ook notatie voor de verschillende varianten.
 
@@ -83,7 +83,7 @@ Cardinaliteit van een rol: het aantal keren dat een entiteit in die rol kan of m
 
 #### Voorbeeld
 
-![](../../semester-1-databanken-intro/deeltalen/ddl-medium/taak-persoon-1-1.svg)
+![](../../.gitbook/assets/taak-persoon-1-1.svg)
 
 ## EER-notatie in MySQL Workbench
 

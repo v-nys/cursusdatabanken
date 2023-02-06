@@ -6,9 +6,9 @@
 
 De `OUTER JOIN` ziet er als volgt uit:
 
-![Venn diagram outer join](../../.gitbook/assets/venn-diagram-outer-join.png)
+![Venn diagram outer join](<../../.gitbook/assets/venn diagram outer join.png>)
 
-MySQL ondersteunt deze constructie niet, in tegenstelling tot sommige andere databanken. Maar je kan ze wel nabootsen door een \(gewone\) left join boven een excluding right join te plaatsen met behulp van `UNION ALL`, dat resultaten samen neemt:
+MySQL ondersteunt deze constructie niet, in tegenstelling tot sommige andere databanken. Maar je kan ze wel nabootsen door een (gewone) left join boven een excluding right join te plaatsen met behulp van `UNION ALL`, dat resultaten samen neemt:
 
 ```sql
 -- net als tevoren kan de code wat variëren
@@ -37,4 +37,3 @@ Je kan ook een left excluding join combineren met een gewone right join.
 ## Opmerking
 
 Er wordt ook wel gesproken over `FULL OUTER JOIN`.
-

@@ -47,7 +47,7 @@ Met het commando `SHOW INDEXES FROM table_name`kan je zien dat de unieke index w
 SHOW INDEXES FROM People;
 ```
 
-![](../../.gitbook/assets/image%20%2845%29.png)
+![](<../../.gitbook/assets/image (23).png>)
 
 Vervolgens voegen wat data toe aan de tabel `People`.
 
@@ -68,9 +68,9 @@ INSERT INTO People(first_name,last_name,mail)
 VALUES ('Jef','Doe','john.doe@modernways.be');
 ```
 
-![](../../.gitbook/assets/image%20%2827%29.png)
+![](<../../.gitbook/assets/image (44).png>)
 
-![](../../.gitbook/assets/image%20%2865%29.png)
+![](<../../.gitbook/assets/image (60).png>)
 
 ### Opgave
 
@@ -79,4 +79,3 @@ Schrijf het sql-statement dat ervoor zorgt indien je bovenop de unieke mailindex
 {% hint style="warning" %}
 Wat met `NULL`-waarden in combinatie met unieke indexen? Zie [de officiële documentatie](https://dev.mysql.com/doc/refman/8.0/en/create-index.html#create-index-unique). De waarden zijn dus niet noodzakelijk 100% uniek, dit in tegenstelling tot sommige andere databasesystemen.
 {% endhint %}
-

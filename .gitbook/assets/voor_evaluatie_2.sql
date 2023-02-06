@@ -21,6 +21,17 @@ use ApDB;
 --
 
 DROP TABLE IF EXISTS `Albums`;
+DROP TABLE IF EXISTS `Artiesten`;
+DROP TABLE IF EXISTS `Boeken`;
+DROP TABLE IF EXISTS `Gebruikers`;
+DROP TABLE IF EXISTS `GebruikerHeeftAlbum`;
+DROP TABLE IF EXISTS `GebruikerHeeftNummer`;
+DROP TABLE IF EXISTS `Huisdieren`;
+DROP TABLE IF EXISTS `Honden`;
+DROP TABLE IF EXISTS `Kunstwerken`;
+DROP TABLE IF EXISTS `NummerOpAlbum`;
+DROP TABLE IF EXISTS `Nummers`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Albums` (
@@ -47,7 +58,7 @@ UNLOCK TABLES;
 -- Table structure for table `Artiesten`
 --
 
-DROP TABLE IF EXISTS `Artiesten`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Artiesten` (
@@ -71,7 +82,7 @@ UNLOCK TABLES;
 -- Table structure for table `Boeken`
 --
 
-DROP TABLE IF EXISTS `Boeken`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Boeken` (
@@ -98,7 +109,7 @@ UNLOCK TABLES;
 -- Table structure for table `GebruikerHeeftAlbum`
 --
 
-DROP TABLE IF EXISTS `GebruikerHeeftAlbum`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `GebruikerHeeftAlbum` (
@@ -122,7 +133,7 @@ UNLOCK TABLES;
 -- Table structure for table `GebruikerHeeftNummer`
 --
 
-DROP TABLE IF EXISTS `GebruikerHeeftNummer`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `GebruikerHeeftNummer` (
@@ -150,7 +161,6 @@ UNLOCK TABLES;
 -- Table structure for table `Gebruikers`
 --
 
-DROP TABLE IF EXISTS `Gebruikers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Gebruikers` (
@@ -175,7 +185,7 @@ UNLOCK TABLES;
 -- Table structure for table `Honden`
 --
 
-DROP TABLE IF EXISTS `Honden`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Honden` (
@@ -199,7 +209,7 @@ UNLOCK TABLES;
 -- Table structure for table `Huisdieren`
 --
 
-DROP TABLE IF EXISTS `Huisdieren`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Huisdieren` (
@@ -224,7 +234,7 @@ UNLOCK TABLES;
 -- Table structure for table `Kunstwerken`
 --
 
-DROP TABLE IF EXISTS `Kunstwerken`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Kunstwerken` (
@@ -246,7 +256,7 @@ UNLOCK TABLES;
 -- Table structure for table `NummerOpAlbum`
 --
 
-DROP TABLE IF EXISTS `NummerOpAlbum`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `NummerOpAlbum` (
@@ -274,7 +284,7 @@ UNLOCK TABLES;
 -- Table structure for table `Nummers`
 --
 
-DROP TABLE IF EXISTS `Nummers`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Nummers` (

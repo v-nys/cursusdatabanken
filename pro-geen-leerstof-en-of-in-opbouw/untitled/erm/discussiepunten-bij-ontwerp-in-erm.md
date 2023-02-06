@@ -3,7 +3,7 @@
 ## Keuze tussen entity set of attribuut
 
 * voorbeeld: neem de entity set "employee" en het attribuut "telephonenumber". Men kan evengoed twee entity sets maken, "employee" en "telephone" met daartussen een relationship set.
-* "Telephone" kan dan bovendien extra attributen krijgen \(plaats, type, kleur,...\).
+* "Telephone" kan dan bovendien extra attributen krijgen (plaats, type, kleur,...).
 * Voordeel van afzonderlijke entity set:
 * aantal is niet naar onder of boven begrensd
 * telefoon kan gemakkelijker toegewezen worden aan verschillende personen tegelijk
@@ -19,7 +19,6 @@
 
 ## Keuze tussen binaire of meervoudige relationship sets
 
-Een relationship tussen meer dan twee entity sets kan steeds herleid worden tot meerdere relationship sets die binaire zijn \(dwz. tussen twee entity sets\).
+Een relationship tussen meer dan twee entity sets kan steeds herleid worden tot meerdere relationship sets die binaire zijn (dwz. tussen twee entity sets).
 
-![](../../../.gitbook/assets/image%20%288%29.png)
-
+![](<../../../.gitbook/assets/image (17).png>)

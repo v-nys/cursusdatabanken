@@ -1,4 +1,3 @@
-use ApDB;
 -- MySQL dump 10.13  Distrib 8.0.22, for Linux (x86_64)
 --
 -- Host: xchk.be    Database: ApDB
@@ -198,6 +197,7 @@ DROP TABLE IF EXISTS `Nummers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Nummers` (
+  Id int primary key,
   `Titel` varchar(100) NOT NULL,
   `Album` varchar(100) NOT NULL,
   `Duurtijd` smallint unsigned NOT NULL,
@@ -230,4 +230,3 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2020-12-05 17:04:11
-alter table Nummers add column Id int auto_increment primary key;
