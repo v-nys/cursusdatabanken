@@ -4,7 +4,7 @@ Stored functies zijn, net als stored procedures, stappenplannen om tot een bepaa
 
 ### Verschil in gebruik met stored procedures
 
-Een stored procedure `MijnProcedure` roep je op door middel van `CALL MijnProcedure()`. De procedure kan ook `IN` en `OUT` parameters hebben en beide plaats je tussen de ronde haakjes.
+Een stored procedure `MyProcedure` roep je op door middel van `CALL MyProcedure()`. De procedure kan ook `IN` en `OUT` parameters hebben en beide plaats je tussen de ronde haakjes.
 
 Een functie schrijf je gewoon zonder `CALL` en alle parameters zijn invoer, dus stemmen overeen met `IN` parameters in een stored procedure. De functie wordt dan uitgerekend en het resultaat wordt uiteindelijk gebruikt. Bijvoorbeeld: `CONCAT` is een ingebouwde functie en als je ergens `CONCAT('hello','world')` schrijft is het net alsof je op diezelfde plaats `'helloworld'` hebt geschreven.
 
@@ -24,7 +24,7 @@ De syntax om een functie aan te maken lijkt sterk op de syntax om een stored pro
 
 ![De function editor vind je op dezelfde manier terug als de procedure editor](../../.gitbook/assets/function-editor.png)
 
-In het algemeen kan je dezelfde zaken doen tussen de `begin` en `end` als in een stored procedure. Je kan dus variabelen declareren, procedures oproepen, `if` of lusstructuren gebruiken,... Wat hier nieuw is, is het woordje `returns`. Dit levert het berekende resultaat op.
+In het algemeen kan je dezelfde zaken doen tussen de `begin` en `end` als in een stored procedure. Je kan dus variabelen declareren, procedures oproepen, `if` of lusstructuren gebruiken,... Wat hier nieuw is, is het keyword `returns`. Dit geeft aan dat de expressie die volgt het **resultaat** is van de functie.
 
 Een voorbeeld van een deterministische functie is als volgt:
 
@@ -33,8 +33,6 @@ Een voorbeeld van een deterministische functie is als volgt:
 Een voorbeeld van een niet-deterministische functie:
 
 ![](../../.gitbook/assets/niet-deterministische-functie.png)
-
-Je kan niet afdwingen via het datatype dat een parameter niet-nullable is, maar je kan in het begin van de functie wel een fout signaleren als dat wel zo is.
 
 ## De referentie
 
