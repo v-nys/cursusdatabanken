@@ -12,6 +12,10 @@ END LOOP
 
 Merk op dat er geen loopconditie aanwezig is. Om de lus te verlaten, schirjf je `LEAVE`, gevolgd door de benaming van de lus die je wil verlaten.
 
+{% hint style="info" %}
+Het `LEAVE` commando werkt ook in andere soorten lussen zoals `WHILE` en `REPEAT`
+{% endhint %}
+
 Hieronder een simpel voorbeeld van een stored procedure die een getal als parameter heeft en dan de getallen vanaf 1 tot het getal in kwestie in een tekenreeks plaatst en deze toont.
 
 ```sql
@@ -51,4 +55,3 @@ CALL loop_(10);
 Resultaat:
 
 ![](../../.gitbook/assets/loop.JPG)
-
