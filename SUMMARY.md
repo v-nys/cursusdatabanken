@@ -120,7 +120,6 @@
   * [LOOP](semester-2-databanken/stored-procedures/loop.md)
   * [WHILE](semester-2-databanken/stored-procedures/while.md)
   * [REPEAT](semester-2-databanken/stored-procedures/repeat.md)
-  * [LEAVE](semester-2-databanken/stored-procedures/leave.md)
   * [SIGNAL](semester-2-databanken/stored-procedures/signal.md)
   * [Error handling](semester-2-databanken/stored-procedures/error-handling.md)
   * [Stored functies](semester-2-databanken/stored-procedures/stored-functies.md)

@@ -20,27 +20,26 @@ Hieronder een simpel voorbeeld van een stored procedure die een getal als parame
 
 ```sql
 USE `aptunes`;
-DROP procedure IF EXISTS `loop_`;
+DROP procedure IF EXISTS `LoopDemo`;
 
 DELIMITER $$
 USE `aptunes`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `loop_`(
-    IN aantal INT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LoopDemo`(
+    IN numberOfIterations INT
+)
 BEGIN
     DECLARE i INT DEFAULT 0;
-    DECLARE tekst VARCHAR(255) DEFAULT '';
-
-    loop_demo:  LOOP
+    DECLARE producedText VARCHAR(255) DEFAULT '';
+    concat_loop:  LOOP
         SET  i = i + 1;
-        IF  i >= aantal THEN
-            SET  tekst = CONCAT(tekst,i);
-            LEAVE  loop_demo;
+        IF  i >= numberOfIterations THEN
+            SET producedText = CONCAT(producedText,i);
+            LEAVE concat_loop;
         ELSE
-            SET  tekst = CONCAT(tekst,i,',');
-        END  IF;
+            SET producedText = CONCAT(producedText,i,',');
+        END IF;
     END LOOP;
-
-    SELECT tekst; 
+    SELECT producedText; 
 END$$
 
 DELIMITER ;
@@ -49,7 +48,7 @@ DELIMITER ;
 Om deze stored procedure op te roepen, hanteren we volgend statement. Waarbij we in onderstaand geval vragen om 10 cijfers weer te geven.
 
 ```sql
-CALL loop_(10);
+CALL LoopDemo(10);
 ```
 
 Resultaat:
