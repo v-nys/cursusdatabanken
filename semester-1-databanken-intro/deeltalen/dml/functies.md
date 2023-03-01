@@ -64,6 +64,10 @@ SELECT Length('abc');
 
 Dan zal je als resultaat `3` krijgen.
 
+{% hint style="info" %}
+Dit werkt voor het ASCII-alfabet, maar eigenlijk geeft LENGTH de lengte in bytes. Als je echt het aantal tekens wil, moet je CHAR\_LENGTH gebruiken.
+{% endhint %}
+
 ## Wiskundige operaties
 
 Ook standaard wiskundige operaties zijn functies. Bijvoorbeeld:
@@ -72,4 +76,3 @@ Ook standaard wiskundige operaties zijn functies. Bijvoorbeeld:
 SELECT 1 + Duurtijd FROM Nummers;
 SELECT Duurtijd - 1 FROM Nummers;
 ```
-
