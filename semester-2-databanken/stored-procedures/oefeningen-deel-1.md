@@ -1,6 +1,6 @@
 # Oefeningen deel 1
 
-We werken, net als in de theorie, met de `aptunes`-database. **Activeer deze database in elk script.** Gebruik telkens het meest specifieke parametertype dat je kan toepassen. Gebruik dus geen `INOUT` parameters als het ook met een gewone `IN` of `OUT` parameter kan.
+We werken met de `aptunes`-database. **Activeer deze database in elk script.** Gebruik telkens het meest specifieke parametertype dat je kan toepassen. Gebruik dus geen `INOUT` parameters als het ook met een gewone `IN` of `OUT` parameter kan.
 
 ## Vraag 1
 
