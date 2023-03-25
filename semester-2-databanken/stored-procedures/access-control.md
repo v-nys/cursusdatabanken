@@ -109,7 +109,7 @@ DELIMITER ;
 
 Vervolgens gaan we met de voorbeeldgebruiker inloggen. Doe dit als volgt.
 
-![](../../.gitbook/assets/sp\_security2.JPG)
+![](../../.gitbook/assets/sp\_security1.jpg)
 
 Kijk even na op welke databases je enige rechten hebt.
 

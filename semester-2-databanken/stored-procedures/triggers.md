@@ -36,23 +36,28 @@ trigger_time: { BEFORE | AFTER }
 trigger_event: { INSERT | UPDATE | DELETE }
 ```
 
-De `trigger_body` is normaal één statement, maar je kan er meerdere statements in schrijven door eerst `BEGIN` te schrijven, dan je statements en dan `END`. Zoals bij stored procedures en functies moet je dan voor aanmaak van de trigger de delimiter wijzigen en na aanmaak van de trigger terugzetten. **Omdat er geen trigger editor is, gebeurt dit niet automatisch.** In de definitie van de trigger kan je ruwweg dezelfde instructies schrijven als in een stored procedure. In een trigger kan je ook gebruik maken van `OLD` of `NEW` om te verwijzen naar bepaalde kolomwaarden voor of na de aanpassing. Je kan alleen `OLD` **en** `NEW` gebruiken in een `UPDATE`, omdat dat het enige soort instructie is waarbij er een oude en een nieuwe waarde is voor een kolom. Het gedeelte `FOR EACH ROW` duidt op elke ingevoegde, aangepaste of verwijderde rij, niet op elke rij in de tabel.&#x20;
+De `trigger_body` is normaal één statement, maar je kan er meerdere statements in schrijven door eerst `BEGIN` te schrijven, dan je statements en dan `END`. Zoals bij stored procedures en functies moet je dan voor aanmaak van de trigger de delimiter wijzigen en na aanmaak van de trigger terugzetten.
+
+Je kan dit automatisch laten afhandelen aan de hand van de trigger editor, die je hier vindt:
+
+<figure><img src="../../.gitbook/assets/trigger-editor.png" alt=""><figcaption></figcaption></figure>
+
+In de definitie van de trigger kan je ruwweg dezelfde instructies schrijven als in een stored procedure. In een trigger kan je ook gebruik maken van `OLD` of `NEW` om te verwijzen naar bepaalde kolomwaarden voor of na de aanpassing. Je kan alleen `OLD` **en** `NEW` gebruiken in een `UPDATE`, omdat dat het enige soort instructie is waarbij er een oude en een nieuwe waarde is voor een kolom. Het gedeelte `FOR EACH ROW` duidt op elke ingevoegde, aangepaste of verwijderde rij, niet op elke rij in de tabel.&#x20;
 
 Een concreet voorbeeld kan bijvoorbeeld zijn:
 
-```
-drop trigger if exists log_personen_insert;
+```sql
+drop trigger if exists LogPersonsInsert;
 
 delimiter $$
 
-CREATE TRIGGER log_personen_insert
+CREATE TRIGGER LogPersonsInsert
     after insert
-    ON Personen FOR EACH ROW
+    ON Persons FOR EACH ROW
     begin
-        declare huidigeTijd datetime;
-        select now() into huidigeTijd;
-        insert into PersonenLog (Id, Tijdstip)
-        values (New.Id, huidigeTijd);
+        declare currentTime datetime default now();
+        insert into PersonLog (Id, currentTime)
+        values (New.Id, currentTime);
     end$$
     
 delimiter ;
@@ -64,10 +69,10 @@ Bepaalde acties zijn niet toegestaan. **Je kan bijvoorbeeld geen aanpassing doen
 
 ### Verwijderen
 
-Dit doe je gewoonweg als volgt, waarbij `trigger_name` de naam is die je bij het aanmaken hebt ingesteld:
+Dit doe je gewoonweg als volgt, waarbij `TriggerName` de naam is die je bij het aanmaken hebt ingesteld:
 
 ```sql
-DROP TRIGGER trigger_name
+DROP TRIGGER TriggerName
 ```
 
 ### Uitvoering
