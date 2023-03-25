@@ -4,7 +4,13 @@
 
 Met de juiste instellingen kan je MySQL queries laten onthouden die langer duren dan een zekere drempelwaarde. Als het gaat om queries die regelmatig terugkomen, is het de moeite waard indexen aan te maken die deze queries kunnen versnellen.
 
-Je kan de trage queries opslaan door in het bestand `my.cnf` in je MySQL-installatie de variabele `slow_query_log` op `On` te zetten, `long_query_time` op het aantal seconden dat "te veel" is in te stellen (bv. 0.2 voor 200 milliseconden) en `slow_query_log_file` in te vullen met de locatie van het gewenste logbestand. Alle queries die je vanaf dan uitvoert zullen in het logbestand worden bijgehouden.
+Je ziet in MySQL Workbench hoe lang het duurt om een query uit te voeren:
+
+<figure><img src="../../.gitbook/assets/duration.png" alt=""><figcaption><p>De eerste timing drukt uit hoe lang het duurt om de query uit te voeren. De tweede drukt uit hoe lang het duurt om de rsultaten op te halen en wordt niet verbeterd door een index.</p></figcaption></figure>
+
+{% hint style="info" %}
+Je kan de trage queries ook opslaan door in het bestand `my.cnf` in je MySQL-installatie de variabele `slow_query_log` op `On` te zetten, `long_query_time` op het aantal seconden dat "te veel" is in te stellen (bv. 0.2 voor 200 milliseconden) en `slow_query_log_file` in te vullen met de locatie van het gewenste logbestand. Alle queries die je vanaf dan uitvoert zullen in het logbestand worden bijgehouden.
+{% endhint %}
 
 ## Stap 2a: uitpluizen zonder MySQL Workbench
 

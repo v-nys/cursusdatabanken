@@ -72,10 +72,6 @@ VALUES ('Jef','Doe','john.doe@modernways.be');
 
 ![](<../../.gitbook/assets/image (60).png>)
 
-### Opgave
-
-Schrijf het sql-statement dat ervoor zorgt indien je bovenop de unieke mailindex ook nog zou willen bepalen dat de combinatie van voornaam en achternaam uniek moet zijn.
-
 {% hint style="warning" %}
 Wat met `NULL`-waarden in combinatie met unieke indexen? Zie [de officiële documentatie](https://dev.mysql.com/doc/refman/8.0/en/create-index.html#create-index-unique). De waarden zijn dus niet noodzakelijk 100% uniek, dit in tegenstelling tot sommige andere databasesystemen.
 {% endhint %}

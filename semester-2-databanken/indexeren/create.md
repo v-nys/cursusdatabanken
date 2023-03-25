@@ -2,9 +2,9 @@
 
 ## Prefix index
 
-Wanneer je een secundaire index voor een kolom maakt, d.w.z. een index die niet over de primaire sleutel gaat, slaat MySQL de waarden van de kolommen op in een afzonderlijke gegevensstructuur. Dit zijn structuren waarin je snel kan opzoeken.
+Wanneer je een secundaire index voor een kolom maakt, dus een index die niet over de primaire sleutel gaat, slaat MySQL de waarden van de kolommen op in een afzonderlijke gegevensstructuur. Dit zijn structuren waarin je snel kan opzoeken.
 
-In het geval dat de kolommen de tekenreekskolommen zijn (`CHAR`, `VARCHAR` of `TEXT`), zal de index veel schijfruimte in beslag nemen en mogelijk de INSERT-bewerkingen vertragen.
+In het geval dat de kolommen de tekenreekskolommen zijn (zoals `VARCHAR`), zal de index veel schijfruimte in beslag nemen en mogelijk de INSERT-bewerkingen vertragen.
 
 Om dit probleem aan te pakken, kan je met MySQL een index maken voor het leidende deel van de kolomwaarden van de tekenreekskolommen met behulp van de volgende syntax:
 
@@ -34,7 +34,7 @@ CREATE INDEX index_name
 ON table_name(column_name(length));
 ```
 
-In bovenstaande voorbeelden is de lengte het aantal tekens voor de datatypes zoals CHAR, VARCHAR en TEXT (en het aantal bytes voor binaire datatypes).
+In bovenstaande voorbeelden is de lengte het aantal tekens voor de datatypes zoals VARCHAR (en het aantal bytes voor binaire datatypes).
 
 ## Voorbeeld
 
@@ -68,9 +68,7 @@ WHERE Omschrijving LIKE 'aardappel%';
 
 Als je de tabel taken veel bevraagt terwijl je filtert op de omschrijving, is het zinvol om voor deze kolom een index te creëren waardoor de uitvoering een heel stuk sneller zal verlopen.
 
-De grootte van de kolom omschrijving is bij design ingesteld op 50 karakters.
-
-Voor de index moet je de lengte van het voorvoegsel bepalen. Soms wordt er gezegd dat je dit zo efficiënt mogelijk dient te doen door de prefixlengte zo kort mogelijk te houden. Hier schuilt wel een gevaar in: wanneer de tabel met nieuwe data wordt uitgebreid, is de index misschien niet meer zo uniek. Dat leidt niet tot fouten maar mogelijk wel tot performantieverlies.
+De grootte van de kolom `Omschrijving` is tijdens het ontwerp ingesteld op 50 karakters, maar dat wil niet zeggen dat we in de index 50 karakters per mogelijkheid moeten bijhouden. Voor de index moet je de lengte van het voorvoegsel bepalen. Soms wordt er gezegd dat je dit zo efficiënt mogelijk dient te doen door de prefixlengte zo kort mogelijk te houden. Hier schuilt wel een gevaar in: wanneer de tabel met nieuwe data wordt uitgebreid, is de index misschien niet meer zo uniek. Dat leidt niet tot fouten maar mogelijk wel tot performantieverlies.
 
 Hoe zoek je nu de ideale lengte van de prefix op? Een vuistregel: zorg dat de index meteen naar een uniek resultaat leidt, maar dat hij niet groter is dan nodig om dit te bereiken.
 
