@@ -104,7 +104,6 @@
   * [DROP](semester-2-databanken/indexeren/drop.md)
   * [UNIQUE](semester-2-databanken/indexeren/unique.md)
   * [trage queries opvolgen](semester-2-databanken/indexeren/trage-queries-opvolgen.md)
-  * [Labo oefeningen](semester-2-databanken/indexeren/labo-oefeningen.md)
 * [ERD](semester-2-databanken/erd/README.md)
   * [Referentiële beperkingen](semester-2-databanken/erd/referential-constraints.md)
   * [Overzicht](semester-2-databanken/erd/overzicht.md)

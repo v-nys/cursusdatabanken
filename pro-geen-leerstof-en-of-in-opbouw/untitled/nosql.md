@@ -28,14 +28,14 @@ Soorten databanken
     Elke tabel heeft 1 PK (deze identificeert een entry)
 
     _Foreign Key(FK)_\
-    __Elke tabel kan 0 of meerdere FK hebben
+    Elke tabel kan 0 of meerdere FK hebben
 * Deze legt een relatie naar een PK in een andere tabel
 * Niet bepaald overzichtelijker, maar wel veel flexibeler en efficiënter
 * Relationele databanken hebben enkele nadelen\
   _Schaalbaarheid voor heel grote databanken_\
-  __Opsplitsen van DB in verschillende DB’s werkt moeilijk\
+  Opsplitsen van DB in verschillende DB’s werkt moeilijk\
   _Complexe SQL code omdat objecten in OO niet overeenkomen met tabellen in DB_\
-  __Bv. personeel(object) heeft adres en bedrijfswagen waarbij de data verspreid zijn over verschillende tabellen
+  Bv. personeel(object) heeft adres en bedrijfswagen waarbij de data verspreid zijn over verschillende tabellen
 
 ### **NoSQLdatabank**&#x20;
 

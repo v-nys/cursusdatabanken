@@ -44,8 +44,8 @@ Hoewel bovenstaande volgorde bepaalt hoe je een query moet uitschrijven, is dat 
 2. WHERE
 3. GROUP BY
 4. HAVING
-5. SELECT
-6. ORDER BY
+5. ORDER BY
+6. SELECT
 
 Waarschijnlijk ken je al deze clausules nog niet, maar dat is niet erg. Je kan terug kijken naar deze uitleg telkens je een nieuwe clausule leert. Het idee is als volgt:
 
@@ -53,5 +53,5 @@ Waarschijnlijk ken je al deze clausules nog niet, maar dat is niet erg. Je kan t
 * dan bepaal je, per record, of dat record mee verwerkt zal worden of niet
 * de behouden records kan je groeperen om informatie over een bepaald groepje te tonen
 * per groepje kan je opnieuw bepalen of dat groepje verwerkt zal worden
-* de resultaten van je verwerking kan je behouden om weer te geven
-* en je kan vastleggen in welke volgorde deze resultaten uiteindelijk verschijnen
+* je legt een volgorde vast
+* je toont het eindresultaat
