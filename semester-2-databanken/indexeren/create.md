@@ -100,6 +100,10 @@ Binnen de schema navigation kan je nu de index zien. Als je nu bovenstaande sele
 De lengte van het "ideale" prefix kan wijzigen naarmate je meer data toevoegt aan een tabel.
 {% endhint %}
 
+{% hint style="danger" %}
+Zelfs als je de ideale prefixlengte gebruikt, houdt het gebruik van een prefix gevolgen in. MySQL kan bij gebruik van een prefix niet garanderen dat twee waarden op dezelfde plaats in de index identiek zijn. Sommige queries kunnen hierdoor trager lopen bij een prefixindex dan bij een index zonder prefix.
+{% endhint %}
+
 ## De rol van kolomvolgorde
 
 Als je een index op meerdere kolommen aanmaakt, is de volgorde van deze kolommen belangrijk. Vergelijk met het telefoonboek. Daar heb je een index op plaatsnaam en familienaam. Dit staat je toe snel iemand terug te vinden. Als je geen informatie kent over hoe de plaatsnamen geordend zijn (stel je voor dat alle gemeentes willekeurig in het telefoonboek stonden in plaats van alfabetisch), moet je toch elke pagina doorzoeken om zeker te zijn dat je de persoon in kwestie niet over het hoofd ziet.
