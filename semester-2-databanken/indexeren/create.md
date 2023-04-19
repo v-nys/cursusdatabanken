@@ -1,5 +1,17 @@
 # CREATE
 
+## Standaardgebruik
+
+Een index toevoegen doe je in het algemene geval met volgende syntax:
+
+```sql
+CREATE INDEX Column1Column2Index on TableName(Column1,Column2);
+```
+
+Dit maakt een index op de combinatie van de kolommen `Column1` en `Column2`. Als er maar één kolom is, laat je de tweede gewoon achterwege. Meer dan twee kolommen kan ook.
+
+De volgorde is hier van belang. Het telefoonboek is bijvoorbeeld een soort index op gemeente, familienaam en voornaam. Je kan het alleen maar efficiënt gebruiken als je de eerste kolom kent en het wordt efficiënter naarmate je meer kolommen kent.
+
 ## Prefix index
 
 Wanneer je een secundaire index voor een kolom maakt, dus een index die niet over de primaire sleutel gaat, slaat MySQL de waarden van de kolommen op in een afzonderlijke gegevensstructuur. Dit zijn structuren waarin je snel kan opzoeken.
