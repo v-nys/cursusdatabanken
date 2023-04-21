@@ -91,12 +91,20 @@ select count(distinct Omschrijving)
 from Taken;
 ```
 
-**Stap 2**: zoek volgens verschillende lengtes de meest unieke prefix. Via `LEFT` krijg je alleen de eerste (aantal) tekens uit een string.
+**Stap 2**: bepaal de maximale lengte van een waarde in de kolom
+
+```sql
+select max(length(Omschrijving)) from Taken;
+```
+
+**Stap 3**: zoek de minimale lengte waarbij je geen informatie verliest. Dit kan nooit meer zijn dan het resultaat van stap 2. Als de langste kolomwaarde bijvoorbeeld 21 is, start je door te kijken of 20 karakters al dan niet zorgen voor informatieverlies. Via `LEFT` krijg je alleen de eerste (aantal) tekens uit een string.
 
 ```sql
 select count(distinct left(Omschrijving,20))
 from Taken;
 ```
+
+Zodra er minder resultaten zijn, heb je de prefix te kort gekozen. Het antwoord is dus één meer dan de lengte waarbij het aantal resultaten begint te krimpen.
 
 Indien 20 de perfecte lengte van de prefix is, dan gaan we de index opbouwen.
 
